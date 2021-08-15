@@ -4,7 +4,7 @@
   "description": "It's a unique portfolio template that made your portfolio website looks great, This is a landing page template powered by bootstrap.",
   "main": "index.js",
   "scripts": {
-    "build": "cd andrew-mccall hugo --gc --themesDir ../.."
+    "build": "cd andrew-mccall hugo --gc --themesDir ../.. --output public"
   },
   "repository": {
     "type": "git",
