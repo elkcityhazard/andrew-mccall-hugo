@@ -1,7 +1,7 @@
 ######################## default configuration ####################
 baseURL = "/"
 # theme directory
-themesDir = '../..'
+themesDir = '../'
 title = "Andrew McCall - Fullstack Web Developer - Traverse City, Michigan"
 theme = "somrat"
 # post pagination
