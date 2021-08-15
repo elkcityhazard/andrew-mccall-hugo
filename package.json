@@ -1,0 +1,20 @@
+{
+  "name": "somrat",
+  "version": "1.0.0",
+  "description": "It's a unique portfolio template that made your portfolio website looks great, This is a landing page template powered by bootstrap.",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd andrew-mccall &&hugo --configDir ../.."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elkcityhazard/andrew-mccall-hugo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elkcityhazard/andrew-mccall-hugo/issues"
+  },
+  "homepage": "https://github.com/elkcityhazard/andrew-mccall-hugo#readme"
+}
