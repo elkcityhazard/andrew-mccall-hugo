@@ -1,0 +1,33 @@
+---
+title : "👋, I'm Andrew McCall"
+# full screen navigation
+first_name : "Andrew"
+last_name : "McCall"
+bg_image : "/images/slider/wallpaper-desktop.png"
+# animated text loop
+occupations:
+- "Fullstack Web Developer"
+- "Graphic Design"
+- "Responsive Web Design"
+- "Search Engine Optimization"
+- "Website Maintenance"
+
+# slider background image loop
+slider_images:
+- "images/slider/slider-1.jpeg"
+- "images/slider/wallpaper-desktop.png"
+- "images/slider/slider-3.jpeg"
+
+# button
+button:
+  enable : true
+  label : "LET'S GET STARTED"
+  link : "#contact"
+
+
+# custom style
+custom_class: "" 
+custom_attributes: "" 
+custom_css: ""
+
+---
