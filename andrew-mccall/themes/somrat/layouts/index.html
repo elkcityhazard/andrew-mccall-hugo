@@ -1,11 +1,11 @@
 {{ define "main" }}
 
 <!-- Start Header -->
-{{ with .GetPage "banner" }}
-<style>{{.Params.custom_css | safeCSS}}</style>
+{{ with .GetPage "banner"  }}
+<style>{{ .Params.custom_css | safeCSS }}</style>
 <section class="header {{.Params.custom_class}}" {{.Params.custom_attributes | safeHTMLAttr}} id="home">
   <div class="logo">
-    <img class="img-fluid" src="{{ site.Params.logo_light | relURL }}" alt="{{ site.Title }}" height="150px" width="250px">
+    <img class="img-fluid" src="{{ site.Params.logo_light | relURL }}" alt="{{ site.Title }}">
   </div>
   <div class="slider-prev-button slider-button">
     <i class="fa fa-angle-left"></i>
@@ -129,7 +129,7 @@
             <span></span>
           </div>
         </a>
-        <div class="mobile-menu-logo"><a href="{{site.BaseURL | relLangURL }}"><img class="img-fluid"
+        <div class="mobile-menu-logo"><a href="{{site.BaseURL | relLangURL }}"><img class="img-fluid mobile-menu-img"
               src="{{ site.Params.logo_dark | absURL }}" alt="{{ site.Title }}"></a>
         </div>
         <div class="menu-slider">

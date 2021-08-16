@@ -1,7 +1,5 @@
 ######################## default configuration ####################
 baseURL = "/"
-# theme directory
-themesDir = '../'
 title = "Andrew McCall - Fullstack Web Developer - Traverse City, Michigan"
 theme = "somrat"
 # post pagination
@@ -15,8 +13,6 @@ googleAnalytics = "" # example : UA-123-45
 # disqus short name
 disqusShortname = "" # get your shortname form here : https://disqus.com
 # publish directory
-publishDir = "andrew-mccall/public"
-
 
 ############################# Outputs ##############################
 [outputs]
@@ -71,9 +67,9 @@ link = "plugins/owl-carousel/owl.carousel.min.js"
 favicon = "images/favicon-transparent.ico"
 logo_light = "images/logo-white.png"
 logo_dark = "images/svg/logo-black.svg"
-logo_width = "300px"
+logo_width = "150px"
 # Meta data
-description = "This is meta description"
+description = "Andrew McCall is a full stack web developer and writer, he specialises in Javascript and the JAMstack. He also creates websites with Mongodb, ExpressJS, React, and NodeJS"
 author = "andrew mccall"
 
 # Preloader
