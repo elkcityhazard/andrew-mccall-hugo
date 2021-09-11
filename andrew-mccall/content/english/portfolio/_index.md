@@ -1,8 +1,7 @@
 ---
 title: "Portfolio"
 description: "Learn more about my skills and experience as a web developer. I'm available for full-time, part-time, contract, and remote work."
-draft: true
-
+draft: false
 
 # custom style
 custom_class: "" 

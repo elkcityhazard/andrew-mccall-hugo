@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "/"
+baseURL = "https://andrew-mccall.com/"
 title = "Andrew McCall - Fullstack Web Developer - Traverse City, Michigan"
 theme = "somrat"
 # post pagination
@@ -7,7 +7,7 @@ paginate = "6"
 # post excerpt
 summaryLength = "10"
 # disable language
-disableLanguages = [] # disable language from here
+disableLanguages = true
 # google analutics
 googleAnalytics = "" # example : UA-123-45
 # disqus short name
@@ -154,51 +154,3 @@ url = "blog"
 weight = 7
 
 
-################################### French language #####################################
-[Languages.fr]
-languageName = "Fr"
-languageCode = "fr-fr"
-contentDir = "content/french"
-weight = 2
-home = "Accueil"
-# copyright
-copyright = "Copyright &copy; 2020 a hugo theme by [somrat](https://somrat.netlify.com)"
-
-
-################# english navigation ##################
-
-# main menu
-[[Languages.fr.menu.main]]
-name = "Home"
-url = "/"
-weight = 1
-
-[[Languages.fr.menu.main]]
-name = "About me"
-pre = "#"
-url = "about"
-weight = 2
-
-[[Languages.fr.menu.main]]
-name = "Services"
-pre = "#"
-url = "service"
-weight = 3
-
-[[Languages.fr.menu.main]]
-name = "Portfolio"
-pre = "#"
-url = "portfolio"
-weight = 4
-
-[[Languages.fr.menu.main]]
-name = "Testimonial"
-pre = "#"
-url = "testimonial"
-weight = 5
-
-[[Languages.fr.menu.main]]
-name = "Contact"
-pre = "#"
-url = "contact"
-weight = 6
