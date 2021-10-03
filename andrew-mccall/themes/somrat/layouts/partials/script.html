@@ -1,11 +1,11 @@
 {{ "<!-- JS Plugins -->" | safeHTML }}
 {{ range site.Params.plugins.js}}
-<script src="{{ .link | absURL }}"></script>
+<script src="{{ .link | absURL }}" defer></script>
 {{ end }}
 
 {{ "<!-- Main Script -->" | safeHTML }}
 {{ $script := resources.Get "js/script.js" | minify}}
-<script src="{{ $script.Permalink }}"></script>
+<script src="{{ $script.Permalink }}" defer ></script>
 
 {{ "<!-- google analitycs -->" | safeHTML }}
 {{ with site.Params.google_analitycs_id}}

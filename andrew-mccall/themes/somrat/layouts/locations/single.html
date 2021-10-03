@@ -1,0 +1,36 @@
+{{ define "main" }}
+<header class="city-header" style="background: linear-gradient(0.25turn, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ .Params.img | absURL }}') no-repeat fixed center center / cover;">
+    <section class="wow fadeInUp city">
+        <div class="container">
+            <h1 data-wow-duration="1.5s" class="wow fadeInUp">{{ .Title }}</h1>
+            <h2 data-wow-duration="1.5s" data-wow-delay="250ms" class="wow fadeInUp">{{ .Params.subtitle }}</h2>
+        </div>
+    </section>
+    <section class="engaging-points">
+        <ul class="engaging-points_list">
+            {{ range .Params.engaging_points }}
+                <li class="wow fadeInUp" data-wow-duration="{{ .rate }}" data-wow-delay="{{ .delay }}">👌 {{ .message }}</li>
+        {{ end }}
+        </ul>
+    </section>
+</header>
+<section class="local-description my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-4 mx-auto">
+                <figure class="mt-5">
+                    <img src="{{ .Params.local_img | absURL }}" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0" alt="{{ .Title }}" width="450" height="350">
+                    <figcaption>{{ .Params.local_caption | humanize }} </figcaption>
+                </figure>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 mx-auto">
+                <h3 class="fadeIn" data-wow-duration="1.5s">We Are Here To Serve</h3>
+                <p class="pt-2">{{ .Params.about | safeHTML }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+<main class="main-content">
+    {{ .Content }}
+</main>
+{{ end }}
