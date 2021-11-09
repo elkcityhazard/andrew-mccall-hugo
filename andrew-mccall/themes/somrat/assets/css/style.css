@@ -1709,6 +1709,20 @@ textarea.form-control::-webkit-input-placeholder,
   transform: translateY(5px);
 }
 
+.footer-link {
+  margin-left: -.5rem;
+}
+
+.footer-link i.fa {
+  transition: all 250ms ease;
+  -webkit-transition: all 250ms ease;
+  -moz-transition: all 250ms ease;
+}
+
+.footer-link:hover i.fa {
+  padding-right: 1rem !important;
+}
+
 .to-top {
   display: inline;
   float: right;

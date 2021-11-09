@@ -76,6 +76,14 @@ author = "andrew mccall"
 [params.preloader]
 enable = true
 preloader = "images/preloader.gif" # use jpg, png, svg or gif format.
+
+
+########################### Physical Address #####################
+[params.address]
+name = "Andrew M McCall"
+address = "4889 Silver Pines Rd"
+city = "Traverse City, Michigan <br /> 49685"
+
   
 ############################# social site ########################
 [[params.social]]

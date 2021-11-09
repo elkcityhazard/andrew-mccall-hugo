@@ -1,5 +1,5 @@
 ---
-title: Petoskey Michigan Web Development: 9 Tips To Better Websites
+title: "Petoskey Michigan Web Development: 9 Tips To Better Websites"
 subtitle: Petoskey Michigan Digital Marketing Services
 date: 2021-09-19
 tags:

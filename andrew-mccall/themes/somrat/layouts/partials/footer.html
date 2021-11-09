@@ -1,6 +1,31 @@
 <footer class="footer-bg fadeInUp wow" data-wow-duration="1.5s">
   <div class="container">
-    <div class="row">
+    <div class="row p-3">
+      <div class="col-12 col-md-3 mt-1 text-light">
+        <h4>Address</h4>
+        {{- with .Site.Params.address -}}
+          <address class="p-0 mx-auto">
+            <p class="m-0 mb-1">{{.name}}</p>
+            <p class="m-0 mb-1">{{.address}}</p>
+            <p class="m-0 mb-1">{{.city | safeHTML }}</p>
+          </address>
+        {{- end -}}
+      </div>
+      <div class="col-12 col-md-3 mt-1 text-light">
+        <h4>Links</h4>
+        {{- range .Site.Menus.main -}}
+          <a href="{{- .URL | absURL -}}" class="d-block text-light footer-link" title="{{- .Name -}}"><i class="fa fa-angle-right px-2"></i>{{ .Name }}</a>
+        {{- end -}}
+      </div>
+      <div class="col-12 col-md-6 mt-1 text-light">
+        <h4>Get Started Today</h4>
+        <p>If you are looking for a web developer in Traverse City, Michigan to help you create a custom web application or to update your existing one, I can help.</p>
+        <p>If you are looking for a web development company to help you build an e-commerce website, I can help.</p>
+        <p>If you are looking for a web development company to help you build an app that will improve your business, I can help.</p>
+        <p>Contact us today!</p>
+        
+
+      </div>
       <div class="footer col-lg-10 offset-lg-1">
         <hr>
         <ul class="footer-icons list-inline">
@@ -17,4 +42,5 @@
       </div>
     </div>
   </div>
+  <a class="elevensight-11button-v2" data-btn-style-hash-id="jb76CMPTWZa1jQhduPnCrW_rIfXaMfgh0m69AJaAk6SnUlxxU7"></a> 
 </footer>

@@ -433,27 +433,14 @@
         </form>
       </div>
     </div>
-    <div class="row">
-      <div class="footer col-lg-10 offset-lg-1">
-        <hr>
-        <ul class="footer-icons list-inline">
-          {{ range site.Params.social }}
-          <li><a href="{{ .link | safeURL }}"><i class="{{ .icon }}"></i></a></li>
-          {{ end }}
-        </ul>
-        <div class="to-top">
-          <a href="#home"><i class="fa fa-chevron-up"></i></a>
-        </div>
-        <div class="credit content">
-          {{ site.Params.copyright | markdownify }}
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 {{ end }}
 <!-- End Contact -->
+{{ partial "footer.html" . }}
 
-<a href="#home" class="scroll-up hvr-icon-up"></a>
+<a href="#home" class="scroll-up hvr-icon-up"></a>  
+<a class="elevensight-11button-v2" data-btn-style-hash-id="jb76CMPTWZa1jQhduPnCrW_rIfXaMfgh0m69AJaAk6SnUlxxU7"></a> 
+<script defer>!function(d,s,id){ var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "https://app.11sight.com/button_loader.js"; fjs.parentNode.insertBefore(js, fjs); }(document,"script","elevensight-11buttonjs"); </script> 
 
 {{ end }}
