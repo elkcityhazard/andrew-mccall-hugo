@@ -7,6 +7,22 @@
     }
 }
 
+@keyframes spinIn {
+    from {
+        transform: rotateX(0deg) rotateY(-1080deg) rotateZ(0deg);
+        -webkit-transform: rotateX(0deg) rotateY(-1080deg) rotateZ(0deg);
+        -moz-transform: rotateX(0deg) rotateY(-1080deg) rotateZ(0deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: rotate(0);
+        -webkit-transform: rotate(0);
+        -moz-transform: rotate(0);
+        opacity: 1;
+    }
+}
+
 .mobile-menu-img {
     max-width: 200px;
 }
@@ -37,4 +53,37 @@ header.city-header section ul li {
 
 section.local-description img {
     object-fit: cover;
+}
+
+.content > p > img {
+    max-width: 100% !important;
+    width: auto;
+}
+
+.perspective .card p {
+    font-size: 1.2rem;
+}
+
+
+@media screen and (min-width: 1200px) {
+    .perspective {
+        background: transparent; 
+        transform-style: preserve-3d;
+        perspective: 900px;
+    }
+    
+    .perspective .card {
+        animation: spinIn 250ms ease 1s forwards;
+        box-shadow: 2px 2px 20px -10px rgba(0,0,0, 0.5);
+        opacity: 0;
+        transition: all 250ms ease;
+        -webkit-transition: all 250ms ease;
+        -moz-transition: all 250ms ease;
+    }
+    
+    .perspective:hover .card {
+        transform: rotate(0);
+        -webkit-transform: rotate(0);
+        -moz-transform: rotate(0)
+    }
 }

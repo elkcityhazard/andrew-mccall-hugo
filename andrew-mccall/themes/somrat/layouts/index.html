@@ -262,7 +262,7 @@
               <div class="service-img">
                 <img class="img-fluid" src="{{ .image | absURL }}" alt="{{ .name | markdownify }}">
               </div>
-              <div class="service-label">{{ .name | markdownify }}</div>
+              <div class="service-label">{{ if .url}} <a href="{{.url}}" title="{{ .Name }}">{{ .name | markdownify }}</a> {{ else }}  {{ .name | markdownify }}  {{end}}</div>
             </div>
             {{ end }}
           </div>
@@ -410,7 +410,7 @@
     <div class="row">
       <div class="contact-holder col-lg-8 offset-lg-2 col-sm-8 offset-sm-2">
         <h1 class="wow fadeInUp" data-wow-duration="1.5s">{{ .Title | markdownify}}</h1>
-        <form method="POST" action="{{ .Params.form_action }}" data-toggle="validator">
+        <form id="contactForm" method="POST" action="{{ .Params.form_action }}" data-toggle="validator">
           <div class="form-container row wow fadeInUp" data-wow-duration="1.5s">
             <div class="form-group col-lg-6">
               <input class="form-control" type="text" name="username" id="username" placeholder="{{.Params.name}}"
@@ -427,7 +427,7 @@
               <div class="help-block with-errors"></div>
             </div>
             <div class="form-group col-lg-12 sub-button">
-              <button class="submit form-control hvr-icon-push" type="submit" value="send"> {{.Params.submit}} </button>
+              <button class="submit form-control hvr-icon-push g-recaptcha" data-sitekey="6Lf6IyUaAAAAAPTTe__sC4052VzvGcwFlBHeajA0" data-callback='onSubmit' data-action='submit' type="submit" value="send"> {{.Params.submit}} </button>
             </div>
           </div>
         </form>
@@ -441,6 +441,6 @@
 
 <a href="#home" class="scroll-up hvr-icon-up"></a>  
 <a class="elevensight-11button-v2" data-btn-style-hash-id="jb76CMPTWZa1jQhduPnCrW_rIfXaMfgh0m69AJaAk6SnUlxxU7"></a> 
-<script defer>!function(d,s,id){ var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "https://app.11sight.com/button_loader.js"; fjs.parentNode.insertBefore(js, fjs); }(document,"script","elevensight-11buttonjs"); </script> 
+
 
 {{ end }}

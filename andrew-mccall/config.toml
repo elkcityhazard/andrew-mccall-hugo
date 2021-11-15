@@ -134,8 +134,8 @@ weight = 2
 
 [[Languages.en.menu.main]]
 name = "Services"
-pre = "#"
-url = "service"
+pre = ""
+url = "/services"
 weight = 3
 
 [[Languages.en.menu.main]]
@@ -160,5 +160,13 @@ weight = 6
 name = "Blog"
 url = "blog"
 weight = 7
+
+#######Services Submenu###########
+
+[[Languages.en.menu.services]]
+name = "Web Development"
+url = "services/web-development-traverse-city"
+parent = "services"
+weight = 1
 
 

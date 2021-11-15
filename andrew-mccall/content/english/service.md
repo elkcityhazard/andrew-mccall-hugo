@@ -4,6 +4,7 @@ service_list:
 # service item loop
 - name : "Web Development"
   image : "images/icons/web-development.png"
+  url: "services/web-development-traverse-city"
   
 # service item loop
 - name : "Graphic Design"

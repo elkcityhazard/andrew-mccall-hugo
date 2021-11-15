@@ -1327,6 +1327,9 @@ ul.experience-chart h4 {
 }
 
 .item-holder {
+  max-width: 100%;
+  min-height: 250px;
+  height: 100%;
   position: relative;
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
@@ -1336,14 +1339,15 @@ ul.experience-chart h4 {
 }
 
 .item-caption {
+  max-width: 100%;
   position: absolute;
   top: 24px;
   bottom: 0;
   left: 0;
-  width: 150px;
+  width: 300px;
   background: #313131;
   -webkit-transform: translateX(-150px);
-  transform: translateX(-150px);
+  transform: translateX(-300px);
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }

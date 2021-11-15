@@ -1,0 +1,34 @@
+{{ define "main" }}
+<header class="p-3 text-center mb-3">
+    <div class="row">
+        <div class="col">
+            <h1>{{ .Title | markdownify }}</h1>
+        </div>
+    </div>
+</header>
+<main class="list p-3">
+    <div class="row">
+
+    </div>
+    {{ with .Site.GetPage "section" "services" }}
+
+    {{ range .Pages }}
+    <div class="col-12 col-md-4 mx-auto perspective">
+        <div class="card border-dark rounded-lg" style="background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.50) 75%, rgba(0,212,255,0.25392155153076856) 100%), url('{{.Params.local_img | absURL}}') no-repeat center center / cover;">
+            <div class="card-header p-3 text-center bg-transparent">
+                <h2><a href="{{.RelPermalink | absURL}}" class="text-decoration-none text-dark">{{ .Name }}</a></h2>
+            </div>
+            <div class="card-body bg-transparent p-3">
+                <p>
+                    {{ .Params.summary }}
+                </p>
+            </div>
+            <div class="card-footer p-3 text-center">
+                <a href="{{ .RelPermalink | absURL}}" class="btn btn-dark btn-block py-3 bg-dark" title="{{ .Name }}">{{ .Name }}</a>
+            </div>
+        </div>
+    </div>
+    {{ end }}
+    {{ end }}
+</main>
+{{ end }}
