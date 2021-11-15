@@ -76,8 +76,8 @@ section.local-description img {
 @media screen and (min-width: 1200px) {
     .perspective {
         background: transparent; 
-        transform-style: preserve-3d;
         perspective: 900px;
+        transform-style: preserve-3d;
     }
     
     .perspective .card {
