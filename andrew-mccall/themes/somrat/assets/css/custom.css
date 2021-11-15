@@ -23,6 +23,11 @@
     }
 }
 
+html,
+body {
+    overflow-x: hidden;
+}
+
 .mobile-menu-img {
     max-width: 200px;
 }
@@ -62,6 +67,10 @@ section.local-description img {
 
 .perspective .card p {
     font-size: 1.2rem;
+}
+
+.#rc-anchor-alert {
+    display: none !important;
 }
 
 
