@@ -23,9 +23,8 @@
     }
 }
 
-html,
-body {
-    overflow-x: hidden;
+.contact {
+    overflow-x: hidden !important;
 }
 
 .mobile-menu-img {
