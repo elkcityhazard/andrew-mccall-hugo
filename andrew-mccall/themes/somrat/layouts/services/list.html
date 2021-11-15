@@ -11,7 +11,7 @@
         {{ with .Site.GetPage "section" "services" }}
 
     {{ range .Pages }}
-    <div class="col-12 col-md-4 mx-auto perspective">
+    <div class="col-12 col-md-4 mx-auto perspective mb-4">
         <div class="card border-dark rounded-lg" style="background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.50) 75%, rgba(0,212,255,0.25392155153076856) 100%), url('{{.Params.local_img | absURL}}') no-repeat center center / cover;">
             <div class="card-header p-3 text-center bg-transparent">
                 <h2><a href="{{.RelPermalink | absURL}}" class="text-decoration-none text-dark">
