@@ -1,7 +1,7 @@
 ######################## default configuration ####################
 baseURL = "https://andrew-mccall.com/"
-title = "Andrew McCall - Fullstack Web Developer - Traverse City, Michigan"
 theme = "somrat"
+title = "Andrew McCall - Fullstack Web Developer - Traverse City, Michigan"
 # post pagination
 paginate = "6"
 # post excerpt
@@ -19,7 +19,7 @@ disqusShortname = "" # get your shortname form here : https://disqus.com
 home = ["HTML"]
 
 [markup.goldmark.renderer]
-unsafe= true
+unsafe = true
 
 ############################# Plugins ##############################
 
@@ -61,30 +61,27 @@ link = "plugins/magnific-popup/jquery.magnific-popup.min.js"
 [[params.plugins.js]]
 link = "plugins/owl-carousel/owl.carousel.min.js"
 
-
 #################### default parameters ################################
 [params]
 favicon = "images/favicon-transparent.ico"
-logo_light = "images/logo-white.png"
 logo_dark = "images/svg/logo-black.svg"
+logo_light = "images/logo-white.png"
 logo_width = "150px"
 # Meta data
-description = "Andrew McCall is a full stack web developer and writer, he specialises in Javascript and the JAMstack. He also creates websites with Mongodb, ExpressJS, React, and NodeJS"
 author = "andrew mccall"
+description = "Traverse City Website Development, Design, & Maintenance Starting at $49.99 / month.  Andrew McCall is a fullstack web developer based in Traverse City, Michigan."
 
 # Preloader
 [params.preloader]
-enable = true
+enable = true 
 preloader = "images/preloader.gif" # use jpg, png, svg or gif format.
-
 
 ########################### Physical Address #####################
 [params.address]
-name = "Andrew M McCall"
 address = "4889 Silver Pines Rd"
 city = "Traverse City, Michigan <br /> 49685"
+name = "Andrew M McCall"
 
-  
 ############################# social site ########################
 [[params.social]]
 icon = "fab fa-facebook-f"
@@ -106,17 +103,15 @@ link = "https://github.com/elkcityhazard"
 icon = "fab fa-linkedin"
 link = "https://www.linkedin.com/in/elkcityhazard"
 
-
 ################################### English language #####################################
 [Languages.en]
-languageName = "En"
-languageCode = "en-us"
 contentDir = "content/english"
-weight = 1
 home = "Home"
+languageCode = "en-us"
+languageName = "En"
+weight = 1
 # copyright
 copyright = "Copyright &copy; 2021  [andrew mccall](https://andrew-mccall.com)"
-
 
 ################# english navigation ##################
 
@@ -165,8 +160,6 @@ weight = 7
 
 [[Languages.en.menu.services]]
 name = "Web Development"
-url = "services/web-development-traverse-city"
 parent = "services"
+url = "services/web-development-traverse-city"
 weight = 1
-
-

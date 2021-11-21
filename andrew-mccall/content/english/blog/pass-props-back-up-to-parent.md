@@ -1,6 +1,6 @@
 ---
-title: "Pass Props Back Up To Parent
-
+title: "Pass Props Back Up To Parent"
+draft: true
 ---
 
 - Create a state for it in the parent folder such as [showModal, setShowModal]
