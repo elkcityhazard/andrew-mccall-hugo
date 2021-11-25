@@ -1,8 +1,8 @@
 ---
 title : "TESTIMONIALS"
 draft: true
-testimonial_slider:
 headless: true
+testimonial_slider:
 # slider item loop
 - name : "Micheal Clark"
   image : "images/clients/client1.jpg"
