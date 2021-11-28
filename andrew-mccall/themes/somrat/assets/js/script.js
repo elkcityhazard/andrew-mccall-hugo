@@ -374,3 +374,21 @@ window.onload = async function() {
 	const video = document.querySelector('.cta-video');
 	video.src = await video.firstElementChild.getAttribute('data-src')
 }
+
+
+
+const parallax = (id, rate) => {
+	let objectToParallax = document.getElementById(id);
+	const initParallax = () => {
+	  let x = objectToParallax.getBoundingClientRect().top / rate;
+	  let y = Math.round((x * 100) / 100);
+	  objectToParallax.style.backgroundPosition = `center ${y}px`;
+	}
+  
+	initParallax(id, rate);
+	window.addEventListener('scroll', function() {
+	  initParallax(id, rate);
+	})
+  }
+  
+  parallax('palmTree', 3)

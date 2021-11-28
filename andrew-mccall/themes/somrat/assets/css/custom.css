@@ -90,6 +90,19 @@ section.local-description img {
     transform: translateY(-50%);
 }
 
+.contact {
+    background: rgb(0,0,0);
+    background: -moz-linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5256303204875701) 50%, rgba(255,156,17,0.3435574913559174) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5256303204875701) 50%, rgba(255,156,17,0.3435574913559174) 100%);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5256303204875701) 50%, rgba(255,156,17,0.3435574913559174) 100%); 
+}
+
+.grecaptcha-badge {
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+}
+
 
 
 @media screen and (min-width: 1200px) {
@@ -129,10 +142,11 @@ section.local-description img {
         left: 0;
         transform: translateY(-50%);
     }
-}
 
-.grecaptcha-badge {
-    visibility: hidden !important;
-    height: 0 !important;
-    width: 0 !important;
+    .contact {
+        background: rgb(0,0,0) url('/images/backgrounds/tropical-beach-with-palm-trees.webp') no-repeat fixed center / cover;
+        background: -moz-linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5256303204875701) 50%, rgba(255,156,17,0.3435574913559174) 100%) url('/images/backgrounds/tropical-beach-with-palm-trees.webp') no-repeat fixed center / cover;
+        background: -webkit-linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5256303204875701) 50%, rgba(255,156,17,0.3435574913559174) 100%) url('/images/backgrounds/tropical-beach-with-palm-trees.webp') no-repeat fixed center / cover;
+        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5256303204875701) 50%, rgba(255,156,17,0.3435574913559174) 100%) url('/images/backgrounds/tropical-beach-with-palm-trees.webp') no-repeat fixed center / cover; 
+    }
 }

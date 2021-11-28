@@ -15,7 +15,7 @@
   </div>
   <div class="owl-carousel owl-full-width owl-theme" id="background-slide">
     {{ range .Params.slider_images }}
-    <div class="slider"><img class="img-fluid" src="{{ . | absURL }}" alt="slider-background"></div>
+    <div class="slider d-none d-lg-block"><img class="img-fluid" src="{{ . | absURL }}" alt="slider-background"></div>
     {{ end }}
   </div>
   <div class="container">
@@ -276,7 +276,7 @@
 <!-- call to action -->
 {{ with .GetPage "call-to-action" }}
 <style>{{.Params.custom_css | safeCSS}}</style>
-<section id="cta" class="need-service overlay section-sm wow fadeInUp {{.Params.custom_class}}" {{.Params.custom_attributes | safeHTMLAttr}} data-wow-duration="1.5s" style="background-image: url('{{ .Params.bg_image | absURL }}');">
+<section id="cta" class="need-service overlay section-sm wow fadeInUp {{.Params.custom_class}}" {{.Params.custom_attributes | safeHTMLAttr}} data-wow-duration="1.5s" style="background: #333;">
   <video class="cta-video" controls autoplay loop>
     <source data-src="/images/backgrounds/palm-trees-1920x1080.mp4" type="video/mp4">
     Your browser does not support the video tag.
@@ -408,7 +408,7 @@
 <!-- Start Contact -->
 {{ with .GetPage "contact"}}
 <style>{{.Params.custom_css | safeCSS}}</style>
-<section class="contact {{.Params.custom_class}}" {{.Params.custom_attributes | safeHTMLAttr}} style="background-image: url('{{.Params.bg_image | absURL}}');" id="contact">
+<section id="palmTree" class="contact {{.Params.custom_class}}" {{.Params.custom_attributes | safeHTMLAttr}} id="contact">
   <div class="container">
     <div class="row">
       <div class="contact-holder col-lg-8 offset-lg-2 col-sm-8 offset-sm-2">

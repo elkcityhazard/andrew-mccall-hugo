@@ -18,6 +18,7 @@
 
   <!-- Main Stylesheet -->
   {{ $styles := resources.Get "css/style.css" | minify }}
+  
   <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
 
   <!-- Custom stylesheet -->
