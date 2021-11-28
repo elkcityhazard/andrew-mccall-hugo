@@ -5,7 +5,7 @@
 <style>{{ .Params.custom_css | safeCSS }}</style>
 <section class="header {{.Params.custom_class}}" {{.Params.custom_attributes | safeHTMLAttr}} id="home">
   <div class="logo">
-    <img class="img-fluid lazy" src="{{ site.Params.logo_light | relURL }}" alt="{{ site.Title }}">
+    <img class="img-fluidlazy" data-src="{{ site.Params.logo_light | relURL }}" alt="{{ site.Title }}">
   </div>
   <div class="slider-prev-button slider-button">
     <i class="fa fa-angle-left"></i>
@@ -15,7 +15,7 @@
   </div>
   <div class="owl-carousel owl-full-width owl-theme" id="background-slide">
     {{ range .Params.slider_images }}
-    <div class="slider d-none d-lg-block"><img class="img-fluid lazy" data-src="{{ . | absURL }}" alt="slider-background"></div>
+    <div class="slider d-none d-lg-block"><img loading="lazy" class="img-fluid" src="{{ . | absURL }}" alt="slider-background"></div>
     {{ end }}
   </div>
   <div class="container">

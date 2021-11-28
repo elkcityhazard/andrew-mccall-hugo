@@ -392,3 +392,21 @@ const parallax = (id, rate) => {
   }
   
   parallax('palmTree', 3)
+
+
+
+
+  const images = document.querySelectorAll('.lazy');
+
+observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.intersectionRatio > 0) {
+      entry.target.src = entry.target.getAttribute('data-src')
+	  observer.unobserve(entry.target)
+    }
+  });
+});
+
+images.forEach(image => {
+  observer.observe(image);
+});
