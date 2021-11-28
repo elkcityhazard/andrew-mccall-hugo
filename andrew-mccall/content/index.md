@@ -1,6 +1,4 @@
 ---
-title: "SERVICES"
-headless: true
 service_list:
   # service item loop
   - name: "Web Development"
@@ -26,9 +24,4 @@ service_list:
   # service item loop
   - name: "Mobile App Development"
     image: "images/icons/mobile-app.png"
-
-# custom style
-custom_class: ""
-custom_attributes: ""
-custom_css: ""
 ---

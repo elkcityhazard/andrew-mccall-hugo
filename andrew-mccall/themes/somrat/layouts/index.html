@@ -245,7 +245,7 @@
 <!-- End About Me -->
 
 <!-- Start Services -->
-{{ with .GetPage "service" }}
+{{ with .Params.service }}
 <style>{{.Params.custom_css | safeCSS}}</style>
 <section class="services {{.Params.custom_class}}" {{.Params.custom_attributes | safeHTMLAttr}} id="service">
   <div class="container">

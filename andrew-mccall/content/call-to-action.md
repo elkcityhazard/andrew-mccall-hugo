@@ -1,5 +1,5 @@
 ---
-title : "NEED A SERVICE?"
+title : "Ready For A Free Consultation?"
 headless: true
 bg_image : "images/backgrounds/need-service.jpg"
 button:
