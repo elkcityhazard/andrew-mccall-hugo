@@ -1,6 +1,7 @@
 ---
 title : "LEARN MORE <br /> ABOUT ME"
 image : "images/backgrounds/portrait.jpg"
+headless: true
 # button
 button:
   enable : true

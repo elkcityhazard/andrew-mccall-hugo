@@ -1,5 +1,6 @@
 ---
 title : "👋, I'm Andrew McCall"
+headless: true
 # full screen navigation
 first_name : "Andrew"
 last_name : "McCall"

@@ -1,5 +1,6 @@
 ---
 title : "NEED A SERVICE?"
+headless: true
 bg_image : "images/backgrounds/need-service.jpg"
 button:
   enable : true
