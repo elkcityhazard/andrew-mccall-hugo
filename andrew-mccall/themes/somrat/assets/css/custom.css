@@ -68,9 +68,28 @@ section.local-description img {
     font-size: 1.2rem;
 }
 
-.#rc-anchor-alert {
+#rc-anchor-alert {
     display: none !important;
 }
+
+#cta {
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+#cta .cta-video {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateY(-50%);
+}
+
 
 
 @media screen and (min-width: 1200px) {
@@ -93,6 +112,22 @@ section.local-description img {
         transform: rotate(0);
         -webkit-transform: rotate(0);
         -moz-transform: rotate(0)
+    }
+
+    #cta {
+        min-height: 50vh !important;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    #cta .cta-video {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateY(-50%);
     }
 }
 

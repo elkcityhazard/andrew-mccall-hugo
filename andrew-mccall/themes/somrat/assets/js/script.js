@@ -361,21 +361,17 @@
 }(jQuery));
 
 
+const video = document.querySelector('.cta-video');
 
-// const parallax = (id, rate) => {
-// 	let objectToParallax = document.querySelector(id);
-// 	const initParallax = () => {
-// 	  let x = objectToParallax.getBoundingClientRect().top / rate;
-// 	  let y = Math.round((x * 100) / 100);
-// 	  objectToParallax.style.backgroundPosition = `center ${Math.floor(y)}px`;
-// 	}
-  
-// 	initParallax(id, rate);
-// 	window.addEventListener('scroll', function() {
-// 	  initParallax(id, rate);
-// 	})
-//   }
-  
-//   parallax('.city-header', 3)
 
- 
+video.addEventListener('click', (e) => {
+	e.preventDefault()
+	e.target.paused ? e.target.play() : e.target.pause()
+
+})
+
+window.onload = async function() {
+	const video = document.querySelector('.cta-video');
+	video.src = await video.firstElementChild.getAttribute('data-src')
+	video.play();
+}
