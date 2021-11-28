@@ -245,8 +245,7 @@
 <!-- End About Me -->
 
 <!-- Start Services -->
-{{ with .Params.service }}
-<style>{{.Params.custom_css | safeCSS}}</style>
+{{ if .Params.service_list }}
 <section class="services {{.Params.custom_class}}" {{.Params.custom_attributes | safeHTMLAttr}} id="service">
   <div class="container">
     <div class="row">

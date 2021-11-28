@@ -362,19 +362,20 @@
 
 
 
-const parallax = (id, rate) => {
-	let objectToParallax = document.querySelector(id);
-	const initParallax = () => {
-	  let x = objectToParallax.getBoundingClientRect().top / rate;
-	  let y = Math.round((x * 100) / 100);
-	  objectToParallax.style.backgroundPosition = `center ${Math.floor(y)}px`;
-	}
+// const parallax = (id, rate) => {
+// 	let objectToParallax = document.querySelector(id);
+// 	const initParallax = () => {
+// 	  let x = objectToParallax.getBoundingClientRect().top / rate;
+// 	  let y = Math.round((x * 100) / 100);
+// 	  objectToParallax.style.backgroundPosition = `center ${Math.floor(y)}px`;
+// 	}
   
-	initParallax(id, rate);
-	window.addEventListener('scroll', function() {
-	  initParallax(id, rate);
-	})
-  }
+// 	initParallax(id, rate);
+// 	window.addEventListener('scroll', function() {
+// 	  initParallax(id, rate);
+// 	})
+//   }
   
-  parallax('.city-header', 3)
+//   parallax('.city-header', 3)
+
  
