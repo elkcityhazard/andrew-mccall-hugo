@@ -28,18 +28,18 @@ The first thing we need to do is set up our grid container:
 
 ```
 <div class="grid-container">
-<div class="grid-item"><img src="https://source.unsplash.com/250x900/?nature,water" alt="image"></div>
-<div class="grid-item"><img src="https://source.unsplash.com/250x500/?nature,water" alt="image"></div>
-<div class="grid-item"><img src="https://source.unsplash.com/250x400/?nature,water" alt="image"></div>
-<div class="grid-item"><img src="https://source.unsplash.com/250x375/?nature,water" alt="image"></div>
-<div class="grid-item"><img src="https://source.unsplash.com/250x400/?nature,water" alt="image"></div>
-<div class="grid-item"><img src="https://source.unsplash.com/250x500/?nature,water" alt="image"></div>
-<div class="grid-item"><img src="https://source.unsplash.com/250x200/?nature,water" alt="image"></div>
-<div class="grid-item"><img src="https://source.unsplash.com/250x900/?nature,water" alt="image"></div>
-<div class="grid-item"><img src="https://source.unsplash.com/250x850/?nature,water" alt="image"></div>
-<div class="grid-item"><img src="https://source.unsplash.com/250x700/?nature,water" alt="image"></div>
-<div class="grid-item"><img src="https://source.unsplash.com/250x625/?nature,water" alt="image"></div>
-<div class="grid-item"><img src="https://source.unsplash.com/250x633/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x900/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x500/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x400/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x375/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x400/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x500/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x200/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x900/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x850/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x700/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x625/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x633/?nature,water" alt="image"></div>
 
 </div>
 ```

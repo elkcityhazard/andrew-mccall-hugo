@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-12 col-sm-12 col-md-4 mx-auto">
                 <figure class="mt-5">
-                    <img src="{{ .Params.local_img | absURL }}" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0" alt="{{ .Title }}" width="450" height="350">
+                    <img loading="lazy" src="{{ .Params.local_img | absURL }}" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0" alt="{{ .Title }}" width="450" height="350">
                     <figcaption>{{ .Params.local_caption | humanize }} </figcaption>
                 </figure>
             </div>

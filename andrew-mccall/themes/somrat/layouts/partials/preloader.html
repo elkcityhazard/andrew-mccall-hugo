@@ -2,8 +2,13 @@
 {{ "<!-- preloader start -->" | safeHTML }}
 <div class="preloader">
   {{ with site.Params.preloader.preloader }}
-  <img src="{{ . | absURL }}" alt="preloader">
+  <img loading="lazy" src="{{ . | absURL }}" alt="preloader" height="150" width="150">
   {{ end }}
+  <div class="circle">
+    <div class="inner-circle">
+      
+    </div>
+  </div>
 </div>
 {{ "<!-- preloader end -->" | safeHTML }}
 {{ end }}

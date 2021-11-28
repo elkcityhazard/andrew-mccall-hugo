@@ -74,7 +74,7 @@ description = "Traverse City Website Development, Design, & Maintenance Starting
 # Preloader
 [params.preloader]
 enable = true 
-preloader = "images/preloader.gif" # use jpg, png, svg or gif format.
+preloader = "/images/svg/logo-small-transparent.svg" # use jpg, png, svg or gif format.
 
 ########################### Physical Address #####################
 [params.address]

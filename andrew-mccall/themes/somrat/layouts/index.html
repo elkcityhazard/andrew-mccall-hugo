@@ -324,7 +324,7 @@
             data-groups="[{{range $index, $element:= .Params.categories }}{{if ne $index 0}},{{end}}&quot;{{. | urlize}}&quot;{{ end }}]">
             <div class="item-holder">
               <a class="image-pop" href="{{ .Params.image | absURL }}" title="{{ .Title | markdownify }}">
-                 <img src="{{ .Params.image | absURL }}" alt="{{ .Title | markdownify }}">
+                 <img loading="lazy" src="{{ .Params.image | absURL }}" alt="{{ .Title | markdownify }}">
               </a>
               <div class="item-caption">
                 <h2 class="mt-2"><a class="text-white" href="{{.Permalink}}">{{ .Title | markdownify }}</a></h2>
@@ -438,8 +438,8 @@
 <!-- End Contact -->
 {{ partial "footer.html" . }}
 
-<a href="#home" class="scroll-up hvr-icon-up"></a>  
-<a class="elevensight-11button-v2" data-btn-style-hash-id="jb76CMPTWZa1jQhduPnCrW_rIfXaMfgh0m69AJaAk6SnUlxxU7"></a> 
-
+<a href="#home" class="scroll-up hvr-icon-up" aria-label="button" title="navigate to the top"></a>  
+  <a class="elevensight-11button-v2"  href="#" aria-label="contact widget" data-btn-style-hash-id="jb76CMPTWZa1jQhduPnCrW_rIfXaMfgh0m69AJaAk6SnUlxxU7" rel="external nofollow"></a>
+  <script defer>!function(d,s,id){ var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "https://app.11sight.com/button_loader.js"; fjs.parentNode.insertBefore(js, fjs); }(document,"script","elevensight-11buttonjs"); </script> 
 
 {{ end }}

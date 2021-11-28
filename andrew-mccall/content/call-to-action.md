@@ -1,7 +1,7 @@
 ---
 title : "Ready For A Free Consultation?"
 headless: true
-bg_image : "images/backgrounds/need-service.jpg"
+bg_image : "/images/backgrounds/palm-trees-1920x1080.mp4"
 button:
   enable : true
   label : "SAY HELLO!"
