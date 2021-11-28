@@ -373,5 +373,4 @@ video.addEventListener('click', (e) => {
 window.onload = async function() {
 	const video = document.querySelector('.cta-video');
 	video.src = await video.firstElementChild.getAttribute('data-src')
-	video.play();
 }
