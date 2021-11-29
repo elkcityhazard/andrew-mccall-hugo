@@ -13,8 +13,8 @@
         {{ end }}
         </ul>
     </section>
-    {{ with .Params.audio }}
 </header>
+{{ with .Params.audio }}
 <section class="audio-player mx-auto my-3 text-center">
     <audio controls aria-label="audio version">
         <source src="{{- . | absURL -}}" type="audio/mpeg">
