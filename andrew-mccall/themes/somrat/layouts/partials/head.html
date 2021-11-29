@@ -10,6 +10,14 @@
   <meta name="author" content="{{ . }}">{{ end }}
   {{ hugo.Generator }}
 
+  <!-- canonical -->
+
+  {{- with .Params.canonical -}}
+  <link rel="canonical" href="{{- . -}}" />
+  {{ else }}
+  <link rel="canonical" href="{{- .RelPermalink | absURL -}}" />
+  {{ end }}
+
   <!-- plugins -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   {{ range site.Params.plugins.css }}
