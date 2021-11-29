@@ -13,7 +13,16 @@
         {{ end }}
         </ul>
     </section>
+    {{ with .Params.audio }}
 </header>
+<section class="audio-player mx-auto my-3 text-center">
+    <audio controls aria-label="audio version">
+        <source src="{{- . | absURL -}}" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio> 
+      <p><small>Audio Version</small></p>
+</section>
+{{ end }}
 <section class="local-description my-5 d-none">
     <div class="container">
         <div class="row">

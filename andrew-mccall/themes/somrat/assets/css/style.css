@@ -24,6 +24,11 @@ body {
   height: 100%;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .content a {
   color: inherit;
   border-bottom: 1px dashed #212121;
