@@ -6,8 +6,9 @@ service_list:
     url: "services/web-development-traverse-city"
 
   # service item loop
-  - name: "Graphic Design"
-    image: "images/icons/graphic-design.png"
+  - name: "Podcast Production"
+    image: "images/icons/podcast.png"
+    url: "services/traverse-city-podcast-production"
 
   # service item loop
   - name: "Database Management"

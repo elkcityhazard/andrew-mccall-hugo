@@ -2,7 +2,7 @@
 title: "Traverse City Podcast Production"
 subtitle: "Fully Baked Podcasts - Ready To Serve"
 description: " I offer high quality podcast recording services to businesses wanting to promote their business or product to a wider audience. I can record, edit, mix and master the ideal podcast for your brand."
-summary: " Let us help you record, edit, mix and master your podcast. We'll produce a professional sounding show, and include a full content edit so you can focus on your content and not worry about the rest of the production."
+summary: " Let us help you record, edit, mix and master your podcast. We'll produce a professional sounding show, and include a full content edit so you can focus on your content and not worry about the rest of the production.  We take away the technological jargon and supply everything you need to craft an engaging narrative that keeps your audience coming back for more.   I create ready made podcast solutions for small and medium sized businesses."
 date: 2021-11-28
 img: "/images/services/podcasting-local-img.webp"
 local_img: "/images/services/podcasting-local-img.webp"
