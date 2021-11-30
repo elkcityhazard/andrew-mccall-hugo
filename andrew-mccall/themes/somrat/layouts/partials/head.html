@@ -20,18 +20,24 @@
 
   <!-- plugins -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   {{ range site.Params.plugins.css }}
   <link rel="stylesheet" href="{{ .link | absURL }}">
   {{ end }}
 
-  <!-- Main Stylesheet -->
-  {{ $styles := resources.Get "css/style.css" | minify }}
+  <!-- local css plugins bundled -->
+  {{ $bootstrap := resources.Get "plugins/bootstrap/bootstrap.min.css"}}
+  {{ $hover := resources.Get "plugins/hover/hover.css" }}
+  {{ $magnific := resources.Get "plugins/magnific-popup/magnific-popup.css" }}
+  {{ $owl := resources.Get "plugins/owl-carousel/owl.carousel.min.css" }}
+  {{ $owlDefault := resources.Get "plugins/owl-carousel/owl.theme.default.min.css" }}
+  {{ $textAnimation := resources.Get "plugins/text-animation/text-animation.css" }}
+  {{ $style := resources.Get "css/style.css" }}
+  {{ $custom := resources.Get "css/custom.css" }}
   
-  <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+  {{ $cssBundle := slice $bootstrap $hover $magnific $owl $owlDefault $textAnimation $style $custom | resources.Concat "css/bundle.css" | fingerprint }}
+  <link rel="stylesheet" href="{{ $cssBundle.Permalink | absURL }}">
 
-  <!-- Custom stylesheet -->
-  {{ $custom := resources.Get "css/custom.css" | minify }}
-  <link rel="stylesheet" href="{{ $custom.Permalink }}" media="screen">
 
   <!--Favicon-->
   <link rel="shortcut icon" href="{{ site.Params.favicon | absURL }}" type="image/x-icon">

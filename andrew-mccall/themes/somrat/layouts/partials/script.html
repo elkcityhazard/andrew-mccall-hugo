@@ -1,11 +1,18 @@
-{{ "<!-- JS Plugins -->" | safeHTML }}
-{{ range site.Params.plugins.js}}
-<script src="{{ .link | absURL }}" defer></script>
-{{ end }}
 
-{{ "<!-- Main Script -->" | safeHTML }}
-{{ $script := resources.Get "js/script.js" | minify}}
-<script src="{{ $script.Permalink }}" defer="true" ></script>
+
+{{ $jquery := resources.Get "plugins/jQuery/jquery.min.js" }}
+{{ $bootstrapjs := resources.Get "plugins/bootstrap/bootstrap.min.js" }}
+{{ $wowjs := resources.Get "plugins/wow.min.js" }}
+{{ $animatetextjs := resources.Get "plugins/text-animation/text-animation.js" }}
+{{ $waypoints := resources.Get "plugins/jquery.waypoints.min.js" }}  
+{{ $shuffle := resources.Get "plugins/shuffle/shuffle.min.js" }}
+{{ $magnificJS := resources.Get "plugins/magnific-popup/jquery.magnific-popup.min.js" }}
+{{ $carouselOwl := resources.Get "plugins/owl-carousel/owl.carousel.min.js" }}
+{{ $scriptjs := resources.Get "js/script.js" }}
+
+{{ $jsBundle := slice $jquery $bootstrapjs $wowjs $animatetextjs $waypoints $shuffle $magnificJS $carouselOwl $scriptjs | resources.Concat "js/bundle.js" | resources.Minify | fingerprint }}
+
+<script src="{{ $jsBundle.Permalink | absURL }}"  ></script>
 
 <script defer>
   function onSubmit(token) {
