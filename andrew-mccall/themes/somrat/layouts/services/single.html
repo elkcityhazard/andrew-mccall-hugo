@@ -2,14 +2,14 @@
 <header class="city-header p-3" style="background: linear-gradient(0.25turn, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ .Params.img | absURL }}') no-repeat fixed center center / cover;">
     <section class="wow fadeInUp city">
         <div class="container">
-            <h1 data-wow-duration="1.5s" class="wow fadeInUp">{{ .Title | markdownify }}</h1>
-            <h2 data-wow-duration="1.5s" data-wow-delay="250ms" class="wow fadeInUp">{{ .Params.subtitle }}</h2>
+            <h1 data-wow-duration="1.5s" class="wow fadeInUp text-white">{{ .Title | markdownify }}</h1>
+            <h2 data-wow-duration="1.5s" data-wow-delay="250ms" class="wow fadeInUp text-white">{{ .Params.subtitle }}</h2>
         </div>
     </section>
     <section class="engaging-points">
         <ul class="engaging-points_list">
             {{ range .Params.engaging_points }}
-                <li class="wow fadeInUp" data-wow-duration="{{ .rate }}" data-wow-delay="{{ .delay }}">👌 {{ .message }}</li>
+                <li class="wow fadeInUp text-white" data-wow-duration="{{ .rate }}" data-wow-delay="{{ .delay }}">👌 {{ .message }}</li>
         {{ end }}
         </ul>
     </section>
