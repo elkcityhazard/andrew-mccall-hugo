@@ -24,10 +24,10 @@ unsafe = true
 ############################# Plugins ##############################
 
 # CSS Plugins
-[[params.plugins.css]]
-link = "https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900&display=swap"
-[[params.plugins.css]]
-link = "https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
+#[[params.plugins.css.blank]]
+#link = "https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900&display=swap"
+#[[params.plugins.css.blank]]
+#link = "https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
 [[params.plugins.css]]
 link = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
 
