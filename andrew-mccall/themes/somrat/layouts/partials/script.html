@@ -12,7 +12,7 @@
 
 {{ $jsBundle := slice $jquery $bootstrapjs $wowjs $animatetextjs $waypoints $shuffle $magnificJS $carouselOwl $scriptjs | resources.Concat "js/bundle.js" | resources.Minify | fingerprint }}
 
-<script src="{{ $jsBundle.Permalink | absURL }}"  ></script>
+<script src="{{ $jsBundle.Permalink | absURL }}"  defer></script>
 
 <script defer>
   function onSubmit(token) {
