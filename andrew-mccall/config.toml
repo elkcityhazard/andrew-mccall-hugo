@@ -88,6 +88,7 @@ preloader = "/images/svg/logo-small-transparent.svg" # use jpg, png, svg or gif 
 address = "4889 Silver Pines Rd"
 city = "Traverse City, Michigan <br /> 49685"
 name = "Andrew M McCall"
+phone = "12312990217"
 
 ############################# social site ########################
 [[params.social]]
@@ -109,6 +110,10 @@ link = "https://github.com/elkcityhazard"
 [[params.social]]
 icon = "fab fa-linkedin"
 link = "https://www.linkedin.com/in/elkcityhazard"
+
+[[params.social]]
+icon = "fab fa-mastodon"
+link = "https://indieweb.social/@elkcityhazard" 
 
 ################################### English language #####################################
 [Languages.en]
