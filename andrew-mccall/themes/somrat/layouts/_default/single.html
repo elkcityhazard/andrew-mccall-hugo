@@ -54,7 +54,7 @@
               <li class="media widget-post align-items-center">
                 {{ if .Params.image }}
                 <a href="{{ .Permalink }}">
-                  <img class="widget-img" src="{{.Params.image | absURL}}" alt="{{.Title}}">
+                  <img class="widget-img" src="{{.Params.image | absURL}}" loading="lazy" alt="{{.Title}}">
                 </a>
                 {{ end }}
                 <div class="media-body">
