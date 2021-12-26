@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "https://wwww.andrew-mccall.com/"
+baseURL = "https://www.andrew-mccall.com/"
 theme = "somrat"
 title = "Andrew McCall - Fullstack Web Developer - Traverse City, Michigan"
 # post pagination
