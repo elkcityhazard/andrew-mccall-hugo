@@ -128,10 +128,6 @@ copyright = "Copyright &copy; 2021  [andrew mccall](https://andrew-mccall.com)"
 ################# english navigation ##################
 
 # main menu
-[[Languages.en.menu.main]]
-name = "Home"
-url = "/"
-weight = 1
 
 [[Languages.en.menu.main]]
 name = "About me"
@@ -174,4 +170,10 @@ weight = 7
 name = "Web Development"
 parent = "services"
 url = "services/web-development-traverse-city"
+weight = 1
+
+[[Languages.en.menu.services]]
+name = "Content Marketing"
+parent = "services"
+url = "services/traverse-city-content-marketing"
 weight = 1

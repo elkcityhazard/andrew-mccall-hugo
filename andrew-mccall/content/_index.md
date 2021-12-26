@@ -11,8 +11,9 @@ service_list:
     url: "services/traverse-city-podcast-production"
 
   # service item loop
-  - name: "Database Management"
-    image: "images/icons/dbms.png"
+  - name: "Content Marketing"
+    image: "images/icons/content-marketing-100x100px.png"
+    url: "services/traverse-city-content-marketing"
 
   # service item loop
   - name: "Software Development"
