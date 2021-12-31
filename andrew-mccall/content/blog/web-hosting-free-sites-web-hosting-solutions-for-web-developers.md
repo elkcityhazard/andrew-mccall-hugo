@@ -7,9 +7,8 @@ description: "Get started with free web hosting for your business or personal we
 draft: false
 ---
 
-# Web Hosting Free Sites: A Guide To Free Web Hosting Solutions For Web Developers
+## Web Hosting Free Sites: A Guide To Free Web Hosting Solutions For Web Developers
 
-Get started with free web hosting for your business or personal website. We explain how to use free web hosting solutions for your business or personal website.
 
 ## Introduction
 
