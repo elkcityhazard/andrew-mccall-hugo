@@ -26,4 +26,8 @@ service_list:
   # service item loop
   - name: "Mobile App Development"
     image: "images/icons/mobile-app.png"
+  # service item loop
+  - name: "Traverse City SEO"
+    image: "images/icons/marketing.png"
+    url: "services/traverse-city-search-engine-optimization"
 ---
