@@ -128,6 +128,10 @@ h3.aside-cta {
     font-size: 1.5em;
 }
 
+#services {
+    max-width: 237px;
+}
+
 
 
 @media screen and (min-width: 1200px) {
