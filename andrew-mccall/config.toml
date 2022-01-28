@@ -83,6 +83,15 @@ description = "Traverse City Website Development, Design, & Maintenance Starting
 enable = true 
 preloader = "/images/svg/logo-small-transparent.svg" # use jpg, png, svg or gif format.
 
+############RSS FEED##############
+
+copyright = 'This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.'
+languageCode = 'en-us'
+[author]
+  name = 'Andrew M McCall'
+
+
+
 ########################### Physical Address #####################
 [params.address]
 address = "4889 Silver Pines Rd"
