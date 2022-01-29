@@ -139,9 +139,8 @@ copyright = "Copyright &copy; 2021  [andrew mccall](https://andrew-mccall.com)"
 # main menu
 
 [[Languages.en.menu.main]]
-name = "About me"
-pre = "#"
-url = "about"
+name = "About Andrew"
+url = "/about"
 weight = 2
 
 [[Languages.en.menu.main]]
