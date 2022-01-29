@@ -1,30 +1,42 @@
 ---
-title: "Traverse City Podcast Production"
-subtitle: "Fully Baked Podcasts - Ready To Serve"
-description: " I offer high quality podcast recording services to businesses wanting to promote their business or product to a wider audience. I can record, edit, mix and master the ideal podcast for your brand."
-summary: " Let us help you record, edit, mix and master your podcast. We'll produce a professional sounding show, and include a full content edit so you can focus on your content and not worry about the rest of the production.  We take away the technological jargon and supply everything you need to craft an engaging narrative that keeps your audience coming back for more.   I create ready made podcast solutions for small and medium sized businesses."
-date: 2021-11-28
+title: Traverse City Podcast Production
+date: 2021-11-28 00:00:00 Z
+subtitle: Fully Baked Podcasts - Ready To Serve
+description: " I offer high quality podcast recording services to businesses wanting
+  to promote their business or product to a wider audience. I can record, edit, mix
+  and master the ideal podcast for your brand."
+summary: " Let us help you record, edit, mix and master your podcast. We'll produce
+  a professional sounding show, and include a full content edit so you can focus on
+  your content and not worry about the rest of the production.  We take away the technological
+  jargon and supply everything you need to craft an engaging narrative that keeps
+  your audience coming back for more.   I create ready made podcast solutions for
+  small and medium sized businesses."
 img: "/images/services/podcasting-local-img.webp"
 local_img: "/images/services/podcasting-local-img.webp"
-local_caption: "Traverse City Podcast Services"
-tags: ["podcasts", "podcast production"]
+local_caption: Traverse City Podcast Services
+tags:
+- podcasts
+- podcast production
 draft: false
 engaging_points:
-- rate: "1.5s"
-  delay: "100ms"
-  message: "Give yourself the best chance at success with the best podcast production company in Northern Michigan."
-- rate: "1.5s"
-  delay: "200ms"
-  message: "You'll be able to focus on your show and not the production process."
-- rate: "1.5s"
-  delay: "300ms"
-  message: "Our podcast production services are affordable and our production process is easy."
-- rate: "1.5s"
-  delay: "400ms"
-  message: "We can produce, record, mix, edit, master, and help you make sure your podcast is reaching your ideal audience."
-- rate: "1.5s"
-  delay: "500ms"
-  message: "We can help you with your podcast marketing to increase your reach."
+- rate: 1.5s
+  delay: 100ms
+  message: Give yourself the best chance at success with the best podcast production
+    company in Northern Michigan.
+- rate: 1.5s
+  delay: 200ms
+  message: You'll be able to focus on your show and not the production process.
+- rate: 1.5s
+  delay: 300ms
+  message: Our podcast production services are affordable and our production process
+    is easy.
+- rate: 1.5s
+  delay: 400ms
+  message: We can produce, record, mix, edit, master, and help you make sure your
+    podcast is reaching your ideal audience.
+- rate: 1.5s
+  delay: 500ms
+  message: We can help you with your podcast marketing to increase your reach.
 audio: "/audio/2021/traverse-city-podcast-production.mp3"
 ---
 

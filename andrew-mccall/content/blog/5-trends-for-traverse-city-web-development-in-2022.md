@@ -1,11 +1,16 @@
 ---
-title: "5 Trends For Traverse City Web Development In 2022"
-date: 2021-09-15
-image: "images/blog/2022-web-development-trends-1600-600.svg"
+title: 5 Trends For Traverse City Web Development In 2022
+date: 2021-09-15 00:00:00 Z
+image: images/blog/2022-web-development-trends-1600-600.svg
 categories:
-  - Web Development
-tags: ["trends","traverse city"]
-description: "In 2022, top Traverse City web development trends will change. With the release of Angular 12, React 18, and other new technologies, websites will look different from today. The biggest change in 2022 will be the focus on user experience, which will start to replace search engine optimization in importance."
+- Web Development
+tags:
+- trends
+- traverse city
+description: In 2022, top Traverse City web development trends will change. With the
+  release of Angular 12, React 18, and other new technologies, websites will look
+  different from today. The biggest change in 2022 will be the focus on user experience,
+  which will start to replace search engine optimization in importance.
 draft: false
 ---
 

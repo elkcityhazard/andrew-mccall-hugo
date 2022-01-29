@@ -1,28 +1,35 @@
 ---
-title: "Traverse City Website Maintenance: A Quick Guide On Website Maintenance"
-altTitle: "Traverse City Website Maintenance"
-subtitle: "Security Updates, Website Updates, Content Maintenance"
-description: "The key to successful website maintenance is having a trusted team of professionals who can provide you with the right level of service."
-summary: "Local businesses in Northern Michigan need to have a website maintenance strategy. With the help of the right team, such as Andrew McCall, they can decrease their risk and maintain their websites for a more consistent flow of business. It is important that local businesses maintain their website for current and potential customers. A strong online presence is imperative for any company looking to succeed."
-img: "images/services/lake-michigan.jpg"
-local_img: "images/services/palm-tree-sunset.jpg"
-local_caption: "Lake Michigan"
+title: 'Traverse City Website Maintenance: A Quick Guide On Website Maintenance'
+altTitle: Traverse City Website Maintenance
+subtitle: Security Updates, Website Updates, Content Maintenance
+description: The key to successful website maintenance is having a trusted team of
+  professionals who can provide you with the right level of service.
+summary: Local businesses in Northern Michigan need to have a website maintenance
+  strategy. With the help of the right team, such as Andrew McCall, they can decrease
+  their risk and maintain their websites for a more consistent flow of business. It
+  is important that local businesses maintain their website for current and potential
+  customers. A strong online presence is imperative for any company looking to succeed.
+img: images/services/lake-michigan.jpg
+local_img: images/services/palm-tree-sunset.jpg
+local_caption: Lake Michigan
 engaging_points:
-- rate: "1.5s"
-  delay: "100ms"
-  message: "More control over your website"
-- rate: "1.5s"
-  delay: "200ms"
-  message: "Knowledgeable and responsive hosting support to help you solve problems as they come up"
-- rate: "1.5s"
-  delay: "300ms"
-  message: "Our team is experienced and knowledgeable."
-- rate: "1.5s"
-  delay: "400ms"
-  message: "Personalized service and customer support to keep your website working and your business flowing"
-- rate: "1.5s"
-  delay: "500ms"
-  message: "Domain name registration and renewal, email accounts"
+- rate: 1.5s
+  delay: 100ms
+  message: More control over your website
+- rate: 1.5s
+  delay: 200ms
+  message: Knowledgeable and responsive hosting support to help you solve problems
+    as they come up
+- rate: 1.5s
+  delay: 300ms
+  message: Our team is experienced and knowledgeable.
+- rate: 1.5s
+  delay: 400ms
+  message: Personalized service and customer support to keep your website working
+    and your business flowing
+- rate: 1.5s
+  delay: 500ms
+  message: Domain name registration and renewal, email accounts
 ---
 
 Why do you need to maintain your website? Because it is important for your business to have a professional image, and if you don’t update your site regularly, this can make you look unprofessional. Updating your website will help keep people coming back to your business; people like new content which they can share with their friends. It also helps build trust in prospective clients that they are dealing with a credible business. If you leave the site without updates for a while, you will slowly lose traffic over time. This article will discuss the importance of website maintenance as well as the different aspects of website maintenance.

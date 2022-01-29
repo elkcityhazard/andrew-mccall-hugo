@@ -1,12 +1,15 @@
 ---
-title: "Everything You Need To Know About Content Delivery Networks As A Beginner"
-date: 2021-08-21
-image: "images/blog/cdn-beginners-1600-800.svg"
-tags: ["web development"]
-description: "Choosing a Content Delivery Network (CDN) is not a decision to be taken lightly. There are several factors to consider, and different factors apply to different types of website. This article guides you through the process of selecting a CDN and the factors you should consider."
+title: Everything You Need To Know About Content Delivery Networks As A Beginner
+date: 2021-08-21 00:00:00 Z
+image: images/blog/cdn-beginners-1600-800.svg
+tags:
+- web development
+description: Choosing a Content Delivery Network (CDN) is not a decision to be taken
+  lightly. There are several factors to consider, and different factors apply to different
+  types of website. This article guides you through the process of selecting a CDN
+  and the factors you should consider.
 draft: false
 ---
-
 
 Choosing a Content Delivery Network (CDN) is not a decision to be taken lightly. There are several factors to consider, and different factors apply to different types of website. This article guides you through the process of selecting a CDN and the factors you should consider.
 

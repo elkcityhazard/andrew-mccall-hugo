@@ -1,27 +1,33 @@
 ---
-title: "Traverse City Web Development"
-subtitle: "Uncomplicated Digital Marketing"
-description: "We have many solutions if you are looking for Traverse City web development options that fit all budgets and needs"
-summary: "Andrew McCall: Traverse City Web Development Services is a full service web design and internet marketing company serving clients in the Traverse City Michigan. We specialize in custom applications for businesses. Our talented team of web developers, designers, and internet marketing specialists will be happy to work with you to build your website, brand, online presence, and lead generation. Please contact us today to get started."
-img: "images/services/lake-michigan.jpg"
-local_img: "images/services/palm-trees.jpg"
-local_caption: "Lake Michigan"
+title: Traverse City Web Development
+subtitle: Uncomplicated Digital Marketing
+description: We have many solutions if you are looking for Traverse City web development
+  options that fit all budgets and needs
+summary: 'Andrew McCall: Traverse City Web Development Services is a full service
+  web design and internet marketing company serving clients in the Traverse City Michigan.
+  We specialize in custom applications for businesses. Our talented team of web developers,
+  designers, and internet marketing specialists will be happy to work with you to
+  build your website, brand, online presence, and lead generation. Please contact
+  us today to get started.'
+img: images/services/lake-michigan.jpg
+local_img: images/services/palm-trees.jpg
+local_caption: Lake Michigan
 engaging_points:
-- rate: "1.5s"
-  delay: "100ms"
-  message: "We are a full-service web development company."
-- rate: "1.5s"
-  delay: "200ms"
-  message: "We offer web design, development, digital marketing, SEO, and more."
-- rate: "1.5s"
-  delay: "300ms"
-  message: "Our team is experienced and knowledgeable."
-- rate: "1.5s"
-  delay: "400ms"
-  message: "We are dedicated to providing high satisfaction to our customers."
-- rate: "1.5s"
-  delay: "500ms"
-  message: "We have experience with e-commerce, payment processing, and analytics."
+- rate: 1.5s
+  delay: 100ms
+  message: We are a full-service web development company.
+- rate: 1.5s
+  delay: 200ms
+  message: We offer web design, development, digital marketing, SEO, and more.
+- rate: 1.5s
+  delay: 300ms
+  message: Our team is experienced and knowledgeable.
+- rate: 1.5s
+  delay: 400ms
+  message: We are dedicated to providing high satisfaction to our customers.
+- rate: 1.5s
+  delay: 500ms
+  message: We have experience with e-commerce, payment processing, and analytics.
 ---
 
 ## What is Traverse City Web Development?

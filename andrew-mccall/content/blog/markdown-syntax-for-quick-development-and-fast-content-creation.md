@@ -1,9 +1,12 @@
 ---
-title: "Markdown Syntax For Quick Development and Fast Content Creation"
-date: 2021-08-17
-image: "images/blog/start-markdown-1200-600.svg"
-tags: ["Static Websites","JAMStack"]
-description: "Markdown is a markup language that was developed to be easy for writers to write. It allows writers to generate web pages quickly and readably."
+title: Markdown Syntax For Quick Development and Fast Content Creation
+date: 2021-08-17 00:00:00 Z
+image: images/blog/start-markdown-1200-600.svg
+tags:
+- Static Websites
+- JAMStack
+description: Markdown is a markup language that was developed to be easy for writers
+  to write. It allows writers to generate web pages quickly and readably.
 draft: false
 ---
 

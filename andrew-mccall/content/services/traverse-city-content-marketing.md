@@ -1,30 +1,39 @@
 ---
-title: "Traverse City Content Marketing"
+title: Traverse City Content Marketing
+date: 2021-12-25 00:00:00 Z
 subtitle: " Maintain a strong Google ranking with content marketing."
-description: "We can help your business maintain a strong Google ranking with content marketing. Contact us today."
-summary: "All businesses want to rank well on Google. However, many businesses do not really understand where their business sits in the search engine algorithm. Google is not a black box, as a matter of fact, SEO is a systematic and structured process. This is why Andrew McCall helps clients understand their particular situation and what needs to be done in order for them to rank well in the search engines.  We can help you grow your content marketing."
-date: 2021-12-25
+description: We can help your business maintain a strong Google ranking with content
+  marketing. Contact us today.
+summary: All businesses want to rank well on Google. However, many businesses do not
+  really understand where their business sits in the search engine algorithm. Google
+  is not a black box, as a matter of fact, SEO is a systematic and structured process.
+  This is why Andrew McCall helps clients understand their particular situation and
+  what needs to be done in order for them to rank well in the search engines.  We
+  can help you grow your content marketing.
 img: "/images/services/content-marketing-local-img.webp"
 local_img: "/images/services/content-marketing-local-img.webp"
-local_caption: "Traverse City Content Marketing Services"
-tags: ["podcasts", "podcast production"]
+local_caption: Traverse City Content Marketing Services
+tags:
+- podcasts
+- podcast production
 draft: false
 engaging_points:
-- rate: "1.5s"
-  delay: "100ms"
-  message: "Content marketing is a way to make your brand stand out from the competition."
-- rate: "1.5s"
-  delay: "200ms"
-  message: "Content marketing is a way to become a trusted source of information for your customers."
-- rate: "1.5s"
-  delay: "300ms"
-  message: "Content marketing is a way to build a lasting relationship with your customers."
-- rate: "1.5s"
-  delay: "400ms"
-  message: "We provide you with the content marketing strategy that you need to succeed."
-- rate: "1.5s"
-  delay: "500ms"
-  message: "We work with you to develop content that will help achieve your goals."
+- rate: 1.5s
+  delay: 100ms
+  message: Content marketing is a way to make your brand stand out from the competition.
+- rate: 1.5s
+  delay: 200ms
+  message: Content marketing is a way to become a trusted source of information for
+    your customers.
+- rate: 1.5s
+  delay: 300ms
+  message: Content marketing is a way to build a lasting relationship with your customers.
+- rate: 1.5s
+  delay: 400ms
+  message: We provide you with the content marketing strategy that you need to succeed.
+- rate: 1.5s
+  delay: 500ms
+  message: We work with you to develop content that will help achieve your goals.
 audio: "/audio/2021/traverse-city-content-marketing.mp3"
 ---
 

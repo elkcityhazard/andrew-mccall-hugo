@@ -1,9 +1,14 @@
 ---
-title: "Web Analytics Platforms That Are Privacy Focused"
-date: 2022-01-23
+title: Web Analytics Platforms That Are Privacy Focused
+date: 2022-01-23 00:00:00 Z
 image: "/images/blog/web-analytics-platforms-that-are-privacy-oriented-1200x600.webp"
-tags: ["SEO","Web Analytics", "Open Source", "Privacy Oriented"]
-description: "Google Analytics is now illegal in some countries.  Find out about some privacy-focused google analytics alternatives."
+tags:
+- SEO
+- Web Analytics
+- Open Source
+- Privacy Oriented
+description: Google Analytics is now illegal in some countries.  Find out about some
+  privacy-focused google analytics alternatives.
 draft: false
 ---
 

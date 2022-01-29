@@ -1,31 +1,23 @@
 ---
-title: ""
+title: ''
 draft: true
 headless: true
-bg_image: "images/backgrounds/funfact-bg.jpg"
+bg_image: images/backgrounds/funfact-bg.jpg
 funfacts:
-  # funfacts item loop
-  - name: "HANDS TO WORK"
-    image: "images/icons/works.png"
-    count: "2"
-
-  # funfacts item loop
-  - name: "HAPPY CLIENT"
-    image: "images/icons/happy.png"
-    count: 10"
-
-  # funfacts item loop
-  - name: "FINISHED PROJECT"
-    image: "images/icons/project.png"
-    count: "15"
-
-  # funfacts item loop
-  - name: "CUPS OF COFFEE"
-    image: "images/icons/coffee.png"
-    count: "9999"
-
-# custom style
-custom_class: ""
-custom_attributes: ""
-custom_css: ""
+- name: HANDS TO WORK
+  image: images/icons/works.png
+  count: '2'
+- name: HAPPY CLIENT
+  image: images/icons/happy.png
+  count: 10"
+- name: FINISHED PROJECT
+  image: images/icons/project.png
+  count: '15'
+- name: CUPS OF COFFEE
+  image: images/icons/coffee.png
+  count: '9999'
+custom_class: ''
+custom_attributes: ''
+custom_css: ''
 ---
+

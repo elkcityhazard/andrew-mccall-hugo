@@ -1,23 +1,17 @@
 ---
-title: "Digital Marketing Website"
-date: 2021-09-11
-image: "images/blog/butcher-shop-website-design-header.webp"
-categories: ["Javascript", "Fullstack", "Bootstrap 5"]
-description: "A digital marketing landing page for a niche digital marketing agency"
+title: Digital Marketing Website
+date: 2021-09-11 00:00:00 Z
+image: images/blog/butcher-shop-website-design-header.webp
+categories:
+- Javascript
+- Fullstack
+- Bootstrap 5
+description: A digital marketing landing page for a niche digital marketing agency
 draft: false
 project_info:
-# - name: "Chine & Feather"
-#  icon: "fas fa-hotdog"
-#  content: "https://butchershopwebsitedesign.com"
-- name: "Chine and Feather Digital Marketing Services"
-  icon: "fas fa-link"
-  content: "https://butchershopwebsitedesign.com"
-# - name: "New Item"
-#   icon: "fas fa-globe"
-#   content: "JamStack"
-# - name: "Loop Item"
-#   icon: "fas fa-redo"
-#   content: "This is in a loop"
+- name: Chine and Feather Digital Marketing Services
+  icon: fas fa-link
+  content: https://butchershopwebsitedesign.com
 ---
 
 Bootstrap 5 is a sleek, responsive web design framework for any company that allows you to quickly and efficiently create an attractive website. The html was designed with simplicity in mind, making it easy to work with. Furthermore, this template includes a responsive design that will automatically adjust based on the device being used - whether mobile device or desktop computer. Responsive web design is becoming the standard as people continue to use multiple devices across a variety of screens.

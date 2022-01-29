@@ -1,32 +1,45 @@
 ---
-title: "Traverse City SEO Services"
-description: "Andrew McCall offers Traverse City SEO Services for local Traverse City businesses. We provide Internet Marketing Services, Search Engine Optimization, and Digital Marketing for businesses in Traverse City, Petoskey, Charlevoix, Harbor Springs, and Northern Michigan."
-summary: "Our Traverse City SEO Services can help Traverse City businesses get found more often on the internet. SEO is a service that helps you rank higher in search engines for certain keywords, which then improves your visibility and leads to more website traffic. Andrew McCall offers a free consultation to Travere City businesses where he will evaluate your website and find out what needs to be done to make it more visible to the public."
-date: 2022-01-03
+title: Traverse City SEO Services
+date: 2022-01-03 00:00:00 Z
+description: Andrew McCall offers Traverse City SEO Services for local Traverse City
+  businesses. We provide Internet Marketing Services, Search Engine Optimization,
+  and Digital Marketing for businesses in Traverse City, Petoskey, Charlevoix, Harbor
+  Springs, and Northern Michigan.
+summary: Our Traverse City SEO Services can help Traverse City businesses get found
+  more often on the internet. SEO is a service that helps you rank higher in search
+  engines for certain keywords, which then improves your visibility and leads to more
+  website traffic. Andrew McCall offers a free consultation to Travere City businesses
+  where he will evaluate your website and find out what needs to be done to make it
+  more visible to the public.
 img: "/images/services/traverse-city-seo-hero.webp"
 local_img: "/images/services/traverse-city-seo-hero.webp"
-local_caption: "Traverse City Search Engine Optimization Services"
-tags: ["Search Engine Optimization", "SEO"]
+local_caption: Traverse City Search Engine Optimization Services
+tags:
+- Search Engine Optimization
+- SEO
 draft: false
 engaging_points:
-- rate: "1.5s"
-  delay: "100ms"
-  message: "We offer a wide range of SEO services to provide your business with the best results possible."
-- rate: "1.5s"
-  delay: "200ms"
-  message: "Our Traverse City SEO Services include keyword research, on-page optimization, content marketing, social media marketing, and website design."
-- rate: "1.5s"
-  delay: "300ms"
-  message: "Our Traverse City SEO Services offer a variety of strategies that are customized for your business."
-- rate: "1.5s"
-  delay: "400ms"
-  message: "We have a team of highly skilled professionals to help your business succeed online."
-- rate: "1.5s"
-  delay: "500ms"
-  message: "We offer a wide range of SEO services, including on-site and off-site SEO."
+- rate: 1.5s
+  delay: 100ms
+  message: We offer a wide range of SEO services to provide your business with the
+    best results possible.
+- rate: 1.5s
+  delay: 200ms
+  message: Our Traverse City SEO Services include keyword research, on-page optimization,
+    content marketing, social media marketing, and website design.
+- rate: 1.5s
+  delay: 300ms
+  message: Our Traverse City SEO Services offer a variety of strategies that are customized
+    for your business.
+- rate: 1.5s
+  delay: 400ms
+  message: We have a team of highly skilled professionals to help your business succeed
+    online.
+- rate: 1.5s
+  delay: 500ms
+  message: We offer a wide range of SEO services, including on-site and off-site SEO.
 audio: "/audio/2021/traverse-city-seo.mp3"
 ---
-
 
 Our Traverse City SEO Services can help Traverse City businesses get found more often on the internet. SEO is a service that helps you rank higher in search engines for certain keywords, which then improves your visibility and leads to more website traffic. Andrew McCall offers a free consultation to Travere City businesses where he will evaluate your website and find out what needs to be done to make it more visible to the public.
 

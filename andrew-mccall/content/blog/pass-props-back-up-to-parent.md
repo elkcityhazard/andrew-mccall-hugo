@@ -1,5 +1,5 @@
 ---
-title: "Pass Props Back Up To Parent"
+title: Pass Props Back Up To Parent
 draft: true
 ---
 

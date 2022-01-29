@@ -1,35 +1,41 @@
 ---
-title: "Petoskey Michigan Web Development: 9 Tips To Better Websites"
+title: 'Petoskey Michigan Web Development: 9 Tips To Better Websites'
+date: 2021-09-19 00:00:00 Z
 subtitle: Petoskey Michigan Digital Marketing Services
-date: 2021-09-19
 tags:
-  - Web Development
-  - Search Engine Optimization
-  - Social Media Management
-  - Petoskey Michigan
-category: 
-  - Web Development
-  - Local Services
+- Web Development
+- Search Engine Optimization
+- Social Media Management
+- Petoskey Michigan
+category:
+- Web Development
+- Local Services
 image: images/locations/petoskey-michigan-web-development-1200-600.png
 local_img: images/locations/little-traverse.jpg
-about: "Do you need an online presence that will stand the test of time? <br /><br />   If your business is growing and you want to stay ahead of the game, then it's crucial to have a website. <br /><br />  We develop custom web sites, so your company can have its own unique space on the internet. We started out in 2018 because we wanted to do things differently. <br /><br />  Our uncomplicated approach provides focused marketing strategy to help grow your brand."
-engaging_points: 
-  - 0:
-    message: We provide web design and development for businesses in Petoskey Michigan.
-    delay: 0ms
-    rate: 1.5s
-  - 1:
-    message: We provide Social Media Management, Content Marketing, Search Engine Optimization, and Short Video Production Services.
-    delay: 0ms
-    rate: 1.5s
-  - 2:
-    message: We have a proven track record of driving online sales and driving traffic.
-    delay: 0ms;
-    rate: 1.5s
-  - 3:
-    message: We offer affordable rates, so don't hesitate to contact us now.
-    delay: 0ms
-    rate: 1.5s
+about: Do you need an online presence that will stand the test of time? <br /><br
+  />   If your business is growing and you want to stay ahead of the game, then it's
+  crucial to have a website. <br /><br />  We develop custom web sites, so your company
+  can have its own unique space on the internet. We started out in 2018 because we
+  wanted to do things differently. <br /><br />  Our uncomplicated approach provides
+  focused marketing strategy to help grow your brand.
+engaging_points:
+- '0': 
+  message: We provide web design and development for businesses in Petoskey Michigan.
+  delay: 0ms
+  rate: 1.5s
+- '1': 
+  message: We provide Social Media Management, Content Marketing, Search Engine Optimization,
+    and Short Video Production Services.
+  delay: 0ms
+  rate: 1.5s
+- '2': 
+  message: We have a proven track record of driving online sales and driving traffic.
+  delay: 0ms;
+  rate: 1.5s
+- '3': 
+  message: We offer affordable rates, so don't hesitate to contact us now.
+  delay: 0ms
+  rate: 1.5s
 ---
 
  Web design and development is an important part of any business. Our Petoskey Michigan Web Development Services has access to a team that can handle any and all of your web development needs. We offer a wide range of services and are available to work with your company. We will design and develop your site and market it through content marketing, search engine optimization and short video production.

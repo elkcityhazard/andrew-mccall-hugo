@@ -1,9 +1,13 @@
 ---
-title: "Web Hosting Free Sites: Web Hosting For Developers"
-date: 2021-12-30
-image: "images/blog/web-hosting-free-sites-900x450.webp"
-tags: ["Web Development", "Web Hosting", "DevOps"]
-description: "Get started with free web hosting for your business or personal website. We explain how to use free web hosting solutions for your business or personal website."
+title: 'Web Hosting Free Sites: Web Hosting For Developers'
+date: 2021-12-30 00:00:00 Z
+image: images/blog/web-hosting-free-sites-900x450.webp
+tags:
+- Web Development
+- Web Hosting
+- DevOps
+description: Get started with free web hosting for your business or personal website.
+  We explain how to use free web hosting solutions for your business or personal website.
 draft: false
 ---
 

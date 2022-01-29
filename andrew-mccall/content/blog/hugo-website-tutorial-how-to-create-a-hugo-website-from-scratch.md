@@ -1,13 +1,18 @@
 ---
-title: "Hugo Website Tutorial: How To Create A Hugo Website"
-date: 2021-12-22
-image: "images/blog/hugo-website-tutorial-1200x600.webp"
-tags: ["hugo", "html", "css", "javascript", "JAMStack", "CMS"]
-description: "Hugo is a powerful static website generator written in the GO language. It can help you create clean, modern websites that load quickly with little overhead."
+title: 'Hugo Website Tutorial: How To Create A Hugo Website'
+date: 2021-12-22 00:00:00 Z
+image: images/blog/hugo-website-tutorial-1200x600.webp
+tags:
+- hugo
+- html
+- css
+- javascript
+- JAMStack
+- CMS
+description: Hugo is a powerful static website generator written in the GO language.
+  It can help you create clean, modern websites that load quickly with little overhead.
 draft: false
 ---
-
-
 
 # Hugo Website Tutorial: How To Create Your First Hugo Website
 

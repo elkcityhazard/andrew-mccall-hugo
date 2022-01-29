@@ -1,13 +1,18 @@
 ---
-title: "5 Things You Need To Know Before And After You Build A Website"
-date: 2021-10-03
-image: "images/blog/make-your-own-website-1200x600.webp"
+title: 5 Things You Need To Know Before And After You Build A Website
+date: 2021-10-03 00:00:00 Z
+image: images/blog/make-your-own-website-1200x600.webp
 categories:
-  - Web Development
-  - Web Design
-  - SEO
-tags: ["Web Development", "Web Design", "Growth Tips"]
-description: "Website design is a journey of discovery. Your website is an extension of your brand, so it's important to invest the time to think about what you want it to be. Learn the 5 key considerations before designing your website."
+- Web Development
+- Web Design
+- SEO
+tags:
+- Web Development
+- Web Design
+- Growth Tips
+description: Website design is a journey of discovery. Your website is an extension
+  of your brand, so it's important to invest the time to think about what you want
+  it to be. Learn the 5 key considerations before designing your website.
 draft: false
 ---
 

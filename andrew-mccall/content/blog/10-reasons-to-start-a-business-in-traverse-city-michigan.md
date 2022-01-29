@@ -1,12 +1,15 @@
 ---
-title: "Top 10 Reasons To Start A Business In Traverse City"
-date: 2021-09-12
+title: Top 10 Reasons To Start A Business In Traverse City
+date: 2021-09-12 00:00:00 Z
 image: images/blog/10-reasons-to-start-a-business-in-traverse-city-1200-600.webp
-tags: ["Traverse City", "Business"]
-description: "We are a website development company in Traverse City, Michigan. We make websites that are perfectly suited for your business. See what we can do for your business today."
+tags:
+- Traverse City
+- Business
+description: We are a website development company in Traverse City, Michigan. We make
+  websites that are perfectly suited for your business. See what we can do for your
+  business today.
 draft: false
 ---
-
 
 We are a website development company in Traverse City, Michigan. We make websites that are perfectly suited for your business. See what we can do for your business today.
 

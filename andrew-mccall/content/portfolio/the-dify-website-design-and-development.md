@@ -1,25 +1,23 @@
 ---
-title: "The Dify Store"
-date: 2021-11-09
-image: "images/portfolio/dify-store-theme.png"
-categories: ["design", "web development"]
-description: ""
+title: The Dify Store
+date: 2021-11-09 00:00:00 Z
+image: images/portfolio/dify-store-theme.png
+categories:
+- design
+- web development
+description: ''
 draft: false
 project_info:
-- name: "Client"
-  icon: "fas fa-user"
-  content: "Schrader Web Solutions"
-- name: "Project Link"
-  icon: "fas fa-link"
-  content: "https://dify-store.vercel.app/"
-- name: "Skills"
-  icon: "fas fa-globe"
-  content: "Web Design/Development"
-# - name: "Loop Item"
-#   icon: "fas fa-redo"
-#   content: "This is in a loop"
+- name: Client
+  icon: fas fa-user
+  content: Schrader Web Solutions
+- name: Project Link
+  icon: fas fa-link
+  content: https://dify-store.vercel.app/
+- name: Skills
+  icon: fas fa-globe
+  content: Web Design/Development
 ---
-
 
 A modern html template theme for The Dify -- an online novelty, brand, swag, and engraving business. The template features Bootstrap 5.0 and is completely responsive.  It is also very quick scoring a 100% on GTMetrix.  
 

@@ -1,12 +1,17 @@
 ---
-title: "10 Static Site Mistakes You Should Stop Making: A blog about the common mistakes people make when creating static sites."
-date: 2021-08-15
-image: "images/blog/10-tips-static-website.svg"
-tags: ["JAMStack", "Web Development", "Static Websites"]
-description: "Static websites are a great way to build a JAMStack websitesite without having to worry about server configuration, databases, or security. Learn why static site generators can be a powerful JAMStack tool."
+title: '10 Static Site Mistakes You Should Stop Making: A blog about the common mistakes
+  people make when creating static sites.'
+date: 2021-08-15 00:00:00 Z
+image: images/blog/10-tips-static-website.svg
+tags:
+- JAMStack
+- Web Development
+- Static Websites
+description: Static websites are a great way to build a JAMStack websitesite without
+  having to worry about server configuration, databases, or security. Learn why static
+  site generators can be a powerful JAMStack tool.
 draft: false
 ---
-
 
 When starting a business, it can be tempting to go with the "latest and greatest" web development technology. In fact, this same temptation often happens within a business even after it has launched a website. A website that has been built with a static site generator is always going to have a lower risk of being hacked. This doesn't just mean your company will be less likely to be hacked, but you will also not have to throw away any code and start over if things do go wrong. If you are a small business you can also take advantage of static generators that are free or low cost.
 

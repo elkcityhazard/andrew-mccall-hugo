@@ -1,13 +1,16 @@
 ---
-title: "12 Expert Tips On How To Promote Your Small Business"
-date: 2022-01-27
+title: 12 Expert Tips On How To Promote Your Small Business
+date: 2022-01-27 00:00:00 Z
 image: "/images/blog/2022/traverse-city-developer-1200x600.jpeg"
-tags: ["marketing", "growth tips", "local seo", "small business tips"]
-description: "12 practical tips to promote your local business, gain trust with your clientele, and grow your sales."
+tags:
+- marketing
+- growth tips
+- local seo
+- small business tips
+description: 12 practical tips to promote your local business, gain trust with your
+  clientele, and grow your sales.
 draft: false
 ---
-
-
 
 The tips in this article are meant to help you promote your small business. Small businesses have a lot of advantages over large enterprises, but they also have some disadvantages. One disadvantage is the lack of resources and money that larger businesses have. Without money, it can be difficult for a small business to get the same kind of exposure as a large corporation. What follows are 12 tips on how to promote your small business so that you can do just as well if not better than the big guys!
 

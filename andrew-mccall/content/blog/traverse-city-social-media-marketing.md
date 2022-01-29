@@ -1,9 +1,12 @@
 ---
-title: "Social Media For Business In Traverse City, Michigan"
-date: 2021-08-20
-image: "images/blog/social-media-blog-heading-1200-600.jpeg"
-tags: ["social media"]
-description: "Gear up to take your social media marketing to the next level. Whether you're trying to land a new customer, get in touch with an old one, or promote a product."
+title: Social Media For Business In Traverse City, Michigan
+date: 2021-08-20 00:00:00 Z
+image: images/blog/social-media-blog-heading-1200-600.jpeg
+tags:
+- social media
+description: Gear up to take your social media marketing to the next level. Whether
+  you're trying to land a new customer, get in touch with an old one, or promote a
+  product.
 draft: false
 ---
 
