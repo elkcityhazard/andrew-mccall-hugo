@@ -1,8 +1,9 @@
 ---
-title: "What Is Blockchain Technology And How Does It Work?"
-date: 2022-02-16
+title: What Is Blockchain Technology And How Does It Work?
+date: 2022-02-16 00:00:00 Z
 image: "/images/blog/2022/ethereum-article-twitter-card/ethereum-article-header.png"
-images: ["/images/blog/2022/ethereum-article-twitter-card/ethereum-article-header.png"]
+images:
+- "/images/blog/2022/ethereum-article-twitter-card/ethereum-article-header.png"
 tags:
 - Blockchain
 - Ethereum
@@ -10,7 +11,8 @@ tags:
 - Web 3.0
 - Javascript
 - Solidity
-description: "Everything you need to know about the basics of Ethereum, blockchain technology, and smart contracts with a bit of Solidity."
+description: Everything you need to know about the basics of Ethereum, blockchain
+  technology, and smart contracts with a bit of Solidity.
 draft: false
 ---
 
