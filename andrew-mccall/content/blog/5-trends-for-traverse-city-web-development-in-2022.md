@@ -1,6 +1,6 @@
 ---
 title: 5 Trends For Traverse City Web Development In 2022
-date: 2021-09-15 00:00:00 Z
+date: 2021-09-15 00:00:00
 image: images/blog/2022-web-development-trends-1600-600.svg
 categories:
 - Web Development

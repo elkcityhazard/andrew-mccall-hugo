@@ -1,6 +1,6 @@
 ---
 title: Traverse City Podcast Production
-date: 2021-11-28 00:00:00 Z
+date: 2021-11-28 00:00:00
 subtitle: Fully Baked Podcasts - Ready To Serve
 description: " I offer high quality podcast recording services to businesses wanting
   to promote their business or product to a wider audience. I can record, edit, mix

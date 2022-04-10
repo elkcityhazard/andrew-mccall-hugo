@@ -1,6 +1,6 @@
 ---
 title: Traverse City Content Marketing
-date: 2021-12-25 00:00:00 Z
+date: 2021-12-25 00:00:00
 subtitle: " Maintain a strong Google ranking with content marketing."
 description: We can help your business maintain a strong Google ranking with content
   marketing. Contact us today.

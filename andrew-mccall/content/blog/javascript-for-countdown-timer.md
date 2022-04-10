@@ -1,5 +1,5 @@
 ---
-title: Javascript For Countdown Timer
+title: Javascript For Countdown Timer | [VIDEO]
 date: 2022-04-10 00:00:00
 image: images/blog/2022/javascript-for-countdown-timer-1200x600.webp
 tags:
@@ -146,71 +146,3 @@ gap: 1rem;
        updateTime("January 1, 2023 00:00:00")
 
 
-## Auto-Generated Video Transcript
-
-All right, guys.
-So this kind of get messed up, so I kind of have to go back and start over.
-So I'm just going to walk us through here really quick what I've done to set up a reasonable countdown timer.
-So, basically, I what I've done here is I've created an HTML boilerplate with Emmett.
-I've linked to CSS.
-Stylesheet.
-I've linked to script, I've made a countdown container where I've added some spans in there, and I give them classes for each thing.
-That's going to be updated.
-And so, 14 days, 14 hours, 14 minutes, 14 seconds.
-I gave the countdown timer a little bit of style, you know, to basically Center everything.
-Basically, if you open this up right now, you say open with live server.
-Just go to Second here.
-You'll see it's actually working.
-Okay, so you're not a centered container.
-So but yeah, so how did I do this?
-So, basically just created a script here.
-So right here are some Global variables.
-I created that we're going to give some state to basically this is what we are going to be updating to within the Dom to actually display the countdown.
-So right here is a reusable object function that I created where you pass in the date as a string, you know.
-Future should be type of string.
-January 123, and I usually pass into the timestamp as well.
-So, what I've done is basically created methods here, in properties for the Constructor.
-So, for example, we have today's day.
-So this debt today is the current date.
-I get via date.now.
-This is a method that Returns the future.
-The future value that's passed in and returns at every turn returns in the same format as as this.
-This is where we're basically creating a method that takes whatever is returned from the future method.
-- today's date.
-This is basically how we are calculating.
-Each value that we want to Output.
-So for example, the days where you're basically saying, so math that floor.
-So we're running down to the nearest whole number and basically you're just taking the difference and you're calculating each property here based on simple.
-Mathematical formulas that you can find on the internet as I've done.
-So, let me get rid of this for now.
-So yeah, I mean, we can bring this over here and we can sell how many milliseconds and I day.
-So, I mean all the stuff is rarely available.
-Let's just say, so.
-60,000.
-So, as you have 1,000, right?
-So you have so days comprised of one.
-So 24 hours.
-There's 60 minutes in an hour, 60 seconds in a minute, and there's 1000 milliseconds in a second.
-So yeah, we're just going through and returning all of these formulas.
-Okay, and then, the next thing we're basically doing here is we're just creating a Function to actually update the Dom and calling it.
-So you have.
-So I'm using the set interval which is a built-in JavaScript function.
-I'm assigning it to a variable of time.
-So right here, I'm creating a new instance of the date countdown and passing in send a string as As the daily one to come down, too.
-Right here.
-We're this is where we're updating the Dom, right?
-So basically we're just checking to see if it's singular.
-So if in the event that we're have a value that's a singular value.
-We are saying hey put day instead of days or output hour instead of ours.
-Right here is where we're studying.
-How often we want to rerun this.
-Ian Wright.
-And then right here we're saying update time.
-We're just we're just initiating the function here and that's pretty much it.
-And, I mean, I guess one other thing you could say here is, you know, if the time that difference is less than or equal to Say return.
-Clear.
-Inter clear Interval Timer.
-So yeah.
-We're just come back here, but everything still working as a should we refresh.
-That is pretty much a little simple timer.
-If you have any questions, feel free to reach out.

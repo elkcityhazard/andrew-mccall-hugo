@@ -1,6 +1,6 @@
 ---
 title: Social Media For Business In Traverse City, Michigan
-date: 2021-08-20 00:00:00 Z
+date: 2021-08-20 00:00:00
 image: images/blog/social-media-blog-heading-1200-600.jpeg
 tags:
 - social media

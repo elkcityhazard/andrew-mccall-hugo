@@ -1,6 +1,6 @@
 ---
 title: Top 10 Reasons To Start A Business In Traverse City
-date: 2021-09-12 00:00:00 Z
+date: 2021-09-12 00:00:00
 image: images/blog/10-reasons-to-start-a-business-in-traverse-city-1200-600.webp
 tags:
 - Traverse City

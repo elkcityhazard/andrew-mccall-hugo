@@ -1,7 +1,7 @@
 ---
 title: '10 Static Site Mistakes You Should Stop Making: A blog about the common mistakes
   people make when creating static sites.'
-date: 2021-08-15 00:00:00 Z
+date: 2021-08-15 00:00:00
 image: images/blog/10-tips-static-website.svg
 tags:
 - JAMStack
