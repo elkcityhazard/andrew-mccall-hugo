@@ -23,6 +23,21 @@
     }
 }
 
+@keyframes spins {
+    from {
+        transform: rotateZ(0);
+        -webkit-transform: rotateZ(0);
+        -moz-transform: rotateZ(0);
+    }
+
+    to {
+    transform: rotateZ(360deg);
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+
+    }
+}
+
 .contact {
     overflow-x: hidden !important;
 }
@@ -131,6 +146,55 @@ h3.aside-cta {
 #services {
     max-width: 237px;
 }
+
+blockquote {
+    background: transparent;
+    color: #000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.125em;
+    font-weight: 700;
+    line-height: 1.667;
+    margin: 2rem auto 4rem;
+    max-width: 60ch;
+    padding: 0 2rem;
+    position: relative;
+    transition: background 333ms ease;
+    -webkit-transition: all 333ms ease;
+    -moz-transition: all 333ms ease;
+    width:fit-content;
+}
+
+blockquote::before {
+    background: rgba(0,0,0,1);
+    content: '';
+    display: flex;
+    align-items: start;
+    font-size: calc(1rem * 1.75);
+    justify-content: center;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+
+}
+
+blockquote::after {
+    background: #333;
+    border-radius: 50%;
+    display: grid;
+    content: "⚡";
+    font-size: 24px;
+    height: 33px;
+    margin: 0;
+    padding: 0;
+    place-items: center;
+    position: absolute;
+    left: calc(-33px / 2);
+    top: calc(100% - 33px);
+    width: 33px;
+}
+
 
 
 
