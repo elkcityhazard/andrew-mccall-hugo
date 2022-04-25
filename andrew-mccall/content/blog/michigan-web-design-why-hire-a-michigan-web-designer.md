@@ -1,6 +1,6 @@
 ---
 title: Michigan Web Design
-date: 2021-11-27 00:00:00
+date: 2021-11-27 00:00:00 Z
 image: images/blog/michigan-web-design.png
 tags:
 - design

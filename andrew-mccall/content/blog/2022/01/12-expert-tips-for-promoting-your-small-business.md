@@ -1,6 +1,6 @@
 ---
 title: 12 Expert Tips On How To Promote Your Small Business
-date: 2022-01-27 00:00:00
+date: 2022-01-27 00:00:00 Z
 image: "/images/blog/2022/traverse-city-developer-1200x600.jpeg"
 tags:
 - marketing

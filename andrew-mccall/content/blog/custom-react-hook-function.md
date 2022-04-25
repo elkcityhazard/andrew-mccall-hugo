@@ -1,6 +1,6 @@
 ---
 title: 'Custom React Hook Function: Create Custom Reusable React Hooks'
-date: 2021-11-21 00:00:00
+date: 2021-11-21 00:00:00 Z
 description: If you find yourself rewriting the same logic over and over you may find
   it easier to create a custom react hook
 draft: false

@@ -1,6 +1,6 @@
 ---
 title: The Dify Store
-date: 2021-11-09 00:00:00
+date: 2021-11-09 00:00:00 Z
 image: images/portfolio/dify-store-theme.png
 categories:
 - design

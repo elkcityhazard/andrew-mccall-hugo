@@ -1,6 +1,6 @@
 ---
 title: 'Traverse City Web Developer: I am a web designer in Traverse City'
-date: 2021-08-18 00:00:00
+date: 2021-08-18 00:00:00 Z
 image: images/blog/traverse-city-developer-560-315 .jpeg
 tags:
 - web
