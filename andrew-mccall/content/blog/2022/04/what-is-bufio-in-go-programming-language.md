@@ -1,12 +1,11 @@
 ---
 title: Why am I switching from Javascript to Go for my backend web development needs?
-date: 2022-04-24 
+date: 2022-04-24
 image: images/portfolio/item6.jpg
 tags:
-- Go
+- Go    
 - Backend
-description: Get started with Go by writing a simple program to accept user input
-  in the command line
+description: "Get started with Go by writing a simple program to accept user input in the command line"
 draft: true
 ---
 
@@ -30,11 +29,11 @@ That being said, I never felt it was the tool for me.  One of the largest concer
 >   Accordingly, WhiteSource investigated malicious activity in npm, identifying more than 1,300 malicious packages in 2021 — which were subsequently removed, but may have been brought into any number of applications before they were taken down.
 
 
-Even Ryan Dahl, the creator of NodeJS has been witnessed criticizing his own work:
+Even Ryand Dahl, the creator of NodeJS has been witnessed criticizing his own work:
 
-> [...] I think Node is not the best system to build a massive server web. 
-> I would use Go for that. And honestly, that’s the reason why I left Node. 
-> It was the realization that: oh, actually, this is not the best server-side system ever.
+>[...] I think Node is not the best system to build a massive server web. I would use Go for > that. And honestly, that’s the reason why I left Node. It was the realization that: oh, > actually, this is not the best server-side system ever.
+
+
  
 
 
