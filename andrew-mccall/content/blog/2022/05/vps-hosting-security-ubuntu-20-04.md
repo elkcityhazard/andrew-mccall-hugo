@@ -2,6 +2,7 @@
 title: "VPS Hosting Security: A Crash Course On VPS Configuration"
 date: 2022-05-14
 image: /images/blog/2022/vps-hosting-security-1200x600.webp
+images: ['images/blog/2022/vps-hostin-security-1200x600.jpeg']
 tags:
 - Server
 - Hosting
