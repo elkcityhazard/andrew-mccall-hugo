@@ -1,13 +1,15 @@
 ---
-title: "VPS Hosting Security: A Crash Course On VPS Configuration"
-date: 2022-05-14
-image: /images/blog/2022/vps-hosting-security-1200x600.webp
-images: ['/images/blog/2022/vps-hosting-security-1200x600.webp']
+title: 'VPS Hosting Security: A Crash Course On VPS Configuration'
+date: 2022-05-14 00:00:00 Z
+image: "/images/blog/2022/vps-hosting-security-1200x600.webp"
+images:
+- "/images/blog/2022/vps-hosting-security-1200x600.webp"
 tags:
 - Server
 - Hosting
 - Security
-description: Using a virtual private server can be a great way to host web applications.  VPS hosting security is one important part of self hosting your application
+description: Using a virtual private server can be a great way to host web applications.  VPS
+  hosting security is one important part of self hosting your application
 draft: false
 ---
 

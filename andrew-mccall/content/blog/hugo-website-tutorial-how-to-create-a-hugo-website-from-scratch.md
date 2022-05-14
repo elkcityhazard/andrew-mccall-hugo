@@ -1,6 +1,6 @@
 ---
 title: 'Hugo Website Tutorial: How To Create A Hugo Website'
-date: 2021-12-22 
+date: 2021-12-22 00:00:00 Z
 image: images/blog/hugo-website-tutorial-1200x600.webp
 tags:
 - hugo
