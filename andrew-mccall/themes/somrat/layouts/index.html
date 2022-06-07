@@ -5,7 +5,7 @@
 <style>{{ .Params.custom_css | safeCSS }}</style>
 <section class="header {{.Params.custom_class}}" {{.Params.custom_attributes | safeHTMLAttr}} id="home">
   <div class="logo">
-    <img class="img-fluid" src="{{ site.Params.logo_light | relURL }}" alt="{{ site.Title }}">
+    <img class="img-fluidlazy" data-src="{{ site.Params.logo_light | relURL }}" alt="{{ site.Title }}">
   </div>
   <div class="slider-prev-button slider-button">
     <i class="fa fa-angle-left"></i>
@@ -15,7 +15,7 @@
   </div>
   <div class="owl-carousel owl-full-width owl-theme" id="background-slide">
     {{ range .Params.slider_images }}
-    <div class="slider"><img class="img-fluid" src="{{ . | absURL }}" alt="slider-background"></div>
+    <div class="slider d-none d-lg-block"><img loading="lazy" class="img-fluid" src="{{ . | absURL }}" alt="slider-background"></div>
     {{ end }}
   </div>
   <div class="container">
@@ -32,6 +32,7 @@
               </span>
             </strong>
           </div>
+          <small><strong>Free 15 minute consultation</strong></small>
           {{ with .Params.button }}
           {{ if .enable }}
           <a class="hireMe" href="{{ .link | relURL}}">{{ .label }}</a>
@@ -129,8 +130,8 @@
             <span></span>
           </div>
         </a>
-        <div class="mobile-menu-logo"><a href="{{site.BaseURL | relLangURL }}"><img class="img-fluid mobile-menu-img"
-              src="{{ site.Params.logo_dark | absURL }}" alt="{{ site.Title }}"></a>
+        <div class="mobile-menu-logo"><a href="{{site.BaseURL | relLangURL }}"><img class="img-fluid mobile-menu-img lazy"
+              data-src="{{ site.Params.logo_dark | absURL }}" alt="{{ site.Title }}"></a>
         </div>
         <div class="menu-slider">
           <nav>
@@ -194,7 +195,7 @@
       </div>
       {{ with .Params.image }}
       <div class="col-lg-6 col-sm-6 col-9 about-me-images wow fadeInUp" data-wow-duration="1.5s">
-        <img class="img-fluid" src="{{ . | absURL }}" alt="about-me">
+        <img class="img-fluid lazy" data-src="{{ . | absURL }}" alt="about-me">
       </div>
       {{ end }}
     </div>
@@ -259,7 +260,7 @@
             {{ range .Params.service_list }}
             <div class="col-lg-4 col-sm-4 col-12 services-icon">
               <div class="service-img">
-                <img class="img-fluid" src="{{ .image | absURL }}" alt="{{ .name | markdownify }}">
+                <img class="img-fluid lazy" data-src="{{ .image | absURL }}" alt="{{ .name | markdownify }}">
               </div>
               <div class="service-label">{{ if .url}} <a href="{{.url}}" title="{{ .Name }}">{{ .name | markdownify }}</a> {{ else }}  {{ .name | markdownify }}  {{end}}</div>
             </div>
@@ -276,7 +277,11 @@
 <!-- call to action -->
 {{ with .GetPage "call-to-action" }}
 <style>{{.Params.custom_css | safeCSS}}</style>
-<section id="cta" class="need-service overlay section-sm wow fadeInUp {{.Params.custom_class}}" {{.Params.custom_attributes | safeHTMLAttr}} data-wow-duration="1.5s" style="background-image: url('{{ .Params.bg_image | absURL }}');">
+<section id="cta" class="need-service overlay section-sm wow fadeInUp {{.Params.custom_class}}" {{.Params.custom_attributes | safeHTMLAttr}} data-wow-duration="1.5s" style="background: #333;">
+  <video class="cta-video" controls autoplay loop>
+    <source data-src="/images/backgrounds/palm-trees-1920x1080.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
   <div class="container position-relative z-index-9">
     <h1>{{ .Title | markdownify }}</h1>
     {{ with .Content }}<div class="text-white content">{{ . | markdownify }}</div> {{ end }}
@@ -324,7 +329,7 @@
             data-groups="[{{range $index, $element:= .Params.categories }}{{if ne $index 0}},{{end}}&quot;{{. | urlize}}&quot;{{ end }}]">
             <div class="item-holder">
               <a class="image-pop" href="{{ .Params.image | absURL }}" title="{{ .Title | markdownify }}">
-                 <img src="{{ .Params.image | absURL }}" alt="{{ .Title | markdownify }}">
+                 <img loading="lazy" data-src="{{ .Params.image | absURL }}" class="lazy" alt="{{ .Title | markdownify }}">
               </a>
               <div class="item-caption">
                 <h2 class="mt-2"><a class="text-white" href="{{.Permalink}}">{{ .Title | markdownify }}</a></h2>
@@ -361,7 +366,7 @@
           {{ range .Params.testimonial_slider }}
           <div class="single-testimonial">
             <div class="testimonial-holder">
-              <img class="img-fluid" src="{{ .image | absURL }}" alt="{{ .name }}">
+              <img class="img-fluid lazy" data-src="{{ .image | absURL }}" alt="{{ .name }}">
               <h2>{{ .name }}</h2>
               <span>{{ .designation | markdownify }}</span>
               <p><i class="fa fa-quote-left"></i> {{ .content | markdownify }} <i class="fa fa-quote-right"></i></p>
@@ -390,7 +395,7 @@
     <div class="fun-facts wow fadeInUp" data-wow-duration="1.5s">
       {{ range .Params.funfacts }}
       <div class="fun-fact-holder">
-        <img class="img-fluid" src="{{ .image | absURL }}" alt="{{ .name }}">
+        <img class="img-fluid lazy" data-src="{{ .image | absURL }}" alt="{{ .name }}">
         <p class="fact-counter count" data-count="{{ .count }}">0</p>
         <p>{{ .name }}</p>
       </div>
@@ -404,13 +409,18 @@
 <!-- Start Contact -->
 {{ with .GetPage "contact"}}
 <style>{{.Params.custom_css | safeCSS}}</style>
-<section class="contact {{.Params.custom_class}}" {{.Params.custom_attributes | safeHTMLAttr}} style="background-image: url('{{.Params.bg_image | absURL}}');" id="contact">
+<section id="palmTree" class="contact {{.Params.custom_class}}" {{.Params.custom_attributes | safeHTMLAttr}} id="contact">
   <div class="container">
     <div class="row">
       <div class="contact-holder col-lg-8 offset-lg-2 col-sm-8 offset-sm-2">
         <h1 class="wow fadeInUp" data-wow-duration="1.5s">{{ .Title | markdownify}}</h1>
         <form id="contactForm" method="POST" action="{{ .Params.form_action }}" data-toggle="validator">
           <div class="form-container row wow fadeInUp" data-wow-duration="1.5s">
+            <div class="form-group col-lg-6 d-none" style="display: none;">
+              <input class="form-control" type="text" name="phonenumber" id="phonenumber" placeholder="{{.Params.name}}"
+                required>
+              <div class="help-block with-errors"></div>
+            </div>
             <div class="form-group col-lg-6">
               <input class="form-control" type="text" name="username" id="username" placeholder="{{.Params.name}}"
                 required>
@@ -438,8 +448,8 @@
 <!-- End Contact -->
 {{ partial "footer.html" . }}
 
-<a href="#home" class="scroll-up hvr-icon-up"></a>  
-<a class="elevensight-11button-v2" data-btn-style-hash-id="jb76CMPTWZa1jQhduPnCrW_rIfXaMfgh0m69AJaAk6SnUlxxU7"></a> 
-
+<a href="#home" class="scroll-up hvr-icon-up" aria-label="button" title="navigate to the top"></a>  
+  <a class="elevensight-11button-v2"  href="#" aria-label="contact widget" data-btn-style-hash-id="jb76CMPTWZa1jQhduPnCrW_rIfXaMfgh0m69AJaAk6SnUlxxU7" rel="external nofollow"></a>
+  <script defer>!function(d,s,id){ var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "https://app.11sight.com/button_loader.js"; fjs.parentNode.insertBefore(js, fjs); }(document,"script","elevensight-11buttonjs"); </script> 
 
 {{ end }}

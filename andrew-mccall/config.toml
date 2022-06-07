@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "https://andrew-mccall.com/"
+baseURL = "https://www.andrew-mccall.com/"
 theme = "somrat"
 title = "Andrew McCall - Fullstack Web Developer - Traverse City, Michigan"
 # post pagination
@@ -24,24 +24,31 @@ unsafe = true
 ############################# Plugins ##############################
 
 # CSS Plugins
-[[params.plugins.css]]
-link = "plugins/bootstrap/bootstrap.min.css"
-[[params.plugins.css]]
-link = "https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900&display=swap"
-# [[params.plugins.css]]
-# link = "https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
+#[[params.plugins.css.blank]]
+#link = "https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900&display=swap"
+#[[params.plugins.css.blank]]
+#link = "https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
 [[params.plugins.css]]
 link = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-[[params.plugins.css]]
+
+
+[[params.plugins.localcss]]
+link = "plugins/bootstrap/bootstrap.min.css"
+[[params.plugins.localcss]]
 link = "plugins/hover/hover.css"
-[[params.plugins.css]]
+[[params.plugins.localcss]]
 link = "plugins/magnific-popup/magnific-popup.css"
-[[params.plugins.css]]
+[[params.plugins.localcss]]
 link = "plugins/owl-carousel/owl.carousel.min.css"
-[[params.plugins.css]]
+[[params.plugins.localcss]]
 link = "plugins/owl-carousel/owl.theme.default.min.css"
-[[params.plugins.css]]
+[[params.plugins.localcss]]
 link = "plugins/text-animation/text-animation.css"
+[[params.plugins.localcss]]
+link = "css/style.css"
+[[params.plugins.localcss]]
+link = "css/custom.css" 
+
 
 # JS Plugins
 [[params.plugins.js]]
@@ -69,18 +76,29 @@ logo_light = "images/logo-white.png"
 logo_width = "150px"
 # Meta data
 author = "andrew mccall"
-description = "Traverse City Website Development, Design, & Maintenance Starting at $49.99 / month.  Andrew McCall is a fullstack web developer based in Traverse City, Michigan."
+description = "I believe in a less complicated digital experience for my clients.   Andrew McCall is a fullstack web developer based in Traverse City, Michigan."
+images = ["/images/social/twitter/share.png"]
 
 # Preloader
 [params.preloader]
 enable = true 
-preloader = "images/preloader.gif" # use jpg, png, svg or gif format.
+preloader = "/images/svg/logo-small-transparent.svg" # use jpg, png, svg or gif format.
+
+############RSS FEED##############
+
+copyright = 'This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.'
+languageCode = 'en-us'
+[author]
+  name = 'Andrew M McCall'
+
+
 
 ########################### Physical Address #####################
 [params.address]
 address = "4889 Silver Pines Rd"
 city = "Traverse City, Michigan <br /> 49685"
 name = "Andrew M McCall"
+phone = "12312990217"
 
 ############################# social site ########################
 [[params.social]]
@@ -103,6 +121,10 @@ link = "https://github.com/elkcityhazard"
 icon = "fab fa-linkedin"
 link = "https://www.linkedin.com/in/elkcityhazard"
 
+[[params.social]]
+icon = "fab fa-mastodon"
+link = "https://indieweb.social/@elkcityhazard" 
+
 ################################### English language #####################################
 [Languages.en]
 contentDir = "content/"
@@ -116,19 +138,14 @@ copyright = "Copyright &copy; 2021  [andrew mccall](https://andrew-mccall.com)"
 ################# english navigation ##################
 
 # main menu
-[[Languages.en.menu.main]]
-name = "Home"
-url = "/"
-weight = 1
 
 [[Languages.en.menu.main]]
-name = "About me"
-pre = "#"
-url = "about"
+name = "About Andrew"
+url = "/about"
 weight = 2
 
 [[Languages.en.menu.main]]
-name = "Services"
+name = "Internet Marketing Services"
 pre = ""
 url = "/services"
 weight = 3
@@ -163,3 +180,10 @@ name = "Web Development"
 parent = "services"
 url = "services/web-development-traverse-city"
 weight = 1
+
+[[Languages.en.menu.services]]
+name = "Content Marketing"
+parent = "services"
+url = "services/traverse-city-content-marketing"
+weight = 1
+

@@ -2,24 +2,33 @@
 <header class="city-header p-3" style="background: linear-gradient(0.25turn, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ .Params.img | absURL }}') no-repeat fixed center center / cover;">
     <section class="wow fadeInUp city">
         <div class="container">
-            <h1 data-wow-duration="1.5s" class="wow fadeInUp">{{ .Title | markdownify }}</h1>
-            <h2 data-wow-duration="1.5s" data-wow-delay="250ms" class="wow fadeInUp">{{ .Params.subtitle }}</h2>
+            <h1 data-wow-duration="1.5s" class="wow fadeInUp text-white">{{ .Title | markdownify }}</h1>
+            <h2 data-wow-duration="1.5s" data-wow-delay="250ms" class="wow fadeInUp text-white">{{ .Params.subtitle }}</h2>
         </div>
     </section>
     <section class="engaging-points">
         <ul class="engaging-points_list">
             {{ range .Params.engaging_points }}
-                <li class="wow fadeInUp" data-wow-duration="{{ .rate }}" data-wow-delay="{{ .delay }}">👌 {{ .message }}</li>
+                <li class="wow fadeInUp text-white" data-wow-duration="{{ .rate }}" data-wow-delay="{{ .delay }}">👌 {{ .message }}</li>
         {{ end }}
         </ul>
     </section>
 </header>
+{{ with .Params.audio }}
+<section class="audio-player mx-auto my-3 text-center">
+    <audio controls aria-label="audio version">
+        <source src="{{- . | absURL -}}" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio> 
+      <p><small>Audio Version</small></p>
+</section>
+{{ end }}
 <section class="local-description my-5 d-none">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center mx-auto">
                 <figure class="mt-5">
-                    <img src="{{ .Params.local_img | absURL }}" class="wow fadeInUp img-fluid" data-wow-duration="1.5s" data-wow-delay="0" alt="{{ .Title }}" width="450" height="350">
+                    <img loading="lazy" src="{{ .Params.local_img | absURL }}" class="wow fadeInUp img-fluid" data-wow-duration="1.5s" data-wow-delay="0" alt="{{ .Title }}" width="450" height="350">
                     <figcaption class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="250ms">{{ .Params.local_caption | humanize }} </figcaption>
                 </figure>
             </div>
@@ -37,6 +46,43 @@
                 {{ .Content }}
                 
             </div>
+            <aside class="col-12 col-md-3 col-lg-4 col-xl-4 mx-auto pl-2">
+                <section class="contact-card p-1">
+                    <h3 class="aside-cta">Are You Ready To Get Started?</h3>
+                    <div class="card">
+                        <div class="card-header">
+                            <p>We can help you build the website or web application your business needs</p>
+                        </div>
+                        <div class="card-body">
+                            <form action="https://api.formcake.com/api/form/0d18e489-8207-4c91-b8cd-4ecd9acd07f7/submission" method="post">
+                                <div class="form-control mb-3">
+                                    <label class="d-flex align-items-center h-100 mb-3" for="email"><small class="text-uppercase">Email:</small> <input class="ml-3  w-100" type="email" id="email" name="email" required placeholder="john@smith.com">
+                                    </label>
+                                </div>
+                                <div class="form-control mb-3">
+                                    <label class="d-flex align-items-center h-100 mb-3" for="name"><small class="text-uppercase">Name: </small> <input class="ml-3  w-100" type="text" id="name" name="name" required placeholder="Roy Smith">
+                                    </label>
+                                </div>
+                                <div class="form-control mb-3">
+                                    <label class="d-flex align-items-center h-100 mb-3" aria-label="select services" for="services"><small class="text-uppercase">Service:</small> <select class="ml-3" name="services" id="services">
+                                            <option value="podcast">Podcast Service</option>
+                                            <option value="webdev">Web Development</option>
+                                            <option value="seo">Search Engine Optimization</option>
+                                            <option value="webmaintenance">Website Maintenance</option>
+                                            <option value="videoprod">Video Production</option>
+                                            <option value="socialmedia">Social Media Management</option>
+                                            <option value="other">Other Services</option>
+                                    </select>
+                                    </label>
+                                </div>
+                                <div class="form-control">
+                                    <button class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </aside>
         </div>
     </div>
 </main>

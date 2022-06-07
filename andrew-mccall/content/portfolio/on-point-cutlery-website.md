@@ -1,23 +1,23 @@
 ---
-title: "On Point Cutlery"
-date: 2021-10-03
-image: "images/portfolio/on-point-cutlery.webp"
-categories: ["design", "web development"]
-description: "A brochure-style website for a local knife sharpening business.  Created with bootstrap, animate on scroll, jquery, and a small bit of vanilla js"
+title: On Point Cutlery
+date: 2021-10-03 00:00:00 Z
+image: images/portfolio/on-point-cutlery.webp
+categories:
+- design
+- web development
+description: A brochure-style website for a local knife sharpening business.  Created
+  with bootstrap, animate on scroll, jquery, and a small bit of vanilla js
 draft: false
 project_info:
-- name: "Client"
-  icon: "fas fa-user"
-  content: "On Point Cutlery"
-- name: "Project Link"
-  icon: "fas fa-link"
-  content: "https://onpointcutlery.com/"
-- name: "Skills"
-  icon: "fas fa-globe"
-  content: "Web Design/Development"
-# - name: "Loop Item"
-#   icon: "fas fa-redo"
-#   content: "This is in a loop"
+- name: Client
+  icon: fas fa-user
+  content: On Point Cutlery
+- name: Project Link
+  icon: fas fa-link
+  content: https://onpointcutlery.com/
+- name: Skills
+  icon: fas fa-globe
+  content: Web Design/Development
 ---
 
 ## Website Design Traverse City: On Point Cutlery

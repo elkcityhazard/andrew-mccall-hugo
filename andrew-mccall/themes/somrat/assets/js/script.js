@@ -361,21 +361,55 @@
 }(jQuery));
 
 
+const video = document.querySelector('.cta-video');
 
-// const parallax = (id, rate) => {
-// 	let objectToParallax = document.querySelector(id);
-// 	const initParallax = () => {
-// 	  let x = objectToParallax.getBoundingClientRect().top / rate;
-// 	  let y = Math.round((x * 100) / 100);
-// 	  objectToParallax.style.backgroundPosition = `center ${Math.floor(y)}px`;
-// 	}
-  
-// 	initParallax(id, rate);
-// 	window.addEventListener('scroll', function() {
-// 	  initParallax(id, rate);
-// 	})
-//   }
-  
-//   parallax('.city-header', 3)
 
- 
+video.addEventListener('click', (e) => {
+	e.preventDefault()
+	e.target.paused ? e.target.play() : e.target.pause()
+
+})
+
+window.onload = async function() {
+	const video = document.querySelector('.cta-video');
+	if (!video) {
+		return
+	}
+	video.src = await video.firstElementChild.getAttribute('data-src')
+}
+
+
+
+const parallax = (id, rate) => {
+	let objectToParallax = document.getElementById(id);
+	const initParallax = () => {
+	  let x = objectToParallax.getBoundingClientRect().top / rate;
+	  let y = Math.round((x * 100) / 100);
+	  objectToParallax.style.backgroundPosition = `center ${y}px`;
+	}
+  
+	initParallax(id, rate);
+	window.addEventListener('scroll', function() {
+	  initParallax(id, rate);
+	})
+  }
+  
+  parallax('palmTree', 3)
+
+
+
+
+  const images = document.querySelectorAll('.lazy');
+
+observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.intersectionRatio > 0) {
+      entry.target.src = entry.target.getAttribute('data-src')
+	  observer.unobserve(entry.target)
+    }
+  });
+});
+
+images.forEach(image => {
+  observer.observe(image);
+});

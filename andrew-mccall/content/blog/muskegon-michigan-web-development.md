@@ -1,17 +1,18 @@
 ---
 title: Muskegon Michigan Web Development Services
+date: 2021-09-24 00:00:00 Z
 subtitle: Muskegon Michigan Web Design Services
-description: "Our Muskegon Michigan Web Development offers assistance to help you create a professional website. We help you build your website to help your business grow in Muskegon Michigan."
-date: 2021-09-24
+description: Our Muskegon Michigan Web Development offers assistance to help you create
+  a professional website. We help you build your website to help your business grow
+  in Muskegon Michigan.
 tags:
-  - Web Development
-  - Search Engine Optimization
-  - Social Media Management
-  - Muskegon Michigan
-category: 
-  - Web Development
-  - Local Services
-
+- Web Development
+- Search Engine Optimization
+- Social Media Management
+- Muskegon Michigan
+category:
+- Web Development
+- Local Services
 image: images/blog/muskegon-michigan-web-services560-315.jpeg
 ---
 

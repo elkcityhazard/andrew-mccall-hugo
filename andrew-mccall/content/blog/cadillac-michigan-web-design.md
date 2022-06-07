@@ -1,20 +1,21 @@
 ---
 title: Cadillac Michigan Web Development Services
+date: 2021-09-20 00:00:00 Z
 subtitle: Cadillac Michigan Digital Marketing Services
-description: "Cadillac Michigan Web Development Services specializes in website design and development of the highest quality. We offer a variety of services including a complete website design, a logo design, a marketing plan, and a custom website development."
-date: 2021-09-20
+description: Cadillac Michigan Web Development Services specializes in website design
+  and development of the highest quality. We offer a variety of services including
+  a complete website design, a logo design, a marketing plan, and a custom website
+  development.
 tags:
-  - Web Development
-  - Search Engine Optimization
-  - Social Media Management
-  - Cadillac Michigan
-category: 
-  - Web Development
-  - Local Services
-
+- Web Development
+- Search Engine Optimization
+- Social Media Management
+- Cadillac Michigan
+category:
+- Web Development
+- Local Services
 image: images/blog/cadillac-michigan-web-development-1200-600.webp
 ---
-
 
 Picking the right freelance web developer is not a decision that can be taken lightly. You'll want to make sure that you're working with a company that is reputable, has a good reputation, and understands what your business needs. Here are 10 reasons why you should pick a freelance web developer for your new Cadillac, Michigan business.
 

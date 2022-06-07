@@ -1,13 +1,16 @@
 ---
-title: "CSS Grid Gallery: Easy Fluid Gallery With CSS Grid and Javascript"
-date: 2021-11-24
-description: "Learn how to create a fluid image gallery with css grid and a few lines of javascript."
+title: 'CSS Grid Gallery: Easy Fluid Gallery With CSS Grid and Javascript'
+date: 2021-11-24 00:00:00 Z
+description: Learn how to create a fluid image gallery with css grid and a few lines
+  of javascript.
 draft: false
 image: "/images/blog/css-grid-gallery-1200-600.png"
 categories:
-  - Web Development
-tags: ["Web Development", "Javascript", "CSS"]
-draft: false
+- Web Development
+tags:
+- Web Development
+- Javascript
+- CSS
 ---
 
 Learn how to create a fluid image gallery with css grid and a few lines of javascript. In the following article, we will learn how to create a grid gallery that is fluid and easy to navigate with CSS Grid and Javascript. First, we will create a container for our grid gallery. Then we will create a row of items. Finally, we need to set up a grid to contain the items in the row. We will then apply some styling for our gallery so that it looks nice on all browsers by using CSS Grid and Javascript's responsive design techniques.
@@ -28,18 +31,18 @@ The first thing we need to do is set up our grid container:
 
 ```
 <div class="grid-container">
-<div class="grid-item"><img src="https://source.unsplash.com/250x900/?nature,water" alt="image"></div>
-<div class="grid-item"><img src="https://source.unsplash.com/250x500/?nature,water" alt="image"></div>
-<div class="grid-item"><img src="https://source.unsplash.com/250x400/?nature,water" alt="image"></div>
-<div class="grid-item"><img src="https://source.unsplash.com/250x375/?nature,water" alt="image"></div>
-<div class="grid-item"><img src="https://source.unsplash.com/250x400/?nature,water" alt="image"></div>
-<div class="grid-item"><img src="https://source.unsplash.com/250x500/?nature,water" alt="image"></div>
-<div class="grid-item"><img src="https://source.unsplash.com/250x200/?nature,water" alt="image"></div>
-<div class="grid-item"><img src="https://source.unsplash.com/250x900/?nature,water" alt="image"></div>
-<div class="grid-item"><img src="https://source.unsplash.com/250x850/?nature,water" alt="image"></div>
-<div class="grid-item"><img src="https://source.unsplash.com/250x700/?nature,water" alt="image"></div>
-<div class="grid-item"><img src="https://source.unsplash.com/250x625/?nature,water" alt="image"></div>
-<div class="grid-item"><img src="https://source.unsplash.com/250x633/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x900/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x500/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x400/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x375/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x400/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x500/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x200/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x900/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x850/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x700/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x625/?nature,water" alt="image"></div>
+<div class="grid-item"><img loading="lazy" src="https://source.unsplash.com/250x633/?nature,water" alt="image"></div>
 
 </div>
 ```

@@ -1,3 +1,12 @@
+@keyframes expand {
+  from {
+    transform: translate3d(-50%, -50%, 0) rotateZ(0);
+  }
+  to {
+  transform: translate3d(-50%, -50%, 0) rotateZ(360deg);
+  }
+}
+
 /*--------------------------------
    Start Preloader & General Styling
 ----------------------------------*/
@@ -13,6 +22,11 @@ html {
 body {
   font-family: "Rubik", sans-serif;
   height: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .content a {
@@ -55,6 +69,37 @@ body {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+
+.preloader .circle,
+.preoloader .circle .inner-circle {
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  display: grid;
+  place-items: center;
+  height: 225px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 225px;
+  z-index: -1;
+}
+
+.preloader .circle {
+  animation: 500ms expand linear infinite;
+  -webkit-animation: 500ms expand linear infinite;
+  transition: all 250ms ease;
+  -webkit-transition: all 250ms ease;
+}
+
+.preloader .circle .inner-circle {
+  background-color: #2b2c2f;
+  border-radius: 50%;
+  height: 210px;
+  width: 210px;
 }
 
 .no-js #preloader {
@@ -1661,7 +1706,7 @@ textarea.form-control::-webkit-input-placeholder,
 }
 
 .footer-bg {
-  background-color: #333;
+  background-color: #000;
 }
 
 .footer hr {

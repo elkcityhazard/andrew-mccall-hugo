@@ -1,24 +1,26 @@
 ---
-title: "Project Title"
-date: 2020-05-12T12:14:34+06:00
-image: "images/portfolio/item5.jpg"
-categories: ["design","sketch"]
-description: "This is meta description."
+title: Project Title
+date: 2020-05-12 06:14:34 Z
+image: images/portfolio/item5.jpg
+categories:
+- design
+- sketch
+description: This is meta description.
 draft: true
 project_info:
-- name: "Client"
-  icon: "fas fa-user"
-  content: "John Doe"
-- name: "Project Link"
-  icon: "fas fa-link"
-  content: "https://examplesite.com/"
-- name: "New Item"
-  icon: "fas fa-globe"
-  content: "Add whatever you want"
-- name: "Loop Item"
-  icon: "fas fa-redo"
-  content: "This is in a loop"
---- 
+- name: Client
+  icon: fas fa-user
+  content: John Doe
+- name: Project Link
+  icon: fas fa-link
+  content: https://examplesite.com/
+- name: New Item
+  icon: fas fa-globe
+  content: Add whatever you want
+- name: Loop Item
+  icon: fas fa-redo
+  content: This is in a loop
+---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
 et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip

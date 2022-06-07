@@ -1,11 +1,19 @@
 ---
-title: "Traverse City Web Developer: I am a web designer in Traverse City"
-date: 2021-08-18
-image: "images/blog/traverse-city-developer-560-315 .jpeg"
-tags: ["web","development", "html", "css", "javascript"]
-description: "Andrew McCall is a small, local web designer and developer based in Traverse City. We offer website design and development, marketing services, branding, graphic design and more."
+title: 'Traverse City Web Developer: I am a web designer in Traverse City'
+date: 2021-08-18 00:00:00 Z
+image: images/blog/traverse-city-developer-560-315 .jpeg
+tags:
+- web
+- development
+- html
+- css
+- javascript
+description: Andrew McCall is a small, local web designer and developer based in Traverse
+  City. We offer website design and development, marketing services, branding, graphic
+  design and more.
 draft: false
 ---
+
 Many of the people who come to me are small business owners who want a website built. They always want to know how much it's going to cost then they agonize over which developer they should choose. I try to keep this in mind when I'm talking with them but sometimes I still can't help but think how lucky they are to have this problem. I wish I could build a website every day and I'm sure many web developers feel the same.
 
 ### What is a Web Developer?

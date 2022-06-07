@@ -1,3 +1,4 @@
 ---
-title: "Traverse City Marketing Services"
+title: Traverse City Marketing Services
 ---
+

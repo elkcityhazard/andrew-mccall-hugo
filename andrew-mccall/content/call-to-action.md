@@ -1,15 +1,13 @@
 ---
-title : "Ready For A Free Consultation?"
+title: Ready For A Free Consultation?
 headless: true
-bg_image : "images/backgrounds/need-service.jpg"
+bg_image: images/backgrounds/need-service.jpg
 button:
-  enable : true
-  label : "SAY HELLO!"
-  link : "#contact"
-
-
-# custom style
-custom_class: "" 
-custom_attributes: "" 
-custom_css: ""
+  enable: true
+  label: SAY HELLO!
+  link: "#contact"
+custom_class: ''
+custom_attributes: ''
+custom_css: ''
 ---
+

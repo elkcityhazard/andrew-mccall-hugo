@@ -1,9 +1,15 @@
 ---
-title: "Everything You Need To Know About Parallax Scrolling & Javascript"
-date: 2021-08-29
-image: "images/blog/complete-guide-parallax-1200-600.png"
-tags: ["javascript","css", "web design", "web development"]
-description: " A complete guide for beginners to parallax scrolling effects, how to use them, how to get started creating them if you are new to javascript, css, and html."
+title: Everything You Need To Know About Parallax Scrolling & Javascript
+date: 2021-08-29 00:00:00 Z
+image: images/blog/complete-guide-parallax-1200-600.png
+tags:
+- javascript
+- css
+- web design
+- web development
+description: " A complete guide for beginners to parallax scrolling effects, how to
+  use them, how to get started creating them if you are new to javascript, css, and
+  html."
 draft: false
 ---
 

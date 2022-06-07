@@ -1,10 +1,10 @@
 ---
-title: "Portfolio"
-description: "Learn more about my skills and experience as a web developer. I'm available for full-time, part-time, contract, and remote work."
+title: Portfolio
+description: Learn more about my skills and experience as a web developer. I'm available
+  for full-time, part-time, contract, and remote work.
 draft: false
-
-# custom style
-custom_class: "" 
-custom_attributes: "" 
-custom_css: ""
+custom_class: ''
+custom_attributes: ''
+custom_css: ''
 ---
+

@@ -23,6 +23,21 @@
     }
 }
 
+@keyframes spins {
+    from {
+        transform: rotateZ(0);
+        -webkit-transform: rotateZ(0);
+        -moz-transform: rotateZ(0);
+    }
+
+    to {
+    transform: rotateZ(360deg);
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+
+    }
+}
+
 .contact {
     overflow-x: hidden !important;
 }
@@ -34,6 +49,7 @@
 header.city-header {
     display: grid;
     place-items: center;
+    margin-bottom: 1rem;
     min-height: 100vh;
 }
 
@@ -68,9 +84,118 @@ section.local-description img {
     font-size: 1.2rem;
 }
 
-.#rc-anchor-alert {
+#rc-anchor-alert {
     display: none !important;
 }
+
+#cta {
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+#cta .cta-video {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.contact {
+    background: rgb(0,0,0);
+    background: -moz-linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5256303204875701) 50%, rgba(255,156,17,0.3435574913559174) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5256303204875701) 50%, rgba(255,156,17,0.3435574913559174) 100%);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5256303204875701) 50%, rgba(255,156,17,0.3435574913559174) 100%); 
+}
+
+.grecaptcha-badge {
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+}
+
+audio {
+    border-radius: 10px;
+}
+
+aside .contact-card .card .card-body form .form-control {
+    display: grid;
+    height: 100%;
+    place-items: start start;
+}
+
+aside .contact-card .card .card-body form .form-control select {
+    background: transparent;
+    border: 1px solid #333;
+    padding: .5rem 0;
+}
+
+aside .contact-card .card .card-body form .form-control button {
+    width: 100% !important;
+}
+
+h3.aside-cta {
+    font-size: 1.5em;
+}
+
+#services {
+    max-width: 237px;
+}
+
+blockquote {
+    background: transparent;
+    color: #000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.125em;
+    font-weight: 700;
+    line-height: 1.667;
+    margin: 2rem auto 4rem;
+    max-width: 60ch;
+    padding: 0 2rem;
+    position: relative;
+    transition: background 333ms ease;
+    -webkit-transition: all 333ms ease;
+    -moz-transition: all 333ms ease;
+    width:fit-content;
+}
+
+blockquote::before {
+    background: rgba(0,0,0,1);
+    content: '';
+    display: flex;
+    align-items: start;
+    font-size: calc(1rem * 1.75);
+    justify-content: center;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+
+}
+
+blockquote::after {
+    background: #333;
+    border-radius: 50%;
+    display: grid;
+    content: "⚡";
+    font-size: 24px;
+    height: 33px;
+    margin: 0;
+    padding: 0;
+    place-items: center;
+    position: absolute;
+    left: calc(-33px / 2);
+    top: calc(100% - 33px);
+    width: 33px;
+}
+
+
 
 
 @media screen and (min-width: 1200px) {
@@ -94,10 +219,27 @@ section.local-description img {
         -webkit-transform: rotate(0);
         -moz-transform: rotate(0)
     }
-}
 
-.grecaptcha-badge {
-    visibility: hidden !important;
-    height: 0 !important;
-    width: 0 !important;
+    #cta {
+        min-height: 50vh !important;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    #cta .cta-video {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateY(-50%);
+    }
+
+    .contact {
+        background: rgb(0,0,0) url('/images/backgrounds/tropical-beach-with-palm-trees.webp') no-repeat fixed center / cover;
+        background: -moz-linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5256303204875701) 50%, rgba(255,156,17,0.3435574913559174) 100%) url('/images/backgrounds/tropical-beach-with-palm-trees.webp') no-repeat fixed center / cover;
+        background: -webkit-linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5256303204875701) 50%, rgba(255,156,17,0.3435574913559174) 100%) url('/images/backgrounds/tropical-beach-with-palm-trees.webp') no-repeat fixed center / cover;
+        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5256303204875701) 50%, rgba(255,156,17,0.3435574913559174) 100%) url('/images/backgrounds/tropical-beach-with-palm-trees.webp') no-repeat fixed center / cover; 
+    }
 }

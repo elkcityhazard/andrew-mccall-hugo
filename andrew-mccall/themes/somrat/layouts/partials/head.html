@@ -1,28 +1,50 @@
 <head>
   <meta charset="utf-8">
-  <title>{{ .Title }}</title>
+  <title>{{- if .Title -}}{{- .Title -}} {{- else -}} Andrew McCall | Traverse City Michigan Web Developer {{- end -}} </title>
 
   <!-- mobile responsive meta -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
   {{ with site.Params.author }}
   <meta name="author" content="{{ . }}">{{ end }}
   {{ hugo.Generator }}
 
+  <!-- canonical -->
+
+  {{- with .Params.canonical -}}
+  <link rel="canonical" href="{{- . -}}" />
+  {{ else }}
+  <link rel="canonical" href="{{- .RelPermalink | absURL -}}" />
+  {{ end }}
+
   <!-- plugins -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   {{ range site.Params.plugins.css }}
   <link rel="stylesheet" href="{{ .link | absURL }}">
   {{ end }}
 
-  <!-- Main Stylesheet -->
-  {{ $styles := resources.Get "css/style.css" | minify }}
-  <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+  {{ template "_internal/opengraph.html" . }}
 
-  <!-- Custom stylesheet -->
-  {{ $custom := resources.Get "css/custom.css" | minify }}
-  <link rel="stylesheet" href="{{ $custom.Permalink }}" media="screen">
+  {{ range .AlternativeOutputFormats -}}
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{ end -}}
+
+
+  <!-- local css plugins bundled -->
+  {{ $bootstrap := resources.Get "plugins/bootstrap/bootstrap.min.css"}}
+  {{ $hover := resources.Get "plugins/hover/hover.css" }}
+  {{ $magnific := resources.Get "plugins/magnific-popup/magnific-popup.css" }}
+  {{ $owl := resources.Get "plugins/owl-carousel/owl.carousel.min.css" }}
+  {{ $owlDefault := resources.Get "plugins/owl-carousel/owl.theme.default.min.css" }}
+  {{ $textAnimation := resources.Get "plugins/text-animation/text-animation.css" }}
+  {{ $style := resources.Get "css/style.css" }}
+  {{ $custom := resources.Get "css/custom.css" }}
+  
+  {{ $cssBundle := slice $bootstrap $hover $magnific $owl $owlDefault $textAnimation $style $custom | resources.Concat "css/bundle.css" | fingerprint }}
+  <link rel="stylesheet" href="{{ $cssBundle.Permalink | absURL }}">
+
 
   <!--Favicon-->
   <link rel="shortcut icon" href="{{ site.Params.favicon | absURL }}" type="image/x-icon">
@@ -43,5 +65,5 @@
   <script defer data-domain="andrew-mccall.com" src="https://plausible.io/js/plausible.js"></script>
   <script src="https://www.google.com/recaptcha/api.js" defer></script>
   <script type="text/javascript" src="https://93c5e58cad9593c5e5ec0eb.zapwp.com/generate_js:true" defer></script> 
-
+  <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
 </head>

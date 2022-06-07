@@ -1,13 +1,16 @@
 ---
-title: "Custom React Hook Function: Create Custom Reusable React Hooks"
-date: 2021-11-21
-description: "If you find yourself rewriting the same logic over and over you may find it easier to create a custom react hook"
+title: 'Custom React Hook Function: Create Custom Reusable React Hooks'
+date: 2021-11-21 00:00:00 Z
+description: If you find yourself rewriting the same logic over and over you may find
+  it easier to create a custom react hook
 draft: false
 image: "/images/blog/react-custom-hooks-120-600.png"
 categories:
-  - Web Development
-tags: ["Web Development", "Javascript", "React"]
-draft: false
+- Web Development
+tags:
+- Web Development
+- Javascript
+- React
 ---
 
 If you have found yourself re-writing the same boilerplate React code over and over, You may be able to refactor that into a reusable custom React hook function that will save you time and help clean up your code a bit.

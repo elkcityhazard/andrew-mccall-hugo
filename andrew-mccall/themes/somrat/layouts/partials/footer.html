@@ -1,22 +1,24 @@
 
 
+<div id="agiled-embed" data-path="appointmentEmbed/076a0c97d09cf1a0ec3e19c7f2529f2b"></div> 
 <footer class="footer-bg fadeInUp wow" data-wow-duration="1.5s">
   <div class="container">
     <div class="row p-3">
       <div class="col-12 col-md-3 mt-1 text-light">
-        <h4>Address</h4>
+        <h3>Address</h3>
         {{- with .Site.Params.address -}}
           <address class="p-0 mx-auto">
             <p class="m-0 mb-1">{{.name}}</p>
             <p class="m-0 mb-1">{{.address}}</p>
             <p class="m-0 mb-1">{{.city | safeHTML }}</p>
+            <p class="m-0 mb-1"><a href="tel:+{{- .phone -}}" class="text-light" title="Traverse City Web Design"><i class="fas fa-phone pr-1"></i>(231) 299 0217</a></p>
           </address>
         {{- end -}}
       </div>
       <div class="col-12 col-md-3 mt-1 text-light">
         <h4>Links</h4>
         {{- range .Site.Menus.main -}}
-          <a href="{{- .URL | absURL -}}" class="d-block text-light footer-link py-2" title="{{- .Name -}}"><i class="fa fa-angle-right px-2"></i>{{ .Name }}</a>
+          <a href="{{- .URL | absURL -}}" class="d-block text-white footer-link py-2" title="{{- .Name -}}"><i class="fa fa-angle-right px-2"></i>{{ .Name }}</a>
         {{- end -}}
       </div>
       <div class="col-12 col-md-6 mt-1 text-light">
@@ -32,11 +34,14 @@
         <hr>
         <ul class="footer-icons list-inline">
           {{ range site.Params.social }}
-          <li><a href="{{ .link | safeURL }}"><i class="{{ .icon }}"></i></a></li>
+          <li><a href="{{ .link | safeURL }}" class="text-dark" title="social media link"><i class="{{ .icon }}"></i></a></li>
           {{ end }}
         </ul>
         <div class="to-top">
-          <a href="#home"><i class="fa fa-chevron-up"></i></a>
+          <a href="#home" title="navigate to the top of the page"><i class="fa fa-chevron-up"></i></a>
+        </div>
+        <div class="mx-auto text-center">
+          <div id="wcb" class="carbonbadge wcb-d"></div>
         </div>
         <div class="credit content">
           {{ site.Params.copyright | markdownify }}
@@ -44,5 +49,4 @@
       </div>
     </div>
   </div>
-  <a class="elevensight-11button-v2" data-btn-style-hash-id="jb76CMPTWZa1jQhduPnCrW_rIfXaMfgh0m69AJaAk6SnUlxxU7"></a> 
 </footer>
