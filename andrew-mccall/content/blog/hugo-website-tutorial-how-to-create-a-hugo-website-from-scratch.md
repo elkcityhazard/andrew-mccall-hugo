@@ -1,6 +1,7 @@
 ---
 title: 'Hugo Website Tutorial: How To Create A Hugo Website'
-date: 2021-12-22 00:00:00 Z
+date: 2021-12-22 
+updated: 2022-06-20
 image: images/blog/hugo-website-tutorial-1200x600.webp
 tags:
 - hugo
@@ -18,6 +19,10 @@ draft: false
 
 Hugo is a powerful static website generator written in the GO language. It can help you create clean, modern websites that load quickly with little overhead.
 
+## [VIDEO] Hugo Tutorials
+
+1.  👉 [ [Video] How To Install Hugo On Windows 10 With Chocolately Package Manager (Less Than 2.5 Minutes)](/blog/2022/06/install-hugo-on-windows-with-chocolately-package-manager/ "Install Hugo On Windows 10 With Chocolately Package Manager")
+
 ## What is the Hugo static site framework?
 
 Hugo is one of my favorite website build tools. It is very fast. They advertise themselves as being "blazingly fast." Hugo is a static website generator built with the GO language. It uses GO templating and than renders a 100% static website at build time. The reason you want this: speed. Static websites have less technology debt than other modern workflows that require a server backend to process and build pages on the fly.
@@ -27,6 +32,8 @@ Additionally, Hugo is also cheaper to maintain. Since there are no plugins to up
 This article will be dedicated to creating a dead simple hugo website tutorial. I will show you how to install Hugo and get your first site up and running. Along the way, we will cover a few basic aspects of Hugo I think new Hugo developers should know right away. This Hugo Tutorial is meant to help new Hugo developers abstract away some of the more difficult aspects of the official Hugo documentation.
 
 ## Installing Hugo
+
+ 👉 __New:__ [ [Video] How To Install Hugo On Windows 10 With Chocolately Package Manager (Less Than 2.5 Minutes)](/blog/2022/06/install-hugo-on-windows-with-chocolately-package-manager/ "Install Hugo On Windows 10 With Chocolately Package Manager")
 
 Unlike other flavors of Static Site Generators, Hugo is dead simple to install. Remember, [gohugo.io](https://gohugo.io "gohugo.io") has comprehensive documentation as well to get you started. If you need further support, you can reach out to myself, or visit the official website which also has an active developer forum. Many examples have been included from their website to demonstrate concepts.
 
@@ -53,8 +60,9 @@ This will start the installation process. Once you are done you can then install
 In the same powershell terminal you can paste one of two commands:
 
 ```ps1
-choco install hugo -confirmor
+choco install hugo -confirm
 ```
+or
 
 ```ps1
 choco install hugo-extended 

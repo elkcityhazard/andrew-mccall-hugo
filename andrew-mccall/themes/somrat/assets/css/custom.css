@@ -155,13 +155,14 @@ blockquote {
     font-weight: 700;
     line-height: 1.667;
     margin: 2rem auto 4rem;
-    max-width: 60ch;
+    max-width: 100%;
     padding: 0 2rem;
     position: relative;
+    overflow-x: auto;
     transition: background 333ms ease;
     -webkit-transition: all 333ms ease;
     -moz-transition: all 333ms ease;
-    width:fit-content;
+    width: 75ch;
 }
 
 blockquote::before {
