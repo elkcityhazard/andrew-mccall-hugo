@@ -1,6 +1,6 @@
 ---
 title: 'React State Array: Updating An Array That Is Stored Inside Of State'
-date: 2021-11-20 00:00:00 Z
+date: 2021-11-20 
 description: Updating state in React can be tricky if you have multiple handlers updating
   the same component.  Find out how to safely update state in a react application
 image: "/images/blog/react-update-previous-state.png"
