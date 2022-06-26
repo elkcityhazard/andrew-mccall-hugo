@@ -1,6 +1,6 @@
 ---
 title: On Point Cutlery
-date: 2021-10-03 
+date: 2021-10-03 00:00:00 Z
 image: images/portfolio/on-point-cutlery.webp
 categories:
 - design

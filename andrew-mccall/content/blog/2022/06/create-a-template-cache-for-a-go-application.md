@@ -1,15 +1,16 @@
 ---
 title: How To Create A Template Cache For Your Golang Web Application
-description: "How to create a reusable template cache for a go web application that allows the application to read templates from memory."
-date: 2022-06-26
+date: 2022-06-26 00:00:00 Z
+description: How to create a reusable template cache for a go web application that
+  allows the application to read templates from memory.
 image: "/images/blog/2022/template-cache-1200x600.jpeg"
 draft: false
 category:
-    - Web Development
+- Web Development
 tags:
-    - Golang
-    - Web Development
-    - Server Side Go
+- Golang
+- Web Development
+- Server Side Go
 ---
 
 A beginner's guide to create a reusable template cache for your Go web application:  eveything you need to get started.   For example the `net/http` and `html/template` package are part of the standard library and allow us to create full-featured web applications with just the standard library.  
