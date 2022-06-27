@@ -1,9 +1,11 @@
 ---
-title: "Traverse City Podcast Production"
-date: 2021-11-28
-image: "images/portfolio/item6.jpg"
-tags: ["podcasts", "podcast production"]
-description: ""
+title: Traverse City Podcast Production
+date: 2021-11-28 00:00:00 Z
+image: images/portfolio/item6.jpg
+tags:
+- podcasts
+- podcast production
+description: ''
 draft: false
 ---
 

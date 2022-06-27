@@ -12,6 +12,12 @@
           {{ with .Params.image }}<img loading="lazy" src="{{. | absURL}}" alt="image" class="img-fluid w-100 mb-5">{{ end }}
           <div class="about-me-text mb-4">
             <h1>{{.Title | markdownify}}</h1>
+            {{ with .Params.date }}
+            <span class="published"><strong>published</strong>: {{ time.Format "Jan 2, 2006" . }}</span>
+            {{ end }}
+            {{ with .Params.updated }}
+            <span class="updated"><strong>updated</strong>: {{ time.Format "Jan 2, 2006" . }}</span>
+            {{ end }}
           </div>
           <div class="content">{{.Content}}</div>
 
