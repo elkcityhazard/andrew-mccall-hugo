@@ -1,19 +1,19 @@
 ---
 title: Install Hugo With Chocolatey Package Manager On Windows 10 [video]
-date: 2022-06-20
-image: /images/blog/2022/install-hugo-windows-10-chocolately.jpeg
-images: ['/images/blog/2022/install-hugo-windows-10-chocolately.jpeg']
+date: 2022-06-20 00:00:00 Z
+image: "/images/blog/2022/install-hugo-windows-10-chocolately.jpeg"
+images:
+- "/images/blog/2022/install-hugo-windows-10-chocolately.jpeg"
 categories:
 - Web Development
 tags:
 - hugo
 - static website generators
 - golang
-description: Installing Hugo on Windows is really quite simple with Chocolately Package Manager.   This video will explain the process of installing Hugo on Windows 10.  
+description: Installing Hugo on Windows is really quite simple with Chocolately Package
+  Manager.   This video will explain the process of installing Hugo on Windows 10.
 draft: false
 ---
-
-
 
 Installing [Hugo](https://gohugo.io "Hugo - The World's Fastest Website Generator") on Windows is easy with [chocolately package manager](https://community.chocolatey.org/ "Windows 10 Software Package Manager").
 
