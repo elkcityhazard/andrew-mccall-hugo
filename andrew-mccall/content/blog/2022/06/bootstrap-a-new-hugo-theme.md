@@ -1,19 +1,19 @@
 ---
 title: Bootstrap A New Hugo Theme From Scratch [video]
-date: 2022-06-21
-image: /images/blog/2022/002-create-a-new-hugo-theme-and-hello-world-home-page.jpeg
-images: ['/images/blog/2022/002-create-a-new-hugo-theme-and-hello-world-home-page.jpeg']
+date: 2022-06-21 00:00:00 Z
+image: "/images/blog/2022/002-create-a-new-hugo-theme-and-hello-world-home-page.jpeg"
+images:
+- "/images/blog/2022/002-create-a-new-hugo-theme-and-hello-world-home-page.jpeg"
 categories:
 - Web Development
 tags:
 - hugo
 - static website generators
 - golang
-description: Part 2 after Installation.  This video covers initiating a new theme and getting hugo to see it in your project.   
+description: Part 2 after Installation.  This video covers initiating a new theme
+  and getting hugo to see it in your project.
 draft: false
 ---
-
-
 
 A part of using Hugo is the freedom of making your own theme.  In this tutorial, I will explain how to bootstrap a new Hugo theme so you can customize it exactly how you want to. I will go over verifying installation, creating a theme, telling Hugo how to use your new theme, and we walk through the very basics of setting up a theme so that the home page displays.  
 
