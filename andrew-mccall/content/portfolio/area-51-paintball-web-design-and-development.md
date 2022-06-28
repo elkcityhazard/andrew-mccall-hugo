@@ -1,6 +1,6 @@
 ---
 title: Area 51 Paintball
-date: 2021-12-28 
+date: 2021-12-28 00:00:00 Z
 image: images/portfolio/area-51-paintball/area-51-mockup.png
 categories:
 - design
