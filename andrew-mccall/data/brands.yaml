@@ -1,0 +1,20 @@
+brands:
+- title: Absolutely Gorgeous Interiors
+  image: "/images/our-brands/absolutely-gorgeous-interiors.png"
+#- title: Andrew McCall
+#  image: "/images/our-brands/andrew-mccall.png"
+- title: Chine And Feather
+  image: "/images/our-brands/chine-and-feather.png"
+- title: Conquer Coaching
+  image: "/images/our-brands/conquer-coaching.png"
+- title: Protoweb Digital Solutions
+  image: "/images/our-brands/protoweb.png"
+- title: Restaurants TC
+  image: "/images/our-brands/restaurants-tc.png"
+- title: TC Coding Dojo
+  image: "/images/our-brands/tc-coding-dojo.png"
+
+designs:
+- title:  Real Estate Web Design
+  description:  This modern real estate web design has many attractive assets.  It has clear call to actions and provides several trust indicators such as branding and testimonials.  The design clearly states the purpose of the website and maintains a composed, clean asthetic.  The design is eloquent, but minimal.  This means that visitors will not be distracted by design elements as they browse the page.  
+  image: "/designs/real-estate-web-design/real-estate-web-design.jpg" 
