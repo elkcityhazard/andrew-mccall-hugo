@@ -1,6 +1,6 @@
 ---
 title: Markdown Syntax For Quick Development and Fast Content Creation
-date: 2021-08-17 00:00:00 Z
+date: 2021-08-17 
 image: images/blog/start-markdown-1200-600.svg
 tags:
 - Static Websites
