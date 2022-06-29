@@ -1,6 +1,6 @@
 ---
 title: Everything You Need To Know About Content Delivery Networks As A Beginner
-date: 2021-08-21 
+date: 2021-08-21 00:00:00 Z
 image: images/blog/cdn-beginners-1600-800.svg
 tags:
 - web development
