@@ -376,12 +376,17 @@ window.onload = async function() {
 		return
 	}
 	video.src = await video.firstElementChild.getAttribute('data-src')
+	video.play()
 }
 
 
 
 const parallax = (id, rate) => {
 	let objectToParallax = document.getElementById(id);
+
+	if (!objectToParallax) {
+		return null
+	}
 	const initParallax = () => {
 	  let x = objectToParallax.getBoundingClientRect().top / rate;
 	  let y = Math.round((x * 100) / 100);
