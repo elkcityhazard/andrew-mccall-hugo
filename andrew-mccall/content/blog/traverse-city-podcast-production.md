@@ -1,6 +1,6 @@
 ---
 title: Traverse City Podcast Production
-date: 2021-11-28 00:00:00 Z
+date: 2021-11-28 
 image: images/portfolio/item6.jpg
 tags:
 - podcasts
