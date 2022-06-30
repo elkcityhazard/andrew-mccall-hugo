@@ -1,6 +1,6 @@
 ---
 title: What Is Blockchain Technology And How Does It Work?
-date: 2022-02-16 
+date: 2022-02-16 00:00:00 Z
 image: "/images/blog/2022/ethereum-article-twitter-card/ethereum-article-header.png"
 images:
 - "/images/blog/2022/ethereum-article-twitter-card/ethereum-article-header.png"
