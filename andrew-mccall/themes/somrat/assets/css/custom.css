@@ -201,6 +201,20 @@ blockquote::after {
     width: 33px;
 }
 
+blockquote.description {
+    background: #333;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    position: initial;
+    padding: 1.5em;
+}
+
+blockquote.description::after,
+blockquote.description::before {
+    display: none;
+}
+
 
 
 
@@ -463,6 +477,10 @@ section.web-design-services .container .row:nth-child(2n + 1) {
     /* flex-flow: row-reverse; */
 }
 
+section.faq {
+    overflow-x: hidden;
+}
+
 @media screen and (min-width: 768px) {
     section.web-design-services .container .row:nth-child(2n + 1) {
         flex-flow: row-reverse;
@@ -472,4 +490,12 @@ section.web-design-services .container .row:nth-child(2n + 1) {
 h3.brands {
     font-size: 3em;
     margin: 1em auto;
+}
+
+
+
+/* Design Firms */
+
+.design-firms .container.row .col-12 .card .card-title .text-info h4 {
+    text-transform: uppercase;
 }

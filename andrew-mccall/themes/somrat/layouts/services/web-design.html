@@ -139,6 +139,34 @@
 
         <!-- end our design services -->
 
+        <!-- faq section -->
+
+        {{ with .Params.faq }}
+
+        <section class="faq">
+            <div class="row">
+                <div class="col-12 text-center p-3">
+                    <h3 class="mx-auto my-1 brands">Frequently Asked Questions</h3>
+                    <p class="text-center">About Web Design In Traverse City, Michigan</p>
+                </div>
+            </div>
+            {{ range . }}
+            <div class="row">
+                <div class="col-12 col-md-9 col-lg-4 mx-auto p-3">
+                    <details>
+                        <summary><strong>{{.question}}</strong></summary>
+                        <p>{{.answer | safeHTML }}</p>
+                    </details>
+                </div>
+            </div>
+            {{ end }}
+        </section>
+
+
+        {{ end }}
+
+        <!-- end faq section -->
+
         <!-- tidycal embed -->
         <section class="tidy-cal p-3">
             <div class="row">
@@ -147,7 +175,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-9 col-lg-9 mx-auto">
+                <div class="col-12 col-md-12 col-lg-10 mx-auto p-3 mb-3">
                     <script src="https://asset-tidycal.b-cdn.net//js/embed.js" defer></script>
                     <div id="tidycal-embed" data-path="elkcityhazard/free-exceptional-user-experience-consultation"></div>
                 </div>
@@ -155,6 +183,63 @@
         </section>
 
         <!-- end tidycal embed-->
+
+        <!-- alternative design firms -->
+
+        {{ with .Params.design_firms }}
+
+        <section class="design-firms bg-dark text-light py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h3 class="section-title brands">Recommended Web Design Firms In Traverse City, Michigan</h3>
+                    </div>
+                </div>
+                {{ range . }}
+
+                <div class="row">
+                    <div class="col-12 col-md-9 col-lg-8 mx-auto mb-3">
+                        <div class="card bg-secondary text-light p-3">
+                            <div class="card-title pl-3">
+                                <a href="{{.website}}" class="text-warning"><h4>{{.title}}</h4></a>
+                            </div>
+                            <div class="card-body">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <blockquote class="description">{{ .description }}</blockquote>
+                                            <h4>Web Design Services</h4>
+                                            {{ with .services }}
+                                                <ul class="list-group">
+                                                    {{ range . }}
+                                                    <li class="list-group-item bg-dark">{{ . }}</li>
+                                                    {{ end }}
+                                                </ul>
+                                            {{ end }}
+                                        </div>
+                                        <div class="col-4">
+                                            <a href="{{.website}}" title="{{ .title}}" rel="noreferrer nofollow">
+                                                <img src="{{ .logo | absURL}}" class="fluid-img firm-logo" alt="brand logo" height="200" width="200">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="{{ .website }}" class="btn btn-secondary">{{ .title }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{ end}}
+            </div>
+        </section>
+
+        {{ end }}
+
+        <!-- end alternative design firms -->
+
 
         {{ partial "footer.html" . }}
     </div>
