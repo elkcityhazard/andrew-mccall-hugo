@@ -1,6 +1,6 @@
 ---
 title: Traverse City Web Design
-date: 2022-06-28 
+date: 2022-06-28 00:00:00 Z
 subtitle: Experience Focused Web Design In Traverse City That Converts
 summary: We believe that websites should be a frictionless experience that leaves
   a lasting brand impression on your visitors.  Our Web Design Services are built
