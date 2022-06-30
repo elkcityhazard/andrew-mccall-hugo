@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head.html" . }}
+<body>
+    <div class="wrapper web-design">
+        {{ partial "navigation.html" . }}
+        <header class="web-design-header">
+            <div class="container">
+                <div class="row d-flex align-items-stretch justify-content-center">
+                    <div class="col-12 col-md-9 col-lg-6 align-self-center mb-3">
+                        <h1 class="web-design-title">{{ .Title }}</h1>
+                        <hr class="divider" />
+                        <h2 class="web-design-subtitle">{{ .Params.subtitle}}</h2>
+                        <div class="arrow-container d-none d-xl-block">
+                            <img src="/images/icons/arrow-350x50.png" alt="decorative arrow" height="50" width="350" decoding="async" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-9 col-lg-6 align-self-center mb-3">
+                        <form class="web-design-form" id="webDesignForm" action="https://api.formcake.com/api/form/6e784bfb-d126-4c93-88be-b019855561ba/submission" method="post">
+                            {{ with .Params.form_title }}
+                            <div class="form-control">
+                                <h3 class="form-title">{{ . }}</h3>
+                            </div>
+                            {{ end }}
+                            <div class="form-control">
+                                <label for="user_email">
+                                    <span>Email:</span>
+                                    <input type="email" name="user_email" id="input-email">
+                                </label>
+                            </div>
+                            <div class="form-control">
+                                <label for="user_name">
+                                    <span>Name:</span>
+                                    <input type="text" name="user_name" id="input-name
+                                    ">
+                                </label>
+                            </div>
+                            <div class="form-control d-none">
+                                <label for="user_password">
+                                    <span>Password:</span>
+                                    <input type="password" name="user_password" id="input-password">
+                                </label>
+                            </div>
+                            <div class="form-control">
+                                <button type="submit" class="web-design-submit-button" class="g-recaptcha"
+                                data-sitekey="6Lf6IyUaAAAAAPTTe__sC4052VzvGcwFlBHeajA0"
+                                data-callback='onSubmit'
+                                data-action='submit'>Get My Free Consultation & E-Book</button>
+                            </div>
+                                {{ with .Params.privacy }}
+                            <div class="form-control">
+                                <p class="form-privacy">{{ . }}</p>
+                            </div>
+                                {{ end }}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="design-process">
+            <div class="container">
+                <div class="row">
+                    {{ with .Params.process_title }}
+                    <div class="col-12 text-center">
+                        <h3 class="section-title">{{ . }}</h3>
+                    </div>
+
+                    {{ end }}
+                </div>
+                {{ with .Params.process }}
+
+                <div class="row processes">
+
+                    {{ range . }}
+
+                    <div class="col-12 col-md-9 col-lg-6 mx-auto p-3 {{ with .display}}  {{ if eq . "none" }} opacity-0 {{end }} {{ end }}">
+                        <div class="card process-card">
+                            <div class="card-title">
+                                <h3 class="item-title"><span class="process-number">{{ .index }}</span>{{ .title }}</h3>
+                            </div>
+                            <div class="card-body">
+                                <p class="item-description">{{ .description }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                {{ end }}
+
+                </div>
+
+
+                {{ end }}
+            </div>
+        </section>
+
+        <!-- CTA -->
+
+        {{ partial "cta.html" . }}
+
+        <!-- end CTA -->
+
+        {{ partial "brands.html" . }}
+
+        <!-- Our Design Services -->
+
+        {{ with $.Site.Data.web_design_services }}
+
+        <section class="web-design-services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center p-3">
+                        <h3 class="text-light">{{ .title }}</h3>
+                        <p class="text-light">{{ .description }}</p>
+                    </div>
+                </div>
+                {{ range .services }}
+                <!-- service -->
+                <div class="row">
+                    <div class="col-12 col-md-9 col-lg-6 mx-auto p-3">
+                        <div class="card bg-transparent">
+                            <div class="card-title">
+                                <h3 class="web-design text-light">{{ .title }}</h3>
+                            </div>
+                            <div class="card-body text-light">
+                                {{ .description }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-9 col-lg-6 mx-auto p-3">
+                        <img src="{{ .image }}" class="d-block service-icon fluid-img mx-auto my-2" alt="service icon" decoding="async" loading="lazy" height="350" width="350">
+                    </div>
+                </div>
+                <!-- end service -->
+                {{ end }}
+            </div>
+        </section>
+
+        {{ end }}
+
+        <!-- end our design services -->
+
+        <!-- tidycal embed -->
+        <section class="tidy-cal p-3">
+            <div class="row">
+                <div class="col-12 text-center p-3">
+                    <h3 class="brands">Schedule A Free Consultation & Receive A Free E-Book</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-9 col-lg-9 mx-auto">
+                    <script src="https://asset-tidycal.b-cdn.net//js/embed.js" defer></script>
+                    <div id="tidycal-embed" data-path="elkcityhazard/free-exceptional-user-experience-consultation"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- end tidycal embed-->
+
+        {{ partial "footer.html" . }}
+    </div>
+    {{ partial "script.html" . }}
+    <script>
+        function onSubmit(token) {
+            document.getElementById("webDesignForm").submit();
+        }
+        </script>
+</body>
+</html>

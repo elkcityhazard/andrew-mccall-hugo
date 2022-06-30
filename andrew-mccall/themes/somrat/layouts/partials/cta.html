@@ -1,0 +1,20 @@
+<!-- call to action -->
+{{ with .GetPage  "web-design-call-to-action" }}
+<style>{{ .Params.custom_css | safeCSS }}</style>
+<section id="cta" class="need-service overlay section-sm wow fadeInUp {{.Params.custom_class}} web-design-cta" {{.Params.custom_attributes | safeHTMLAttr }} data-wow-duration="1.5s" style="background: #333;">
+  <video class="cta-video" controls autoplay="true" loop>
+    <source data-src="{{ .Site.BaseURL }}images/backgrounds/palm-trees-1920x1080.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="container position-relative z-index-9">
+    <h1>{{ .Title | markdownify }}</h1>
+    {{ with .Content }}<div class="text-white content">{{ . | markdownify }}</div> {{ end }}
+    {{ with .Params.button }}
+    {{ if .enable }}
+    <a href="{{ .link | absURL }}">{{ .label }}</a>
+    {{ end }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+<!-- end call to action -->

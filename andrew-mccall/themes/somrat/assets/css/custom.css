@@ -42,6 +42,11 @@
     overflow-x: hidden !important;
 }
 
+.opacity-0 {
+    opacity: 0;
+    visibility: hidden;
+}
+
 .mobile-menu-img {
     max-width: 200px;
 }
@@ -234,7 +239,10 @@ blockquote::after {
         right: 0;
         bottom: 0;
         left: 0;
-        transform: translateY(-50%);
+        transform: translateY(0) scale(1.5);
+        height: 100%;
+        min-height: 50vh;
+        width: 100%;
     }
 
     .contact {
@@ -243,4 +251,225 @@ blockquote::after {
         background: -webkit-linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5256303204875701) 50%, rgba(255,156,17,0.3435574913559174) 100%) url('/images/backgrounds/tropical-beach-with-palm-trees.webp') no-repeat fixed center / cover;
         background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5256303204875701) 50%, rgba(255,156,17,0.3435574913559174) 100%) url('/images/backgrounds/tropical-beach-with-palm-trees.webp') no-repeat fixed center / cover; 
     }
+}
+
+
+/* Web Design Header */
+
+.web-design-header {
+    background: linear-gradient(0.25turn, rgba(255, 99, 125, 0.33), rgba(255, 99, 125, 0.66) ), url('/images/backgrounds/web-design-hero-1920x768.png') no-repeat fixed center center / cover;
+    box-shadow: 2px -2px 20px -10px #000;
+    display: grid;
+    place-items: center;
+    height: 100%;
+    margin: 0 auto 40px;
+    min-height: 768px;
+    width: 100%;
+    text-align: center;
+    
+}
+
+@media screen and (min-width: 768px) {
+    .web-design-header {
+        text-align: left;
+    }
+}
+
+.web-design-header .container {
+    height: 100%;
+}
+
+.web-design-header .container .row {
+    height: 100%;
+}
+
+.web-design-title {
+    color: #fff;
+    font-size: 5rem;
+    text-shadow: 2px 2px 4px #000;
+}
+
+hr.divider {
+    background: #fff;
+    border-radius: 2rem;
+    box-shadow: 2px 2px 5px -3px #000;
+    display: block;
+    width: 75%;
+    margin: 0.5em auto;
+    height: 2px;
+}
+
+.web-design-subtitle {
+    color: #fff;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.arrow-container {
+    padding: 5px 10px;
+    text-align: center;
+}
+
+
+/* Web Design Form */
+
+.web-design-form {
+    border: none;
+    box-shadow: 2px 2px 20px -10px #000;
+    max-width: 350px;
+    margin: auto;
+}
+
+.web-design .form-control {
+    background: rgba(0,0,0,0.33);
+    border: none;
+    border-radius: 0;
+    height: auto;
+    text-align: center;
+}
+
+.web-design-form .form-control label {
+    background: rgba(255,255,255,0);
+    padding: 5px 10px;
+}
+
+.web-design-form .form-control label span {
+    color: #fff;
+    display: inline-block;
+    min-width: 50px;
+}
+
+.web-design-form .form-control label input {
+    background: rgba(255,255,255,0.5);
+    border-width: 0;
+    border-radius: 10px;
+    color: #555;
+    box-shadow: none;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.5;
+    padding: 5px 7px;
+    transition: all 250ms ease;
+    -webkit-transition: all 250ms ease;
+    -moz-transition: all 250ms ease;
+
+}
+
+.web-design-form .form-control label:focus-within input:focus {
+    background: #fff;
+    outline: 1px dotted #fff;
+}
+
+
+.web-design-submit-button {
+    background: transparent;
+    border: 1px solid #fff;;
+    border-radius: 2rem;
+    color: #fff;
+    font-size: 14px;
+    margin: auto;
+    padding: 0.5em 1em;
+    text-transform: uppercase;
+    transition: all 250ms ease;
+    -webkit-transition: all 250ms ease;
+    -moz-transition: all 250ms ease;
+}
+
+.web-design-submit-button:hover,
+.web-design-submit-button:active {
+    background: rgba(255, 99, 125, 1);
+    color: #fff;
+}
+
+.form-title {
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.form-privacy {
+    color: #fff;
+    font-size: 10px;
+    text-align: left;
+}
+
+
+
+
+/************************
+Web Design Process
+*/
+
+section.design-process .container .row .col-12 .section-title {
+    color: #000;
+    font-size: 4rem;
+    margin: 1rem auto;
+}
+
+
+.card-title .item-title {
+    color: #000;
+    position: relative;
+    width: fit-content;
+}
+
+.card-title .item-title::after {
+    background: rgba(255, 99, 125, 0.66);
+    content: "";
+    display: block;
+    left: calc(50% + 40px);
+    height: 2px;
+    width: calc(100% - 40px);
+    position: absolute;
+    transform: translateX(calc(-50% - 10px));
+    bottom: 0em;
+}
+
+span.process-number {
+    align-items: center;
+    background: rgba(255, 99, 125, 1);
+    color: #000;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.web-design-cta {
+    height: 100vh;
+    max-height: 768px;
+}
+
+
+/*********
+Web Design Services Section
+***/
+
+section.web-design-services {
+    background: #191919;
+}
+
+section.web-design-services .container .row .col-12 h3 {
+    font-size: 4rem;
+    margin: 1em auto;
+}
+
+section.web-design-services .container .row .col-12 h3.web-design {
+    font-size: 1.75rem;
+}
+section.web-design-services .container .row:nth-child(2n + 1) {
+    /* flex-flow: row-reverse; */
+}
+
+@media screen and (min-width: 768px) {
+    section.web-design-services .container .row:nth-child(2n + 1) {
+        flex-flow: row-reverse;
+    }
+}
+
+h3.brands {
+    font-size: 3em;
+    margin: 1em auto;
 }

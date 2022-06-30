@@ -26,6 +26,7 @@ Hugo is a powerful static website generator written in the GO language. It can h
 ## [VIDEO] Hugo Tutorials
 
 1.  👉 [ [Video] How To Install Hugo On Windows 10 With Chocolately Package Manager (Less Than 2.5 Minutes)](/blog/2022/06/install-hugo-on-windows-with-chocolately-package-manager/ "Install Hugo On Windows 10 With Chocolately Package Manager")
+2.  👉 [ [Video] How To Boostrap A New Hugo Theme And Display The Home Page ](/blog/2022/06/bootstrap-a-new-hugo-theme/ "Create A Hugo Theme From Scratch: Part 1")
 
 ## What is the Hugo static site framework?
 
@@ -99,6 +100,8 @@ Now that we have installation out of the way, we can get on to the fun part. I h
 Once you are done and the terminal is open simply type `hugo new site name-of-the-site`. This will automatically generate a new site project for you. Once it is done you will need to enter that directory. On most terminals (I can't think of an exception) simply type `cd name-of-my-site.`
 
 ## Creating A New Theme for a Hugo Static Site
+
+👉 **New**: [ [Video] How To Boostrap A New Hugo Theme And Display The Home Page ](/blog/2022/06/bootstrap-a-new-hugo-theme/ "Create A Hugo Theme From Scratch: Part 1")
 
 You can start building your hugo project right away if you want to. I personally prefer to create a theme, though. Themes are great because when you want to change the look of your site, all you need to do is port the content into a new theme and make minor tweaks. Once you are inside the project directory that houses your config.yaml file, make sure to get back into the terminal prompt and type `hugo new theme nameoftheme.`
 

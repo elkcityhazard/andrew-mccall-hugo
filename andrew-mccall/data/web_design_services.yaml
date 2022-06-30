@@ -1,0 +1,21 @@
+title: Our Web Design Services
+description: We believe that a frictionless user experience is the best way to attract new paying customers.  Our web design process ensures that your visitors will be navigating a well optimized, mobile-first website that will leave a lasting impression on them through smart, clean branding.  
+services:
+  - title: Custom Wordpress Web Design
+    description: Wordpress templates and themes can speed up the processes at the risk of being generic and blending in with your competition. Many themes require a costly yearly licensing fee to maintain access to security updates.  Having a wordpress theme designed from scratch will help you have full control over your website as well as a unique branding message that leaves a lasting impression on your customers.  Using Elegant Themes?  We can tell.  Don't have a boring generic website when you can have an impressive, bespoke design that leaves a lasting impression on your current and future clients.
+    image: "/images/icons/bird-icons/1.png"
+  - title: Landing Page Web Design
+    description: If you are getting traffic through your campaigns but your conversion is falling flat, we can help you.  We specialize in designing bespoke landing pages that are user experience oriented with proven design systems that help fulfill your campaign goals.  We can create a visually stunning design for your landing page that uses all of the best practices to ensure you are establishing trust with your potential client and delivering to their tailored needs.
+    image: "/images/icons/bird-icons/2.png"
+  - title: Logo Design
+    description:  Maybe you don't need a full web design for your project.  We can help you design a unique logo for your brand that can compliment your current website design or be the foundation for a future design.  Each logo is delivered with several variations and file types to meet the most common needs.
+    image: "/images/icons/bird-icons/3.png"
+  - title: ADA Compliant Website Design
+    description: We know you want to meet all of your clients expectations.  That is why our web designs are 100% tested for ADA compliance.  Additionally, all websites created by our development team will be 100% functional for screen readers as well.  We know how important it is to serve visual and hearing impaired folks.  We use several ADA testing tools to ensure that your website design will meet all ADA requirements for accessibility.
+    image: "/images/icons/bird-icons/4.png"  
+  - title: Responsive Web Design
+    description:  We are increasingly using our mobile devices to find products and services online.  Our responsive web design services will ensure you rank higher on google with a mobile-friendly design and quality page experience.  We will increase your website traffic and conversions through well optimized mobile-friendly web design practices.   Get started with a free consultation today.
+    image: "/images/icons/bird-icons/5.png"  
+  - title: UX Web Design
+    description:  User Experience is our focus.  We believe that your visitors should have the best possible experience on your website.  If their experience is frictionless, they are more likely to convert to paying customers.  That is why we focus our web designs to use all of the best practices for user experience.  We optimize and test designs until you are happy with the results.  What are you waiting for?  Get a free consultation today.
+    image: "/images/icons/bird-icons/6.png"  
