@@ -1,6 +1,6 @@
 ---
 title: Everything You Need To Know About Parallax Scrolling & Javascript
-date: 2021-08-29 
+date: 2021-08-29 00:00:00 Z
 image: images/blog/complete-guide-parallax-1200-600.png
 tags:
 - javascript
