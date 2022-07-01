@@ -1,6 +1,6 @@
 ---
 title: 5 Things You Need To Know Before And After You Build A Website
-date: 2021-10-03 
+date: 2021-10-03 00:00:00 Z
 image: images/blog/make-your-own-website-1200x600.webp
 categories:
 - Web Development

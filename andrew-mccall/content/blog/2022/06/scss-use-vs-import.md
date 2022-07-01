@@ -1,6 +1,6 @@
 ---
-title: "SCSS Use VS Import: How To Use @Use in SCSS"
-date: 2022-06-07 00:00:00 
+title: 'SCSS Use VS Import: How To Use @Use in SCSS'
+date: 2022-06-07 00:00:00 Z
 image: "/images/blog/2022/scss-use-vs-import-1200-600.webp"
 images:
 - "/images/blog/2022/scss-use-vs-import-1200-600.webp"
@@ -10,10 +10,10 @@ tags:
 - Frontend
 - Web Development Tips
 - scss cheatsheet
-description: "SCSS Import is going away but what does that mean for you?  Let me explain how scss @use works quick and simple."
+description: SCSS Import is going away but what does that mean for you?  Let me explain
+  how scss @use works quick and simple.
 draft: false
 ---
-
 
 You have probably seen many times that `@import` is gradually being deprecated in SASS.  So what is the alternative?  Sass wants us to use @use which actually requires a little bit more setup but comes with the ability to namespace your sass and make it easier to maintain in larger projects. 
 

@@ -1,6 +1,6 @@
 ---
 title: Why am I switching from Javascript to Go for my backend web development needs?
-date: 2022-04-24 
+date: 2022-04-24 00:00:00 Z
 image: images/portfolio/item6.jpg
 tags:
 - Go
