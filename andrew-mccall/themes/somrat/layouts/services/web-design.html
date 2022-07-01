@@ -153,7 +153,7 @@
             {{ range . }}
             <div class="row">
                 <div class="col-12 col-md-9 col-lg-4 mx-auto p-3">
-                    <details>
+                    <details class="mx-auto p-3">
                         <summary><strong>{{.question}}</strong></summary>
                         <p>{{.answer | safeHTML }}</p>
                     </details>
@@ -206,7 +206,7 @@
                             <div class="card-body">
                                 <div class="container-fluid">
                                     <div class="row">
-                                        <div class="col-8">
+                                        <div class="col-12 col-8-lg">
                                             <blockquote class="description">{{ .description }}</blockquote>
                                             <h4>Web Design Services</h4>
                                             {{ with .services }}
@@ -217,7 +217,7 @@
                                                 </ul>
                                             {{ end }}
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-12 col-4-lg">
                                             <a href="{{.website}}" title="{{ .title}}" rel="noreferrer nofollow">
                                                 <img src="{{ .logo | absURL}}" class="fluid-img firm-logo" alt="brand logo" height="200" width="200">
                                             </a>
