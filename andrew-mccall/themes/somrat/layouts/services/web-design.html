@@ -200,13 +200,13 @@
                 <div class="row">
                     <div class="col-12 col-md-9 col-lg-8 mx-auto mb-3">
                         <div class="card bg-secondary text-light p-3">
-                            <div class="card-title pl-3">
+                            <div class="card-title pl-3 text-center">
                                 <a href="{{.website}}" class="text-warning"><h4>{{.title}}</h4></a>
                             </div>
                             <div class="card-body">
                                 <div class="container-fluid">
-                                    <div class="row">
-                                        <div class="col-12 col-8-lg">
+                                    <div class="row flex-no-wrap">
+                                        <div class="col-12 col-lg-8">
                                             <blockquote class="description">{{ .description }}</blockquote>
                                             <h4>Web Design Services</h4>
                                             {{ with .services }}
@@ -217,7 +217,7 @@
                                                 </ul>
                                             {{ end }}
                                         </div>
-                                        <div class="col-12 col-4-lg">
+                                        <div class="col-12 col-lg-4">
                                             <a href="{{.website}}" title="{{ .title}}" rel="noreferrer nofollow">
                                                 <img src="{{ .logo | absURL}}" class="fluid-img firm-logo" alt="brand logo" height="200" width="200">
                                             </a>
@@ -225,7 +225,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer">
+                            <div class="card-footer bg-transparent">
                                 <a href="{{ .website }}" class="btn btn-secondary">{{ .title }}</a>
                             </div>
                         </div>

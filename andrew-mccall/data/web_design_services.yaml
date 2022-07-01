@@ -19,3 +19,9 @@ services:
   - title: UX Web Design
     description:  User Experience is our focus.  We believe that your visitors should have the best possible experience on your website.  If their experience is frictionless, they are more likely to convert to paying customers.  That is why we focus our web designs to use all of the best practices for user experience.  We optimize and test designs until you are happy with the results.  What are you waiting for?  Get a free consultation today.
     image: "/images/icons/bird-icons/6.png"  
+  - title: Mobile App Design
+    description:  We can ensure your branding maintains consistency across all of your channels.  Our web designers specialize in cross-platform designs that look beautiful on any device that your community uses.  We can assist you with wireframing, prototyping, custom animations, as well as custom icon design.  We can also help you develop your custom applicaton as an integrated part of your product team.  
+    image: "/images/icons/bird-icons/7.png"
+  - title: Small Business Web Design
+    description: "Small businesses can benefit tremendously from a professional web design.  We work with businesses of all sizes to make sure they can afford to upgrade their branding and presentation layer.  Having a professional design and branding can make your small business stand out in the crowd.  We can handle the design processes and the development processes as well.  If you think getting a bespoke, custom web design for your small business is too expensive, then you will be surprised.  We recognize the value of small businesses in northern Michigan and can help you get a better web design for your business that elevates your authority."
+    image: "/images/icons/bird-icons/8.png"  
