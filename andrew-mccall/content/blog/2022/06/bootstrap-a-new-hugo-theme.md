@@ -1,6 +1,6 @@
 ---
 title: Bootstrap A New Hugo Theme From Scratch [video]
-date: 2022-06-21 
+date: 2022-06-21 00:00:00 Z
 image: "/images/blog/2022/002-create-a-new-hugo-theme-and-hello-world-home-page.jpeg"
 images:
 - "/images/blog/2022/002-create-a-new-hugo-theme-and-hello-world-home-page.jpeg"
