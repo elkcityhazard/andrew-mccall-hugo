@@ -21,9 +21,15 @@
           <a href="{{- .URL | absURL -}}" class="d-block text-white footer-link py-2" title="{{- .Name -}}"><i class="fa fa-angle-right px-2"></i>{{ .Name }}</a>
         {{- end -}}
       </div>
-      <div class="col-12 col-md-6 mt-1 text-light">
+      <div class="col-12 col-md-3 mt-1 text-light">
+        <h4>Web Design Services</h4>
+        {{ range .Site.Menus.services }}
+        <a href="{{ .URL | absURL }}" class="d-block text-light" title="Traverse City {{ .Name }}">{{ .Name }}</a>
+        {{ end }}
+      </div>
+      <div class="col-12 col-md-3 mt-1 text-light">
         <h4>Get Started Today</h4>
-        <p>If you are looking for a web developer in Traverse City, Michigan to help you create a custom web application or to update your existing one, I can help.</p>
+        <p>If you are looking for a web designer in Traverse City, Michigan to help you create a custom web application or to update your existing one, I can help.</p>
         <p>If you are looking for a web development company to help you build an e-commerce website, I can help.</p>
         <p>If you are looking for a web development company to help you build an app that will improve your business, I can help.</p>
         <p>Contact us today!</p>

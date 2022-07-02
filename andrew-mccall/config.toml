@@ -177,13 +177,32 @@ weight = 7
 
 [[Languages.en.menu.services]]
 name = "Web Development"
-parent = "services"
-url = "services/web-development-traverse-city"
-weight = 1
+url = "/services/web-development-traverse-city"
+weight = 0
 
 [[Languages.en.menu.services]]
 name = "Content Marketing"
-parent = "services"
-url = "services/traverse-city-content-marketing"
+url = "/services/traverse-city-content-marketing"
 weight = 1
+
+[[Languages.en.menu.services]]
+name = "Podcast Production"
+url = "/services/traverse-city-podcast-production"
+weight = 2
+
+[[Languages.en.menu.services]]
+name = "Web Design"
+url = "/services/traverse-city-we-design"
+weight = 3
+
+
+[[Languages.en.menu.services]]
+name = "Website Maintenance"
+url = "/services/website-maintenance-traverse-city"
+weight = 4
+
+[[Languages.en.menu.services]]
+name = "Search Engine Optimization"
+url = "/services/traverse-city-search-engine-optimization"
+weight = 5
 

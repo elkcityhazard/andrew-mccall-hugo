@@ -104,6 +104,12 @@ faq:
     it is okay to ask the potential designer to create a small demo work for you.  It
     is best to get feedback from other clients or experts in the industry to help
     you answer some of the questions about the potential designer. '
+-   question: What Are The Disadvantages To Using A Website Template? 
+    answer: There are a few negatives of using a template for your website. First, the templates can be quite generic and not very customizable. This means that your website may not look very unique compared to other websites. Second, the templates may not be very mobile-friendly, which can be a problem if most of your visitors are accessing your website from their phones or tablets. Finally, the templates may not be very updated or optimized for search engine optimization (SEO).
+-   question: Should I buy A Web Template From Theme Forest?
+    answer: There are pros and cons to buying a template from Theme Forest. On the one hand, you can get a high-quality template for a relatively low price. On the other hand, you may not be able to customize the template as much as you want to.
+-   question: Is It Okay To Use A Low Cost Or Free Website Template For My Business?
+    answer: There's no right or wrong answer to this question - it depends on your business and what you're looking for in a website template. If you're on a tight budget, free templates can be a great option; however, they may not always be customizable or as professional-looking as paid templates. If you have the money to invest, paying for a high-quality template or professional web design can be worth it in the long run, as it will likely be more customizable and look more polished.
 design_firms:
 - title: Lake Effect Digital
   logo: "/images/companies/le-digital.png"
