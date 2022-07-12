@@ -1,6 +1,6 @@
 ---
 title: Javascript For Countdown Timer | [VIDEO]
-date: 2022-04-10 00:00:00 Z
+date: 2022-04-10 
 image: images/blog/2022/javascript-for-countdown-timer-1200x600.webp
 tags:
 - javascript

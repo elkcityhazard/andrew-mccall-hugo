@@ -1,6 +1,6 @@
 ---
 title: 'SCSS Use VS Import: How To Use @Use in SCSS'
-date: 2022-06-07 00:00:00 Z
+date: 2022-06-07 
 image: "/images/blog/2022/scss-use-vs-import-1200-600.webp"
 images:
 - "/images/blog/2022/scss-use-vs-import-1200-600.webp"
