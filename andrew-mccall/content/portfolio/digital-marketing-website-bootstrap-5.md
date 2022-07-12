@@ -1,6 +1,6 @@
 ---
 title: Digital Marketing Website
-date: 2021-09-11 
+date: 2021-09-11 00:00:00 Z
 image: images/blog/butcher-shop-website-design-header.webp
 categories:
 - Javascript

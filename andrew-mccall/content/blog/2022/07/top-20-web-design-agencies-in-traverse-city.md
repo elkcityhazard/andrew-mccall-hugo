@@ -1,6 +1,6 @@
 ---
-title: "20 Traverse City Web Design Companies | A Complete Website Design List"
-date: 2022-07-11
+title: 20 Traverse City Web Design Companies | A Complete Website Design List
+date: 2022-07-11 00:00:00 Z
 image: "/images/blog/2022/guide-to-tc-web-design-1280x720.jpeg"
 images:
 - "/images/blog/2022/guide-to-tc-web-design-1280x720.jpeg"
@@ -10,7 +10,9 @@ tags:
 - web design
 - traverse city web design
 - web design traverse city
-description: "A Complete Guide To Traverse City Michigan Website Design.  We List 20 of the top Traverse City Web Design Agencies.  Custom Client And Professional Marketing Directory In Northern Michigan."
+description: A Complete Guide To Traverse City Michigan Website Design.  We List 20
+  of the top Traverse City Web Design Agencies.  Custom Client And Professional Marketing
+  Directory In Northern Michigan.
 draft: false
 ---
 
