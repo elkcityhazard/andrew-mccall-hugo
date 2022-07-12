@@ -7,7 +7,7 @@ tags:
 - JAMStack
 - Web Development
 - Static Websites
-description: Static websites are a great way to build a JAMStack websitesite without
+Description: Static websites are a great way to build a JAMStack websitesite without
   having to worry about server configuration, databases, or security. Learn why static
   site generators can be a powerful JAMStack tool.
 draft: false

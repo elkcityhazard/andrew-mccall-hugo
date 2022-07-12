@@ -79,7 +79,7 @@
                                 <h3 class="item-title"><span class="process-number">{{ .index }}</span>{{ .title }}</h3>
                             </div>
                             <div class="card-body">
-                                <p class="item-description">{{ .description }}</p>
+                                <p class="item-Description">{{ .Description }}</p>
                             </div>
                         </div>
                     </div>
@@ -110,7 +110,7 @@
                 <div class="row">
                     <div class="col-12 text-center p-3">
                         <h3 class="text-light">{{ .title }}</h3>
-                        <p class="text-light">{{ .description }}</p>
+                        <p class="text-light">{{ .Description }}</p>
                     </div>
                 </div>
                 {{ range .services }}
@@ -122,7 +122,7 @@
                                 <h3 class="web-design text-light">{{ .title }}</h3>
                             </div>
                             <div class="card-body text-light">
-                                {{ .description }}
+                                {{ .Description }}
                             </div>
                         </div>
                     </div>
@@ -207,7 +207,7 @@
                                 <div class="container-fluid">
                                     <div class="row flex-no-wrap">
                                         <div class="col-12 col-lg-8">
-                                            <blockquote class="description">{{ .description }}</blockquote>
+                                            <blockquote class="Description">{{ .Description }}</blockquote>
                                             <h4>Web Design Services</h4>
                                             {{ with .services }}
                                                 <ul class="list-group">

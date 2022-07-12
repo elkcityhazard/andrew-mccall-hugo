@@ -5,7 +5,7 @@ image: images/portfolio/dify-store-theme.png
 categories:
 - design
 - web development
-description: ''
+Description: ''
 draft: false
 project_info:
 - name: Client

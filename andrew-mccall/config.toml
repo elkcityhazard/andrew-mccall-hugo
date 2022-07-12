@@ -76,7 +76,7 @@ logo_light = "images/logo-white.png"
 logo_width = "150px"
 # Meta data
 author = "andrew mccall"
-description = "I believe in a less complicated digital experience for my clients.   Andrew McCall is a fullstack web developer based in Traverse City, Michigan."
+Description = "I believe in a less complicated digital experience for my clients.   Andrew McCall is a fullstack web developer based in Traverse City, Michigan."
 images = ["/images/social/twitter/share.png"]
 
 # Preloader

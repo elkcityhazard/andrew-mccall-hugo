@@ -1,6 +1,6 @@
 ---
 title: Success
-description: Thank you for contacting Andrew M McCall
+Description: Thank you for contacting Andrew M McCall
 layout: success
 ---
 

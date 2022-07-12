@@ -7,7 +7,7 @@ tags:
 - css
 - web design
 - web development
-description: " A complete guide for beginners to parallax scrolling effects, how to
+Description: " A complete guide for beginners to parallax scrolling effects, how to
   use them, how to get started creating them if you are new to javascript, css, and
   html."
 draft: false

@@ -1,7 +1,7 @@
 ---
 title: 'CSS Grid Gallery: Easy Fluid Gallery With CSS Grid and Javascript'
 date: 2021-11-24 
-description: Learn how to create a fluid image gallery with css grid and a few lines
+Description: Learn how to create a fluid image gallery with css grid and a few lines
   of javascript.
 draft: false
 image: "/images/blog/css-grid-gallery-1200-600.png"

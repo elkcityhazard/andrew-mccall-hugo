@@ -1,7 +1,7 @@
 ---
 title: 'Custom React Hook Function: Create Custom Reusable React Hooks'
 date: 2021-11-21 
-description: If you find yourself rewriting the same logic over and over you may find
+Description: If you find yourself rewriting the same logic over and over you may find
   it easier to create a custom react hook
 draft: false
 image: "/images/blog/react-custom-hooks-120-600.png"

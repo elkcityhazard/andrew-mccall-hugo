@@ -9,7 +9,7 @@ summary: We believe that websites should be a frictionless experience that leave
   requirements. Get started learning how a bespoke, user experience centered theme
   can help you attract high quality leads for your business.
 form_title: Get A Free Web Design Consultation & E-Book
-description: We deliver high-converting, user experience focused web design and development
+Description: We deliver high-converting, user experience focused web design and development
   that provide lasting impressions for your brand.
 type: services
 layout: web-design
@@ -20,44 +20,44 @@ privacy: How do we use the information you provide? We don't share it with anyon
 process_title: Our Web Design Process
 process:
 - title: Goal Identification
-  description: We work with you to identify what your business goals are and what
+  Description: We work with you to identify what your business goals are and what
     the purpose of your website is going to be.
   index: 1
 - title: Scope Definition
-  description: Once we know your site's goals, we start to think about what web pages
+  Description: Once we know your site's goals, we start to think about what web pages
     and features your new site will need to fulfill your goals.  This is when we also
     start to develop a timeline for your project.
   index: 2
 - title: Sitemap and Wireframing
-  description: We create a sitemap to start thinking of how your site's pages will
+  Description: We create a sitemap to start thinking of how your site's pages will
     relate to each other.  Then we start to wireframe your project to give you a visualization
     of how your site's layout will start to look.
   index: 3
 - title: Content Creation
-  description: Now that we have an overall idea of your site, it's time for you to
+  Description: Now that we have an overall idea of your site, it's time for you to
     go to action.  Having your content is vital to the process.  This is where you
     write out your content and gather any media assets your site will need so we can
     ensure your content is laid out perfectly on your new site.
   index: 4
 - title: Visual Assets
-  description: Now that we have an idea of how content will flow on the website, we
+  Description: Now that we have an idea of how content will flow on the website, we
     can start thinking about your visual branding.  Some businesses may already have
     a visual brand to work with.  Don't worry if you don't.  We can help you achieve
     a visual branding that leaves a lasting impression.
   index: 5
 - title: Testing Your Site
-  description: Now that all of the pages are well defined and we have an idea of how
+  Description: Now that all of the pages are well defined and we have an idea of how
     to display your content, it is time to make sure it is functioning correctly.  We
     combine manual and automated methods to test the functionality of your website
     for errors.
   index: 6
 - title: Launch Time
-  description: Once everything is working at tip-top performance, it is time to plan
+  Description: Once everything is working at tip-top performance, it is time to plan
     and launch your new website.  This is when we plan the date and time and figure
     out how you are going to let people know about your new website!
   index: 7
 - title: 
-  description: 
+  Description: 
   index: 
   display: none
 faq:
@@ -125,7 +125,7 @@ faq:
 design_firms:
 - title: Lake Effect Digital
   logo: "/images/companies/le-digital.png"
-  description: Call it data-driven, human-centric creative. On the surface it might
+  Description: Call it data-driven, human-centric creative. On the surface it might
     look like branding, a website, digital marketing, social media and content strategy,
     or SEO and analytics. But whatever we create, it won't simply be some brilliant
     ad copy or fancy logomark that exists in a vacuum. It will be a shared experience
@@ -141,7 +141,7 @@ design_firms:
   website: https://ledigtal.com
 - title: Traverse City Web Design
   logo: "/images/companies/traverse-city-web-design.png"
-  description: Traverse City Web Design, LLC. is a top-rated web design agency in
+  Description: Traverse City Web Design, LLC. is a top-rated web design agency in
     picturesque Northern Michigan.   We create, repair and host websites for small
     & medium size businesses in Michigan, and across the country. We can make you
     an amazing new website.  We can make your current website better. We can help
@@ -155,7 +155,7 @@ design_firms:
   website: https://traversecitywebdesign.com/
 - title: Traverse Web
   logo: "/images/companies/traverse-web.png"
-  description: Since 1996, Traverse Web has evolved from a full service domain hosting
+  Description: Since 1996, Traverse Web has evolved from a full service domain hosting
     provider to a leading Traverse City web design and development company. As veterans
     of the local digital scene here in Traverse City, our web design services are
     tailored to meet the needs of small business and enterprise-level organizations
@@ -168,7 +168,7 @@ design_firms:
   website: https://traverseweb.com
 - title: Byte Production
   logo: "/images/companies/byte-production.png"
-  description: Byte Productions provides custom web design & development, mobile &
+  Description: Byte Productions provides custom web design & development, mobile &
     responsive web design, custom programming, web & email hosting, online event registration
     and SEO Services. Established in 1991, we are the most experienced, well-respected
     website design company in Traverse City, Michigan!

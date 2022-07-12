@@ -7,7 +7,7 @@ tags:
 - Web Analytics
 - Open Source
 - Privacy Oriented
-description: Google Analytics is now illegal in some countries.  Find out about some
+Description: Google Analytics is now illegal in some countries.  Find out about some
   privacy-focused google analytics alternatives.
 draft: false
 ---

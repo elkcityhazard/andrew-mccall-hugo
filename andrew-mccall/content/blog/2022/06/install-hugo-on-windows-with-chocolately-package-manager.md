@@ -10,7 +10,7 @@ tags:
 - hugo
 - static website generators
 - golang
-description: Installing Hugo on Windows is really quite simple with Chocolately Package
+Description: Installing Hugo on Windows is really quite simple with Chocolately Package
   Manager.   This video will explain the process of installing Hugo on Windows 10.
 draft: false
 ---

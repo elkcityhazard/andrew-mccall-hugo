@@ -5,7 +5,7 @@ image: images/portfolio/item6.jpg
 tags:
 - design
 - web
-description: This is meta description.
+Description: This is meta Description.
 draft: true
 ---
 

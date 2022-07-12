@@ -10,7 +10,7 @@ tags:
 - Web Development
 - Web Design
 - Growth Tips
-description: Website design is a journey of discovery. Your website is an extension
+Description: Website design is a journey of discovery. Your website is an extension
   of your brand, so it's important to invest the time to think about what you want
   it to be. Learn the 5 key considerations before designing your website.
 draft: false
@@ -76,7 +76,7 @@ To make the world accessible and to enable people with disabilities to live rich
 
 There are many ways in which accessibility can be improved on a website such as:
 
-- Providing audio descriptions or transcripts for speech so that people who are deaf or hard of hearing can understand the content.
+- Providing audio Descriptions or transcripts for speech so that people who are deaf or hard of hearing can understand the content.
 
 - Providing captions for online video so that people who are deaf or hard of hearing can understand the content.
 

@@ -5,7 +5,7 @@ image: images/portfolio/on-point-cutlery.webp
 categories:
 - design
 - web development
-description: A brochure-style website for a local knife sharpening business.  Created
+Description: A brochure-style website for a local knife sharpening business.  Created
   with bootstrap, animate on scroll, jquery, and a small bit of vanilla js
 draft: false
 project_info:

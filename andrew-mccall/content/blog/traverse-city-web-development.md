@@ -8,7 +8,7 @@ tags:
 - html
 - css
 - javascript
-description: Andrew McCall is a small, local web designer and developer based in Traverse
+Description: Andrew McCall is a small, local web designer and developer based in Traverse
   City. We offer website design and development, marketing services, branding, graphic
   design and more.
 draft: false

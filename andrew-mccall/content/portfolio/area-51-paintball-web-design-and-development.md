@@ -5,7 +5,7 @@ image: images/portfolio/area-51-paintball/area-51-mockup.png
 categories:
 - design
 - web development
-description: Area 51 Paintball is a paintball center located in Mancelona, Michigan.
+Description: Area 51 Paintball is a paintball center located in Mancelona, Michigan.
 draft: false
 project_info:
 - name: Client

@@ -8,7 +8,7 @@ tags:
 - Server
 - Hosting
 - Security
-description: Using a virtual private server can be a great way to host web applications.  VPS
+Description: Using a virtual private server can be a great way to host web applications.  VPS
   hosting security is one important part of self hosting your application
 draft: false
 ---
@@ -260,7 +260,7 @@ Next, we need to tell Apache about these directories to serve them.
 
 At this point we are looking at `sites-enabled` and `sites-available`
 
-Sites-available contains all of the files you might be serving, configuration, the descriptions for the virtual hosts exist in sites-available.  All the sites that are actually being served exists in sites-enabled.
+Sites-available contains all of the files you might be serving, configuration, the Descriptions for the virtual hosts exist in sites-available.  All the sites that are actually being served exists in sites-enabled.
 
 Sites enabled will contain a symbolic links /alias.  This means there will be a symbolic link from the sites-enabled directory to the configuration file in the sites-available directory.  
 

@@ -6,7 +6,7 @@ tags:
 - Web Development
 - Web Hosting
 - DevOps
-description: Get started with free web hosting for your business or personal website.
+Description: Get started with free web hosting for your business or personal website.
   We explain how to use free web hosting solutions for your business or personal website.
 draft: false
 ---

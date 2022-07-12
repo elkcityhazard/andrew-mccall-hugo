@@ -2,7 +2,7 @@
 title: Cadillac Michigan Web Development Services
 date: 2021-09-20 
 subtitle: Cadillac Michigan Digital Marketing Services
-description: Cadillac Michigan Web Development Services specializes in website design
+Description: Cadillac Michigan Web Development Services specializes in website design
   and development of the highest quality. We offer a variety of services including
   a complete website design, a logo design, a marketing plan, and a custom website
   development.

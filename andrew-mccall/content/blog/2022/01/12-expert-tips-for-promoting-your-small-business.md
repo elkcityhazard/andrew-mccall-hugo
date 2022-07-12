@@ -7,7 +7,7 @@ tags:
 - growth tips
 - local seo
 - small business tips
-description: 12 practical tips to promote your local business, gain trust with your
+Description: 12 practical tips to promote your local business, gain trust with your
   clientele, and grow your sales.
 draft: false
 ---

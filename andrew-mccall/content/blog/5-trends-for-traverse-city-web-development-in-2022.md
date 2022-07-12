@@ -7,7 +7,7 @@ categories:
 tags:
 - trends
 - traverse city
-description: In 2022, top Traverse City web development trends will change. With the
+Description: In 2022, top Traverse City web development trends will change. With the
   release of Angular 12, React 18, and other new technologies, websites will look
   different from today. The biggest change in 2022 will be the focus on user experience,
   which will start to replace search engine optimization in importance.

@@ -6,7 +6,7 @@ categories:
 - Javascript
 - Fullstack
 - Bootstrap 5
-description: A digital marketing landing page for a niche digital marketing agency
+Description: A digital marketing landing page for a niche digital marketing agency
 draft: false
 project_info:
 - name: Chine and Feather Digital Marketing Services

@@ -76,7 +76,7 @@ header.city-header section ul li {
     opacity: 0;
 }
 
-section.local-description img {
+section.local-Description img {
     object-fit: cover;
 }
 
@@ -201,7 +201,7 @@ blockquote::after {
     width: 33px;
 }
 
-blockquote.description {
+blockquote.Description {
     background: #333;
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
@@ -210,8 +210,8 @@ blockquote.description {
     padding: 1.5em;
 }
 
-blockquote.description::after,
-blockquote.description::before {
+blockquote.Description::after,
+blockquote.Description::before {
     display: none;
 }
 

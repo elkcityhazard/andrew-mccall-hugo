@@ -1,7 +1,7 @@
 ---
 title: Traverse City Web Development
 subtitle: Uncomplicated Digital Marketing
-description: We have many solutions if you are looking for Traverse City web development
+Description: We have many solutions if you are looking for Traverse City web development
   options that fit all budgets and needs
 summary: 'Andrew McCall: Traverse City Web Development Services is a full service
   web design and internet marketing company serving clients in the Traverse City Michigan.

@@ -5,7 +5,7 @@ image: images/blog/2022/javascript-for-countdown-timer-1200x600.webp
 tags:
 - javascript
 - web development
-description: Learn how to create a reusable javascript coundown timer with vanilla
+Description: Learn how to create a reusable javascript coundown timer with vanilla
   javascript and no dependencies.
 draft: false
 ---

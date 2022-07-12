@@ -10,7 +10,7 @@ tags:
 - hugo
 - static website generators
 - golang
-description: Part 2 after Installation.  This video covers initiating a new theme
+Description: Part 2 after Installation.  This video covers initiating a new theme
   and getting hugo to see it in your project.
 draft: false
 ---

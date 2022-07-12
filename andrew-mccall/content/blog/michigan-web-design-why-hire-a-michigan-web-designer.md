@@ -6,7 +6,7 @@ tags:
 - design
 - web developmet
 - digital marketing
-description: Michigan Web Design by Andrew McCall specializes in custom web application
+Description: Michigan Web Design by Andrew McCall specializes in custom web application
   and business website development. We create websites and applications that help
   our clients and their customers and we're located in Traverse City, Michigan.
 draft: false

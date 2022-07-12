@@ -11,7 +11,7 @@ tags:
 - Web 3.0
 - Javascript
 - Solidity
-description: Everything you need to know about the basics of Ethereum, blockchain
+Description: Everything you need to know about the basics of Ethereum, blockchain
   technology, and smart contracts with a bit of Solidity.
 draft: false
 ---

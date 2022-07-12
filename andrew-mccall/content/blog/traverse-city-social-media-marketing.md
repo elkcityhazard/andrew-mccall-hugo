@@ -4,7 +4,7 @@ date: 2021-08-20
 image: images/blog/social-media-blog-heading-1200-600.jpeg
 tags:
 - social media
-description: Gear up to take your social media marketing to the next level. Whether
+Description: Gear up to take your social media marketing to the next level. Whether
   you're trying to land a new customer, get in touch with an old one, or promote a
   product.
 draft: false

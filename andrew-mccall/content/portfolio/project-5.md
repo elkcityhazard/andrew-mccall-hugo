@@ -5,7 +5,7 @@ image: images/portfolio/item5.jpg
 categories:
 - design
 - sketch
-description: This is meta description.
+Description: This is meta Description.
 draft: true
 project_info:
 - name: Client

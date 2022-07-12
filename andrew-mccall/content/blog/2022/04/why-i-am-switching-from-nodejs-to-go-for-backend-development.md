@@ -5,7 +5,7 @@ image: images/portfolio/item6.jpg
 tags:
 - Go
 - Backend
-description: Get started with Go by writing a simple program to accept user input
+Description: Get started with Go by writing a simple program to accept user input
   in the command line
 draft: true
 ---

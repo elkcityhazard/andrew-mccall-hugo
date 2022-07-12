@@ -10,7 +10,7 @@ tags:
 - javascript
 - JAMStack
 - CMS
-description: Hugo is a powerful static website generator written in the GO language.
+Description: Hugo is a powerful static website generator written in the GO language.
   It can help you create clean, modern websites that load quickly with little overhead.
 draft: false
 ---
@@ -116,7 +116,7 @@ By default you get quite a bit to work with when Hugo spins up a new website.
 
 ### Hugo Archetypes Directory
 
-Archetypes are basically your predefined frontmatter files that are used when you are creating new pages with Hugo. Many developers will use `hugo new` to create new content files and Hugo will pull from the archetypes to structure the markdown page. The config file is the site configuration module. This is where you put the global variables and configurations for your Hugo static site. This will hold your default title, meta description, and menus for your website. Content is where we hold our markdown files and is generally the layout of your website. This might have directories named "blog", "about-us", "services" and so on.
+Archetypes are basically your predefined frontmatter files that are used when you are creating new pages with Hugo. Many developers will use `hugo new` to create new content files and Hugo will pull from the archetypes to structure the markdown page. The config file is the site configuration module. This is where you put the global variables and configurations for your Hugo static site. This will hold your default title, meta Description, and menus for your website. Content is where we hold our markdown files and is generally the layout of your website. This might have directories named "blog", "about-us", "services" and so on.
 
 ### Hugo Data Directory
 
@@ -223,23 +223,23 @@ title: services
 headless: true
 services:
 - name: "Walk On Times"
-description: "This is our general admission gameplay time. You don't need to call ahead to book a time with us when there is walk-on time available."
+Description: "This is our general admission gameplay time. You don't need to call ahead to book a time with us when there is walk-on time available."
 url: "/paintball-services/walk-on-play"
 icon: "/images/icons"
 - name: "Corporate Events"
-description: "Paintball is great for team building because it allows the players to work together as a cohesive unit to achieve a goal."
+Description: "Paintball is great for team building because it allows the players to work together as a cohesive unit to achieve a goal."
 url: "/paintball-services/corporate-entertainment-services"
 icon: "/images/icons"
 - name: "Paintball Parties"
-description: "Birthday Parties and special events are our specialties! Area 51 Paintball can help you plan a birthday or party event."
+Description: "Birthday Parties and special events are our specialties! Area 51 Paintball can help you plan a birthday or party event."
 url: "/paintball-services/paintball-parties"
 icon: "/images/icons"
 - name: "Paintball Equipment Repair"
-description: "We can help troubleshoot and repair your broken paintball markers and equipment to help you."
+Description: "We can help troubleshoot and repair your broken paintball markers and equipment to help you."
 url: "/paintball-services/paintball-equipment-repair"
 icon: "/images/icons"
 - name: "Paintball Equipment Sales"
-description: "Ready to upgrade your gear? We have a full selection of top models for you to choose from."
+Description: "Ready to upgrade your gear? We have a full selection of top models for you to choose from."
 url: "/paintball-services/paintball-equipment-sales"
 icon: "/images/icons"
 ---
@@ -251,7 +251,7 @@ Note the declaration for headless. It is set to true. This is how you tell Hugo 
 {{ with .services }}
 {{ range $index, $service := . }}
 <h1 id="{{$index}}">{{ .name }}</h1>
-<p id="{{$index}}"> {{ .description }} </p>
+<p id="{{$index}}"> {{ .Description }} </p>
 {{ end }}
 {{ end }}
 ```

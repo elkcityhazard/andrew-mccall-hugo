@@ -10,7 +10,7 @@ tags:
 - Frontend
 - Web Development Tips
 - scss cheatsheet
-description: SCSS Import is going away but what does that mean for you?  Let me explain
+Description: SCSS Import is going away but what does that mean for you?  Let me explain
   how scss @use works quick and simple.
 draft: false
 ---

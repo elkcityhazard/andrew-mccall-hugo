@@ -2,7 +2,7 @@
 title: 'Traverse City Website Maintenance: A Quick Guide On Website Maintenance'
 altTitle: Traverse City Website Maintenance
 subtitle: Security Updates, Website Updates, Content Maintenance
-description: The key to successful website maintenance is having a trusted team of
+Description: The key to successful website maintenance is having a trusted team of
   professionals who can provide you with the right level of service.
 summary: Local businesses in Northern Michigan need to have a website maintenance
   strategy. With the help of the right team, such as Andrew McCall, they can decrease

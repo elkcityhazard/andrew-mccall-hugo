@@ -2,7 +2,7 @@
 title: Traverse City Content Marketing
 date: 2021-12-25 
 subtitle: " Maintain a strong Google ranking with content marketing."
-description: We can help your business maintain a strong Google ranking with content
+Description: We can help your business maintain a strong Google ranking with content
   marketing. Contact us today.
 summary: All businesses want to rank well on Google. However, many businesses do not
   really understand where their business sits in the search engine algorithm. Google
@@ -80,7 +80,7 @@ First off, you should always include at least one photo or video within the post
 
 It is important to remember that the goal of a blog post is to help answer a question. Searcher's are using popular search engines to find answers to questions. Writing off topic content will signal to Google that your content is low quality.
 
-Make sure that your blog articles are well formed. They should have a clear title, description, summary, and well structured outline. Headings should be in a proper order. It should flow in a way that is clear and makes sense.
+Make sure that your blog articles are well formed. They should have a clear title, Description, summary, and well structured outline. Headings should be in a proper order. It should flow in a way that is clear and makes sense.
 
 ## Content Marketing Schedule: What is a content marketing schedule?
 
