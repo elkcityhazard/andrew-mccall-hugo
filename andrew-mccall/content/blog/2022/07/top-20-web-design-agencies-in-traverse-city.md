@@ -1,7 +1,7 @@
 ---
 title: "20 Traverse City Web Design Companies | A Complete Website Design List"
-date: 2022-07-11
-image: "/images/blog/2022/guide-to-tc-web-design-1200x600.jpeg"
+date: 2022-07-11 00:00:00
+image: "/images/blog/2022/guide-to-tc-web-design-1280x720.jpeg"
 images:
 - "/images/blog/2022/guide-to-tc-web-design-1200x600.jpeg"
 categories:

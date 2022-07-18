@@ -1,11 +1,11 @@
 ---
-title: Javascript For Countdown Timer | [VIDEO]
-date: 2022-04-10 
+title: "Javascript For Countdown Timer | [VIDEO]"
+date: 2022-04-10 00:00:00
 image: images/blog/2022/javascript-for-countdown-timer-1200x600.webp
 tags:
 - javascript
 - web development
-Description: Learn how to create a reusable javascript coundown timer with vanilla
+description: Learn how to create a reusable javascript coundown timer with vanilla
   javascript and no dependencies.
 draft: false
 ---

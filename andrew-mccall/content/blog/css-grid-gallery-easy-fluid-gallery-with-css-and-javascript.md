@@ -1,5 +1,5 @@
 ---
-title: 'CSS Grid Gallery: Easy Fluid Gallery With CSS Grid and Javascript'
+title: "CSS Grid Gallery: Easy Fluid Gallery With CSS Grid and Javascript"
 date: 2021-11-24 
 Description: Learn how to create a fluid image gallery with css grid and a few lines
   of javascript.
