@@ -9,7 +9,7 @@ summary: We believe that websites should be a frictionless experience that leave
   requirements. Get started learning how a bespoke, user experience centered theme
   can help you attract high quality leads for your business.
 form_title: Get A Free Web Design Consultation & E-Book
-Description: We deliver high-converting, user experience focused web design and development
+Description: We deliver high-converting, user experience focused Traverse City Web Design
   that provide lasting impressions for your brand.
 type: services
 layout: web-design

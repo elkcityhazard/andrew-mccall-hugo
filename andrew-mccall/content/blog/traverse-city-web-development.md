@@ -1,16 +1,14 @@
 ---
 title: 'Traverse City Web Developer: I am a web designer in Traverse City'
 date: 2021-08-18 
-image: images/blog/traverse-city-developer-560-315 .jpeg
+image: images/blog/traverse-city-developer-560-315.jpeg
 tags:
 - web
 - development
 - html
 - css
 - javascript
-Description: Andrew McCall is a small, local web designer and developer based in Traverse
-  City. We offer website design and development, marketing services, branding, graphic
-  design and more.
+Description: Custom web design and development that leaves a lasting impression.  Grow your business with custom web design.  
 draft: false
 ---
 
