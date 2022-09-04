@@ -432,7 +432,7 @@ async function getTwitterData(url) {
 
 	} catch (err) {
 		console.log(err)
-		throw new Error("Error Fetching Data")
+		return null
 
 	}
 
@@ -478,7 +478,8 @@ async function parseTwitterData (url) {
 		
 
 	} catch (err) {
-		throw new Error("error parsing twitter data")
+		console.log(err)
+		return null
 	}
 }
 
