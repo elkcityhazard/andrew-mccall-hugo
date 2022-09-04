@@ -457,9 +457,39 @@ async function parseTwitterData (url) {
 
 		const request = await getTwitterData(url)
 
-		request.tweets.data.forEach((tweet) => {
+		const {profile_image_url, username, name, id } = request.image.data
 
-			const li = document.createElement("li")
+
+		const twitterImage = document.getElementById("twitter-image")
+
+		const newImage = document.createElement('img')
+
+		newImage.setAttribute('src', profile_image_url)
+
+		newImage.style.float = "left"
+		newImage.style.marginRight = "10px"
+
+		twitterImage.append(newImage)
+
+		const byline = document.createElement('a')
+		byline.setAttribute("href", `https://www.twitter.com/${username}`)
+		byline.setAttribute("title", name)
+		byline.setAttribute("rel", "nofollow noreferrer")
+		byline.textContent = username
+
+		twitterImage.append(byline)
+
+		const myname = document.createElement("p")
+		myname.textContent = name
+
+		myname.classList.add("pl-3")
+		myname.classList.add("pt-1")
+
+		twitterImage.appendChild(myname)
+
+		request.tweets.data.forEach((tweet, index) => {
+			if (index <= 2) {
+				const li = document.createElement("li")
 			const a = document.createElement('a')
 			a.setAttribute("href", `https://twitter.com/elkcityhazard/status/${tweet.id}` )
 			linkClasses.forEach(classEl => a.classList.add(classEl))
@@ -471,6 +501,9 @@ async function parseTwitterData (url) {
 
 
 			console.log(tweet.text, tweet.id)
+			} else {
+				return
+			}
 		})
 
 
