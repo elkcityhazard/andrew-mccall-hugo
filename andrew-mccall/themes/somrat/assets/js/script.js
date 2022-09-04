@@ -418,3 +418,68 @@ observer = new IntersectionObserver((entries) => {
 images.forEach(image => {
   observer.observe(image);
 });
+
+
+async function getTwitterData(url) {
+
+	try {
+
+		const request = await fetch(url, {
+		})
+		const data = await request.json()
+
+		return data
+
+	} catch (err) {
+		console.log(err)
+		throw new Error("Error Fetching Data")
+
+	}
+
+} 
+
+async function parseTwitterData (url) {
+	try {
+
+		const container = document.querySelector('.twitter-data')
+		const classArr = ['text-light', 'p-0', 'mx-auto', 'list-style-none']
+
+
+		classArr.forEach(classEl => container.classList.add(classEl))
+
+
+		const list = document.createElement('ol')
+
+		const liClasses = new Array("p-2", "mb-3", "text-left", "tweet")
+
+		const linkClasses = new Array("d-block", "text-uppercase", "text-warning", "text-center")
+
+
+		const request = await getTwitterData(url)
+
+		request.tweets.data.forEach((tweet) => {
+
+			const li = document.createElement("li")
+			const a = document.createElement('a')
+			a.setAttribute("href", `https://twitter.com/elkcityhazard/status/${tweet.id}` )
+			linkClasses.forEach(classEl => a.classList.add(classEl))
+			a.textContent = "view tweet"
+			li.textContent = tweet.text
+			liClasses.forEach((classEl) => li.classList.add(classEl))
+			li.appendChild(a)
+			list.append(li)
+
+
+			console.log(tweet.text, tweet.id)
+		})
+
+
+		container.appendChild(list)
+		
+
+	} catch (err) {
+		throw new Error("error parsing twitter data")
+	}
+}
+
+parseTwitterData("https://twitter.andrew-mccall.com")

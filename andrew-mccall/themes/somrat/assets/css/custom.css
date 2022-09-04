@@ -499,3 +499,25 @@ h3.brands {
 .design-firms .container.row .col-12 .card .card-title .text-info h4 {
     text-transform: uppercase;
 }
+
+.twitter-card {
+    background: #000;
+}
+
+.twitter-data {
+    background: #000;
+}
+
+
+li.tweet {
+    border: 1px dashed #1d9bf0;
+    color: #fff;
+}
+
+.list-style-none > ol {
+    background: #000;
+    color: #fff;
+    list-style: none;
+   padding-left: unset;
+    margin: 0 auto 0 0;
+}
