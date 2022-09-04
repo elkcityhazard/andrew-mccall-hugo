@@ -364,19 +364,21 @@
 const video = document.querySelector('.cta-video');
 
 
-video.addEventListener('click', (e) => {
+video && video.addEventListener('click', (e) => {
 	e.preventDefault()
 	e.target.paused ? e.target.play() : e.target.pause()
 
 })
 
-window.onload = async function() {
-	const video = document.querySelector('.cta-video');
-	if (!video) {
-		return
+if (video) {
+	window.onload = async function() {
+		const video = document.querySelector('.cta-video');
+		if (!video) {
+			return null
+		}
+		video.src = await video.firstElementChild.getAttribute('data-src')
+		video.play()
 	}
-	video.src = await video.firstElementChild.getAttribute('data-src')
-	video.play()
 }
 
 
