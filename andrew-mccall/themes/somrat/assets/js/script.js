@@ -519,3 +519,93 @@ async function parseTwitterData (url) {
 }
 
 parseTwitterData("https://twitter.andrew-mccall.com")
+
+
+
+async function getReviews (url) {
+	try {
+
+		const request = await fetch(url)
+		const response = await request.json();
+		return response
+
+	} catch (err) {
+		throw new Error(err)
+	}
+}
+
+
+function reviewStars(starRating) {
+	switch (starRating) {
+		case "ONE":
+			return "🔥"
+			break;
+		case "TWO":
+			return "🔥🔥"
+			break;
+		case "THREE":
+			return "🔥🔥🔥"
+			break;
+		case "FOUR":
+			return "🔥🔥🔥🔥"
+			break;
+		case "FIVE":
+			return "🔥🔥🔥🔥🔥"
+			break;
+		default:
+			return "🔥🔥🔥🔥🔥"
+	}
+}
+
+
+async function parseReviews () {
+	try {
+
+	const data = await getReviews("https://twitter.andrew-mccall.com/reviews")
+	const reviewContainer = document.getElementById("reviews")
+
+	if (!reviewContainer || !data) {
+		return null
+	}
+
+	console.log("Review Data: ", data)
+
+	const {reviews, averageRating, totalReviewCount} = data
+
+	// request a weekday along with a long date
+	const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };	
+
+	reviews.forEach((review, index) => {
+
+		const reviewHTML = `
+	<div class="col-3 card mx-auto opacity-0 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="${.5 * index + "s"}">
+                <div class="card-header text-center">
+                    <span class="star-rating d-block mb-2 text-center">${reviewStars(review.starRating)}</span>
+                    <img src="${review.reviewer.profilePhotoUrl}" alt="avatar" class="fluid-img reviewer-image d-block mx-auto mb-3">
+                    <h3 class="name d-block">${review.reviewer.displayName}</h3>
+                </div>
+                <div class="card-body">
+                    <p class="mb-3 text-left mx-auto">${review.comment}</p>
+					<details>
+						<summary class="text-uppercase"><strong>Response</strong></summary>
+						<p>${review.reviewReply.comment}</p>
+					</details>
+                </div>
+                <div class="footer">
+                    ${new Date(review.createTime).toLocaleDateString("en-US", options)}
+                </div>
+            </div>
+	`
+
+	reviewContainer.innerHTML += reviewHTML
+
+	})
+
+
+
+	} catch (err) {
+		throw new Error(err)
+	}
+}
+
+parseReviews()
