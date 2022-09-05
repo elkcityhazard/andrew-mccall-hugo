@@ -578,7 +578,7 @@ async function parseReviews () {
 	reviews.forEach((review, index) => {
 
 		const reviewHTML = `
-	<div class="col-3 card mx-auto opacity-0 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="${.5 * index + "s"}">
+	<div class="col-12 col-md-4 card mx-auto opacity-0 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="${.5 * index + "s"}">
                 <div class="card-header text-center">
                     <span class="star-rating d-block mb-2 text-center">${reviewStars(review.starRating)}</span>
                     <img src="${review.reviewer.profilePhotoUrl}" alt="avatar" class="fluid-img reviewer-image d-block mx-auto mb-3">
