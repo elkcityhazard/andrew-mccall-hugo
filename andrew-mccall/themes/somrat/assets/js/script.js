@@ -518,15 +518,25 @@ async function parseTwitterData (url) {
 	}
 }
 
-parseTwitterData("https://twitter.andrew-mccall.com")
+parseTwitterData("https://twitter.andrew-mccall.com/")
 
 
 
 async function getReviews (url) {
 	try {
 
+		let response 
+
 		const request = await fetch(url)
-		const response = await request.json();
+
+		response = await request.json();
+
+		if (response.length <= 0) {
+			const request = await fetch(`${url}/data.json`)
+			response = await request.json()
+			return response 
+		}
+
 		return response
 
 	} catch (err) {
