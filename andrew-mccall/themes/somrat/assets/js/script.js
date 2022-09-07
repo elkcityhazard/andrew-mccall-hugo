@@ -528,14 +528,14 @@ async function getReviews (url) {
 		let response 
 
 		const request = await fetch(url)
-
-		response = await request.json();
-
-		if (response.length <= 0) {
+		if (request.status !== 200) {
 			const request = await fetch(`${url}/data.json`)
 			response = await request.json()
 			return response 
 		}
+
+		response = await request.json();
+
 
 		return response
 
