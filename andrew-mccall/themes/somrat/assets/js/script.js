@@ -571,7 +571,7 @@ function reviewStars(starRating) {
 async function parseReviews () {
 	try {
 
-	const data = await getReviews("https://twitter.andrew-mccall.com/reviews")
+	const data = await getReviews("https://twitter.andrew-mccall.com/reviews/data.json")
 	const reviewContainer = document.getElementById("reviews")
 
 	if (!reviewContainer || !data) {
