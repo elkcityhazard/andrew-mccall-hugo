@@ -1,7 +1,7 @@
 ---
 title: 'Hugo Website Tutorial: How To Create A Hugo Website'
 date: 2021-12-22 00:00:00
-updated: 2022-06-20 00:00:00
+updated: 2022-09-22 00:00:00
 image: images/blog/hugo-website-tutorial-1200x600.webp
 tags:
 - hugo
@@ -23,6 +23,7 @@ Hugo is a powerful static website generator written in the GO language. It can h
 
 1.  👉 [ [Video] How To Install Hugo On Windows 10 With Chocolately Package Manager (Less Than 2.5 Minutes)](/blog/2022/06/install-hugo-on-windows-with-chocolately-package-manager/ "Install Hugo On Windows 10 With Chocolately Package Manager")
 2.  👉 [ [Video] How To Boostrap A New Hugo Theme And Display The Home Page ](/blog/2022/06/bootstrap-a-new-hugo-theme/ "Create A Hugo Theme From Scratch: Part 1")
+3.  👉 [[Video] Output Structured Data Using Hugo, YAML, and Frontmatter](/blog/2022/09/frontmatter-data-and-hugo-templates/ "Learn about Hugo context and outputting structured data using frontmatter parameters")
 
 ## What is the Hugo static site framework?
 
@@ -173,6 +174,8 @@ my unique html markup goes here.
 As you can see, the block and baseof system gives Hugo some powerful flexibility to create modular websites with ease.
 
 ## How Context Works In Hugo
+
+👉 **NEW:** [[Video] Output Structured Data Using Hugo, YAML, and Frontmatter](/blog/2022/09/frontmatter-data-and-hugo-templates/ "Learn about Hugo context and outputting structured data using frontmatter parameters")
 
 Context is probably the single most important concept to grasp with Hugo. It is the foundation of what makes Hugo so powerful. If you do not come from a programming background, context will most likely be a bit more difficult to grasp. Without over complicating it, context is just the currently focused bit of information in an array of similar pieces of information.
 
