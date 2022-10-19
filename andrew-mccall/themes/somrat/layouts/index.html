@@ -13,7 +13,7 @@
   <div class="slider-next-button slider-button">
     <i class="fa fa-angle-right"></i>
   </div>
-  <div class="owl-carousel owl-full-width owl-theme" id="background-slide">
+  <div class="owl-carousel owl-full-width owl-theme d-none" id="background-slide">
     {{ range .Params.slider_images }}
     <div class="slider d-none d-lg-block"><img loading="lazy" class="img-fluid" src="{{ . | absURL }}" alt="slider-background"></div>
     {{ end }}
