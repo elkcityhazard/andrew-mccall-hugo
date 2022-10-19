@@ -2,6 +2,7 @@
 title: "How To Create A Website For My Online Business: Small Business Website Guide"
 description: "A website builder will be enough for your business website but there are great options for unlocking your small business website potential."
 date: 2022-10-14
+updated: 2022-10-18T00:00:00
 image: "/images/blog/2022/how-to-create-a-website-1024x512.png"
 images:
 - "/images/blog/2022/how-to-create-a-website-1024x512.png"
@@ -256,3 +257,20 @@ In conclusion, planning a website is a complex process that is vital to your onl
 
 Want help?  I am an experienced digital marketer with 6 years of experience.  Give me 30 minutes of your time and I will show you how to plan your website and walk you through every step necessary to have a great one!  [Message me today for a free consultation](https://book.andrew-mccall.com/ "Traverse City Web Designer and SEO")!
 
+
+## Frequently Asked Questions
+
+### What's the best website builder for a small business?
+
+If you are planning to sell products, I would recommend Shopify over WooCommerce.  If you are looking for an information site that has some event capabilites I would recommend Squarespace.  Wordpress has several site builder options include WPBakery, Elementor, and DIVI Themes.  
+
+### Can i build my own website from scratch for a small business?
+
+Yes you can.  The question is: are you willing to make that a priority.  Many business owners find they want to focus on strategy and day-to-day operations of their business.  Updating the website frequently can take away from this higher-level thinking.  
+
+That being said, of course you can.  There are many tools out there that can help assist with this.  You can also learn how to code and get pretty far on your own.  
+
+
+### How to start online business without money?
+
+There are several services that allow you to host a website with no upfront costs.  That being said, your domain name won't be very good and the quality of the hosting will be poor.  [NeoCities.org](https://neocities.org/ "Get A Free Website With NeoCities.org") is a place you can start with a free website.  Also, you can use [Carrd.co](https://carrd.co "Business Landing Page Builder") to create beautiful landing pages for free.  
