@@ -7,15 +7,15 @@
   <div class="logo">
     <img class="img-fluidlazy" data-src="{{ site.Params.logo_light | relURL }}" alt="{{ site.Title }}">
   </div>
-  <div class="slider-prev-button slider-button">
+  <div class="slider-prev-button slider-button d-none">
     <i class="fa fa-angle-left"></i>
   </div>
-  <div class="slider-next-button slider-button">
+  <div class="slider-next-button slider-button d-none">
     <i class="fa fa-angle-right"></i>
   </div>
   <div class="owl-carousel owl-full-width owl-theme d-none" id="background-slide">
     {{ range .Params.slider_images }}
-    <div class="slider d-none d-lg-block"><img loading="lazy" class="img-fluid" src="{{ . | absURL }}" alt="slider-background"></div>
+    <div class="slider d-none d-lg-block d-none"><img loading="lazy" class="img-fluid" src="{{ . | absURL }}" alt="slider-background"></div>
     {{ end }}
   </div>
   <div class="container">

@@ -1,5 +1,5 @@
 ---
-title: "How To Create A Website For My Online Business: Small Business Website Guide"
+title: "How To Create A Website For Your Online Business: Small Business Website Guide"
 description: "A website builder will be enough for your business website but there are great options for unlocking your small business website potential."
 date: 2022-10-14
 updated: 2022-10-18T00:00:00
@@ -21,17 +21,15 @@ draft: false
 ---
 
 
-  
 
-# How To Create A Website For My Online Business: 10 Tips To Build A Small Business Website To Maximize Your Online Business Efforts
 
 ## Why Do You Need A Business Website?
 
 A business website is one of the most important tools you can have for promoting your company online. It is a cost-effective way to reach out to potential customers and clients, and it can help you build a strong online presence.
 
-A business website can be used to showcase your products and services, provide information about your company, and even sell products and services online. If you are not sure where to start, there are many website builders and platforms that can help you build a professional website quickly and easily.
+It can be used to showcase your products and services, provide information about your company, and even sell products and services online. If you are not sure where to start, there are many website builders and platforms that can help you build a professional website quickly and easily as well as a few DIY options.
 
-In this article, we will explore some of the reasons why you need a website for your business. and answer the question, "how to create a website for my online business?" We will also provide some tips on how to get started with building your own website.
+In this article, we will explore some of the the elements needed and ways you can create a website for your online business.  
 
 ## Start With A Website Builder For Your Small Business Website
 
@@ -44,6 +42,8 @@ Another big advantage is that most website builders include website design. This
 
 
 Finally, most website builders are very affordable – and some are even free. If you’re looking for an easy, affordable, and professional way to create a small business website, then a website builder is the perfect solution.
+
+Website builders are an area where you get what you pay for.  Services like webpack are feature-rich while free solutions are often very limited.  For example. no custom coding, no code-embedding features which you may need later down to get more out of your templated website.  
 
 
 Although there are many free website builder solutions for small business, I prefer to recommend services such as Squarespace or Shopify which are paid solutions. Their costs are generally small to get started and many small businesses find that paying a bit extra goes a long way in terms of features you get for your business website.
@@ -109,12 +109,15 @@ Namecheap often has discount codes for new buyers and sales on first year domain
 
 When you are first starting your small business, you may not have the time or money to invest in a custom website design. However, this does not mean that your website has to look lackluster. There are many great website templates available that can give your website a professional look without breaking the bank.
 
-
 In addition to being cost-effective, website templates are also easy to use. Even if you have no experience with web design, you should be able to find a template that meets your needs and fairly easily edit it to create a great looking website for your business.
 
 If you are technical, or have someone on your team who is tech savvy, a template (such as an html template or wordpress template) can be an excellent option. Templates are generally more flexible than website builders since you can directly edit the template files as needed.
 
-So if you are starting a small business and need to get a website up and running quickly and cheaply, consider using a website template. It could be just what you need to get your business off the ground.
+So if you are starting a small business and need to get a website up and running quickly and cheaply, consider using a website template and hiring a value-oriented web develop. It could be just what you need to get your business off the ground.
+
+A note on purchasing website templates: When you purchase a website template, you must agree to the terms of use set forth by the template creator. These terms of use vary depending on the template, but usually include restrictions on how you can modify and distribute the template. Some creators also require that you give them credit for the design, while others allow you to use the template for free as long as you don't redistribute it. Be sure to read the terms of use before purchasing or using a website template.
+
+A few services to get templates from: 
 
 [Gumroad](https://gumroad.com/)
 
@@ -139,6 +142,8 @@ There are a few reasons why this is the best approach. First, it ensures that yo
 [Creately](https://creately.com/blog/diagrams/website-planning-guide/) can help you with planning your website content.
 
 [Moz Content Strategy Template](https://moz.com/content-strategy-template "Moz Content Strategy Template")
+
+
 
 Having a winning content strategy is important for the success of your website. Moz has a fantastic tool to help you create a success content strategy. Their template will help you coordinate your onsite content, blog, and offsite content to reinforce your brand message to visitors and social followers. For advanced content creators, it can help organize your personas, competitor analysis, and track gaps in your content.
 
@@ -274,3 +279,11 @@ That being said, of course you can.  There are many tools out there that can hel
 ### How to start online business without money?
 
 There are several services that allow you to host a website with no upfront costs.  That being said, your domain name won't be very good and the quality of the hosting will be poor.  [NeoCities.org](https://neocities.org/ "Get A Free Website With NeoCities.org") is a place you can start with a free website.  Also, you can use [Carrd.co](https://carrd.co "Business Landing Page Builder") to create beautiful landing pages for free.  
+
+
+## Online Business Website Checklist
+
+- Web design is complete
+- Content is written
+- Navigation includes about, contact, service pages, blog, and primary google business category
+- Clear call to actions are written and placement is decided
