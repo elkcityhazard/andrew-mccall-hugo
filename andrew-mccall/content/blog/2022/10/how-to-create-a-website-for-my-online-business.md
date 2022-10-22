@@ -258,11 +258,6 @@ There are many benefits to having a professional web developer create and manage
 5. A professional web developer can provide ongoing maintenance and support for your website, so you can focus on running your business.
 
 
-In conclusion, planning a website is a complex process that is vital to your online business success.  It doesn't have to be complex, though.  With proper planning, designing, building, and creating content for your website can be smooth and attract new customers to your business.
-
-Want help?  I am an experienced digital marketer with 6 years of experience.  Give me 30 minutes of your time and I will show you how to plan your website and walk you through every step necessary to have a great one!  [Message me today for a free consultation](https://book.andrew-mccall.com/ "Traverse City Web Designer and SEO")!
-
-
 ## Frequently Asked Questions
 
 ### What's the best website builder for a small business?
@@ -287,3 +282,16 @@ There are several services that allow you to host a website with no upfront cost
 - Content is written
 - Navigation includes about, contact, service pages, blog, and primary google business category
 - Clear call to actions are written and placement is decided
+- [SEO AUDIT Completed](https://docs.google.com/spreadsheets/d/1tDzAxXOFM2PifuZvHM5DMnpd97Ig4UmloAGqqMc6vH0/edit?usp=sharing "SEO TRAVERSE CITY AUDIT SHEET")
+- Internal navigation is reviewed
+- Content plan is made
+- Web Development is complete
+- Google Business Profile is set up
+- Name, Address, and Phone Number is in the appropriate places and the same format
+- Local Citations have been created
+- Post 1-2 articles a month for SEO
+
+
+In conclusion, planning a website is a complex process that is vital to your online business success.  It doesn't have to be complex, though.  With proper planning, designing, building, and creating content for your website can be smooth and attract new customers to your business.
+
+Want help?  I am an experienced digital marketer with 6 years of experience.  Give me 30 minutes of your time and I will show you how to plan your website and walk you through every step necessary to have a great one!  [Message me today for a free consultation](https://book.andrew-mccall.com/ "Traverse City Web Designer and SEO")!
