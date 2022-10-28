@@ -162,7 +162,7 @@ It is recommended that you put your primary keyword as early as possible in your
 
 8. Structured Markup is a data-schema format that search engines use to better understand your page content, and in turn better display your content in the search engine results page. From Google:
 
-Google Search works hard to understand the content of a page. You can help us by providing explicit clues about the meaning of a page to Google by including structured data on the page. Structured data is a standardized format for providing information about a page and classifying the page content; for example, on a recipe page, what are the ingredients, the cooking time and temperature, the calories, and so on.
+>Google Search works hard to understand the content of a page. You can help us by providing explicit clues about the meaning of a page to Google by including structured data on the page. Structured data is a standardized format for providing information about a page and classifying the page content; for example, on a recipe page, what are the ingredients, the cooking time and temperature, the calories, and so on.
 
 Source: [Google](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data "Google Structured Data Overview")
 
@@ -218,7 +218,7 @@ That being said, there is quite a bit more to discuss here.
 
 ### Local Citations: Why your small business needs local citations
 
-A local citation is any online mention of partial or complete name, address, and phone number of a local business - also called NAP data. Citations can occur on local business directories, on websites and apps, and on social platforms. Citations help people to discover local businesses and can also impact local search engine rankings. Specifically, having high quality basic citations can help you [rank accurately on Google’s local search interfaces](https://moz.com/blog/beginner-guide-google-maps-ranking). Local businesses can actively manage many citations to ensure data accuracy.
+>A local citation is any online mention of partial or complete name, address, and phone number of a local business - also called NAP data. Citations can occur on local business directories, on websites and apps, and on social platforms. Citations help people to discover local businesses and can also impact local search engine rankings. Specifically, having high quality basic citations can help you [rank accurately on Google’s local search interfaces](https://moz.com/blog/beginner-guide-google-maps-ranking). Local businesses can actively manage many citations to ensure data accuracy.
 
 Source: [Moz: What Is a Local Citation?](https://moz.com/learn/seo/local-citations "What is a local citation?")
 
