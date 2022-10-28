@@ -1,0 +1,24 @@
+{{ define "main" }}
+
+<header class="container mx-auto p-3 h-50">
+    <div class="row align-items-center justify-content-start h-100">
+        <div class="col-12 col-md-9 col-lg-6 mx-auto p-3 h-100 d-flex align-items-center">
+            <h1>{{ .Title }}</h1>
+        </div>
+        <div class="col-12 col-md-9 col-lg-6 mx-auto p-3"></div>
+    </div>
+</header>
+
+{{ with .Params.seo_checklist }}
+
+{{ range . }}
+
+{{ .domain_name }}
+
+
+{{  end }}
+
+
+{{ end }}
+
+{{ end }}
