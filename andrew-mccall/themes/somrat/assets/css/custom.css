@@ -163,11 +163,11 @@ blockquote {
     max-width: 100%;
     padding: 0 2rem;
     position: relative;
-    overflow-x: auto;
     transition: background 333ms ease;
     -webkit-transition: all 333ms ease;
     -moz-transition: all 333ms ease;
-    width: 75ch;
+    width: 100%;
+    max-width: 60ch;
 }
 
 blockquote::before {
