@@ -38,7 +38,9 @@ engaging_points:
 audio: "/audio/2021/traverse-city-seo.mp3"
 ---
 
-Our Traverse City SEO Services can help Traverse City businesses get found more often on the internet. SEO is a service that helps you rank higher in search engines for certain keywords, which then improves your visibility and leads to more website traffic. Andrew McCall offers a free consultation to Travere City businesses where he will evaluate your website and find out what needs to be done to make it more visible to the public.
+Update: [Check out our FREE Guide To SEO For Local Small Business Websites](https://www.andrew-mccall.com/blog/2022/10/seo-checklist-for-local-small-business-websites/ "SEO Checklist For Local Small Business Websites") to take your Traverse City SEO to the next level.  
+
+Our Traverse City SEO Services can help Traverse City businesses get found more often on the internet. SEO is a service that helps you rank higher in search engines for certain keywords, which then improves your visibility and leads to more website traffic. Andrew McCall offers a free consultation to Traverse City businesses where he will evaluate your website and find out what needs to be done to make it more visible to the public.
 
 ## What Is SEO?
 

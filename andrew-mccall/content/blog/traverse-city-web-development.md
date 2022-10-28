@@ -28,7 +28,7 @@ A few things I can help you out with are:
 
 - Quickly build or maintain a website on the JAMStack
 - Ecommerce or online store setup and maintenance
-- SEO strategy and implementation
+- [SEO strategy and implementation](https://www.andrew-mccall.com/blog/2022/10/seo-checklist-for-local-small-business-websites/ "SEO Checklist for local small business websites")
 - Wordpress setup and maintenance
 - Landing pages and lead generation
 - Graphics design
