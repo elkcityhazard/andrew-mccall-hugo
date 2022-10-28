@@ -143,8 +143,6 @@ There are a few reasons why this is the best approach. First, it ensures that yo
 
 [Moz Content Strategy Template](https://moz.com/content-strategy-template "Moz Content Strategy Template")
 
-
-
 Having a winning content strategy is important for the success of your website. Moz has a fantastic tool to help you create a success content strategy. Their template will help you coordinate your onsite content, blog, and offsite content to reinforce your brand message to visitors and social followers. For advanced content creators, it can help organize your personas, competitor analysis, and track gaps in your content.
 
 [Notion Content Calendar template](https://www.notion.so/templates/content-calendar)
@@ -182,6 +180,8 @@ SEO is the process of optimizing your website to rank higher in search engine re
 
 Investing in SEO can be a great way to improve your visibility online and attract more customers to your business. If you're not sure where to start, contact a reputable SEO agency to help you get started.
 
+If you want to learn how to do SEO for your local small business, I have a [handy guide and a free SEO Template here](/blog/2022/10/seo-checklist-for-local-small-business-websites/ "SEO Checklist For Local Small Business Websites").
+
 [Google Keyword Planner](https://ads.google.com/home/tools/keyword-planner/)
 
 Google Keyword Planner is a free keyword research tool that helps you find relevant keywords for your SEO strategy. You can use it to find new keywords and get ideas for your website or blog. It can also help you improve your existing SEO strategy by giving you insights into how people are searching for your site.
@@ -199,7 +199,7 @@ Backlinks can also be a signal of the quality of your content. If an article is 
 
 [Cookieless Site Analytics](https://plausible.io/)
 
-Using Google Analytics requires a robust privacy policy and is [actually illegal in some countries.](https://www.covalentbonds.com/resources/are-google-analytics-days-numbered) Why not use a privacy-first analytics company? Why do you need website analytics for you business website?
+Using Google Analytics requires a robust privacy policy and is [actually illegal in some countries.](https://www.covalentbonds.com/resources/are-google-analytics-days-numbered) Why not use a [privacy-first analytics company](/blog/web-analytics-platforms-that-are-privacy-focused/ "a complete list of privacy first analytics")? Why do you need website analytics for you business website?
 
 There are many reasons why website analytics are important for businesses.
 

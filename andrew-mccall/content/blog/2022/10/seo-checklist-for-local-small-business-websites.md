@@ -84,7 +84,7 @@ First, let's see a broad overview of what goes into an SEO checklist for local s
 
 6. Off Page Audit
 
-7. Local SEO Optimization
+7. [Local SEO Optimization](/services/traverse-city-search-engine-optimization)
 
 8.Mobile / Speed / Security Optimization
 
