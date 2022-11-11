@@ -15,6 +15,7 @@ disqusShortname = "" # get your shortname form here : https://disqus.com
 # publish directory
 
 
+
 ############################# Outputs ##############################
 [outputs]
 home = ["HTML"]

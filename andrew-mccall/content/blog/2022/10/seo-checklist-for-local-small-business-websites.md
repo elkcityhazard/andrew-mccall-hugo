@@ -1,6 +1,6 @@
 ---
-title: "SEO Checklist For Local Small Business Websites: A Guide [Free SEO Audit Template]"
-description: "Utilize my free SEO audit template to start doing your own small business manual seo audits. "
+title: "A Complete SEO Checklist For Local Small Business Websites [Free SEO Audit Template]"
+description: "Utilize my free SEO audit template to start doing your own small business manual seo audits."
 date: 2022-10-27
 updated: 2022-10-27T00:00:00
 image: "/images/blog/2022/small-busines-seo-audit.jpeg"

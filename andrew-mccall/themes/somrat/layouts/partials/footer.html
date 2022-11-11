@@ -52,7 +52,8 @@
         <hr>
         <ul class="footer-icons list-inline">
           {{ range site.Params.social }}
-          <li><a href="{{ .link | safeURL }}" class="text-dark" title="social media link"><i class="{{ .icon }}"></i></a></li>
+          {{ $link := . }}
+          <li><a href="{{ .link | safeURL }}" {{ if (eq .link "https://indieweb.social/@elkcityhazard") }} rel="me" {{ end }} class="text-dark" title="social media link"><i class="{{ .icon }}"></i></a></li>
           {{ end }}
         </ul>
         <div class="to-top">
