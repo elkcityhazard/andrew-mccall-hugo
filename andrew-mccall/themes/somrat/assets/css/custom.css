@@ -521,3 +521,42 @@ li.tweet {
    padding-left: unset;
     margin: 0 auto 0 0;
 }
+
+
+
+
+/*
+TOC Styles
+*/
+
+.toc-wrapper {
+    display: block;
+    margin-bottom: 1.5rem;
+    padding-left: 2.5%;
+}
+
+#TableOfContents ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+#TableOfContents ul li {
+    border-bottom: 1px solid rgba(0,0,0,0.10);
+    padding: 5px 0;
+    font-weight: 700;
+}
+
+#TableOfContents ul li a {
+    color: #333;
+}
+
+#TableOfContents ul li ul li {
+    font-weight: 500;
+}
+
+#TableOfContents ul li:last-child,
+#TableOfContents ul li ul li:last-child {
+    border-bottom: none;
+}
+
