@@ -2442,3 +2442,33 @@ textarea.form-control::-webkit-input-placeholder,
   object-fit: cover;
   margin-right: 10px;
 }
+
+
+a[title="Grow Your Business Organically"] {
+  border: unset;
+  display: block;
+  margin: 1rem auto;
+  font-size: 2rem;
+  text-decoration: none;
+  -moz-transiton: all 250ms ease-in-out;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  text-align: center;
+}
+
+a[title="Grow Your Business Organically"]:hover {
+  border-bottom: none;
+}
+
+a[title="Grow Your Business Organically"] {
+  border: 2px dashed #000;
+  padding: 5px 7px;
+}
+
+
+a[title="Grow Your Business Organically"]:hover,
+a[title="Grow Your Business Organically"]:focus {
+  background: #333;
+  color: #fff;
+  border: none;
+}

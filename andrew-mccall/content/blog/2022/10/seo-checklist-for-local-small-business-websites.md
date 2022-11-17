@@ -94,6 +94,9 @@ As you can see, the founations of the basic seo checklist are broken into managa
 
 Next, we need to start breaking down our checklist into the managable chunks.
 
+{{< cta "Do You Want A Free Gift?" 
+        "Sign up for my newsletter and I will send you my free Ebook that will help you reach new customers with your content."  >}}   {{< /cta >}}
+
 ## Domain Name: Does A Domain Name Help WIth SEO?
 
 ### Is the domain short and memorable?
