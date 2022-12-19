@@ -5,7 +5,7 @@ date:  #2022-10-31T00:00:00:000Z
 updated:  #2022-10-31T00:00:00:000Z
 image: "/images/blog/2022/"
 images:
-- "/images/blog/2022/"
+- "./working-with-images-with-golang-1600x900.jpeg"
 categories:
 - 
 tags:
@@ -15,7 +15,7 @@ tags:
 - 
 - 
 - 
-draft: false
+draft: true
 ---
 
 # Wordpress Site Builders: Not The Best Solution For Most Small Businesses
