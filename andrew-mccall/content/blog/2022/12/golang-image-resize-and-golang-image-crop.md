@@ -108,6 +108,8 @@ The process here is 4 steps:
 3. Using `net/http` we are calling `http.DetectContentType` and passing the image into it.   This receiver method accepts a slice of bytes and returns a string which is the mime-type of the file.
 4. Since we partially read the file, we need to `Seek` to the beginning.  This is because the file is currently read to 512 bytes.  Because of this, any operation such as saving the file will not include the first 512 bytes.  To fix this, all we need to do is call `file.Seek(0,0)` which will return the file to the beginning.  
 
+## Create A New Image Using Go Standard Library Package
+
 5. At this point, we should be able to theoretically determine the file type and decode the image.  One of the reasons we might want to determine the file type is, in the event that the file is say a `wav` file, we can return and exit from the function (no reason to continue) .  Again, this is a part that may not be necessary but it is how I did it.  I feel that as long as we import `image/jpeg` and `image/png` we should be able to use `Image.Decode()` to decode the image into memory.   That being said, I did not set it up this way.   I just made a simple check to see which type of image we have:
 ```
 // create a new image variable
@@ -125,6 +127,8 @@ src, _ = jpeg.Decode(input)
 }
 ```
 Besides using the built in Decode functions, the only thing to note here is that we are using the strings package to determine if the filetype is equal to the mime type provided.  `strings.EqualFold` is essentially just checking to make sure two strings are exactly the same.  
+
+## Cropping The Image 
 
 6. Set up the destination image using Go's Image package.  There will be a few things going on here so let's get the code written and explore what is going on:
 ```
@@ -240,6 +244,7 @@ if err := png.Encode(croppedImageFile, croppedImage); err != nil {
 
 This is pretty much a repeat of what we have already seen in regards to creating a file.  
 
+## Use Nearest Neighbor To Save the resized image
 
 Finally, the last step is we are going to save the resized version of the src image using the quickest (but not the most accurate method) which is Nearest Neighbor
 ```
