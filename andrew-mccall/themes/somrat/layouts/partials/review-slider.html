@@ -1,0 +1,168 @@
+<style>
+    /* *,
+    *::before,
+    *::after {
+        border: 1px dotted red;
+    } */
+.slide-container {
+    display: flex;
+    max-width: 60ch;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    height: 600px;
+}
+
+.slide {
+    position: absolute;
+    left: 0;
+    height: auto;
+    -moz-transition: all 500ms ease-in-out;
+    -webkit-transition: all 500ms ease-in-out;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 1rem;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide.next {
+    transform: translateX(100%);
+}
+
+.slide.prev {
+    transform: translateX(-100%);
+}
+
+.btn-container {
+    max-width: 100%;
+    margin: auto;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 1fr 1fr;
+    place-items: start center;
+    padding: 1em 0;
+    width: fit-content;
+
+}
+
+/* .reviewer-photo {
+    border: 1px solid black;
+    display: grid;
+    place-items: center;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+} */
+
+</style>
+
+
+
+<section class="review-slider">
+    <div class="section-header">
+        <h3>Reviews</h3>
+    </div>
+    <div class="slide-container">
+
+        {{ with .Site.Data.reviews }}
+        {{ with .reviews }}
+        {{ range . }}
+        <article class="slide {{ .class }}">
+            <img src="{{ .reviewer.profilePhotoUrl}} " alt="{{.reviewer.displayName}}" height="100" width="100" decoding="async" loading="lazy" class="reviewer-photo">
+            <h4>{{.reviewer.displayName}}</h4>
+            {{ if eq .starRating "FIVE" }}
+            <span class="stars">🦩🦩🦩🦩🦩</span>
+            {{ else if eq .starRating "FOUR" }}
+            <span class="stars">🦩🦩🦩🦩</span>
+            {{ else if eq .starRating "THREE" }}
+            <span class="stars">🦩🦩🦩</span>
+            {{ else if eq .starRating "TWO" }}
+            <span class="stars">🦩🦩</span>
+            {{ else if eq .starRating  "ONE" }}
+            <span class="stars">🦩</span>
+
+            {{ end }}
+            <p class="comment">
+                {{.comment}}
+            </p>
+            <time class="create-time">{{ .createTime | time.Format ":date_long" }}</time>
+            {{ with .reviewReply }}
+            <p class="reply">{{.comment }}</p>
+            {{ end }}
+        </article>
+        {{ end }}
+        {{ end }}
+        {{ end }}
+    </div>
+    <div class="btn-container">
+        <button class="btn" id="prev">Prev</button>
+        <button class="btn" id="next">Next</button>
+    </div>
+</section>
+
+
+
+
+<script defer>
+    const container = document.querySelector('.slide-container')
+    const nextBtn = document.getElementById("next")
+    const prevBtn = document.getElementById("prev")
+
+    const startSlider = (type) => {
+
+        const active = document.querySelector(".active")
+        const last = document.querySelector(".prev")
+        let next = active.nextElementSibling
+
+        if (!next) {
+            next = container.firstElementChild
+        }
+        
+        active.classList.remove(['active'])
+        last.classList.remove(['prev'])
+        next.classList.remove(['next'])
+
+        if (type === 'prev') {
+
+            active.classList.add('next')
+            last.classList.add('active')
+            next = last.previousElementSibling
+            if (!next) next = container.lastElementChild
+            next.classList.remove(['next'])
+            next.classList.add('prev')
+            return 
+        } 
+
+
+        active.classList.add('prev')
+        last.classList.add('next')
+        next.classList.add('active')
+
+    }
+
+
+    nextBtn.addEventListener('click', () => {
+        startSlider()
+    })
+
+    prevBtn.addEventListener('click', () => {
+        startSlider('prev')
+    })
+
+
+
+</script>

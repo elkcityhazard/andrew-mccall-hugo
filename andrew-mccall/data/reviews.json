@@ -1,0 +1,105 @@
+{
+    "reviews": [
+        {
+            "class": "active",
+            "reviewId": "AbFvOqlpi_d8GSaTIzxlonoYuCHfQKJ5j0Pi7ekikVh3VAgA31Wfg2YAtUoh19O-9gofqCMUfVRn2A",
+            "reviewer": {
+                "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/AD5-WCk4G3d2J_xzD07ylF8-V5lkONy6y17owD3I1jYT=s120-c-c0x00000000-cc-rp-mo-br100",
+                "displayName": "Mark Delikta"
+            },
+            "starRating": "FIVE",
+            "comment": "I was very pleased with the service I received from Andrew McCall - Traverse City Web Design. They had great communication and were extremely helpful in getting my website up and running. I had a great experience working with them and they provided me with all the necessary tools to make sure my business was established online. They were knowledgeable and offered helpful advice when needed. I would definitely recommend them to anyone looking to create a website.",
+            "createTime": "2022-12-28T15:56:19.694069Z",
+            "updateTime": "2022-12-28T15:56:19.694069Z",
+            "reviewReply": {
+                "comment": "",
+                "updatedTime": ""
+            },
+            "name": "accounts/108658308358928240662/locations/13000794927535829181/reviews/AbFvOqlpi_d8GSaTIzxlonoYuCHfQKJ5j0Pi7ekikVh3VAgA31Wfg2YAtUoh19O-9gofqCMUfVRn2A"
+        },
+        {
+            "class": "next",
+            "reviewId": "AbFvOqnuBI0xwZstpAfn3FWaak8vq8Zk5ah3YS99lw5S8_7MyiGwrOmQSwCSKYCQ__l5fxxB55ka",
+            "reviewer": {
+                "profilePhotoUrl": "https://lh3.googleusercontent.com/a/AEdFTp7a8VfmNeMBmMAcVVfynQ1IZrQBd7KuA8UmBfWP2w=s120-c-c0x00000000-cc-rp-mo-br100",
+                "displayName": "Krista Kay"
+            },
+            "starRating": "FIVE",
+            "comment": "I recently worked with Andrew M McCall's Traverse City SEO Services to set up and optimize my Google Business Profile for local search results. Andrew was very knowledgeable and helpful throughout the entire process - he answered all of my questions in a timely manner and provided me with clear instructions as we went along. His expertise has been extremely valuable in helping me improve my online presence. I highly recommend his SEO services!\nAndrew's expertise has been critical to the launch of our new business branch in Traverse City.",
+            "createTime": "2022-12-23T18:37:16.192917Z",
+            "updateTime": "2022-12-23T18:37:16.192917Z",
+            "reviewReply": {
+                "comment": "Krista, it has been a pleasure! I am looking forward to the next phase!",
+                "updatedTime": ""
+            },
+            "name": "accounts/108658308358928240662/locations/13000794927535829181/reviews/AbFvOqnuBI0xwZstpAfn3FWaak8vq8Zk5ah3YS99lw5S8_7MyiGwrOmQSwCSKYCQ__l5fxxB55ka"
+        },
+        {
+            "class": "prev",
+            "reviewId": "AbFvOql4TILa-mQAnKO9x8INALxLI_1GY_kvSNsnQdvlAu2C8nYSG6g8l91vkPhefRJhwMq8DZ2pZA",
+            "reviewer": {
+                "profilePhotoUrl": "https://lh3.googleusercontent.com/a/AEdFTp6jUAF2TGADRqQ6EKkDGQ-xg8TRBJe86Pwjfu16=s120-c-c0x00000000-cc-rp-mo-br100",
+                "displayName": "John Sheill"
+            },
+            "starRating": "FIVE",
+            "comment": "I was looking for help with SEO and optimizing my Google Business Profile in Traverse City and found Andrew McCall - Traverse City Web Design.  Andrew helped me fix my Google Business Profile so that I was visible on local search again.  Excellent!",
+            "createTime": "2022-12-23T13:22:45.692939Z",
+            "updateTime": "2022-12-23T13:22:45.692939Z",
+            "reviewReply": {
+                "comment": "Thanks so much for the kind words, John.  I look forward to helping you grow your business online.  ",
+                "updatedTime": ""
+            },
+            "name": "accounts/108658308358928240662/locations/13000794927535829181/reviews/AbFvOql4TILa-mQAnKO9x8INALxLI_1GY_kvSNsnQdvlAu2C8nYSG6g8l91vkPhefRJhwMq8DZ2pZA"
+        },
+        {
+            "reviewId": "AbFvOqnvNYKCIjGIb1dvAepzKKnC4mKdGdLUyoEuhTVYOE9ve9BhXiUe8a1q09CFEc-fF7dPJZXAow",
+            "reviewer": {
+                "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/AD5-WCkgIsb95zYGC-1thvFRUnoe7v-2QMsn_iqnQCmn5w=s120-c-c0x00000000-cc-rp-mo-br100",
+                "displayName": "Mary Fortuna"
+            },
+            "starRating": "FIVE",
+            "comment": "Andrew did a beautiful job of redesigning and updating my sad, broken artist's website. I handed off a mess of photos and files, and he put it all together to make a site that's interesting and fun and easy to navigate and update. I recommend him highly for any artist who needs someone to help them get their act together. Thank you, Andrew!",
+            "createTime": "2022-02-03T21:52:11.979313Z",
+            "updateTime": "2022-02-03T21:52:11.979313Z",
+            "reviewReply": {
+                "comment": "My pleasure Mary! Thanks for sharing the love!!",
+                "updatedTime": ""
+            },
+            "name": "accounts/108658308358928240662/locations/13000794927535829181/reviews/AbFvOqnvNYKCIjGIb1dvAepzKKnC4mKdGdLUyoEuhTVYOE9ve9BhXiUe8a1q09CFEc-fF7dPJZXAow"
+        },
+        {
+            "reviewId": "AbFvOqkrLD8-Fr-9d0norwzbkfsi2nc3Mf9rCx20ErtM--kzE4ORmRyUipQh3p3lttCBIC3FrvPPSA",
+            "reviewer": {
+                "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/AD5-WCksNvBigIRroS7yScR3tIxbPuU0-pUmVqPKu_xDbw=s120-c-c0x00000000-cc-rp-mo-br100",
+                "displayName": "Allen Morris"
+            },
+            "starRating": "FIVE",
+            "comment": "Was a great pleasure in working with Andrew for a new website. He was very helpful in explaining the options we had as this was a new endeavor for me. would highly recommend his services for website development and maintenance.",
+            "createTime": "2021-12-26T19:58:13.779715Z",
+            "updateTime": "2021-12-26T19:58:13.779715Z",
+            "reviewReply": {
+                "comment": "Allen, the experience was nothing but a pleasant one.  I am glad we were able to get you back up and running after so much time without a website.  Looking forward to working with you in the future!",
+                "updatedTime": ""
+            },
+            "name": "accounts/108658308358928240662/locations/13000794927535829181/reviews/AbFvOqkrLD8-Fr-9d0norwzbkfsi2nc3Mf9rCx20ErtM--kzE4ORmRyUipQh3p3lttCBIC3FrvPPSA"
+        },
+        {
+            "reviewId": "AbFvOqmJ_JcQJ9m4Oa18KObHyw-_OaNMFFCfgl0xR0IRV89pB0Af63QtwWePq-a2oF-J-8CWsSM",
+            "reviewer": {
+                "profilePhotoUrl": "https://lh3.googleusercontent.com/a/AEdFTp6BjvhRxsBdHFPUsbPPKAnXv9GZhtRlFgsZfjhd=s120-c-c0x00000000-cc-rp-mo-br100",
+                "displayName": "Spencer Hall"
+            },
+            "starRating": "FIVE",
+            "comment": "I found Andrew online and contacted him about my project.He was immediately responsive. I hired him..he had my project put together and running on a website within one day.  I had several changes to make and he did so very quickly....He is easy to work with, pleasant, and very good at what he does. His prices are fair and inline with the project...I highly recommend Andrew and will certainly use him again...",
+            "createTime": "2021-06-22T12:43:18.001673Z",
+            "updateTime": "2021-06-22T12:43:18.001673Z",
+            "reviewReply": {
+                "comment": "Spencer,  It has been a pleasure working on your project and I look forward to working with you further!",
+                "updatedTime": ""
+            },
+            "name": "accounts/108658308358928240662/locations/13000794927535829181/reviews/AbFvOqmJ_JcQJ9m4Oa18KObHyw-_OaNMFFCfgl0xR0IRV89pB0Af63QtwWePq-a2oF-J-8CWsSM"
+        }
+    ],
+    "averageRating": 5,
+    "totalReviewCount": 6
+}
