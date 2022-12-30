@@ -10,13 +10,13 @@
     margin: auto;
     overflow: hidden;
     position: relative;
-    height: 600px;
+    height: 500px;
 }
 
 .slide {
     position: absolute;
     left: 0;
-    height: auto;
+    height: 100%;
     -moz-transition: all 500ms ease-in-out;
     -webkit-transition: all 500ms ease-in-out;
     transition: all 0.5s ease-in-out;
@@ -55,6 +55,12 @@
 
 }
 
+.stars {
+    font-size: 2em;
+    font-weight: 700;
+    word-spacing: 1.5px;
+}
+
 /* .reviewer-photo {
     border: 1px solid black;
     display: grid;
@@ -72,26 +78,26 @@
 
 
 
-<section class="review-slider">
-    <div class="section-header">
-        <h3>Reviews</h3>
+<section class="review-slider bg-white">
+    <div class="section-header text-center p-3">
+        <h3>My Google Reviews</h3>
     </div>
-    <div class="slide-container">
+    <div class="slide-container bg-dark">
 
         {{ with .Site.Data.reviews }}
         {{ with .reviews }}
         {{ range . }}
-        <article class="slide {{ .class }}">
+        <article class="slide {{ .class }} bg-dark text-light">
             <img src="{{ .reviewer.profilePhotoUrl}} " alt="{{.reviewer.displayName}}" height="100" width="100" decoding="async" loading="lazy" class="reviewer-photo">
             <h4>{{.reviewer.displayName}}</h4>
             {{ if eq .starRating "FIVE" }}
-            <span class="stars">🦩🦩🦩🦩🦩</span>
+            <span class="stars">🦩 🦩 🦩 🦩 🦩</span>
             {{ else if eq .starRating "FOUR" }}
-            <span class="stars">🦩🦩🦩🦩</span>
+            <span class="stars">🦩 🦩 🦩 🦩</span>
             {{ else if eq .starRating "THREE" }}
-            <span class="stars">🦩🦩🦩</span>
+            <span class="stars">🦩 🦩 🦩</span>
             {{ else if eq .starRating "TWO" }}
-            <span class="stars">🦩🦩</span>
+            <span class="stars">🦩 🦩</span>
             {{ else if eq .starRating  "ONE" }}
             <span class="stars">🦩</span>
 
@@ -109,8 +115,8 @@
         {{ end }}
     </div>
     <div class="btn-container">
-        <button class="btn" id="prev">Prev</button>
-        <button class="btn" id="next">Next</button>
+        <button class="btn btn-info" id="prev">Prev</button>
+        <button class="btn btn-info" id="next">Next</button>
     </div>
 </section>
 

@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: elkcityhazard/andrew-mccall-hugo   # Path to your Github repository
+  branch: main    # Branch to update
+  base_url: https://netlify.andrew-mccall.com/ # Path to ext auth provider
+media_folder: static/img
+public_folder: /img
+collections:
+  - name: 'blog'
+    label: 'Blog'
+    folder: 'content/blog'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
