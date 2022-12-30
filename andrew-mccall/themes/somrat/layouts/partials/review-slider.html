@@ -156,12 +156,18 @@
 
 
     nextBtn.addEventListener('click', () => {
+        clearInterval(timer)
         startSlider()
     })
 
     prevBtn.addEventListener('click', () => {
         startSlider('prev')
+        clearInterval(timer)
     })
+
+    let timer = setInterval(() => {
+        startSlider()
+    }, 7000)
 
 
 
