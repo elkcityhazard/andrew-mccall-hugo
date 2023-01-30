@@ -125,8 +125,28 @@
 
 <script defer>
     const container = document.querySelector('.slide-container')
+    const slides = document.querySelectorAll('.slide')
     const nextBtn = document.getElementById("next")
     const prevBtn = document.getElementById("prev")
+
+    nextBtn.addEventListener('click', () => {
+        clearInterval(timer)
+        startSlider()
+    })
+
+    prevBtn.addEventListener('click', () => {
+        startSlider('prev')
+        clearInterval(timer)
+    })
+
+    slides.forEach((slide, index) => () => {
+        slide.addEventListener('click', (e) => {
+            console.log(e)
+        })
+        slide.addEventListener('touchstart', (e) => {
+            console.log("touchstart")
+        })
+    })
 
     const startSlider = (type) => {
 
@@ -159,17 +179,6 @@
         next.classList.add('active')
 
     }
-
-
-    nextBtn.addEventListener('click', () => {
-        clearInterval(timer)
-        startSlider()
-    })
-
-    prevBtn.addEventListener('click', () => {
-        startSlider('prev')
-        clearInterval(timer)
-    })
 
     let timer = setInterval(() => {
         startSlider()
