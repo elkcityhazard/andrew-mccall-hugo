@@ -85,6 +85,79 @@ type Item struct {
 }
 ```
 
+## Making An HTTP Request With Golang To Get XML 
+
+
+Typically, one can create a new `http client`, go out and fetch an xml body, and unmarshal it into a struct for futher processing.  
+
+Go has a built in library to help out with this called `encoding/xml`.  To fetch the xml payload we just need to create a client and make a `http request`.
+
+This might look like this:
+
+```
+client := &http.Client{}
+
+	req, err := http.NewRequest(http.MethodGet, "https://www.andrew-mccall.com/blog/index.xml", nil)
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	resp, err := client.Do(req)
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+    if resp.Body != nil {
+
+        //   defer closing the body until the function finishes execution 
+        defer resp.Body.Close()
+
+    // read the response into a slice of byte and handle the error if any 
+
+        body, err := io.ReadAll(resp.Body)
+
+        if err != nil {
+            log.Fatalln(err)
+        }
+
+        // write the response to the console
+
+        os.Stdout.Write(body)
+
+    }
+
+```
+
+This is fairly straightforward but let me explain what an http fetch request looks like in Go:
+
+## A Quick Refresher On Making Http Requests With Go
+
+1.  The first thing we need to do is create a new `client` to do our work.  [Go Does Not Have Classes](https://go.dev/tour/methods/1 "receiver functons") but has receiver methods on types.  The idea here is that this declaration would be reused since it is `pointing to` a client method in memory.  To learn more about this I can recommend reading this great stackoverflow article: [Pointers - Why Is Http Client Prefixed With A &?](https://stackoverflow.com/questions/45751608/why-is-http-client-prefixed-with "Pointers - why is http client prefixed with a &?")
+
+2. The next thing we need to do is create a new request.  `http.NewRequeset` takes in a method, a url, and a payload if applicable.  it returns a `*http.Request` and an error.  Because of this, we naturally repeat handling the error.  
+
+3.  If all goe well, we now have a fully formed request.  The next thing we need to do is actually make the request.  To do that, we use a receiver methon the client called `Do`.  
+
+```
+	resp, err := client.Do(req)
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+```
+
+`Do` takes in the request and returns a response body and an error.  Again, we check for the error.
+
+4.  The next thing we need to do is check and make sure that the `response body` is not `nil`.  `if resp.Body !- nil {...}`.  If it is not empty, we will need to first `defer resp.Body.Close()`.  This is so the body does not close at any point before the function finishes executing.  
+
+5. Finally, we need to to convert the `response body` to something we can use.  To do that we use the `io` package to read the `response body` like so: `body, err  := io.ReadAll(resp.Body)`.  Again, we check for an error, and now we have a variable named `body` that is a `[]byte`.  We can do a lot with this, but to close out the example, we can use the `os` package to write the payload to the console: `os.Stdout.Write(body)`.
+
+6.  If all goes well, you should see the output of the response body written to the console.  
+
+## Non-Standard XML Response - XML Namespace Issues
+
 As you can see there are several `namespaces` named `link`.  This ended up causing quite a bit of pain for me.  The `link` inside of `Item` is no issue.  Where the issue lies is in the `Channel struct`.  
 
 If we examine the keys we have two places where we are using the `link` namespace.  In the beginning, I did not think it was going to be in issue.  After all, one `Space` is the schema for an atom link with a `Local` name of `link` and other one is just `link` with `Space` attached to it.  I thought that `xml.Unmarshal` would be able to figure this out and `unmarshal` the XML appropriately.
@@ -122,18 +195,6 @@ Unfortunately, the world isn't perfect and sometimes we are forced to deal with 
 
 If we know for a fact that we don't need one of these RSS values, we can simply omit either `Link` or `Atom` from `Channel` and everything will work and you can `unmarshal` one of the other.  
 
-<style>
-img:not(1n).lazy:hover {
-    transform: scale(1.5);
-    -webkit-transform-origin: top left;
-    -moz-transform-origin: top left;
-    transform-origin: top left;
-    -moz-transform: all 250ms ease-in-out;
-    -webkit-transform: all 250ms ease-in-out;
-    transition: all 250ms ease-in-out;
-    cursor: crosshair;
-}
-</style>
 
 __Remove ATOM__
 
