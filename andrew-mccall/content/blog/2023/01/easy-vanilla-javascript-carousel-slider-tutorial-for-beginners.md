@@ -73,7 +73,10 @@ After the `.carousel-wrapper` but before the end of the `#app` div, I am placing
 
 That is pretty much it for the html set up.  Nothing too complicated so far.  One thing to note, is many often place carousel slides in a list.  I think that this would be semantically more correct since a carousel slider is technically a list of slides.  But, since there is no textual content, I have elected to keep this as simple as possible. 
 
-To make this a bit more robust, we definitely would want to add an alt tag, a title tag, a height and width property, a decoding tag, and use html5 picture tag to make it a bit more complete.  In an effort to make this as easy to follow, I have elected to ommit some of these enhancements.  
+To make this a bit more robust, we definitely would want to add an alt tag, a title tag, a height and width property, a decoding tag, and use html5 picture tag to make it a bit more complete.  In an effort to make this as easy to follow, I have elected to ommit some of these enhancements.
+
+{{< cta "Just getting started With Web Development?" 
+        "Sign up for my newsletter and I will send you my free Ebook that will help you reach your professional web development goals."  >}}   {{< /cta >}}
 
 
 
