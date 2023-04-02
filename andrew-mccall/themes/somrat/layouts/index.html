@@ -413,7 +413,7 @@
 <!-- Start Contact -->
 {{ with .GetPage "contact"}}
 <style>{{.Params.custom_css | safeCSS}}</style>
-<section id="palmTree" class="contact {{.Params.custom_class}}" {{.Params.custom_attributes | safeHTMLAttr}} id="contact">
+<section id="palmTree" class="d-none contact {{.Params.custom_class}}" {{.Params.custom_attributes | safeHTMLAttr}} id="contact">
   <div class="container">
     <div class="row">
       <div class="contact-holder col-lg-8 offset-lg-2 col-sm-8 offset-sm-2">
