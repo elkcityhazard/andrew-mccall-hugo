@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve">
+<desc>Created with https://simplified.com</desc>
+<defs>
+</defs>
+<g transform="matrix(1 0 0 1 25 25)" id="workarea"  >
+<rect style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0.03; fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  x="-25" y="-25" rx="0" ry="0" width="50" height="50" />
+</g>
+<g transform="matrix(0.35 0 0 0.35 25 25)" id="4ca7cc11-9696-4868-8b39-368fc6ff8d35"  >
+<g style="" vector-effect="non-scaling-stroke"   >
+		<g transform="matrix(1 0 0 1 0 0)"  >
+<path style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(214,223,88); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  transform=" translate(-128, -128)" d="M 161.314 157.657 L 94.686 157.657 C 88.646 157.657 83.732 152.74300000000002 83.732 146.703 L 83.732 117.134 L 89.707 117.134 L 89.707 146.703 C 89.707 149.449 91.94 151.68200000000002 94.68599999999999 151.68200000000002 L 161.314 151.68200000000002 C 164.06 151.68200000000002 166.293 149.449 166.293 146.703 L 166.293 109.297 C 166.293 106.551 164.06 104.318 161.314 104.318 L 92.566 104.318 L 123.582 128.695 C 125.94399999999999 130.551 130.099 130.567 132.474 128.73 L 158.534 108.577 L 162.189 113.303 L 136.13 133.456 C 131.563 136.987 124.42999999999999 136.95999999999998 119.89 133.392 L 88.349 108.602 C 84.64500000000001 105.691 84.84100000000001 103.09100000000001 85.28800000000001 101.80000000000001 C 85.73500000000001 100.50900000000001 87.18700000000001 98.34300000000002 91.89800000000001 98.34300000000002 L 161.31400000000002 98.34300000000002 C 167.354 98.34300000000002 172.26800000000003 103.25700000000002 172.26800000000003 109.29700000000003 L 172.26800000000003 146.70300000000003 C 172.268 152.743 167.354 157.657 161.314 157.657 z" stroke-linecap="round" />
+</g>
+</g>
+</g>
+</svg>

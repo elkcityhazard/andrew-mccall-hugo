@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google Analytics on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
+    <link>/tags/google-analytics/</link>
+    <description>Recent content in Google Analytics on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Feb 2023 20:44:47 -0500</lastBuildDate><atom:link href="/tags/google-analytics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google Analytics 4: Key Differences From Universal Analytics</title>
+      <link>/blog/2023/02/google-analytics-4-key-differences/</link>
+      <pubDate>Thu, 09 Feb 2023 20:44:47 -0500</pubDate>
+      
+      <guid>/blog/2023/02/google-analytics-4-key-differences/</guid>
+      <description>Google Analytics 4 vs Universal Analytics: A Comparison Measurement: Universal analytics measurement is session-based while Google Analytics 4 has a flexible event-based data model. Reporting: Universal Analytics has limited cross-device and cross-platform reporting whereas Google Analytics 4 has greater support for full cross-device and cross-platform reporting. Automation: Universal Analytics properties have limited support for automation. Google Analytics 4 supports machine learning throughout to improve and simplify insight discovery. What is An Audience?</description>
+    </item>
+    
+  </channel>
+</rss>

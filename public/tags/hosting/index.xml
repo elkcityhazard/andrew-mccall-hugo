@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hosting on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
+    <link>/tags/hosting/</link>
+    <description>Recent content in Hosting on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 14 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/hosting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VPS Hosting Security: A Crash Course On VPS Configuration</title>
+      <link>/blog/2022/05/vps-hosting-security-ubuntu-20-04/</link>
+      <pubDate>Sat, 14 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2022/05/vps-hosting-security-ubuntu-20-04/</guid>
+      <description>VPS Hosting Security: What Do I Need To Know Self-hosting websites and web applications give you the ultimate control over your hosting but require a bit of knowledge to implement VPS Hosting Security. Have you ever tried to ssh into a shared server at hostinger only to find that they have bricked almost all essential functionality? The downfall of doing it yourself and having ultimate control is that your server will not be security-hardened out of the box.</description>
+    </item>
+    
+  </channel>
+</rss>

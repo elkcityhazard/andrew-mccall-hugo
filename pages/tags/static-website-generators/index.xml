@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>static website generators on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
+    <link>/tags/static-website-generators/</link>
+    <description>Recent content in static website generators on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 21 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/static-website-generators/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bootstrap A New Hugo Theme From Scratch [video]</title>
+      <link>/blog/2022/06/bootstrap-a-new-hugo-theme/</link>
+      <pubDate>Tue, 21 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2022/06/bootstrap-a-new-hugo-theme/</guid>
+      <description>A part of using Hugo is the freedom of making your own theme. In this tutorial, I will explain how to bootstrap a new Hugo theme so you can customize it exactly how you want to. I will go over verifying installation, creating a theme, telling Hugo how to use your new theme, and we walk through the very basics of setting up a theme so that the home page displays.</description>
+    </item>
+    
+    <item>
+      <title>Install Hugo With Chocolatey Package Manager On Windows 10 [video]</title>
+      <link>/blog/2022/06/install-hugo-on-windows-with-chocolately-package-manager/</link>
+      <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2022/06/install-hugo-on-windows-with-chocolately-package-manager/</guid>
+      <description>Installing Hugo on Windows is easy with chocolately package manager.
+For those who are not familiar, Hugo is a static website generator that can help you manage blazing fast static websites with minimal effort.
+If you are on Windows, installing Hugo is easy using Chocolately Package Manager. Here are the steps we take.
+Directions To Install Hugo on Windows 10 With Chocolately Package Manager Navigate to chocolately package manager
+Click the &amp;ldquo;install&amp;rdquo; link which is located at the top right hand corner next to the light/dark toggle.</description>
+    </item>
+    
+  </channel>
+</rss>

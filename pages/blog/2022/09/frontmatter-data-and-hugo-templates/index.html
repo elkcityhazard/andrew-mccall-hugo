@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content=" Learn how easy it is output frontmatter data with Hugo creating this simple coffee shop menu - Andrew M McCall is a Golang, Javascript, PHP, SQL web developer living in Traverse City, MI ">
+	<title>Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
+	
+	
+	<link rel="stylesheet" type="text/css" href="/css/index.css">
+	<script src="/scripts/index.js" type="module" defer></script>
+</head>
+<body class="single">
+	<div class="wrapper">
+		<header class="article-header">
+			<nav class="main-nav">
+				
+					
+
+				<a href="/about/" title="About Me" rel="">About Me</a>	
+				
+
+				<a href="/blog/" title="Blog" rel="">Blog</a>	
+				
+
+				<a href="/contact/" title="Contact" rel="">Contact</a>	
+				
+
+				<a href="/projects/" title="Projects" rel="">Projects</a>	
+				
+				
+			</nav>
+				<nav aria-label="breadcrumb" class="breadcrumb">
+  				<ol class="breadcrumbs">
+  				  
+  				    <li>
+  				      <a href="/">Home</a>
+  				    </li>
+  				  
+  				    <li>
+  				      <a href="/blog/">Blog</a>
+  				    </li>
+  				  
+  				  <li class="active">
+  				    <a aria-current="page" href="/blog/2022/09/frontmatter-data-and-hugo-templates/">Frontmatter Data And Hugo Templates: How To Output Data With Hugo Static Site Generator</a>
+  				  </li>
+  				</ol>
+			</nav>
+			<h1>Frontmatter Data And Hugo Templates: How To Output Data With Hugo Static Site Generator</h1>
+			<div class="author-byline">
+				<strong>By: </strong><span></span>
+						<br />
+						<strong>Published: </strong><span>Sep 21, 2022</span>
+
+						
+						
+					
+						
+							<br />
+							<strong> Categories: </strong>
+							<ul class="categories">
+							
+									<li>
+										<a href="/categories/web-development/">Web Development</a>
+									</li>
+
+							
+						</ul>
+						
+
+						
+							<br />
+							<strong> Tags: </strong>
+							<ul class="categories">
+							
+									<li>
+										<a href="/tags/hugo/">hugo</a>
+									</li>
+
+							
+									<li>
+										<a href="/tags/frontmatter/">Frontmatter</a>
+									</li>
+
+							
+									<li>
+										<a href="/tags/data/">Data</a>
+									</li>
+
+							
+									<li>
+										<a href="/tags/static-site-generator/">Static Site Generator</a>
+									</li>
+
+							
+									<li>
+										<a href="/tags/tools/">Tools</a>
+									</li>
+
+							
+						</ul>
+						
+
+			</div>
+				
+			</header>
+		<div class="container">
+				<main class="main-content">
+				<article id="mainContent" class="main-content__content">
+					<p>Hugo makes quick work of small client jobs.  It can even handle structured data like coffee shop menus or restaurant pricing.</p>
+<h2 id="video-creating-a-coffee-shop-menu-using-frontmatter-yaml-and-hugo">VIDEO: Creating A Coffee Shop Menu Using Frontmatter YAML and Hugo</h2>
+<!-- raw HTML omitted -->
+<h2 id="creating-a-hugo-homepage">Creating A Hugo Homepage</h2>
+<p><code>hugo new site my-coffee-shop &amp;&amp; cd my-coffee-shop</code></p>
+<p>The first thing we are going to do is create a new Hugo website.  In the <code>config.toml</code> file, we added a <code>site title</code>.</p>
+<p>We also need to make sure we create a <code>index.html</code> page in the layouts folder as well as a <code>_index.md</code> file which will live at the base of our content folder.  This markdown file will be used to hold our structured data which we are going to output in the template.</p>
+<p>I brought in bootstrap from <code>cdnjs</code> since we are not learning css in this tutorial.  After that we created a new HTML boilerplate in the <code>index.html</code> file.</p>
+<p>Next we do some very basic bootstrap stylings just to give our menu some styling so we have something to look at.</p>
+<h2 id="using-frontmatter-and-yaml-to-create-structured-data">Using Frontmatter and YAML To Create Structured Data</h2>
+<p>We need to set up the section for our menu.  But before we can fully create our coffee shop menu, we need to create the data to be outputted by the template.  This is going to be achieved using <a href="https://gohugo.io/content-management/front-matter/" title="Hugo Frontmatter Documentation">frontmatter</a> as well as <a href="https://yaml.org/" title="Yet Another Markup Language">YAML</a>.</p>
+<p>The <code>_index.md</code> file will look this:</p>
+<pre tabindex="0"><code>---
+menu:
+  - title: &#34;Latte&#34;
+    description: &#34;A coffee drink that features steamed milk&#34;
+    sizes:
+      - type: small
+        price: 2.99
+        size: 12 oz
+      - type: medium
+        price: 3.99
+        size: 16oz
+      - type: large
+        price: 4.99
+        size: 20oz
+    ingredients:
+      - Milk
+      - Coffee
+  - title: &#34;Americano&#34;
+    description: &#34;A Coffee Beverage featured Espresso and hot water&#34;
+    sizes:
+      - type: small
+        price: 3.99
+        size: 12 oz
+      - type: medium
+        price: 4.99
+        size: 16oz
+      - type: large
+        price: 5.99
+        size: 20oz
+    ingredients: 
+      - Water
+      - Espresso
+  - title: &#34;Mocha&#34;
+    description: &#34;A Coffee Beverage with cocoa&#34;
+    sizes:
+      - type: small
+        price: 2.29
+        size: 12 oz
+      - type: medium
+        price: 3.29
+        size: 16oz
+      - type: large
+        price: 4.29
+        size: 20oz
+    ingredients: 
+      - Water
+      - Cocoa
+      - Milk
+---
+</code></pre><p>We declare a frontmatter parameter named <code>menu</code>.  To distinguish a new item in the menu, we start each item with a <code>-</code> and indent accordingly according to <code>YAML</code> specification.  If we need to create a new list group, such as &ldquo;sizes&rdquo;, we create a new list declaration by defining the list name and a <code>:</code>.  Again, to define a new item in the list we start with a <code>-</code>. Each property will then be indented and typed out accordingly with the format of <code>property: value</code>.</p>
+<h2 id="using-hugo-to-output-the-structured-data">Using Hugo To Output The Structured Data</h2>
+<p>The first thing we need to do is hop back into our index.html template.  Since we defined the menu as a frontmatter parameter, we will need to access it using built in Hugo functions which are based off of Go Templates.  I highly recommend reading the <a href="https://pkg.go.dev/text/template" title="Go Text/Template Package Documentation">GO documentation</a> to learn more about the inner workings of Hugo&rsquo;s templating engine.</p>
+<p>To best describe what we need to do, let us break down our code:</p>
+<pre tabindex="0"><code>&lt;div class=&#34;row&#34;&gt;
+
+                {{ with .Params.menu }}
+
+                {{ range . }}
+
+                &lt;div class=&#34;col-12 col-md-6 col-lg-4 mx-auto p-3&#34;&gt;
+                    &lt;div class=&#34;card bg-dark text-light&#34;&gt;
+                        &lt;div class=&#34;card-header&#34;&gt;
+                            &lt;h3&gt;{{ .title }}&lt;/h3&gt;
+                            &lt;p class=&#34;card-description&#34;&gt;{{ .description }}&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&#34;card-body&#34;&gt;
+                            {{  with .sizes }}
+                                &lt;ul class=&#34;list-group&#34;&gt;
+                                    {{ range . }}
+                                    &lt;li class=&#34;list-group-item&#34;&gt;&lt;strong&gt;{{ .type }}: &lt;/strong&gt; ${{ .price }} - {{ .size }}&lt;/li&gt;
+                                    {{ end }}
+                                &lt;/ul&gt;
+                            {{ end }}
+                            {{ with .ingredients }}
+                            &lt;div class=&#34;text-center p-3&#34;&gt;&lt;strong&gt;Ingredients&lt;/strong&gt;&lt;/div&gt;
+                                &lt;ul class=&#34;list-group&#34;&gt;
+                                    {{ range . }}
+                                    &lt;li class=&#34;list-group-item&#34;&gt;{{ . }}&lt;/li&gt;
+                                    {{ end }}
+                                &lt;/ul&gt;
+                            {{ end }}
+
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                {{ end }}
+
+
+                {{ end }}
+            &lt;/div&gt;
+</code></pre><p>The first thing we are doing is selecting the menu from the frontmatter variable.  Hugo let&rsquo;s you define your own frontmatter params and the way you access them in the template is through the <code>.Params</code> declaration.  Hugo is passing in the data to the template as an interface.  We are using the <code>{{ with .Params.menu }}</code> function to first, check that there is data and also hoisting the context of that data to the dot.  There is no better explanation of the dot then the fantastically written article by Regis Philibert entitled, <a href="https://www.regisphilibert.com/blog/2018/02/hugo-the-scope-the-context-and-the-dot/" title="Read More About Hugo Context And The Dot">Hugo, the scope, the context and the dot</a>.</p>
+<p>To borrow (rip directly) from Regis&rsquo; article:</p>
+<blockquote>
+<p>I’m using the word scope in the title here, because it’s what first come to mind when dealing with the issue and I guess what people will eventually seek help for. But I suppose we’ll be talking more about the « context »
+The scope is really what is available to you at a certain point in your code. From inside a function or a class for exemple.
+But in Hugo Templates, most of the time, only one object is available to you: the context. And it is stored in a dot.
+Yep, that dot. {{.}}
+So you end up using the properties of this object like so: .Title, .Permalink, .IsHome</p>
+</blockquote>
+<p>Source: <a href="https://www.regisphilibert.com/blog/2018/02/hugo-the-scope-the-context-and-the-dot/" title="Read More About Hugo Context And The Dot">Hugo, the scope, the context and the dot</a></p>
+<p>Once we switched the context to the menu itself, we can start accessing the properties using the dot.  Since we have a list of items, we are going to use the <a href="https://gohugo.io/templates/introduction/#iteration" title="Hugo Iteration Tutorial and Documentation">range function to iterate over the context</a>.  This is how we access the title and description.  Then, once we get to the sizes, we will need to range yet again. This is because sizes is another list, which in Go and Hugo world means map, array, or slice.</p>
+<p>Again, we are going to use the <code>with</code> function to check first if the sizes exist, and then range over the context provided by the with statement.</p>
+<p>The reason why the context shifts to the dot is because GO, and thus Hugo, is a pass by value language.  This means that context is reset within the scope of the function body.  It has no awareness of any reference, it is simply just accepting the values and doing what it needs to do with it.  In Golang, we would pass a pointer reference to the function to update the variable itself but Hugo does not work this way. This is why the context goes from say <code>.sizes.type</code> to simply <code>.type</code>.</p>
+<p>Finally, all we are doing is checking to see if ingredients exist and using the same principles as we have already seen to loop through the ingredients and output it as a list group.</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>Learning how context works in Hugo can be challenging at first but as you can see, a simple example can help clarify how it works and make it easier to digest.  If you are a freelancer or have a smaller project, Hugo can be an amazing tool to make money quickly as this framework can spin up production ready static sites very quickly.</p>
+<p>This is a part of a larger series of videos on Hugo.  Read and watch the rest of my hugo videos by clicking the links below:</p>
+<ul>
+<li><a href="/blog/2022/06/bootstrap-a-new-hugo-theme/" title="Set up a hugo website tutorial">Bootstrap A New Hugo Theme From Scratch</a></li>
+<li><a href="/blog/2022/06/install-hugo-on-windows-with-chocolately-package-manager/" title="Install Hugo With Chocolately On Windows 10">Install Hugo On Windows With Chocolately</a></li>
+<li><a href="/blog/hugo-website-tutorial-how-to-create-a-hugo-website-from-scratch/" title="Complete Beginners Guide To Hugo">A Complete Beginners Guide To Hugo</a></li>
+</ul>
+
+				</article>
+			</main>
+		</div>
+		<aside class="sidebar"> 
+			
+		<section class="author-card">
+		<div class="author-card__inner-row">
+			<div class="author-card__inner-row__portrait">
+				<div class="outer-portrait">
+					<div class="inner-portrait">
+						<img data-src="/images/portrait.webp" class="logo" alt="portrait of author" height="300" width="300" loading="lazy" decoding="async">
+					</div>
+				</div>
+			</div>
+			<div class="author-meta">
+					<h3 class="author-meta__name">Andrew M McCall</h3>
+					<span class="role">Web Developer</span>
+					<div class="meta-box  ">
+						<time class="publish-date" datetime="2022-09-21 00:00:00 &#43;0000 UTC">Sep 21, 2022</time>
+					<span id="readTime" class="read-time">-</span>
+					</div>
+					
+					 
+					<div class="social-icons">
+						
+						<a href="/contact" title=" email  - social " rel="noreferrer noopener"><img data-src="/images/icons/email-50x50.svg" class="logo" alt="email - social icon" loading="lazy" decoding="async" height="35" width="35"></a>
+						
+						<a href="https://indieweb.social/@elkcityhazard" title=" @elkcityhazard  - social " rel="noreferrer noopener"><img data-src="/images/icons/logo-purple.png" class="logo" alt="mastodon - social icon" loading="lazy" decoding="async" height="35" width="35"></a>
+						
+						<a href="https://book.andrew-mccall.com/" title=" introwise  - social " rel="noreferrer noopener"><img data-src="/images/icons/logo-small-transparent.png" class="logo" alt="introwise - social icon" loading="lazy" decoding="async" height="35" width="35"></a>
+						
+						<a href="https://codeberg.org/elkcityhazard" title=" codeberg  - social " rel="noreferrer noopener"><img data-src="/images/icons/codeberg.png" class="logo" alt="codeberg - social icon" loading="lazy" decoding="async" height="35" width="35"></a>
+						
+						<a href="https://gitlab.com/elkcityhazard" title=" gitlab  - social " rel="noreferrer noopener"><img data-src="/images/icons/gitlab.png" class="logo" alt="gitlab - social icon" loading="lazy" decoding="async" height="35" width="35"></a>
+						
+					</div>
+					
+					
+				</div>
+
+		</div>
+</section>
+			
+
+<section class="related">
+<h3 class="related__heading">See Also</h3>
+<ul>
+ 
+ <li>
+ 	<div class="featured-card">
+					<a href="/blog/everything-you-need-to-know-to-get-started-with-content-delivery-networks-as-a-beginner/" title="Everything You Need To Know About Content Delivery Networks As A Beginner">
+					<h4 class="featured-card__title">Everything You Need To Know About Content Delivery Networks As A Beginner</h4>
+					</a>
+					<div class="featured-card__byline">
+						<strong>By: </strong><span></span>
+						<br />
+						<strong>Published: </strong><span>Aug 21, 2021</span>
+					</div>
+					<div class="featured-card__content">Choosing a Content Delivery Network (CDN) is not a decision to be taken lightly. There are several factors to consider, and different factors apply to different types of website. This article guides you through the process of selecting a CDN and the factors you should consider.
+What Is A Content Delivery Network A content delivery network (CDN) is a system of servers that delivers web pages, video, and applications to a user based on their location.</div>
+					<a href="/blog/everything-you-need-to-know-to-get-started-with-content-delivery-networks-as-a-beginner/" class="featured-card__button" title="Everything You Need To Know About Content Delivery Networks As A Beginner -Choosing a Content Delivery Network (CDN) is not a decision to be taken lightly. There are several factors to consider, and different factors apply to different types of website. This article guides you through the process of selecting a CDN and the factors you should consider.
+What Is A Content Delivery Network A content delivery network (CDN) is a system of servers that delivers web pages, video, and applications to a user based on their location.">Everything You Need To Know About Content Delivery Networks As A Beginner</a>
+				</div>
+ </li>
+ 
+ <li>
+ 	<div class="featured-card">
+					<a href="/blog/2023/01/easy-vanilla-javascript-carousel-slider-tutorial-for-beginners/" title="Vanilla Javascript Carousel Slider: A Beginner&#39;s Tutorial">
+					<h4 class="featured-card__title">Vanilla Javascript Carousel Slider: A Beginner&#39;s Tutorial</h4>
+					</a>
+					<div class="featured-card__byline">
+						<strong>By: </strong><span></span>
+						<br />
+						<strong>Published: </strong><span>Jan 29, 2023</span>
+					</div>
+					<div class="featured-card__content">Vanilla Javascript Carousel Slider: A Beginner Slider A photo or content slider is one of the oldest, but most popular design assets one can create with javascript. Many developers will reach for popular carousel frameworks such as swiper, slick, or photoswipe. Most of the time, you don&rsquo;t need so much overhead. Let&rsquo;s build a slider together and see how we can build a responsive slider without using a ton of a extra javascript.</div>
+					<a href="/blog/2023/01/easy-vanilla-javascript-carousel-slider-tutorial-for-beginners/" class="featured-card__button" title="Vanilla Javascript Carousel Slider: A Beginner&#39;s Tutorial -Vanilla Javascript Carousel Slider: A Beginner Slider A photo or content slider is one of the oldest, but most popular design assets one can create with javascript. Many developers will reach for popular carousel frameworks such as swiper, slick, or photoswipe. Most of the time, you don&rsquo;t need so much overhead. Let&rsquo;s build a slider together and see how we can build a responsive slider without using a ton of a extra javascript.">Vanilla Javascript Carousel Slider: A Beginner&#39;s Tutorial</a>
+				</div>
+ </li>
+ 
+ <li>
+ 	<div class="featured-card">
+					<a href="/blog/2022/12/golang-image-resize-and-golang-image-crop/" title="Golang Image Resize and Golang Image Crop: Image Manipulation With Go Programming Language">
+					<h4 class="featured-card__title">Golang Image Resize and Golang Image Crop: Image Manipulation With Go Programming Language</h4>
+					</a>
+					<div class="featured-card__byline">
+						<strong>By: </strong><span></span>
+						<br />
+						<strong>Published: </strong><span>Dec 18, 2022</span>
+					</div>
+					<div class="featured-card__content">Golang Image Resize &amp; Golang Image Crop In general, I believe most people will want to use a dedicated package to really make this powerful but I wanted to write a bit about my experience with resizing images in Golang.
+Before I go any further, here are a few resources I used to learn more about image processing for my own purposes.
+How to Crop image in Golang? https://stackoverflow.com/questions/22940724/go-resizing-images Go Image Package Go Image/Draw Package</div>
+					<a href="/blog/2022/12/golang-image-resize-and-golang-image-crop/" class="featured-card__button" title="Golang Image Resize and Golang Image Crop: Image Manipulation With Go Programming Language -Golang Image Resize &amp; Golang Image Crop In general, I believe most people will want to use a dedicated package to really make this powerful but I wanted to write a bit about my experience with resizing images in Golang.
+Before I go any further, here are a few resources I used to learn more about image processing for my own purposes.
+How to Crop image in Golang? https://stackoverflow.com/questions/22940724/go-resizing-images Go Image Package Go Image/Draw Package">Golang Image Resize and Golang Image Crop: Image Manipulation With Go Programming Language</a>
+				</div>
+ </li>
+ 
+ <li>
+ 	<div class="featured-card">
+					<a href="/blog/2022/10/how-to-create-a-website-for-my-online-business/" title="How To Create A Website For Your Online Business: Small Business Website Guide">
+					<h4 class="featured-card__title">How To Create A Website For Your Online Business: Small Business Website Guide</h4>
+					</a>
+					<div class="featured-card__byline">
+						<strong>By: </strong><span></span>
+						<br />
+						<strong>Published: </strong><span>Oct 14, 2022</span>
+					</div>
+					<div class="featured-card__content">Why Do You Need A Business Website? A business website is one of the most important tools you can have for promoting your company online. It is a cost-effective way to reach out to potential customers and clients, and it can help you build a strong online presence.
+It can be used to showcase your products and services, provide information about your company, and even sell products and services online. If you are not sure where to start, there are many website builders and platforms that can help you build a professional website quickly and easily as well as a few DIY options.</div>
+					<a href="/blog/2022/10/how-to-create-a-website-for-my-online-business/" class="featured-card__button" title="How To Create A Website For Your Online Business: Small Business Website Guide -Why Do You Need A Business Website? A business website is one of the most important tools you can have for promoting your company online. It is a cost-effective way to reach out to potential customers and clients, and it can help you build a strong online presence.
+It can be used to showcase your products and services, provide information about your company, and even sell products and services online. If you are not sure where to start, there are many website builders and platforms that can help you build a professional website quickly and easily as well as a few DIY options.">How To Create A Website For Your Online Business: Small Business Website Guide</a>
+				</div>
+ </li>
+ 
+ <li>
+ 	<div class="featured-card">
+					<a href="/blog/2022/09/golang-read-environment-variables-from-file/" title="Golang Read Environment Variables From File: How To Do It [Code Snippets]">
+					<h4 class="featured-card__title">Golang Read Environment Variables From File: How To Do It [Code Snippets]</h4>
+					</a>
+					<div class="featured-card__byline">
+						<strong>By: </strong><span></span>
+						<br />
+						<strong>Published: </strong><span>Sep 08, 2022</span>
+					</div>
+					<div class="featured-card__content">What Are Environmental Variables In Go A Cautionary Tale: My AWS Account Was Hacked And I Have A $50,000 Bill
+If you have ever used an API key or database connection string, you have most likely had a need to secure some sensitive data. Environment variables are a way to achieve this. We may need to do this because certain API&rsquo;s can only be called so many times and the key is a way of authorizing our requests and keeping track of them.</div>
+					<a href="/blog/2022/09/golang-read-environment-variables-from-file/" class="featured-card__button" title="Golang Read Environment Variables From File: How To Do It [Code Snippets] -What Are Environmental Variables In Go A Cautionary Tale: My AWS Account Was Hacked And I Have A $50,000 Bill
+If you have ever used an API key or database connection string, you have most likely had a need to secure some sensitive data. Environment variables are a way to achieve this. We may need to do this because certain API&rsquo;s can only be called so many times and the key is a way of authorizing our requests and keeping track of them.">Golang Read Environment Variables From File: How To Do It [Code Snippets]</a>
+				</div>
+ </li>
+ 
+</ul>
+</section>
+
+			<section class="toc">
+	<h3>Table Of Contents</h3>
+	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#video-creating-a-coffee-shop-menu-using-frontmatter-yaml-and-hugo">VIDEO: Creating A Coffee Shop Menu Using Frontmatter YAML and Hugo</a></li>
+    <li><a href="#creating-a-hugo-homepage">Creating A Hugo Homepage</a></li>
+    <li><a href="#using-frontmatter-and-yaml-to-create-structured-data">Using Frontmatter and YAML To Create Structured Data</a></li>
+    <li><a href="#using-hugo-to-output-the-structured-data">Using Hugo To Output The Structured Data</a></li>
+    <li><a href="#final-thoughts">Final Thoughts</a></li>
+  </ul>
+</nav>
+</section>  
+		</aside>
+		<footer class="main-footer">
+	<div class="main-footer__row">
+		<div class="col">
+			<a href="/">
+			<img data-src="/images/logo-small-transparent.png" class="logo" alt="logo" loading="lazy" decoding="async" height="200" width="200">
+		</a>
+		</div>
+		<div class="col">
+				<h4>Navigation</h4>
+<nav class="footer-nav">
+				
+					
+
+				<a href="/about/" title="About Me" rel="">About Me</a>	
+				
+
+				<a href="/blog/" title="Blog" rel="">Blog</a>	
+				
+
+				<a href="/contact/" title="Contact" rel="">Contact</a>	
+				
+
+				<a href="/projects/" title="Projects" rel="">Projects</a>	
+				
+				
+			</nav>
+		</div>
+		<div class="col">
+			
+					 <h4>Connect</h4>
+					<div class="social-icons footer">
+						
+						<a href="/contact" title=" email  - social " rel="noreferrer noopener"><img data-src="/images/icons/email-50x50.svg" alt="email social icon" class="logo" aria-label="email" loading="lazy" decoding="async" height="45" width="45"></a>
+						
+						<a href="https://indieweb.social/@elkcityhazard" title=" @elkcityhazard  - social " rel="noreferrer noopener"><img data-src="/images/icons/logo-purple.png" alt="mastodon social icon" class="logo" aria-label="mastodon" loading="lazy" decoding="async" height="45" width="45"></a>
+						
+						<a href="https://book.andrew-mccall.com/" title=" introwise  - social " rel="noreferrer noopener"><img data-src="/images/icons/logo-small-transparent.png" alt="introwise social icon" class="logo" aria-label="introwise" loading="lazy" decoding="async" height="45" width="45"></a>
+						
+						<a href="https://codeberg.org/elkcityhazard" title=" codeberg  - social " rel="noreferrer noopener"><img data-src="/images/icons/codeberg.png" alt="codeberg social icon" class="logo" aria-label="codeberg" loading="lazy" decoding="async" height="45" width="45"></a>
+						
+						<a href="https://gitlab.com/elkcityhazard" title=" gitlab  - social " rel="noreferrer noopener"><img data-src="/images/icons/gitlab.png" alt="gitlab social icon" class="logo" aria-label="gitlab" loading="lazy" decoding="async" height="45" width="45"></a>
+						
+					</div>
+					
+					
+		</div>
+			
+	</div>
+	
+	<p class="center">&copy; 2022 - <a href="/">Andrew M McCall - Traverse City Web Developer</a> </p>
+</footer>
+	</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
+    <link>/tags/hugo/</link>
+    <description>Recent content in hugo on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Frontmatter Data And Hugo Templates: How To Output Data With Hugo Static Site Generator</title>
+      <link>/blog/2022/09/frontmatter-data-and-hugo-templates/</link>
+      <pubDate>Wed, 21 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2022/09/frontmatter-data-and-hugo-templates/</guid>
+      <description>Hugo makes quick work of small client jobs. It can even handle structured data like coffee shop menus or restaurant pricing.
+VIDEO: Creating A Coffee Shop Menu Using Frontmatter YAML and Hugo Creating A Hugo Homepage hugo new site my-coffee-shop &amp;amp;&amp;amp; cd my-coffee-shop
+The first thing we are going to do is create a new Hugo website. In the config.toml file, we added a site title.
+We also need to make sure we create a index.</description>
+    </item>
+    
+    <item>
+      <title>Bootstrap A New Hugo Theme From Scratch [video]</title>
+      <link>/blog/2022/06/bootstrap-a-new-hugo-theme/</link>
+      <pubDate>Tue, 21 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2022/06/bootstrap-a-new-hugo-theme/</guid>
+      <description>A part of using Hugo is the freedom of making your own theme. In this tutorial, I will explain how to bootstrap a new Hugo theme so you can customize it exactly how you want to. I will go over verifying installation, creating a theme, telling Hugo how to use your new theme, and we walk through the very basics of setting up a theme so that the home page displays.</description>
+    </item>
+    
+    <item>
+      <title>Install Hugo With Chocolatey Package Manager On Windows 10 [video]</title>
+      <link>/blog/2022/06/install-hugo-on-windows-with-chocolately-package-manager/</link>
+      <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2022/06/install-hugo-on-windows-with-chocolately-package-manager/</guid>
+      <description>Installing Hugo on Windows is easy with chocolately package manager.
+For those who are not familiar, Hugo is a static website generator that can help you manage blazing fast static websites with minimal effort.
+If you are on Windows, installing Hugo is easy using Chocolately Package Manager. Here are the steps we take.
+Directions To Install Hugo on Windows 10 With Chocolately Package Manager Navigate to chocolately package manager
+Click the &amp;ldquo;install&amp;rdquo; link which is located at the top right hand corner next to the light/dark toggle.</description>
+    </item>
+    
+    <item>
+      <title>Hugo Website Tutorial: How To Create A Hugo Website</title>
+      <link>/blog/hugo-website-tutorial-how-to-create-a-hugo-website-from-scratch/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/hugo-website-tutorial-how-to-create-a-hugo-website-from-scratch/</guid>
+      <description>Hugo Website Tutorial: How To Create Your First Hugo Website Hugo is a powerful static website generator written in the GO language. It can help you create clean, modern websites that load quickly with little overhead.
+[VIDEO] Hugo Tutorials 👉 [Video] How To Install Hugo On Windows 10 With Chocolately Package Manager (Less Than 2.5 Minutes) 👉 [Video] How To Boostrap A New Hugo Theme And Display The Home Page 👉 [Video] Output Structured Data Using Hugo, YAML, and Frontmatter What is the Hugo static site framework?</description>
+    </item>
+    
+  </channel>
+</rss>
