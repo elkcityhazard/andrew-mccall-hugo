@@ -38,7 +38,7 @@ img.loaded {
 	max-width: 1600px;
 	margin: auto;
 	position: fixed;
-	z-index: 2;
+	z-index: 99999999999999;
 }
 
 .row {
@@ -242,7 +242,7 @@ aside {
 				max-width: 1200px;
 				position: fixed;
 				top: 0;
-				z-index: 3;
+				z-index: 99999999999;
 			}
 		}
 		.container {
