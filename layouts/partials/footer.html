@@ -1,0 +1,26 @@
+<footer class="main-footer">
+	<div class="main-footer__row">
+		<div class="col">
+			<a href="{{ .Site.BaseURL}}">
+			<img data-src="{{ .Site.Params.footer_logo }}" class="logo" alt="logo" loading="lazy" decoding="async" height="200" width="200">
+		</a>
+		</div>
+		<div class="col">
+				{{ partial "footer-nav.html" . }}
+		</div>
+		<div class="col">
+			{{ with .Site.Params.social }}
+					 <h4>Connect</h4>
+					<div class="social-icons footer">
+						{{ range . }}
+						<a href="{{.url }}" title="{{ if .handle  }} {{ .handle }} {{ else }} {{ .name }} {{ end }} - social " rel="noreferrer noopener"><img data-src="{{ .icon }}" alt="{{ .name }} social icon" class="logo" aria-label="{{ .name }}" loading="lazy" decoding="async" height="45" width="45"></a>
+						{{ end }}
+					</div>
+					
+					{{ end }}
+		</div>
+			
+	</div>
+	
+	<p class="center">&copy; {{ .Date.Format "2006" }} - <a href="{{ .Site.BaseURL }}">Andrew M McCall - Traverse City Web Developer</a> </p>
+</footer>

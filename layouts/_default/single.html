@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="{{ if .Description }} {{ .Description}} - {{ .Site.Params.description }} {{ else }} {{ .Site.Params.description }} {{ end }}">
+	<title>{{- .Site.Title -}}</title>
+	{{ $style := resources.Get "css/index.css" }}
+	{{ $script := resources.Get "scripts/index.js" |  js.Build (dict "sourceMap" "external" ) }}
+	<link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
+	<script src="{{ $script.RelPermalink }}" type="module" defer></script>
+</head>
+<body class="single">
+	<div class="wrapper">
+		<header class="article-header">
+			<nav class="main-nav">
+				{{ with .Site.Menus.main }}
+					{{ range . }}
+
+				<a href="{{- .URL -}}" title="{{- .Name -}}" rel="">{{- .Name -}}</a>	
+				{{ end }}
+				{{ end }}
+			</nav>
+				<nav aria-label="breadcrumb" class="breadcrumb">
+  				<ol class="breadcrumbs">
+  				  {{ range .Ancestors.Reverse }}
+  				    <li>
+  				      <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+  				    </li>
+  				  {{ end }}
+  				  <li class="active">
+  				    <a aria-current="page" href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+  				  </li>
+  				</ol>
+			</nav>
+			<h1>{{ .Title }}</h1>
+			<div class="author-byline">
+				<strong>By: </strong><span>{{- .Params.author -}}</span>
+						<br />
+						<strong>Published: </strong><span>{{ .Params.publishDate.Format "Jan 02, 2006" }}</span>
+
+						{{ $categories := .Page.GetTerms "categories" }}
+						{{ $tags := .Page.GetTerms "tags" }}
+					
+						{{ with $categories }}
+							<br />
+							<strong> Categories: </strong>
+							<ul class="categories">
+							{{ range . }}
+									<li>
+										<a href="{{.RelPermalink}}">{{.LinkTitle}}</a>
+									</li>
+
+							{{ end}}
+						</ul>
+						{{ end }}
+
+						{{ with $tags }}
+							<br />
+							<strong> Tags: </strong>
+							<ul class="categories">
+							{{ range . }}
+									<li>
+										<a href="{{.RelPermalink}}">{{.LinkTitle}}</a>
+									</li>
+
+							{{ end}}
+						</ul>
+						{{ end }}
+
+			</div>
+				
+			</header>
+		<div class="container">
+				<main class="main-content">
+				<article id="mainContent" class="main-content__content">
+					{{ .Content }}
+				</article>
+			</main>
+		</div>
+		<aside class="sidebar"> 
+			{{ partial "author-card.html" . }}
+			{{ partial "related.html" . }}
+			{{ partial "toc.html" . }}  
+		</aside>
+		{{ partial "footer.html" . }}
+	</div>
+</body>
+</html>

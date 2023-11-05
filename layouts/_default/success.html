@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+{{ partial "head.html" .}}
+<body class="single">
+	<div class="wrapper">
+		<header class="article-header">
+			<nav class="main-nav">
+				{{ with .Site.Menus.main }}
+					{{ range . }}
+
+				<a href="{{- .URL -}}" title="{{- .Name -}}" rel="">{{- .Name -}}</a>	
+				{{ end }}
+				{{ end }}
+			</nav>
+			<h1 class="">{{ .Title }}</h1>
+			</header>
+		<div class="container">
+			{{ block "main" . }}
+				<main class="main-content">
+				<article id="mainContent" class="main-content__content">
+					
+					{{ .Content }}
+					
+					<a class="return-home" href="{{.Site.BaseURL}}" title="{{.Site.Title}}">Return Home</a>
+
+				</article>
+			</main>
+			{{ end }}
+		</div>
+	
+{{ partial "footer.html" . }}
+	</div>
+</body>
+</html>
+
+
+	
+
+
+

@@ -1,0 +1,31 @@
+@use '../_defaults/colors' as colors;
+
+.pagination-default {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20px, 40px));
+	margin: 1rem auto;
+	font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+	font-weight: 600;
+	font-size: clamp(1rem, 10vh, 1.33rem);
+	padding: 1rem;
+	align-items: center;
+	justify-content: center;
+
+	.page-item {
+		aspect-ratio: 1/1;
+		display: grid;
+		place-items: center;
+	}
+
+	.page-item.active {
+		border: 2px solid colors.$cloud-blue;
+		border-radius: 50%;
+		.page-link {
+			color: colors.$rose-pink;
+			display: grid;
+			place-items: center;
+			text-decoration: underline;
+		}
+	}
+}
+

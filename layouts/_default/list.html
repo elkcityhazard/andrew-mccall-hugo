@@ -1,0 +1,41 @@
+{{ define "main" }}
+		
+		<section class="featured">
+			{{ with .Paginator.Pages }}
+
+				{{ range (first 3 .) }}
+				<div class="featured-card">
+					<a href="{{- .RelPermalink -}}" title="{{- .Title -}}">
+					<h2 class="featured-card__title">{{ .Title }}</h2>
+					</a>
+					<div class="featured-card__byline">
+						<strong>By: </strong><span>{{- .Params.author -}}</span>
+						<br />
+						<strong>Published: </strong><span>{{ .Params.publishDate.Format "Jan 02, 2006" }}</span>
+					</div>
+					<div class="featured-card__content">
+						{{- .Summary -}}
+					</div>
+					<a href="{{- .RelPermalink -}}" class="btn" title="{{- .Summary -}}">{{- .Title -}}</a>
+				</div>
+				{{ end }}
+			{{ end }}
+		</section>		
+
+		<section class="more-posts">
+			<h3>More Posts</h3>
+			<ol>
+				{{ range (after 3 .Paginator.Pages) }}
+   					<li>
+   						<a href="{{.RelPermalink}}" title="{{ .Summary }}" class="">{{ .Title }}</a>
+   						<div class="meta-box">
+   							<div><strong>By: </strong>{{ .Params.author }}</div>
+   							<div><strong>Published: </strong>{{.Params.publishDate.Format "Jan 02, 2006"}}</div>
+   						</div>
+   					</li>
+				{{ end }}
+			</ol>
+{{ template "_internal/pagination.html" . }}
+
+		</section>
+{{ end }}

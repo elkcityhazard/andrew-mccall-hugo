@@ -1,0 +1,24 @@
+
+
+/* SCSS HSL */
+$oxford-blue: hsla(231, 100%, 9%, 1);
+$penn-blue: hsla(220, 100%, 17%, 1);
+$royal-blue-traditional: hsla(225, 84%, 24%, 1);
+$bice-blue: hsla(204, 85%, 36%, 1);
+$non-photo-blue: hsla(198, 89%, 82%, 1);
+
+$non-photo-blue-0: hsla(198, 89%, 82%, 0);
+
+$rose-pink: darken(#ef6d7a, 25%);
+$cloud-blue: #8ac5dc;
+$sun-yellow: #d6df58;
+
+$sun-yellow-900: hsl(64, 68%, 61%, 1);
+$sun-yellow-500: hsl(64, 68%, 61%, 0.5);
+$sun-yellow-100: hsl(64, 68%, 61%, 0.1);
+
+
+
+.fadeOut {
+	opacity: 0;
+}

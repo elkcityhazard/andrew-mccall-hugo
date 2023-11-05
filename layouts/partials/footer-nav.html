@@ -1,0 +1,9 @@
+<h4>Navigation</h4>
+<nav class="footer-nav">
+				{{ with .Site.Menus.main }}
+					{{ range . }}
+
+				<a href="{{- .URL -}}" title="{{- .Name -}}" rel="">{{- .Name -}}</a>	
+				{{ end }}
+				{{ end }}
+			</nav>

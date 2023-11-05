@@ -1,0 +1,68 @@
+@use '../_defaults/colors' as c;
+@use '../_defaults/mixins' as mixins;
+@use '../_defaults/media-query' as query;
+
+.toc {
+	@media screen and (min-width: 1920px) {
+		background: #fff;
+		z-index: 99;
+		height: 100vh;
+		padding-top: 100px;
+		padding-right: 15px;
+		position: fixed;
+		top: 0px;
+		right: 0;
+		transform: translateX(0);
+		width: auto;
+		max-width: 325px;
+		margin-right: 1rem;
+		margin-left: auto;
+		@include mixins.base-transition();
+		&:hover,
+		&:active,
+		&:focus {
+			transform: translateX(0);
+			overflow-y: auto;
+		}
+		a {
+			font-size: clamp(12px, 1vh, 2vh);
+			margin-bottom: 1rem;
+			padding-right: 0;
+		}
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: c.$rose-pink;
+		font-size: clamp(1.25rem, 10vh, 2rem);
+		text-decoration: underline;
+		text-transform: uppercase;
+	}
+
+	a {
+	
+	font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+	font-weight: 600;
+	text-decoration: none;
+	color: c.$bice-blue;
+	padding: 0.25rem;
+	@include mixins.base-transition();
+	&:hover,
+	&:active,
+	&:focus {
+		color: darken(c.$rose-pink, 20%);
+	}
+
+}
+
+a.active {
+	@include mixins.base-transition();
+	background: c.$sun-yellow;
+	padding: 0.25rem;
+	font-weight: 600;
+}
+
+}

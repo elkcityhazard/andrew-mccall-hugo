@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-us">
+{{ partial "head.html" . }}
+<body>
+	<div class="wrapper">
+		<header class="main-header"> <!-- main header -->
+			<nav class="main-nav">
+				{{ with .Site.Menus.main }}
+					{{ range . }}
+
+				<a href="{{- .URL -}}" title="{{- .Name -}}" rel="">{{- .Name -}}</a>	
+				{{ end }}
+				{{ end }}
+			</nav>
+			<div class="main-header__row">
+				<div class="main-header__row-col">
+					<h1>{{- .Site.Title -}}</h1>
+				</div>
+				<div class="main-header__row-col">
+					
+				</div>
+			</div>
+		</header> <!-- end main header -->
+		
+		<section class="featured">
+			<h2 class="featured__title">Most Recent Posts</h2>
+			<div class="featured__articles">
+				{{ range (where .Site.Pages "Section" "blog") }}
+
+				{{ range (first 3 .Pages) }}
+				<div class="featured-card">
+					<a href="{{- .RelPermalink -}}" title="{{- .Title -}}">
+					<h2 class="featured-card__title">{{ .Title }}</h2>
+					</a>
+					<div class="featured-card__byline">
+						<strong>By: </strong><span>{{- .Params.author -}}</span>
+						<br />
+						<strong>Published: </strong><span>{{ .Params.publishDate.Format "Jan 02, 2006" }}</span>
+					</div>
+					<div class="featured-card__content">
+						{{- .Summary -}}
+					</div>
+					<a href="{{- .RelPermalink -}}" class="featured-card__button" title="{{ .Title }} - {{- .Summary -}}">{{ .Title }}</a>
+				</div>
+				{{ end }}
+			{{ end }}
+			</div>
+
+			
+		</section>	
+
+
+		<section class="featured">
+			<h2 class="featured__title">Most Recent Projects</h2>
+			<div class="featured__articles">
+				{{ range (where .Site.Pages "Section" "projects") }}
+
+				{{ range (first 3 .Pages) }}
+				<div class="featured-card">
+					<a href="{{- .RelPermalink -}}" title="{{- .Title -}}">
+					<h2 class="featured-card__title">{{ .Title }}</h2>
+					</a>
+					<div class="featured-card__byline">
+						<strong>By: </strong><span>{{- .Params.author -}}</span>
+						<br />
+						<strong>Published: </strong><span>{{ .Params.publishDate.Format "Jan 02, 2006" }}</span>
+					</div>
+					<div class="featured-card__content">
+						{{- .Summary -}}
+					</div>
+					<a href="{{- .RelPermalink -}}" class="featured-card__button" title="{{ .Title }} - {{- .Summary -}}">{{ .Title }}</a>
+				</div>
+				{{ end }}
+			{{ end }}
+			</div>
+
+			
+		</section>		
+		{{ partial "footer.html" . }}
+	</div>
+</body>
+</html>

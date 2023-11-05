@@ -1,0 +1,136 @@
+@use '../_defaults/_colors.scss' as c;
+@use '../_defaults/media-query' as query;
+
+.related {
+
+	.related__heading {
+		color: c.$rose-pink;
+		font-size: clamp(1.25rem, 10vh, 2rem);
+		text-decoration: underline;
+		text-transform: uppercase;
+	}
+
+	ul {
+		padding: 1rem 0;
+		width: 75vw;
+		@include query.tablet {
+			width: initial;
+		}
+		@include query.desktop {
+			width: initial;
+		}
+
+		margin: auto;
+		li {
+			margin-bottom: 1rem;
+			padding-left: 1rem;
+			position: relative;
+			&::after,
+			&::before {
+		content: "";
+		background: c.$rose-pink;
+		display: block;
+		height: 100%;
+		width: 4px;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+			}
+			&::after {
+				background: c.$rose-pink;
+				border: 1px solid c.$cloud-blue;
+				border-radius: 50%;
+				box-shadow: 2px 2px 20px -10px #000;
+				height: 1rem;
+				width: 1rem;
+				top: unset;
+				bottom: 0;
+				left: -1rem;
+				transform: translate(57%, 0%);
+			}
+			.featured-card {
+				a {
+					text-decoration: none;
+					font-size: clamp(0.75rem, 1rem, 1.1rem);
+
+					&:hover,
+					&:active,
+					&:focus {
+						.featured-card__title {
+							color: lighten(c.$royal-blue-traditional, 50%);
+						}
+					}
+					&:focus {
+						outline: 1px dotted #000;
+					}
+					.featured-card__title {
+						color: c.$royal-blue-traditional;
+						font-size: 1.25rem;
+						text-decoration: underline;
+						font-weight: 700;
+						transition: color 250ms ease;
+					-webkit-transition: color 250ms ease;
+					-moz-transition: color 250ms ease;
+					}
+				}
+
+				.featured-card__button {
+					background: c.$rose-pink;
+					border: 1px solid transparent;
+					border-top-right-radius: 2.25rem;
+					border-bottom-right-radius: 2.25rem;
+					box-shadow: 0 0 10px -5px #000;
+					color: transparent;
+					display: inline-block;
+					margin-top: 1rem;
+					max-height: 2vw;
+					overflow: hidden;
+					max-width: 7vw;
+					min-width: 33%;
+					padding: 0.5rem 1rem;
+					position: relative;
+					text-align: center;
+					text-transform: uppercase;
+					transition: color 250ms ease;
+					-webkit-transition: color 250ms ease;
+					-moz-transition: color 250ms ease;
+					&::after {
+									content: "read more";
+									background: c.$rose-pink;
+									color: #fff;
+									display: grid;
+									font-size: clamp(0.667rem, 0.75rem, 1rem);
+									place-items: center;
+									text-transform: uppercase;
+									text-transform: uppercase;
+									position: absolute;
+									top: 0;
+									left: 0;
+									height: 100%;
+									width: 100%;
+									z-index: 99;
+									-moz-transition: all 250ms ease;
+									-webkit-transition: all 250ms ease;
+									transition: all 250ms ease;
+			}
+					&:hover,
+					&:active,
+					&:focus {
+						background: #fff;
+						color: c.$rose-pink;
+						border: 1px solid c.$rose-pink;
+						&::after {
+							padding-left: 1rem;
+						}
+					}
+					&:focus {
+						outline: 1px dotted #000;
+					}
+
+				}
+			}
+		}
+	}
+
+}

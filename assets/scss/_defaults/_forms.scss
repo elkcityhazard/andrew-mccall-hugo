@@ -1,0 +1,92 @@
+@use "../_defaults/colors" as c;
+
+#mainContactForm {
+	
+	margin: {
+		top: 0;
+		right: auto;
+		bottom: 1rem;
+		left: 0;
+	}
+	width: 100%;
+}
+
+.contact-form {
+	max-width: 100%;
+	width: calc(100vw - 15px);
+	form {
+	font-size: clamp(0.75rem, 1rem, 1.25rem);
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 1rem;
+
+	.form-control {
+	display: flex;
+	flex-flow: column wrap;
+	max-width: 100%;
+	label,
+	input,
+	textarea {
+		max-width: 100%;
+		padding: 1rem;
+	}
+
+	label {
+		font-size: 0.667rem;
+		text-transform: uppercase;
+	}
+
+	textarea {
+		text-align: left;
+	}
+
+	input,
+	textarea {
+		border: 1px solid c.$cloud-blue;
+		&:focus,
+		&:focus-within {
+			outline: 1px solid c.$rose-pink;
+		}
+	}
+
+	input[type="submit"] {
+		background: c.$rose-pink;
+		color: #fff;
+		cursor: pointer;
+		text-transform:uppercase;
+		font-size: clamp(1rem, 4vh, 1.33rem);
+		outline: 1px solid transparent;
+		transition: all 250ms ease;
+		-webkit-transition: all 250ms ease;
+		-moz-transition: all 250ms ease;
+		&:hover,
+		&:active,
+		&:focus {
+			background: transparent;
+			color: c.$rose-pink;
+			outline: 1px solid c.$rose-pink;
+		}
+	}
+
+}
+}
+}
+
+small.error {
+	background: red;
+	color: #fff;
+	text-transform: uppercase;
+	opacity: 0;
+	transform: translateY(1rem);
+	transition: all 350ms ease;
+	-webkit-transition: all 350ms ease;
+	-moz-transition: all 350ms ease;
+	&.show-error {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	p {
+		padding: 1rem;
+	}
+}
+

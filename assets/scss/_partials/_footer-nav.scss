@@ -1,0 +1,99 @@
+@use '../_defaults/_colors' as c;
+@use '../_defaults/_media-query.scss' as m;
+
+.main-footer {
+	max-width:100%;
+	.main-footer__row {
+		display: grid;
+		gap: 1rem;
+		align-items: center;
+		justify-content: center;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+		@include m.tablet {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+		@include m.desktop {
+			grid-template-columns: repeat(12, minmax(0, 1fr));
+			align-items: center;
+			justify-content: center;
+		}
+		.col {
+			max-width: 100%;
+			width: fit-content;
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				color: c.$rose-pink;
+				font-size: clamp(1.5rem, 3vh, 2rem);
+				font-weight: 400;
+			}
+			&:first-of-type {
+				text-align: center;
+				@include m.desktop {
+				grid-column-start: 2;
+				grid-column-end:4;
+
+			}
+			
+			}
+			&:nth-child(2) {
+				@include m.tablet {
+					grid-column-start:2;
+					grid-column-end: 3;
+				}
+				@include m.desktop {
+					grid-column-start:5;
+					grid-column-end:10;
+				}
+			}
+			&:nth-child(3) {
+				@include m.tablet {
+					grid-column-start: 3;
+					grid-column-end: 4;
+				}
+				@include m.desktop {
+					grid-column-start:10;
+				grid-column-end:13;
+				}
+			}
+
+		}
+		 + p {
+		 	font-size: 0.75rem;
+		 	padding: 1rem 0;
+			text-align: left;
+			@include m.tablet {
+				margin: auto;
+				text-align: center;
+			}
+			@include m.desktop {
+				margin: auto;
+				text-align: center;
+			}
+		}
+	}
+
+
+}
+
+.footer-nav {
+	display: flex;
+	flex-flow: row wrap;
+	@media screen and (min-width: 768px) {
+		flex-flow: row wrap;
+	}
+	@include m.desktop {
+
+	}
+	padding: 0;
+	a {
+		display: block;
+		width: auto;
+		&::after {
+			display: none;
+		}
+	}
+}

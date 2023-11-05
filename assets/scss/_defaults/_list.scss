@@ -1,0 +1,138 @@
+@use './colors' as c;
+
+$light-pink: lighten(c.$rose-pink, 50%);
+
+.list {
+	.blog-header {
+		padding-top: 70px;
+		max-width: 60ch;
+		margin: 0 auto 1rem;
+		text-align: center;
+		background-color: #fff;
+		display: grid;
+		place-items: center start;
+		.blog-header__row {
+			width: 100%;
+		}
+		h1 {
+			color: c.$rose-pink;
+			text-align: left;
+			font-size: clamp(2rem, 15vh, 5.5rem);
+			font-weight: 900;
+			position: relative;
+			width: 100%;
+			&::after {
+					content: "";
+					display: inline-block;
+					height: 4px;
+					width: 350px;
+					max-width: 100%;
+					background: linear-gradient(0.25turn, c.$rose-pink, c.$cloud-blue, c.$sun-yellow, #fff);
+					position: absolute;
+					left: 0;
+					bottom: 0rem;
+				}	
+		}
+
+	}
+	.featured {
+		display: grid;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+		margin: auto;
+		margin-bottom: 2rem;
+		max-width: 60ch;
+		.featured-card {
+			margin-bottom: 1rem;
+			.featured-card__title {
+				color: c.$rose-pink;
+
+			}
+			.featured-card__button {
+				background: c.$rose-pink;
+					border: 1px solid transparent;
+					border-top-right-radius: 2.25rem;
+					border-bottom-right-radius: 2.25rem;
+					box-shadow: 0 0 10px -5px #000;
+					color: #fff;
+					font-size: 16px;
+					display: inline-block;
+					margin-top: 1rem;
+					max-width: 100%;
+					padding: 0.5rem 1rem;
+					text-align: center;
+					text-decoration: none;
+					text-transform: uppercase;
+					transition: color 250ms ease;
+					-webkit-transition: color 250ms ease;
+					-moz-transition: color 250ms ease;
+					&:hover,
+					&:active,
+					&:focus {
+						background: #fff;
+						color: c.$rose-pink;
+						border: 1px solid c.$rose-pink;
+					}
+					&:focus {
+						outline: 1px dotted #000;
+					}
+			}
+		}
+	}
+
+	.more-posts {
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			height: 100px;
+			width: 100px;
+
+		}
+		display: grid;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+		margin: 0 auto 1rem;
+		max-width: 60ch;
+		h3 {
+			color: c.$bice-blue;
+			font-size: clamp(1.5rem, 10vh, 2.5rem);
+			margin-bottom: 1rem;
+			position:relative;
+			text-transform: uppercase;
+			font-weight: 700;
+			&::after {
+					content: "";
+					display: inline-block;
+					height: 4px;
+					width: 250px;
+					max-width: 100%;
+					background: linear-gradient(0.25turn, c.$rose-pink, c.$cloud-blue, c.$sun-yellow, #fff);
+					position: absolute;
+					left: 0;
+					bottom: 0rem;
+				}	
+		}
+		ol {
+			list-style: none;
+			margin-bottom: 1rem;
+			li {
+				margin-bottom: 1rem;
+				a {
+					color: c.$royal-blue-traditional;
+					text-decoration: none;
+					font-weight: 700;
+					font-size: clamp(1rem, 4vh, 1.5rem);
+					&:hover,
+					&:active,
+					&:focus {
+						color: c.$bice-blue;
+					}
+
+					&:focus {
+						outline: 1px dotted #000;
+					}
+				}
+				
+			}
+		}
+	}
+}

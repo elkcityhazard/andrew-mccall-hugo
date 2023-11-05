@@ -1,0 +1,8 @@
+
+
+
+@mixin base-transition($property:all, $type:ease, $duration:300ms) {
+	-moz-transition: $property $duration $type;
+	-webkit-transition: $property $duration $type;
+	transition: $property $duration $type;
+}
