@@ -5,4 +5,5 @@ description: "this is where the project description goes to tell the meta bots w
 summary: "this is where the summary of the project goes which will be displayed on the project card."
 thumbnail: "/images/web-design-3.png"
 layout: single-project
+draft: true
 ---

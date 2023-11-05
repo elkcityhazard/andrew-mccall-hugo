@@ -6,6 +6,7 @@ publishDate: 2023-10-26
 author: Andrew M McCall
 category: 'web developer'
 tags: ['javascript', 'go', 'php']
+draft: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In fermentum et sollicitudin ac orci phasellus egestas. Elit duis tristique sollicitudin nibh sit amet. Nulla facilisi cras fermentum odio eu feugiat pretium. Neque volutpat ac tincidunt vitae semper quis lectus. Nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue. Duis convallis convallis tellus id interdum velit laoreet id donec. Blandit turpis cursus in hac habitasse platea dictumst. At augue eget arcu dictum varius. Hac habitasse platea dictumst quisque sagittis purus sit amet. Nunc lobortis mattis aliquam faucibus purus in massa tempor. Facilisi cras fermentum odio eu feugiat. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla. Ornare suspendisse sed nisi lacus sed. Massa id neque aliquam vestibulum. Tincidunt vitae semper quis lectus nulla at volutpat diam. Quam adipiscing vitae proin sagittis nisl. Potenti nullam ac tortor vitae purus faucibus ornare suspendisse. Eget nullam non nisi est. Tincidunt augue interdum velit euismod in pellentesque massa placerat.
