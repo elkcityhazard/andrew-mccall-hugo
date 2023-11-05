@@ -137,8 +137,12 @@ aside li {
   flex-flow: column wrap;
   align-items: flex-start;
   justify-content: space-between;
-  max-width: 25vw;
   width: 100%;
+}
+@media (min-width: 1024px) {
+  .featured__articles .featured-card {
+    max-width: 25vw;
+  }
 }
 .featured__articles .featured-card a {
   text-decoration: none;
