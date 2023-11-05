@@ -5,6 +5,10 @@
 	grid-template-areas: 
 				 "a"
 			     "b";
+			     padding-top: 100px;
+			     @include m.desktop {
+			     	padding-top: initial;
+			     }
 	@include m.desktop {
 		min-height: 100vh;
 	}
@@ -30,9 +34,9 @@
 			      		margin: auto;
 			      		place-items: center stretch;
 			      	}
-			      	height: calc(100vh - 83px);
+			      	min-height: calc(100vh - 83px);
 			      	@include m.desktop {
-			      		height: calc(100vh - 65px);
+			      		min-height: calc(100vh - 65px);
 			      	}
 			      	.main-header__row-col {
 			      		&:nth-child(2n+1) {

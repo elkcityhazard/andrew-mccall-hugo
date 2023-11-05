@@ -957,7 +957,13 @@ small.error p {
 .main-header {
   display: grid;
   grid-template-areas: "a" "b";
+  padding-top: 100px;
   grid-template-columns: 1fr;
+}
+@media (min-width: 1024px) {
+  .main-header {
+    padding-top: initial;
+  }
 }
 @media (min-width: 1024px) {
   .main-header {
@@ -977,7 +983,7 @@ small.error p {
   grid-area: b;
   grid-template-areas: "cola" "colb";
   grid-template-columns: 1fr;
-  height: calc(100vh - 83px);
+  min-height: calc(100vh - 83px);
 }
 @media screen and (min-width: 768px) {
   .main-header .main-header__row {
@@ -989,7 +995,7 @@ small.error p {
 }
 @media (min-width: 1024px) {
   .main-header .main-header__row {
-    height: calc(100vh - 65px);
+    min-height: calc(100vh - 65px);
   }
 }
 .main-header .main-header__row .main-header__row-col:nth-child(2n+1) {
