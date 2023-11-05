@@ -24,3 +24,12 @@ new LazyLoad(document.querySelectorAll('.portrait'))
 
 
 new CopyCode('pre')
+
+
+
+
+/*
+**	Hacks 
+**/
+
+document.getElementById('currentYear').textContent = new Date(Date.now()).getFullYear()
