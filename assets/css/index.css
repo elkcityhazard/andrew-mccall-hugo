@@ -902,20 +902,20 @@ small.error p {
 .list .featured .featured-card .featured-card__button:focus {
   outline: 1px dotted #000;
 }
-.list .more-posts {
+
+.more-posts {
   position: relative;
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   margin: 0 auto 1rem;
-  max-width: 60ch;
 }
-.list .more-posts::before {
+.more-posts::before {
   content: "";
   position: absolute;
   height: 100px;
   width: 100px;
 }
-.list .more-posts h3 {
+.more-posts h3 {
   color: hsl(204, 85%, 36%);
   font-size: clamp(1.5rem, 10vh, 2.5rem);
   margin-bottom: 1rem;
@@ -923,7 +923,7 @@ small.error p {
   text-transform: uppercase;
   font-weight: 700;
 }
-.list .more-posts h3::after {
+.more-posts h3::after {
   content: "";
   display: inline-block;
   height: 4px;
@@ -934,23 +934,23 @@ small.error p {
   left: 0;
   bottom: 0rem;
 }
-.list .more-posts ol {
+.more-posts ol.more-posts__list {
   list-style: none;
   margin-bottom: 1rem;
 }
-.list .more-posts ol li {
-  margin-bottom: 1rem;
+.more-posts ol.more-posts__list li {
+  margin-bottom: 2rem !important;
 }
-.list .more-posts ol li a {
+.more-posts ol.more-posts__list li a {
   color: hsl(225, 84%, 24%);
   text-decoration: none;
   font-weight: 700;
-  font-size: clamp(1rem, 4vh, 1.5rem);
+  font-size: clamp(1.1rem, 3vh, 1.5rem);
 }
-.list .more-posts ol li a:hover, .list .more-posts ol li a:active, .list .more-posts ol li a:focus {
+.more-posts ol.more-posts__list li a:hover, .more-posts ol.more-posts__list li a:active, .more-posts ol.more-posts__list li a:focus {
   color: hsl(204, 85%, 36%);
 }
-.list .more-posts ol li a:focus {
+.more-posts ol.more-posts__list li a:focus {
   outline: 1px dotted #000;
 }
 
@@ -1490,6 +1490,7 @@ small.error p {
   padding: 1rem;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 .pagination-default .page-item {
   aspect-ratio: 1/1;

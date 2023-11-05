@@ -24,7 +24,7 @@
 
 		<section class="more-posts">
 			<h3>More Posts</h3>
-			<ol>
+			<ol class="more-posts__list">
 				{{ range (after 3 .Paginator.Pages) }}
    					<li>
    						<a href="{{.RelPermalink}}" title="{{ .Summary }}" class="">{{ .Title }}</a>
