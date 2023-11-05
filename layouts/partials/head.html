@@ -8,4 +8,6 @@
 	{{ $script := resources.Get "scripts/index.js" |  js.Build (dict "sourceMap" "external" ) }}
 	<link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
 	<script src="{{ $script.RelPermalink }}" type="module" defer></script>
+	<script defer data-domain="andrew-mccall.com" src="https://plausible.io/js/script.js"></script>
+
 </head>
