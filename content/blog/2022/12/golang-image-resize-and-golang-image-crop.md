@@ -1,6 +1,8 @@
 ---
 title: "Golang Image Resize and Golang Image Crop: Image Manipulation With Go Programming Language"
 description: "Go has native support via the Image package to resize and crop images.  Keep your application light by doing your own image resizing and cropping"
+author: Andrew M McCall
+summary: An introduction to some of the very basic features of iamge cropping with Go.  
 date:  2022-12-18T00:00:00
 updated:  2022-12-18T00:00:00
 image: "/blog/2022/12/working-with-images-with-golang-1600x900.jpeg"

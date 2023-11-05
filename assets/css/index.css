@@ -166,11 +166,16 @@ aside li {
 .featured__articles .featured-card .featured-card__button {
   background: #c71627;
   color: transparent;
+  border-top-right-radius: 3rem;
+  border-bottom-right-radius: 3rem;
   text-transform: uppercase;
   display: inline-grid;
   place-items: center;
   font-size: clamp(0.667rem, 1vw, 1.75vw);
   margin: auto auto 1rem auto;
+  overflow: hidden;
+  max-height: 40px;
+  max-width: 175px;
   padding: 0.5rem;
   text-align: center;
   width: 100%;
