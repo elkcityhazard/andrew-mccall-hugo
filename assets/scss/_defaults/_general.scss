@@ -276,6 +276,7 @@ aside {
 
 			display: flex;
 			flex-flow: row wrap;
+			gap: 0 2rem;
 			width: 100%;
 			.about-me {
 				flex: 0 0 100%;
@@ -316,7 +317,7 @@ aside {
 				flex: 1 2;
 				max-width: unset;
 			}
-			overflow: hidden;
+			overflow: initial;
 			
 		}
 			

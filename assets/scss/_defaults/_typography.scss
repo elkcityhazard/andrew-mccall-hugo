@@ -70,6 +70,12 @@ ul.categories {
 	}
 }
 
+.author-byline {
+	strong {
+		margin-right: clamp(1px, 1vw, 2vw);
+	}
+}
+
 p > a {
 	color: c.$rose-pink;
 	font-weight: 700;

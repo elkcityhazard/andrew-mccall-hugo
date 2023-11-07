@@ -12,8 +12,7 @@
 }
 
 .contact-form {
-	max-width: 100%;
-	width: calc(100vw - 15px);
+	flex: 1 2;
 	form {
 	font-size: clamp(0.75rem, 1rem, 1.25rem);
 	display: flex;
@@ -70,6 +69,10 @@
 
 }
 }
+}
+
+.sidebar.contact {
+	flex: 1 1;
 }
 
 small.error {

@@ -263,6 +263,7 @@ aside li {
 .single .wrapper .container {
   display: flex;
   flex-flow: row wrap;
+  gap: 0 2rem;
   width: 100%;
 }
 .single .wrapper .container .about-me {
@@ -304,7 +305,7 @@ aside li {
   flex: 0 0 100%;
   min-width: 0;
   max-width: 100%;
-  overflow: hidden;
+  overflow: initial;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .single .wrapper .container aside {
@@ -381,6 +382,10 @@ ul.categories li::after {
 }
 ul.categories li:last-child::after {
   display: none;
+}
+
+.author-byline strong {
+  margin-right: clamp(1px, 1vw, 2vw);
 }
 
 p > a {
@@ -805,8 +810,7 @@ h6 {
 }
 
 .contact-form {
-  max-width: 100%;
-  width: calc(100vw - 15px);
+  flex: 1 2;
 }
 .contact-form form {
   font-size: 1rem;
@@ -856,6 +860,10 @@ h6 {
   background: transparent;
   color: #c71627;
   outline: 1px solid #c71627;
+}
+
+.sidebar.contact {
+  flex: 1 1;
 }
 
 small.error {
@@ -1522,6 +1530,36 @@ small.error p {
   display: grid;
   place-items: center;
   text-decoration: underline;
+}
+
+.contact-form {
+  flex: 1 1;
+  min-width: 0;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .contact-form {
+    flex: 1 1;
+  }
+}
+@media (min-width: 1024px) {
+  .contact-form {
+    flex: 2 1;
+  }
+}
+.contact-form + aside.sidebar.contact {
+  flex: 1 2 100%;
+  min-width: 0;
+  padding-top: 3vh;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .contact-form + aside.sidebar.contact {
+    flex: 0 2 33%;
+  }
+}
+@media (min-width: 1024px) {
+  .contact-form + aside.sidebar.contact {
+    flex: 1 3;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
