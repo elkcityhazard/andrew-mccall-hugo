@@ -9,7 +9,7 @@
 	{{ $script := resources.Get "scripts/index.js" |  js.Build (dict "sourceMap" "external" ) }}
 	<link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
 	<script src="{{ $script.RelPermalink }}" type="module" defer></script>
-	
+
 </head>
 <body class="single">
 	<div class="wrapper">
@@ -69,8 +69,8 @@
 		</div>
 		<aside class="sidebar"> 
 			{{ partial "author-card.html" . }}
-			{{ partial "related.html" . }}
 			{{ partial "toc.html" . }}  
+			{{ partial "related.html" . }}
 		</aside>
 		{{ partial "featured-posts.html" . }}
 		{{ partial "featured-projects.html" . }}
