@@ -245,7 +245,6 @@ aside li {
 .single .wrapper {
   display: flex;
   flex-flow: row wrap;
-  gap: 1.5rem;
   padding-top: 100px;
 }
 .single .wrapper header {
@@ -262,43 +261,38 @@ aside li {
   z-index: 99999999999;
 }
 .single .wrapper .container {
-  flex: 0 0 100%;
-  min-width: 0;
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
 }
-@media screen and (min-width: 968px) {
-  .single .wrapper .container {
-    flex: 2;
+.single .wrapper .container main.main-content {
+  flex: 1 1;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .single .wrapper .container main.main-content {
+    flex: 1 0;
   }
 }
-.single .wrapper aside {
+@media (min-width: 1024px) {
+  .single .wrapper .container main.main-content {
+    flex: 2 1;
+  }
+}
+.single .wrapper .container aside {
   flex: 0 0 100%;
   min-width: 0;
   max-width: 100%;
   overflow: hidden;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .single .wrapper aside {
-    max-width: 399px;
+  .single .wrapper .container aside {
+    flex: 0 0 100%;
   }
 }
 @media (min-width: 1024px) {
-  .single .wrapper aside {
-    max-width: auto;
-  }
-}
-@media screen and (min-width: 968px) {
-  .single .wrapper aside {
-    flex: 1;
-  }
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .single .wrapper aside.sidebar {
-    padding-left: 1rem;
-  }
-}
-@media (min-width: 1024px) {
-  .single .wrapper aside.sidebar {
-    padding-left: 1rem;
+  .single .wrapper .container aside {
+    flex: 1 2;
+    max-width: unset;
   }
 }
 .single .wrapper footer {

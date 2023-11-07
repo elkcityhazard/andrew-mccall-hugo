@@ -256,7 +256,7 @@ aside {
 	.wrapper {
 		display: flex;
 		flex-flow: row wrap;
-		gap: 1.5rem;
+		//gap: 1.5rem;
 		padding-top: 100px;
 		header {
 			position: relative;
@@ -274,38 +274,32 @@ aside {
 		}
 		.container {
 
-			flex: 0 0 100%;
-			min-width: 0;
-			//overflow: hidden;
-			@media screen and (min-width: 968px) {
-				flex: 2;
+			display: flex;
+			flex-flow: row wrap;
+			width: 100%;
+			main.main-content {
+				flex: 1 1;
+				@include m.tablet {
+					flex: 1 0;
+				}
+				@include m.desktop {
+					flex: 2 1;
+				}
 			}
-			
-		}
-		aside {
+			aside {
 			flex: 0 0 100%;
 			min-width: 0;
 			max-width: 100%;
 			@include m.tablet {
-				max-width: 399px;
+				flex: 0 0 100%;
 			}
 			@include m.desktop {
-				max-width: auto;
+				flex: 1 2;
+				max-width: unset;
 			}
 			overflow: hidden;
-			@media screen and (min-width: 968px) {
-				flex: 1;
-			}
-
-			&.sidebar {
-				@include m.tablet {
-					padding-left: 1rem;	
-				}
-				@include m.desktop {
-					padding-left: 1rem;
-				}
-				
-			}
+			
+		}
 			
 		}
 		footer {

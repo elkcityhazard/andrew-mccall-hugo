@@ -66,12 +66,13 @@
 					{{ .Content }}
 				</article>
 			</main>
-		</div>
-		<aside class="sidebar"> 
+			<aside class="sidebar"> 
 			{{ partial "author-card.html" . }}
 			{{ partial "toc.html" . }}  
 			{{ partial "related.html" . }}
 		</aside>
+		</div>
+		
 		{{ partial "featured-posts.html" . }}
 		{{ partial "featured-projects.html" . }}
 		{{ partial "footer.html" . }}
