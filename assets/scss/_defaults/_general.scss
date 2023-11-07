@@ -162,9 +162,9 @@ aside {
 			&:focus,
 			&:active {
 				color: c.$bice-blue;
-				-moz-transform: translateY(-1vh) rotateZ(2deg) scale(1.02);
-				-webkit-transform: translateY(-1vh) rotateZ(2deg) scale(1.02);
-				transform: translateY(-1vh) rotateZ(2deg) scale(1.02);
+				-moz-transform: translateY(-1vh) rotateZ(2deg);
+				-webkit-transform: translateY(-1vh) rotateZ(2deg);
+				transform: translateY(-1vh) rotateZ(2deg);
 			}
 		}
 		.featured-card__byline {
@@ -242,9 +242,9 @@ aside {
 					&:focus,
 					&:active {
 						color: c.$bice-blue;
-						-moz-transform: translateY(-1vh) rotateZ(-2deg) scale(1.02);
-						-webkit-transform: translateY(-1vh) rotateZ(-2deg) scale(1.02);
-						transform: translateY(-1vh) rotateZ(-2deg) scale(1.02);
+						-moz-transform: translateY(-1vh) rotateZ(-2deg);
+						-webkit-transform: translateY(-1vh) rotateZ(-2deg);
+						transform: translateY(-1vh) rotateZ(-2deg);
 					}
 				}
 			}
