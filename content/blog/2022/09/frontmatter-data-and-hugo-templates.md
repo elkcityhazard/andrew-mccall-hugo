@@ -1,5 +1,6 @@
 ---
 title: "Frontmatter Data And Hugo Templates: How To Output Data With Hugo Static Site Generator"
+author: Andrew M McCall
 date: 2022-09-21
 image: "/images/blog/2022/front-matter-hugo-vid.jpeg"
 images:

@@ -1,5 +1,6 @@
 ---
 title: "20 Traverse City Web Design Companies | A Complete Website Design List"
+author: Andrew M McCall
 date: 2022-07-11 00:00:00
 image: "/images/blog/2022/guide-to-tc-web-design-1280x720.jpeg"
 images:

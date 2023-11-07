@@ -1,5 +1,6 @@
 ---
 title: 'VPS Hosting Security: A Crash Course On VPS Configuration'
+author: Andrew M McCall
 date: 2022-05-14 00:00:00
 image: "/images/blog/2022/vps-hosting-security-1200x600.webp"
 images:

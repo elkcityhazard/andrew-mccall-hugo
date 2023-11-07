@@ -1,5 +1,6 @@
 ---
 title: How To Host A Static Website For Cheap On Bunny CDN
+author: Andrew M McCall
 date: 2020-10-28 00:00:00
 image: images/blog/underwater-cable-map-1200-600.svg
 tags:

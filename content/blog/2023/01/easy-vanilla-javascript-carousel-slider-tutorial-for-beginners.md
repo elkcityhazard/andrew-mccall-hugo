@@ -1,5 +1,6 @@
 ---
 title: "Vanilla Javascript Carousel Slider: A Beginner's Tutorial"
+author: Andrew M McCall
 description: "Making a responsive slider carousel with vanilla javascript is easy.  Follow My step by step guide to making a simple, responsive slider.  "
 date:  2023-01-29T00:00:00
 updated:  2023-01-29T00:00:00

@@ -23,19 +23,26 @@
 		</header> <!-- end main header -->
 		
 		<section class="featured">
-			<h2 class="featured__title">Most Recent Posts</h2>
+			<h2 class="featured__title">{{- .Params.blog_section_title -}}</h2>
 			<div class="featured__articles">
 				{{ range (where .Site.Pages "Section" "blog") }}
 
 				{{ range (first 3 .Pages) }}
 				<div class="featured-card">
-					<a href="{{- .RelPermalink -}}" title="{{- .Title -}}">
+					<a href="{{- .RelPermalink -}}" title="{{- .Title -}} - {{- .Summary -}}">
 					<h2 class="featured-card__title">{{ .Title }}</h2>
 					</a>
 					<div class="featured-card__byline">
 						<strong>By: </strong><span>{{- .Params.author -}}</span>
 						<br />
 						<strong>Published: </strong><span>{{ .Params.publishDate.Format "Jan 02, 2006" }}</span>
+						{{ with .Params.updated }}
+						
+						
+						<br />
+
+						<strong>Updated: </strong><span>{{ time.Format "Jan 02, 2006" . }}</span>
+						{{ end }}
 					</div>
 					<div class="featured-card__content">
 						{{- .Summary -}}
@@ -51,7 +58,7 @@
 
 
 		<section class="featured">
-			<h2 class="featured__title">Most Recent Projects</h2>
+			<h2 class="featured__title">{{- .Params.project_section_title -}}</h2>
 			<div class="featured__articles">
 				{{ range (where .Site.Pages "Section" "projects") }}
 

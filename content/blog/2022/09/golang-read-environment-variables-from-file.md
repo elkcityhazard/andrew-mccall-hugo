@@ -1,5 +1,6 @@
 ---
 title: "Golang Read Environment Variables From File: How To Do It [Code Snippets]"
+author: Andrew M McCall
 date: 2022-09-08
 image: "/images/blog/2022/how-to-read-env-file-in-go-1200x600.jpeg"
 images:

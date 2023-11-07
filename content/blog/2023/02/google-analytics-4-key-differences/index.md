@@ -1,8 +1,10 @@
 ---
 title: "Google Analytics 4: Key Differences From Universal Analytics"
+author: Andrew M McCall
 description: "My Notes From Google Skillshop Course on Google Analytics 4 On The Differences Between GA4 and Universal Analytics"
 date:  2023-02-09T20:44:47-05:00
 updated:  2023-02-09T20:44:47-05:00
+summary: "My Notes From Google Skillshop Course on Google Analytics 4 On The Differences Between GA4 and Universal Analytics"
 image: "/blog/2023/02/google-analytics-4-key-differences/ga-4-key-differences.jpeg"
 images:
 - "/blog/2023/02/google-analytics-4-key-differences/ga-4-key-differences.jpeg"

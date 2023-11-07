@@ -1,5 +1,6 @@
 ---
 title: "Traverse City Web Developer: I am a web designer in Traverse City"
+author: Andrew M McCall
 date: 2021-08-18 00:00:00
 image: images/blog/traverse-city-developer-560-315.jpeg
 tags:
@@ -9,7 +10,7 @@ tags:
 - css
 - javascript
 Description: Custom web design and development that leaves a lasting impression.  Grow your business with custom web design.  
-draft: false
+draft: true
 ---
 
 Many of the people who come to me are small business owners who want a website built. They always want to know how much it's going to cost then they agonize over which developer they should choose. I try to keep this in mind when I'm talking with them but sometimes I still can't help but think how lucky they are to have this problem. I wish I could build a website every day and I'm sure many web developers feel the same.

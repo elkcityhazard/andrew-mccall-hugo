@@ -1,5 +1,6 @@
 ---
 title: "How To Create A Website For Your Online Business: Small Business Website Guide"
+author: Andrew M McCall
 description: "A website builder will be enough for your business website but there are great options for unlocking your small business website potential."
 date: 2022-10-14
 updated: 2022-10-18T00:00:00

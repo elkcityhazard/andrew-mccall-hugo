@@ -1,5 +1,6 @@
 ---
 title: "10 Secrets To Creating A Personal Coach Website That Converts"
+author: Andrew M McCall
 date: 2022-07-23
 image: "/images/blog/2022/10-secrets-to-creating-a-personal-coaching-website.png"
 images:

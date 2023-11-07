@@ -1,5 +1,6 @@
 ---
 title: Michigan Web Design
+author: Andrew M McCall
 date: 2021-11-27 00:00:00
 image: images/blog/michigan-web-design.png
 tags:
@@ -9,7 +10,7 @@ tags:
 Description: Michigan Web Design by Andrew McCall specializes in custom web application
   and business website development. We create websites and applications that help
   our clients and their customers and we're located in Traverse City, Michigan.
-draft: false
+draft: true
 ---
 
 A web design company is an important aspect of your business that can help you achieve success in this digital age. They bring together the right team of professionals to create the look, feel and user-friendliness of your online presence, which in turn affects how well your business does overall. Michigan Web Design by Andrew McCall is a leading local marketing agency located in Traverse City, Michigan.

@@ -1,5 +1,6 @@
 ---
 title: "Cookieless Analytics: Cookieless Tracking Alternatives To Google Analytics"
+author: Andrew M McCall
 date: 2022-07-18
 image: "/images/blog/2022/cookieless-analytics-1200x600.jpeg"
 images:

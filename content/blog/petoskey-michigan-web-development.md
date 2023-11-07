@@ -1,5 +1,7 @@
 ---
 title: 'Petoskey Michigan Web Development: 9 Tips To Better Websites'
+author: Andrew M McCall
+draft: true
 date: 2021-09-19 00:00:00
 subtitle: Petoskey Michigan Digital Marketing Services
 tags:

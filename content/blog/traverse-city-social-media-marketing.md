@@ -1,5 +1,6 @@
 ---
 title: Traverse City Social Media Management
+author: Andrew M McCall
 date: 2021-08-20 00:00:00
 image: images/blog/social-media-blog-heading-1200-600.jpeg
 tags:
@@ -7,7 +8,7 @@ tags:
 Description: Gear up to take your social media marketing to the next level. Whether
   you're trying to land a new customer, get in touch with an old one, or promote a
   product.
-draft: false
+draft: true
 ---
 
 Some people are fighting against the idea that having a social media presence nowadays is an essential way of doing business. We happen to know several companies who have killed off their Twitter and Facebook accounts, only to confirm they lost customers as a result because it was difficult for them to find these businesses online. If you're thinking about pulling the plug on social networking in 2022, we'd advise you examine your business goals carefully first and decide whether or not removing your social media presence can help you achieve them.

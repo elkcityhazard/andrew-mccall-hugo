@@ -1,5 +1,6 @@
 ---
 title: Markdown Syntax For Quick Development and Fast Content Creation
+author: Andrew M McCall
 date: 2021-08-17 00:00:00
 image: images/blog/start-markdown-1200-600.svg
 tags:

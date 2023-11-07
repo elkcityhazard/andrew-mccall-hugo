@@ -136,7 +136,7 @@ aside li {
   display: flex;
   flex-flow: column wrap;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
 }
 @media (min-width: 1024px) {
@@ -152,10 +152,19 @@ aside li {
   color: #c71627;
   font-size: clamp(1.1rem, 0.7153rem + 1.6368vw, 1.5rem);
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-transform: uppercase;
+  -moz-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+.featured__articles .featured-card .featured-card__title:hover, .featured__articles .featured-card .featured-card__title:focus, .featured__articles .featured-card .featured-card__title:active {
+  color: hsl(204, 85%, 36%);
+  -moz-transform: translateY(-1vh) rotateZ(2deg) scale(1.02);
+  -webkit-transform: translateY(-1vh) rotateZ(2deg) scale(1.02);
+  transform: translateY(-1vh) rotateZ(2deg) scale(1.02);
 }
 .featured__articles .featured-card .featured-card__byline {
   font-size: 0.85rem;
@@ -166,6 +175,10 @@ aside li {
 }
 .featured__articles .featured-card .featured-card__content {
   margin-bottom: 0.667rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .featured__articles .featured-card .featured-card__button {
   background: #c71627;
@@ -176,11 +189,11 @@ aside li {
   display: inline-grid;
   place-items: center;
   font-size: clamp(0.667rem, 1vw, 1.75vw);
-  margin: auto auto 1rem auto;
+  margin: auto auto 1rem 0;
   overflow: hidden;
   max-height: 40px;
   max-width: 175px;
-  padding: 0.5rem;
+  padding: 0.667rem 0.5rem;
   text-align: center;
   width: 100%;
   flex: 0 1 auto;
@@ -220,6 +233,12 @@ aside li {
 }
 .featured__articles .featured-card .featured-card__button:focus::after {
   outline-style: dotted;
+}
+.featured__articles .featured-card:nth-child(2n) .featured-card__title:hover, .featured__articles .featured-card:nth-child(2n) .featured-card__title:focus, .featured__articles .featured-card:nth-child(2n) .featured-card__title:active {
+  color: hsl(204, 85%, 36%);
+  -moz-transform: translateY(-1vh) rotateZ(-2deg) scale(1.02);
+  -webkit-transform: translateY(-1vh) rotateZ(-2deg) scale(1.02);
+  transform: translateY(-1vh) rotateZ(-2deg) scale(1.02);
 }
 
 .single .wrapper {

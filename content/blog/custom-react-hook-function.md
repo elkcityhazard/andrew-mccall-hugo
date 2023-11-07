@@ -1,5 +1,6 @@
 ---
 title: "Custom React Hook Function: Create Custom Reusable React Hooks"
+author: Andrew M McCall
 date: 2021-11-21 
 Description: If you find yourself rewriting the same logic over and over you may find
   it easier to create a custom react hook

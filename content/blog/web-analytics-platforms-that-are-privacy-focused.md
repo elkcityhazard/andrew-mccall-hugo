@@ -1,5 +1,6 @@
 ---
 title: Web Analytics Platforms That Are Privacy Focused
+author: Andrew M McCall
 date: 2022-01-23 00:00:00
 image: "/images/blog/web-analytics-platforms-that-are-privacy-oriented-1200x600.webp"
 tags:

@@ -1,12 +1,13 @@
 ---
 title: Traverse City Podcast Production
+author: Andrew M McCall
 date: 2021-11-28 00:00:00
 image: images/portfolio/item6.jpg
 tags:
 - podcasts
 - podcast production
 Description: ''
-draft: false
+draft: true
 ---
 
 Podcasts have been around for a while now, but what is a podcast production? Depending on the type of podcast you're producing, your production needs will vary. In this article I'll be going through some of the different types of podcasts and the production styles that are suitable for each one. Podcasts are an excellent way to promote your brand or business and let people know what you have going on.

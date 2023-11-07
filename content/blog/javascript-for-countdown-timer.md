@@ -1,5 +1,6 @@
 ---
 title: "Javascript For Countdown Timer | [VIDEO]"
+author: Andrew M McCall
 date: 2022-04-10 00:00:00
 image: images/blog/2022/javascript-for-countdown-timer-1200x600.webp
 tags:

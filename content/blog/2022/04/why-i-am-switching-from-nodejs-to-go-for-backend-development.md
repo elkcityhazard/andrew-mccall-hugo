@@ -1,5 +1,6 @@
 ---
 title: Why am I switching from Javascript to Go for my backend web development needs?
+author: Andrew M McCall
 date: 2022-04-24 00:00:00
 image: images/portfolio/item6.jpg
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Install Hugo With Chocolatey Package Manager On Windows 10 [video]"
+author: Andrew M McCall
 date: 2022-06-20 00:00:00
 image: "/images/blog/2022/install-hugo-windows-10-chocolately.jpeg"
 images:
