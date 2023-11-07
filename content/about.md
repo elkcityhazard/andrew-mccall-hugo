@@ -2,6 +2,9 @@
 title: About Me
 menu: ['main']
 layout: "about"
+
+blog_section_title: "My Recent Posts"
+project_section_title: "My Recent Projects"
 ---
 
 Hi, my name is Andrew M McCall and thank you for visiting my website. My website journey began in 1998 when I created my first Bon Jovi fan website (it was terrible)!

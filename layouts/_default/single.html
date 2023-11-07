@@ -21,18 +21,6 @@
 				{{ end }}
 				{{ end }}
 			</nav>
-				<nav aria-label="breadcrumb" class="breadcrumb">
-  				<ol class="breadcrumbs">
-  				  {{ range .Ancestors.Reverse }}
-  				    <li>
-  				      <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
-  				    </li>
-  				  {{ end }}
-  				  <li class="active">
-  				    <a aria-current="page" href="{{ .Permalink }}">{{ .LinkTitle }}</a>
-  				  </li>
-  				</ol>
-			</nav>
 			<h1>{{ .Title }}</h1>
 			<div class="author-byline">
 				<strong>By: </strong><span>{{- .Params.author -}}</span>
@@ -69,7 +57,7 @@
 						{{ end }}
 
 			</div>
-				
+				{{ partial "breadcrumbs.html" . }}
 			</header>
 		<div class="container">
 				<main class="main-content">
@@ -83,6 +71,8 @@
 			{{ partial "related.html" . }}
 			{{ partial "toc.html" . }}  
 		</aside>
+		{{ partial "featured-posts.html" . }}
+		{{ partial "featured-projects.html" . }}
 		{{ partial "footer.html" . }}
 	</div>
 </body>

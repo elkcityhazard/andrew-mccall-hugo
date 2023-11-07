@@ -19,7 +19,6 @@
 		}
 		.col {
 			max-width: 100%;
-			width: fit-content;
 			h1,
 			h2,
 			h3,
@@ -62,7 +61,7 @@
 
 		}
 		 + p {
-		 	font-size: 0.75rem;
+		 	font-size: clamp(0.60rem, 2vh, 1rem);
 		 	padding: 1rem 0;
 			text-align: left;
 			@include m.tablet {

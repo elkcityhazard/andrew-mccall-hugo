@@ -72,7 +72,7 @@ aside li {
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: center;
-  gap: 1.5rem;
+  gap: 0 1.5rem;
   padding: 0;
 }
 .breadcrumbs li {
@@ -80,6 +80,7 @@ aside li {
   position: relative;
 }
 .breadcrumbs li a {
+  font-size: clamp(0.667rem, 2vh, 1rem);
   margin: unset;
 }
 .breadcrumbs li:first-of-type {
@@ -346,7 +347,7 @@ ul.categories {
 }
 ul.categories li {
   display: inline-block;
-  font-size: clamp(1vh, 2vh, 1rem);
+  font-size: clamp(0.667rem, 2vh, 1rem);
   margin-right: 1rem;
   position: relative;
 }
@@ -609,6 +610,12 @@ a.btn::after {
   -moz-transition: all 250ms ease;
   -webkit-transition: all 250ms ease;
   transition: all 250ms ease;
+}
+a.btn:hover::after, a.btn:focus::after, a.btn:active::after {
+  padding-left: 1rem;
+}
+a.btn:focus {
+  outline: 1px dotted #000;
 }
 
 nav {
@@ -1319,7 +1326,6 @@ small.error p {
 }
 .main-footer .main-footer__row .col {
   max-width: 100%;
-  width: fit-content;
 }
 .main-footer .main-footer__row .col h1,
 .main-footer .main-footer__row .col h2,
@@ -1365,7 +1371,7 @@ small.error p {
   }
 }
 .main-footer .main-footer__row + p {
-  font-size: 0.75rem;
+  font-size: clamp(0.6rem, 2vh, 1rem);
   padding: 1rem 0;
   text-align: left;
 }

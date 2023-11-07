@@ -23,6 +23,8 @@ params:
   description: 'Andrew M McCall is a Golang, Javascript, PHP, SQL web developer living in Traverse City, MI'
   footer_bio: "Andrew McCall is a Web Developer living in Traverse City, Michigan.  He is married to Elizabeth, and dog-dad to Ally. He writes about Go, Javascript, Mental Health, and other technology related topics."
   footer_logo: "/images/logo-small-transparent.png"
+  blog_section_title: "My Recent Posts"
+  project_section_title: "My Recent Projects"
   social:
     - name: email
       icon: /images/icons/email-50x50.svg

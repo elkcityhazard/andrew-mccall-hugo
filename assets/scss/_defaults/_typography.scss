@@ -18,7 +18,7 @@ h6 {
 
 
 ol,
-ul,
+ul, 
 p,
 span,
 div,
@@ -47,7 +47,7 @@ ul.categories {
 	display: inline-block;
 	li {
 		display: inline-block;
-		font-size: clamp(1vh, 2vh, 1rem);
+		font-size: clamp(0.667rem, 2vh, 1rem);
 		margin-right: 1rem;
 		position: relative;
 		&::after {
@@ -339,7 +339,17 @@ a.btn {
 									-webkit-transition: all 250ms ease;
 									transition: all 250ms ease;
 			}
+			&:hover,
+			&:focus,
+			&:active {
+				&::after {
+					padding-left: 1rem;
 				}
+				}
+				&:focus {
+					outline: 1px dotted #000;
+				}
+			}
 
 nav {
 	padding: 1rem 0;
