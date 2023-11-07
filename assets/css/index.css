@@ -1240,35 +1240,6 @@ small.error p {
   outline: 1px dotted #000;
 }
 
-@media screen and (min-width: 1920px) {
-  .toc {
-    background: #fff;
-    z-index: 99;
-    height: 100vh;
-    padding-top: 100px;
-    padding-right: 15px;
-    position: fixed;
-    top: 0px;
-    right: 0;
-    transform: translateX(0);
-    width: auto;
-    max-width: 325px;
-    margin-right: 1rem;
-    margin-left: auto;
-    -moz-transition: all 300ms ease;
-    -webkit-transition: all 300ms ease;
-    transition: all 300ms ease;
-  }
-  .toc:hover, .toc:active, .toc:focus {
-    transform: translateX(0);
-    overflow-y: auto;
-  }
-  .toc a {
-    font-size: clamp(12px, 1vh, 2vh);
-    margin-bottom: 1rem;
-    padding-right: 0;
-  }
-}
 .toc h1,
 .toc h2,
 .toc h3,
@@ -1283,6 +1254,7 @@ small.error p {
 .toc a {
   font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
   font-weight: 600;
+  font-size: clamp(0.667rem, 2vh, 1rem);
   text-decoration: none;
   color: hsl(204, 85%, 36%);
   padding: 0.25rem;
