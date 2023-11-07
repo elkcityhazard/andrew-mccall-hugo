@@ -1,0 +1,33 @@
+<section class="featured">
+			<h2 class="featured__title">{{- .Site.Params.blog_section_title -}}</h2>
+			<div class="featured__articles">
+				{{ range (where .Site.Pages "Section" "blog") }}
+
+				{{ range (first 3 .Pages) }}
+				<div class="featured-card">
+					<a href="{{- .RelPermalink -}}" title="{{- .Title -}} - {{- .Summary -}}">
+					<h2 class="featured-card__title">{{ .Title }}</h2>
+					</a>
+					<div class="featured-card__byline">
+						<strong>By: </strong><span>{{- .Params.author -}}</span>
+						<br />
+						<strong>Published: </strong><span>{{ .Params.publishDate.Format "Jan 02, 2006" }}</span>
+						{{ with .Params.updated }}
+						
+						
+						<br />
+
+						<strong>Updated: </strong><span>{{ time.Format "Jan 02, 2006" . }}</span>
+						{{ end }}
+					</div>
+					<div class="featured-card__content">
+						{{- .Summary -}}
+					</div>
+					<a href="{{- .RelPermalink -}}" class="featured-card__button" title="{{ .Title }} - {{- .Summary -}}">{{ .Title }}</a>
+				</div>
+				{{ end }}
+			{{ end }}
+			</div>
+
+			
+		</section>	
