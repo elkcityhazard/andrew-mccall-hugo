@@ -265,6 +265,22 @@ aside li {
   flex-flow: row wrap;
   width: 100%;
 }
+.single .wrapper .container .about-me {
+  flex: 0 0 100%;
+}
+.single .wrapper .container .about-me .row {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .single .wrapper .container .about-me .row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .single .wrapper .container .about-me .row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 .single .wrapper .container main.main-content {
   flex: 1 1;
 }
@@ -1480,7 +1496,7 @@ small.error p {
   margin: 1rem auto;
   font-family: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans", source-sans-pro, sans-serif;
   font-weight: 600;
-  font-size: clamp(1rem, 10vh, 1.33rem);
+  font-size: clamp(0.667rem, 2vh, 1rem);
   padding: 1rem;
   align-items: center;
   justify-content: center;

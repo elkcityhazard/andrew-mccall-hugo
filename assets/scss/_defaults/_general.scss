@@ -277,6 +277,18 @@ aside {
 			display: flex;
 			flex-flow: row wrap;
 			width: 100%;
+			.about-me {
+				flex: 0 0 100%;
+				.row {
+					grid-template-columns: repeat(1, minmax(0, 1fr));
+					@include m.tablet {
+						grid-template-columns: repeat(2, minmax(0, 1fr));
+					}
+					@include m.desktop {
+						grid-template-columns: repeat(2, minmax(0, 1fr));
+					}
+				}
+			}
 			main.main-content {
 				flex: 1 1;
 				@include m.tablet {
