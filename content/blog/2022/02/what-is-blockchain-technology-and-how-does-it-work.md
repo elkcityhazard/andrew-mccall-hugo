@@ -1,5 +1,5 @@
 ---
-title: What Is Blockchain Technology And How Does It Work?author: Andrew M McCall
+title: What Is Blockchain Technology And How Does It Work?
 author: Andrew M McCall
 date: 2022-02-16 00:00:00
 image: "/images/blog/2022/ethereum-article-twitter-card/ethereum-article-header.png"
