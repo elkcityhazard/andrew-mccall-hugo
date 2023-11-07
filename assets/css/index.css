@@ -515,6 +515,9 @@ pre .toast {
   left: 0;
   transform: translateY(-50%);
 }
+.meta-box.list {
+  font-size: clamp(0.667rem, 2vh, 1rem);
+}
 
 .social-icons a {
   aspect-ratio: 1/1;

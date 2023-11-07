@@ -28,7 +28,7 @@
 				{{ range (after 3 .Paginator.Pages) }}
    					<li>
    						<a href="{{.RelPermalink}}" title="{{ .Summary }}" class="">{{ .Title }}</a>
-   						<div class="meta-box">
+   						<div class="meta-box list">
    							<div><strong>By: </strong>{{ .Params.author }}</div>
    							<div><strong>Published: </strong>{{.Params.publishDate.Format "Jan 02, 2006"}}</div>
    						</div>

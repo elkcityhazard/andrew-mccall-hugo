@@ -1,0 +1,50 @@
+<script type="application/ld+json">
+	{
+		"@context":"http://schema.org",
+		"@type": "BlogPosting",
+		"image": "http://example.com/images/image.jpg",
+		"url": "{{.RelPermalink}}",
+		"headline": "{{.Title}}",
+		"alternativeHeadline": "{{.Description}}",
+		"dateCreated": "{{.date}}",
+		"datePublished": "{{.date}}",
+		"dateModified": "{{.date}}",
+		"inLanguage": "en-US",
+		"isFamilyFriendly": "true",
+		"copyrightYear": "2023",
+		"copyrightHolder": "",
+		"contentLocation": {
+			"@type": "Place",
+			"name": "Traverse City, MI"
+		},
+		"accountablePerson": {
+			"@type": "Person",
+			"name": "Andrew M McCall",
+			"url": "https://andrew-mccall.com"
+		},
+		"author": {
+			"@type": "Person",
+			"name": "Andrew M McCall",
+			"url": "https://andrew-mccall.com"
+		},
+		"creator": {
+			"@type": "Person",
+			"name": "Andrew M McCall",
+			"url": "https://andrew-mccall.com"
+		},
+		"publisher": {
+			"@type": "Organization",
+			"name": "Andrew M McCall",
+			"url": "https://andrew-mccall.com",
+			"logo": {
+				"@type": "ImageObject",
+				"url": "/images/logo-small-transparent.png",
+				"width":"2880",
+				"height":"2478"
+			}
+		},
+		"mainEntityOfPage": "True",
+		"articleSection": "Blog",
+		"articleBody": "{{ .Content }}"
+	}
+</script>
