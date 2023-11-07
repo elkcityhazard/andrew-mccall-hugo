@@ -281,6 +281,12 @@ aside li {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+.single .wrapper .container .about-me .row img {
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: auto;
+}
 .single .wrapper .container main.main-content {
   flex: 1 1;
 }
