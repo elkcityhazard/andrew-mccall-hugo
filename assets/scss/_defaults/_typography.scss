@@ -290,6 +290,17 @@ a {
 
 }
 
+a.skip-to-content-link {
+	&:focus {
+		outline: 1px dotted #000;
+		left: 0;
+    	top: 0;
+    	padding: 3px;
+    	background: #ffc;
+    	
+	}
+}
+
 a.active {
 	@include mixins.base-transition();
 	background: c.$sun-yellow;
