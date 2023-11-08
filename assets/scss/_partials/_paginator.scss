@@ -1,5 +1,9 @@
 @use '../_defaults/colors' as colors;
 
+.more-posts {
+	width: 100%;
+}
+
 .pagination-default {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(20px, 40px));

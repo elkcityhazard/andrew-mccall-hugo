@@ -1505,6 +1505,10 @@ small.error p {
   opacity: 0.2;
 }
 
+.more-posts {
+  width: 100%;
+}
+
 .pagination-default {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20px, 40px));
