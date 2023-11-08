@@ -1,0 +1,23 @@
+@use '../_defaults/media-query' as queries;
+
+.contact-form {
+	flex: 1 1;
+	min-width: 0;
+	@include queries.tablet {
+			flex: 1 1;
+		}
+	@include queries.desktop {
+			flex: 2 1;
+	}
+	+ aside.sidebar.contact {
+		flex: 1 2 100%;
+		min-width: 0;
+		padding-top: 3vh;
+		@include queries.tablet {
+			flex: 0 2 33%;
+		}
+		@include queries.desktop {
+			flex: 1 3;
+		}
+	}
+}
