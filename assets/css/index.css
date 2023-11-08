@@ -385,7 +385,7 @@ ul.categories li:last-child::after {
 }
 
 .author-byline strong {
-  margin-right: clamp(1px, 1vw, 1.1vw);
+  margin-right: clamp(1px, 1vh, 7px);
 }
 
 p > a {
