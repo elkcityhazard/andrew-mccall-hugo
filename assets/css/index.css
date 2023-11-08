@@ -290,6 +290,7 @@ aside li {
 }
 .single .wrapper .container main.main-content {
   flex: 1 1;
+  max-width: 100%;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .single .wrapper .container main.main-content {
