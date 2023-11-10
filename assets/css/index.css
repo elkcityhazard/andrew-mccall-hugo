@@ -1016,6 +1016,10 @@ small.error p {
   outline: 1px dotted #000;
 }
 
+.d-none {
+  display: none !important;
+}
+
 .main-header {
   display: grid;
   grid-template-areas: "a" "b";
