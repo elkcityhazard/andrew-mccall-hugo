@@ -3,6 +3,16 @@
 @use '../_defaults/media-query' as query;
 
 .toc {
+	
+	@include query.tablet {
+		
+	}
+	@include query.desktop {
+		background: #fff !important;
+		position: sticky;
+		top: 65px;
+	}
+	z-index: 3;
 	h1,
 	h2,
 	h3,

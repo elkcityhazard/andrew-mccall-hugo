@@ -1280,6 +1280,16 @@ small.error p {
   outline: 1px dotted #000;
 }
 
+.toc {
+  z-index: 3;
+}
+@media (min-width: 1024px) {
+  .toc {
+    background: #fff !important;
+    position: sticky;
+    top: 65px;
+  }
+}
 .toc h1,
 .toc h2,
 .toc h3,
