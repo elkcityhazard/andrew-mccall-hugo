@@ -56,6 +56,7 @@ img.loaded {
 .col img.portrait {
   border-radius: 1rem;
   box-shadow: 2px 2px 20px -10px #000;
+  opacity: 1;
 }
 
 aside img {
@@ -276,10 +277,16 @@ aside li {
   .single .wrapper .container .about-me .row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  .single .wrapper .container .about-me .row .col:nth-child(1) {
+    place-self: center;
+  }
 }
 @media (min-width: 1024px) {
   .single .wrapper .container .about-me .row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .single .wrapper .container .about-me .row .col:nth-child(1) {
+    place-self: center;
   }
 }
 .single .wrapper .container .about-me .row img {
@@ -322,6 +329,96 @@ aside li {
 .single .wrapper footer {
   flex: 0 0 100%;
   max-width: 100%;
+}
+
+body.dark-mode {
+  background: #333;
+}
+body.dark-mode nav,
+body.dark-mode header,
+body.dark-mode section,
+body.dark-mode div,
+body.dark-mode main,
+body.dark-mode article,
+body.dark-mode aside,
+body.dark-mode .wrapper {
+  background: #333;
+}
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode span,
+body.dark-mode p,
+body.dark-mode strong,
+body.dark-mode li {
+  color: #fff;
+}
+body.dark-mode h1 a,
+body.dark-mode h2 a,
+body.dark-mode h3 a,
+body.dark-mode h4 a,
+body.dark-mode h5 a,
+body.dark-mode h6 a,
+body.dark-mode span a,
+body.dark-mode p a,
+body.dark-mode strong a,
+body.dark-mode li a {
+  color: hsl(198, 89%, 82%);
+}
+body.dark-mode .wrapper .main-header .main-nav {
+  background: #333;
+  color: #fff;
+}
+body.dark-mode .wrapper .main-header .main-nav a {
+  color: #fff;
+}
+body.dark-mode .wrapper .main-header .main-nav a:hover, body.dark-mode .wrapper .main-header .main-nav a:active, body.dark-mode .wrapper .main-header .main-nav a:focus {
+  color: hsl(198, 89%, 82%);
+}
+body.dark-mode .wrapper .featured-card a .featured-card__title {
+  color: #d6df58;
+}
+body.dark-mode .wrapper .featured-card:nth-child(2n+1), body.dark-mode .wrapper .featured-card:nth-child(2n) {
+  color: #fff;
+}
+body.dark-mode .wrapper .featured-card:nth-child(2n+1):hover a h1,
+body.dark-mode .wrapper .featured-card:nth-child(2n+1):hover a h2,
+body.dark-mode .wrapper .featured-card:nth-child(2n+1):hover a h3,
+body.dark-mode .wrapper .featured-card:nth-child(2n+1):hover a h4,
+body.dark-mode .wrapper .featured-card:nth-child(2n+1):hover a h5,
+body.dark-mode .wrapper .featured-card:nth-child(2n+1):hover a h6, body.dark-mode .wrapper .featured-card:nth-child(2n+1):active a h1,
+body.dark-mode .wrapper .featured-card:nth-child(2n+1):active a h2,
+body.dark-mode .wrapper .featured-card:nth-child(2n+1):active a h3,
+body.dark-mode .wrapper .featured-card:nth-child(2n+1):active a h4,
+body.dark-mode .wrapper .featured-card:nth-child(2n+1):active a h5,
+body.dark-mode .wrapper .featured-card:nth-child(2n+1):active a h6, body.dark-mode .wrapper .featured-card:nth-child(2n+1):focus a h1,
+body.dark-mode .wrapper .featured-card:nth-child(2n+1):focus a h2,
+body.dark-mode .wrapper .featured-card:nth-child(2n+1):focus a h3,
+body.dark-mode .wrapper .featured-card:nth-child(2n+1):focus a h4,
+body.dark-mode .wrapper .featured-card:nth-child(2n+1):focus a h5,
+body.dark-mode .wrapper .featured-card:nth-child(2n+1):focus a h6, body.dark-mode .wrapper .featured-card:nth-child(2n):hover a h1,
+body.dark-mode .wrapper .featured-card:nth-child(2n):hover a h2,
+body.dark-mode .wrapper .featured-card:nth-child(2n):hover a h3,
+body.dark-mode .wrapper .featured-card:nth-child(2n):hover a h4,
+body.dark-mode .wrapper .featured-card:nth-child(2n):hover a h5,
+body.dark-mode .wrapper .featured-card:nth-child(2n):hover a h6, body.dark-mode .wrapper .featured-card:nth-child(2n):active a h1,
+body.dark-mode .wrapper .featured-card:nth-child(2n):active a h2,
+body.dark-mode .wrapper .featured-card:nth-child(2n):active a h3,
+body.dark-mode .wrapper .featured-card:nth-child(2n):active a h4,
+body.dark-mode .wrapper .featured-card:nth-child(2n):active a h5,
+body.dark-mode .wrapper .featured-card:nth-child(2n):active a h6, body.dark-mode .wrapper .featured-card:nth-child(2n):focus a h1,
+body.dark-mode .wrapper .featured-card:nth-child(2n):focus a h2,
+body.dark-mode .wrapper .featured-card:nth-child(2n):focus a h3,
+body.dark-mode .wrapper .featured-card:nth-child(2n):focus a h4,
+body.dark-mode .wrapper .featured-card:nth-child(2n):focus a h5,
+body.dark-mode .wrapper .featured-card:nth-child(2n):focus a h6 {
+  color: #a6af22;
+}
+body.dark-mode footer .main-footer__row > .col h1, body.dark-mode footer .main-footer__row > .col h2, body.dark-mode footer .main-footer__row > .col h3, body.dark-mode footer .main-footer__row > .col h4, body.dark-mode footer .main-footer__row > .col h5, body.dark-mode footer .main-footer__row > .col h6, body.dark-mode footer .main-footer__row > .col a, body.dark-mode footer .main-footer__row > .col col > h1, body.dark-mode footer .main-footer__row > .col .col > h2, body.dark-mode footer .main-footer__row > .col .col > h3, body.dark-mode footer .main-footer__row > .col .col > h4 {
+  color: #fff;
 }
 
 h1,
