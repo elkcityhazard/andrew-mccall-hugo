@@ -1,0 +1,82 @@
+@use './_colors.scss' as colors;
+body.dark-mode {
+	background: #333;
+	nav,
+	header,
+	section,
+	div,
+	main,
+	article,
+	aside,
+	.wrapper {
+		background: #333;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	span,
+	p,
+	strong,
+	li {
+		color: #fff;
+		a {
+			color: colors.$non-photo-blue;
+		}
+	}
+
+	.wrapper {
+		.main-header {
+			.main-nav {
+				background: #333;
+				color: #fff;
+				a {
+					color: #fff;
+					&:hover,
+					&:active,
+					&:focus {
+						color: colors.$non-photo-blue;
+					}
+				}
+			}
+		}
+
+		.featured-card {
+			a {
+				.featured-card__title {
+					color: colors.$sun-yellow;
+				}
+			}
+			
+			&:nth-child(2n +1),
+			&:nth-child(2n) {
+				color: #fff;
+				&:hover,
+				&:active,
+				&:focus {
+					a {
+						h1,
+						h2,
+						h3,
+						h4,
+						h5,
+						h6 {
+							color: darken(colors.$sun-yellow, 20%);
+						}
+					}
+				}
+			}
+		}
+	}
+	footer {
+
+		.main-footer__row > .col {
+			h1, h2, h3, h4, h5, h6, a, col > h1, .col > h2, .col > h3, .col > h4 {
+			color: #fff;
+		}
+		}
+	}
+}
