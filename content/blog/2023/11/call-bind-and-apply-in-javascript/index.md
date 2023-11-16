@@ -1,17 +1,21 @@
 ---
 title: Call, Apply, And Bind Methods In Javascript
-summary:  Call, apply, and bind methods can be confusing for newer Javascript developers.  In this post, we break down Call, Apply, And Bind methods for newer Javascript developers.
-description: we break down call, apply, and bind in Javascript and make sense of some simple use cases to help newer Javascript developers in their journey.
+summary: Call, apply, and bind methods can be confusing for newer Javascript
+  developers.  In this post, we break down Call, Apply, And Bind methods for
+  newer Javascript developers.
+description: we break down call, apply, and bind in Javascript and make sense of
+  some simple use cases to help newer Javascript developers in their journey.
 publishDate: 2023-11-15
 draft: false
 author: Andrew M McCall
 category:
-	- web development
+  - web development
 tags:
-	- Call 
-	- Bind 
-	- Apply
-	- Javascript
+  - Call
+  - Bind
+  - Apply
+  - Javascript
+
 ---
 
 
