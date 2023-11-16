@@ -8,7 +8,7 @@ description: we break down call, apply, and bind in Javascript and make sense of
 publishDate: 2023-11-15
 draft: false
 author: Andrew M McCall
-category:
+categories:
   - web development
 tags:
   - Call
@@ -23,13 +23,15 @@ tags:
 
 ## Call - We Use It All Of The Time
 
-In javascript, when you evoke a function in your program, javascript uses `call` under the hood. 
+When we call a function in our programs, javascript uses `call` under the hood. 
 
 Think of it like this:
 
 `myFunc()` where the `()` is just a shorthand for call.  
 
-`call` takes a some parameters.  The first parameter is the `this` you want to bind to the function.  
+
+
+`call` takes a some parameters.  The first parameter is the object in which you want to bind to the function.  
 
 The second parameter is the string argument you want to pass to the `call` function.  This can be comma delimited to accept multiple arguments.
 These arguments can be passed into any method that you are calling that accepts arguments. In this case `phrase`
@@ -106,4 +108,7 @@ console.log(bindCatToDog("rawr"))
 I hope these simple examples will help you recall the differences between bind. call, and apply later down the road.  They each represent an added flexibility that can save some time when you are writing code.  
 
 For now, love yourself, now, then, and later.  
+
+
+
 
