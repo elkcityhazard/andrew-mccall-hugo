@@ -69,7 +69,7 @@ export default class copyCode {
 
 		e.target.closest('pre').append(success)
 
-		e.target.closest('pre').querySelector('div').onanimationend = function(e) {
+		e.target.closest('pre').querySelector('div.success').onanimationend = function(e) {
 				
 				e.target.remove()
 			}
