@@ -45,8 +45,10 @@ p > code {
 
 ul,
 ol {
-	list-style: none;
-	list-style-position: inside;
+	li {
+		margin-bottom: 1rem;
+		padding-inline-start: 1rem;
+	}
 }
 
 ul.categories {

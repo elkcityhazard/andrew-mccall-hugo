@@ -451,10 +451,16 @@ p {
   max-width: 60ch;
 }
 
-ul,
-ol {
-  list-style: none;
-  list-style-position: inside;
+p > code {
+  background: #e6e6e6;
+  color: #000;
+  font-family: "Courier New", Courier, monospace;
+}
+
+ul li,
+ol li {
+  margin-bottom: 1rem;
+  padding-inline-start: 1rem;
 }
 
 ul.categories {
