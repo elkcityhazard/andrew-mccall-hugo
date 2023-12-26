@@ -6,6 +6,13 @@ summary:  Go has powerful concurrency tools fully baked into the programming Lan
 publishDate: 2023-12-26
 updateDate: 2023-12-16
 draft: false
+categories:
+  - Web Development
+tags:
+  - Golang
+  - Channels
+  - Concurrency
+  - Go
 ---
 
 ## What Are Goroutines and Channels?
