@@ -99,6 +99,9 @@ ul.categories {
 		transform: translateY(-50%);
 		right: calc(-0.30rem - 2px);
 		background: c.$penn-blue;
+            &.categories {
+                margin: unset;
+            }
 	}
 	&:last-child {
 		&::after {
