@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="{{ if .Description }} {{ .Description}} - {{ .Site.Params.description }} {{ else }} {{ .Site.Params.description }} {{ end }}">
-	<title>{{- .Site.Title -}}</title>
+        <title>{{ . Title }} - {{- .Site.Title -}}</title>
 	{{ $style := resources.Get "css/index.css" }}
 	{{ $script := resources.Get "scripts/index.js" |  js.Build (dict "sourceMap" "external" ) }}
 	<link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
