@@ -126,10 +126,21 @@ nav.breadcrumb {
 
 .featured {
 	margin-bottom: 3rem;
-    max-width: 60ch;
 	&:last-of-type {
 		margin-bottom: 1rem;
 	}
+	.featured-card {
+		.featured-card__title,
+		.featured-card__byline,
+		.featured-card__content,
+		.featured-card__button {
+			max-width: 60ch;
+		}
+		a > h2.featured-card__title {
+			max-width: 499px;
+		}
+	}
+
 }
 
 .featured__title {
@@ -181,12 +192,14 @@ nav.breadcrumb {
 		.featured-card__byline {
 			font-size: 0.85rem;
 			margin-bottom: 0.667rem;
+			max-width: 60ch;
 			strong + span {
 				padding-left: 0.5rem;
 			}
 		}
 		.featured-card__content {
 			margin-bottom: 0.667rem;
+			max-width: 60ch;
 			display: -webkit-box;
   			-webkit-line-clamp: 4;
   			-webkit-box-orient: vertical;  
