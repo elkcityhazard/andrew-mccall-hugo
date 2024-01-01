@@ -78,6 +78,7 @@ nav.breadcrumb {
   justify-content: flex-start;
   align-items: center;
   gap: 0 1.5rem;
+  margin: unset;
   padding: 0;
 }
 .breadcrumbs li {
@@ -1864,6 +1865,10 @@ small.error p {
 .cta-btn:focus, .cta-btn:focus-within, .cta-btn:focus-visible {
   background: transparent;
   outline-style: dotted;
+}
+
+nav.breadcrumb ol.breadcrumbs {
+  margin: initial;
 }
 
 /*# sourceMappingURL=index.css.map */

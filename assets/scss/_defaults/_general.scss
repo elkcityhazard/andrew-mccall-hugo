@@ -80,6 +80,7 @@ nav.breadcrumb {
 	justify-content: flex-start;
 	align-items: center;
 	gap: 0 1.5rem;
+    margin: unset;
 	padding: 0;
 	li {
 		@include m.desktop {
