@@ -11,8 +11,10 @@ h3,
 h4,
 h5,
 h6 {
+	display: inline-block;
 	font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
 	font-weight: normal;
+	max-width: 768px;
  
 }
 
@@ -45,8 +47,8 @@ p > code {
 
 ul,
 ol {
-	margin: auto;
-	max-width: 75vw;
+	
+	max-width: 60ch;
 	li {
 		margin-bottom: 1rem;
 		padding-inline-start: 1rem;
@@ -72,6 +74,7 @@ ul.categories {
 		display: inline-block;
 		font-size: clamp(0.60rem, $yAxisIntersection + toVW(), 1rem);
 		margin-right: 0.5rem;
+		margin-bottom: 0;
 		padding-inline-start: 0;
 		position: relative;
 		text-transform: lowercase;
@@ -138,7 +141,7 @@ blockquote {
 	width: 60ch;
 	p {
 	font-family: Didot, 'Bodoni MT', 'Noto Serif Display', 'URW Palladio L', P052, Sylfaen, serif;
-	font-size: clamp(1.5rem, 1.667rem, 1.75rem);
+	font-size: clamp(1.5rem, mixins.build-clamp(1.5, 1.75, 399, 968), 1.75rem);
 	font-weight: 700;
 	margin: auto;
 	padding: 0 0 0 1rem;
@@ -171,7 +174,7 @@ pre {
 	color: #fff;
 	cursor: pointer;
 	display: block;
-	max-width: 100%;
+	max-width: 60ch;
 	margin: 1rem 0;
 	padding: 1rem;
 	overflow: auto;

@@ -443,8 +443,10 @@ h3,
 h4,
 h5,
 h6 {
+  display: inline-block;
   font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
   font-weight: normal;
+  max-width: 768px;
 }
 
 ol,
@@ -475,8 +477,7 @@ p > code {
 
 ul,
 ol {
-  margin: auto;
-  max-width: 75vw;
+  max-width: 60ch;
 }
 ul li,
 ol li {
@@ -491,6 +492,7 @@ ul.categories li {
   display: inline-block;
   font-size: clamp(0.6rem, 0.700374382rem + 0.4494382022vw, 1rem);
   margin-right: 0.5rem;
+  margin-bottom: 0;
   padding-inline-start: 0;
   position: relative;
   text-transform: lowercase;
@@ -542,7 +544,7 @@ blockquote {
 }
 blockquote p {
   font-family: Didot, "Bodoni MT", "Noto Serif Display", "URW Palladio L", P052, Sylfaen, serif;
-  font-size: 1.667rem;
+  font-size: clamp(1.5rem, 1.3246924429rem + 0.7908611599vw, 1.75rem);
   font-weight: 700;
   margin: auto;
   padding: 0 0 0 1rem;
@@ -573,7 +575,7 @@ pre {
   color: #fff;
   cursor: pointer;
   display: block;
-  max-width: 100%;
+  max-width: 60ch;
   margin: 1rem 0;
   padding: 1rem;
   overflow: auto;
@@ -1274,6 +1276,9 @@ small.error p {
   display: block;
   line-height: 1.25;
 }
+.author-card .author-card__inner-row .author-meta h3 {
+  margin-bottom: 0;
+}
 
 .author-meta__name {
   line-height: 1.5;
@@ -1734,7 +1739,8 @@ small.error p {
   font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
   font-weight: normal;
   padding: 1rem;
-  max-width: 100%;
+  max-width: 60ch;
+  width: 100%;
 }
 .cta .cta__inner .row .col-50 {
   position: relative;
