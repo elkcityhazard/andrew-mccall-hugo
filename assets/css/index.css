@@ -506,6 +506,7 @@ ol li {
 
 ul.categories {
   display: inline-block;
+  margin: 0;
 }
 ul.categories li {
   display: inline-block;
@@ -527,6 +528,9 @@ ul.categories li::after {
   transform: translateY(-50%);
   right: calc(-0.3rem - 2px);
   background: hsl(220, 100%, 17%);
+}
+ul.categories li::after.categories {
+  margin: unset;
 }
 ul.categories li:last-child::after {
   display: none;

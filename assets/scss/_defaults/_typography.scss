@@ -80,6 +80,7 @@ $yAxisIntersection: (-$min-viewport) * $slope + $min-font-size;
 
 ul.categories {
 	display: inline-block;
+    margin: 0;
 	li {
 		display: inline-block;
 		font-size: clamp(0.60rem, $yAxisIntersection + toVW(), 1rem);
