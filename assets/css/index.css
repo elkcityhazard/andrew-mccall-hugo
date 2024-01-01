@@ -120,6 +120,7 @@ nav.breadcrumb {
 
 .featured {
   margin-bottom: 3rem;
+  max-width: 60ch;
 }
 .featured:last-of-type {
   margin-bottom: 1rem;
