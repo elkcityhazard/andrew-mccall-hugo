@@ -54,14 +54,14 @@ export default class FormValidation {
             if (this.errors.length > 0) {
             	
             	for (const v of this.errors) {
-            		if (v.hasOwnProperty('email')) {
+            		if (Object.prototype.hasOwnProperty.call(v, 'email')) {
             			const msg = document.createElement('p')
             			msg.innerText = v?.email
             			document.querySelector('input[name="email"] + .error').appendChild(msg)
             			document.querySelector('input[name="email"] + .error').classList.add('show-error')
             		}
 
-            		if (v.hasOwnProperty('message')) {
+            		if (Object.prototype.hasOwnProperty.call(v,'message')) {
             			const msg = document.createElement('p')
             			msg.innerText = v?.message
             			document.querySelector('textarea[name="message"] + .error').appendChild(msg)
@@ -74,17 +74,10 @@ export default class FormValidation {
             	throw new Error("invalid data")
             }
 
+            return document.createElement('form').submit.call(document.getElementById(this.form))
+
+
             
-            const response = await fetch('https://api.formcake.com/api/form/91ab5345-3e83-4b1d-aed8-5b15ecb8d581/submission', {
-            	method: "POST",
-            	body: formData,
-            })
-
-            const data = await response.json()
-
-            if (response.status == 200) {
-            	location.assign('/success')
-            }
 
         } catch (err) {
             console.error(err.message)
