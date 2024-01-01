@@ -1,0 +1,102 @@
+@use '../_defaults/colors' as colors;
+@use '../_defaults/media-query' as breakpoints;
+
+.cta {
+    background: colors.$sun-yellow-900;
+    font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+    font-weight: normal;
+    padding: 1rem;
+    max-width: 100%;
+    .cta__inner {
+        .row {
+            .col-50 {
+                position: relative;
+                img {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    height: 100%;
+                    width: 100%;
+                    opacity: 0.25;
+                    z-index: 0;
+                }
+                .cta__inner-card {
+                    background: #fff;
+                    margin-bottom: 1rem;
+                    &:nth-child(2n) {
+                        margin-bottom: 0;
+                    }
+                    padding: 1rem;
+                }
+               .content-wrap {
+                display: grid;
+                padding: 1rem;
+                place-items: center;
+                height: 100%;
+                width: 100%;
+                p,
+                a {
+                    z-index: 1;
+                }
+                p {
+                    color: #000;
+                    font-size: 1.5rem;
+                    font-weight: 900;
+                    text-shadow: 1px 1px 3px #888;
+                }
+               }
+            }
+        }
+    }
+    @include breakpoints.small {
+        margin-bottom: 1rem;
+        
+        
+    }
+
+    @include breakpoints.desktop {
+        border-radius: 1rem;
+        box-shadow: 0 0 15px -10px #000;
+        font-size: 1rem;
+        margin: 1rem auto;
+        max-width: 100%;
+        padding: 1rem;
+        width: 100%;
+        .cta__inner {
+            h3 {
+                font-size: 2rem;
+                margin-bottom: 0 !important;
+            }
+           .row {
+            .col-50 {
+                .cta__inner-card {
+                    background: #fff;
+                    box-shadow: 2px 2px 20px -10px #000;
+                    margin: 1rem auto;
+                    max-width: 300px;
+                    padding: 1rem;
+                    // transform: translateX(-25%);
+                }
+            }
+           }
+        }
+    }
+    
+}
+
+
+.cta-btn {
+    background: colors.$rose-pink;
+    color: #fff;
+    text-transform: uppercase;
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-radius: 2rem;
+    padding: 0.33rem 1rem;
+    &::after,
+    &::before {
+        content:"";
+    }
+}

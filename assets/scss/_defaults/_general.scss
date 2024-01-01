@@ -271,6 +271,9 @@ aside {
 				position: fixed;
 				top: 0;
 				z-index: 99999999999;
+				@include m.desktop {
+					max-width: 100%;
+				}
 			}
 		}
 		.container {
@@ -327,7 +330,7 @@ aside {
 			}
 			@include m.desktop {
 				flex: 1 2;
-				max-width: unset;
+				max-width: 300px;
 			}
 			overflow: initial;
 			

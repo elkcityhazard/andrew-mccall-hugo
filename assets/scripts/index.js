@@ -20,6 +20,7 @@ new FormValidation('mainContactForm')
 
 new LazyLoad(document.querySelectorAll('.card-background'))
 new LazyLoad(document.querySelectorAll('.logo'))
+new LazyLoad(document.querySelectorAll('.lazy'))
 //new LazyLoad(document.querySelectorAll('.portrait'))
 
 
