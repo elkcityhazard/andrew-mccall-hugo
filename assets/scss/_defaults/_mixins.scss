@@ -1,8 +1,24 @@
 
-
-
 @mixin base-transition($property:all, $type:ease, $duration:300ms) {
 	-moz-transition: $property $duration $type;
 	-webkit-transition: $property $duration $type;
 	transition: $property $duration $type;
+}
+
+
+
+
+@function build-clamp($minFontSize: 1, $maxFontSize: 1.5, $minViewportWidth: 399, $maxViewportWidth: 1200) {
+
+	$minWidth: calc($minViewportWidth / 18);
+	$maxWidth: calc($maxViewportWidth / 18);
+
+	$slope: calc(($maxFontSize - $minFontSize) / ($maxWidth - $minWidth));
+	$yAxisIntersection: (-$minWidth) * $slope + $minFontSize;
+
+	@debug($yAxisIntersection);
+
+	@return #{$yAxisIntersection}rem + ' + ' + #{$slope * 100}vw;
+
+
 }

@@ -11,7 +11,7 @@
 		background: #fff !important;
 		position: sticky;
 		top: 65px;
-	}
+	} 
 	z-index: 3;
 	h1,
 	h2,
@@ -20,7 +20,8 @@
 	h5,
 	h6 {
 		color: c.$rose-pink;
-		font-size: clamp(1.25rem, 10vh, 2rem);
+		font-size: clamp(1rem, 1.49rem + 8.333vw, 1.5rem);
+		padding-left: 1rem;
 		text-decoration: underline;
 		text-transform: uppercase;
 	}

@@ -1,4 +1,5 @@
 @use '../_defaults/colors' as colors;
+@use '../_defaults/mixins' as mixins;
 
 .more-posts {
 	width: 100%;
@@ -17,8 +18,20 @@
 	width: 100%;
 	.page-item {
 		aspect-ratio: 1/1;
+		border-radius: 50%;
 		display: grid;
 		place-items: center;
+		padding-inline-start: 0;
+		@include mixins.base-transition();
+		&:hover,
+		&:active,
+		&:focus {
+			border: 2px solid colors.$rose-pink;
+			border-radius: 50%;
+		}
+		&:focus {
+			outline: 2px dotted colors.$rose-pink;
+		}
 	}
 
 	.page-item.active {

@@ -70,6 +70,9 @@ aside {
 		list-style-position: inside;
 	}
 }
+nav.breadcrumb {
+	padding: 0;	
+}
 
 .breadcrumbs {
 	display: flex;
@@ -79,10 +82,14 @@ aside {
 	gap: 0 1.5rem;
 	padding: 0;
 	li {
+		@include m.desktop {
+			margin-bottom: 0;
+		}
 		display: inline-block;
+		padding-inline-start: 0;
 		position: relative;
 		a {
-			font-size: clamp(0.667rem, 2vh, 1rem);
+			font-size: clamp(0.5rem, mixins.build-clamp(0.5, 0.8, 399, 968), 1rem);
 			margin: unset;
 		}
 		&:first-of-type {
@@ -319,6 +326,7 @@ aside {
 				}
 				@include m.desktop {
 					flex: 2 1;
+					max-width: 768px;
 				}
 			}
 			aside {
@@ -330,7 +338,7 @@ aside {
 			}
 			@include m.desktop {
 				flex: 1 2;
-				max-width: 300px;
+				max-width: 349px;
 			}
 			overflow: initial;
 			

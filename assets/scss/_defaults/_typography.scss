@@ -45,29 +45,46 @@ p > code {
 
 ul,
 ol {
+	margin: auto;
+	max-width: 75vw;
 	li {
 		margin-bottom: 1rem;
 		padding-inline-start: 1rem;
+		
 	}
+}
+
+$min-font-size: 0.8rem;
+$max-font-size: 1rem;
+$min-viewport: 22.1667rem;
+$max-viewport: 66.6667rem;
+
+$slope: calc(($max-font-size - $min-font-size) / ($max-viewport - $min-viewport));
+$yAxisIntersection: (-$min-viewport) * $slope + $min-font-size;
+
+@function toVW() {
+@return unquote($slope * 100 + 'vw')
 }
 
 ul.categories {
 	display: inline-block;
 	li {
 		display: inline-block;
-		font-size: clamp(0.667rem, 2vh, 1rem);
-		margin-right: 1rem;
+		font-size: clamp(0.60rem, $yAxisIntersection + toVW(), 1rem);
+		margin-right: 0.5rem;
+		padding-inline-start: 0;
 		position: relative;
+		text-transform: lowercase;
 		&::after {
 		content: "";
 		display: inline-block;
 		width: 2px;
-		height: 20px;
+		height: 12px;
 		margin: auto;
 		top: 50%;
 		position: absolute;
 		transform: translateY(-50%);
-		right: calc(-0.5rem - 2px);
+		right: calc(-0.28rem - 2px);
 		background: c.$penn-blue;
 	}
 	&:last-child {
@@ -78,9 +95,11 @@ ul.categories {
 	}
 }
 
+
+
 .author-byline {
 	strong {
-		margin-right: clamp(1px, 1vh, 7px);
+		margin-right: 3px;
 	}
 }
 
@@ -152,7 +171,7 @@ pre {
 	color: #fff;
 	cursor: pointer;
 	display: block;
-	max-width: 60ch;
+	max-width: 100%;
 	margin: 1rem 0;
 	padding: 1rem;
 	overflow: auto;

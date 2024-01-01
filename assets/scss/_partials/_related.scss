@@ -6,12 +6,13 @@
 	.related__heading {
 		color: c.$rose-pink;
 		font-size: clamp(1.25rem, 10vh, 2rem);
+		margin-bottom: 0;
 		text-decoration: underline;
 		text-transform: uppercase;
 	}
 
 	ul {
-		padding: 1rem 0;
+		padding: 0 1rem 1rem;
 		width: 75vw;
 		@include query.tablet {
 			width: initial;

@@ -1,4 +1,5 @@
 @use '../_defaults/media-query' as m;
+
 .author-card {
 	max-width: 350px;
 	.author-card__inner-row {
@@ -43,31 +44,6 @@
 		}
 	
 }
-
-// .sidebar.contact {
-		
-// 			.author-card__inner-row {
-// 				.author-card__inner-row__portrait {
-// 					.outer-portrait {
-// 						.inner-portrait {
-// 							text-align: center;
-// 							@media screen and (min-width:968px) {
-// 								text-align: left;
-// 							}
-// 							img {
-// 								border-radius: 50%;
-// 							}
-// 						}
-// 					}
-// 				}
-// 			}
-// 		.author-meta {
-// 			width: 100%;
-// 			text-align: left;
-// 			max-width: 499px;
-// 			margin: auto;
-// 		}
-// 	}
 
 
 .author-meta__name {
