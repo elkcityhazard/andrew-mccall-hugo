@@ -491,7 +491,7 @@ ul.categories {
 ul.categories li {
   display: inline-block;
   font-size: clamp(0.6rem, 0.700374382rem + 0.4494382022vw, 1rem);
-  margin-right: 0.5rem;
+  margin-right: 0.8rem;
   margin-bottom: 0;
   padding-inline-start: 0;
   position: relative;
