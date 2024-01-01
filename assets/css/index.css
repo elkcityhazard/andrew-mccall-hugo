@@ -1791,7 +1791,7 @@ small.error p {
     box-shadow: 0 0 15px -10px #000;
     font-size: 1rem;
     margin: 1rem auto;
-    max-width: 100%;
+    max-width: 60ch;
     padding: 1rem;
     width: 100%;
   }
