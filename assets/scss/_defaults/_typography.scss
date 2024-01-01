@@ -1,5 +1,6 @@
 @use './_colors.scss' as c;
 @use './mixins' as mixins;
+@use './media-query' as breakpoint;
 @use "sass:color";
 
 $meta-rem: 0.412rem;
@@ -46,9 +47,18 @@ p > code {
 }
 
 ul,
-ol {
-	
+ol {	
+	margin: 1rem auto 1rem 1rem;
+	max-width: 100%;
+	@include breakpoint.small {
+	max-width: 80vw;
+	}
+	@include breakpoint.tablet {
+		max-width: 60ch;
+	}
+	@include breakpoint.desktop {
 	max-width: 60ch;
+	}
 	li {
 		margin-bottom: 1rem;
 		padding-inline-start: 1rem;

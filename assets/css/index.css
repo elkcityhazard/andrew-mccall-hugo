@@ -477,7 +477,26 @@ p > code {
 
 ul,
 ol {
-  max-width: 60ch;
+  margin: 1rem auto 1rem 1rem;
+  max-width: 100%;
+}
+@media (min-width: 499px) and (max-width: 767px) {
+  ul,
+  ol {
+    max-width: 80vw;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  ul,
+  ol {
+    max-width: 60ch;
+  }
+}
+@media (min-width: 1024px) {
+  ul,
+  ol {
+    max-width: 60ch;
+  }
 }
 ul li,
 ol li {
@@ -1736,13 +1755,21 @@ small.error p {
 
 .cta {
   background: hsl(64, 68%, 61%);
+  border-radius: 2rem;
   font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
   font-weight: normal;
   padding: 1rem;
   max-width: 60ch;
   width: 100%;
 }
+.cta .cta__inner {
+  max-width: 100%;
+}
+.cta .cta__inner .row {
+  grid-template-columns: repeat(1px, 1fr);
+}
 .cta .cta__inner .row .col-50 {
+  max-width: 100%;
   position: relative;
 }
 .cta .cta__inner .row .col-50 img {
@@ -1758,6 +1785,7 @@ small.error p {
 .cta .cta__inner .row .col-50 .cta__inner-card {
   background: #fff;
   margin-bottom: 1rem;
+  max-width: 100%;
   padding: 1rem;
 }
 .cta .cta__inner .row .col-50 .cta__inner-card:nth-child(2n) {
@@ -1765,6 +1793,7 @@ small.error p {
 }
 .cta .cta__inner .row .col-50 .content-wrap {
   display: grid;
+  max-width: 100%;
   padding: 1rem;
   place-items: center;
   height: 100%;
@@ -1810,6 +1839,7 @@ small.error p {
 
 .cta-btn {
   background: #c71627;
+  outline: 2px solid transparent;
   color: #fff;
   text-transform: uppercase;
   display: block;
@@ -1817,9 +1847,19 @@ small.error p {
   text-align: center;
   border-radius: 2rem;
   padding: 0.33rem 1rem;
+  margin-top: 1rem;
 }
 .cta-btn::after, .cta-btn::before {
   content: "";
+}
+.cta-btn:hover, .cta-btn:active {
+  background: transparent;
+  outline: 2px solid hsl(204, 85%, 36%);
+  color: hsl(204, 85%, 36%);
+}
+.cta-btn:focus, .cta-btn:focus-within, .cta-btn:focus-visible {
+  background: transparent;
+  outline-style: dotted;
 }
 
 /*# sourceMappingURL=index.css.map */

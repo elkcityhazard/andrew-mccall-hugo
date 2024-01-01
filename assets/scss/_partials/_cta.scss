@@ -1,16 +1,21 @@
 @use '../_defaults/colors' as colors;
 @use '../_defaults/media-query' as breakpoints;
 
+
 .cta {
     background: colors.$sun-yellow-900;
+    border-radius: 2rem;
     font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
     font-weight: normal;
     padding: 1rem;
     max-width: 60ch;
     width: 100%;
     .cta__inner {
+        max-width: 100%;
         .row {
+            grid-template-columns: repeat(1px, 1fr);
             .col-50 {
+                max-width: 100%;
                 position: relative;
                 img {
                     position: absolute;
@@ -25,6 +30,7 @@
                 .cta__inner-card {
                     background: #fff;
                     margin-bottom: 1rem;
+                    max-width: 100%;
                     &:nth-child(2n) {
                         margin-bottom: 0;
                     }
@@ -32,6 +38,7 @@
                 }
                .content-wrap {
                 display: grid;
+                max-width: 100%;
                 padding: 1rem;
                 place-items: center;
                 height: 100%;
@@ -89,6 +96,7 @@
 
 .cta-btn {
     background: colors.$rose-pink;
+    outline: 2px solid  transparent;
     color: #fff;
     text-transform: uppercase;
     display: block;
@@ -96,8 +104,21 @@
     text-align: center;
     border-radius: 2rem;
     padding: 0.33rem 1rem;
+    margin-top: 1rem;
     &::after,
     &::before {
         content:"";
+    }
+    &:hover,
+    &:active {
+        background: transparent;
+        outline: 2px solid colors.$bice-blue;
+        color: colors.$bice-blue;
+    }
+    &:focus,
+    &:focus-within,
+    &:focus-visible{
+        background: transparent;
+        outline-style: dotted;
     }
 }
