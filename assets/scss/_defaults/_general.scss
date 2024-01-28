@@ -125,6 +125,7 @@ nav.breadcrumb {
 }
 
 .featured {
+	width: 100%;
 	margin-bottom: 3rem;
 	&:last-of-type {
 		margin-bottom: 1rem;
@@ -150,12 +151,13 @@ nav.breadcrumb {
 .featured__articles {
 	display: grid;
 	gap: 2vw;
+	width: 100%;
 	grid-template-columns: repeat(1, minmax(0, 1fr));
 	@include m.tablet {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 	@include m.desktop {
-		grid-template-columns: repeat(3, minmax(0, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 	}
 	margin: auto;
 	.featured-card {
@@ -165,7 +167,7 @@ nav.breadcrumb {
 		justify-content: space-around;
 		width: 100%;
 		@include m.desktop {
-			max-width: 25vw;
+			max-width: fit-content
 		}
 		a {
 			text-decoration: none;

@@ -119,6 +119,7 @@ nav.breadcrumb {
 }
 
 .featured {
+  width: 100%;
   margin-bottom: 3rem;
 }
 .featured:last-of-type {
@@ -141,6 +142,7 @@ nav.breadcrumb {
 .featured__articles {
   display: grid;
   gap: 2vw;
+  width: 100%;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   margin: auto;
 }
@@ -151,7 +153,7 @@ nav.breadcrumb {
 }
 @media (min-width: 1024px) {
   .featured__articles {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 }
 .featured__articles .featured-card {
@@ -163,7 +165,7 @@ nav.breadcrumb {
 }
 @media (min-width: 1024px) {
   .featured__articles .featured-card {
-    max-width: 25vw;
+    max-width: fit-content;
   }
 }
 .featured__articles .featured-card a {
@@ -1088,46 +1090,6 @@ small.error p {
   left: 0;
   bottom: 0rem;
 }
-.list .featured {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  margin: auto;
-  margin-bottom: 2rem;
-  max-width: 60ch;
-}
-.list .featured .featured-card {
-  margin-bottom: 1rem;
-}
-.list .featured .featured-card .featured-card__title {
-  color: #c71627;
-}
-.list .featured .featured-card .featured-card__button {
-  background: #c71627;
-  border: 1px solid transparent;
-  border-top-right-radius: 2.25rem;
-  border-bottom-right-radius: 2.25rem;
-  box-shadow: 0 0 10px -5px #000;
-  color: #fff;
-  font-size: 16px;
-  display: inline-block;
-  margin-top: 1rem;
-  max-width: 100%;
-  padding: 0.5rem 1rem;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: color 250ms ease;
-  -webkit-transition: color 250ms ease;
-  -moz-transition: color 250ms ease;
-}
-.list .featured .featured-card .featured-card__button:hover, .list .featured .featured-card .featured-card__button:active, .list .featured .featured-card .featured-card__button:focus {
-  background: #fff;
-  color: #c71627;
-  border: 1px solid #c71627;
-}
-.list .featured .featured-card .featured-card__button:focus {
-  outline: 1px dotted #000;
-}
 
 .more-posts {
   position: relative;
@@ -1177,6 +1139,47 @@ small.error p {
   color: hsl(204, 85%, 36%);
 }
 .more-posts ol.more-posts__list li a:focus {
+  outline: 1px dotted #000;
+}
+
+.featured {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  margin: auto;
+  margin-bottom: 2rem;
+  width: calc(100% - 2rem);
+}
+.featured .featured-card {
+  margin-bottom: 1rem;
+}
+.featured .featured-card .featured-card__title {
+  color: #c71627;
+}
+.featured .featured-card .featured-card__button {
+  background: #c71627;
+  border: 1px solid transparent;
+  border-top-right-radius: 2.25rem;
+  border-bottom-right-radius: 2.25rem;
+  box-shadow: 0 0 10px -5px #000;
+  color: #fff;
+  font-size: 16px;
+  display: inline-block;
+  margin-top: 1rem;
+  max-width: 100%;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 250ms ease;
+  -webkit-transition: color 250ms ease;
+  -moz-transition: color 250ms ease;
+}
+.featured .featured-card .featured-card__button:hover, .featured .featured-card .featured-card__button:active, .featured .featured-card .featured-card__button:focus {
+  background: #fff;
+  color: #c71627;
+  border: 1px solid #c71627;
+}
+.featured .featured-card .featured-card__button:focus {
   outline: 1px dotted #000;
 }
 

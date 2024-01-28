@@ -35,49 +35,7 @@ $light-pink: lighten(c.$rose-pink, 50%);
 		}
 
 	}
-	.featured {
-		display: grid;
-		grid-template-columns: repeat(1, minmax(0, 1fr));
-		margin: auto;
-		margin-bottom: 2rem;
-		max-width: 60ch;
-		.featured-card {
-			margin-bottom: 1rem;
-			.featured-card__title {
-				color: c.$rose-pink;
-
-			}
-			.featured-card__button {
-				background: c.$rose-pink;
-					border: 1px solid transparent;
-					border-top-right-radius: 2.25rem;
-					border-bottom-right-radius: 2.25rem;
-					box-shadow: 0 0 10px -5px #000;
-					color: #fff;
-					font-size: 16px;
-					display: inline-block;
-					margin-top: 1rem;
-					max-width: 100%;
-					padding: 0.5rem 1rem;
-					text-align: center;
-					text-decoration: none;
-					text-transform: uppercase;
-					transition: color 250ms ease;
-					-webkit-transition: color 250ms ease;
-					-moz-transition: color 250ms ease;
-					&:hover,
-					&:active,
-					&:focus {
-						background: #fff;
-						color: c.$rose-pink;
-						border: 1px solid c.$rose-pink;
-					}
-					&:focus {
-						outline: 1px dotted #000;
-					}
-			}
-		}
-	}
+	
 }
 
 .more-posts {
@@ -132,6 +90,50 @@ $light-pink: lighten(c.$rose-pink, 50%);
 					}
 				}
 				
+			}
+		}
+	}
+
+	.featured {
+		display: grid;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+		margin: auto;
+		margin-bottom: 2rem;
+		width: calc(100% - 2rem);
+		.featured-card {
+			margin-bottom: 1rem;
+			.featured-card__title {
+				color: c.$rose-pink;
+
+			}
+			.featured-card__button {
+				background: c.$rose-pink;
+					border: 1px solid transparent;
+					border-top-right-radius: 2.25rem;
+					border-bottom-right-radius: 2.25rem;
+					box-shadow: 0 0 10px -5px #000;
+					color: #fff;
+					font-size: 16px;
+					display: inline-block;
+					margin-top: 1rem;
+					max-width: 100%;
+					padding: 0.5rem 1rem;
+					text-align: center;
+					text-decoration: none;
+					text-transform: uppercase;
+					transition: color 250ms ease;
+					-webkit-transition: color 250ms ease;
+					-moz-transition: color 250ms ease;
+					&:hover,
+					&:active,
+					&:focus {
+						background: #fff;
+						color: c.$rose-pink;
+						border: 1px solid c.$rose-pink;
+					}
+					&:focus {
+						outline: 1px dotted #000;
+					}
 			}
 		}
 	}
