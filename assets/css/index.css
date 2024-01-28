@@ -1187,6 +1187,11 @@ small.error p {
   display: none !important;
 }
 
+#portrait {
+  max-width: 100%;
+  height: auto;
+}
+
 .main-header {
   display: grid;
   grid-template-areas: "a" "b";
