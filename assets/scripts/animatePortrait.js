@@ -21,6 +21,8 @@
         
     }
 
+   
+
 }
 
 
@@ -55,6 +57,12 @@ class Cell {
         }.bind(this), this.index * 2)
 
     }
+
+    getImageData() {
+        return this.effect.context.getImageData(this.x, this.y, this.width, this.height)
+    }
+
+    
 
     draw(context) {
         
@@ -118,12 +126,12 @@ class Effect {
     constructor(canvas, image) {
         this.canvas = canvas
         this.context = this.canvas.getContext('2d')
-       
+        this.particlesArray = []
         this.width = this.canvas.width
         this.height = this.canvas.height
         // we need to set up some cell attributes
-        this.cellWidth = this.width / 25
-        this.cellHeight = this.height / 40
+        this.cellWidth = this.width / 15
+        this.cellHeight = this.height / 25
         this.image = image
         // we need to creat a new cell inside of the effect class
         //this.cell = new Cell(this, 0,0)
@@ -138,20 +146,28 @@ class Effect {
         this.active = false
 
         this.canvas.addEventListener('mousemove', function(e){
-            return false
+            
             this.mouse.x = e.offsetX
             this.mouse.y = e.offsetY
             
         }.bind(this))
 
         this.canvas.addEventListener('mouseleave', function(e){
-            return false
+            
             this.mouse.x = undefined
             this.mouse.y = undefined
             
         }.bind(this))
         
 
+    }
+
+    init() {
+        for (let y = 0; y < this.height; y += this.cellHeight) {
+            for (let x = 0; x < this.width; x += this.cellWidth) {
+                this.particlesArray.push(new Particle(x, y))
+            }
+        }
     }
 
     createGrid() {
@@ -167,8 +183,13 @@ class Effect {
         }
     }
 
+   
+
     render() {
         this.imageGrid.forEach((cell, index) => {
+            this.particlesArray.forEach((particle,index) => {
+                particle.draw(this.context)
+            })
             cell.update()
             cell.draw(this.context)
         
@@ -178,10 +199,25 @@ class Effect {
 }
 
 
+class Particle {
+    constructor(x, y) {
+        this.x = undefined  
+        this.y = undefined
+        this.size = 10
+
+    }
+
+    draw(context) {
+        context.fillRect(this.x, this.y, this.size, this.size)
+    }
+}
+
+
 
 export {
     PortraitAnimation,
     Cell,
-    Effect
+    Effect,
+    Particle
 }
 
