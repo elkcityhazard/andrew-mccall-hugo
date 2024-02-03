@@ -120,7 +120,7 @@ nav.breadcrumb {
 
 .wrapper {
 	margin: auto;
-	max-width: 1200px;
+	max-width: 1500px;
 	padding: 0 1rem;
 }
 
@@ -342,8 +342,8 @@ nav.breadcrumb {
 					flex: 1 0;
 				}
 				@include m.desktop {
-					flex: 2 1;
-					max-width: 768px;
+					flex: 3 1;
+					max-width: 968px;
 				}
 			}
 			aside {

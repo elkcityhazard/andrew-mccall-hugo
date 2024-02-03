@@ -6,6 +6,7 @@
 $meta-rem: 0.412rem;
 
 
+
 h1,
 h2,
 h3,
@@ -37,7 +38,8 @@ footer {
 
 span,
 p {
-	max-width: 60ch;
+    font-size: clamp(0.85rem, 0.802rem + 0.435vw, 1.15rem);
+	max-width: 100ch;
 }
 
 p > code {
@@ -54,10 +56,10 @@ ol {
 	max-width: 80vw;
 	}
 	@include breakpoint.tablet {
-		max-width: 60ch;
+		max-width: 100ch;
 	}
 	@include breakpoint.desktop {
-	max-width: 60ch;
+	max-width: 100ch;
 	}
 	li {
 		margin-bottom: 1rem;
@@ -189,7 +191,7 @@ pre {
 	cursor: pointer;
 	display: block;
     font-size:1.06rem;
-	max-width: 60ch;
+	max-width: 100ch;
 	margin: 1rem 0;
 	padding: 1rem;
 	overflow: auto;
