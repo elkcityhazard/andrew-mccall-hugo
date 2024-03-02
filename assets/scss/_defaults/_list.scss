@@ -14,7 +14,7 @@ $light-pink: lighten(c.$rose-pink, 50%);
 		.blog-header__row {
 			width: 100%;
 		}
-		h1 {
+	h1 {
 			color: c.$rose-pink;
 			text-align: left;
 			font-size: clamp(2rem, 15vh, 5.5rem);
@@ -36,6 +36,33 @@ $light-pink: lighten(c.$rose-pink, 50%);
 
 	}
 	
+}
+
+
+.featured.hero-list {
+    display: grid;
+    gap: 2vmax;
+    grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
+    .featured-card {
+        a {
+            display: inline-block;
+            font-size: clamp(1rem, 0.8000rem + 1.7999vw, 2rem);
+        }
+        .featured-card__content {
+            background: transparent;
+             height: 6rem;
+            position: relative;
+             overflow: hidden;
+            &::before {
+                background: linear-gradient(0.5turn, rgba(255,255,255,0), rgba(255,255,255,0.75) 95%, rgba(255,255,255,1) 90%);
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                
+            }
+        }
+    }
 }
 
 .more-posts {

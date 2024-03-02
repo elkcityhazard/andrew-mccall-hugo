@@ -2,29 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Digital Marketing on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
-    <link>/tags/digital-marketing/</link>
+    <link>//localhost:1313/tags/digital-marketing/</link>
     <description>Recent content in Digital Marketing on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Feb 2023 20:44:47 -0500</lastBuildDate><atom:link href="/tags/digital-marketing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Feb 2023 20:44:47 -0500</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/digital-marketing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Google Analytics 4: Key Differences From Universal Analytics</title>
-      <link>/blog/2023/02/google-analytics-4-key-differences/</link>
+      <link>//localhost:1313/blog/2023/02/google-analytics-4-key-differences/</link>
       <pubDate>Thu, 09 Feb 2023 20:44:47 -0500</pubDate>
-      
-      <guid>/blog/2023/02/google-analytics-4-key-differences/</guid>
-      <description>Google Analytics 4 vs Universal Analytics: A Comparison Measurement: Universal analytics measurement is session-based while Google Analytics 4 has a flexible event-based data model. Reporting: Universal Analytics has limited cross-device and cross-platform reporting whereas Google Analytics 4 has greater support for full cross-device and cross-platform reporting. Automation: Universal Analytics properties have limited support for automation. Google Analytics 4 supports machine learning throughout to improve and simplify insight discovery. What is An Audience?</description>
+      <guid>//localhost:1313/blog/2023/02/google-analytics-4-key-differences/</guid>
+      <description>My Notes From Google Skillshop Course on Google Analytics 4 On The Differences Between GA4 and Universal Analytics</description>
     </item>
-    
-    <item>
-      <title>Michigan Web Design</title>
-      <link>/blog/michigan-web-design-why-hire-a-michigan-web-designer/</link>
-      <pubDate>Sat, 27 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/michigan-web-design-why-hire-a-michigan-web-designer/</guid>
-      <description>A web design company is an important aspect of your business that can help you achieve success in this digital age. They bring together the right team of professionals to create the look, feel and user-friendliness of your online presence, which in turn affects how well your business does overall. Michigan Web Design by Andrew McCall is a leading local marketing agency located in Traverse City, Michigan.
-Michigan Web Design Company I am a Michigan based web designer and developer located in Traverse City, Michigan.</description>
-    </item>
-    
   </channel>
 </rss>

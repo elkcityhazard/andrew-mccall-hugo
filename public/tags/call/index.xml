@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Call on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
+    <link>//localhost:1313/tags/call/</link>
+    <description>Recent content in Call on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/call/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Call, Apply, And Bind Methods In Javascript</title>
+      <link>//localhost:1313/blog/2023/11/call-bind-and-apply-in-javascript/</link>
+      <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/blog/2023/11/call-bind-and-apply-in-javascript/</guid>
+      <description>Call, apply, and bind methods can be confusing for newer Javascript developers.  In this post, we break down Call, Apply, And Bind methods for newer Javascript developers.</description>
+    </item>
+  </channel>
+</rss>

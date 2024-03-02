@@ -2,443 +2,416 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
+    <loc>//localhost:1313/blog/</loc>
+    <lastmod>2024-02-01T20:48:51-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/</loc>
+    <lastmod>2024-02-01T20:48:51-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/go/</loc>
+    <lastmod>2024-02-01T20:48:51-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/blog/2024/02/go-tests-notes-for-creating-go-tests/</loc>
+    <lastmod>2024-02-01T20:48:51-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/</loc>
+    <lastmod>2024-02-01T20:48:51-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/software-testing/</loc>
+    <lastmod>2024-02-01T20:48:51-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/</loc>
+    <lastmod>2024-02-01T20:48:51-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/testing/</loc>
+    <lastmod>2024-02-01T20:48:51-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/css/</loc>
+    <lastmod>2024-01-27T20:24:05-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/html/</loc>
+    <lastmod>2024-01-27T20:24:05-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/images/</loc>
+    <lastmod>2024-01-27T20:24:05-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/javascript/</loc>
+    <lastmod>2024-01-27T20:24:05-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/blog/2024/01/javascript-image-animation-effects/</loc>
+    <lastmod>2024-01-27T20:24:05-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/web-development/</loc>
+    <lastmod>2024-01-27T20:24:05-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/channels/</loc>
+    <lastmod>2024-01-15T20:01:49-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/email/</loc>
+    <lastmod>2024-01-15T20:01:49-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/golang/</loc>
+    <lastmod>2024-01-15T20:01:49-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/goroutines/</loc>
+    <lastmod>2024-01-15T20:01:49-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/blog/2024/01/sending-emails-with-go-routines/</loc>
+    <lastmod>2024-01-15T20:01:49-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/crypto/</loc>
+    <lastmod>2023-12-31T19:18:59-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/blog/2023/12/golang-create-a-random-string/</loc>
+    <lastmod>2023-12-31T19:18:59-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/rune/</loc>
+    <lastmod>2023-12-31T19:18:59-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/concurrency/</loc>
+    <lastmod>2023-12-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/blog/2023/12/go-channels-tutorial/</loc>
+    <lastmod>2023-12-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/apply/</loc>
+    <lastmod>2023-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/bind/</loc>
+    <lastmod>2023-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/call/</loc>
+    <lastmod>2023-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/blog/2023/11/call-bind-and-apply-in-javascript/</loc>
+    <lastmod>2023-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/projects/</loc>
     <lastmod>2023-11-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/projects/project_1/</loc>
-    <lastmod>2023-11-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/projects/</loc>
-    <lastmod>2023-11-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/blog/</loc>
+    <loc>//localhost:1313/success/</loc>
     <lastmod>2023-10-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/go/</loc>
-    <lastmod>2023-10-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/javascript/</loc>
-    <lastmod>2023-10-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/php/</loc>
-    <lastmod>2023-10-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2023-10-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/success/</loc>
-    <lastmod>2023-10-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/zig/</loc>
-    <lastmod>2023-10-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/blog/2023/10/test-blog-4/</loc>
-    <lastmod>2023-10-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/blog/2023/10/test-blog-3/</loc>
-    <lastmod>2023-10-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/blog/2023/10/test-blog-2/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/grep/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/vim/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/blog/2023/10/test-blog-1/</loc>
-    <lastmod>2023-10-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/categories/</loc>
+    <loc>//localhost:1313/tags/digital-marketing/</loc>
     <lastmod>2023-02-09T20:44:47-05:00</lastmod>
   </url><url>
-    <loc>/tags/digital-marketing/</loc>
+    <loc>//localhost:1313/tags/google-analytics/</loc>
     <lastmod>2023-02-09T20:44:47-05:00</lastmod>
   </url><url>
-    <loc>/tags/google-analytics/</loc>
+    <loc>//localhost:1313/tags/google-analytics-4/</loc>
     <lastmod>2023-02-09T20:44:47-05:00</lastmod>
   </url><url>
-    <loc>/tags/google-analytics-4/</loc>
+    <loc>//localhost:1313/blog/2023/02/google-analytics-4-key-differences/</loc>
     <lastmod>2023-02-09T20:44:47-05:00</lastmod>
   </url><url>
-    <loc>/blog/2023/02/google-analytics-4-key-differences/</loc>
+    <loc>//localhost:1313/categories/seo/</loc>
     <lastmod>2023-02-09T20:44:47-05:00</lastmod>
   </url><url>
-    <loc>/categories/seo/</loc>
+    <loc>//localhost:1313/tags/universal-analytics/</loc>
     <lastmod>2023-02-09T20:44:47-05:00</lastmod>
   </url><url>
-    <loc>/tags/universal-analytics/</loc>
-    <lastmod>2023-02-09T20:44:47-05:00</lastmod>
-  </url><url>
-    <loc>/tags/css/</loc>
+    <loc>//localhost:1313/tags/frontend-web-development/</loc>
     <lastmod>2023-01-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/frontend-web-development/</loc>
+    <loc>//localhost:1313/tags/vanilla-javascript/</loc>
     <lastmod>2023-01-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/html/</loc>
+    <loc>//localhost:1313/blog/2023/01/easy-vanilla-javascript-carousel-slider-tutorial-for-beginners/</loc>
     <lastmod>2023-01-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/vanilla-javascript/</loc>
-    <lastmod>2023-01-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/blog/2023/01/easy-vanilla-javascript-carousel-slider-tutorial-for-beginners/</loc>
-    <lastmod>2023-01-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/categories/web-development/</loc>
-    <lastmod>2023-01-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/golang/</loc>
+    <loc>//localhost:1313/blog/2022/12/golang-image-resize-and-golang-image-crop/</loc>
     <lastmod>2022-12-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2022/12/golang-image-resize-and-golang-image-crop/</loc>
+    <loc>//localhost:1313/tags/image-processing/</loc>
     <lastmod>2022-12-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/image-processing/</loc>
+    <loc>//localhost:1313/tags/mime-type-detection/</loc>
     <lastmod>2022-12-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/mime-type-detection/</loc>
+    <loc>//localhost:1313/tags/server-programming/</loc>
     <lastmod>2022-12-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/server-programming/</loc>
+    <loc>//localhost:1313/tags/web-development/</loc>
     <lastmod>2022-12-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/web-development/</loc>
-    <lastmod>2022-12-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/blog/2022/10/seo-checklist-for-local-small-business-websites/</loc>
+    <loc>//localhost:1313/blog/2022/10/seo-checklist-for-local-small-business-websites/</loc>
     <lastmod>2022-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/google-business-profile-optimization/</loc>
+    <loc>//localhost:1313/tags/google-business-profile-optimization/</loc>
     <lastmod>2022-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/local-citations/</loc>
+    <loc>//localhost:1313/tags/local-citations/</loc>
     <lastmod>2022-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/local-seo/</loc>
+    <loc>//localhost:1313/tags/local-seo/</loc>
     <lastmod>2022-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/search-engine-optimization/</loc>
+    <loc>//localhost:1313/categories/search-engine-optimization/</loc>
     <lastmod>2022-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/seo/</loc>
+    <loc>//localhost:1313/tags/seo/</loc>
     <lastmod>2022-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/seo-traverse-city/</loc>
+    <loc>//localhost:1313/tags/seo-traverse-city/</loc>
     <lastmod>2022-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/small-business-seo/</loc>
+    <loc>//localhost:1313/tags/small-business-seo/</loc>
     <lastmod>2022-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/content-marketing/</loc>
+    <loc>//localhost:1313/tags/content-marketing/</loc>
     <lastmod>2022-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2022/10/how-to-create-a-website-for-my-online-business/</loc>
+    <loc>//localhost:1313/blog/2022/10/how-to-create-a-website-for-my-online-business/</loc>
     <lastmod>2022-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/planning/</loc>
+    <loc>//localhost:1313/tags/planning/</loc>
     <lastmod>2022-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/search-engine-optimization/</loc>
+    <loc>//localhost:1313/tags/search-engine-optimization/</loc>
     <lastmod>2022-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/social-media-marketing/</loc>
+    <loc>//localhost:1313/tags/social-media-marketing/</loc>
     <lastmod>2022-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/traverse-city-business/</loc>
+    <loc>//localhost:1313/tags/traverse-city-business/</loc>
     <lastmod>2022-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/web-design-traverse-city/</loc>
+    <loc>//localhost:1313/tags/web-design-traverse-city/</loc>
     <lastmod>2022-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/website-builder/</loc>
+    <loc>//localhost:1313/tags/website-builder/</loc>
     <lastmod>2022-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/website-design/</loc>
+    <loc>//localhost:1313/tags/website-design/</loc>
     <lastmod>2022-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/data/</loc>
+    <loc>//localhost:1313/tags/data/</loc>
     <lastmod>2022-09-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/frontmatter/</loc>
+    <loc>//localhost:1313/tags/frontmatter/</loc>
     <lastmod>2022-09-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2022/09/frontmatter-data-and-hugo-templates/</loc>
+    <loc>//localhost:1313/blog/2022/09/frontmatter-data-and-hugo-templates/</loc>
     <lastmod>2022-09-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/hugo/</loc>
+    <loc>//localhost:1313/tags/hugo/</loc>
     <lastmod>2022-09-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/static-site-generator/</loc>
+    <loc>//localhost:1313/tags/static-site-generator/</loc>
     <lastmod>2022-09-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/tools/</loc>
+    <loc>//localhost:1313/tags/tools/</loc>
     <lastmod>2022-09-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/.env/</loc>
+    <loc>//localhost:1313/tags/.env/</loc>
     <lastmod>2022-09-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/dotenv/</loc>
+    <loc>//localhost:1313/tags/dotenv/</loc>
     <lastmod>2022-09-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/go-application-configuration/</loc>
+    <loc>//localhost:1313/tags/go-application-configuration/</loc>
     <lastmod>2022-09-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2022/09/golang-read-environment-variables-from-file/</loc>
+    <loc>//localhost:1313/blog/2022/09/golang-read-environment-variables-from-file/</loc>
     <lastmod>2022-09-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2022/07/10-secrets-to-creating-a-personal-coaching-website-that-converts/</loc>
+    <loc>//localhost:1313/blog/2022/07/10-secrets-to-creating-a-personal-coaching-website-that-converts/</loc>
     <lastmod>2022-07-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/call-to-actions/</loc>
+    <loc>//localhost:1313/tags/call-to-actions/</loc>
     <lastmod>2022-07-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/personal-coaching-tips/</loc>
+    <loc>//localhost:1313/categories/personal-coaching-tips/</loc>
     <lastmod>2022-07-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/web-design/</loc>
+    <loc>//localhost:1313/tags/web-design/</loc>
     <lastmod>2022-07-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/website-conversion/</loc>
+    <loc>//localhost:1313/tags/website-conversion/</loc>
     <lastmod>2022-07-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/analytics/</loc>
+    <loc>//localhost:1313/categories/analytics/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/cookieless-analytics/</loc>
+    <loc>//localhost:1313/tags/cookieless-analytics/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2022/07/cookieless-analytics-cookieless-tracking-alternatives/</loc>
+    <loc>//localhost:1313/blog/2022/07/cookieless-analytics-cookieless-tracking-alternatives/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/google-analytics-alterantives/</loc>
+    <loc>//localhost:1313/tags/google-analytics-alterantives/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/privacy-first-analytics/</loc>
+    <loc>//localhost:1313/tags/privacy-first-analytics/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2022/07/top-20-web-design-agencies-in-traverse-city/</loc>
+    <loc>//localhost:1313/blog/2022/07/top-20-web-design-agencies-in-traverse-city/</loc>
     <lastmod>2022-07-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/traverse-city-web-design/</loc>
+    <loc>//localhost:1313/tags/traverse-city-web-design/</loc>
     <lastmod>2022-07-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/web-devsign/</loc>
+    <loc>//localhost:1313/categories/web-devsign/</loc>
     <lastmod>2022-07-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2022/06/create-a-template-cache-for-a-go-application/</loc>
+    <loc>//localhost:1313/blog/2022/06/create-a-template-cache-for-a-go-application/</loc>
     <lastmod>2022-06-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/server-side-go/</loc>
+    <loc>//localhost:1313/tags/server-side-go/</loc>
     <lastmod>2022-06-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2022/06/bootstrap-a-new-hugo-theme/</loc>
+    <loc>//localhost:1313/blog/2022/06/bootstrap-a-new-hugo-theme/</loc>
     <lastmod>2022-06-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/static-website-generators/</loc>
+    <loc>//localhost:1313/tags/static-website-generators/</loc>
     <lastmod>2022-06-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2022/06/install-hugo-on-windows-with-chocolately-package-manager/</loc>
+    <loc>//localhost:1313/blog/2022/06/install-hugo-on-windows-with-chocolately-package-manager/</loc>
     <lastmod>2022-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/frontend/</loc>
+    <loc>//localhost:1313/tags/frontend/</loc>
     <lastmod>2022-06-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/scss/</loc>
+    <loc>//localhost:1313/tags/scss/</loc>
     <lastmod>2022-06-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/scss-cheatsheet/</loc>
+    <loc>//localhost:1313/tags/scss-cheatsheet/</loc>
     <lastmod>2022-06-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2022/06/scss-use-vs-import/</loc>
+    <loc>//localhost:1313/blog/2022/06/scss-use-vs-import/</loc>
     <lastmod>2022-06-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/web-development-tips/</loc>
+    <loc>//localhost:1313/tags/web-development-tips/</loc>
     <lastmod>2022-06-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/hosting/</loc>
+    <loc>//localhost:1313/tags/hosting/</loc>
     <lastmod>2022-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/security/</loc>
+    <loc>//localhost:1313/tags/security/</loc>
     <lastmod>2022-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/server/</loc>
+    <loc>//localhost:1313/tags/server/</loc>
     <lastmod>2022-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2022/05/vps-hosting-security-ubuntu-20-04/</loc>
+    <loc>//localhost:1313/blog/2022/05/vps-hosting-security-ubuntu-20-04/</loc>
     <lastmod>2022-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/javascript-for-countdown-timer/</loc>
+    <loc>//localhost:1313/blog/javascript-for-countdown-timer/</loc>
     <lastmod>2022-04-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/blockchain/</loc>
+    <loc>//localhost:1313/tags/blockchain/</loc>
     <lastmod>2022-02-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/ethereum/</loc>
+    <loc>//localhost:1313/tags/ethereum/</loc>
     <lastmod>2022-02-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/smart-contracts/</loc>
+    <loc>//localhost:1313/tags/smart-contracts/</loc>
     <lastmod>2022-02-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/solidity/</loc>
+    <loc>//localhost:1313/tags/solidity/</loc>
     <lastmod>2022-02-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/web-3.0/</loc>
+    <loc>//localhost:1313/tags/web-3.0/</loc>
     <lastmod>2022-02-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2022/02/what-is-blockchain-technology-and-how-does-it-work/</loc>
+    <loc>//localhost:1313/blog/2022/02/what-is-blockchain-technology-and-how-does-it-work/</loc>
     <lastmod>2022-02-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2022/01/12-expert-tips-for-promoting-your-small-business/</loc>
+    <loc>//localhost:1313/blog/2022/01/12-expert-tips-for-promoting-your-small-business/</loc>
     <lastmod>2022-01-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/growth-tips/</loc>
+    <loc>//localhost:1313/tags/growth-tips/</loc>
     <lastmod>2022-01-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/marketing/</loc>
+    <loc>//localhost:1313/tags/marketing/</loc>
     <lastmod>2022-01-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/small-business-tips/</loc>
+    <loc>//localhost:1313/tags/small-business-tips/</loc>
     <lastmod>2022-01-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/open-source/</loc>
+    <loc>//localhost:1313/tags/open-source/</loc>
     <lastmod>2022-01-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/privacy-oriented/</loc>
+    <loc>//localhost:1313/tags/privacy-oriented/</loc>
     <lastmod>2022-01-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/web-analytics/</loc>
+    <loc>//localhost:1313/tags/web-analytics/</loc>
     <lastmod>2022-01-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/web-analytics-platforms-that-are-privacy-focused/</loc>
+    <loc>//localhost:1313/blog/web-analytics-platforms-that-are-privacy-focused/</loc>
     <lastmod>2022-01-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/devops/</loc>
+    <loc>//localhost:1313/tags/devops/</loc>
     <lastmod>2021-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/web-hosting/</loc>
+    <loc>//localhost:1313/tags/web-hosting/</loc>
     <lastmod>2021-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/web-hosting-free-sites-web-hosting-solutions-for-web-developers/</loc>
+    <loc>//localhost:1313/blog/web-hosting-free-sites-web-hosting-solutions-for-web-developers/</loc>
     <lastmod>2021-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/cms/</loc>
+    <loc>//localhost:1313/tags/cms/</loc>
     <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/hugo-website-tutorial-how-to-create-a-hugo-website-from-scratch/</loc>
+    <loc>//localhost:1313/blog/hugo-website-tutorial-how-to-create-a-hugo-website-from-scratch/</loc>
     <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/jamstack/</loc>
+    <loc>//localhost:1313/tags/jamstack/</loc>
     <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/podcast-production/</loc>
-    <lastmod>2021-11-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/podcasts/</loc>
-    <lastmod>2021-11-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/blog/traverse-city-podcast-production/</loc>
-    <lastmod>2021-11-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/design/</loc>
-    <lastmod>2021-11-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/blog/michigan-web-design-why-hire-a-michigan-web-designer/</loc>
-    <lastmod>2021-11-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/web-developmet/</loc>
-    <lastmod>2021-11-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/blog/css-grid-gallery-easy-fluid-gallery-with-css-and-javascript/</loc>
+    <loc>//localhost:1313/blog/css-grid-gallery-easy-fluid-gallery-with-css-and-javascript/</loc>
     <lastmod>2021-11-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/custom-react-hook-function/</loc>
+    <loc>//localhost:1313/blog/custom-react-hook-function/</loc>
     <lastmod>2021-11-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/react/</loc>
+    <loc>//localhost:1313/tags/react/</loc>
     <lastmod>2021-11-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/how-to-easily-access-previous-state-in-react-application/</loc>
+    <loc>//localhost:1313/blog/how-to-easily-access-previous-state-in-react-application/</loc>
     <lastmod>2021-11-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/5-things-you-need-to-know-before-and-after-you-build-a-website/</loc>
+    <loc>//localhost:1313/blog/5-things-you-need-to-know-before-and-after-you-build-a-website/</loc>
     <lastmod>2021-10-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/web-design/</loc>
+    <loc>//localhost:1313/categories/web-design/</loc>
     <lastmod>2021-10-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/muskegon-michigan/</loc>
-    <lastmod>2021-09-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/blog/muskegon-michigan-web-development/</loc>
-    <lastmod>2021-09-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/social-media-management/</loc>
-    <lastmod>2021-09-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/cadillac-michigan/</loc>
-    <lastmod>2021-09-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/blog/cadillac-michigan-web-design/</loc>
-    <lastmod>2021-09-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/petoskey-michigan/</loc>
-    <lastmod>2021-09-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/blog/petoskey-michigan-web-development/</loc>
-    <lastmod>2021-09-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/blog/5-trends-for-traverse-city-web-development-in-2022/</loc>
+    <loc>//localhost:1313/blog/5-trends-for-traverse-city-web-development-in-2022/</loc>
     <lastmod>2021-09-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/traverse-city/</loc>
+    <loc>//localhost:1313/tags/traverse-city/</loc>
     <lastmod>2021-09-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/trends/</loc>
+    <loc>//localhost:1313/tags/trends/</loc>
     <lastmod>2021-09-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/business/</loc>
+    <loc>//localhost:1313/tags/business/</loc>
     <lastmod>2021-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/10-reasons-to-start-a-business-in-traverse-city-michigan/</loc>
+    <loc>//localhost:1313/blog/10-reasons-to-start-a-business-in-traverse-city-michigan/</loc>
     <lastmod>2021-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/a-complete-beginners-guide-to-parallax-scrolling-and-javascript/</loc>
+    <loc>//localhost:1313/blog/a-complete-beginners-guide-to-parallax-scrolling-and-javascript/</loc>
     <lastmod>2021-08-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/everything-you-need-to-know-to-get-started-with-content-delivery-networks-as-a-beginner/</loc>
+    <loc>//localhost:1313/blog/everything-you-need-to-know-to-get-started-with-content-delivery-networks-as-a-beginner/</loc>
     <lastmod>2021-08-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/social-media/</loc>
-    <lastmod>2021-08-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/blog/traverse-city-social-media-marketing/</loc>
-    <lastmod>2021-08-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/development/</loc>
-    <lastmod>2021-08-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/blog/traverse-city-web-development/</loc>
-    <lastmod>2021-08-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/web/</loc>
-    <lastmod>2021-08-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/blog/markdown-syntax-for-quick-development-and-fast-content-creation/</loc>
+    <loc>//localhost:1313/blog/markdown-syntax-for-quick-development-and-fast-content-creation/</loc>
     <lastmod>2021-08-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/static-websites/</loc>
+    <loc>//localhost:1313/tags/static-websites/</loc>
     <lastmod>2021-08-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/10-static-website-mistakes-you-should-stop-making/</loc>
+    <loc>//localhost:1313/blog/10-static-website-mistakes-you-should-stop-making/</loc>
     <lastmod>2021-08-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/host-a-static-website-for-cheap-on-bunnycdn/</loc>
+    <loc>//localhost:1313/blog/host-a-static-website-for-cheap-on-bunnycdn/</loc>
     <lastmod>2020-10-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/about/</loc>
+    <loc>//localhost:1313/about/</loc>
   </url><url>
-    <loc>/contact/</loc>
+    <loc>//localhost:1313/contact/</loc>
   </url>
 </urlset>

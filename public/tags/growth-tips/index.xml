@@ -1,30 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>growth tips on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
-    <link>/tags/growth-tips/</link>
-    <description>Recent content in growth tips on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
+    <title>Growth Tips on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
+    <link>//localhost:1313/tags/growth-tips/</link>
+    <description>Recent content in Growth Tips on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 27 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/growth-tips/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/growth-tips/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>12 Expert Tips On How To Promote Your Small Business</title>
-      <link>/blog/2022/01/12-expert-tips-for-promoting-your-small-business/</link>
+      <link>//localhost:1313/blog/2022/01/12-expert-tips-for-promoting-your-small-business/</link>
       <pubDate>Thu, 27 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/2022/01/12-expert-tips-for-promoting-your-small-business/</guid>
+      <guid>//localhost:1313/blog/2022/01/12-expert-tips-for-promoting-your-small-business/</guid>
       <description>The tips in this article are meant to help you promote your small business. Small businesses have a lot of advantages over large enterprises, but they also have some disadvantages. One disadvantage is the lack of resources and money that larger businesses have. Without money, it can be difficult for a small business to get the same kind of exposure as a large corporation. What follows are 12 tips on how to promote your small business so that you can do just as well if not better than the big guys!</description>
     </item>
-    
     <item>
       <title>5 Things You Need To Know Before And After You Build A Website</title>
-      <link>/blog/5-things-you-need-to-know-before-and-after-you-build-a-website/</link>
+      <link>//localhost:1313/blog/5-things-you-need-to-know-before-and-after-you-build-a-website/</link>
       <pubDate>Sun, 03 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/5-things-you-need-to-know-before-and-after-you-build-a-website/</guid>
-      <description>5 Ways You Can Use Your Website to Grow Your Business Websites are a great way to grow your business, but you need to make sure that they are properly maintained and optimized for this. In order to help you with that, here are five ways you can use your website for the growth of your business.
-Create a blog: Blogging is a great way to create content and generate leads.</description>
+      <guid>//localhost:1313/blog/5-things-you-need-to-know-before-and-after-you-build-a-website/</guid>
+      <description>5 Ways You Can Use Your Website to Grow Your Business Websites are a great way to grow your business, but you need to make sure that they are properly maintained and optimized for this. In order to help you with that, here are five ways you can use your website for the growth of your business.&#xA;Create a blog: Blogging is a great way to create content and generate leads.</description>
     </item>
-    
   </channel>
 </rss>

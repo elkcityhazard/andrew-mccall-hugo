@@ -5,7 +5,7 @@ author: Andrew M McCall
 description:  I explain Goroutines and Channels and how to apply them from basic concepts to more advanced use cases. 
 summary:  Go has powerful concurrency tools fully baked into the programming Language.  This post aims to explain go routines and channels so you can get started using them in your own projects.
 publishDate: 2024-02-01T20:48:51-05:00
-updateDate:  2024-02-01T20:48:51-05:00
+updateDate:  2024-02-10T20:40:00-05:00
 draft: false
 categories:
   - Software Testing
@@ -109,4 +109,4 @@ Finally, if the result of `string(out)` does not equal our expected prompt value
 
 __Note:__ we can use a similar method to test `fmt.Println()`.  The difference, however, is that near the end, where we test the string, we are calling `!strings.Contains()` and throwing a new `t.Errorf()` if the test fails.  
 
-
+## Testing 

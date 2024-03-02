@@ -1,64 +1,68 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>golang on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
-    <link>/tags/golang/</link>
-    <description>Recent content in golang on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
+    <title>Golang on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
+    <link>//localhost:1313/tags/golang/</link>
+    <description>Recent content in Golang on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Jan 2024 20:01:49 -0500</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sending Emails With Go Routines</title>
+      <link>//localhost:1313/blog/2024/01/sending-emails-with-go-routines/</link>
+      <pubDate>Mon, 15 Jan 2024 20:01:49 -0500</pubDate>
+      <guid>//localhost:1313/blog/2024/01/sending-emails-with-go-routines/</guid>
+      <description>Transactional emails and token creation are expensive operations.  Let&amp;rsquo;s explore how we can offload these to the background using channels and go routines.</description>
+    </item>
+    <item>
+      <title>Golang Create a Random String</title>
+      <link>//localhost:1313/blog/2023/12/golang-create-a-random-string/</link>
+      <pubDate>Sun, 31 Dec 2023 19:18:59 -0500</pubDate>
+      <guid>//localhost:1313/blog/2023/12/golang-create-a-random-string/</guid>
+      <description>Go&amp;rsquo;s rand package can help us easily generate a random string for when we need to ensure uniqueness with naming in our applicaton. We walkthrough the process of generating a random string using golang.</description>
+    </item>
+    <item>
+      <title>Go Channels Tutorial - Understanding Goroutines and Channels</title>
+      <link>//localhost:1313/blog/2023/12/go-channels-tutorial/</link>
+      <pubDate>Tue, 26 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/blog/2023/12/go-channels-tutorial/</guid>
+      <description>Go has powerful concurrency tools fully baked into the programming Language.  This post aims to explain go routines and channels so you can get started using them in your own projects.</description>
+    </item>
     <item>
       <title>Golang Image Resize and Golang Image Crop: Image Manipulation With Go Programming Language</title>
-      <link>/blog/2022/12/golang-image-resize-and-golang-image-crop/</link>
+      <link>//localhost:1313/blog/2022/12/golang-image-resize-and-golang-image-crop/</link>
       <pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/2022/12/golang-image-resize-and-golang-image-crop/</guid>
-      <description>Golang Image Resize &amp;amp; Golang Image Crop In general, I believe most people will want to use a dedicated package to really make this powerful but I wanted to write a bit about my experience with resizing images in Golang.
-Before I go any further, here are a few resources I used to learn more about image processing for my own purposes.
-How to Crop image in Golang? https://stackoverflow.com/questions/22940724/go-resizing-images Go Image Package Go Image/Draw Package</description>
+      <guid>//localhost:1313/blog/2022/12/golang-image-resize-and-golang-image-crop/</guid>
+      <description>An introduction to some of the very basic features of iamge cropping with Go.</description>
     </item>
-    
     <item>
       <title>Golang Read Environment Variables From File: How To Do It [Code Snippets]</title>
-      <link>/blog/2022/09/golang-read-environment-variables-from-file/</link>
+      <link>//localhost:1313/blog/2022/09/golang-read-environment-variables-from-file/</link>
       <pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/2022/09/golang-read-environment-variables-from-file/</guid>
-      <description>What Are Environmental Variables In Go A Cautionary Tale: My AWS Account Was Hacked And I Have A $50,000 Bill
-If you have ever used an API key or database connection string, you have most likely had a need to secure some sensitive data. Environment variables are a way to achieve this. We may need to do this because certain API&amp;rsquo;s can only be called so many times and the key is a way of authorizing our requests and keeping track of them.</description>
+      <guid>//localhost:1313/blog/2022/09/golang-read-environment-variables-from-file/</guid>
+      <description>What Are Environmental Variables In Go A Cautionary Tale: My AWS Account Was Hacked And I Have A $50,000 Bill&#xA;If you have ever used an API key or database connection string, you have most likely had a need to secure some sensitive data. Environment variables are a way to achieve this. We may need to do this because certain API&amp;rsquo;s can only be called so many times and the key is a way of authorizing our requests and keeping track of them.</description>
     </item>
-    
     <item>
       <title>How To Create A Template Cache For Your Golang Web Application</title>
-      <link>/blog/2022/06/create-a-template-cache-for-a-go-application/</link>
+      <link>//localhost:1313/blog/2022/06/create-a-template-cache-for-a-go-application/</link>
       <pubDate>Sun, 26 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/2022/06/create-a-template-cache-for-a-go-application/</guid>
-      <description>A beginner&amp;rsquo;s guide to create a reusable template cache for your Go web application: eveything you need to get started. For example the net/http and html/template package are part of the standard library and allow us to create full-featured web applications with just the standard library.
-Template Cache In Go Web Applications: A Beginner&amp;rsquo;s Guide Getting started creating a web application with Go isn&amp;rsquo;t difficult. One area that was difficult for me was the idea of creating a template cache to serve Go template files.</description>
+      <guid>//localhost:1313/blog/2022/06/create-a-template-cache-for-a-go-application/</guid>
+      <description>A beginner&amp;rsquo;s guide to create a reusable template cache for your Go web application: eveything you need to get started. For example the net/http and html/template package are part of the standard library and allow us to create full-featured web applications with just the standard library.&#xA;Template Cache In Go Web Applications: A Beginner&amp;rsquo;s Guide Getting started creating a web application with Go isn&amp;rsquo;t difficult. One area that was difficult for me was the idea of creating a template cache to serve Go template files.</description>
     </item>
-    
     <item>
       <title>Bootstrap A New Hugo Theme From Scratch [video]</title>
-      <link>/blog/2022/06/bootstrap-a-new-hugo-theme/</link>
+      <link>//localhost:1313/blog/2022/06/bootstrap-a-new-hugo-theme/</link>
       <pubDate>Tue, 21 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/2022/06/bootstrap-a-new-hugo-theme/</guid>
+      <guid>//localhost:1313/blog/2022/06/bootstrap-a-new-hugo-theme/</guid>
       <description>A part of using Hugo is the freedom of making your own theme. In this tutorial, I will explain how to bootstrap a new Hugo theme so you can customize it exactly how you want to. I will go over verifying installation, creating a theme, telling Hugo how to use your new theme, and we walk through the very basics of setting up a theme so that the home page displays.</description>
     </item>
-    
     <item>
       <title>Install Hugo With Chocolatey Package Manager On Windows 10 [video]</title>
-      <link>/blog/2022/06/install-hugo-on-windows-with-chocolately-package-manager/</link>
+      <link>//localhost:1313/blog/2022/06/install-hugo-on-windows-with-chocolately-package-manager/</link>
       <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/2022/06/install-hugo-on-windows-with-chocolately-package-manager/</guid>
-      <description>Installing Hugo on Windows is easy with chocolately package manager.
-For those who are not familiar, Hugo is a static website generator that can help you manage blazing fast static websites with minimal effort.
-If you are on Windows, installing Hugo is easy using Chocolately Package Manager. Here are the steps we take.
-Directions To Install Hugo on Windows 10 With Chocolately Package Manager Navigate to chocolately package manager
-Click the &amp;ldquo;install&amp;rdquo; link which is located at the top right hand corner next to the light/dark toggle.</description>
+      <guid>//localhost:1313/blog/2022/06/install-hugo-on-windows-with-chocolately-package-manager/</guid>
+      <description>Installing Hugo on Windows is easy with chocolately package manager.&#xA;For those who are not familiar, Hugo is a static website generator that can help you manage blazing fast static websites with minimal effort.&#xA;If you are on Windows, installing Hugo is easy using Chocolately Package Manager. Here are the steps we take.&#xA;Directions To Install Hugo on Windows 10 With Chocolately Package Manager Navigate to chocolately package manager&#xA;Click the &amp;ldquo;install&amp;rdquo; link which is located at the top right hand corner next to the light/dark toggle.</description>
     </item>
-    
   </channel>
 </rss>

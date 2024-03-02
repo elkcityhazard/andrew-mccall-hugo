@@ -89,6 +89,7 @@ aside li {
   color: #c71627;
   content: "≫";
   height: 100%;
+  font-size: 0.25rem;
   width: auto;
   position: absolute;
   top: 50%;
@@ -198,11 +199,13 @@ aside li {
   -webkit-transition: all 250ms ease;
   transition: all 250ms ease;
 }
-.featured__articles .featured-card .featured-card__button:hover, .featured__articles .featured-card .featured-card__button:active {
+.featured__articles .featured-card .featured-card__button:hover,
+.featured__articles .featured-card .featured-card__button:active {
   background: #fff;
   color: #c71627;
 }
-.featured__articles .featured-card .featured-card__button:hover::after, .featured__articles .featured-card .featured-card__button:active::after {
+.featured__articles .featured-card .featured-card__button:hover::after,
+.featured__articles .featured-card .featured-card__button:active::after {
   outline: 1px solid #c71627;
   padding-left: 1.25rem;
 }
@@ -283,7 +286,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
+  font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro,
+    sans-serif;
   font-weight: normal;
 }
 
@@ -297,7 +301,8 @@ section,
 aside,
 form,
 footer {
-  font-family: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans", source-sans-pro, sans-serif;
+  font-family: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans",
+    source-sans-pro, sans-serif;
   font-weight: normal;
   line-height: 1.5;
 }
@@ -348,12 +353,22 @@ p > a {
   -moz-transition: all 250ms ease;
   transition: all 250ms ease;
 }
-p > a:hover, p > a:active, p > a:focus {
+p > a:hover,
+p > a:active,
+p > a:focus {
   border-bottom-color: transparent;
 }
 
 blockquote {
-  background: linear-gradient(to right, #8ac5dc 4px, transparent 6px) 0 0, linear-gradient(to right, #8ac5dc 4px, transparent 4px) 0 100%, linear-gradient(to left, #8ac5dc 4px, transparent 4px) 100% 0, linear-gradient(to left, #8ac5dc 4px, transparent 4px) 100% 100%, linear-gradient(to bottom, #8ac5dc 4px, transparent 4px) 0 0, linear-gradient(to bottom, #8ac5dc 4px, transparent 4px) 100% 0, linear-gradient(to top, #8ac5dc 4px, transparent 4px) 0 100%, linear-gradient(to top, #8ac5dc 4px, transparent 4px) 100% 100%;
+  background:
+    linear-gradient(to right, #8ac5dc 4px, transparent 6px) 0 0,
+    linear-gradient(to right, #8ac5dc 4px, transparent 4px) 0 100%,
+    linear-gradient(to left, #8ac5dc 4px, transparent 4px) 100% 0,
+    linear-gradient(to left, #8ac5dc 4px, transparent 4px) 100% 100%,
+    linear-gradient(to bottom, #8ac5dc 4px, transparent 4px) 0 0,
+    linear-gradient(to bottom, #8ac5dc 4px, transparent 4px) 100% 0,
+    linear-gradient(to top, #8ac5dc 4px, transparent 4px) 0 100%,
+    linear-gradient(to top, #8ac5dc 4px, transparent 4px) 100% 100%;
   background-repeat: no-repeat;
   background-size: 30px 30px;
   border: 4px solid transparent;
@@ -364,13 +379,15 @@ blockquote {
   width: 100%;
 }
 blockquote p {
-  font-family: Didot, "Bodoni MT", "Noto Serif Display", "URW Palladio L", P052, Sylfaen, serif;
-  font-size: 1.667rem;
+  font-family: Didot, "Bodoni MT", "Noto Serif Display", "URW Palladio L", P052,
+    Sylfaen, serif;
+  font-size: clamp(0.67rem, 0.648rem + 0.198vw, 0.78rem);
   font-weight: 700;
   margin: auto;
   padding: 0 0 0 1rem;
 }
-blockquote::before, blockquote::after {
+blockquote::before,
+blockquote::after {
   content: "";
   display: none;
   width: 8px;
@@ -408,7 +425,8 @@ pre {
 }
 pre code {
   color: #d6df58;
-  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+    "DejaVu Sans Mono", monospace;
   font-size: 1rem;
   font-weight: normal;
 }
@@ -511,7 +529,8 @@ pre .toast {
 }
 
 a {
-  font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
+  font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
+    Arial, sans-serif;
   font-weight: normal;
   text-decoration: none;
   color: #c71627;
@@ -519,7 +538,9 @@ a {
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }
-a:hover, a:active, a:focus {
+a:hover,
+a:active,
+a:focus {
   color: #6b0c15;
 }
 
@@ -554,7 +575,9 @@ a.btn {
   -webkit-transition: color 250ms ease;
   -moz-transition: color 250ms ease;
 }
-a.btn:hover, a.btn:active, a.btn:focus {
+a.btn:hover,
+a.btn:active,
+a.btn:focus {
   background: #fff;
   color: #c71627;
   border: 1px solid #c71627;
@@ -600,7 +623,8 @@ nav a {
   -moz-transition: color 250ms ease;
   transition: color 250ms ease;
 }
-nav a:hover, nav a:active {
+nav a:hover,
+nav a:active {
   color: #85a1f4;
 }
 nav a:focus {
@@ -782,12 +806,13 @@ h6 {
 .contact-form form .form-control textarea {
   border: 1px solid #8ac5dc;
 }
-.contact-form form .form-control input:focus, .contact-form form .form-control input:focus-within,
+.contact-form form .form-control input:focus,
+.contact-form form .form-control input:focus-within,
 .contact-form form .form-control textarea:focus,
 .contact-form form .form-control textarea:focus-within {
   outline: 1px solid #c71627;
 }
-.contact-form form .form-control input[type=submit] {
+.contact-form form .form-control input[type="submit"] {
   background: #c71627;
   color: #fff;
   cursor: pointer;
@@ -798,7 +823,9 @@ h6 {
   -webkit-transition: all 250ms ease;
   -moz-transition: all 250ms ease;
 }
-.contact-form form .form-control input[type=submit]:hover, .contact-form form .form-control input[type=submit]:active, .contact-form form .form-control input[type=submit]:focus {
+.contact-form form .form-control input[type="submit"]:hover,
+.contact-form form .form-control input[type="submit"]:active,
+.contact-form form .form-control input[type="submit"]:focus {
   background: transparent;
   color: #c71627;
   outline: 1px solid #c71627;
@@ -885,7 +912,9 @@ small.error p {
   -webkit-transition: color 250ms ease;
   -moz-transition: color 250ms ease;
 }
-.list .featured .featured-card .featured-card__button:hover, .list .featured .featured-card .featured-card__button:active, .list .featured .featured-card .featured-card__button:focus {
+.list .featured .featured-card .featured-card__button:hover,
+.list .featured .featured-card .featured-card__button:active,
+.list .featured .featured-card .featured-card__button:focus {
   background: #fff;
   color: #c71627;
   border: 1px solid #c71627;
@@ -938,7 +967,9 @@ small.error p {
   font-weight: 700;
   font-size: clamp(1rem, 4vh, 1.5rem);
 }
-.list .more-posts ol li a:hover, .list .more-posts ol li a:active, .list .more-posts ol li a:focus {
+.list .more-posts ol li a:hover,
+.list .more-posts ol li a:active,
+.list .more-posts ol li a:focus {
   color: hsl(204, 85%, 36%);
 }
 .list .more-posts ol li a:focus {
@@ -983,7 +1014,7 @@ small.error p {
     height: calc(100vh - 65px);
   }
 }
-.main-header .main-header__row .main-header__row-col:nth-child(2n+1) {
+.main-header .main-header__row .main-header__row-col:nth-child(2n + 1) {
   grid-area: cola;
 }
 .main-header .main-header__row .main-header__row-col:nth-child(2n) {
@@ -1007,7 +1038,8 @@ small.error p {
   transform: translate(-70%, -50%);
 }
 .main-header .main-header__row .main-header__row-col:nth-child(2n)::before {
-  background: transparent url("/images/island.png") no-repeat center center/contain;
+  background: transparent url("/images/island.png") no-repeat center
+    center/contain;
   content: "";
   position: absolute;
   display: inline-block;
@@ -1043,10 +1075,19 @@ small.error p {
 .author-card .author-card__inner-row .author-card__inner-row__portrait {
   grid-area: portrait;
 }
-.author-card .author-card__inner-row .author-card__inner-row__portrait .outer-portrait .inner-portrait {
+.author-card
+  .author-card__inner-row
+  .author-card__inner-row__portrait
+  .outer-portrait
+  .inner-portrait {
   padding: 5px;
 }
-.author-card .author-card__inner-row .author-card__inner-row__portrait .outer-portrait .inner-portrait img {
+.author-card
+  .author-card__inner-row
+  .author-card__inner-row__portrait
+  .outer-portrait
+  .inner-portrait
+  img {
   border-radius: 50%;
   width: 200px;
   max-width: 100%;
@@ -1105,7 +1146,8 @@ small.error p {
   padding-left: 1rem;
   position: relative;
 }
-.related ul li::after, .related ul li::before {
+.related ul li::after,
+.related ul li::before {
   content: "";
   background: #c71627;
   display: block;
@@ -1132,7 +1174,9 @@ small.error p {
   text-decoration: none;
   font-size: 1rem;
 }
-.related ul li .featured-card a:hover .featured-card__title, .related ul li .featured-card a:active .featured-card__title, .related ul li .featured-card a:focus .featured-card__title {
+.related ul li .featured-card a:hover .featured-card__title,
+.related ul li .featured-card a:active .featured-card__title,
+.related ul li .featured-card a:focus .featured-card__title {
   color: #85a1f4;
 }
 .related ul li .featured-card a:focus {
@@ -1187,12 +1231,16 @@ small.error p {
   -webkit-transition: all 250ms ease;
   transition: all 250ms ease;
 }
-.related ul li .featured-card .featured-card__button:hover, .related ul li .featured-card .featured-card__button:active, .related ul li .featured-card .featured-card__button:focus {
+.related ul li .featured-card .featured-card__button:hover,
+.related ul li .featured-card .featured-card__button:active,
+.related ul li .featured-card .featured-card__button:focus {
   background: #fff;
   color: #c71627;
   border: 1px solid #c71627;
 }
-.related ul li .featured-card .featured-card__button:hover::after, .related ul li .featured-card .featured-card__button:active::after, .related ul li .featured-card .featured-card__button:focus::after {
+.related ul li .featured-card .featured-card__button:hover::after,
+.related ul li .featured-card .featured-card__button:active::after,
+.related ul li .featured-card .featured-card__button:focus::after {
   padding-left: 1rem;
 }
 .related ul li .featured-card .featured-card__button:focus {
@@ -1218,7 +1266,9 @@ small.error p {
     -webkit-transition: all 300ms ease;
     transition: all 300ms ease;
   }
-  .toc:hover, .toc:active, .toc:focus {
+  .toc:hover,
+  .toc:active,
+  .toc:focus {
     transform: translateX(0);
     overflow-y: auto;
   }
@@ -1240,7 +1290,8 @@ small.error p {
   text-transform: uppercase;
 }
 .toc a {
-  font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
+  font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
+    Arial, sans-serif;
   font-weight: 600;
   text-decoration: none;
   color: hsl(204, 85%, 36%);
@@ -1249,7 +1300,9 @@ small.error p {
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }
-.toc a:hover, .toc a:active, .toc a:focus {
+.toc a:hover,
+.toc a:active,
+.toc a:focus {
   color: #6b0c15;
 }
 .toc a.active {
@@ -1469,7 +1522,8 @@ small.error p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20px, 40px));
   margin: 1rem auto;
-  font-family: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans", source-sans-pro, sans-serif;
+  font-family: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans",
+    source-sans-pro, sans-serif;
   font-weight: 600;
   font-size: clamp(1rem, 10vh, 1.33rem);
   padding: 1rem;

@@ -83,6 +83,7 @@ nav.breadcrumb {
     margin: unset;
 	padding: 0;
 	li {
+        margin-bottom: 0;
 		@include m.desktop {
 			margin-bottom: 0;
 		}
@@ -98,8 +99,11 @@ nav.breadcrumb {
 		}
 		&::after {
 			color: c.$rose-pink;
+            display: grid;
+            place-items: center;
 			content: "\226B";
-			height: 100%;
+            font-size: 12px;
+            font-size: clamp(0.56rem, 0.5160rem + 0.3960vw, 0.78rem);
 			width: auto;
 			position: absolute;
 			top: 50%;
@@ -206,6 +210,7 @@ nav.breadcrumb {
   			-webkit-line-clamp: 4;
   			-webkit-box-orient: vertical;  
   			overflow: hidden;
+            height: 6rem;
 		}
 		.featured-card__button {
 			background: c.$rose-pink;
@@ -290,13 +295,16 @@ nav.breadcrumb {
 			.main-nav {
 				background: #fff;
 				display: block;
-				width: 100%;
+				width: 100vw;
 				max-width: 1200px;
+                padding: 1vw;
 				position: fixed;
+                left: 0;
 				top: 0;
 				z-index: 99999999999;
 				@include m.desktop {
-					max-width: 100%;
+                    max-width: unset;
+                    text-align: center;
 				}
 			}
 		}

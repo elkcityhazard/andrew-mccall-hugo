@@ -1,0 +1,35 @@
+.list-card__container {
+    margin: auto;
+    max-width: 65rem;
+
+    .list-card__container-inner {
+        display: flex;
+
+        .list-card__container-column {
+            &:nth-child(1) {
+                flex: 2 1;
+
+                figcaption {
+                    h2 {
+                        display: grid;
+                        place-items: center;
+                        transform-style: preserve-3d;
+                        perspective: 400px;
+
+                        a {
+                            backface-visibility: hidden;
+                            text-shadow: 0 0 2px #000;
+                            transform: rotate3d(2, -2,2, -5deg);
+                        }
+
+                    }
+                }
+
+            }
+
+            &:nth-child(2) {
+                flex: 1 2;
+            }
+        }
+    }
+}

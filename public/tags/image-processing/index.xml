@@ -2,21 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Image Processing on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
-    <link>/tags/image-processing/</link>
+    <link>//localhost:1313/tags/image-processing/</link>
     <description>Recent content in Image Processing on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/image-processing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/image-processing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang Image Resize and Golang Image Crop: Image Manipulation With Go Programming Language</title>
-      <link>/blog/2022/12/golang-image-resize-and-golang-image-crop/</link>
+      <link>//localhost:1313/blog/2022/12/golang-image-resize-and-golang-image-crop/</link>
       <pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/2022/12/golang-image-resize-and-golang-image-crop/</guid>
-      <description>Golang Image Resize &amp;amp; Golang Image Crop In general, I believe most people will want to use a dedicated package to really make this powerful but I wanted to write a bit about my experience with resizing images in Golang.
-Before I go any further, here are a few resources I used to learn more about image processing for my own purposes.
-How to Crop image in Golang? https://stackoverflow.com/questions/22940724/go-resizing-images Go Image Package Go Image/Draw Package</description>
+      <guid>//localhost:1313/blog/2022/12/golang-image-resize-and-golang-image-crop/</guid>
+      <description>An introduction to some of the very basic features of iamge cropping with Go.</description>
     </item>
-    
   </channel>
 </rss>

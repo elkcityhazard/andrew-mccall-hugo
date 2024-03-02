@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content=" I explain Goroutines and Channels and how to apply them from basic concepts to more advanced use cases. - Andrew M McCall is a Golang, Javascript, PHP, SQL web developer living in Traverse City, MI ">
+        <title>Go Channels Tutorial - Understanding Goroutines and Channels -Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
+	
+	
+	<link rel="stylesheet" type="text/css" href="//localhost:1313/css/index.css">
+	<script src="/scripts/index.js" type="module" defer></script>
+
+</head>
+<body class="single">
+	<div class="wrapper">
+		<header class="article-header">
+			<nav class="main-nav">
+				
+					
+
+				<a href="/about/" title="About Me" rel="">About Me</a>	
+				
+
+				<a href="/blog/" title="Blog" rel="">Blog</a>	
+				
+
+				<a href="/contact/" title="Contact" rel="">Contact</a>	
+				
+
+				<a href="/projects/" title="Projects" rel="">Projects</a>	
+				
+				
+			</nav>
+			<h1 class="article-title">Go Channels Tutorial - Understanding Goroutines and Channels</h1>
+			<div class="author-byline">
+				<strong>By: </strong><span>Andrew M McCall</span>
+						<br />
+						<strong>Published: </strong><span>Dec 26, 2023</span>
+
+						
+						
+					
+						
+							<br />
+							<strong> Categories: </strong>
+							<ul class="categories">
+							
+									<li>
+										<a href="/categories/web-development/">Web Development</a>
+									</li>
+
+							
+						</ul>
+						
+
+						
+							<br />
+							<strong> Tags: </strong>
+							<ul class="categories">
+							
+									<li>
+										<a href="/tags/golang/">Golang</a>
+									</li>
+
+							
+									<li>
+										<a href="/tags/channels/">Channels</a>
+									</li>
+
+							
+									<li>
+										<a href="/tags/concurrency/">Concurrency</a>
+									</li>
+
+							
+									<li>
+										<a href="/tags/go/">Go</a>
+									</li>
+
+							
+						</ul>
+						
+
+			</div>
+				<nav aria-label="breadcrumb" class="breadcrumb">
+  				<ol class="breadcrumbs">
+  				  
+  				    <li>
+  				      <a href="//localhost:1313/">Home</a>
+  				    </li>
+  				  
+  				    <li>
+  				      <a href="//localhost:1313/blog/">Blog</a>
+  				    </li>
+  				  
+  				  <li class="active">
+  				    <a aria-current="page" href="//localhost:1313/blog/2023/12/go-channels-tutorial/">Go Channels Tutorial - Understanding Goroutines and Channels</a>
+  				  </li>
+  				</ol>
+			</nav>
+			</header>
+		<div class="container">
+				<main class="main-content">
+				<article id="mainContent" class="main-content__content">
+					<h2 id="what-are-goroutines-and-channels">What Are Goroutines and Channels?</h2>
+<p>Concurrency refers to the languages ability to deal with many different tasks at once.  In human terms, I like to think of it like doing the dishes while waiting for your laundry to dry.</p>
+<h3 id="goroutines-running-tasks-in-the-background">Goroutines: Running Tasks In The Background</h3>
+<p>Let&rsquo;s say we have a web application that requires a transactional email.  For example, perhaps a user signs up and subscribes to your service and you want to send them a welcome email or an invoice of some kind.</p>
+<p>This would be a really good use of a goroutine.   Goroutines are essentially functions that can run concurrently in a separate process.  This is beneficial because it prevents blocking in your main program. For example, a user might visit your service, subscribe to a plan, receive a generated invoice, and potentially some other downloadable file like a generated pdf, or other asset.  Sending email could potentially be one goroutine, while generating the downloadable asset could potentially be another goroutine.  This free&rsquo;s up the main thread to continue implementing the main processes of the program.</p>
+<h3 id="channels-how-go-routines-share-memory-by-communicating">Channels: How Go Routines Share Memory By Communicating</h3>
+<p><a href="https://go.dev/blog/codelab-share" title="Share Memory By Communicating: By Andrew Gerrand">Share Memory By Communicating</a>.</p>
+<p>Go utilizies Channels to pass references to data between goroutines. A more traditional method to share data is by protecting their structure utilizing locks (which Go still supports).  Channels ensure that only one Goroutine has access to data at a time and eliminates some of the messiness of locks.</p>
+<p>This concept is summarized through the paradigm:</p>
+<blockquote>
+<p>Do not communicate by sharing memory; instead, share memory by communicating.</p>
+</blockquote>
+<h3 id="an-example-of-channels-in-go">An Example Of Channels In Go</h3>
+<pre tabindex="0"><code>
+package main
+
+import (
+	&#34;bufio&#34;
+	&#34;fmt&#34;
+	&#34;log&#34;
+	&#34;os&#34;
+	&#34;strings&#34;
+)
+
+func UpdateInputOutput(b &lt;-chan string, c chan&lt;- string) {
+
+	for {
+
+		in, ok := &lt;-b
+
+		if !ok {
+			log.Fatalln(&#34;not okay&#34;)
+		}
+
+		c &lt;- in
+
+	}
+
+}
+
+func main() {
+
+	inch := make(chan string)
+	outch := make(chan string)
+
+	go UpdateInputOutput(inch, outch)
+
+	for {
+
+		var userInput string
+
+		var reader = bufio.NewReader(os.Stdin)
+		fmt.Println(&#34;------------------------&#34;)
+		fmt.Println(&#34;Type &#39;quit&#39; to exit&#34;)
+		fmt.Print(&#34;Enter A Word To Repeat =&gt; &#34;)
+
+		userInput, err := reader.ReadString(&#39;\n&#39;)
+
+		if err != nil {
+			log.Fatalln(err)
+		}
+
+		if strings.ToLower(userInput) == &#34;quit\n&#34; {
+			break
+		}
+
+		inch &lt;- userInput
+
+		response := &lt;-outch
+		fmt.Printf(&#34;\n&#34;)
+		fmt.Println(&#34;Response:&#34;, reverseString(response))
+
+	}
+
+	fmt.Println(&#34;all done, closing channels&#34;)
+
+	close(inch)
+	close(outch)
+
+}
+
+func reverseString(s string) (result string) {
+	for _, val := range s {
+		result = string(val) + result
+	}
+	return
+}
+</code></pre><ol>
+<li>
+<p>Inside of the main function, I created an in channel and out channel.  The in channel will receive data and pass it on to the out channel which will read the final result.</p>
+</li>
+<li>
+<p>I defined an <code>UpdateInputOutput</code> function.  In this case, I am telling it that be will being set from a channel, while c will be updated from within the function.  This function utilizes an open for loop to continuously listen for channel input.  In the event that there is some issue with the in channel, the function will simply stop the program.</p>
+</li>
+<li>
+<p>In the main function, I simply start the goroutine (UpdateInputOutput) and I pass it the necessary channels.  From there, We are getting some user input.  Again, we will utilize an open for loop to continuously prompt the user for input.  If the type exit, we break out of the for loop and close the channels.</p>
+</li>
+<li>
+<p>Once we receive input, we parse it into a variable, and pass the data to the in channel.  The goroutine fires off and updates the response which we read from the outchannel into <code>response</code>.  If everything goes to plan, we will receive our input text reversed as the final output.  If we type <code>quit</code> we will simply close the channels, and be done with the program.</p>
+</li>
+</ol>
+
+				</article>
+			</main>
+			<aside class="sidebar"> 
+			
+		<section class="author-card">
+		<div class="author-card__inner-row">
+			<div class="author-card__inner-row__portrait">
+				<div class="outer-portrait">
+					<div class="inner-portrait">
+						<img data-src="/images/portrait.webp" class="logo" alt="portrait of author" height="300" width="300" loading="lazy" decoding="async">
+					</div>
+				</div>
+			</div>
+			<div class="author-meta">
+					<h3 class="author-meta__name">Andrew M McCall</h3>
+					<span class="role">Web Developer</span>
+					<div class="meta-box  ">
+						<time class="publish-date" datetime="2023-12-26 00:00:00 &#43;0000 UTC">Dec 26, 2023</time>
+					<span id="readTime" class="read-time">-</span>
+					</div>
+					
+					 
+					<div class="social-icons">
+						
+						<a href="/contact" title=" email  - social " rel="noreferrer noopener"><img data-src="/images/icons/email-50x50.svg" class="logo" alt="email - social icon" loading="lazy" decoding="async" height="35" width="35"></a>
+						
+						<a href="https://indieweb.social/@elkcityhazard" title=" @elkcityhazard  - social " rel="noreferrer noopener"><img data-src="/images/icons/logo-purple.png" class="logo" alt="mastodon - social icon" loading="lazy" decoding="async" height="35" width="35"></a>
+						
+						<a href="https://book.andrew-mccall.com/" title=" introwise  - social " rel="noreferrer noopener"><img data-src="/images/icons/logo-small-transparent.png" class="logo" alt="introwise - social icon" loading="lazy" decoding="async" height="35" width="35"></a>
+						
+						<a href="https://codeberg.org/elkcityhazard" title=" codeberg  - social " rel="noreferrer noopener"><img data-src="/images/icons/codeberg.png" class="logo" alt="codeberg - social icon" loading="lazy" decoding="async" height="35" width="35"></a>
+						
+						<a href="https://gitlab.com/elkcityhazard" title=" gitlab  - social " rel="noreferrer noopener"><img data-src="/images/icons/gitlab.png" class="logo" alt="gitlab - social icon" loading="lazy" decoding="async" height="35" width="35"></a>
+						
+					</div>
+					
+					
+				</div>
+                    
+		</div>
+    
+</section>
+ 
+                        
+
+<section class="related">
+<h3 class="related__heading">See Also</h3>
+<ul>
+ 
+ <li>
+ 	<div class="featured-card">
+					<a href="/blog/2024/01/javascript-image-animation-effects/" title="Javascript Image Animation Effects">
+					<h4 class="featured-card__title">Javascript Image Animation Effects</h4>
+					</a>
+					<div class="featured-card__byline">
+						<strong>By: </strong><span>Andrew M McCall</span>
+						<br />
+						<strong>Published: </strong><span>Jan 27, 2024</span>
+					</div>
+					<div class="featured-card__content">I walk through the process of using html canvas, javascript, and css to manipulate an image.</div>
+					<a href="/blog/2024/01/javascript-image-animation-effects/" class="featured-card__button d-none" title="Javascript Image Animation Effects -I walk through the process of using html canvas, javascript, and css to manipulate an image.">Javascript Image Animation Effects</a>
+				</div>
+ </li>
+ 
+ <li>
+ 	<div class="featured-card">
+					<a href="/blog/2024/01/sending-emails-with-go-routines/" title="Sending Emails With Go Routines">
+					<h4 class="featured-card__title">Sending Emails With Go Routines</h4>
+					</a>
+					<div class="featured-card__byline">
+						<strong>By: </strong><span>Andrew M McCall</span>
+						<br />
+						<strong>Published: </strong><span>Jan 15, 2024</span>
+					</div>
+					<div class="featured-card__content">Transactional emails and token creation are expensive operations.  Let&rsquo;s explore how we can offload these to the background using channels and go routines.</div>
+					<a href="/blog/2024/01/sending-emails-with-go-routines/" class="featured-card__button d-none" title="Sending Emails With Go Routines -Transactional emails and token creation are expensive operations.  Let&rsquo;s explore how we can offload these to the background using channels and go routines.">Sending Emails With Go Routines</a>
+				</div>
+ </li>
+ 
+ <li>
+ 	<div class="featured-card">
+					<a href="/blog/2023/12/golang-create-a-random-string/" title="Golang Create a Random String">
+					<h4 class="featured-card__title">Golang Create a Random String</h4>
+					</a>
+					<div class="featured-card__byline">
+						<strong>By: </strong><span>Andrew M McCall</span>
+						<br />
+						<strong>Published: </strong><span>Dec 31, 2023</span>
+					</div>
+					<div class="featured-card__content">Go&rsquo;s rand package can help us easily generate a random string for when we need to ensure uniqueness with naming in our applicaton. We walkthrough the process of generating a random string using golang.</div>
+					<a href="/blog/2023/12/golang-create-a-random-string/" class="featured-card__button d-none" title="Golang Create a Random String -Go&rsquo;s rand package can help us easily generate a random string for when we need to ensure uniqueness with naming in our applicaton. We walkthrough the process of generating a random string using golang.">Golang Create a Random String</a>
+				</div>
+ </li>
+ 
+ <li>
+ 	<div class="featured-card">
+					<a href="/blog/2023/01/easy-vanilla-javascript-carousel-slider-tutorial-for-beginners/" title="Vanilla Javascript Carousel Slider: A Beginner&#39;s Tutorial">
+					<h4 class="featured-card__title">Vanilla Javascript Carousel Slider: A Beginner&#39;s Tutorial</h4>
+					</a>
+					<div class="featured-card__byline">
+						<strong>By: </strong><span>Andrew M McCall</span>
+						<br />
+						<strong>Published: </strong><span>Jan 29, 2023</span>
+					</div>
+					<div class="featured-card__content">Vanilla Javascript Carousel Slider: A Beginner Slider A photo or content slider is one of the oldest, but most popular design assets one can create with javascript. Many developers will reach for popular carousel frameworks such as swiper, slick, or photoswipe. Most of the time, you don&rsquo;t need so much overhead. Let&rsquo;s build a slider together and see how we can build a responsive slider without using a ton of a extra javascript.</div>
+					<a href="/blog/2023/01/easy-vanilla-javascript-carousel-slider-tutorial-for-beginners/" class="featured-card__button d-none" title="Vanilla Javascript Carousel Slider: A Beginner&#39;s Tutorial -Vanilla Javascript Carousel Slider: A Beginner Slider A photo or content slider is one of the oldest, but most popular design assets one can create with javascript. Many developers will reach for popular carousel frameworks such as swiper, slick, or photoswipe. Most of the time, you don&rsquo;t need so much overhead. Let&rsquo;s build a slider together and see how we can build a responsive slider without using a ton of a extra javascript.">Vanilla Javascript Carousel Slider: A Beginner&#39;s Tutorial</a>
+				</div>
+ </li>
+ 
+ <li>
+ 	<div class="featured-card">
+					<a href="/blog/2022/12/golang-image-resize-and-golang-image-crop/" title="Golang Image Resize and Golang Image Crop: Image Manipulation With Go Programming Language">
+					<h4 class="featured-card__title">Golang Image Resize and Golang Image Crop: Image Manipulation With Go Programming Language</h4>
+					</a>
+					<div class="featured-card__byline">
+						<strong>By: </strong><span>Andrew M McCall</span>
+						<br />
+						<strong>Published: </strong><span>Dec 18, 2022</span>
+					</div>
+					<div class="featured-card__content">An introduction to some of the very basic features of iamge cropping with Go.</div>
+					<a href="/blog/2022/12/golang-image-resize-and-golang-image-crop/" class="featured-card__button d-none" title="Golang Image Resize and Golang Image Crop: Image Manipulation With Go Programming Language -An introduction to some of the very basic features of iamge cropping with Go.">Golang Image Resize and Golang Image Crop: Image Manipulation With Go Programming Language</a>
+				</div>
+ </li>
+ 
+</ul>
+</section>
+
+			<section class="toc">
+	<h3>Table Of Contents</h3>
+	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-are-goroutines-and-channels">What Are Goroutines and Channels?</a>
+      <ul>
+        <li><a href="#goroutines-running-tasks-in-the-background">Goroutines: Running Tasks In The Background</a></li>
+        <li><a href="#channels-how-go-routines-share-memory-by-communicating">Channels: How Go Routines Share Memory By Communicating</a></li>
+        <li><a href="#an-example-of-channels-in-go">An Example Of Channels In Go</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</section> 
+		</aside>
+		</div>
+		
+		<section class="featured">
+			<h2 class="featured__title">My Recent Posts</h2>
+			<div class="featured__articles">
+				
+
+				
+				<div class="featured-card">
+					<a href="/blog/2024/02/go-tests-notes-for-creating-go-tests/" title="Go Tests Notes for Creating Go Tests-Go has powerful concurrency tools fully baked into the programming Language.  This post aims to explain go routines and channels so you can get started using them in your own projects.">
+					<h2 class="featured-card__title">Go Tests Notes for Creating Go Tests</h2>
+					</a>
+					<div class="featured-card__byline">
+						<strong>By: </strong><span>Andrew M McCall</span>
+						<br />
+						<strong>Published: </strong><span>Feb 01, 2024</span>
+						
+					</div>
+					<div class="featured-card__content">Go has powerful concurrency tools fully baked into the programming Language.  This post aims to explain go routines and channels so you can get started using them in your own projects.</div>
+					<a href="/blog/2024/02/go-tests-notes-for-creating-go-tests/" class="featured-card__button " title="Go Tests Notes for Creating Go Tests -Go has powerful concurrency tools fully baked into the programming Language.  This post aims to explain go routines and channels so you can get started using them in your own projects.">Go Tests Notes for Creating Go Tests</a>
+				</div>
+				
+				<div class="featured-card">
+					<a href="/blog/2024/01/javascript-image-animation-effects/" title="Javascript Image Animation Effects-I walk through the process of using html canvas, javascript, and css to manipulate an image.">
+					<h2 class="featured-card__title">Javascript Image Animation Effects</h2>
+					</a>
+					<div class="featured-card__byline">
+						<strong>By: </strong><span>Andrew M McCall</span>
+						<br />
+						<strong>Published: </strong><span>Jan 27, 2024</span>
+						
+					</div>
+					<div class="featured-card__content">I walk through the process of using html canvas, javascript, and css to manipulate an image.</div>
+					<a href="/blog/2024/01/javascript-image-animation-effects/" class="featured-card__button " title="Javascript Image Animation Effects -I walk through the process of using html canvas, javascript, and css to manipulate an image.">Javascript Image Animation Effects</a>
+				</div>
+				
+				<div class="featured-card">
+					<a href="/blog/2024/01/sending-emails-with-go-routines/" title="Sending Emails With Go Routines-Transactional emails and token creation are expensive operations.  Let&rsquo;s explore how we can offload these to the background using channels and go routines.">
+					<h2 class="featured-card__title">Sending Emails With Go Routines</h2>
+					</a>
+					<div class="featured-card__byline">
+						<strong>By: </strong><span>Andrew M McCall</span>
+						<br />
+						<strong>Published: </strong><span>Jan 15, 2024</span>
+						
+					</div>
+					<div class="featured-card__content">Transactional emails and token creation are expensive operations.  Let&rsquo;s explore how we can offload these to the background using channels and go routines.</div>
+					<a href="/blog/2024/01/sending-emails-with-go-routines/" class="featured-card__button " title="Sending Emails With Go Routines -Transactional emails and token creation are expensive operations.  Let&rsquo;s explore how we can offload these to the background using channels and go routines.">Sending Emails With Go Routines</a>
+				</div>
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+
+				
+			
+			</div>
+
+			
+		</section>
+
+		<section class="featured">
+			<h2 class="featured__title">My Recent Projects</h2>
+			<div class="featured__articles">
+				
+
+				
+			
+			</div>
+
+			
+		</section>	
+		<footer class="main-footer">
+	<div class="main-footer__row">
+		<div class="col">
+			<a href="//localhost:1313/">
+			<img data-src="/images/logo-small-transparent.png" class="logo" alt="logo" loading="lazy" decoding="async" height="200" width="200">
+		</a>
+		</div>
+		<div class="col">
+				<h4>Navigation</h4>
+<nav class="footer-nav">
+				
+					
+
+				<a href="/about/" title="About Me" rel="">About Me</a>	
+				
+
+				<a href="/blog/" title="Blog" rel="">Blog</a>	
+				
+
+				<a href="/contact/" title="Contact" rel="">Contact</a>	
+				
+
+				<a href="/projects/" title="Projects" rel="">Projects</a>	
+				
+				
+			</nav>
+		</div>
+		<div class="col">
+			
+					 <h4>Connect</h4>
+					<div class="social-icons footer">
+						
+						<a href="/contact" title=" email  - social " rel="noreferrer noopener"><img data-src="/images/icons/email-50x50.svg" alt="email social icon" class="logo" aria-label="email" loading="lazy" decoding="async" height="45" width="45"></a>
+						
+						<a href="https://indieweb.social/@elkcityhazard" title=" @elkcityhazard  - social " rel="noreferrer noopener"><img data-src="/images/icons/logo-purple.png" alt="mastodon social icon" class="logo" aria-label="mastodon" loading="lazy" decoding="async" height="45" width="45"></a>
+						
+						<a href="https://book.andrew-mccall.com/" title=" introwise  - social " rel="noreferrer noopener"><img data-src="/images/icons/logo-small-transparent.png" alt="introwise social icon" class="logo" aria-label="introwise" loading="lazy" decoding="async" height="45" width="45"></a>
+						
+						<a href="https://codeberg.org/elkcityhazard" title=" codeberg  - social " rel="noreferrer noopener"><img data-src="/images/icons/codeberg.png" alt="codeberg social icon" class="logo" aria-label="codeberg" loading="lazy" decoding="async" height="45" width="45"></a>
+						
+						<a href="https://gitlab.com/elkcityhazard" title=" gitlab  - social " rel="noreferrer noopener"><img data-src="/images/icons/gitlab.png" alt="gitlab social icon" class="logo" aria-label="gitlab" loading="lazy" decoding="async" height="45" width="45"></a>
+						
+					</div>
+					
+					
+		</div>
+			
+	</div>
+	
+	<p class="center">&copy; <span id="currentYear">2024</span> - <a href="//localhost:1313/">Andrew M McCall - Traverse City Web Developer</a> </p>
+</footer>
+
+
+	</div>
+</body>
+</html>

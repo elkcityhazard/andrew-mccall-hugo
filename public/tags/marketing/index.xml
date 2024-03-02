@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>marketing on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
-    <link>/tags/marketing/</link>
-    <description>Recent content in marketing on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
+    <title>Marketing on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
+    <link>//localhost:1313/tags/marketing/</link>
+    <description>Recent content in Marketing on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 27 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/marketing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/marketing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>12 Expert Tips On How To Promote Your Small Business</title>
-      <link>/blog/2022/01/12-expert-tips-for-promoting-your-small-business/</link>
+      <link>//localhost:1313/blog/2022/01/12-expert-tips-for-promoting-your-small-business/</link>
       <pubDate>Thu, 27 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/2022/01/12-expert-tips-for-promoting-your-small-business/</guid>
+      <guid>//localhost:1313/blog/2022/01/12-expert-tips-for-promoting-your-small-business/</guid>
       <description>The tips in this article are meant to help you promote your small business. Small businesses have a lot of advantages over large enterprises, but they also have some disadvantages. One disadvantage is the lack of resources and money that larger businesses have. Without money, it can be difficult for a small business to get the same kind of exposure as a large corporation. What follows are 12 tips on how to promote your small business so that you can do just as well if not better than the big guys!</description>
     </item>
-    
   </channel>
 </rss>

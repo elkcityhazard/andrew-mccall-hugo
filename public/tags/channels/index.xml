@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Channels on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
+    <link>//localhost:1313/tags/channels/</link>
+    <description>Recent content in Channels on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 15 Jan 2024 20:01:49 -0500</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/channels/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sending Emails With Go Routines</title>
+      <link>//localhost:1313/blog/2024/01/sending-emails-with-go-routines/</link>
+      <pubDate>Mon, 15 Jan 2024 20:01:49 -0500</pubDate>
+      <guid>//localhost:1313/blog/2024/01/sending-emails-with-go-routines/</guid>
+      <description>Transactional emails and token creation are expensive operations.  Let&amp;rsquo;s explore how we can offload these to the background using channels and go routines.</description>
+    </item>
+    <item>
+      <title>Go Channels Tutorial - Understanding Goroutines and Channels</title>
+      <link>//localhost:1313/blog/2023/12/go-channels-tutorial/</link>
+      <pubDate>Tue, 26 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/blog/2023/12/go-channels-tutorial/</guid>
+      <description>Go has powerful concurrency tools fully baked into the programming Language.  This post aims to explain go routines and channels so you can get started using them in your own projects.</description>
+    </item>
+  </channel>
+</rss>

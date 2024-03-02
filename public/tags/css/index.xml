@@ -1,68 +1,54 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CSS on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
-    <link>/tags/css/</link>
-    <description>Recent content in CSS on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
+    <title>Css on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
+    <link>//localhost:1313/tags/css/</link>
+    <description>Recent content in Css on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Jan 2024 20:24:05 -0500</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Javascript Image Animation Effects</title>
+      <link>//localhost:1313/blog/2024/01/javascript-image-animation-effects/</link>
+      <pubDate>Sat, 27 Jan 2024 20:24:05 -0500</pubDate>
+      <guid>//localhost:1313/blog/2024/01/javascript-image-animation-effects/</guid>
+      <description>I walk through the process of using html canvas, javascript, and css to manipulate an image.</description>
+    </item>
     <item>
       <title>Vanilla Javascript Carousel Slider: A Beginner&#39;s Tutorial</title>
-      <link>/blog/2023/01/easy-vanilla-javascript-carousel-slider-tutorial-for-beginners/</link>
+      <link>//localhost:1313/blog/2023/01/easy-vanilla-javascript-carousel-slider-tutorial-for-beginners/</link>
       <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/2023/01/easy-vanilla-javascript-carousel-slider-tutorial-for-beginners/</guid>
+      <guid>//localhost:1313/blog/2023/01/easy-vanilla-javascript-carousel-slider-tutorial-for-beginners/</guid>
       <description>Vanilla Javascript Carousel Slider: A Beginner Slider A photo or content slider is one of the oldest, but most popular design assets one can create with javascript. Many developers will reach for popular carousel frameworks such as swiper, slick, or photoswipe. Most of the time, you don&amp;rsquo;t need so much overhead. Let&amp;rsquo;s build a slider together and see how we can build a responsive slider without using a ton of a extra javascript.</description>
     </item>
-    
     <item>
       <title>SCSS Use VS Import: How To Use @Use in SCSS</title>
-      <link>/blog/2022/06/scss-use-vs-import/</link>
+      <link>//localhost:1313/blog/2022/06/scss-use-vs-import/</link>
       <pubDate>Tue, 07 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/2022/06/scss-use-vs-import/</guid>
-      <description>You have probably seen many times that @import is gradually being deprecated in SASS. So what is the alternative? Sass wants us to use @use which actually requires a little bit more setup but comes with the ability to namespace your sass and make it easier to maintain in larger projects.
-What Is Wrong With Using @Import in SASS? I do not feel there is any better way to put this than cite the official SASS documentation:</description>
+      <guid>//localhost:1313/blog/2022/06/scss-use-vs-import/</guid>
+      <description>You have probably seen many times that @import is gradually being deprecated in SASS. So what is the alternative? Sass wants us to use @use which actually requires a little bit more setup but comes with the ability to namespace your sass and make it easier to maintain in larger projects.&#xA;What Is Wrong With Using @Import in SASS? I do not feel there is any better way to put this than cite the official SASS documentation:</description>
     </item>
-    
     <item>
       <title>Hugo Website Tutorial: How To Create A Hugo Website</title>
-      <link>/blog/hugo-website-tutorial-how-to-create-a-hugo-website-from-scratch/</link>
+      <link>//localhost:1313/blog/hugo-website-tutorial-how-to-create-a-hugo-website-from-scratch/</link>
       <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/hugo-website-tutorial-how-to-create-a-hugo-website-from-scratch/</guid>
-      <description>Hugo Website Tutorial: How To Create Your First Hugo Website Hugo is a powerful static website generator written in the GO language. It can help you create clean, modern websites that load quickly with little overhead.
-[VIDEO] Hugo Tutorials 👉 [Video] How To Install Hugo On Windows 10 With Chocolately Package Manager (Less Than 2.5 Minutes) 👉 [Video] How To Boostrap A New Hugo Theme And Display The Home Page 👉 [Video] Output Structured Data Using Hugo, YAML, and Frontmatter What is the Hugo static site framework?</description>
+      <guid>//localhost:1313/blog/hugo-website-tutorial-how-to-create-a-hugo-website-from-scratch/</guid>
+      <description>Hugo Website Tutorial: How To Create Your First Hugo Website Hugo is a powerful static website generator written in the GO language. It can help you create clean, modern websites that load quickly with little overhead.&#xA;[VIDEO] Hugo Tutorials 👉 [Video] How To Install Hugo On Windows 10 With Chocolately Package Manager (Less Than 2.5 Minutes) 👉 [Video] How To Boostrap A New Hugo Theme And Display The Home Page 👉 [Video] Output Structured Data Using Hugo, YAML, and Frontmatter What is the Hugo static site framework?</description>
     </item>
-    
     <item>
       <title>CSS Grid Gallery: Easy Fluid Gallery With CSS Grid and Javascript</title>
-      <link>/blog/css-grid-gallery-easy-fluid-gallery-with-css-and-javascript/</link>
+      <link>//localhost:1313/blog/css-grid-gallery-easy-fluid-gallery-with-css-and-javascript/</link>
       <pubDate>Wed, 24 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/css-grid-gallery-easy-fluid-gallery-with-css-and-javascript/</guid>
+      <guid>//localhost:1313/blog/css-grid-gallery-easy-fluid-gallery-with-css-and-javascript/</guid>
       <description>Learn how to create a fluid image gallery with css grid and a few lines of javascript. In the following article, we will learn how to create a grid gallery that is fluid and easy to navigate with CSS Grid and Javascript. First, we will create a container for our grid gallery. Then we will create a row of items. Finally, we need to set up a grid to contain the items in the row.</description>
     </item>
-    
     <item>
       <title>Everything You Need To Know About Parallax Scrolling &amp; Javascript</title>
-      <link>/blog/a-complete-beginners-guide-to-parallax-scrolling-and-javascript/</link>
+      <link>//localhost:1313/blog/a-complete-beginners-guide-to-parallax-scrolling-and-javascript/</link>
       <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/a-complete-beginners-guide-to-parallax-scrolling-and-javascript/</guid>
-      <description>Everything a beginner javascript student needs to know about implementing parallax scrolling on their website. What parallax is, why use it, why not to use, and a few ways that it can be achieved.
-What is parallax scrolling effects? What is parallax scrolling? If you have only come here for a parallax definition then your journey ends here: Parallax scrolling effects is a movement, one that is created by the scrolling of one layer of an image, which creates a sense of depth and keeps the audience&amp;rsquo;s eyes glued to the screen.</description>
+      <guid>//localhost:1313/blog/a-complete-beginners-guide-to-parallax-scrolling-and-javascript/</guid>
+      <description>Everything a beginner javascript student needs to know about implementing parallax scrolling on their website. What parallax is, why use it, why not to use, and a few ways that it can be achieved.&#xA;What is parallax scrolling effects? What is parallax scrolling? If you have only come here for a parallax definition then your journey ends here: Parallax scrolling effects is a movement, one that is created by the scrolling of one layer of an image, which creates a sense of depth and keeps the audience&amp;rsquo;s eyes glued to the screen.</description>
     </item>
-    
-    <item>
-      <title>Traverse City Web Developer: I am a web designer in Traverse City</title>
-      <link>/blog/traverse-city-web-development/</link>
-      <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/traverse-city-web-development/</guid>
-      <description>Many of the people who come to me are small business owners who want a website built. They always want to know how much it&amp;rsquo;s going to cost then they agonize over which developer they should choose. I try to keep this in mind when I&amp;rsquo;m talking with them but sometimes I still can&amp;rsquo;t help but think how lucky they are to have this problem. I wish I could build a website every day and I&amp;rsquo;m sure many web developers feel the same.</description>
-    </item>
-    
   </channel>
 </rss>

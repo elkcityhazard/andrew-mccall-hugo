@@ -1,5 +1,5 @@
 (() => {
-  // ns-hugo:/home/andrew/Documents/hugo-projects/andrew-mccall.com/assets/scripts/readTime.js
+  // ns-hugo:/home/andrew/Documents/hugo-projects/andrew-mccall-hugo/assets/scripts/readTime.js
   var ReadTime = class {
     constructor(input, output) {
       this.input = input;
@@ -22,7 +22,7 @@
     }
   };
 
-  // ns-hugo:/home/andrew/Documents/hugo-projects/andrew-mccall.com/assets/scripts/validateForm.js
+  // ns-hugo:/home/andrew/Documents/hugo-projects/andrew-mccall-hugo/assets/scripts/validateForm.js
   var FormValidation = class {
     constructor(form, errors = []) {
       this.form = form;
@@ -58,13 +58,13 @@
         message = this.validateMessage(message);
         if (this.errors.length > 0) {
           for (const v of this.errors) {
-            if (v.hasOwnProperty("email")) {
+            if (Object.prototype.hasOwnProperty.call(v, "email")) {
               const msg = document.createElement("p");
               msg.innerText = v?.email;
               document.querySelector('input[name="email"] + .error').appendChild(msg);
               document.querySelector('input[name="email"] + .error').classList.add("show-error");
             }
-            if (v.hasOwnProperty("message")) {
+            if (Object.prototype.hasOwnProperty.call(v, "message")) {
               const msg = document.createElement("p");
               msg.innerText = v?.message;
               document.querySelector('textarea[name="message"] + .error').appendChild(msg);
@@ -73,14 +73,7 @@
           }
           throw new Error("invalid data");
         }
-        const response = await fetch("https://api.formcake.com/api/form/91ab5345-3e83-4b1d-aed8-5b15ecb8d581/submission", {
-          method: "POST",
-          body: formData
-        });
-        const data = await response.json();
-        if (response.status == 200) {
-          location.assign("/success");
-        }
+        return document.createElement("form").submit.call(document.getElementById(this.form));
       } catch (err) {
         console.error(err.message);
         return err;
@@ -121,7 +114,7 @@
     }
   };
 
-  // ns-hugo:/home/andrew/Documents/hugo-projects/andrew-mccall.com/assets/scripts/lazyLoad.js
+  // ns-hugo:/home/andrew/Documents/hugo-projects/andrew-mccall-hugo/assets/scripts/lazyLoad.js
   var LazyLoad = class {
     constructor(images) {
       this.images = images;
@@ -166,7 +159,7 @@
   };
   var lazyLoad_default = LazyLoad;
 
-  // ns-hugo:/home/andrew/Documents/hugo-projects/andrew-mccall.com/assets/scripts/copyCode.js
+  // ns-hugo:/home/andrew/Documents/hugo-projects/andrew-mccall-hugo/assets/scripts/copyCode.js
   var copyCode = class {
     constructor(element) {
       this.element = element;
@@ -204,7 +197,7 @@
         success.style.opacity = 0;
         success.classList.add("toast");
         e.target.closest("pre").append(success);
-        e.target.closest("pre").querySelector("div").onanimationend = function(e2) {
+        e.target.closest("pre").querySelector("div.success").onanimationend = function(e2) {
           e2.target.remove();
         };
       } catch (err) {
@@ -214,7 +207,7 @@
     }
   };
 
-  // ns-hugo:/home/andrew/Documents/hugo-projects/andrew-mccall.com/assets/scripts/tableOfContents.js
+  // ns-hugo:/home/andrew/Documents/hugo-projects/andrew-mccall-hugo/assets/scripts/tableOfContents.js
   var TableOfContents = class {
     constructor(headings) {
       this.headings = headings;
@@ -251,6 +244,147 @@
     }
   };
 
+  // ns-hugo:/home/andrew/Documents/hugo-projects/andrew-mccall-hugo/assets/scripts/animatePortrait.js
+  var PortraitAnimation = class {
+    constructor(canvas, image) {
+      this.canvas = document.getElementById(canvas);
+      this.ctx = this.canvas.getContext("2d");
+      this.image = document.getElementById(image);
+      this.canvas.width = this.image.width;
+      this.canvas.height = this.image.height;
+      this.events();
+    }
+    events() {
+      if (!this.canvas || !this.ctx || !this.image) {
+        return null;
+      }
+      console.info("portrait animation 0.0.1...");
+    }
+  };
+  var Cell = class {
+    // we need to have a reference to the effect class
+    constructor(effect, x, y, index) {
+      this.effect = effect;
+      this.index = index;
+      this.x = x;
+      this.y = y;
+      this.positionX = Math.abs(Math.random() * this.effect.width + 1);
+      this.positionY = Math.abs(Math.random() * this.effect.height + 1);
+      this.speedX;
+      this.speedY;
+      this.width = this.effect.cellWidth;
+      this.height = this.effect.cellHeight;
+      this.image = effect.image;
+      this.slideX = 0;
+      this.slideY = 0;
+      this.vx = 0;
+      this.vy = 0;
+      this.ease = 0.01;
+      this.friction = 0.8;
+      this.randomize = Math.random() * 50 + 1;
+      setTimeout(function() {
+        this.start();
+      }.bind(this), this.index * 2);
+    }
+    getImageData() {
+      return this.effect.context.getImageData(this.x, this.y, this.width, this.height);
+    }
+    draw(context) {
+      context.drawImage(this.image, this.x + this.slideX, this.y + this.slideY, this.width, this.height, this.positionX, this.positionY, this.width, this.height);
+      context.strokeStyle = this.speedY > 0 || this.speedX > 0 ? `rgba(0,0,0,${this.speedX})` : `rgba(0,0,0,0)`;
+      context.strokeRect(this.positionX, this.positionY, this.width, this.height);
+    }
+    start() {
+      this.speedX = (this.x - this.positionX) / this.randomize;
+      this.speedY = (this.y - this.positionY) / this.randomize;
+    }
+    update() {
+      if (Math.abs(this.speedX) > 0 || Math.abs(this.speedY) > 0) {
+        this.speedX = (this.x - this.positionX) / this.randomize;
+        this.speedY = (this.y - this.positionY) / this.randomize;
+        this.positionX += this.speedX;
+        this.positionY += this.speedY;
+      }
+      const dx = this.effect.mouse.x - this.x;
+      const dy = this.effect.mouse.y - this.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      if (distance < this.effect.mouse.radius) {
+        const angle = Math.atan2(dy, dx);
+        const force = distance / this.effect.mouse.radius;
+        this.vx = force * Math.cos(angle);
+        this.vy = force * Math.sin(angle);
+      } else {
+        this.vx = 0;
+        this.vy = 0;
+      }
+      this.slideX += (this.vx *= this.friction) - this.slideX * this.ease;
+      this.slideY += (this.vy *= this.friction) - this.slideY * this.ease;
+    }
+  };
+  var Effect = class {
+    constructor(canvas, image) {
+      this.canvas = canvas;
+      this.context = this.canvas.getContext("2d");
+      this.particlesArray = [];
+      this.width = this.canvas.width;
+      this.height = this.canvas.height;
+      this.cellWidth = this.width / 15;
+      this.cellHeight = this.height / 25;
+      this.image = image;
+      this.imageGrid = [];
+      this.createGrid();
+      this.mouse = {
+        x: void 0,
+        y: void 0,
+        radius: 100
+      };
+      this.active = false;
+      this.canvas.addEventListener("mousemove", function(e) {
+        this.mouse.x = e.offsetX;
+        this.mouse.y = e.offsetY;
+      }.bind(this));
+      this.canvas.addEventListener("mouseleave", function(e) {
+        this.mouse.x = void 0;
+        this.mouse.y = void 0;
+      }.bind(this));
+    }
+    init() {
+      for (let y = 0; y < this.height; y += this.cellHeight) {
+        for (let x = 0; x < this.width; x += this.cellWidth) {
+          this.particlesArray.push(new Particle(x, y));
+        }
+      }
+    }
+    createGrid() {
+      let index = 0;
+      for (let y = 0; y < this.height; y += this.cellHeight) {
+        for (let x = 0; x < this.width; x += this.cellWidth) {
+          index++;
+          this.imageGrid.unshift(new Cell(this, x, y, index));
+        }
+      }
+    }
+    render() {
+      this.imageGrid.forEach((cell, index) => {
+        this.particlesArray.forEach((particle, index2) => {
+          particle.draw(this.context);
+        });
+        cell.update();
+        cell.draw(this.context);
+      });
+    }
+  };
+  var Particle = class {
+    constructor(x, y) {
+      this.x = void 0;
+      this.y = void 0;
+      this.size = 10;
+    }
+    draw(context) {
+      context.fillRect(this.x, this.y, this.size, this.size);
+    }
+  };
+
   // <stdin>
   var mainContent = document.getElementById("mainContent") || null;
   if (mainContent) {
@@ -260,6 +394,28 @@
   new FormValidation("mainContactForm");
   new lazyLoad_default(document.querySelectorAll(".card-background"));
   new lazyLoad_default(document.querySelectorAll(".logo"));
-  new lazyLoad_default(document.querySelectorAll(".portrait"));
+  new lazyLoad_default(document.querySelectorAll(".lazy"));
   new copyCode("pre");
+  document.getElementById("currentYear").textContent = new Date(Date.now()).getFullYear();
+  window.addEventListener("load", function() {
+    switch (location.pathname) {
+      case "/about/":
+        let animate = function() {
+          if (effect.imageGrid[effect.imageGrid.length - 1].speedX > 0 || effect.imageGrid[effect.imageGrid.length - 1].speedY > 0) {
+            effect.context.clearRect(0, 0, effect.canvas.width, effect.canvas.height);
+          }
+          effect.render();
+          const particle1 = new Particle();
+          particle1.draw(effect.context);
+          requestAnimationFrame(animate);
+        };
+        const portrait = new PortraitAnimation("portrait", "portraitImg");
+        const effect = new Effect(portrait.canvas, portrait.image);
+        const imageData = effect.imageGrid.map((cell) => cell.getImageData());
+        effect.init();
+        effect.render();
+        animate();
+        break;
+    }
+  });
 })();

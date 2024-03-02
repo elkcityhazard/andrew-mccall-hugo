@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rune on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
+    <link>//localhost:1313/tags/rune/</link>
+    <description>Recent content in Rune on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 31 Dec 2023 19:18:59 -0500</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/rune/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang Create a Random String</title>
+      <link>//localhost:1313/blog/2023/12/golang-create-a-random-string/</link>
+      <pubDate>Sun, 31 Dec 2023 19:18:59 -0500</pubDate>
+      <guid>//localhost:1313/blog/2023/12/golang-create-a-random-string/</guid>
+      <description>Go&amp;rsquo;s rand package can help us easily generate a random string for when we need to ensure uniqueness with naming in our applicaton. We walkthrough the process of generating a random string using golang.</description>
+    </item>
+  </channel>
+</rss>

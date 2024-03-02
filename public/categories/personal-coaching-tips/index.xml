@@ -2,20 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Personal Coaching Tips on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
-    <link>/categories/personal-coaching-tips/</link>
+    <link>//localhost:1313/categories/personal-coaching-tips/</link>
     <description>Recent content in Personal Coaching Tips on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/personal-coaching-tips/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/categories/personal-coaching-tips/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>10 Secrets To Creating A Personal Coach Website That Converts</title>
-      <link>/blog/2022/07/10-secrets-to-creating-a-personal-coaching-website-that-converts/</link>
+      <link>//localhost:1313/blog/2022/07/10-secrets-to-creating-a-personal-coaching-website-that-converts/</link>
       <pubDate>Sat, 23 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/2022/07/10-secrets-to-creating-a-personal-coaching-website-that-converts/</guid>
-      <description>Are you thinking about starting a personal coaching business? If so, you&amp;rsquo;ll need to create a website that can attract and convert clients. In this blog post, we&amp;rsquo;ll share seven secrets to help you create a personal coach website that converts.
-1. Have A Clear and Focused Website Goal For Your Perspective Personal Coaching Clients When starting a personal coaching business, one of the most important things you can do is to have a clear and focused goal for your website.</description>
+      <guid>//localhost:1313/blog/2022/07/10-secrets-to-creating-a-personal-coaching-website-that-converts/</guid>
+      <description>Are you thinking about starting a personal coaching business? If so, you&amp;rsquo;ll need to create a website that can attract and convert clients. In this blog post, we&amp;rsquo;ll share seven secrets to help you create a personal coach website that converts.&#xA;1. Have A Clear and Focused Website Goal For Your Perspective Personal Coaching Clients When starting a personal coaching business, one of the most important things you can do is to have a clear and focused goal for your website.</description>
     </item>
-    
   </channel>
 </rss>

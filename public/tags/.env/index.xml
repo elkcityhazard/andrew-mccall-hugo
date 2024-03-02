@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>.env on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
-    <link>/tags/.env/</link>
-    <description>Recent content in .env on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
+    <title>.Env on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
+    <link>//localhost:1313/tags/.env/</link>
+    <description>Recent content in .Env on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/.env/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/.env/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang Read Environment Variables From File: How To Do It [Code Snippets]</title>
-      <link>/blog/2022/09/golang-read-environment-variables-from-file/</link>
+      <link>//localhost:1313/blog/2022/09/golang-read-environment-variables-from-file/</link>
       <pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/2022/09/golang-read-environment-variables-from-file/</guid>
-      <description>What Are Environmental Variables In Go A Cautionary Tale: My AWS Account Was Hacked And I Have A $50,000 Bill
-If you have ever used an API key or database connection string, you have most likely had a need to secure some sensitive data. Environment variables are a way to achieve this. We may need to do this because certain API&amp;rsquo;s can only be called so many times and the key is a way of authorizing our requests and keeping track of them.</description>
+      <guid>//localhost:1313/blog/2022/09/golang-read-environment-variables-from-file/</guid>
+      <description>What Are Environmental Variables In Go A Cautionary Tale: My AWS Account Was Hacked And I Have A $50,000 Bill&#xA;If you have ever used an API key or database connection string, you have most likely had a need to secure some sensitive data. Environment variables are a way to achieve this. We may need to do this because certain API&amp;rsquo;s can only be called so many times and the key is a way of authorizing our requests and keeping track of them.</description>
     </item>
-    
   </channel>
 </rss>

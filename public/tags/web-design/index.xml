@@ -2,50 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web Design on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
-    <link>/tags/web-design/</link>
+    <link>//localhost:1313/tags/web-design/</link>
     <description>Recent content in Web Design on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/web-design/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/web-design/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>10 Secrets To Creating A Personal Coach Website That Converts</title>
-      <link>/blog/2022/07/10-secrets-to-creating-a-personal-coaching-website-that-converts/</link>
+      <link>//localhost:1313/blog/2022/07/10-secrets-to-creating-a-personal-coaching-website-that-converts/</link>
       <pubDate>Sat, 23 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/2022/07/10-secrets-to-creating-a-personal-coaching-website-that-converts/</guid>
-      <description>Are you thinking about starting a personal coaching business? If so, you&amp;rsquo;ll need to create a website that can attract and convert clients. In this blog post, we&amp;rsquo;ll share seven secrets to help you create a personal coach website that converts.
-1. Have A Clear and Focused Website Goal For Your Perspective Personal Coaching Clients When starting a personal coaching business, one of the most important things you can do is to have a clear and focused goal for your website.</description>
+      <guid>//localhost:1313/blog/2022/07/10-secrets-to-creating-a-personal-coaching-website-that-converts/</guid>
+      <description>Are you thinking about starting a personal coaching business? If so, you&amp;rsquo;ll need to create a website that can attract and convert clients. In this blog post, we&amp;rsquo;ll share seven secrets to help you create a personal coach website that converts.&#xA;1. Have A Clear and Focused Website Goal For Your Perspective Personal Coaching Clients When starting a personal coaching business, one of the most important things you can do is to have a clear and focused goal for your website.</description>
     </item>
-    
     <item>
       <title>20 Traverse City Web Design Companies | A Complete Website Design List</title>
-      <link>/blog/2022/07/top-20-web-design-agencies-in-traverse-city/</link>
+      <link>//localhost:1313/blog/2022/07/top-20-web-design-agencies-in-traverse-city/</link>
       <pubDate>Mon, 11 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/2022/07/top-20-web-design-agencies-in-traverse-city/</guid>
-      <description>There are many great options for web design and graphic design in Northern Michigan. The area is home to a number of talented designers who can create stunning websites and graphics that will help your business stand out from the competition. Whether you&amp;rsquo;re looking for a simple website or something more complex, you&amp;rsquo;re sure to find a designer in Northern Michigan who can meet your needs.
-We break down 20 web design agencies in Northern Michigan to help you make the best decision possible for your next web design project.</description>
+      <guid>//localhost:1313/blog/2022/07/top-20-web-design-agencies-in-traverse-city/</guid>
+      <description>There are many great options for web design and graphic design in Northern Michigan. The area is home to a number of talented designers who can create stunning websites and graphics that will help your business stand out from the competition. Whether you&amp;rsquo;re looking for a simple website or something more complex, you&amp;rsquo;re sure to find a designer in Northern Michigan who can meet your needs.&#xA;We break down 20 web design agencies in Northern Michigan to help you make the best decision possible for your next web design project.</description>
     </item>
-    
     <item>
       <title>5 Things You Need To Know Before And After You Build A Website</title>
-      <link>/blog/5-things-you-need-to-know-before-and-after-you-build-a-website/</link>
+      <link>//localhost:1313/blog/5-things-you-need-to-know-before-and-after-you-build-a-website/</link>
       <pubDate>Sun, 03 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/5-things-you-need-to-know-before-and-after-you-build-a-website/</guid>
-      <description>5 Ways You Can Use Your Website to Grow Your Business Websites are a great way to grow your business, but you need to make sure that they are properly maintained and optimized for this. In order to help you with that, here are five ways you can use your website for the growth of your business.
-Create a blog: Blogging is a great way to create content and generate leads.</description>
+      <guid>//localhost:1313/blog/5-things-you-need-to-know-before-and-after-you-build-a-website/</guid>
+      <description>5 Ways You Can Use Your Website to Grow Your Business Websites are a great way to grow your business, but you need to make sure that they are properly maintained and optimized for this. In order to help you with that, here are five ways you can use your website for the growth of your business.&#xA;Create a blog: Blogging is a great way to create content and generate leads.</description>
     </item>
-    
     <item>
       <title>Everything You Need To Know About Parallax Scrolling &amp; Javascript</title>
-      <link>/blog/a-complete-beginners-guide-to-parallax-scrolling-and-javascript/</link>
+      <link>//localhost:1313/blog/a-complete-beginners-guide-to-parallax-scrolling-and-javascript/</link>
       <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/a-complete-beginners-guide-to-parallax-scrolling-and-javascript/</guid>
-      <description>Everything a beginner javascript student needs to know about implementing parallax scrolling on their website. What parallax is, why use it, why not to use, and a few ways that it can be achieved.
-What is parallax scrolling effects? What is parallax scrolling? If you have only come here for a parallax definition then your journey ends here: Parallax scrolling effects is a movement, one that is created by the scrolling of one layer of an image, which creates a sense of depth and keeps the audience&amp;rsquo;s eyes glued to the screen.</description>
+      <guid>//localhost:1313/blog/a-complete-beginners-guide-to-parallax-scrolling-and-javascript/</guid>
+      <description>Everything a beginner javascript student needs to know about implementing parallax scrolling on their website. What parallax is, why use it, why not to use, and a few ways that it can be achieved.&#xA;What is parallax scrolling effects? What is parallax scrolling? If you have only come here for a parallax definition then your journey ends here: Parallax scrolling effects is a movement, one that is created by the scrolling of one layer of an image, which creates a sense of depth and keeps the audience&amp;rsquo;s eyes glued to the screen.</description>
     </item>
-    
   </channel>
 </rss>

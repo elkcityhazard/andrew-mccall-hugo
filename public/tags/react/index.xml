@@ -2,29 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>React on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
-    <link>/tags/react/</link>
+    <link>//localhost:1313/tags/react/</link>
     <description>Recent content in React on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/react/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Custom React Hook Function: Create Custom Reusable React Hooks</title>
-      <link>/blog/custom-react-hook-function/</link>
+      <link>//localhost:1313/blog/custom-react-hook-function/</link>
       <pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/custom-react-hook-function/</guid>
-      <description>If you have found yourself re-writing the same boilerplate React code over and over, You may be able to refactor that into a reusable custom React hook function that will save you time and help clean up your code a bit.
-What Is A React Hook React Hooks are a new feature in React 16.8, which allow us to use state and lifecycle hooks without constructor functions. They enable us to write less code, improve testability of components , and reduce potential side effects .</description>
+      <guid>//localhost:1313/blog/custom-react-hook-function/</guid>
+      <description>If you have found yourself re-writing the same boilerplate React code over and over, You may be able to refactor that into a reusable custom React hook function that will save you time and help clean up your code a bit.&#xA;What Is A React Hook React Hooks are a new feature in React 16.8, which allow us to use state and lifecycle hooks without constructor functions. They enable us to write less code, improve testability of components , and reduce potential side effects .</description>
     </item>
-    
     <item>
       <title>React State Array: Updating An Array That Is Stored Inside Of State</title>
-      <link>/blog/how-to-easily-access-previous-state-in-react-application/</link>
+      <link>//localhost:1313/blog/how-to-easily-access-previous-state-in-react-application/</link>
       <pubDate>Sat, 20 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/how-to-easily-access-previous-state-in-react-application/</guid>
+      <guid>//localhost:1313/blog/how-to-easily-access-previous-state-in-react-application/</guid>
       <description>State is one of the most important concepts in React. It&amp;rsquo;s what allows us to build components that manage and maintain their own data, and it also enables us to create reusable components that can be shared across projects without duplicating code. But what exactly is State, and how do we use it? A component&amp;rsquo;s state is simply a JavaScript object with properties and values. The values of these properties can be changed over time (hence the name &amp;ldquo;state&amp;rdquo;) by invoking setState().</description>
     </item>
-    
   </channel>
 </rss>

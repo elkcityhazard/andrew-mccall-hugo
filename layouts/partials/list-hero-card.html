@@ -1,0 +1,27 @@
+<section class="list-card__container d-none">
+  <div class="list-card__container-inner">
+    <div class="list-card__container-column">
+                {{ with  first 1 .Pages  }}
+                    {{ range . }}
+                    <figure class="list-card__figure">
+                        <img src="{{or .Params.image "/images/ " }}" alt="{{ .Title }}">
+                        
+                        <figcaption>
+                    <h2><a href="{{ .RelPermalink }}" title="Link To: {{ .Title }}">{{ .Title }}</a></h2>
+                            <p>{{ .Description }}</h2>
+                        </figcaption>
+                    </figure>
+                    {{ end }}
+                {{ end }}
+    </div>
+    <div class="list-card__container-column">
+
+            {{ with  after 1 .Pages }}
+                {{ range first 5 . }}
+                        {{ .Title }}
+                {{ end }}
+            {{ end }}
+
+        </div>
+  </div>
+</section>

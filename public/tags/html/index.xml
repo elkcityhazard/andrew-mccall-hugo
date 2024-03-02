@@ -1,39 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>HTML on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
-    <link>/tags/html/</link>
-    <description>Recent content in HTML on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
+    <title>Html on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
+    <link>//localhost:1313/tags/html/</link>
+    <description>Recent content in Html on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Jan 2024 20:24:05 -0500</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Javascript Image Animation Effects</title>
+      <link>//localhost:1313/blog/2024/01/javascript-image-animation-effects/</link>
+      <pubDate>Sat, 27 Jan 2024 20:24:05 -0500</pubDate>
+      <guid>//localhost:1313/blog/2024/01/javascript-image-animation-effects/</guid>
+      <description>I walk through the process of using html canvas, javascript, and css to manipulate an image.</description>
+    </item>
     <item>
       <title>Vanilla Javascript Carousel Slider: A Beginner&#39;s Tutorial</title>
-      <link>/blog/2023/01/easy-vanilla-javascript-carousel-slider-tutorial-for-beginners/</link>
+      <link>//localhost:1313/blog/2023/01/easy-vanilla-javascript-carousel-slider-tutorial-for-beginners/</link>
       <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/2023/01/easy-vanilla-javascript-carousel-slider-tutorial-for-beginners/</guid>
+      <guid>//localhost:1313/blog/2023/01/easy-vanilla-javascript-carousel-slider-tutorial-for-beginners/</guid>
       <description>Vanilla Javascript Carousel Slider: A Beginner Slider A photo or content slider is one of the oldest, but most popular design assets one can create with javascript. Many developers will reach for popular carousel frameworks such as swiper, slick, or photoswipe. Most of the time, you don&amp;rsquo;t need so much overhead. Let&amp;rsquo;s build a slider together and see how we can build a responsive slider without using a ton of a extra javascript.</description>
     </item>
-    
     <item>
       <title>Hugo Website Tutorial: How To Create A Hugo Website</title>
-      <link>/blog/hugo-website-tutorial-how-to-create-a-hugo-website-from-scratch/</link>
+      <link>//localhost:1313/blog/hugo-website-tutorial-how-to-create-a-hugo-website-from-scratch/</link>
       <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/hugo-website-tutorial-how-to-create-a-hugo-website-from-scratch/</guid>
-      <description>Hugo Website Tutorial: How To Create Your First Hugo Website Hugo is a powerful static website generator written in the GO language. It can help you create clean, modern websites that load quickly with little overhead.
-[VIDEO] Hugo Tutorials 👉 [Video] How To Install Hugo On Windows 10 With Chocolately Package Manager (Less Than 2.5 Minutes) 👉 [Video] How To Boostrap A New Hugo Theme And Display The Home Page 👉 [Video] Output Structured Data Using Hugo, YAML, and Frontmatter What is the Hugo static site framework?</description>
+      <guid>//localhost:1313/blog/hugo-website-tutorial-how-to-create-a-hugo-website-from-scratch/</guid>
+      <description>Hugo Website Tutorial: How To Create Your First Hugo Website Hugo is a powerful static website generator written in the GO language. It can help you create clean, modern websites that load quickly with little overhead.&#xA;[VIDEO] Hugo Tutorials 👉 [Video] How To Install Hugo On Windows 10 With Chocolately Package Manager (Less Than 2.5 Minutes) 👉 [Video] How To Boostrap A New Hugo Theme And Display The Home Page 👉 [Video] Output Structured Data Using Hugo, YAML, and Frontmatter What is the Hugo static site framework?</description>
     </item>
-    
-    <item>
-      <title>Traverse City Web Developer: I am a web designer in Traverse City</title>
-      <link>/blog/traverse-city-web-development/</link>
-      <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/traverse-city-web-development/</guid>
-      <description>Many of the people who come to me are small business owners who want a website built. They always want to know how much it&amp;rsquo;s going to cost then they agonize over which developer they should choose. I try to keep this in mind when I&amp;rsquo;m talking with them but sometimes I still can&amp;rsquo;t help but think how lucky they are to have this problem. I wish I could build a website every day and I&amp;rsquo;m sure many web developers feel the same.</description>
-    </item>
-    
   </channel>
 </rss>
