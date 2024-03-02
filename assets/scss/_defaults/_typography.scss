@@ -81,37 +81,51 @@ $yAxisIntersection: (-$min-viewport) * $slope + $min-font-size;
 }
 
 ul.categories {
-	display: inline-block;
+    align-items: center;
+    justify-content: flex-start;
+	display: inline-flex;
     margin: 0;
 	li {
 		display: inline-block;
 		font-size: clamp(0.60rem, $yAxisIntersection + toVW(), 1rem);
-		margin-right: 0.8rem;
 		margin-bottom: 0;
 		padding-inline-start: 0;
 		position: relative;
 		text-transform: lowercase;
+		
+	&:last-child {
 		&::after {
+			display: none;
+		}
+            + .divider {
+                display: none;
+            }
+	}
+	}
+    .divider {
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        position: relative;
+            &::after {
 		content: "";
 		display: inline-block;
 		width: 2px;
 		height: 12px;
 		margin: auto;
 		top: 50%;
+        left: 50%;
+            transform: translate(-50%, -50%);
 		position: absolute;
-		transform: translateY(-50%);
-		right: calc(-0.50rem - 2px);
 		background: c.$penn-blue;
             &.categories {
                 margin: unset;
             }
 	}
-	&:last-child {
-		&::after {
-			display: none;
-		}
-	}
-	}
+        &:last-of-type {
+            display: none;
+        }
+    }
 }
 
 
