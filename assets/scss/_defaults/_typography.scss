@@ -84,6 +84,7 @@ ul.categories {
     align-items: center;
     justify-content: flex-start;
 	display: inline-flex;
+    flex-flow: row wrap;
     margin: 0;
 	li {
 		display: inline-block;

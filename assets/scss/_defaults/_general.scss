@@ -82,6 +82,9 @@ nav.breadcrumb {
 	gap: 0 1.5rem;
     margin: unset;
 	padding: 0;
+    @include m.desktop {
+        padding-top: 1rem;
+    }
 	li {
         margin-bottom: 0;
 		@include m.desktop {
@@ -91,7 +94,7 @@ nav.breadcrumb {
 		padding-inline-start: 0;
 		position: relative;
 		a {
-			font-size: clamp(0.5rem, mixins.build-clamp(0.5, 0.8, 399, 968), 1rem);
+            font-size: clamp(0.6rem, 0.700374382rem + 0.4494382022vw, 1rem);
 			margin: unset;
 		}
 		&:first-of-type {
@@ -102,8 +105,9 @@ nav.breadcrumb {
             display: grid;
             place-items: center;
 			content: "\226B";
-            font-size: 12px;
-            font-size: clamp(0.56rem, 0.5160rem + 0.3960vw, 0.78rem);
+            font-size: 1rem;
+            font-size: clamp(0.6rem, 0.700374382rem + 0.4494382022vw, 1rem);
+
 			width: auto;
 			position: absolute;
 			top: 50%;

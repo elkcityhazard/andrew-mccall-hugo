@@ -81,6 +81,11 @@ nav.breadcrumb {
   margin: unset;
   padding: 0;
 }
+@media (min-width: 1024px) {
+  .breadcrumbs {
+    padding-top: 1rem;
+  }
+}
 .breadcrumbs li {
   margin-bottom: 0;
   display: inline-block;
@@ -93,7 +98,7 @@ nav.breadcrumb {
   }
 }
 .breadcrumbs li a {
-  font-size: clamp(0.5rem, 0.2896309315rem + 0.9490333919vw, 1rem);
+  font-size: clamp(0.6rem, 0.700374382rem + 0.4494382022vw, 1rem);
   margin: unset;
 }
 .breadcrumbs li:first-of-type {
@@ -104,8 +109,8 @@ nav.breadcrumb {
   display: grid;
   place-items: center;
   content: "≫";
-  font-size: 12px;
-  font-size: clamp(0.56rem, 0.516rem + 0.396vw, 0.78rem);
+  font-size: 1rem;
+  font-size: clamp(0.6rem, 0.700374382rem + 0.4494382022vw, 1rem);
   width: auto;
   position: absolute;
   top: 50%;
@@ -531,6 +536,7 @@ ul.categories {
   align-items: center;
   justify-content: flex-start;
   display: inline-flex;
+  flex-flow: row wrap;
   margin: 0;
 }
 ul.categories li {

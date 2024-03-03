@@ -214,19 +214,24 @@
       this.tocObserver = null;
       this.toc = Array.from(document.querySelectorAll("#TableOfContents a"));
       this.options = {
-        rootMargin: "0px",
+        rootMargin: "10px",
         threshhold: 1
       };
       this.events();
     }
     events() {
+      if (!this.toc)
+        return;
       this.observe();
       this.headings.forEach((heading) => {
         this.tocObserver.observe(heading);
       });
     }
     observe() {
-      this.tocObserver = new IntersectionObserver(this.handleIntersect.bind(this), this.options);
+      this.tocObserver = new IntersectionObserver(
+        this.handleIntersect.bind(this),
+        this.options
+      );
     }
     handleIntersect(entries) {
       entries.forEach((entry, index) => {
