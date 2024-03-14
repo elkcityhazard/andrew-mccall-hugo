@@ -251,7 +251,7 @@ func (mrw *MockResponseWriter) Header() http.Header {
 
 Note that I am also creating a helper function to return a new `MockResponseWriter`.
 
-All we are doing here is writing the functions we need to implement `WriteJSON`.  These functions are all a part of the ResponseWriter Interface which can be viewed here: [https://pkg.go.dev/net/http#ResponseWriter](http.ResponseWriter Interface "ResponseWriter Interface").
+All we are doing here is writing the functions we need to implement `WriteJSON`.  These functions are all a part of the ResponseWriter Interface which can be viewed here: [http.ResponseWriter Interface](https://pkg.go.dev/net/http#ResponseWriter "ResponseWriter Interface").
 
 Finally we can start setting up our unit under test:
 
@@ -336,4 +336,4 @@ Arrange, Act, Assert are the fundamentals of test driven development.  This exam
 
 Until next time, Love yourself now, then, and later.  
 
-- Andrew 
+ Andrew @elkcityhazard on Mastodon
