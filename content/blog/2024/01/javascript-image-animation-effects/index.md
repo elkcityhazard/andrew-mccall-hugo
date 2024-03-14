@@ -6,7 +6,7 @@ description:  Some notes on how to use html canvas and javascript to create anim
 summary:  I walk through the process of using html canvas, javascript, and css to manipulate an image.
 publishDate: 2024-01-27T20:24:05-05:00
 updateDate:  2024-01-27T20:24:05-05:00
-draft: false
+draft: true
 categories:
   - Web Development
 tags:

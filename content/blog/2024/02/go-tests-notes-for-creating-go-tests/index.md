@@ -6,7 +6,7 @@ description:  I explain Goroutines and Channels and how to apply them from basic
 summary:  Go has powerful concurrency tools fully baked into the programming Language.  This post aims to explain go routines and channels so you can get started using them in your own projects.
 publishDate: 2024-02-01T20:48:51-05:00
 updateDate:  2024-02-10T20:40:00-05:00
-draft: false
+draft: true
 categories:
   - Software Testing
 tags:
