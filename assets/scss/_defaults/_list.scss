@@ -131,6 +131,13 @@ $light-pink: lighten(c.$rose-pink, 50%);
 			margin-bottom: 1rem;
 			.featured-card__title {
 				color: c.$rose-pink;
+				font-size: clamp(1rem, 0.6781rem + 2.3176vw, 1.667rem);
+				min-height: calc(3 * 1.5 * clamp(1rem, 0.6781rem + 2.3176vw, 1.667rem));
+				overflow: hidden;
+				display: -webkit-box;
+				-webkit-line-clamp: 3; /* number of lines to show */
+						line-clamp: 3; 
+				-webkit-box-orient: vertical;
 
 			}
 			.featured-card__button {

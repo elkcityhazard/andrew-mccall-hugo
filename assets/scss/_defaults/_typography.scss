@@ -5,6 +5,8 @@
 
 $meta-rem: 0.412rem;
 
+$line-height: 1.5;
+
 
 
 h1,
@@ -18,6 +20,17 @@ h6 {
 	font-weight: normal;
 	max-width: 550px;
  
+}
+
+h1,
+h2,
+h3 {
+	min-height: calc(3 * $line-height);
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 3; /* number of lines to show */
+			line-clamp: 3;
+	-webkit-box-orient: vertical;
 }
 
 

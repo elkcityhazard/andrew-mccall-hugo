@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "postcss": "^8.4.36",
+    "postcss-import": "^16.0.1",
+    "postcss-preset-env": "^9.5.2"
+  }
+}

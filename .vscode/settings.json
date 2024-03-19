@@ -1,4 +1,5 @@
 {
+    "editor.fontSize": 18,
     "frontMatter.framework.id": "hugo",
     "frontMatter.content.publicFolder": "static",
     "frontMatter.preview.host": "http://localhost:1313",
@@ -7,5 +8,6 @@
             "title": "content",
             "path": "[[workspace]]/content"
         }
-    ]
+    ],
+    "terminal.integrated.fontSize": 18,
 }

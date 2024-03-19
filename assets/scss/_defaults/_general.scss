@@ -305,10 +305,14 @@ nav.breadcrumb {
 				position: fixed;
                 left: 0;
 				top: 0;
+				text-align: center;
 				z-index: 99999999999;
 				@include m.desktop {
-                    max-width: unset;
-                    text-align: center;
+                    margin: auto;
+					max-width: 1500px;
+					left: 50%;
+                    text-align: left;
+					transform: translateX(-50%);
 				}
 			}
 		}

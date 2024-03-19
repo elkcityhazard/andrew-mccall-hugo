@@ -6,21 +6,14 @@
     <description>Recent content in Go on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Feb 2024 20:48:51 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 13 Mar 2024 20:22:02 -0400</lastBuildDate>
     <atom:link href="//localhost:1313/tags/go/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Go Tests Notes for Creating Go Tests</title>
-      <link>//localhost:1313/blog/2024/02/go-tests-notes-for-creating-go-tests/</link>
-      <pubDate>Thu, 01 Feb 2024 20:48:51 -0500</pubDate>
-      <guid>//localhost:1313/blog/2024/02/go-tests-notes-for-creating-go-tests/</guid>
-      <description>Go has powerful concurrency tools fully baked into the programming Language.  This post aims to explain go routines and channels so you can get started using them in your own projects.</description>
-    </item>
-    <item>
-      <title>Sending Emails With Go Routines</title>
-      <link>//localhost:1313/blog/2024/01/sending-emails-with-go-routines/</link>
-      <pubDate>Mon, 15 Jan 2024 20:01:49 -0500</pubDate>
-      <guid>//localhost:1313/blog/2024/01/sending-emails-with-go-routines/</guid>
-      <description>Transactional emails and token creation are expensive operations.  Let&amp;rsquo;s explore how we can offload these to the background using channels and go routines.</description>
+      <title>Unit Testing Json Encode</title>
+      <link>//localhost:1313/blog/2024/03/unit-testing-json-encode/</link>
+      <pubDate>Wed, 13 Mar 2024 20:22:02 -0400</pubDate>
+      <guid>//localhost:1313/blog/2024/03/unit-testing-json-encode/</guid>
+      <description>Here are my notes on testing a JSON writer for Golang that lets you wrap the response in an envelope</description>
     </item>
     <item>
       <title>Go Channels Tutorial - Understanding Goroutines and Channels</title>

@@ -6,19 +6,19 @@
     <description>Recent content in Categories on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Feb 2024 20:48:51 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 13 Mar 2024 20:22:02 -0400</lastBuildDate>
     <atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Software Testing</title>
-      <link>//localhost:1313/categories/software-testing/</link>
-      <pubDate>Thu, 01 Feb 2024 20:48:51 -0500</pubDate>
-      <guid>//localhost:1313/categories/software-testing/</guid>
+      <title>Go</title>
+      <link>//localhost:1313/categories/go/</link>
+      <pubDate>Wed, 13 Mar 2024 20:22:02 -0400</pubDate>
+      <guid>//localhost:1313/categories/go/</guid>
       <description></description>
     </item>
     <item>
       <title>Web Development</title>
       <link>//localhost:1313/categories/web-development/</link>
-      <pubDate>Sat, 27 Jan 2024 20:24:05 -0500</pubDate>
+      <pubDate>Sun, 31 Dec 2023 19:18:59 -0500</pubDate>
       <guid>//localhost:1313/categories/web-development/</guid>
       <description></description>
     </item>

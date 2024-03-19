@@ -6,14 +6,14 @@
     <description>Recent content in Golang on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Jan 2024 20:01:49 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 13 Mar 2024 20:22:02 -0400</lastBuildDate>
     <atom:link href="//localhost:1313/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Sending Emails With Go Routines</title>
-      <link>//localhost:1313/blog/2024/01/sending-emails-with-go-routines/</link>
-      <pubDate>Mon, 15 Jan 2024 20:01:49 -0500</pubDate>
-      <guid>//localhost:1313/blog/2024/01/sending-emails-with-go-routines/</guid>
-      <description>Transactional emails and token creation are expensive operations.  Let&amp;rsquo;s explore how we can offload these to the background using channels and go routines.</description>
+      <title>Unit Testing Json Encode</title>
+      <link>//localhost:1313/blog/2024/03/unit-testing-json-encode/</link>
+      <pubDate>Wed, 13 Mar 2024 20:22:02 -0400</pubDate>
+      <guid>//localhost:1313/blog/2024/03/unit-testing-json-encode/</guid>
+      <description>Here are my notes on testing a JSON writer for Golang that lets you wrap the response in an envelope</description>
     </item>
     <item>
       <title>Golang Create a Random String</title>

@@ -3,61 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>//localhost:1313/blog/</loc>
-    <lastmod>2024-02-01T20:48:51-05:00</lastmod>
+    <lastmod>2024-03-13T20:22:02-04:00</lastmod>
   </url><url>
     <loc>//localhost:1313/categories/</loc>
-    <lastmod>2024-02-01T20:48:51-05:00</lastmod>
+    <lastmod>2024-03-13T20:22:02-04:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/go/</loc>
-    <lastmod>2024-02-01T20:48:51-05:00</lastmod>
+    <lastmod>2024-03-13T20:22:02-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blog/2024/02/go-tests-notes-for-creating-go-tests/</loc>
-    <lastmod>2024-02-01T20:48:51-05:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/</loc>
-    <lastmod>2024-02-01T20:48:51-05:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/categories/software-testing/</loc>
-    <lastmod>2024-02-01T20:48:51-05:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/</loc>
-    <lastmod>2024-02-01T20:48:51-05:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/testing/</loc>
-    <lastmod>2024-02-01T20:48:51-05:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/css/</loc>
-    <lastmod>2024-01-27T20:24:05-05:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/html/</loc>
-    <lastmod>2024-01-27T20:24:05-05:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/images/</loc>
-    <lastmod>2024-01-27T20:24:05-05:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/javascript/</loc>
-    <lastmod>2024-01-27T20:24:05-05:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/blog/2024/01/javascript-image-animation-effects/</loc>
-    <lastmod>2024-01-27T20:24:05-05:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/categories/web-development/</loc>
-    <lastmod>2024-01-27T20:24:05-05:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/channels/</loc>
-    <lastmod>2024-01-15T20:01:49-05:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/email/</loc>
-    <lastmod>2024-01-15T20:01:49-05:00</lastmod>
+    <loc>//localhost:1313/categories/go/</loc>
+    <lastmod>2024-03-13T20:22:02-04:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/golang/</loc>
-    <lastmod>2024-01-15T20:01:49-05:00</lastmod>
+    <lastmod>2024-03-13T20:22:02-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/goroutines/</loc>
-    <lastmod>2024-01-15T20:01:49-05:00</lastmod>
+    <loc>//localhost:1313/</loc>
+    <lastmod>2024-03-13T20:22:02-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blog/2024/01/sending-emails-with-go-routines/</loc>
-    <lastmod>2024-01-15T20:01:49-05:00</lastmod>
+    <loc>//localhost:1313/tags/</loc>
+    <lastmod>2024-03-13T20:22:02-04:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/test-driven-development/</loc>
+    <lastmod>2024-03-13T20:22:02-04:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/unit-testing/</loc>
+    <lastmod>2024-03-13T20:22:02-04:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/blog/2024/03/unit-testing-json-encode/</loc>
+    <lastmod>2024-03-13T20:22:02-04:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/crypto/</loc>
     <lastmod>2023-12-31T19:18:59-05:00</lastmod>
@@ -67,6 +40,12 @@
   </url><url>
     <loc>//localhost:1313/tags/rune/</loc>
     <lastmod>2023-12-31T19:18:59-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/web-development/</loc>
+    <lastmod>2023-12-31T19:18:59-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/channels/</loc>
+    <lastmod>2023-12-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/concurrency/</loc>
     <lastmod>2023-12-26T00:00:00+00:00</lastmod>
@@ -84,6 +63,9 @@
     <lastmod>2023-11-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/blog/2023/11/call-bind-and-apply-in-javascript/</loc>
+    <lastmod>2023-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/javascript/</loc>
     <lastmod>2023-11-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/projects/</loc>
@@ -110,7 +92,13 @@
     <loc>//localhost:1313/tags/universal-analytics/</loc>
     <lastmod>2023-02-09T20:44:47-05:00</lastmod>
   </url><url>
+    <loc>//localhost:1313/tags/css/</loc>
+    <lastmod>2023-01-29T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>//localhost:1313/tags/frontend-web-development/</loc>
+    <lastmod>2023-01-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/html/</loc>
     <lastmod>2023-01-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/vanilla-javascript/</loc>

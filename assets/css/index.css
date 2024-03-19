@@ -295,12 +295,16 @@ nav.breadcrumb {
   position: fixed;
   left: 0;
   top: 0;
+  text-align: center;
   z-index: 99999999999;
 }
 @media (min-width: 1024px) {
   .single .wrapper header .main-nav {
-    max-width: unset;
-    text-align: center;
+    margin: auto;
+    max-width: 1500px;
+    left: 50%;
+    text-align: left;
+    transform: translateX(-50%);
   }
 }
 .single .wrapper .container {
@@ -474,6 +478,17 @@ h6 {
   font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
   font-weight: normal;
   max-width: 550px;
+}
+
+h1,
+h2,
+h3 {
+  min-height: 4.5;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 ol,
@@ -1210,6 +1225,13 @@ small.error p {
 }
 .featured .featured-card .featured-card__title {
   color: #c71627;
+  font-size: clamp(1rem, 0.6781rem + 2.3176vw, 1.667rem);
+  min-height: calc(4.5 * clamp(1rem, 0.6781rem + 2.3176vw, 1.667rem));
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 .featured .featured-card .featured-card__button {
   background: #c71627;
@@ -1973,7 +1995,6 @@ nav.breadcrumb o.breadcrumbs {
 }
 
 .article-header {
-  max-width: 103ch;
   margin: auto;
 }
 .article-header .main-nav {
@@ -1988,7 +2009,6 @@ nav.breadcrumb o.breadcrumbs {
 
 .container .main-content .main-content__content {
   margin: auto;
-  max-width: 60ch;
 }
 .container .main-content .main-content__content h1,
 .container .main-content .main-content__content h2,

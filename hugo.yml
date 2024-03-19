@@ -43,5 +43,28 @@ params:
       icon: /images/icons/gitlab.png
       url: https://gitlab.com/elkcityhazard
 
+build:
+  drafts: true
+  future: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - CSS
+    - JS
+
+outputs:
+  CSS:
+    mediaType: text/css
+    isPlainText: true
+    notAlternative: true
+    rel: stylesheet
+    media: all
+    external: true
+    externalURL: css/index.css
+    externalURLS:
+      - css/index.css
+      - css.index.css.map
 
 
