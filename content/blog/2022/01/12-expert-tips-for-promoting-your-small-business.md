@@ -10,7 +10,7 @@ tags:
 - small business tips
 Description: 12 practical tips to promote your local business, gain trust with your
   clientele, and grow your sales.
-draft: false
+draft: true
 ---
 
 The tips in this article are meant to help you promote your small business. Small businesses have a lot of advantages over large enterprises, but they also have some disadvantages. One disadvantage is the lack of resources and money that larger businesses have. Without money, it can be difficult for a small business to get the same kind of exposure as a large corporation. What follows are 12 tips on how to promote your small business so that you can do just as well if not better than the big guys!
