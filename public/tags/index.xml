@@ -478,27 +478,6 @@
       <description></description>
     </item>
     <item>
-      <title>Growth Tips</title>
-      <link>//localhost:1313/tags/growth-tips/</link>
-      <pubDate>Thu, 27 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/growth-tips/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Marketing</title>
-      <link>//localhost:1313/tags/marketing/</link>
-      <pubDate>Thu, 27 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/marketing/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Small Business Tips</title>
-      <link>//localhost:1313/tags/small-business-tips/</link>
-      <pubDate>Thu, 27 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/small-business-tips/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Open Source</title>
       <link>//localhost:1313/tags/open-source/</link>
       <pubDate>Sun, 23 Jan 2022 00:00:00 +0000</pubDate>
@@ -552,6 +531,13 @@
       <link>//localhost:1313/tags/react/</link>
       <pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/tags/react/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Growth Tips</title>
+      <link>//localhost:1313/tags/growth-tips/</link>
+      <pubDate>Sun, 03 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/growth-tips/</guid>
       <description></description>
     </item>
     <item>

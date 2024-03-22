@@ -1829,6 +1829,20 @@ small.error p {
 .contact-form {
   flex: 1 1;
   min-width: 0;
+  max-width: 768px;
+}
+.contact-form #mainContactForm .form-control input,
+.contact-form #mainContactForm .form-control textarea {
+  box-shadow: 2px 2px 8px -6px #000;
+  -moz-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+.contact-form #mainContactForm .form-control input:hover, .contact-form #mainContactForm .form-control input:focus, .contact-form #mainContactForm .form-control input:active,
+.contact-form #mainContactForm .form-control textarea:hover,
+.contact-form #mainContactForm .form-control textarea:focus,
+.contact-form #mainContactForm .form-control textarea:active {
+  box-shadow: 2px 2px 8px -4px #000;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .contact-form {
