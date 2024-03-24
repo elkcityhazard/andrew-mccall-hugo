@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CMS on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
-    <link>//localhost:1313/tags/cms/</link>
-    <description>Recent content in CMS on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
+    <title>CMS on Andrew M McCall</title>
+    <link>http://localhost:1313/tags/cms/</link>
+    <description>Recent content in CMS on Andrew M McCall</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 22 Dec 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/cms/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/cms/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo Website Tutorial: How To Create A Hugo Website</title>
-      <link>//localhost:1313/blog/hugo-website-tutorial-how-to-create-a-hugo-website-from-scratch/</link>
+      <link>http://localhost:1313/blog/hugo-website-tutorial-how-to-create-a-hugo-website-from-scratch/</link>
       <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/blog/hugo-website-tutorial-how-to-create-a-hugo-website-from-scratch/</guid>
+      <guid>http://localhost:1313/blog/hugo-website-tutorial-how-to-create-a-hugo-website-from-scratch/</guid>
       <description>Hugo Website Tutorial: How To Create Your First Hugo Website Hugo is a powerful static website generator written in the GO language. It can help you create clean, modern websites that load quickly with little overhead.&#xA;[VIDEO] Hugo Tutorials 👉 [Video] How To Install Hugo On Windows 10 With Chocolately Package Manager (Less Than 2.5 Minutes) 👉 [Video] How To Boostrap A New Hugo Theme And Display The Home Page 👉 [Video] Output Structured Data Using Hugo, YAML, and Frontmatter What is the Hugo static site framework?</description>
     </item>
   </channel>

@@ -1,571 +1,571 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
-    <link>//localhost:1313/tags/</link>
-    <description>Recent content in Tags on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
+    <title>Tags on Andrew M McCall</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on Andrew M McCall</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 13 Mar 2024 20:22:02 -0400</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go</title>
-      <link>//localhost:1313/tags/go/</link>
+      <link>http://localhost:1313/tags/go/</link>
       <pubDate>Wed, 13 Mar 2024 20:22:02 -0400</pubDate>
-      <guid>//localhost:1313/tags/go/</guid>
+      <guid>http://localhost:1313/tags/go/</guid>
       <description></description>
     </item>
     <item>
       <title>Golang</title>
-      <link>//localhost:1313/tags/golang/</link>
+      <link>http://localhost:1313/tags/golang/</link>
       <pubDate>Wed, 13 Mar 2024 20:22:02 -0400</pubDate>
-      <guid>//localhost:1313/tags/golang/</guid>
+      <guid>http://localhost:1313/tags/golang/</guid>
       <description></description>
     </item>
     <item>
       <title>Test Driven Development</title>
-      <link>//localhost:1313/tags/test-driven-development/</link>
+      <link>http://localhost:1313/tags/test-driven-development/</link>
       <pubDate>Wed, 13 Mar 2024 20:22:02 -0400</pubDate>
-      <guid>//localhost:1313/tags/test-driven-development/</guid>
+      <guid>http://localhost:1313/tags/test-driven-development/</guid>
       <description></description>
     </item>
     <item>
       <title>Unit Testing</title>
-      <link>//localhost:1313/tags/unit-testing/</link>
+      <link>http://localhost:1313/tags/unit-testing/</link>
       <pubDate>Wed, 13 Mar 2024 20:22:02 -0400</pubDate>
-      <guid>//localhost:1313/tags/unit-testing/</guid>
+      <guid>http://localhost:1313/tags/unit-testing/</guid>
       <description></description>
     </item>
     <item>
       <title>Crypto</title>
-      <link>//localhost:1313/tags/crypto/</link>
+      <link>http://localhost:1313/tags/crypto/</link>
       <pubDate>Sun, 31 Dec 2023 19:18:59 -0500</pubDate>
-      <guid>//localhost:1313/tags/crypto/</guid>
+      <guid>http://localhost:1313/tags/crypto/</guid>
       <description></description>
     </item>
     <item>
       <title>Rune</title>
-      <link>//localhost:1313/tags/rune/</link>
+      <link>http://localhost:1313/tags/rune/</link>
       <pubDate>Sun, 31 Dec 2023 19:18:59 -0500</pubDate>
-      <guid>//localhost:1313/tags/rune/</guid>
+      <guid>http://localhost:1313/tags/rune/</guid>
       <description></description>
     </item>
     <item>
       <title>Channels</title>
-      <link>//localhost:1313/tags/channels/</link>
+      <link>http://localhost:1313/tags/channels/</link>
       <pubDate>Tue, 26 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/channels/</guid>
+      <guid>http://localhost:1313/tags/channels/</guid>
       <description></description>
     </item>
     <item>
       <title>Concurrency</title>
-      <link>//localhost:1313/tags/concurrency/</link>
+      <link>http://localhost:1313/tags/concurrency/</link>
       <pubDate>Tue, 26 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/concurrency/</guid>
+      <guid>http://localhost:1313/tags/concurrency/</guid>
       <description></description>
     </item>
     <item>
       <title>Apply</title>
-      <link>//localhost:1313/tags/apply/</link>
+      <link>http://localhost:1313/tags/apply/</link>
       <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/apply/</guid>
+      <guid>http://localhost:1313/tags/apply/</guid>
       <description></description>
     </item>
     <item>
       <title>Bind</title>
-      <link>//localhost:1313/tags/bind/</link>
+      <link>http://localhost:1313/tags/bind/</link>
       <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/bind/</guid>
+      <guid>http://localhost:1313/tags/bind/</guid>
       <description></description>
     </item>
     <item>
       <title>Call</title>
-      <link>//localhost:1313/tags/call/</link>
+      <link>http://localhost:1313/tags/call/</link>
       <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/call/</guid>
+      <guid>http://localhost:1313/tags/call/</guid>
       <description></description>
     </item>
     <item>
       <title>Javascript</title>
-      <link>//localhost:1313/tags/javascript/</link>
+      <link>http://localhost:1313/tags/javascript/</link>
       <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/javascript/</guid>
+      <guid>http://localhost:1313/tags/javascript/</guid>
       <description></description>
     </item>
     <item>
       <title>Digital Marketing</title>
-      <link>//localhost:1313/tags/digital-marketing/</link>
+      <link>http://localhost:1313/tags/digital-marketing/</link>
       <pubDate>Thu, 09 Feb 2023 20:44:47 -0500</pubDate>
-      <guid>//localhost:1313/tags/digital-marketing/</guid>
+      <guid>http://localhost:1313/tags/digital-marketing/</guid>
       <description></description>
     </item>
     <item>
       <title>Google Analytics</title>
-      <link>//localhost:1313/tags/google-analytics/</link>
+      <link>http://localhost:1313/tags/google-analytics/</link>
       <pubDate>Thu, 09 Feb 2023 20:44:47 -0500</pubDate>
-      <guid>//localhost:1313/tags/google-analytics/</guid>
+      <guid>http://localhost:1313/tags/google-analytics/</guid>
       <description></description>
     </item>
     <item>
       <title>Google Analytics 4</title>
-      <link>//localhost:1313/tags/google-analytics-4/</link>
+      <link>http://localhost:1313/tags/google-analytics-4/</link>
       <pubDate>Thu, 09 Feb 2023 20:44:47 -0500</pubDate>
-      <guid>//localhost:1313/tags/google-analytics-4/</guid>
+      <guid>http://localhost:1313/tags/google-analytics-4/</guid>
       <description></description>
     </item>
     <item>
       <title>Universal Analytics</title>
-      <link>//localhost:1313/tags/universal-analytics/</link>
+      <link>http://localhost:1313/tags/universal-analytics/</link>
       <pubDate>Thu, 09 Feb 2023 20:44:47 -0500</pubDate>
-      <guid>//localhost:1313/tags/universal-analytics/</guid>
+      <guid>http://localhost:1313/tags/universal-analytics/</guid>
       <description></description>
     </item>
     <item>
       <title>Css</title>
-      <link>//localhost:1313/tags/css/</link>
+      <link>http://localhost:1313/tags/css/</link>
       <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/css/</guid>
+      <guid>http://localhost:1313/tags/css/</guid>
       <description></description>
     </item>
     <item>
       <title>Frontend Web Development</title>
-      <link>//localhost:1313/tags/frontend-web-development/</link>
+      <link>http://localhost:1313/tags/frontend-web-development/</link>
       <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/frontend-web-development/</guid>
+      <guid>http://localhost:1313/tags/frontend-web-development/</guid>
       <description></description>
     </item>
     <item>
       <title>Html</title>
-      <link>//localhost:1313/tags/html/</link>
+      <link>http://localhost:1313/tags/html/</link>
       <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/html/</guid>
+      <guid>http://localhost:1313/tags/html/</guid>
       <description></description>
     </item>
     <item>
       <title>Vanilla Javascript</title>
-      <link>//localhost:1313/tags/vanilla-javascript/</link>
+      <link>http://localhost:1313/tags/vanilla-javascript/</link>
       <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/vanilla-javascript/</guid>
+      <guid>http://localhost:1313/tags/vanilla-javascript/</guid>
       <description></description>
     </item>
     <item>
       <title>Image Processing</title>
-      <link>//localhost:1313/tags/image-processing/</link>
+      <link>http://localhost:1313/tags/image-processing/</link>
       <pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/image-processing/</guid>
+      <guid>http://localhost:1313/tags/image-processing/</guid>
       <description></description>
     </item>
     <item>
       <title>Mime-Type Detection</title>
-      <link>//localhost:1313/tags/mime-type-detection/</link>
+      <link>http://localhost:1313/tags/mime-type-detection/</link>
       <pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/mime-type-detection/</guid>
+      <guid>http://localhost:1313/tags/mime-type-detection/</guid>
       <description></description>
     </item>
     <item>
       <title>Server Programming</title>
-      <link>//localhost:1313/tags/server-programming/</link>
+      <link>http://localhost:1313/tags/server-programming/</link>
       <pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/server-programming/</guid>
+      <guid>http://localhost:1313/tags/server-programming/</guid>
       <description></description>
     </item>
     <item>
       <title>Web Development</title>
-      <link>//localhost:1313/tags/web-development/</link>
+      <link>http://localhost:1313/tags/web-development/</link>
       <pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/web-development/</guid>
+      <guid>http://localhost:1313/tags/web-development/</guid>
       <description></description>
     </item>
     <item>
       <title>Google Business Profile Optimization</title>
-      <link>//localhost:1313/tags/google-business-profile-optimization/</link>
+      <link>http://localhost:1313/tags/google-business-profile-optimization/</link>
       <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/google-business-profile-optimization/</guid>
+      <guid>http://localhost:1313/tags/google-business-profile-optimization/</guid>
       <description></description>
     </item>
     <item>
       <title>Local Citations</title>
-      <link>//localhost:1313/tags/local-citations/</link>
+      <link>http://localhost:1313/tags/local-citations/</link>
       <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/local-citations/</guid>
+      <guid>http://localhost:1313/tags/local-citations/</guid>
       <description></description>
     </item>
     <item>
       <title>Local SEO</title>
-      <link>//localhost:1313/tags/local-seo/</link>
+      <link>http://localhost:1313/tags/local-seo/</link>
       <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/local-seo/</guid>
+      <guid>http://localhost:1313/tags/local-seo/</guid>
       <description></description>
     </item>
     <item>
       <title>SEO</title>
-      <link>//localhost:1313/tags/seo/</link>
+      <link>http://localhost:1313/tags/seo/</link>
       <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/seo/</guid>
+      <guid>http://localhost:1313/tags/seo/</guid>
       <description></description>
     </item>
     <item>
       <title>SEO Traverse City</title>
-      <link>//localhost:1313/tags/seo-traverse-city/</link>
+      <link>http://localhost:1313/tags/seo-traverse-city/</link>
       <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/seo-traverse-city/</guid>
+      <guid>http://localhost:1313/tags/seo-traverse-city/</guid>
       <description></description>
     </item>
     <item>
       <title>Small Business SEO</title>
-      <link>//localhost:1313/tags/small-business-seo/</link>
+      <link>http://localhost:1313/tags/small-business-seo/</link>
       <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/small-business-seo/</guid>
+      <guid>http://localhost:1313/tags/small-business-seo/</guid>
       <description></description>
     </item>
     <item>
       <title>Content Marketing</title>
-      <link>//localhost:1313/tags/content-marketing/</link>
+      <link>http://localhost:1313/tags/content-marketing/</link>
       <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/content-marketing/</guid>
+      <guid>http://localhost:1313/tags/content-marketing/</guid>
       <description></description>
     </item>
     <item>
       <title>Planning</title>
-      <link>//localhost:1313/tags/planning/</link>
+      <link>http://localhost:1313/tags/planning/</link>
       <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/planning/</guid>
+      <guid>http://localhost:1313/tags/planning/</guid>
       <description></description>
     </item>
     <item>
       <title>Search Engine Optimization</title>
-      <link>//localhost:1313/tags/search-engine-optimization/</link>
+      <link>http://localhost:1313/tags/search-engine-optimization/</link>
       <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/search-engine-optimization/</guid>
+      <guid>http://localhost:1313/tags/search-engine-optimization/</guid>
       <description></description>
     </item>
     <item>
       <title>Social Media Marketing</title>
-      <link>//localhost:1313/tags/social-media-marketing/</link>
+      <link>http://localhost:1313/tags/social-media-marketing/</link>
       <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/social-media-marketing/</guid>
+      <guid>http://localhost:1313/tags/social-media-marketing/</guid>
       <description></description>
     </item>
     <item>
       <title>Traverse City Business</title>
-      <link>//localhost:1313/tags/traverse-city-business/</link>
+      <link>http://localhost:1313/tags/traverse-city-business/</link>
       <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/traverse-city-business/</guid>
+      <guid>http://localhost:1313/tags/traverse-city-business/</guid>
       <description></description>
     </item>
     <item>
       <title>Web Design Traverse City</title>
-      <link>//localhost:1313/tags/web-design-traverse-city/</link>
+      <link>http://localhost:1313/tags/web-design-traverse-city/</link>
       <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/web-design-traverse-city/</guid>
+      <guid>http://localhost:1313/tags/web-design-traverse-city/</guid>
       <description></description>
     </item>
     <item>
       <title>Website Builder</title>
-      <link>//localhost:1313/tags/website-builder/</link>
+      <link>http://localhost:1313/tags/website-builder/</link>
       <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/website-builder/</guid>
+      <guid>http://localhost:1313/tags/website-builder/</guid>
       <description></description>
     </item>
     <item>
       <title>Website Design</title>
-      <link>//localhost:1313/tags/website-design/</link>
+      <link>http://localhost:1313/tags/website-design/</link>
       <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/website-design/</guid>
+      <guid>http://localhost:1313/tags/website-design/</guid>
       <description></description>
     </item>
     <item>
       <title>Data</title>
-      <link>//localhost:1313/tags/data/</link>
+      <link>http://localhost:1313/tags/data/</link>
       <pubDate>Wed, 21 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/data/</guid>
+      <guid>http://localhost:1313/tags/data/</guid>
       <description></description>
     </item>
     <item>
       <title>Frontmatter</title>
-      <link>//localhost:1313/tags/frontmatter/</link>
+      <link>http://localhost:1313/tags/frontmatter/</link>
       <pubDate>Wed, 21 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/frontmatter/</guid>
+      <guid>http://localhost:1313/tags/frontmatter/</guid>
       <description></description>
     </item>
     <item>
       <title>Hugo</title>
-      <link>//localhost:1313/tags/hugo/</link>
+      <link>http://localhost:1313/tags/hugo/</link>
       <pubDate>Wed, 21 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/hugo/</guid>
+      <guid>http://localhost:1313/tags/hugo/</guid>
       <description></description>
     </item>
     <item>
       <title>Static Site Generator</title>
-      <link>//localhost:1313/tags/static-site-generator/</link>
+      <link>http://localhost:1313/tags/static-site-generator/</link>
       <pubDate>Wed, 21 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/static-site-generator/</guid>
+      <guid>http://localhost:1313/tags/static-site-generator/</guid>
       <description></description>
     </item>
     <item>
       <title>Tools</title>
-      <link>//localhost:1313/tags/tools/</link>
+      <link>http://localhost:1313/tags/tools/</link>
       <pubDate>Wed, 21 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/tools/</guid>
+      <guid>http://localhost:1313/tags/tools/</guid>
       <description></description>
     </item>
     <item>
       <title>.Env</title>
-      <link>//localhost:1313/tags/.env/</link>
+      <link>http://localhost:1313/tags/.env/</link>
       <pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/.env/</guid>
+      <guid>http://localhost:1313/tags/.env/</guid>
       <description></description>
     </item>
     <item>
       <title>Dotenv</title>
-      <link>//localhost:1313/tags/dotenv/</link>
+      <link>http://localhost:1313/tags/dotenv/</link>
       <pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/dotenv/</guid>
+      <guid>http://localhost:1313/tags/dotenv/</guid>
       <description></description>
     </item>
     <item>
       <title>Go Application Configuration</title>
-      <link>//localhost:1313/tags/go-application-configuration/</link>
+      <link>http://localhost:1313/tags/go-application-configuration/</link>
       <pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/go-application-configuration/</guid>
+      <guid>http://localhost:1313/tags/go-application-configuration/</guid>
       <description></description>
     </item>
     <item>
       <title>Call to Actions</title>
-      <link>//localhost:1313/tags/call-to-actions/</link>
+      <link>http://localhost:1313/tags/call-to-actions/</link>
       <pubDate>Sat, 23 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/call-to-actions/</guid>
+      <guid>http://localhost:1313/tags/call-to-actions/</guid>
       <description></description>
     </item>
     <item>
       <title>Web Design</title>
-      <link>//localhost:1313/tags/web-design/</link>
+      <link>http://localhost:1313/tags/web-design/</link>
       <pubDate>Sat, 23 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/web-design/</guid>
+      <guid>http://localhost:1313/tags/web-design/</guid>
       <description></description>
     </item>
     <item>
       <title>Website Conversion</title>
-      <link>//localhost:1313/tags/website-conversion/</link>
+      <link>http://localhost:1313/tags/website-conversion/</link>
       <pubDate>Sat, 23 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/website-conversion/</guid>
+      <guid>http://localhost:1313/tags/website-conversion/</guid>
       <description></description>
     </item>
     <item>
       <title>Cookieless Analytics</title>
-      <link>//localhost:1313/tags/cookieless-analytics/</link>
+      <link>http://localhost:1313/tags/cookieless-analytics/</link>
       <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/cookieless-analytics/</guid>
+      <guid>http://localhost:1313/tags/cookieless-analytics/</guid>
       <description></description>
     </item>
     <item>
       <title>Google Analytics Alterantives</title>
-      <link>//localhost:1313/tags/google-analytics-alterantives/</link>
+      <link>http://localhost:1313/tags/google-analytics-alterantives/</link>
       <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/google-analytics-alterantives/</guid>
+      <guid>http://localhost:1313/tags/google-analytics-alterantives/</guid>
       <description></description>
     </item>
     <item>
       <title>Privacy First Analytics</title>
-      <link>//localhost:1313/tags/privacy-first-analytics/</link>
+      <link>http://localhost:1313/tags/privacy-first-analytics/</link>
       <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/privacy-first-analytics/</guid>
+      <guid>http://localhost:1313/tags/privacy-first-analytics/</guid>
       <description></description>
     </item>
     <item>
       <title>Traverse City Web Design</title>
-      <link>//localhost:1313/tags/traverse-city-web-design/</link>
+      <link>http://localhost:1313/tags/traverse-city-web-design/</link>
       <pubDate>Mon, 11 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/traverse-city-web-design/</guid>
+      <guid>http://localhost:1313/tags/traverse-city-web-design/</guid>
       <description></description>
     </item>
     <item>
       <title>Server Side Go</title>
-      <link>//localhost:1313/tags/server-side-go/</link>
+      <link>http://localhost:1313/tags/server-side-go/</link>
       <pubDate>Sun, 26 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/server-side-go/</guid>
+      <guid>http://localhost:1313/tags/server-side-go/</guid>
       <description></description>
     </item>
     <item>
       <title>Static Website Generators</title>
-      <link>//localhost:1313/tags/static-website-generators/</link>
+      <link>http://localhost:1313/tags/static-website-generators/</link>
       <pubDate>Tue, 21 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/static-website-generators/</guid>
+      <guid>http://localhost:1313/tags/static-website-generators/</guid>
       <description></description>
     </item>
     <item>
       <title>Frontend</title>
-      <link>//localhost:1313/tags/frontend/</link>
+      <link>http://localhost:1313/tags/frontend/</link>
       <pubDate>Tue, 07 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/frontend/</guid>
+      <guid>http://localhost:1313/tags/frontend/</guid>
       <description></description>
     </item>
     <item>
       <title>SCSS</title>
-      <link>//localhost:1313/tags/scss/</link>
+      <link>http://localhost:1313/tags/scss/</link>
       <pubDate>Tue, 07 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/scss/</guid>
+      <guid>http://localhost:1313/tags/scss/</guid>
       <description></description>
     </item>
     <item>
       <title>Scss Cheatsheet</title>
-      <link>//localhost:1313/tags/scss-cheatsheet/</link>
+      <link>http://localhost:1313/tags/scss-cheatsheet/</link>
       <pubDate>Tue, 07 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/scss-cheatsheet/</guid>
+      <guid>http://localhost:1313/tags/scss-cheatsheet/</guid>
       <description></description>
     </item>
     <item>
       <title>Web Development Tips</title>
-      <link>//localhost:1313/tags/web-development-tips/</link>
+      <link>http://localhost:1313/tags/web-development-tips/</link>
       <pubDate>Tue, 07 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/web-development-tips/</guid>
+      <guid>http://localhost:1313/tags/web-development-tips/</guid>
       <description></description>
     </item>
     <item>
       <title>Hosting</title>
-      <link>//localhost:1313/tags/hosting/</link>
+      <link>http://localhost:1313/tags/hosting/</link>
       <pubDate>Sat, 14 May 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/hosting/</guid>
+      <guid>http://localhost:1313/tags/hosting/</guid>
       <description></description>
     </item>
     <item>
       <title>Security</title>
-      <link>//localhost:1313/tags/security/</link>
+      <link>http://localhost:1313/tags/security/</link>
       <pubDate>Sat, 14 May 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/security/</guid>
+      <guid>http://localhost:1313/tags/security/</guid>
       <description></description>
     </item>
     <item>
       <title>Server</title>
-      <link>//localhost:1313/tags/server/</link>
+      <link>http://localhost:1313/tags/server/</link>
       <pubDate>Sat, 14 May 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/server/</guid>
+      <guid>http://localhost:1313/tags/server/</guid>
       <description></description>
     </item>
     <item>
       <title>Blockchain</title>
-      <link>//localhost:1313/tags/blockchain/</link>
+      <link>http://localhost:1313/tags/blockchain/</link>
       <pubDate>Wed, 16 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/blockchain/</guid>
+      <guid>http://localhost:1313/tags/blockchain/</guid>
       <description></description>
     </item>
     <item>
       <title>Ethereum</title>
-      <link>//localhost:1313/tags/ethereum/</link>
+      <link>http://localhost:1313/tags/ethereum/</link>
       <pubDate>Wed, 16 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/ethereum/</guid>
+      <guid>http://localhost:1313/tags/ethereum/</guid>
       <description></description>
     </item>
     <item>
       <title>Smart Contracts</title>
-      <link>//localhost:1313/tags/smart-contracts/</link>
+      <link>http://localhost:1313/tags/smart-contracts/</link>
       <pubDate>Wed, 16 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/smart-contracts/</guid>
+      <guid>http://localhost:1313/tags/smart-contracts/</guid>
       <description></description>
     </item>
     <item>
       <title>Solidity</title>
-      <link>//localhost:1313/tags/solidity/</link>
+      <link>http://localhost:1313/tags/solidity/</link>
       <pubDate>Wed, 16 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/solidity/</guid>
+      <guid>http://localhost:1313/tags/solidity/</guid>
       <description></description>
     </item>
     <item>
       <title>Web 3.0</title>
-      <link>//localhost:1313/tags/web-3.0/</link>
+      <link>http://localhost:1313/tags/web-3.0/</link>
       <pubDate>Wed, 16 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/web-3.0/</guid>
+      <guid>http://localhost:1313/tags/web-3.0/</guid>
       <description></description>
     </item>
     <item>
       <title>Open Source</title>
-      <link>//localhost:1313/tags/open-source/</link>
+      <link>http://localhost:1313/tags/open-source/</link>
       <pubDate>Sun, 23 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/open-source/</guid>
+      <guid>http://localhost:1313/tags/open-source/</guid>
       <description></description>
     </item>
     <item>
       <title>Privacy Oriented</title>
-      <link>//localhost:1313/tags/privacy-oriented/</link>
+      <link>http://localhost:1313/tags/privacy-oriented/</link>
       <pubDate>Sun, 23 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/privacy-oriented/</guid>
+      <guid>http://localhost:1313/tags/privacy-oriented/</guid>
       <description></description>
     </item>
     <item>
       <title>Web Analytics</title>
-      <link>//localhost:1313/tags/web-analytics/</link>
+      <link>http://localhost:1313/tags/web-analytics/</link>
       <pubDate>Sun, 23 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/web-analytics/</guid>
+      <guid>http://localhost:1313/tags/web-analytics/</guid>
       <description></description>
     </item>
     <item>
       <title>DevOps</title>
-      <link>//localhost:1313/tags/devops/</link>
+      <link>http://localhost:1313/tags/devops/</link>
       <pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/devops/</guid>
+      <guid>http://localhost:1313/tags/devops/</guid>
       <description></description>
     </item>
     <item>
       <title>Web Hosting</title>
-      <link>//localhost:1313/tags/web-hosting/</link>
+      <link>http://localhost:1313/tags/web-hosting/</link>
       <pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/web-hosting/</guid>
+      <guid>http://localhost:1313/tags/web-hosting/</guid>
       <description></description>
     </item>
     <item>
       <title>CMS</title>
-      <link>//localhost:1313/tags/cms/</link>
+      <link>http://localhost:1313/tags/cms/</link>
       <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/cms/</guid>
+      <guid>http://localhost:1313/tags/cms/</guid>
       <description></description>
     </item>
     <item>
       <title>JAMStack</title>
-      <link>//localhost:1313/tags/jamstack/</link>
+      <link>http://localhost:1313/tags/jamstack/</link>
       <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/jamstack/</guid>
+      <guid>http://localhost:1313/tags/jamstack/</guid>
       <description></description>
     </item>
     <item>
       <title>React</title>
-      <link>//localhost:1313/tags/react/</link>
+      <link>http://localhost:1313/tags/react/</link>
       <pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/react/</guid>
+      <guid>http://localhost:1313/tags/react/</guid>
       <description></description>
     </item>
     <item>
       <title>Growth Tips</title>
-      <link>//localhost:1313/tags/growth-tips/</link>
+      <link>http://localhost:1313/tags/growth-tips/</link>
       <pubDate>Sun, 03 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/growth-tips/</guid>
+      <guid>http://localhost:1313/tags/growth-tips/</guid>
       <description></description>
     </item>
     <item>
       <title>Traverse City</title>
-      <link>//localhost:1313/tags/traverse-city/</link>
+      <link>http://localhost:1313/tags/traverse-city/</link>
       <pubDate>Wed, 15 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/traverse-city/</guid>
+      <guid>http://localhost:1313/tags/traverse-city/</guid>
       <description></description>
     </item>
     <item>
       <title>Trends</title>
-      <link>//localhost:1313/tags/trends/</link>
+      <link>http://localhost:1313/tags/trends/</link>
       <pubDate>Wed, 15 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/trends/</guid>
+      <guid>http://localhost:1313/tags/trends/</guid>
       <description></description>
     </item>
     <item>
       <title>Business</title>
-      <link>//localhost:1313/tags/business/</link>
+      <link>http://localhost:1313/tags/business/</link>
       <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/business/</guid>
+      <guid>http://localhost:1313/tags/business/</guid>
       <description></description>
     </item>
     <item>
       <title>Static Websites</title>
-      <link>//localhost:1313/tags/static-websites/</link>
+      <link>http://localhost:1313/tags/static-websites/</link>
       <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/static-websites/</guid>
+      <guid>http://localhost:1313/tags/static-websites/</guid>
       <description></description>
     </item>
   </channel>

@@ -1,0 +1,74 @@
+ul li ul li {
+    margin-inline-start: var(--spacing-4);
+}
+
+ul[data-taxonomy="tags"] {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--spacing-1);
+    font-size: var(--font-size-md);
+    letter-spacing: var(--letter-spacing-2);
+    text-transform: uppercase;
+}
+
+ul[data-taxonomy="tags"] li {
+    border: var(--border-default);
+    border-color: var(--off-white);
+    flex: 0 0 auto;
+    padding: var(--spacing-1);
+}
+
+body[data-theme="light"] ul[data-taxonomy="tags"] li {
+    border-color: var(--dark-black);
+}
+
+main ul,
+main ol,
+main dl {
+    list-style: initial;
+}
+
+main ul li,
+main ol li,
+main dl li {
+    margin: 0 var(--spacing-auto) var(--spacing-1);
+    padding: var(--spacing-1) 0;
+}
+
+
+
+
+/*
+*   dark theme tag links
+*/
+
+body[data-theme="dark"] ul[data-taxonomy="tags"] li a {
+    color: var(--off-white);
+}
+
+body[data-theme="dark"] ul[data-taxonomy="tags"] li a:hover,
+body[data-theme="dark"] ul[data-taxonomy="tags"] li a:active,
+body[data-theme="dark"] ul[data-taxonomy="tags"] li a:focus {
+    color: var(--aqua-green);
+}
+
+
+
+/*
+ * pagination
+ */
+
+ section[data-section="pagination"] {
+    width: var(--width-100);
+    max-width: var(--width-100);
+    text-align: center;
+ }
+
+section[data-section="pagination"] ul.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    list-style: none;
+    margin: 0 var(--spacing-auto);
+}

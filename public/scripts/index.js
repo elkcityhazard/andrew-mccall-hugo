@@ -391,6 +391,23 @@
     }
   };
 
+  // ns-hugo:/home/andrew/Documents/hugo-projects/andrew-mccall-hugo/assets/scripts/readTimeEl.js
+  var ReadTimeInfo = class extends HTMLElement {
+    constructor() {
+      super();
+      const shadow = this.attachShadow({ mode: "open" });
+    }
+    connectedCallback() {
+      console.log("hello");
+    }
+    createMsg() {
+      const span = document.createElement("span");
+      span.textContent = "Shadow DOM";
+      this.appendChild(span);
+    }
+  };
+  customElements.define("read-time-info", ReadTimeInfo);
+
   // <stdin>
   var mainContent = document.getElementById("mainContent") || null;
   if (mainContent) {
@@ -402,6 +419,8 @@
   new lazyLoad_default(document.querySelectorAll(".logo"));
   new lazyLoad_default(document.querySelectorAll(".lazy"));
   new copyCode("pre");
+  var readTimeInfo = new ReadTimeInfo();
+  readTimeInfo.createMsg();
   document.getElementById("currentYear").textContent = new Date(Date.now()).getFullYear();
   window.addEventListener("load", function() {
     switch (location.pathname) {

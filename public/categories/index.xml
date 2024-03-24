@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
-    <link>//localhost:1313/categories/</link>
-    <description>Recent content in Categories on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
+    <title>Categories on Andrew M McCall</title>
+    <link>http://localhost:1313/categories/</link>
+    <description>Recent content in Categories on Andrew M McCall</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 13 Mar 2024 20:22:02 -0400</lastBuildDate>
-    <atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go</title>
-      <link>//localhost:1313/categories/go/</link>
+      <link>http://localhost:1313/categories/go/</link>
       <pubDate>Wed, 13 Mar 2024 20:22:02 -0400</pubDate>
-      <guid>//localhost:1313/categories/go/</guid>
+      <guid>http://localhost:1313/categories/go/</guid>
       <description></description>
     </item>
     <item>
       <title>Web Development</title>
-      <link>//localhost:1313/categories/web-development/</link>
+      <link>http://localhost:1313/categories/web-development/</link>
       <pubDate>Sun, 31 Dec 2023 19:18:59 -0500</pubDate>
-      <guid>//localhost:1313/categories/web-development/</guid>
+      <guid>http://localhost:1313/categories/web-development/</guid>
       <description></description>
     </item>
     <item>
       <title>SEO</title>
-      <link>//localhost:1313/categories/seo/</link>
+      <link>http://localhost:1313/categories/seo/</link>
       <pubDate>Thu, 09 Feb 2023 20:44:47 -0500</pubDate>
-      <guid>//localhost:1313/categories/seo/</guid>
+      <guid>http://localhost:1313/categories/seo/</guid>
       <description></description>
     </item>
     <item>
       <title>Search Engine Optimization</title>
-      <link>//localhost:1313/categories/search-engine-optimization/</link>
+      <link>http://localhost:1313/categories/search-engine-optimization/</link>
       <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/categories/search-engine-optimization/</guid>
+      <guid>http://localhost:1313/categories/search-engine-optimization/</guid>
       <description></description>
     </item>
     <item>
       <title>Personal Coaching Tips</title>
-      <link>//localhost:1313/categories/personal-coaching-tips/</link>
+      <link>http://localhost:1313/categories/personal-coaching-tips/</link>
       <pubDate>Sat, 23 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/categories/personal-coaching-tips/</guid>
+      <guid>http://localhost:1313/categories/personal-coaching-tips/</guid>
       <description></description>
     </item>
     <item>
       <title>Analytics</title>
-      <link>//localhost:1313/categories/analytics/</link>
+      <link>http://localhost:1313/categories/analytics/</link>
       <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/categories/analytics/</guid>
+      <guid>http://localhost:1313/categories/analytics/</guid>
       <description></description>
     </item>
     <item>
       <title>Web Devsign</title>
-      <link>//localhost:1313/categories/web-devsign/</link>
+      <link>http://localhost:1313/categories/web-devsign/</link>
       <pubDate>Mon, 11 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/categories/web-devsign/</guid>
+      <guid>http://localhost:1313/categories/web-devsign/</guid>
       <description></description>
     </item>
     <item>
       <title>Web Design</title>
-      <link>//localhost:1313/categories/web-design/</link>
+      <link>http://localhost:1313/categories/web-design/</link>
       <pubDate>Sun, 03 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/categories/web-design/</guid>
+      <guid>http://localhost:1313/categories/web-design/</guid>
       <description></description>
     </item>
   </channel>

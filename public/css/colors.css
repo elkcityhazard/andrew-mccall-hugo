@@ -1,0 +1,80 @@
+:root {
+    --dark-black: hsla(210, 13%, 15%, 1);
+    --dark-black-9: hsla(210, 13%, 15%, 0.9);
+    --dark-black-8: hsla(210, 13%, 15%, 0.8);
+    --dark-black-7: hsla(210, 13%, 15%, 0.7);
+    --dark-black-6: hsla(210, 13%, 15%, 0.6);
+    --dark-black-5: hsla(210, 13%, 15%, 0.5);
+    --dark-black-4: hsla(210, 13%, 15%, 0.4);
+    --dark-black-3: hsla(210, 13%, 15%, 0.3);
+    --dark-black-2: hsla(210, 13%, 15%, 0.2);
+    --dark-black-1: hsla(210, 13%, 15%, 0.1);
+
+    --light-black: hsla(210, 13%, 20%, 1);
+    --light-black-9: hsla(210, 13%, 20%, 0.9);
+    --light-black-8: hsla(210, 13%, 20%, 0.8);
+    --light-black-7: hsla(210, 13%, 20%, 0.7);
+    --light-black-6: hsla(210, 13%, 20%, 0.6);
+    --light-black-5: hsla(210, 13%, 20%, 0.5);
+    --light-black-4: hsla(210, 13%, 20%, 0.4);
+    --light-black-3: hsla(210, 13%, 20%, 0.3);
+    --light-black-2: hsla(210, 13%, 20%, 0.2);
+    --light-black-1: hsla(210, 13%, 20%, 0.1);
+
+    --aqua-green: hsla(195, 25%, 45%, 1);
+    --aqua-green-9: hsla(195, 25%, 45%, 0.9);
+    --aqua-green-8: hsla(195, 25%, 45%, 0.8);
+    --aqua-green-7: hsla(195, 25%, 45%, 0.7);
+    --aqua-green-6: hsla(195, 25%, 45%, 0.6);
+    --aqua-green-5: hsla(195, 25%, 45%, 0.5);
+    --aqua-green-4: hsla(195, 25%, 45%, 0.4);
+    --aqua-green-3: hsla(195, 25%, 45%, 0.3);
+    --aqua-green-2: hsla(195, 25%, 45%, 0.2);
+    --aqua-green-1: hsla(195, 25%, 45%, 0.1);
+
+    --off-white: hsla(0, 0%, 93%, 1);
+    --off-white-9: hsla(0, 0%, 93%, 0.9);
+    --off-white-8: hsla(0, 0%, 93%, 0.8);
+    --off-white-7: hsla(0, 0%, 93%, 0.7);
+    --off-white-6: hsla(0, 0%, 93%, 0.6);
+    --off-white-5: hsla(0, 0%, 93%, 0.5);
+    --off-white-4: hsla(0, 0%, 93%, 0.4);
+    --off-white-3: hsla(0, 0%, 93%, 0.3);
+    --off-white-2: hsla(0, 0%, 93%, 0.2);
+    --off-white-1: hsla(0, 0%, 93%, 0.1);
+
+    --white: hsla(0, 0%, 100%, 1.0);
+    --black:  hsla(0, 0%, 0%, 1.0);
+
+}
+
+body {
+    background: var(--light-black);
+    color: var(--off-white);
+}
+
+
+/*
+*   Light Theme
+*
+*/
+
+body[data-theme="light"] {
+    background: var(--offset-white);
+    color: var(--dark-black);
+}
+
+body[data-theme="light"] a:hover,
+body[data-theme="light"] a:active,
+body[data-theme="light"] a:focus {
+    color: var(--dark-black);
+}
+
+/*
+*   Dark Theme
+*/
+
+body[data-theme="dark"] {
+    background: var(--dark-black);
+    color: var(--off-white);
+}

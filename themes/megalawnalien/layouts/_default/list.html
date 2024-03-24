@@ -1,0 +1,54 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  {{ $paginator := .Paginate (where .Data.Pages "Type" "blog") }}
+  {{ range $paginator.Pages }}
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <p>{{ .Summary }}</p> 
+
+  {{ end }}
+
+<section data-section="pagination">
+  {{ template "_internal/pagination.html" . }}
+</section>
+
+{{ if or ( and (eq .Type "tags") (site.Taxonomies.tags)) (and (eq .Type "categories" site.Taxonomies.categories)  )  }}
+{{ with .Site.Taxonomies.tags }}
+
+<ul>
+
+  {{ range $taxonomy, $terms := site.Taxonomies }}
+    <li>
+      {{ with site.GetPage $taxonomy }}
+
+
+        <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+      {{ end }}
+      <ul>
+        {{ range $term, $weightedPages := $terms }}
+          <li>
+            <h3 data-term><a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a></h3>
+            <ul>
+              {{ range $weightedPages }}
+                <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+              {{ end }}
+            </ul>
+          </li>
+        {{ end }}
+      </ul>
+    </li>
+  {{ end }}
+</ul>
+
+
+
+
+
+{{ end }}
+{{ end }}
+ 
+{{ end }}
+
+
+
+

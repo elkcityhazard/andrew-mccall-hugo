@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Universal Analytics on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
-    <link>//localhost:1313/tags/universal-analytics/</link>
-    <description>Recent content in Universal Analytics on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
+    <title>Universal Analytics on Andrew M McCall</title>
+    <link>http://localhost:1313/tags/universal-analytics/</link>
+    <description>Recent content in Universal Analytics on Andrew M McCall</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 09 Feb 2023 20:44:47 -0500</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/universal-analytics/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/universal-analytics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Google Analytics 4: Key Differences From Universal Analytics</title>
-      <link>//localhost:1313/blog/2023/02/google-analytics-4-key-differences/</link>
+      <link>http://localhost:1313/blog/2023/02/google-analytics-4-key-differences/</link>
       <pubDate>Thu, 09 Feb 2023 20:44:47 -0500</pubDate>
-      <guid>//localhost:1313/blog/2023/02/google-analytics-4-key-differences/</guid>
+      <guid>http://localhost:1313/blog/2023/02/google-analytics-4-key-differences/</guid>
       <description>My Notes From Google Skillshop Course on Google Analytics 4 On The Differences Between GA4 and Universal Analytics</description>
     </item>
   </channel>

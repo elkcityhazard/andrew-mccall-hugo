@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Go on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
-    <link>//localhost:1313/categories/go/</link>
-    <description>Recent content in Go on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
+    <title>Go on Andrew M McCall</title>
+    <link>http://localhost:1313/categories/go/</link>
+    <description>Recent content in Go on Andrew M McCall</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 13 Mar 2024 20:22:02 -0400</lastBuildDate>
-    <atom:link href="//localhost:1313/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/go/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unit Testing Json Encode</title>
-      <link>//localhost:1313/blog/2024/03/unit-testing-json-encode/</link>
+      <link>http://localhost:1313/blog/2024/03/unit-testing-json-encode/</link>
       <pubDate>Wed, 13 Mar 2024 20:22:02 -0400</pubDate>
-      <guid>//localhost:1313/blog/2024/03/unit-testing-json-encode/</guid>
+      <guid>http://localhost:1313/blog/2024/03/unit-testing-json-encode/</guid>
       <description>Here are my notes on testing a JSON writer for Golang that lets you wrap the response in an envelope</description>
     </item>
   </channel>

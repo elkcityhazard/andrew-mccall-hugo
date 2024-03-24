@@ -1,0 +1,21 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Andrew M McCall'
+
+theme = "megalawnalien"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+paginate = 10
+
+[params]
+ description = "Andrew M McCall is a fullstack web developer in Traverse City, Michigan who loves Go, Lua, PHP, Javascript, Vanilla CSS, SQL, Postgresql, Semantic HTML, and Accessibility."
+ social = [
+    { name = "mastodon", url = "https://indieweb.social/@elkcityhazard" },
+    { name = "github", url = "https://github.com/elkcityhazard" },
+    { name = "gitlab", url = "https://gitlab.com/elkcityhazard" },
+    { name = "linkedIn", url = "https://www.linkedin.com/in/andrew-mccall-8a09582b3/" }
+ ]
+
+

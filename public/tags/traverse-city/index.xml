@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Traverse City on Andrew M McCall - Golang, Javascript, PHP, Wordpress</title>
-    <link>//localhost:1313/tags/traverse-city/</link>
-    <description>Recent content in Traverse City on Andrew M McCall - Golang, Javascript, PHP, Wordpress</description>
+    <title>Traverse City on Andrew M McCall</title>
+    <link>http://localhost:1313/tags/traverse-city/</link>
+    <description>Recent content in Traverse City on Andrew M McCall</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 15 Sep 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/traverse-city/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/traverse-city/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>5 Trends For Traverse City Web Development In 2022</title>
-      <link>//localhost:1313/blog/5-trends-for-traverse-city-web-development-in-2022/</link>
+      <link>http://localhost:1313/blog/5-trends-for-traverse-city-web-development-in-2022/</link>
       <pubDate>Wed, 15 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/blog/5-trends-for-traverse-city-web-development-in-2022/</guid>
+      <guid>http://localhost:1313/blog/5-trends-for-traverse-city-web-development-in-2022/</guid>
       <description>When it comes to trends in web development, there is no telling what will happen with the release of new technologies and tools. It is difficult to predict what will happen in 2022, but one thing is for sure, website trends will be different with the release of new versions of Angular, React, and other technologies. The focus on user experience will start to replace search engine optimization as the most important factor in the success of a website.</description>
     </item>
     <item>
       <title>Top 10 Reasons To Start A Business In Traverse City</title>
-      <link>//localhost:1313/blog/10-reasons-to-start-a-business-in-traverse-city-michigan/</link>
+      <link>http://localhost:1313/blog/10-reasons-to-start-a-business-in-traverse-city-michigan/</link>
       <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/blog/10-reasons-to-start-a-business-in-traverse-city-michigan/</guid>
+      <guid>http://localhost:1313/blog/10-reasons-to-start-a-business-in-traverse-city-michigan/</guid>
       <description>We are a website development company in Traverse City, Michigan. We make websites that are perfectly suited for your business. See what we can do for your business today.&#xA;Traverse City, Michigan is a small town with the potential for growth. There are plenty of opportunities to make new connections, especially with the thriving business community. This blog will look at 10 reasons why you should start a business in Traverse City Michigan.</description>
     </item>
   </channel>

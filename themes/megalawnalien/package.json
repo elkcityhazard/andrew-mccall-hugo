@@ -1,0 +1,20 @@
+{
+  "name": "megalawnalien",
+  "version": "1.0.0",
+  "description": "## Features",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp concat-css && postcss static/css/index.css -o assets/css/index.min.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cssnano": "^6.1.1",
+    "gulp": "^4.0.2",
+    "gulp-concat-css": "^3.1.0",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0"
+  }
+}
