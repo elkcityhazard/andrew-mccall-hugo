@@ -71,6 +71,7 @@ section[data-section="pagination"] ul.pagination {
     align-items: center;
     justify-content: center;
     flex-flow: row wrap;
+    gap: var(--spacing-2);
     list-style: none;
     margin: 0 var(--spacing-auto);
 }
