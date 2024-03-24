@@ -1,10 +1,13 @@
-baseURL = 'https://example.org/'
+baseURL = '/'
 languageCode = 'en-us'
 title = 'Andrew M McCall'
 name = "megalawnalien"
 
 [markup.goldmark.renderer]
 unsafe = true
+
+[params]
+description = "Andrew M McCall is a fullstack web developer with 6 years of professional experience in Golang, Javascript, PHP, Lua, MongoDB, Mysql, Postgres, and NGINX, & Caddy"
 
 [[menus.main]]
 name = 'Home'

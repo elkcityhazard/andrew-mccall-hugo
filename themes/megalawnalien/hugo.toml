@@ -3,6 +3,9 @@ languageCode = 'en-us'
 title = 'Andrew M McCall'
 name = "megalawnalien"
 
+[params]
+description = "Andrew M McCall is a fullstack web developer with 6 years of professional experience in Golang, Javascript, PHP, Lua, MongoDB, Mysql, Postgres, and NGINX, & Caddy"
+
 [markup.goldmark.renderer]
 unsafe = true
 
