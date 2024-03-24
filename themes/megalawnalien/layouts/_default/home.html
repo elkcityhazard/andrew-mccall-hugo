@@ -1,4 +1,7 @@
+
+
 {{ define "main" }}
+<random-thing>Hello World</random-thing>
   {{ .Content }}
   {{ $paginator := .Paginate (where .Site.RegularPages "Section" "blog") }}
   {{ range first 3 $paginator.Pages }}
