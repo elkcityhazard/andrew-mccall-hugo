@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on Andrew M McCall</title>
+    <link>http://localhost:1313/tags/go/</link>
+    <description>Recent content in Go on Andrew M McCall</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 13 Mar 2024 20:22:02 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unit Testing Json Encode</title>
+      <link>http://localhost:1313/blog/2024/03/unit-testing-json-encode/</link>
+      <pubDate>Wed, 13 Mar 2024 20:22:02 -0400</pubDate>
+      <guid>http://localhost:1313/blog/2024/03/unit-testing-json-encode/</guid>
+      <description>Here are my notes on testing a JSON writer for Golang that lets you wrap the response in an envelope</description>
+    </item>
+    <item>
+      <title>Go Channels Tutorial - Understanding Goroutines and Channels</title>
+      <link>http://localhost:1313/blog/2023/12/go-channels-tutorial/</link>
+      <pubDate>Tue, 26 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2023/12/go-channels-tutorial/</guid>
+      <description>Go has powerful concurrency tools fully baked into the programming Language.  This post aims to explain go routines and channels so you can get started using them in your own projects.</description>
+    </item>
+    <item>
+      <title>Golang Image Resize and Golang Image Crop: Image Manipulation With Go Programming Language</title>
+      <link>http://localhost:1313/blog/2022/12/golang-image-resize-and-golang-image-crop/</link>
+      <pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2022/12/golang-image-resize-and-golang-image-crop/</guid>
+      <description>An introduction to some of the very basic features of iamge cropping with Go.</description>
+    </item>
+    <item>
+      <title>Golang Read Environment Variables From File: How To Do It [Code Snippets]</title>
+      <link>http://localhost:1313/blog/2022/09/golang-read-environment-variables-from-file/</link>
+      <pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2022/09/golang-read-environment-variables-from-file/</guid>
+      <description>What Are Environmental Variables In Go A Cautionary Tale: My AWS Account Was Hacked And I Have A $50,000 Bill&#xA;If you have ever used an API key or database connection string, you have most likely had a need to secure some sensitive data. Environment variables are a way to achieve this. We may need to do this because certain API&amp;rsquo;s can only be called so many times and the key is a way of authorizing our requests and keeping track of them.</description>
+    </item>
+  </channel>
+</rss>

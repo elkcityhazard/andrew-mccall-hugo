@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content=" This is meta Description. ">
+<title>How To Host A Static Website For Cheap On Bunny CDN | Andrew M McCall</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bundle.css">
+
+
+
+
+<script src="/js/main.js" defer type="module" type="text/javascript"></script>
+
+</head>
+<body data-theme="light">
+  <a 
+  href="#content"
+  aria-label="jump to main content"
+  >Jump to Content</a>
+  <header>
+    <div data-ui-toggle>
+    <svg aria-label="dark theme icon" role="presentation" data-icon="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+        <path d="M12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <svg aria-label="light theme icon" role="presentation" data-icon="light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+       </svg>
+          
+    <label 
+    for="themeToggle" 
+    aria-controls="themeToggle"
+    title="theme toggle"
+    >
+        <input 
+        type="checkbox" 
+        name="themeToggle" 
+        id="themeToggle" 
+        aria-checked="false"
+        aria-label="theme toggle"
+        role="switch"
+        >
+    </label>
+</div>
+
+   
+    <hgroup>
+    <h1>Andrew M McCall</h1>
+</hgroup>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/blog/">Blog</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    <li>
+      <a href="/resume/">Resume</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+
+  </header>
+  <main id="#content">
+    
+  <h1>How To Host A Static Website For Cheap On Bunny CDN</h1>
+  
+  
+  <time datetime="2020-10-28T00:00:00&#43;00:00">October 28, 2020</time>
+
+  <h2 id="how-to-host-a-website-on-bunnycdn">How To Host A Website On BunnyCDN</h2>
+<p>We all want our web hosting to be as cheap as possible, especially when we are starting out. Often, many aspiring developers turn to shared hosting solutions to program their first static sites. This is convenient because in the beginning most developers struggle with basic tasks like connecting through ftp and uploading their site. As we progress, however, we begin to realize the limitations of shared hosting such as resource sharing and slow responses during peak times. This is when we start exploring other options available to us.</p>
+<h2 id="bunnycdn-hosting">BunnyCDN Hosting</h2>
+<p>As the web has grown the limitations of the world wide web have becoming apparent. As more businesses began relying on the internet as a core part of their business there needed to be away to transcend the limitations of the internet.</p>
+<p>For example, let us assume that this fictional page is being stored somewhere on a server in Argentina. For those in Argentina the page will most likely load quite quickly because the data has very little distance to travel. Now, let us suppose someone in Russia is requesting this fictional page. The data is requested and then it travels the cable network until it reaches the destination which introduces latency along the way. Because of geographical distance the content is delivered at a much lower speed to the end user.</p>
+<h2 id="how-a-content-delivery-system-solves-the-geo-location-problem">How A Content Delivery System Solves The Geo Location Problem</h2>
+<p>Content Delivery Networks distribute content evenly throughout the world</p>
+<p>To solve the problem content delivery networks started popping up to distribute content evenly throughout the world. Essentially content is hosted on an origin server and then mirrored on several cdn nodes throughout the world to put the content closer to the end user. This can help solve a very important problem for website owners: making sure your website is fast! Of course, this is not the only optimization you need to make to have a fast website but that is for another time.</p>
+<h2 id="how-to-host-your-site-completely-on-a-cdn">How To Host Your Site Completely On A CDN</h2>
+<p>This example uses bunnyCDN but you can do this with other cdn’s as well.</p>
+<h3 id="set-up-storage-zone-and-pull-zone">Set Up Storage Zone and Pull Zone</h3>
+<p>In the main admin panel you need to first create a storage zone. You can name this whatever you want for example: my-new-domain. I do not include www or .com in this storage zone.</p>
+<p>Once the storage zone is created you need to link it to a pull zone. There will be a link after you create the storage zone that is labeled “Connect Pull Zone”.</p>
+<p>once you click on that link you will be brought to a page to set up the pull zone. fill out the default hostname with whatever name you like, for example: my-new-domain.b-cdn.net.</p>
+<p>Now you have a storage zone set up with a pull zone connected to it.</p>
+<h3 id="set-up-edge-rules-for-custom-domain-name">Set Up Edge Rules For Custom Domain Name</h3>
+<p>Go to your edge rules and click on add new edge rule.</p>
+<p>The action will be <strong>Set Request Header</strong></p>
+<p>The condition matching will be <strong>Match Any</strong></p>
+<p>The conditions will be **If Request URL Match Any ***</p>
+<p>click save edge rule.</p>
+<h3 id="add-the-custom-hostname">Add the Custom Hostname</h3>
+<p>Now go back to your pull zone and click on the pull zone you want to work with. Next, add a new hostname. This is the one that I make into the domain name I want to use: for example: my-new-domain.com</p>
+<p>Now you need to have access to your DNS records for your domain. You will go to the website where you registered your domain because you need to make a custom dns record.</p>
+<p>I will use a website like <a href="https://ip-lookup.net/">https://ip-lookup.net/</a> to find the public ip address of my cdn. For Example: <a href="https://my-new-domain.b-cdn.net">https://my-new-domain.b-cdn.net</a>. Once you get the IPv4 public address you need to go back to your dns provider and make a new dns record.</p>
+<p>Ideally you will have a dns provider that supports cname flattening. This will make it easier to get set up with your ssl cert in the end but I was able to get it working by making an a record to my cdn ip address.</p>
+<p>The next step is to activate your ssl and enforce it then purge your cache.</p>
+<h4 id="final-thoughts-on-bunnycdn-hosting">Final Thoughts On BunnyCDN Hosting</h4>
+<p>I was able to get this up and running with pointing an a record to the public ip address. It is my understanding that the ideal is to use a cname which only works at Top level domains with cname flattening. I’m not sure what is going to happen if I leave it like this but it is a consideration since it isn’t 100% correct.</p>
+
+  
+  <section data-taxonomy="tags">
+    <header><hgroup>Tags:</hgroup></header>
+    <ul data-taxonomy="tags">
+        <li><a href="/tags/web-hosting/">Web Hosting</a></li>
+    </ul>
+  </section>
+
+
+  </main>
+  <footer>
+    <section data-section="footer">
+    <ul>
+        
+       </ul>
+       <p>Copyright 2024. All rights reserved.</p>       
+</section>
+
+
+
+
+  </footer>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content=" If you find yourself rewriting the same logic over and over you may find it easier to create a custom react hook ">
+<title>Custom React Hook Function: Create Custom Reusable React Hooks | Andrew M McCall</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bundle.css">
+
+
+
+
+<script src="/js/main.js" defer type="module" type="text/javascript"></script>
+
+</head>
+<body data-theme="light">
+  <a 
+  href="#content"
+  aria-label="jump to main content"
+  >Jump to Content</a>
+  <header>
+    <div data-ui-toggle>
+    <svg aria-label="dark theme icon" role="presentation" data-icon="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+        <path d="M12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <svg aria-label="light theme icon" role="presentation" data-icon="light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+       </svg>
+          
+    <label 
+    for="themeToggle" 
+    aria-controls="themeToggle"
+    title="theme toggle"
+    >
+        <input 
+        type="checkbox" 
+        name="themeToggle" 
+        id="themeToggle" 
+        aria-checked="false"
+        aria-label="theme toggle"
+        role="switch"
+        >
+    </label>
+</div>
+
+   
+    <hgroup>
+    <h1>Andrew M McCall</h1>
+</hgroup>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/blog/">Blog</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    <li>
+      <a href="/resume/">Resume</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+
+  </header>
+  <main id="#content">
+    
+  <h1>Custom React Hook Function: Create Custom Reusable React Hooks</h1>
+  
+  
+  <time datetime="2021-11-21T00:00:00&#43;00:00">November 21, 2021</time>
+
+  <p>If you have found yourself re-writing the same boilerplate React code over and over, You may be able to refactor that into a reusable custom React hook function that will save you time and help clean up your code a bit.</p>
+<h2 id="what-is-a-react-hook">What Is A React Hook</h2>
+<p>React Hooks are a new feature in React 16.8, which allow us to use state and lifecycle hooks without constructor functions. They enable us to write less code, improve testability of components , and reduce potential side effects .
+A few weeks ago I was working on a project that had many nested components with lots of state . It became difficult to manage the state because every component depended on each other. The solution was to create higher-order components (HOC). But this caused the codebase to be bloated and become unmanagable quickly.</p>
+<h2 id="why-use-a-custom-react-hook-function">Why Use A Custom React Hook Function</h2>
+<p>The React Hooks API was introduced in React 16.8 with the goal of making components more reusable and composable. The resulting code is simpler, easier to read, and easier to write.</p>
+<h2 id="how-to-create-a-custom-react-hook">How To Create A Custom React Hook</h2>
+<p>In This example we are going to create a custom react hook for fetching data:</p>
+<p>In our react project we are going to need to create a new folder called, <em>hooks</em> inside of the src directory. In order for React to recognize our custom hook, we need to name our custom hook function starting with &lsquo;use&rsquo;. For example, useFetch.js</p>
+<p>All a react custom hook is is a function that we can export and use where ever we want. Inside of our simple useFetch function we can write:</p>
+<pre tabindex="0"><code>import { useState, useEffect } from &#34;react&#34;;
+
+export const useFetch = (url) =&gt; {
+  const [data, setData] = useState(null);
+
+  useEffect(() =&gt; {
+    const fetchData = async () =&gt; {
+      const response = await fetch(url);
+      const json = await response.json();
+      setData(json);
+    };
+    fetchData();
+  }, [url]);
+
+  return { data };
+};
+</code></pre><p>Custom React hooks can use any other React hook inside of them. In this example, I am pulling in useEffect and useState. I am than exporting a function named useFetch with a parameter being passed in called url. This is how we accept a url and make it so that this custom React hook function is reusable anywhere in our project.</p>
+<p>Then we pass useEffect so that we can call our function right away when the component loads and also wait for any applicable updates that would require the component to refire. Inside the fuse state we are creating a brand new function. We have to do this because we cannot use async await on the useEffect callback function expressly. Instead, we have to create the async/await function inside of the callback. This is to avoid state pollution by causing volatility in the useEffect callback.</p>
+<p>You technically <strong>can</strong> write the function outside of the useEffect callback but it would require you to wrap the function inside of the useCallback hook and also pass the function into the useState dependency array. Writing it inside of useEffect lets you eliminate that extra step which is a bit cleaner.</p>
+<p>The function I created inside of useEffect is just a standard fetch function written in async/await syntax. Since we did not write the function outside of the useEffect Hook, we need to call the function inside of useEffect so that it initializes. Finally, we are returned the data which in this custom React hook function I destructured to { data }.</p>
+<p>Now, to add our custom React hook function to our project we need to import it into the component we want to use it in.</p>
+<pre tabindex="0"><code>import { useState } from &#34;react&#34;;
+import { useFetch } from &#34;../hooks/useFetch&#34;;
+
+export default function GetData() {
+  const [url, setUrl] = useState(`http://localhost:5000/blog`);
+  const { data } = useFetch(url);
+
+  return (
+    &lt;div className=&#39;trip-list&#39;&gt;
+      &lt;h2&gt;Trip List&lt;/h2&gt;
+      &lt;ul&gt;
+        {data &amp;&amp;
+          data.map((post) =&gt; (
+            &lt;li key={post.id}&gt;
+              &lt;h3&gt;{post.title}&lt;/h3&gt;
+              &lt;p&gt;{post.summary}&lt;/p&gt;
+            &lt;/li&gt;
+          ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre><p>As you can see in this simple example we have url stored inside of some state. We have imported our custom React hook function and, since we have an initial url state, our custom React hook function fires and fetches the data from the URL.</p>
+<p>Using custom React hook functions is great for making more manageable and well maintained code. Whenever you find yourself re-writing boilerplate inside of your components, you may find it easier to just use a custom React hook to abstract away some of the boring boilerplate writing.</p>
+<p>Still having trouble? Reach out to me on twitter @elkcityhazard.</p>
+
+  
+  <section data-taxonomy="tags">
+    <header><hgroup>Tags:</hgroup></header>
+    <ul data-taxonomy="tags">
+        <li><a href="/tags/web-development/">Web Development</a></li>
+        <li><a href="/tags/javascript/">Javascript</a></li>
+        <li><a href="/tags/react/">React</a></li>
+    </ul>
+  </section>
+
+
+  </main>
+  <footer>
+    <section data-section="footer">
+    <ul>
+        
+       </ul>
+       <p>Copyright 2024. All rights reserved.</p>       
+</section>
+
+
+
+
+  </footer>
+</body>
+</html>

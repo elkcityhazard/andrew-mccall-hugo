@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content=" Making a responsive slider carousel with vanilla javascript is easy.  Follow My step by step guide to making a simple, responsive slider.   ">
+<title>Vanilla Javascript Carousel Slider: A Beginner&#39;s Tutorial | Andrew M McCall</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bundle.css">
+
+
+
+
+<script src="/js/main.js" defer type="module" type="text/javascript"></script>
+
+</head>
+<body data-theme="light">
+  <a 
+  href="#content"
+  aria-label="jump to main content"
+  >Jump to Content</a>
+  <header>
+    <div data-ui-toggle>
+    <svg aria-label="dark theme icon" role="presentation" data-icon="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+        <path d="M12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <svg aria-label="light theme icon" role="presentation" data-icon="light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+       </svg>
+          
+    <label 
+    for="themeToggle" 
+    aria-controls="themeToggle"
+    title="theme toggle"
+    >
+        <input 
+        type="checkbox" 
+        name="themeToggle" 
+        id="themeToggle" 
+        aria-checked="false"
+        aria-label="theme toggle"
+        role="switch"
+        >
+    </label>
+</div>
+
+   
+    <hgroup>
+    <h1>Andrew M McCall</h1>
+</hgroup>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/blog/">Blog</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    <li>
+      <a href="/resume/">Resume</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+
+  </header>
+  <main id="#content">
+    
+  <h1>Vanilla Javascript Carousel Slider: A Beginner&#39;s Tutorial</h1>
+  
+  
+  <time datetime="2023-01-29T00:00:00&#43;00:00">January 29, 2023</time>
+
+  <h1 id="vanilla-javascript-carousel-slider-a-beginner-slider">Vanilla Javascript Carousel Slider: A Beginner Slider</h1>
+<p>A photo or content slider is one of the oldest, but most popular design assets one can create with javascript.  Many developers will reach for popular carousel frameworks such as swiper, slick, or photoswipe.  Most of the time, you don&rsquo;t need so much overhead.  Let&rsquo;s build a slider together and see how we can build a responsive slider without using a ton of a extra javascript.</p>
+<h2 id="vanilla-javascript-carousel-slider---html">Vanilla Javascript Carousel Slider - HTML</h2>
+<pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&#34;en&#34;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&#34;UTF-8&#34; /&gt;
+    &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34; /&gt;
+    &lt;title&gt;Gallery!&lt;/title&gt;
+    &lt;link rel=&#34;stylesheet&#34; href=&#34;./style.css&#34;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&#34;app&#34;&gt;  
+      &lt;div class=&#34;carousel-wrapper&#34;&gt;
+        &lt;div class=&#34;slide&#34;&gt;
+          &lt;img src=&#34;https://picsum.photos/id/237/1920/1080&#34; alt=&#34;slide&#34;&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;slide&#34;&gt;
+          &lt;img src=&#34;https://picsum.photos/id/238/1920/1080&#34; alt=&#34;slide&#34;&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;slide&#34;&gt;
+          &lt;img src=&#34;https://picsum.photos/id/239/1920/1080&#34; alt=&#34;slide&#34;&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;slide&#34;&gt;
+          &lt;img src=&#34;https://picsum.photos/id/240/1920/1080&#34; alt=&#34;slide&#34;&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;slide&#34;&gt;
+          &lt;img src=&#34;https://picsum.photos/id/241/1920/1080&#34; alt=&#34;slide&#34;&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;button id=&#34;prev&#34;&gt;Prev&lt;/button&gt;
+      &lt;button id=&#34;next&#34;&gt;Next&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;script type=&#34;module&#34; src=&#34;./main.js&#34;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>The html  is pretty straightforward to make a responsive vanilla javascript carousel slider.  a div with an id of <code>app</code> is used to control overflow of the slides.<br>
+Inside of the <code>app</code> we have a wrapper for the slides themselves.  In this instance, I gave that container a class of <code>.carousel-wrapper</code> but it doesn&rsquo;t matter what class it has as long as you know what it is called.</p>
+<p>Inside of the <code>.carousel-wrapper</code> we are placing our slides.  In this instance, I am grabbing images from <a href="https://lorem.picsum" title="lorem picsum">Lorem Picsum</a>.</p>
+<p>After the <code>.carousel-wrapper</code> but before the end of the <code>#app</code> div, I am placing the <code>#next</code> and <code>#prev</code> buttons to increment or decrement the vanilla javascript carousel slider.</p>
+<p>That is pretty much it for the html set up.  Nothing too complicated so far.  One thing to note, is many often place carousel slides in a list.  I think that this would be semantically more correct since a carousel slider is technically a list of slides.  But, since there is no textual content, I have elected to keep this as simple as possible.</p>
+<p>To make this a bit more robust, we definitely would want to add an alt tag, a title tag, a height and width property, a decoding tag, and use html5 picture tag to make it a bit more complete.  In an effort to make this as easy to follow, I have elected to ommit some of these enhancements.</p>
+<h2 id="vanilla-javascript-carousel-slider-css">Vanilla Javascript Carousel Slider: CSS</h2>
+<pre tabindex="0"><code>html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#app {
+  overflow:hidden;
+  max-width: 768px;
+  margin: auto;
+  position: relative;
+}
+
+.carousel-wrapper {
+  display: flex;
+  max-width: 768px;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  flex: 0 0 100%;
+  height: 100%;
+  width: 100%;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#prev,
+#next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+#prev {
+  left: 1em;
+}
+
+#next {
+  right: 1em;
+}
+</code></pre><p>Most of this css is very straight forward if you have written any css at all.  A few things to note here is that <code>#app</code>  is essentially a wrapper div that we are using to contain the slides.  Because <code>.carousel-wrapper</code> is using flexbox, and the slides are overflowing their container, putting <code>overflow:hidden</code> is the trick to making sure we are only seeing the active slide.</p>
+<p><code>.carousel-wrapper</code> has <code>display: flex</code> and the <code>.slide</code> has <code>flex: 0 0 100%</code>.  This allows each slide to take up 100% of the container.  Also, the slides will not wrap to the next line which is good because we are creating a horizontal scrolling carousel.</p>
+<p>For the images, I changed them to display block so they would take up the entire height and width of the container.</p>
+<h2 id="vanilla-javascript-carousel-slider-javascript">Vanilla Javascript Carousel Slider: Javascript</h2>
+<pre tabindex="0"><code>const slider = document.querySelector(&#39;.carousel-wrapper&#39;)
+const prevBtn = document.getElementById(&#39;prev&#39;)
+const nextBtn = document.getElementById(&#39;next&#39;)
+let slideIndex = 1
+let isMoving = false
+
+const start = slider.firstElementChild.cloneNode(true)
+const end = slider.lastElementChild.cloneNode(true)
+
+slider.appendChild(start)
+slider.prepend(end)
+
+
+function moveSlides() {
+    slider.style.transform = `translate3d(-${slideIndex * 100}%, 0, 0)`
+}
+
+function slideHandler(type) {
+    isMoving = true
+    type !== &#39;prev&#39; ? slideIndex += 1 : slideIndex -= 1
+    slider.style.transition = `transform 1000ms ease-in-out`
+    moveSlides()
+
+}
+
+nextBtn.addEventListener(&#39;click&#39;, (e) =&gt; {
+    if (isMoving) return
+    slideHandler()
+})
+
+prevBtn.addEventListener(&#39;click&#39;, (e) =&gt; {
+    if (isMoving) return
+    slideHandler(&#39;prev&#39;)
+ })
+
+slider.addEventListener(&#39;transitionend&#39;, () =&gt; {
+    isMoving = false
+    const slides = document.querySelectorAll(&#39;.slide&#39;)
+
+    if (slideIndex &lt;= 0) {
+        slider.style.transition = &#34;none&#34;
+        slideIndex = slides.length - 2
+        moveSlides()
+    }
+
+    if (slideIndex &gt;= slides.length - 1) {
+        slider.style.transition = &#34;none&#34;
+        slideIndex = 1
+        moveSlides()
+    }
+
+})
+
+moveSlides()
+</code></pre><ol>
+<li>We define some variables.  The first thing we do is define the slide-wrapper as <code>slider</code>.  This is going to be the container that we control <code>transform: translateX()</code> with.</li>
+<li><code>prevBtn</code> and <code>nextBtn</code> are defined so we can controller the slider and increment or decrement it.</li>
+<li>We set the default slideIndex to 1 to position the first slide.</li>
+<li>We define a variable named <code>isMoving</code> so that we don&rsquo;t double increment or decrement slides when we click the respective buttons.</li>
+<li>Part one of the trick is cloning the first and last slide.  We do this using the <code>cloneNode</code> method.    This looks like this:</li>
+</ol>
+<pre tabindex="0"><code>const start = slider.firstElementChild.cloneNode(true)
+const end = slider.lastElementChild.cloneNode(true)
+slider.appendChild(start)
+slider.prepend(end)
+</code></pre><p>The reason we need to do this part is because we are going to use a <code>transitionend</code> event listener to transition the vanilla javascript carousel slider to the beginning or the end.  When the carousel slider gets to the beginning or the end, we are going to remove the <code>transition-type</code> and cleverly restart the slide.</p>
+<ol start="6">
+<li><code>moveSlides()</code> is just a convenience function to set the transition of the <code>slider</code> based on the current <code>slideIndex</code></li>
+<li><code>slideHandler()</code> does a couple of things:
+<ol>
+<li>It sets <code>isMoving</code> to true.  This flag will allow us to control excess click events from firing .</li>
+<li>We take in a <code>type</code> and check if it equals <code>'prev'</code>.  We use this type to determine if we are <code>incrementing</code> or <code>decrementing</code> <code>slideIndex</code>.</li>
+<li>We make sure that the <code>transiton-type</code>, <code>transition-duration</code>, and <code>transition timing-function</code> are set on the <code>slider</code>.</li>
+<li>we fire <code>moveSlides()</code> which recalculates the current <code>translateX()</code> value.</li>
+</ol>
+</li>
+<li>Next, we have <code>2</code> click events, one for each button to control which way we translate the slider.</li>
+<li>The final trick to getting this slider to work is using <code>transitionend</code> event listener.
+<ol>
+<li>we add an event listener to <code>slider</code> with the event <code>transitionend</code> with an <code>anonymous callback</code> function.</li>
+<li>Since the transition has ended, we set <code>isMoving = false</code>.  If we don&rsquo;t do this, we won&rsquo;t be able to increment or decrement the sldier with the buttons.</li>
+<li>We create an array of the slides using <code>document.querySelectorAll('.slide')</code>.  We need to do this so we can control navigating the start and end of the slides.</li>
+<li>This is where we do a bit of magic:</li>
+</ol>
+</li>
+</ol>
+<pre tabindex="0"><code>if (slideIndex &lt;= 0) {
+        slider.style.transition = &#34;none&#34;
+        slideIndex = slides.length - 2
+        moveSlides()
+    }
+
+    if (slideIndex &gt;= slides.length - 1) {
+        slider.style.transition = &#34;none&#34;
+        slideIndex = 1
+        moveSlides()
+    }
+</code></pre><p>Typically, if we are using <code>flexbox</code> as a carousel, we are setting the translation value as <code>slider.style.transform = translateX(-${slideIndex * 100}%)</code>.</p>
+<p>If we reset the slideIndex to <code>0</code> the slider will quickly translate back to the beginning of the slide in a most <strong>non-graceful</strong> manner.   To avoid this fast and jarring transition, we have cloned the first slide and placed it at the end as well as cloned the last slide and placed it at the beginning.  By doing this check on the <code>anonymous function</code> attached to the <code>transitionend</code> event handler, we are quietly transforming the slide to the beginning or end of the vanilla javascript carousel slider.</p>
+<p>To explain another way, Once we get to <code>index of 0</code>, since that is actually a clone of the last slide, we are removing the transition-type and quickly jumping to the original slide which is at <code>slides.length -2</code>.</p>
+<p>Again, if we are getting to the last slide which is a clone of the first slide - the slide that is at <code>slides.length - 1</code>, we are saying,</p>
+<blockquote>
+<p>&ldquo;Hey, let&rsquo;s turn off the transform and quickly jump to the actual first slide which is actually at index position 1.&rdquo;</p>
+</blockquote>
+<iframe width="100%" height="300" src="//jsfiddle.net/elkcityhazard/6vqyg0d2/3/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+<h2 id="vanilla-javascript-carousel-slider-conclusion">Vanilla Javascript Carousel Slider Conclusion</h2>
+<p>Creating a vanilla javascript carousel slider doesn&rsquo;t require bringing in a large library.  As you can see, we can accomplish this with relative ease with vanilla javascript.</p>
+<p>The final consideration would be to add touch events.   This would require just a bit more work.  We would need to use touch or pointer events, get a start position, a &ldquo;ondrag&rdquo; position, and calculate the difference.</p>
+<p>Once we know the difference we can determine if we need to increment or decrement the slide.</p>
+<p>I would say the most challenging part to this would be adding in a ui response to give feedback on the &ldquo;grab.&rdquo;</p>
+<p>If you need help, feel free to reach out to me at @elkcityhazard on twitter.</p>
+
+  
+  <section data-taxonomy="tags">
+    <header><hgroup>Tags:</hgroup></header>
+    <ul data-taxonomy="tags">
+        <li><a href="/tags/javascript/">Javascript</a></li>
+        <li><a href="/tags/frontend-web-development/">Frontend Web Development</a></li>
+        <li><a href="/tags/css/">Css</a></li>
+        <li><a href="/tags/html/">Html</a></li>
+        <li><a href="/tags/vanilla-javascript/">Vanilla Javascript</a></li>
+    </ul>
+  </section>
+
+
+  </main>
+  <footer>
+    <section data-section="footer">
+    <ul>
+        
+       </ul>
+       <p>Copyright 2024. All rights reserved.</p>       
+</section>
+
+
+
+
+  </footer>
+</body>
+</html>

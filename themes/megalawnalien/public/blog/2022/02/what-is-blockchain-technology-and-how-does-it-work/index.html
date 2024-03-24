@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content=" Everything you need to know about the basics of Ethereum, blockchain technology, and smart contracts with a bit of Solidity. ">
+<title>What Is Blockchain Technology And How Does It Work? | Andrew M McCall</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bundle.css">
+
+
+
+
+<script src="/js/main.js" defer type="module" type="text/javascript"></script>
+
+</head>
+<body data-theme="light">
+  <a 
+  href="#content"
+  aria-label="jump to main content"
+  >Jump to Content</a>
+  <header>
+    <div data-ui-toggle>
+    <svg aria-label="dark theme icon" role="presentation" data-icon="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+        <path d="M12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <svg aria-label="light theme icon" role="presentation" data-icon="light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+       </svg>
+          
+    <label 
+    for="themeToggle" 
+    aria-controls="themeToggle"
+    title="theme toggle"
+    >
+        <input 
+        type="checkbox" 
+        name="themeToggle" 
+        id="themeToggle" 
+        aria-checked="false"
+        aria-label="theme toggle"
+        role="switch"
+        >
+    </label>
+</div>
+
+   
+    <hgroup>
+    <h1>Andrew M McCall</h1>
+</hgroup>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/blog/">Blog</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    <li>
+      <a href="/resume/">Resume</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+
+  </header>
+  <main id="#content">
+    
+  <h1>What Is Blockchain Technology And How Does It Work?</h1>
+  
+  
+  <time datetime="2022-02-16T00:00:00&#43;00:00">February 16, 2022</time>
+
+  <h2 id="what-is-blockchain-technolology-ethereum-smart-contracts-explained">What Is Blockchain Technolology, Ethereum, Smart Contracts: Explained</h2>
+<p>Feeling confused about the blockchain, Ethereum, or smart contracts?  This article aims to give a general introduction to the components and principles of the blockchain and help newcomers understand some of the terms and definitions behind this newer and exciting technology.</p>
+<h2 id="what-is-the-blockchain">What is the Blockchain?</h2>
+<p>The blockchain is a decentralized network of computers.  Furthermore, it is continously growing in size.  This is because the blockchain is designed to store a decentralized public ledger of information.  The blocks are then chained together with cryptography.  Each block contains it&rsquo;s own copy of the public ledger and a crytpographic hash of the previous record.   The blockchain is excellent for recording monetary transactions.</p>
+<h2 id="anatomy-of-a-transaction">Anatomy Of A Transaction</h2>
+<p>Unlike traditional bank transaction, Ethereum and blockchain transactions are a bit more complex to execute.  This is because the decentralized technology aims to be as secure as possible and presupposed a minimal level of immutability which is a cornerstone of the blockchain technology.</p>
+<p>Here are some of the essential parts of an Ethereum transaction:</p>
+<p><strong>NONCE:</strong> How many times the sender has sent a transaction.  Regarding the blockchains: Refers to <strong>a number only used once.</strong> Which is a number added to a hashed or encrypted block in a blockchain that, when rehashed, meets the difficulty level restrictions.</p>
+<p><strong>TO:</strong> Address of account that the transaction data (money) is going to be sent to</p>
+<p><strong>VALUE:</strong>  Amount of ether to send to targeted address</p>
+<p><strong>Gas Price :</strong> A term used on the Ethereum platform that refers to the <strong>price you are willing to pay for a transaction</strong></p>
+<p><strong>Start Gas / Gas Limit:</strong> unit of gas that this transaction can consume</p>
+<p><strong>V, R, S:  A</strong>re the <strong>values for the transaction&rsquo;s signature</strong>
+They can be used as in Get public key of any Ethereum account A little more information, r and s are outputs of an ECDSA signature, and v is the recovery id.</p>
+<p><strong>V,R,S is a one way process.</strong></p>
+<hr>
+<p><img src="/images/blog/2022/ethereum-transaction.png" alt="Ethereum Transaction Explained" title="A basic ethereum transaction"></p>
+<p>Source: <a href="https://medium.com/the-capital/ethereum-what-how-why-b4be4308629d">ETHEREUM — What? How? Why?. What is Ethereum? Learn about a… | by Vritika Naik | The Capital | Medium</a></p>
+<h2 id="blockchain-nodes">Blockchain Nodes</h2>
+<p>The blockchain is made up of nodes.  Each node contains and entire copy of the blockchain.</p>
+<p>The transaction arrives at the node.</p>
+<p>Multiple transactions can be happening asynchronously at the same time on the node.</p>
+<p>The node assembles the transactions into a “block” which is similar to a list or even a ledger.</p>
+<p>The node then performs validation calculations the block.  This is what we would refer to as mining.</p>
+<h2 id="notes-on-mining">Notes On Mining</h2>
+<p><strong>What is the SHA-256 Algorithm?</strong></p>
+<p>SHA 256 is a part of the SHA 2 family of algorithms, where SHA stands for Secure Hash Algorithm. Published in 2001, it was a joint effort between the NSA and NIST to introduce a successor to the SHA 1 family, which was slowly losing strength against brute force attacks.</p>
+<p>The significance of the 256 in the name stands for the final hash digest value, i.e. irrespective of the size of plaintext/cleartext, the hash value will always be 256 bits.</p>
+<p>The other algorithms in the SHA family are more or less similar to SHA 256.</p>
+<p>Transactions each contain a unique digital fingerprint for the data it contains.  This is created using SHA-256.  What is unique about SHA-256 is that it will always return 256 bits regardless of the data into the hash.</p>
+<p>Simply put, it will always have the same length and key if the data remains un-mutated.</p>
+<p>The goal of the blockchain is to record all transactions and keep the record as immutable as possible.  The Blockchain wants to keep past transactions unchanged as possible.</p>
+<p>When transactions are modified it changes the value of the unique SHA-256 fingerprint.  Mining must take place to calculate a new <strong>nonce</strong> such that the value, when added to hashed or encrypted block, that when rehashed meets the difficult level restrictions.</p>
+<p>Since the record of the SHA-256 is passed to future blocks as the <strong>“previous sha-256 value,”</strong>  this requires multiple re-mining events.  Another way to say this: If one block’s sha-256 value becomes invalidated, it can affect the other blocks as well.  If one block is changed, re-mining will need to occur on cascading blocks.</p>
+<p>This means that the further back in time a block is, the more difficult it is to change due to added complexity of re-hashing.</p>
+<h2 id="distributed-blockchain">Distributed Blockchain</h2>
+<p>The blockchain wouldn’t be valuable if it couldn’t maintain the integrity of it’s data.  That is why the block chain is distributed across a network.  The distributed network makes up a group of peers where a complete copy of the blockchain is stored on each.  This is similar to a checks and balances system.</p>
+<p>When transactions are created and tokens are being passed between parties, it is important to resist the modification of the past and maintain the integrity of the passed stored transactions.</p>
+<p>In the example of a coinbase transaction, having a copy of the previous hash makes tracing the transaction easier and mutation of the transaction record more difficult.</p>
+<h2 id="tokens-resist-modification-of-blockchain-transactions">Tokens: Resist Modification Of Blockchain Transactions</h2>
+<p>Let’s take a moment to summarize what we have learned so far.</p>
+<p>Since blockchains are by default trustless, global, and permanent, and that all the data is stored across the network in such a way that anyone who uses the blockchain can know it’s transactional history, This is because blockchain transactions are recorded to a public-facing general ledger on it’s respective node network.</p>
+<p>Additionally:</p>
+<blockquote>
+<p><a href="https://blockgeeks.com/guides/smart-contracts/">Smart contracts</a>
+ are how things get done in the Ethereum ecosystem. When someone wants to get a particular task done in <a href="https://blockgeeks.com/guides/ethereum/">ethereum</a>
+ they initiate a smart contract with one or more people. S<strong>mart contracts are a series of instructions, written using the programming language “<a href="https://blockgeeks.com/guides/how-to-learn-solidity/">solidity</a>”, which work on the basis of the IFTTT logic aka the IF-THIS-THEN-THAT logic</strong>
+. Basically, if the first set of instructions are done then execute the next function and after that the next and keep on repeating until you reach the end of the contract</p>
+</blockquote>
+<p>Source: <a href="https://blockgeeks.com/guides/ethereum-token/">What is An Ethereum Token: The Ultimate Beginner’s Guide - Blockgeeks</a></p>
+<p>To summarize, <strong>smart contracts</strong> are <strong>how</strong> things get done in Ethereum.</p>
+<p><strong>Ether</strong> is the name of Ethereum’s currency that is exchanged for value.</p>
+<p>To continue our point regarding tokens, it is important to understand that Ethereum is not just a transactional currency but it is also an Environment as well.  Anyone can utilize the blockchain to create decentralized applications and personal projects.  Smart contracts are able to tie together traditional web 2.0 interfaces built with technologies like Javascript and the Ethereum network.</p>
+<p>Since applications deployed to the Ethereum network are decentralized, they are traditionally not owned by single people but groups of people.  This means that people typically buy into an application through what is referred to as an <a href="https://www.gemini.com/cryptopedia/initial-coin-offering-explained-ethereum-ico">ICO (Initial Coin Offering)</a>.</p>
+<p>To summarize what an ICO is from gemini.com:</p>
+<blockquote>
+<p><em>An Initial Coin Offering (ICO), also known as a token sale, is an asset distribution methodology that involves selling digital assets to raise funds for a blockchain-based project. ICOs first became popular in 2017, and they’ve since raised billions of dollars for a wide variety of crypto projects. The explosive growth of token sales helped to accelerate the adoption of Ethereum and cemented its place as a key value player in the crypto ecosystem.</em></p>
+</blockquote>
+<p>Source: <a href="https://www.gemini.com/cryptopedia/initial-coin-offering-explained-ethereum-ico">Initial Coin Offerings: The Ethereum ICO Boom | Gemini</a></p>
+<p>What this means is that a person buys tokens that are associated with a decentralized application in exchange for Ether.</p>
+<h2 id="two-types-of-tokens">Two Types Of Tokens</h2>
+<h3 id="usage-tokens">Usage Tokens</h3>
+<p>Usage tokens basically act like native currency inside of the decentralized app.  This is not a foreign concept to many.  For example, when you go to your local carnival or fair, you often exchange money for tickets. These tickets are the currency to use the rides.</p>
+<p>This principal can be extended to usage tokens.  Golem Network Tokens are a good example of this.  Golem is a worldwide supercomputer that utilizes the power of each computer in it’s network.  Golem Network Tokens are what you use to pay for the computer processing power you rent from the network.</p>
+<p>Source: <a href="https://coincentral.com/golem-gnt-beginners-guide/">What Is Golem (GNT)? | A Guide to the Decentralized Supercomputer (coincentral.com)</a></p>
+<h3 id="work-tokens">Work Tokens</h3>
+<blockquote>
+<p>Work Tokens are tokens that give individuals rights to contribute work to aDAO (and earn value) to help it function properly.</p>
+</blockquote>
+<p>Source: <a href="https://thecontrol.co/tokens-tokens-and-more-tokens-d4b177fbb443">Tokens, Tokens and More Tokens. Over $331M has been raised in token… | by Nick Tomaino | The Control</a></p>
+<p>Essentially, work tokens are a way to identify you as a type of shareholder in relation to the decentralized application or organization.  This means that you have a say in the direction of the application or organization.  It also means that you can earn directly from your involvement with the organization or application.</p>
+<p>The idea, simplified in this example, is that using tokens makes certain functions within the smart contracts easier to execute which is win-win for everyone.  Tokens can also add overall value to Ether as well.</p>
+<p>Since this is meant to be a simplified introduction, if you want to learn more about how Tokens work and they receive their value you can read about it here: <a href="https://blockgeeks.com/guides/ethereum-token/">What is An Ethereum Token: The Ultimate Beginner’s Guide - Blockgeeks</a></p>
+<h2 id="blockchains-are-public-and-designed-to-be-immutable">Blockchains are Public and Designed To Be Immutable</h2>
+<p>The point being made here is that Ethereum transactions are designed to be publicly available and also as immutable as possible.  For example, with Coinbase transactions, the previous hash value is always stored so that transactions can be retained and verifiable.  This is good because it  again helps resist mutation.   Creating new SHA-256 hashes for each transaction is the bread and butter of what mining is.</p>
+<p>When a transaction is created, the block is designed to solve some level of secure specificity to satisfy a security standard.  When the SHA-256 hash changes some data, the block needs to reprocess to ensure the new hash meets the complexity requirements.</p>
+<p>Another way of putting this is that we are looking at the value of the hash to determine that it is less than some target value.  The entire process of rehashing takes time which we refer to as block time.</p>
+<h2 id="what-is-block-time">What Is Block Time?</h2>
+<p>Block time can be defined as the amount of time it takes to hash everything from zero to the target nonce value that meets the complexity requirement that is predetermined.  Once the block has found the solution, it has to distribute the solution to all the other nodes.</p>
+<p>One interesting note is that Ethereum has a target block time of 15 seconds.  The target is variable and adjusts over time.  The goal here is that the complexity target for solving nodes is going to change to dynamically adjust the block time to always be near that 15 seconds.</p>
+<p>One of the reasons that the block time is always being adjusted is because Ethereum is a distributed network so available computing power is always changing depending on the amount of processing attached to the network.</p>
+<h2 id="what-are-smart-contracts-and-how-to-smart-contracts-work">What Are Smart Contracts And How To Smart Contracts Work</h2>
+<p>A simple definition of smart contracts is that they are an account that is controlled by some code.  This is typically written with Solidity using a simple programming paradigm such as IF-THIS-THEN-THAT logical structures.</p>
+<p>It will usually include the balance that the account owns, a data storage for the contract, and the code for when the contract needs to run.</p>
+<p><img src="/images/blog/2022/smart-contract-schematic.png" alt="How A Smart Contract Works" title="How a smart contract works"></p>
+<p>Source: <a href="https://www.payninja.co/smart-contracts/">Smart Contracts 101 – PayNinja</a></p>
+<h2 id="account-vs-contract-account---ethereum">Account vs Contract Account - Ethereum</h2>
+<p>External accounts live in their own type of universe.</p>
+<p>Contract accounts are specific to their network.  There is no communication between networks with contract accounts.</p>
+<p>Contract Source: This is the code that we author on our computer.  We then deploy the code to the network.  This is the logic that controls how the contract should behave and how it handles money.</p>
+<p>The source code gets deployed to the network (such as Ethereum or a test network like Rinkeby).</p>
+<p>The deployed contract code creates an “instance” which we refer to as a contract account.  We can take one contract source code and deploy it multiple times.  If you are a developer, one way to think of contract accounts is that they are like “classes”.  We can build it than deploy multiple instances of the same class to the networks.</p>
+<h2 id="solidity-programming-language--smart-contracts--ethereum-network">Solidity Programming Language | Smart Contracts | Ethereum Network</h2>
+<p>Solidity is a strongly-typed programming language that is used to create smart contracts on the Ethereum network.  It’s extension is .sol.  It is similar to Javascript but does has some large quirks to it that make it different in some respects.  The contracts we write are usually pretty small.  So how is Solidity used then?</p>
+<p>We write contract definitions using solidity which takes the contract definitions and stuffs it into a compiler.  This produces byte code that is ready for deployment.  It acts as an application binary interface to interact between our front end and the Ethereum network.  This is because after we deploy the smart contract we typically use something like Javascript to interact with the byte code directly as it is deployed on the blockchain.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>I hope this helps you understand a bit about the Ethereum network, blockchain, and smart contracts.  The goal is not to cover everything, but give a simplified introduction for those who are new to the blockchain and Ethereum.  If you have any questions you can contact me or reach out to me @elkcityhazard on twitter.</p>
+
+  
+  <section data-taxonomy="tags">
+    <header><hgroup>Tags:</hgroup></header>
+    <ul data-taxonomy="tags">
+        <li><a href="/tags/blockchain/">Blockchain</a></li>
+        <li><a href="/tags/ethereum/">Ethereum</a></li>
+        <li><a href="/tags/smart-contracts/">Smart Contracts</a></li>
+        <li><a href="/tags/web-3.0/">Web 3.0</a></li>
+        <li><a href="/tags/javascript/">Javascript</a></li>
+        <li><a href="/tags/solidity/">Solidity</a></li>
+    </ul>
+  </section>
+
+
+  </main>
+  <footer>
+    <section data-section="footer">
+    <ul>
+        
+       </ul>
+       <p>Copyright 2024. All rights reserved.</p>       
+</section>
+
+
+
+
+  </footer>
+</body>
+</html>

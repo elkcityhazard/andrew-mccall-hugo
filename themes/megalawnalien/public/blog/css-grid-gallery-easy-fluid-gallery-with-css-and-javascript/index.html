@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content=" Learn how to create a fluid image gallery with css grid and a few lines of javascript. ">
+<title>CSS Grid Gallery: Easy Fluid Gallery With CSS Grid and Javascript | Andrew M McCall</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bundle.css">
+
+
+
+
+<script src="/js/main.js" defer type="module" type="text/javascript"></script>
+
+</head>
+<body data-theme="light">
+  <a 
+  href="#content"
+  aria-label="jump to main content"
+  >Jump to Content</a>
+  <header>
+    <div data-ui-toggle>
+    <svg aria-label="dark theme icon" role="presentation" data-icon="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+        <path d="M12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <svg aria-label="light theme icon" role="presentation" data-icon="light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+       </svg>
+          
+    <label 
+    for="themeToggle" 
+    aria-controls="themeToggle"
+    title="theme toggle"
+    >
+        <input 
+        type="checkbox" 
+        name="themeToggle" 
+        id="themeToggle" 
+        aria-checked="false"
+        aria-label="theme toggle"
+        role="switch"
+        >
+    </label>
+</div>
+
+   
+    <hgroup>
+    <h1>Andrew M McCall</h1>
+</hgroup>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/blog/">Blog</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    <li>
+      <a href="/resume/">Resume</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+
+  </header>
+  <main id="#content">
+    
+  <h1>CSS Grid Gallery: Easy Fluid Gallery With CSS Grid and Javascript</h1>
+  
+  
+  <time datetime="2021-11-24T00:00:00&#43;00:00">November 24, 2021</time>
+
+  <p>Learn how to create a fluid image gallery with css grid and a few lines of javascript. In the following article, we will learn how to create a grid gallery that is fluid and easy to navigate with CSS Grid and Javascript. First, we will create a container for our grid gallery. Then we will create a row of items. Finally, we need to set up a grid to contain the items in the row. We will then apply some styling for our gallery so that it looks nice on all browsers by using CSS Grid and Javascript&rsquo;s responsive design techniques.</p>
+<h2 id="fluid-layout-thumbnails-for-grid-gallery">Fluid Layout Thumbnails For Grid Gallery</h2>
+<p>As a web developer, we are often handed a collection of images that are far from optimized. From being different image file types, to different orientations, there are many challenges that images present to web developers. The challenge is to get these to look good on the page with as minimal image processing as possible.</p>
+<p>The biggest challenge we have with image galleries are images with different heights and widths. This makes it difficult to tile the images thumbnails correctly without resorting to the standard fixes such making equal aspect squares and using the object fit to control the image aspect ratio.</p>
+<p>This leads to problems, however, because it leaves a lot of room for error because the computer has to guess where the focus of the image should be. One option is to manually resize the images. This is a time consuming process that I personally don&rsquo;t like to do. There are cloud solutions like Cloudinary as well that can help do this. The problem with these services is that their free-tier is usually limited and their monthly payment services are usually expensive.</p>
+<p>There is a simple way to create a fluid css grid with no media queries that perfectly tiles differently sized images.</p>
+<h2 id="html-image-gallery-setup">HTML Image Gallery Setup</h2>
+<p>The first thing we need to do is set up our grid container:</p>
+<pre tabindex="0"><code>&lt;div class=&#34;grid-container&#34;&gt;
+&lt;div class=&#34;grid-item&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://source.unsplash.com/250x900/?nature,water&#34; alt=&#34;image&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;grid-item&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://source.unsplash.com/250x500/?nature,water&#34; alt=&#34;image&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;grid-item&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://source.unsplash.com/250x400/?nature,water&#34; alt=&#34;image&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;grid-item&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://source.unsplash.com/250x375/?nature,water&#34; alt=&#34;image&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;grid-item&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://source.unsplash.com/250x400/?nature,water&#34; alt=&#34;image&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;grid-item&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://source.unsplash.com/250x500/?nature,water&#34; alt=&#34;image&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;grid-item&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://source.unsplash.com/250x200/?nature,water&#34; alt=&#34;image&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;grid-item&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://source.unsplash.com/250x900/?nature,water&#34; alt=&#34;image&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;grid-item&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://source.unsplash.com/250x850/?nature,water&#34; alt=&#34;image&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;grid-item&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://source.unsplash.com/250x700/?nature,water&#34; alt=&#34;image&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;grid-item&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://source.unsplash.com/250x625/?nature,water&#34; alt=&#34;image&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;grid-item&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://source.unsplash.com/250x633/?nature,water&#34; alt=&#34;image&#34;&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+</code></pre><p>Next we will need to add in the css styles:</p>
+<p><code>.grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1px 4px; grid-auto-flow: row dense; grid-auto-rows: repeat(10px); }</code></p>
+<p>Finally, a few lines of javascript:</p>
+<p><code>const gridItems = document.querySelectorAll('.grid-item')</code></p>
+<p><code>gridItems.forEach((item) =&gt; {</code><br>
+<code>const img = item.lastElementChild</code><br>
+<code>img.addEventListener('load', function() {</code><br>
+<code>item.style.height = img.clientHeight + 'px'</code><br>
+<code>const spans = Math.ceil(item.clientHeight / 10);</code><br>
+<code>console.log(spans)</code><br>
+<code>item.style.gridRowEnd = `span ${spans}` </code><br>
+<code>})</code><br>
+<code>})</code></p>
+<h2 id="the-final-product">The Final Product</h2>
+<iframe width="100%" height="300" src="//jsfiddle.net/elkcityhazard/vpf6arLw/46/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+<h2 id="an-explanation-of-the-html">An Explanation Of The HTML</h2>
+<p>The HTML is straight forward for this limited example. All we are doing is creating a container div to contain all of the image thumbnails we have in our gallery. I wrapped each image into their own container wrapper in case we need to do any additional stylings. In production, you might choose to wrap the images in a figure tag and add a figcaption for added information.</p>
+<p>You will notice that the width&rsquo;s of each item is already the same via the images query parameters. I recommend setting an explicit height and width on the image tag to help with client side rendering and making the browser&rsquo;s job a little easier. The css will automatically resize the images, but performance wise it is best to set an explicit height and width on the img tag itself.</p>
+<h2 id="explaining-the-css-for-the-grid-thumbnails">Explaining The CSS For The Grid Thumbnails</h2>
+<p>Most of the styling goes into the grid container element. We start off by declaring the grid as the display style. Next, we use the built-in css property <code>grid-template-columns.</code> This fantastic css property will make our grid thumbnails response and fluid and do most of the work for us. We give it the repeat value which takes in a couple of arguments. The first argument is <code>auto-fit</code> which basically tells the browser to choose how to fit our grid columns. This will help our thumbnails because they will be rendered responsively depending on the size of the viewport (mobile, tablet, desktop). Next, we pass in the minmax value which also takes in two parameters. The first value is the minimum size of the column and the second parameter is the maximum size of the column. So in this example we are basically saying, &ldquo;Hey browser, I want you to make appropriate size columns that are no less than 250px but no more than 1 fraction of the view port. In the event that we have more columns, each one will take up an equal fraction of the viewport.</p>
+<p>I also gave each image container a gap property which defines the space between each grid item. Finally, I used the grid-auto-rows property which is something we need for the javascript to work. Basically, we are just telling the browser that we need as many 10px tall rows as we can get that will take up 100% of the content-box of the grid-container.</p>
+<h2 id="explanation-of-the-javascript">Explanation of the Javascript</h2>
+<p>We need to create a variable to store a nodeList of all of the grid items. I called my variable gridItems to keep it simple. Next we are using forEach to loop through the nodeList much like an array. Here is the tricky part of the equation. We need to get the height of the rendered image to help align the grid correctly. Unfortunately, unless the image is loaded, we cannot access any of it&rsquo;s properties right away. This leaves us unable to programmatically determine the height of each grid item.</p>
+<p>There is a work around for this, though. We need to create another function that fires for each nodeList item (the gridItems). Again, I created a new variable which is just the image that will be the thumbnail. To get access to it I reused the scope of the &ldquo;item&rdquo; and just reached to the child image with lastElementChild since it is the only child of the scoped item.</p>
+<p>Now that I have access to the image, I want to setup a callback function for when the image finishes loading. Remember, we cannot get the image height until it is fully loaded into the document object model.</p>
+<p>The next bit of the function is how we programatically set the height of each grid item. We are taking the grid item, accessing it&rsquo;s style properties, and then setting the height to the clientHeight of the image which is just the rendered height of the image after the browser processes the stylesheet.</p>
+<p>Next, we want to take this new information and do something with it. We have the height, but we still haven&rsquo;t told the browser how to tile our images. For that we need to do a minor bit of math. If you can remember, we set the <code>grid-auto-rows: repeat(10px);</code> This will tell the browser to have as many 10px tall rows as possible within the grid container. In order to tile images in the grid-container we need to the browser what the <code>grid-row-end</code> is for each image.</p>
+<p>The formula to figure this out is <code>const spans = Math.ceil(item.clientHeight / 10);</code></p>
+<p>We are saying: &ldquo;Do this math problem and round it up to the nearest whole number.&rdquo; The formula is the image height / 10 where is the row height specified in the grid container. We divide by 10 because that is how we can determine how many rows our images should span when the tile.</p>
+<p>Finally, the last bit of the callback item is: <code>item.style.gridRowEnd = `span ${spans}` </code></p>
+<p>This is how we figure out how many grid rows each grid item should span.</p>
+<p>This is a technique I like to use when you don&rsquo;t know the size of the images before hand. This works especially good if you are getting images from clients that need to maintain their size or if you are grabbing images from an api that is random in size.
+In this post, we’ve seen how to create a fluid responsive thumbnail gallery with CSS Grid. Now that you have an example under your belt, it should be much simpler for you to build similar layouts of your own. If you have any questions or comments about the process I went through in this post, please message me or contact me via the chat app.</p>
+
+  
+  <section data-taxonomy="tags">
+    <header><hgroup>Tags:</hgroup></header>
+    <ul data-taxonomy="tags">
+        <li><a href="/tags/web-development/">Web Development</a></li>
+        <li><a href="/tags/javascript/">Javascript</a></li>
+        <li><a href="/tags/css/">Css</a></li>
+    </ul>
+  </section>
+
+
+  </main>
+  <footer>
+    <section data-section="footer">
+    <ul>
+        
+       </ul>
+       <p>Copyright 2024. All rights reserved.</p>       
+</section>
+
+
+
+
+  </footer>
+</body>
+</html>

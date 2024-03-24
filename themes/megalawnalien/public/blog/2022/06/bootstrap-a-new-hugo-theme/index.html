@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content=" Part 2 after Installation.  This video covers initiating a new theme and getting hugo to see it in your project. ">
+<title>Bootstrap A New Hugo Theme From Scratch [video] | Andrew M McCall</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bundle.css">
+
+
+
+
+<script src="/js/main.js" defer type="module" type="text/javascript"></script>
+
+</head>
+<body data-theme="light">
+  <a 
+  href="#content"
+  aria-label="jump to main content"
+  >Jump to Content</a>
+  <header>
+    <div data-ui-toggle>
+    <svg aria-label="dark theme icon" role="presentation" data-icon="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+        <path d="M12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <svg aria-label="light theme icon" role="presentation" data-icon="light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+       </svg>
+          
+    <label 
+    for="themeToggle" 
+    aria-controls="themeToggle"
+    title="theme toggle"
+    >
+        <input 
+        type="checkbox" 
+        name="themeToggle" 
+        id="themeToggle" 
+        aria-checked="false"
+        aria-label="theme toggle"
+        role="switch"
+        >
+    </label>
+</div>
+
+   
+    <hgroup>
+    <h1>Andrew M McCall</h1>
+</hgroup>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/blog/">Blog</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    <li>
+      <a href="/resume/">Resume</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+
+  </header>
+  <main id="#content">
+    
+  <h1>Bootstrap A New Hugo Theme From Scratch [video]</h1>
+  
+  
+  <time datetime="2022-06-21T00:00:00&#43;00:00">June 21, 2022</time>
+
+  <p>A part of using Hugo is the freedom of making your own theme.  In this tutorial, I will explain how to bootstrap a new Hugo theme so you can customize it exactly how you want to. I will go over verifying installation, creating a theme, telling Hugo how to use your new theme, and we walk through the very basics of setting up a theme so that the home page displays.</p>
+<p>Need help installing hugo?  I have a <a href="/blog/2022/06/install-hugo-on-windows-with-chocolately-package-manager/" title="installing Hugo Is Easy With Chocolately Package Manager">How To Install Hugo Tutorial</a> that is a part of this Hugo theme tutorial  that can help you get started.</p>
+<iframe id="odysee-iframe" width="560" height="315" src="https://odysee.com/$/embed/bootstrap-a-hugo-theme-and-hello-world-home-page/702fe749b7f345a6ead2c9af686a43d7c71a11e8?r=HADqujT6idtBaZKLwMq9UWNb6LbwVV2z" allowfullscreen style="max-width: 100%; margin: 1em auto; display: block;"></iframe>
+<p>This starts in your favorite terminal prompt.</p>
+<ol>
+<li>
+<p>Verify your Hugo install with <code>hugo version</code></p>
+</li>
+<li>
+<p>Verify your working directory with <code>pwd</code></p>
+</li>
+<li>
+<p>`hugo new site mysite&rsquo; 👉 mysite is the name of your project</p>
+</li>
+<li>
+<p><code>cd mysite</code></p>
+</li>
+<li>
+<p><code>hugo new theme mytheme</code> 👉<strong>mytheme</strong> can be replaced with the name of your theme</p>
+</li>
+<li>
+<p>if you are using <a href="https://github.com/Microsoft/vscode" title="Visual Studio Code">VS CODE</a>, then type <code>code .</code> and your project should open up in VS Code.</p>
+</li>
+<li>
+<p>Find your <code>config.toml</code> file.  Add an entry <code>theme = &quot;mytheme&quot;</code> where <strong>mytheme</strong> is the name of the theme you created at the terminal prompt with .</p>
+</li>
+<li>
+<p>At this point we can open a new terminal in the directory and type <code>hugo server</code>.  Nothing will serve at this point.</p>
+</li>
+<li>
+<p>Next, I am creating a new file at the base of the content directory called <code>_index.md</code>.  This is a markdown file.  Markdown is how you create pages in Hugo.  It accepts something called <strong>frontmatter</strong>.</p>
+</li>
+</ol>
+<p>If you want to learn <a href="/blog/markdown-syntax-for-quick-development-and-fast-content-creation/" title="How To Write Markdown">how to write frontmatter</a> I have a post to get you started.  Essentially, markdown is a way to pass data into Hugo&rsquo;s templates.  I will explore this more later on in this mini course.  Markdown has very simple content but it can be limited in it&rsquo;s scope.</p>
+<ol start="10">
+<li>
+<p>After you create the content file, we need to edit the <code>index.html</code> file which is located under <code>themes/mytheme/layouts</code>.  This is where you put in your html.  Hugo uses to Golang templating syntax.  Variables are wrapped in double-curly braces like this: <code>{{ .Title }}</code>.</p>
+</li>
+<li>
+<p>Next, we can include stylesheets into our templates.  To do this, we are the static directory inside of the theme.  This is probably the easiest way.  hugo strips the <code>/static</code> prefix so when you include your html you do not need to add <code>/static</code> to access the stylesheet.</p>
+</li>
+</ol>
+<p>I highly recommend checking out the following resources to learn more about bootstrapping a Hugo theme.</p>
+<ul>
+<li>
+<p><a href="https://gohugo.io/commands/hugo_new_theme/#readout" title="create a new hugo theme">Hugo New Theme</a></p>
+</li>
+<li>
+<p><a href="https://pkg.go.dev/text/template" title="Go Text Template Package">Go Text/Template Package</a></p>
+</li>
+</ul>
+<p>In the next article, we will start fleshing out our single and list pages and talk about how partials and context work.</p>
+<p>This article is part of a series on how to create a Hugo website from scratch.  Read the original article here: <a href="/blog/hugo-website-tutorial-how-to-create-a-hugo-website-from-scratch/" title="How To Create A Hugo Website From Scratch">How To Create A Hugo Website From Scratch: An Overview</a></p>
+
+  
+  <section data-taxonomy="tags">
+    <header><hgroup>Tags:</hgroup></header>
+    <ul data-taxonomy="tags">
+        <li><a href="/tags/hugo/">Hugo</a></li>
+        <li><a href="/tags/static-website-generators/">Static Website Generators</a></li>
+        <li><a href="/tags/golang/">Golang</a></li>
+    </ul>
+  </section>
+
+
+  </main>
+  <footer>
+    <section data-section="footer">
+    <ul>
+        
+       </ul>
+       <p>Copyright 2024. All rights reserved.</p>       
+</section>
+
+
+
+
+  </footer>
+</body>
+</html>

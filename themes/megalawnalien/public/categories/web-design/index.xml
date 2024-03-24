@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web Design on Andrew M McCall</title>
+    <link>http://localhost:1313/categories/web-design/</link>
+    <description>Recent content in Web Design on Andrew M McCall</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/web-design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5 Things You Need To Know Before And After You Build A Website</title>
+      <link>http://localhost:1313/blog/5-things-you-need-to-know-before-and-after-you-build-a-website/</link>
+      <pubDate>Sun, 03 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/5-things-you-need-to-know-before-and-after-you-build-a-website/</guid>
+      <description>5 Ways You Can Use Your Website to Grow Your Business Websites are a great way to grow your business, but you need to make sure that they are properly maintained and optimized for this. In order to help you with that, here are five ways you can use your website for the growth of your business.&#xA;Create a blog: Blogging is a great way to create content and generate leads.</description>
+    </item>
+  </channel>
+</rss>

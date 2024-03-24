@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content=" SCSS Import is going away but what does that mean for you?  Let me explain how scss @use works quick and simple. ">
+<title>SCSS Use VS Import: How To Use @Use in SCSS | Andrew M McCall</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bundle.css">
+
+
+
+
+<script src="/js/main.js" defer type="module" type="text/javascript"></script>
+
+</head>
+<body data-theme="light">
+  <a 
+  href="#content"
+  aria-label="jump to main content"
+  >Jump to Content</a>
+  <header>
+    <div data-ui-toggle>
+    <svg aria-label="dark theme icon" role="presentation" data-icon="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+        <path d="M12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <svg aria-label="light theme icon" role="presentation" data-icon="light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+       </svg>
+          
+    <label 
+    for="themeToggle" 
+    aria-controls="themeToggle"
+    title="theme toggle"
+    >
+        <input 
+        type="checkbox" 
+        name="themeToggle" 
+        id="themeToggle" 
+        aria-checked="false"
+        aria-label="theme toggle"
+        role="switch"
+        >
+    </label>
+</div>
+
+   
+    <hgroup>
+    <h1>Andrew M McCall</h1>
+</hgroup>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/blog/">Blog</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    <li>
+      <a href="/resume/">Resume</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+
+  </header>
+  <main id="#content">
+    
+  <h1>SCSS Use VS Import: How To Use @Use in SCSS</h1>
+  
+  
+  <time datetime="2022-06-07T00:00:00&#43;00:00">June 7, 2022</time>
+
+  <p>You have probably seen many times that <code>@import</code> is gradually being deprecated in SASS.  So what is the alternative?  Sass wants us to use @use which actually requires a little bit more setup but comes with the ability to namespace your sass and make it easier to maintain in larger projects.</p>
+<h2 id="what-is-wrong-with-using-import-in-sass">What Is Wrong With Using @Import in SASS?</h2>
+<p>I do not feel there is any better way to put this than cite the official SASS documentation:</p>
+<blockquote>
+<p>The @import rule has a number of serious issues:</p>
+<pre><code>  @import makes all variables, mixins, and functions 
+  globally accessible. This makes it very difficult 
+  for people (or tools) to tell where anything 
+  is defined. Because everything’s global, libraries 
+  must prefix to all their members to avoid naming 
+  collisions. @extend rules are also global, which 
+  makes it difficult to predict which style rules will 
+  be extended. Each stylesheet is executed and its CSS 
+  emitted every time it’s @imported, which increases 
+  compilation time and produces bloated output. 
+  There was no way to define private members or placeholder 
+  selectors that were inaccessible to downstream stylesheets.
+</code></pre>
+<p>The new module system and the @use rule address all these problems.</p>
+</blockquote>
+<p>Source: <a href="https://sass-lang.com/documentation/at-rules/import" title="What is wrong with @import">sass-lang.com</a></p>
+<p>So, then, what do we do?  At first was a bit confusing for me to understand how the <code>@use</code> directive works in SASS.<br>
+I felt like it required a lot of extra typing to achieve the same result but there must be a benefit.  It turns out
+that it is not as difficult as it seems and does not require very many extra lines of code to get it to work right.</p>
+<h2 id="how-to-use-the-use-scss-directive">How To Use The @Use SCSS Directive</h2>
+<p>The key element to the <code>@use</code> directive is that to get it to work efficiently it requires another directive which is called <code>@forward</code>.
+Again, from the SASS documentation:</p>
+<blockquote>
+<p>The @forward rule loads a Sass stylesheet and makes its mixins,
+functions, and variables available when your stylesheet is loaded with the @use rule.
+It makes it possible to organize Sass libraries across many files, while allowing
+their users to load a single entrypoint file.</p>
+</blockquote>
+<p>Source: <a href="https://sass-lang.com/documentation/at-rules/forward" title="@forward rule">sass-lang.com</a></p>
+<p>The <code>@use</code> directive works with both the <code>@forward</code> directive but to get it to work effectively there is
+one more component that needs to be brought into the fold.  <code>@forward</code> directives need to be stored inside
+an <code>_index.scss</code> file.  The idea is to create a subfolder in the main scss file structure.  It might be
+called something like <code>_components</code>.  Inside this sub-directory you might have something like a button
+component, a card component, and so on and so forth.</p>
+<p>Of course it is totally fine to just use the <code>@use</code> directive for these components but the issue with this
+approach is that we have to define the namespace for each <code>@use</code> directive.  This would make maintaining the
+SASS structure difficult to say the least.  For example, any time we wanted to call a button it would look
+like this:</p>
+<p><code>@use './_components/_button.scss' as button;</code></p>
+<p>To actually call the button into action it would need to look like this:</p>
+<pre tabindex="0"><code>.some-class-name {
+    color: button.$some-defined-color-variable;
+}
+</code></pre><h3 id="a-better-approach-to-import">A Better Approach To @Import</h3>
+<p>Instead of calling each component with <code>@use</code> we can call <code>@use</code> on the <code>_index.scss</code> file localed in the <code>_components</code>
+directory.  But first we must forward are required modules in the <code>_index.scss</code> file.   Think of <code>@forward</code> as
+a more robust way of requiring css components.  The index file acts as a directory of sorts of all of your
+required modules.  Inside of the <code>_index.scss</code> file we simply would include our scss components like this:</p>
+<p><code>@forward './_button.scss';</code></p>
+<p>Once we have all of the appropriate forward directives set up in the index, all we need to do to gain access to them
+is call <code>@use './_components/_index.scss' as *;</code>.  Now that index file has passed on all of the forwarded scss
+modules to the current scss module.</p>
+<p><strong>Note:</strong> the <code>*</code> imports the directives similiary to how <code>@import</code> works without a defined namespace.  Alternatively,
+we could have done it like this: <code>@use './_components/_index.scss' as variables;</code></p>
+<p>In this case we would need to access our scss modules like this:</p>
+<pre tabindex="0"><code>.some-class-name {
+    color: variables.$blue;
+}
+</code></pre><h2 id="use-use-and-forward-to-better-organize-your-scss-partials">Use @Use and @Forward to better organize your SCSS Partials</h2>
+<p>Where the <code>@use</code> and <code>@forward</code> directives really shine is that it makes organizing your SCSS Modules a breeze.
+For example, let&rsquo;s say you want to have a SCSS Partials Library with different components.  These can be built out
+individually in their own file and then simply brought into the index to be forwarded.<br>
+I personally like to break out my custom page styles into their own pages folder to keep my templates as organized as possible.
+If I need to make a change to a template, I know exactly which SCSS file to go into and edit if needed.</p>
+<h2 id="final-thoughts-scss-use-vs-import">Final Thoughts: SCSS @use vs @import</h2>
+<p>I hope this brings some light to newer developers (or those new to SCSS) on how to better utilize the <code>@use</code> and <code>@forward</code> directives.
+I personally don&rsquo;t feel that the official documentation covered the concept of creating a module index to forward
+the necessary modules onto other SCSS modules.  To think of it another way:  the index file is almost like a table of contents for your modules.  When you are ready to use them simply call the <code>@use</code> directive on the index file and you will have full access to all of your defined scss directives that are forwarded.</p>
+<p>If you still have questions feel free to contact me on the website or reach out on twitter @elkcityhazard.</p>
+<p>Need help with your SCSS?  I am happy to consult for free!</p>
+
+  
+  <section data-taxonomy="tags">
+    <header><hgroup>Tags:</hgroup></header>
+    <ul data-taxonomy="tags">
+        <li><a href="/tags/scss/">SCSS</a></li>
+        <li><a href="/tags/css/">Css</a></li>
+        <li><a href="/tags/frontend/">Frontend</a></li>
+        <li><a href="/tags/web-development-tips/">Web Development Tips</a></li>
+        <li><a href="/tags/scss-cheatsheet/">Scss Cheatsheet</a></li>
+    </ul>
+  </section>
+
+
+  </main>
+  <footer>
+    <section data-section="footer">
+    <ul>
+        
+       </ul>
+       <p>Copyright 2024. All rights reserved.</p>       
+</section>
+
+
+
+
+  </footer>
+</body>
+</html>

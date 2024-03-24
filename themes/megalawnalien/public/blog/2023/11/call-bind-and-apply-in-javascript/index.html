@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content=" we break down call, apply, and bind in Javascript and make sense of some simple use cases to help newer Javascript developers in their journey. ">
+<title>Call, Apply, And Bind Methods In Javascript | Andrew M McCall</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bundle.css">
+
+
+
+
+<script src="/js/main.js" defer type="module" type="text/javascript"></script>
+
+</head>
+<body data-theme="light">
+  <a 
+  href="#content"
+  aria-label="jump to main content"
+  >Jump to Content</a>
+  <header>
+    <div data-ui-toggle>
+    <svg aria-label="dark theme icon" role="presentation" data-icon="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+        <path d="M12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <svg aria-label="light theme icon" role="presentation" data-icon="light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+       </svg>
+          
+    <label 
+    for="themeToggle" 
+    aria-controls="themeToggle"
+    title="theme toggle"
+    >
+        <input 
+        type="checkbox" 
+        name="themeToggle" 
+        id="themeToggle" 
+        aria-checked="false"
+        aria-label="theme toggle"
+        role="switch"
+        >
+    </label>
+</div>
+
+   
+    <hgroup>
+    <h1>Andrew M McCall</h1>
+</hgroup>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/blog/">Blog</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    <li>
+      <a href="/resume/">Resume</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+
+  </header>
+  <main id="#content">
+    
+  <h1>Call, Apply, And Bind Methods In Javascript</h1>
+  
+  
+  <time datetime="2023-11-15T00:00:00&#43;00:00">November 15, 2023</time>
+
+  <h2 id="the-basics-of-bind-call-and-apply">The Basics of bind, call, and apply</h2>
+<h2 id="call---we-use-it-all-of-the-time">Call - We Use It All Of The Time</h2>
+<p>When we call a function in our programs, javascript uses <code>call</code> under the hood.</p>
+<p>Think of it like this:</p>
+<p><code>myFunc()</code> where the <code>()</code> is just a shorthand for call.</p>
+<p><code>call</code> takes a some parameters.  The first parameter is the object in which you want to bind to the function.</p>
+<p>The second parameter is the string argument you want to pass to the <code>call</code> function.  This can be comma delimited to accept multiple arguments.
+These arguments can be passed into any method that you are calling that accepts arguments. In this case <code>phrase</code></p>
+<h2 id="apply---mostly-the-same-as-call">Apply - Mostly The Same As Call</h2>
+<p><code>apply</code> is basically a different version of call.  Again, we pass it the <code>this</code> that we want to bind to the function.  In this example, we are asserting that we want to borrow the  <code>speak</code> method from the <code>dog</code> object and apply it to the <code>cat</code> object with the <code>phrase</code> being equal to <code>meow</code>.</p>
+<p>Since <code>apply</code> works with array-like objects, if we have any additional parameters that we want to pass to the called method, we need to pass that as an array. For Example:</p>
+<pre tabindex="0"><code>const dog = {
+  name: &#34;Fido&#34;,
+  speak: function(phrase, isGoodBoy=false) {
+   return  phrase + &#34; my name is &#34; + this.name + (isGoodBoy ? &#39; and I am a good boy.&#39; : &#39; and I am a bad boy.&#39;)
+  }
+}
+
+const cat = {
+  name: &#34;Felix&#34;,
+}
+
+console.log(dog.speak.apply(cat, [&#34;meow&#34;, true]))
+</code></pre><h2 id="bind---it-returns-a-new-function">Bind - It Returns A New Function!</h2>
+<p><code>bind</code> basically sets the context of <code>this</code> and returns a whole new function.  This is useful if you might need to reuse a function later on in your program.  In reality, it works very closely to what we have already observed.</p>
+<p><code>const bindCatToDog = dog.speak.bind(cat)</code></p>
+<p>Here we are using the bind method to orient the <code>this</code> to the <code>cat</code> object.  Later on we can call the function like this:</p>
+<p><code>console.log(bindCatToDog(&quot;rawr&quot;))</code></p>
+<h2 id="some-examples">Some Examples</h2>
+<pre tabindex="0"><code>const dog = {
+  name: &#34;Fido&#34;,
+  speak: function(phrase) {
+   return  phrase + &#34; my name is &#34; + this.name
+  }
+}
+
+const cat = {
+  name: &#34;Felix&#34;,
+}
+
+const bird = {
+name: &#34;tweety&#34;
+}
+
+console.log(dog.speak(&#34;woof&#34;))
+
+console.log(dog.speak.apply(cat, [&#34;meow&#34;]))
+
+console.log(dog.speak.call(bird, &#34;tweet tweet&#34;))
+
+const bindCatToDog = dog.speak.bind(cat)
+
+console.log(bindCatToDog(&#34;rawr&#34;))
+</code></pre><p>I hope these simple examples will help you recall the differences between bind. call, and apply later down the road.  They each represent an added flexibility that can save some time when you are writing code.</p>
+<p>For now, love yourself, now, then, and later.</p>
+
+  
+  <section data-taxonomy="tags">
+    <header><hgroup>Tags:</hgroup></header>
+    <ul data-taxonomy="tags">
+        <li><a href="/tags/call/">Call</a></li>
+        <li><a href="/tags/bind/">Bind</a></li>
+        <li><a href="/tags/apply/">Apply</a></li>
+        <li><a href="/tags/javascript/">Javascript</a></li>
+    </ul>
+  </section>
+
+
+  </main>
+  <footer>
+    <section data-section="footer">
+    <ul>
+        
+       </ul>
+       <p>Copyright 2024. All rights reserved.</p>       
+</section>
+
+
+
+
+  </footer>
+</body>
+</html>

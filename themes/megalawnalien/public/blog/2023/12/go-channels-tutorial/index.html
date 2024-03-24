@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content=" I explain Goroutines and Channels and how to apply them from basic concepts to more advanced use cases. ">
+<title>Go Channels Tutorial - Understanding Goroutines and Channels | Andrew M McCall</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bundle.css">
+
+
+
+
+<script src="/js/main.js" defer type="module" type="text/javascript"></script>
+
+</head>
+<body data-theme="light">
+  <a 
+  href="#content"
+  aria-label="jump to main content"
+  >Jump to Content</a>
+  <header>
+    <div data-ui-toggle>
+    <svg aria-label="dark theme icon" role="presentation" data-icon="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+        <path d="M12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <svg aria-label="light theme icon" role="presentation" data-icon="light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+       </svg>
+          
+    <label 
+    for="themeToggle" 
+    aria-controls="themeToggle"
+    title="theme toggle"
+    >
+        <input 
+        type="checkbox" 
+        name="themeToggle" 
+        id="themeToggle" 
+        aria-checked="false"
+        aria-label="theme toggle"
+        role="switch"
+        >
+    </label>
+</div>
+
+   
+    <hgroup>
+    <h1>Andrew M McCall</h1>
+</hgroup>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/blog/">Blog</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    <li>
+      <a href="/resume/">Resume</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+
+  </header>
+  <main id="#content">
+    
+  <h1>Go Channels Tutorial - Understanding Goroutines and Channels</h1>
+  
+  
+  <time datetime="2023-12-26T00:00:00&#43;00:00">December 26, 2023</time>
+
+  <h2 id="what-are-goroutines-and-channels">What Are Goroutines and Channels?</h2>
+<p>Concurrency refers to the languages ability to deal with many different tasks at once.  In human terms, I like to think of it like doing the dishes while waiting for your laundry to dry.</p>
+<h3 id="goroutines-running-tasks-in-the-background">Goroutines: Running Tasks In The Background</h3>
+<p>Let&rsquo;s say we have a web application that requires a transactional email.  For example, perhaps a user signs up and subscribes to your service and you want to send them a welcome email or an invoice of some kind.</p>
+<p>This would be a really good use of a goroutine.   Goroutines are essentially functions that can run concurrently in a separate process.  This is beneficial because it prevents blocking in your main program. For example, a user might visit your service, subscribe to a plan, receive a generated invoice, and potentially some other downloadable file like a generated pdf, or other asset.  Sending email could potentially be one goroutine, while generating the downloadable asset could potentially be another goroutine.  This free&rsquo;s up the main thread to continue implementing the main processes of the program.</p>
+<h3 id="channels-how-go-routines-share-memory-by-communicating">Channels: How Go Routines Share Memory By Communicating</h3>
+<p><a href="https://go.dev/blog/codelab-share" title="Share Memory By Communicating: By Andrew Gerrand">Share Memory By Communicating</a>.</p>
+<p>Go utilizies Channels to pass references to data between goroutines. A more traditional method to share data is by protecting their structure utilizing locks (which Go still supports).  Channels ensure that only one Goroutine has access to data at a time and eliminates some of the messiness of locks.</p>
+<p>This concept is summarized through the paradigm:</p>
+<blockquote>
+<p>Do not communicate by sharing memory; instead, share memory by communicating.</p>
+</blockquote>
+<h3 id="an-example-of-channels-in-go">An Example Of Channels In Go</h3>
+<pre tabindex="0"><code>
+package main
+
+import (
+	&#34;bufio&#34;
+	&#34;fmt&#34;
+	&#34;log&#34;
+	&#34;os&#34;
+	&#34;strings&#34;
+)
+
+func UpdateInputOutput(b &lt;-chan string, c chan&lt;- string) {
+
+	for {
+
+		in, ok := &lt;-b
+
+		if !ok {
+			log.Fatalln(&#34;not okay&#34;)
+		}
+
+		c &lt;- in
+
+	}
+
+}
+
+func main() {
+
+	inch := make(chan string)
+	outch := make(chan string)
+
+	go UpdateInputOutput(inch, outch)
+
+	for {
+
+		var userInput string
+
+		var reader = bufio.NewReader(os.Stdin)
+		fmt.Println(&#34;------------------------&#34;)
+		fmt.Println(&#34;Type &#39;quit&#39; to exit&#34;)
+		fmt.Print(&#34;Enter A Word To Repeat =&gt; &#34;)
+
+		userInput, err := reader.ReadString(&#39;\n&#39;)
+
+		if err != nil {
+			log.Fatalln(err)
+		}
+
+		if strings.ToLower(userInput) == &#34;quit\n&#34; {
+			break
+		}
+
+		inch &lt;- userInput
+
+		response := &lt;-outch
+		fmt.Printf(&#34;\n&#34;)
+		fmt.Println(&#34;Response:&#34;, reverseString(response))
+
+	}
+
+	fmt.Println(&#34;all done, closing channels&#34;)
+
+	close(inch)
+	close(outch)
+
+}
+
+func reverseString(s string) (result string) {
+	for _, val := range s {
+		result = string(val) + result
+	}
+	return
+}
+</code></pre><ol>
+<li>
+<p>Inside of the main function, I created an in channel and out channel.  The in channel will receive data and pass it on to the out channel which will read the final result.</p>
+</li>
+<li>
+<p>I defined an <code>UpdateInputOutput</code> function.  In this case, I am telling it that be will being set from a channel, while c will be updated from within the function.  This function utilizes an open for loop to continuously listen for channel input.  In the event that there is some issue with the in channel, the function will simply stop the program.</p>
+</li>
+<li>
+<p>In the main function, I simply start the goroutine (UpdateInputOutput) and I pass it the necessary channels.  From there, We are getting some user input.  Again, we will utilize an open for loop to continuously prompt the user for input.  If the type exit, we break out of the for loop and close the channels.</p>
+</li>
+<li>
+<p>Once we receive input, we parse it into a variable, and pass the data to the in channel.  The goroutine fires off and updates the response which we read from the outchannel into <code>response</code>.  If everything goes to plan, we will receive our input text reversed as the final output.  If we type <code>quit</code> we will simply close the channels, and be done with the program.</p>
+</li>
+</ol>
+
+  
+  <section data-taxonomy="tags">
+    <header><hgroup>Tags:</hgroup></header>
+    <ul data-taxonomy="tags">
+        <li><a href="/tags/golang/">Golang</a></li>
+        <li><a href="/tags/channels/">Channels</a></li>
+        <li><a href="/tags/concurrency/">Concurrency</a></li>
+        <li><a href="/tags/go/">Go</a></li>
+    </ul>
+  </section>
+
+
+  </main>
+  <footer>
+    <section data-section="footer">
+    <ul>
+        
+       </ul>
+       <p>Copyright 2024. All rights reserved.</p>       
+</section>
+
+
+
+
+  </footer>
+</body>
+</html>

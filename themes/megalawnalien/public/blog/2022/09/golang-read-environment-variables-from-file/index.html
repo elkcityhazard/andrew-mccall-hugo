@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content=" How to create a .env file and read it from file in your golang program. ">
+<title>Golang Read Environment Variables From File: How To Do It [Code Snippets] | Andrew M McCall</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bundle.css">
+
+
+
+
+<script src="/js/main.js" defer type="module" type="text/javascript"></script>
+
+</head>
+<body data-theme="light">
+  <a 
+  href="#content"
+  aria-label="jump to main content"
+  >Jump to Content</a>
+  <header>
+    <div data-ui-toggle>
+    <svg aria-label="dark theme icon" role="presentation" data-icon="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+        <path d="M12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <svg aria-label="light theme icon" role="presentation" data-icon="light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+       </svg>
+          
+    <label 
+    for="themeToggle" 
+    aria-controls="themeToggle"
+    title="theme toggle"
+    >
+        <input 
+        type="checkbox" 
+        name="themeToggle" 
+        id="themeToggle" 
+        aria-checked="false"
+        aria-label="theme toggle"
+        role="switch"
+        >
+    </label>
+</div>
+
+   
+    <hgroup>
+    <h1>Andrew M McCall</h1>
+</hgroup>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/blog/">Blog</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    <li>
+      <a href="/resume/">Resume</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+
+  </header>
+  <main id="#content">
+    
+  <h1>Golang Read Environment Variables From File: How To Do It [Code Snippets]</h1>
+  
+  
+  <time datetime="2022-09-08T00:00:00&#43;00:00">September 8, 2022</time>
+
+  <h2 id="what-are-environmental-variables-in-go">What Are Environmental Variables In Go</h2>
+<p>A Cautionary Tale: <a href="https://www.quora.com/My-AWS-account-was-hacked-and-I-have-a-50-000-bill-how-can-I-reduce-the-amount-I-need-to-pay">My AWS Account Was Hacked And I Have A $50,000 Bill</a></p>
+<p>If you have ever used an API key or database connection string, you have most likely had a need to secure some sensitive data. Environment variables are a way to achieve this. We may need to do this because certain API&rsquo;s can only be called so many times and the key is a way of authorizing our requests and keeping track of them. For example, the twitter API only allows 500k Tweets per monthcalls on the free <strong>Essential Access</strong> account per application. -Source: <a href="https://developer.twitter.com/en/docs/twitter-api/tweet-caps" title="Twitter Developer Documentation">Twitter Developer Documentation</a></p>
+<p>At a larger scale, we would want to protect our API access token so an abuser cannot gain access to it. This is especially important if we are committing our project to a public git repository. The way environment variables work in Go and in many other languages is that they are declared and assigned variables and their value is set to the the environment placeholder value. In GO this looks like this:</p>
+<p><code>apiKey := os.Getenv(&quot;envVariableName&quot;)</code></p>
+<p>This can be read as: &ldquo;create an assign a variable named apiKey where the value is equal to the environment variable named &ldquo;envVariableName.&rdquo;</p>
+<p>For example, if we have a .env file with a value <code>API_KEY=123456789</code> the apiKey variable would be assigned the value 123456789.</p>
+<p>The environment variable is read into memory and stored for use in the application.  This is better than just hard coding sensitive variables because we can have a strict separation of concerns insofar as others will not be able to easily discover our sensitive keys in public repositories.</p>
+<h2 id="how-to-create-an-environmental-variable-file-in-go">How To Create An Environmental Variable File In Go</h2>
+<p>Creating an environmental variable file (.env) is not difficult.  Typically, we store them in the root of our application and name then <code>.env</code>.  It is important to note, that if you are planning to commit your project to a public git repository, the <code>.env</code> file should be added to the <code>.gitignore</code> file.  This is so the environment variable file doesn&rsquo;t get committed to the repository and exposed to threat-actors.</p>
+<p>Once the file is created, it is just a basic text file.  To populate the environment variable values, all you need to do is create some key=value pairs.  For are simple example it might look something like this:</p>
+<pre tabindex="0"><code>API_KEY=123456789
+DB_CONNECTION=postgres://name:pass@mydbdomain.com
+</code></pre><p>Again, this file can be saved anywhere but I typically store it in the root of the directory, or, in the case of GO, wherever I am going to be building my executable file and running it.</p>
+<h2 id="how-to-read-an-environment-variable-from-file-in-go">How To Read An Environment Variable From File In Go</h2>
+<p>Reading the environment variables are pretty straightforward in Go.  Let&rsquo;s write some psuedo-code to see what we need to do:</p>
+<ol>
+<li>Define some package level variables or AppConfig struct to hold environment variables</li>
+<li>Create a function to open the <code>.env</code> file, read it, and parse the values.</li>
+<li>Assign the environment variables</li>
+<li>Use the environment variables</li>
+</ol>
+<p>In this simple example we can keep it all to one file:</p>
+<pre tabindex="0"><code>package main
+
+import (
+&#34;bufio&#34;
+&#34;fmt&#34;
+&#34;log&#34;
+&#34;os&#34;
+&#34;strings&#34;
+)
+
+var apiString string
+var dbConnection string
+
+func main() {
+
+setENV()
+
+fmt.Println(apiString)
+fmt.Println(dbConnection)
+}
+
+func  SetENV() {
+
+//	Open the .env file 
+envFile, err := os.Open(&#34;./.env&#34;)
+//	check for errors
+if err !=  nil {
+log.Fatalln(err)
+}
+ //	defer closing the file until the function exits
+defer envFile.Close() 
+
+// create a new scanner to read each row
+scanner := bufio.NewScanner(envFile)
+
+//	 loop through each row of the .env file
+for scanner.Scan() {
+//	split the text on the equal sign to get the key and value
+envVar := strings.Split(scanner.Text(), &#34;=&#34;)
+//	os.Setenv takes in a key and a value which are both strings
+
+os.Setenv(envVar[0], envVar[1])
+}
+//	check for errors with scanner.Scan
+if err := scanner.Err(); err !=  nil {
+log.Fatal(err)
+}
+
+// assign the environment variables using the os.Getenv method  
+apiKey = os.Getenv(&#34;API_KEY&#34;)
+dbConnection = os.Getenv(&#34;DB_CONNECTION&#34;)
+}
+</code></pre><p>if all goes well, we should expect to see:</p>
+<pre tabindex="0"><code>123456789
+postgres://name:pass@mydbdomain.com
+</code></pre><h2 id="alternatives-to-environmental-variable-file-in-go">Alternatives To Environmental Variable File In Go</h2>
+<p>Let&rsquo;s explore some of the alternatives to reading a .env file directory.</p>
+<h2 id="creating-passing-and-parsing-flags">Creating, Passing, And Parsing Flags</h2>
+<p>An idiomatic approach to passing configuration variables to your GO application is using command line flags.</p>
+<p>For example, we might write a line of code in our application like this:</p>
+<pre tabindex="0"><code>package main
+import (
+	&#34;flag&#34;
+)
+func main() {
+`addr := flag.String(&#34;addr&#34;, &#34;:4000&#34;, &#34;Port Address To Listen On&#34;)`
+
+flag.Parse()
+}
+</code></pre><p>Then, to explicitly set the address we might start our application like this:</p>
+<p><code>go run ./cmd/web -addr=&quot;:80&quot;</code></p>
+<p>Alex Edward&rsquo;s Book, <a href="https://lets-go.alexedwards.net/" title="Let's Go">Let&rsquo;s Go</a> succinctly explains this:</p>
+<blockquote>
+<p>This essentially defines a new command-line flag with the name <code>addr</code>, a default value of <code>&quot;:4000&quot;</code> and some short help text explaining what the flag controls. The value of the flag will be stored in the <code>addr</code> variable at runtime.</p>
+</blockquote>
+<p>This method can actually be combined with environment variables. For example, you could create a deploy.sh script to define and export the environment variables and pass them into your application as flags</p>
+<pre tabindex="0"><code>$ export ADDR=&#34;:9999&#34;
+$ go run ./cmd/web -addr=$ADDR
+</code></pre><p>The benefit of using flags vs strict environment variables is that you have access to multiple types (env variables are limited to string type) and also a powerful semi-new feature known as flag.Func(), although flag.Func() is not in the scope of this article.</p>
+<h2 id="using--ldflags-to-set-environment-variables">Using -ldflags To Set Environment Variables</h2>
+<p>To start, <a href="https://www.digitalocean.com/community/tutorials/using-ldflags-to-set-version-information-for-go-applications" title="-ldflags option">Digital Ocean</a> has a fantastic article regarding -ldflags.</p>
+<p><code>-ldflags</code> is a tool used during the build process and it is incredibly useful at passing dynamic data to your go application.</p>
+<p>From their article:</p>
+<blockquote>
+<p>One way to solve this in Go is to use <code>-ldflags</code> with the <code>go build</code> command to insert dynamic information into the binary at build time, without the need for source code modification. In this flag, <code>ld</code> stands for <a href="https://en.wikipedia.org/wiki/Linker_(computing)"><em>linker</em></a>, the program that links together the different pieces of the compiled source code into the final binary. <code>ldflags</code>, then, stands for <em>linker flags</em>. It is called this because it passes a flag to the underlying Go toolchain linker, <a href="https://golang.org/cmd/link"><code>cmd/link</code></a>, that allows you to change the values of imported packages at build time from the command line.</p>
+</blockquote>
+<p>Suppose we want to build our GO application:</p>
+<p>go  build -o my-app <code>-ldflags=&quot;-X 'main.apiKey=$TOKEN' -X 'main.addr=$ADDR'&quot;</code></p>
+<p>with the <code>-ldflags</code> option, we are essentially telling the linker to set these variables in these packages to the following values.  In this example, we are looking at the <code>apiKey</code> and <code>addr</code> variable in the <code>package main</code></p>
+<p>What does the <code>-X</code> stand for?</p>
+<blockquote>
+<p>we will use the <code>-X</code> flag to write information into the variable at link time, followed by the <a href="https://www.digitalocean.com/community/tutorials/importing-packages-in-go">package</a> path to the variable and its new value</p>
+</blockquote>
+<p>Source: <a href="https://www.digitalocean.com/community/tutorials/using-ldflags-to-set-version-information-for-go-applications" title="-ldflags option">Digital Ocean</a></p>
+<h2 id="using-a-package-to-read-environmental-variable-files">Using A Package To Read Environmental Variable Files</h2>
+<p>Don&rsquo;t want to spin up your own <code>.env</code> file solution for your next Go application?  Handling all the possible outcomes can be challenging and may often choose to reach for a package.  Here a few that you can <code>go get</code> for your next Go project.</p>
+<ul>
+<li><a href="https://pkg.go.dev/github.com/searKing/golang/third_party/github.com/spf13/viper">https://pkg.go.dev/github.com/searKing/golang/third_party/github.com/spf13/viper</a></li>
+<li><a href="https://pkg.go.dev/github.com/joho/godotenv">https://pkg.go.dev/github.com/joho/godotenv</a></li>
+<li><a href="https://pkg.go.dev/github.com/direnv/go-dotenv">https://pkg.go.dev/github.com/direnv/go-dotenv</a></li>
+<li><a href="https://github.com/Netflix/go-env">https://github.com/Netflix/go-env</a></li>
+</ul>
+<p><strong>Note:</strong> Remember, using third party packages can introduce risk, bugs, or broken dependencies into your code.</p>
+<h2 id="keeping-environment-variables-secure">Keeping Environment Variables Secure</h2>
+<ol>
+<li>Make sure to include the <code>.env</code> in the <code>.gitignore</code></li>
+<li>Never let users directly access and change <code>.env</code></li>
+<li>Don&rsquo;t store them in directories that are easily accessible to other system users</li>
+<li>Consider adding Multi Factor Authentication to your server</li>
+</ol>
+<h2 id="golang-environment-variables-conclusion">Golang Environment Variables Conclusion</h2>
+<p>Reading your environment variables from file in Go is not very difficult.  Consider reducing your application footprint by creating your own small utility to import your environment variables.   This will also help you better understand your application from a security standpoint and learn the value of building from scratch.</p>
+<p>Do you want to work with me?  Email me at <a href="mailto:andrew@andrew-mccall.com" title="Hire a Go Developer">andrew@andrew-mccall.com</a>.  I have 5 years of experience developing applications and Command Line Tools.</p>
+
+  
+  <section data-taxonomy="tags">
+    <header><hgroup>Tags:</hgroup></header>
+    <ul data-taxonomy="tags">
+        <li><a href="/tags/go/">Go</a></li>
+        <li><a href="/tags/golang/">Golang</a></li>
+        <li><a href="/tags/dotenv/">Dotenv</a></li>
+        <li><a href="/tags/.env/">.Env</a></li>
+        <li><a href="/tags/go-application-configuration/">Go Application Configuration</a></li>
+    </ul>
+  </section>
+
+
+  </main>
+  <footer>
+    <section data-section="footer">
+    <ul>
+        
+       </ul>
+       <p>Copyright 2024. All rights reserved.</p>       
+</section>
+
+
+
+
+  </footer>
+</body>
+</html>

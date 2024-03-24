@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SEO on Andrew M McCall</title>
+    <link>http://localhost:1313/tags/seo/</link>
+    <description>Recent content in SEO on Andrew M McCall</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 27 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/seo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Complete SEO Checklist For Local Small Business Websites [Free SEO Audit Template]</title>
+      <link>http://localhost:1313/blog/2022/10/seo-checklist-for-local-small-business-websites/</link>
+      <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2022/10/seo-checklist-for-local-small-business-websites/</guid>
+      <description>Demystify Search Engine Optimization by using my free SEO Checklist for Local Small Business Websites.&#xA;SEO CHECKLIST FOR LOCAL SMALL BUSINESS WEBSITES Download My Free Manual SEO Audit Template: free SEO Checklist For Local Small Business Websites&#xA;Today, I am going to show you how to conduct your first manual SEO audit on your local small business website. There is a ton of competing information out there which can confuse SEO beginners.</description>
+    </item>
+    <item>
+      <title>Web Analytics Platforms That Are Privacy Focused</title>
+      <link>http://localhost:1313/blog/web-analytics-platforms-that-are-privacy-focused/</link>
+      <pubDate>Sun, 23 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/web-analytics-platforms-that-are-privacy-focused/</guid>
+      <description>If you are still using Google Analytics: stop!&#xA;Google analytics is a powerful tool and the number one analytics platform used by businesses today. Upon first glance it may seem like a simple data analysis tool, but in reality it can be used to collect massive amounts of personal information on any internet user or device.&#xA;As we begin to shift away from the web 2.0 paradigm to web 3.0, it is important to take an inventory of our data collection habits.</description>
+    </item>
+  </channel>
+</rss>

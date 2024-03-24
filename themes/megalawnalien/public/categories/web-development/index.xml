@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web Development on Andrew M McCall</title>
+    <link>http://localhost:1313/categories/web-development/</link>
+    <description>Recent content in Web Development on Andrew M McCall</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 31 Dec 2023 19:18:59 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/web-development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang Create a Random String</title>
+      <link>http://localhost:1313/blog/2023/12/golang-create-a-random-string/</link>
+      <pubDate>Sun, 31 Dec 2023 19:18:59 -0500</pubDate>
+      <guid>http://localhost:1313/blog/2023/12/golang-create-a-random-string/</guid>
+      <description>Go&amp;rsquo;s rand package can help us easily generate a random string for when we need to ensure uniqueness with naming in our applicaton. We walkthrough the process of generating a random string using golang.</description>
+    </item>
+    <item>
+      <title>Go Channels Tutorial - Understanding Goroutines and Channels</title>
+      <link>http://localhost:1313/blog/2023/12/go-channels-tutorial/</link>
+      <pubDate>Tue, 26 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2023/12/go-channels-tutorial/</guid>
+      <description>Go has powerful concurrency tools fully baked into the programming Language.  This post aims to explain go routines and channels so you can get started using them in your own projects.</description>
+    </item>
+    <item>
+      <title>Call, Apply, And Bind Methods In Javascript</title>
+      <link>http://localhost:1313/blog/2023/11/call-bind-and-apply-in-javascript/</link>
+      <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2023/11/call-bind-and-apply-in-javascript/</guid>
+      <description>Call, apply, and bind methods can be confusing for newer Javascript developers.  In this post, we break down Call, Apply, And Bind methods for newer Javascript developers.</description>
+    </item>
+    <item>
+      <title>Vanilla Javascript Carousel Slider: A Beginner&#39;s Tutorial</title>
+      <link>http://localhost:1313/blog/2023/01/easy-vanilla-javascript-carousel-slider-tutorial-for-beginners/</link>
+      <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2023/01/easy-vanilla-javascript-carousel-slider-tutorial-for-beginners/</guid>
+      <description>Vanilla Javascript Carousel Slider: A Beginner Slider A photo or content slider is one of the oldest, but most popular design assets one can create with javascript. Many developers will reach for popular carousel frameworks such as swiper, slick, or photoswipe. Most of the time, you don&amp;rsquo;t need so much overhead. Let&amp;rsquo;s build a slider together and see how we can build a responsive slider without using a ton of a extra javascript.</description>
+    </item>
+    <item>
+      <title>Golang Image Resize and Golang Image Crop: Image Manipulation With Go Programming Language</title>
+      <link>http://localhost:1313/blog/2022/12/golang-image-resize-and-golang-image-crop/</link>
+      <pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2022/12/golang-image-resize-and-golang-image-crop/</guid>
+      <description>An introduction to some of the very basic features of iamge cropping with Go.</description>
+    </item>
+    <item>
+      <title>How To Create A Website For Your Online Business: Small Business Website Guide</title>
+      <link>http://localhost:1313/blog/2022/10/how-to-create-a-website-for-my-online-business/</link>
+      <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2022/10/how-to-create-a-website-for-my-online-business/</guid>
+      <description>Why Do You Need A Business Website? A business website is one of the most important tools you can have for promoting your company online. It is a cost-effective way to reach out to potential customers and clients, and it can help you build a strong online presence.&#xA;It can be used to showcase your products and services, provide information about your company, and even sell products and services online. If you are not sure where to start, there are many website builders and platforms that can help you build a professional website quickly and easily as well as a few DIY options.</description>
+    </item>
+    <item>
+      <title>Frontmatter Data And Hugo Templates: How To Output Data With Hugo Static Site Generator</title>
+      <link>http://localhost:1313/blog/2022/09/frontmatter-data-and-hugo-templates/</link>
+      <pubDate>Wed, 21 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2022/09/frontmatter-data-and-hugo-templates/</guid>
+      <description>Hugo makes quick work of small client jobs. It can even handle structured data like coffee shop menus or restaurant pricing.&#xA;VIDEO: Creating A Coffee Shop Menu Using Frontmatter YAML and Hugo Creating A Hugo Homepage hugo new site my-coffee-shop &amp;amp;&amp;amp; cd my-coffee-shop&#xA;The first thing we are going to do is create a new Hugo website. In the config.toml file, we added a site title.&#xA;We also need to make sure we create a index.</description>
+    </item>
+    <item>
+      <title>Golang Read Environment Variables From File: How To Do It [Code Snippets]</title>
+      <link>http://localhost:1313/blog/2022/09/golang-read-environment-variables-from-file/</link>
+      <pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2022/09/golang-read-environment-variables-from-file/</guid>
+      <description>What Are Environmental Variables In Go A Cautionary Tale: My AWS Account Was Hacked And I Have A $50,000 Bill&#xA;If you have ever used an API key or database connection string, you have most likely had a need to secure some sensitive data. Environment variables are a way to achieve this. We may need to do this because certain API&amp;rsquo;s can only be called so many times and the key is a way of authorizing our requests and keeping track of them.</description>
+    </item>
+    <item>
+      <title>Bootstrap A New Hugo Theme From Scratch [video]</title>
+      <link>http://localhost:1313/blog/2022/06/bootstrap-a-new-hugo-theme/</link>
+      <pubDate>Tue, 21 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2022/06/bootstrap-a-new-hugo-theme/</guid>
+      <description>A part of using Hugo is the freedom of making your own theme. In this tutorial, I will explain how to bootstrap a new Hugo theme so you can customize it exactly how you want to. I will go over verifying installation, creating a theme, telling Hugo how to use your new theme, and we walk through the very basics of setting up a theme so that the home page displays.</description>
+    </item>
+    <item>
+      <title>Install Hugo With Chocolatey Package Manager On Windows 10 [video]</title>
+      <link>http://localhost:1313/blog/2022/06/install-hugo-on-windows-with-chocolately-package-manager/</link>
+      <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2022/06/install-hugo-on-windows-with-chocolately-package-manager/</guid>
+      <description>Installing Hugo on Windows is easy with chocolately package manager.&#xA;For those who are not familiar, Hugo is a static website generator that can help you manage blazing fast static websites with minimal effort.&#xA;If you are on Windows, installing Hugo is easy using Chocolately Package Manager. Here are the steps we take.&#xA;Directions To Install Hugo on Windows 10 With Chocolately Package Manager Navigate to chocolately package manager&#xA;Click the &amp;ldquo;install&amp;rdquo; link which is located at the top right hand corner next to the light/dark toggle.</description>
+    </item>
+    <item>
+      <title>Web Hosting Free Sites: Web Hosting For Developers</title>
+      <link>http://localhost:1313/blog/web-hosting-free-sites-web-hosting-solutions-for-web-developers/</link>
+      <pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/web-hosting-free-sites-web-hosting-solutions-for-web-developers/</guid>
+      <description>Web Hosting Free Sites: A Guide To Free Web Hosting Solutions For Web Developers For new businesses or web developers that are just getting started, choosing affordable, reliable, and performant web hosting can be a challenging experience. The internet has become such an indispensable part of our lives that it&amp;rsquo;s hard to imagine a world without it. The internet has reshaped the way we do business and communicate, it has revolutionized the way we learn, work, and play, and it has changed the way we live our everyday lives.</description>
+    </item>
+    <item>
+      <title>CSS Grid Gallery: Easy Fluid Gallery With CSS Grid and Javascript</title>
+      <link>http://localhost:1313/blog/css-grid-gallery-easy-fluid-gallery-with-css-and-javascript/</link>
+      <pubDate>Wed, 24 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/css-grid-gallery-easy-fluid-gallery-with-css-and-javascript/</guid>
+      <description>Learn how to create a fluid image gallery with css grid and a few lines of javascript. In the following article, we will learn how to create a grid gallery that is fluid and easy to navigate with CSS Grid and Javascript. First, we will create a container for our grid gallery. Then we will create a row of items. Finally, we need to set up a grid to contain the items in the row.</description>
+    </item>
+    <item>
+      <title>Custom React Hook Function: Create Custom Reusable React Hooks</title>
+      <link>http://localhost:1313/blog/custom-react-hook-function/</link>
+      <pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/custom-react-hook-function/</guid>
+      <description>If you have found yourself re-writing the same boilerplate React code over and over, You may be able to refactor that into a reusable custom React hook function that will save you time and help clean up your code a bit.&#xA;What Is A React Hook React Hooks are a new feature in React 16.8, which allow us to use state and lifecycle hooks without constructor functions. They enable us to write less code, improve testability of components , and reduce potential side effects .</description>
+    </item>
+    <item>
+      <title>React State Array: Updating An Array That Is Stored Inside Of State</title>
+      <link>http://localhost:1313/blog/how-to-easily-access-previous-state-in-react-application/</link>
+      <pubDate>Sat, 20 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/how-to-easily-access-previous-state-in-react-application/</guid>
+      <description>State is one of the most important concepts in React. It&amp;rsquo;s what allows us to build components that manage and maintain their own data, and it also enables us to create reusable components that can be shared across projects without duplicating code. But what exactly is State, and how do we use it? A component&amp;rsquo;s state is simply a JavaScript object with properties and values. The values of these properties can be changed over time (hence the name &amp;ldquo;state&amp;rdquo;) by invoking setState().</description>
+    </item>
+    <item>
+      <title>5 Things You Need To Know Before And After You Build A Website</title>
+      <link>http://localhost:1313/blog/5-things-you-need-to-know-before-and-after-you-build-a-website/</link>
+      <pubDate>Sun, 03 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/5-things-you-need-to-know-before-and-after-you-build-a-website/</guid>
+      <description>5 Ways You Can Use Your Website to Grow Your Business Websites are a great way to grow your business, but you need to make sure that they are properly maintained and optimized for this. In order to help you with that, here are five ways you can use your website for the growth of your business.&#xA;Create a blog: Blogging is a great way to create content and generate leads.</description>
+    </item>
+    <item>
+      <title>5 Trends For Traverse City Web Development In 2022</title>
+      <link>http://localhost:1313/blog/5-trends-for-traverse-city-web-development-in-2022/</link>
+      <pubDate>Wed, 15 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/5-trends-for-traverse-city-web-development-in-2022/</guid>
+      <description>When it comes to trends in web development, there is no telling what will happen with the release of new technologies and tools. It is difficult to predict what will happen in 2022, but one thing is for sure, website trends will be different with the release of new versions of Angular, React, and other technologies. The focus on user experience will start to replace search engine optimization as the most important factor in the success of a website.</description>
+    </item>
+  </channel>
+</rss>

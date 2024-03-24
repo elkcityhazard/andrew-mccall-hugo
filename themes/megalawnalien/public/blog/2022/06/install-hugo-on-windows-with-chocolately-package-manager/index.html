@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content=" Installing Hugo on Windows is really quite simple with Chocolately Package Manager.   This video will explain the process of installing Hugo on Windows 10. ">
+<title>Install Hugo With Chocolatey Package Manager On Windows 10 [video] | Andrew M McCall</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bundle.css">
+
+
+
+
+<script src="/js/main.js" defer type="module" type="text/javascript"></script>
+
+</head>
+<body data-theme="light">
+  <a 
+  href="#content"
+  aria-label="jump to main content"
+  >Jump to Content</a>
+  <header>
+    <div data-ui-toggle>
+    <svg aria-label="dark theme icon" role="presentation" data-icon="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+        <path d="M12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <svg aria-label="light theme icon" role="presentation" data-icon="light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+       </svg>
+          
+    <label 
+    for="themeToggle" 
+    aria-controls="themeToggle"
+    title="theme toggle"
+    >
+        <input 
+        type="checkbox" 
+        name="themeToggle" 
+        id="themeToggle" 
+        aria-checked="false"
+        aria-label="theme toggle"
+        role="switch"
+        >
+    </label>
+</div>
+
+   
+    <hgroup>
+    <h1>Andrew M McCall</h1>
+</hgroup>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/blog/">Blog</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    <li>
+      <a href="/resume/">Resume</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+
+  </header>
+  <main id="#content">
+    
+  <h1>Install Hugo With Chocolatey Package Manager On Windows 10 [video]</h1>
+  
+  
+  <time datetime="2022-06-20T00:00:00&#43;00:00">June 20, 2022</time>
+
+  <p>Installing <a href="https://gohugo.io" title="Hugo - The World's Fastest Website Generator">Hugo</a> on Windows is easy with <a href="https://community.chocolatey.org/" title="Windows 10 Software Package Manager">chocolately package manager</a>.</p>
+<iframe id="odysee-iframe" width="100%" height="315" src="https://odysee.com/$/embed/install-hugo-on-windows-10-chocolately-package-manager/1e56233689c0aa6ae056c04611e2b09ad7035178?r=HADqujT6idtBaZKLwMq9UWNb6LbwVV2z" allowfullscreen style="max-width: 100%; margin: 1em auto;"></iframe>
+<p>For those who are not familiar, Hugo is a static website generator that can help you manage blazing fast static websites with minimal effort.</p>
+<p>If you are on Windows, installing Hugo is easy using Chocolately Package Manager.  Here are the steps we take.</p>
+<h2 id="directions-to-install-hugo-on-windows-10-with-chocolately-package-manager">Directions To Install Hugo on Windows 10 With Chocolately Package Manager</h2>
+<ol>
+<li>
+<p>Navigate to <a href="https://community.chocolatey.org/" title="Windows 10 Software Package Manager">chocolately package manager</a></p>
+</li>
+<li>
+<p>Click the <a href="https://chocolatey.org/install" title="install chocolately package manager">&ldquo;install&rdquo;</a> link which is located at the top right hand corner next to the light/dark toggle.</p>
+</li>
+<li>
+<p>Select <code>individual</code> install method</p>
+</li>
+<li>
+<p>Open up an elevated administrator instance of Windows Powershell.  To accomplish this, the fastest way is to press the Windows key which will open up the start menu.  Start typing <code>Powershell</code>.  Next, you will need to right-click on Windows Powershell and select <code>Run As Administrator</code></p>
+</li>
+<li>
+<p>Next we will need to check the <code>Execution Policy</code>.  This is as simple as copying and pasting the following line into the elevated Powershell: <code>Get-ExecutionPolicy</code></p>
+</li>
+</ol>
+<p>The related section from the official installation documentation says the following:</p>
+<blockquote>
+<p>Run <code>Get-ExecutionPolicy</code>. If it returns <code>Restricted</code>, then run <code>Set-ExecutionPolicy AllSigned</code> or <code>Set-ExecutionPolicy Bypass -Scope Process</code>.</p>
+</blockquote>
+<p>Once the Execution Policy is set all we need to do now is actually install chocolatey:</p>
+<blockquote>
+<p>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&lsquo;<a href="https://community.chocolatey.org/install.ps1'">https://community.chocolatey.org/install.ps1'</a>))</p>
+</blockquote>
+<p>Once you paste the text into Powershell, press <code>Enter</code> and wait a few moments for it to install.  Once the script has executed all that is left is to type <code>choco</code> to verify that Chocolately is now installed.</p>
+<ol start="6">
+<li>
+<p>Once that is completed, we can get on with installing Hugo.  To  do that simply type <code>choco install hugo -a</code>.  This will automatically download the latest release of Hugo and the flag <code>-a</code> says to Chocolately to go ahead and install the package (you can manually confirm this by ommiting the -a flag).</p>
+</li>
+<li>
+<p>Once the package has installed, simply type <code>hugo version</code> to verify the installation.</p>
+</li>
+</ol>
+<p>This article is part of a series on how to create a Hugo website from scratch.  Read the original article here: <a href="/blog/hugo-website-tutorial-how-to-create-a-hugo-website-from-scratch/" title="How To Create A Hugo Website From Scratch">How To Create A Hugo Website From Scratch: An Overview</a></p>
+
+  
+  <section data-taxonomy="tags">
+    <header><hgroup>Tags:</hgroup></header>
+    <ul data-taxonomy="tags">
+        <li><a href="/tags/hugo/">Hugo</a></li>
+        <li><a href="/tags/static-website-generators/">Static Website Generators</a></li>
+        <li><a href="/tags/golang/">Golang</a></li>
+    </ul>
+  </section>
+
+
+  </main>
+  <footer>
+    <section data-section="footer">
+    <ul>
+        
+       </ul>
+       <p>Copyright 2024. All rights reserved.</p>       
+</section>
+
+
+
+
+  </footer>
+</body>
+</html>

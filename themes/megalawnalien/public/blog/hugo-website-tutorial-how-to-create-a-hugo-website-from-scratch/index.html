@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content=" Hugo is a powerful static website generator written in the GO language. It can help you create clean, modern websites that load quickly with little overhead. ">
+<title>Hugo Website Tutorial: How To Create A Hugo Website | Andrew M McCall</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bundle.css">
+
+
+
+
+<script src="/js/main.js" defer type="module" type="text/javascript"></script>
+
+</head>
+<body data-theme="light">
+  <a 
+  href="#content"
+  aria-label="jump to main content"
+  >Jump to Content</a>
+  <header>
+    <div data-ui-toggle>
+    <svg aria-label="dark theme icon" role="presentation" data-icon="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+        <path d="M12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <svg aria-label="light theme icon" role="presentation" data-icon="light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+       </svg>
+          
+    <label 
+    for="themeToggle" 
+    aria-controls="themeToggle"
+    title="theme toggle"
+    >
+        <input 
+        type="checkbox" 
+        name="themeToggle" 
+        id="themeToggle" 
+        aria-checked="false"
+        aria-label="theme toggle"
+        role="switch"
+        >
+    </label>
+</div>
+
+   
+    <hgroup>
+    <h1>Andrew M McCall</h1>
+</hgroup>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/blog/">Blog</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    <li>
+      <a href="/resume/">Resume</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+
+  </header>
+  <main id="#content">
+    
+  <h1>Hugo Website Tutorial: How To Create A Hugo Website</h1>
+  
+  
+  <time datetime="2021-12-22T00:00:00&#43;00:00">December 22, 2021</time>
+
+  <h1 id="hugo-website-tutorial-how-to-create-your-first-hugo-website">Hugo Website Tutorial: How To Create Your First Hugo Website</h1>
+<p>Hugo is a powerful static website generator written in the GO language. It can help you create clean, modern websites that load quickly with little overhead.</p>
+<h2 id="video-hugo-tutorials">[VIDEO] Hugo Tutorials</h2>
+<ol>
+<li>👉 <a href="/blog/2022/06/install-hugo-on-windows-with-chocolately-package-manager/" title="Install Hugo On Windows 10 With Chocolately Package Manager"> [Video] How To Install Hugo On Windows 10 With Chocolately Package Manager (Less Than 2.5 Minutes)</a></li>
+<li>👉 <a href="/blog/2022/06/bootstrap-a-new-hugo-theme/" title="Create A Hugo Theme From Scratch: Part 1"> [Video] How To Boostrap A New Hugo Theme And Display The Home Page </a></li>
+<li>👉 <a href="/blog/2022/09/frontmatter-data-and-hugo-templates/" title="Learn about Hugo context and outputting structured data using frontmatter parameters">[Video] Output Structured Data Using Hugo, YAML, and Frontmatter</a></li>
+</ol>
+<h2 id="what-is-the-hugo-static-site-framework">What is the Hugo static site framework?</h2>
+<p>Hugo is one of my favorite website build tools. It is very fast. They advertise themselves as being &ldquo;blazingly fast.&rdquo; Hugo is a static website generator built with the GO language. It uses GO templating and than renders a 100% static website at build time. The reason you want this: speed. Static websites have less technology debt than other modern workflows that require a server backend to process and build pages on the fly.</p>
+<p>Additionally, Hugo is also cheaper to maintain. Since there are no plugins to update or complicated server architecture to maintain, Hugo has a minimal economic and environmental footprint. I run my personal hugo site off of a content delivery network and it only costs me a few bucks a month.</p>
+<p>This article will be dedicated to creating a dead simple hugo website tutorial. I will show you how to install Hugo and get your first site up and running. Along the way, we will cover a few basic aspects of Hugo I think new Hugo developers should know right away. This Hugo Tutorial is meant to help new Hugo developers abstract away some of the more difficult aspects of the official Hugo documentation.</p>
+<h2 id="installing-hugo">Installing Hugo</h2>
+<p>👉 <strong>New:</strong> <a href="/blog/2022/06/install-hugo-on-windows-with-chocolately-package-manager/" title="Install Hugo On Windows 10 With Chocolately Package Manager"> [Video] How To Install Hugo On Windows 10 With Chocolately Package Manager (Less Than 2.5 Minutes)</a></p>
+<p>Unlike other flavors of Static Site Generators, Hugo is dead simple to install. Remember, <a href="https://gohugo.io" title="gohugo.io">gohugo.io</a> has comprehensive documentation as well to get you started. If you need further support, you can reach out to myself, or visit the official website which also has an active developer forum. Many examples have been included from their website to demonstrate concepts.</p>
+<p>All installation methods require you to visit the following page: <a href="https://github.com/gohugoio/hugo/releases">https://github.com/gohugoio/hugo/releases</a></p>
+<p>This is where you will find your operating specific installer or binary. Also, a thing to note here: you can see the changelog for each release. That is handy to see what features are being developed and implemented and what fixes were shipped.</p>
+<h3 id="windows">Windows</h3>
+<p>The official documentation explains several ways to install Hugo on windows. It can be viewed at <a href="https://gohugo.io/getting-started/installing/#windows">https://gohugo.io/getting-started/installing/#windows</a></p>
+<p>I personally prefer the method of using a package manager likey Chocolatey.</p>
+<p>If you don&rsquo;t know what a package manager is or why you need one, I won&rsquo;t bore you with the details. All you need to know about package managers is that they help you install software more efficiently and also help you maintain your software updates in one place.</p>
+<p>On windows, I prefer to use <a href="https://chocolatey.org/">https://chocolatey.org/</a></p>
+<p>If you decide to use this method, you just need to navigate to the &ldquo;get started&rdquo; page and follow the directions. It involves copying and pasting code into an admin-elevated powershell terminal. You need to open up windows powershell by right-clicking on the icon and selecting &ldquo;run as administrator.&rdquo; Once the terminal opens you simply need to set your Execution Policy to &ldquo;non-restricted.&rdquo; To do this paste the following code:</p>
+<p><code>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))</code></p>
+<p>This will start the installation process. Once you are done you can then install Hugo.</p>
+<p>In the same powershell terminal you can paste one of two commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>choco install hugo -confirm
+</span></span></code></pre></div><p>or</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps1" data-lang="ps1"><span style="display:flex;"><span>choco install hugo-extended 
+</span></span></code></pre></div><p>If you are newer to web development, you will most likely need the first option. For those who use a more modern workflow, hugo-extended is packed full of additional features such as baked in sass/scss support, fingerprinting, bundling features and more.</p>
+<h3 id="mac">Mac</h3>
+<p>I personally prefer to use the homebrew package manager to install hugo on mac. Unfortunately, some older macs are not supported by homebrew anymore. If you have a mac that is less than 8 years old, you should be okay. If you want to learn more about <a href="https://brew.sh/" title="homebrew package manager">Homebrew on Mac</a>, you can do so by clicking the contextual link.</p>
+<p>Once you have installed homebrew on your version of Mac, it is very simple to install Hugo.</p>
+<p>All you need to do is open up a command line and type <code>brew install hugo.</code></p>
+<p>This will install all of the dependencies and packages necessary to run the Hugo binary on Mac.</p>
+<p>Again, if you need help, simply reach out to me and I will be happy to help.</p>
+<h3 id="linux">Linux</h3>
+<p>There are quite a few different methods to install Hugo on linux. Personally, I like to download the .tar.gz file from the github repo, extact it, and than move the binary into the /usr/local/bin directory (if you want it installed globally).</p>
+<p>If you don&rsquo;t feel like you can handle a manual install like this, I can recommend either using the snap store, default package repositories (i.e., sudo apt-get install hugo), brew install hugo, any of the other popular methods that install packages on Linux. Again, if you need help drop me a note and I will help you.</p>
+<h2 id="creating-a-new-hugo-static-site">Creating a new Hugo static Site</h2>
+<p>Now that we have installation out of the way, we can get on to the fun part. I have a folder on my desktop called hugo-sites. I recommend you create a similar named folder to store your hugo projects. After you create the folder, the next step will be to open up a command prompt there. Not sure how to open a terminal window? Take a few moments to search your favorite internet search engine and you will find a wealth of information. On many desktop environements, it is built in to the right-click context menu. I do remember, however, on windows having to make a minor tweak to the registry to get this option available to me.</p>
+<p>Once you are done and the terminal is open simply type <code>hugo new site name-of-the-site</code>. This will automatically generate a new site project for you. Once it is done you will need to enter that directory. On most terminals (I can&rsquo;t think of an exception) simply type <code>cd name-of-my-site.</code></p>
+<h2 id="creating-a-new-theme-for-a-hugo-static-site">Creating A New Theme for a Hugo Static Site</h2>
+<p>👉 <strong>New</strong>: <a href="/blog/2022/06/bootstrap-a-new-hugo-theme/" title="Create A Hugo Theme From Scratch: Part 1"> [Video] How To Boostrap A New Hugo Theme And Display The Home Page </a></p>
+<p>You can start building your hugo project right away if you want to. I personally prefer to create a theme, though. Themes are great because when you want to change the look of your site, all you need to do is port the content into a new theme and make minor tweaks. Once you are inside the project directory that houses your config.yaml file, make sure to get back into the terminal prompt and type <code>hugo new theme nameoftheme.</code></p>
+<p>Again, make sure you are in your project folder in the terminal! Once you run the command, Hugo will generate a new theme for you. The last thing you need to do to start using the new theme is to link to it in the config.toml file. To do so, you simply add near the top of your config tile a line that looks something like this:</p>
+<p><code>theme = &quot;nameoftheme&quot;</code></p>
+<p>Now that we have that out of the way. We can start using our new theme! Theming is where Hugo goes from a boring old static website generator to something more powerful and extensible.</p>
+<h2 id="defining-layout-structure-for-a-hugo-static-site">Defining layout structure for a Hugo static site</h2>
+<p>By default you get quite a bit to work with when Hugo spins up a new website.</p>
+<p><code>. ├── archetypes ├── config.toml ├── content ├── data ├── layouts ├── static └── themes</code></p>
+<h3 id="hugo-archetypes-directory">Hugo Archetypes Directory</h3>
+<p>Archetypes are basically your predefined frontmatter files that are used when you are creating new pages with Hugo. Many developers will use <code>hugo new</code> to create new content files and Hugo will pull from the archetypes to structure the markdown page. The config file is the site configuration module. This is where you put the global variables and configurations for your Hugo static site. This will hold your default title, meta Description, and menus for your website. Content is where we hold our markdown files and is generally the layout of your website. This might have directories named &ldquo;blog&rdquo;, &ldquo;about-us&rdquo;, &ldquo;services&rdquo; and so on.</p>
+<h3 id="hugo-data-directory">Hugo Data Directory</h3>
+<p>The data directory is great if you need to render any type of structured data. For example, maybe you have a collection of items like baseball cards that are organized in a structured method. You can store the file in the data directory as a JSON file and Hugo will be able to render it via the GO templates to the page.</p>
+<h3 id="hugo-layouts-directory">Hugo Layouts Directory</h3>
+<p>Layouts are exactly what they sound like. If you are making a standalone Hugo project, you can actually put your layout templates in this folder. I personally do not do it this way because I like the interchangability of the themes method. But, if you know you are not going to be re-theming often, you can store your layouts in the layout folder to minimize your directory strucuture.</p>
+<h3 id="hugo-static-directory">Hugo Static Directory</h3>
+<p>The static directory stores anything that is going to be served that often remains unchanged. This would be things like your images, javascript files, and css files. These are files that generally would be candidates for cdn delivery.</p>
+<h3 id="hugo-themes-directory">Hugo Themes Directory</h3>
+<p>The themes directory is the method we will be talking about the most. This houses your themes which is awesome because you can change your theme when necessary and your content is still living in the content directory which makes re-theming a breeze!</p>
+<h2 id="the-baseof-file">The Baseof File</h2>
+<p>So if you are still following along you should have a theme and the base set up for a Hugo static site. In your themes folder, you will have a folder with then name, &ldquo;_default.&rdquo; Inside the folder, there will be a file called baseof.html. This, as it&rsquo;s name suggets, is the base layout template that you can build additional templates out of. This is where you create your blocks.</p>
+<p>A block allows you to create the outer wrapper of your pages, overriding parts as necessary for each page template. The baseof file holds the blocks and extends them to each page template. Blocks are handly because you can define main sections of your page that you will most likely always have such as the header. You may have a few different types of header Blocks. The advantage here is that you can swap them out very easily since they are components. Hugo themselves provides a great example of how the block system works:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go-html-template" data-lang="go-html-template"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;<span style="color:#75715e">{{</span> <span style="color:#66d9ef">block</span> <span style="color:#e6db74">&#34;title&#34;</span> <span style="color:#a6e22e">.</span> <span style="color:#75715e">}}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">&lt;!-- Blocks may include default content. --&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">{{</span> <span style="color:#a6e22e">.Site.Title</span> <span style="color:#75715e">}}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">{{</span> <span style="color:#66d9ef">end</span> <span style="color:#75715e">}}</span>&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- Code that all your templates share, like a header --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">{{</span> <span style="color:#66d9ef">block</span> <span style="color:#e6db74">&#34;main&#34;</span> <span style="color:#a6e22e">.</span> <span style="color:#75715e">}}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">&lt;!-- The part of the page that begins to differ between templates --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">{{</span> <span style="color:#66d9ef">end</span> <span style="color:#75715e">}}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">{{</span> <span style="color:#66d9ef">block</span> <span style="color:#e6db74">&#34;footer&#34;</span> <span style="color:#a6e22e">.</span> <span style="color:#75715e">}}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- More shared code, perhaps a footer but that can be overridden if need be in  --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">{{</span> <span style="color:#66d9ef">end</span> <span style="color:#75715e">}}</span>
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p>Then, when you want to override a block on a new template, all you have to do is create a new html file and define a new block from the template like this:</p>
+<p>{{ define &ldquo;main&rdquo; }}</p>
+<p>my unique html markup goes here.</p>
+<p>{{ end }}</p>
+<p>As you can see, the block and baseof system gives Hugo some powerful flexibility to create modular websites with ease.</p>
+<h2 id="how-context-works-in-hugo">How Context Works In Hugo</h2>
+<p>👉 <strong>NEW:</strong> <a href="/blog/2022/09/frontmatter-data-and-hugo-templates/" title="Learn about Hugo context and outputting structured data using frontmatter parameters">[Video] Output Structured Data Using Hugo, YAML, and Frontmatter</a></p>
+<p>Context is probably the single most important concept to grasp with Hugo. It is the foundation of what makes Hugo so powerful. If you do not come from a programming background, context will most likely be a bit more difficult to grasp. Without over complicating it, context is just the currently focused bit of information in an array of similar pieces of information.</p>
+<p>For example, lets pretend we have a blog. Say we have a section of our blog devoted entirely to cats. It will most likely have a folder named cats with a leaf bundle file like &ldquo;_index.md&rdquo; to signify that it is a collection of like articles.</p>
+<p>If we had a template file we might have a section that looks like this:</p>
+<pre tabindex="0"><code>{{ range .Pages }}
+
+&lt;h2&gt;{{ .Title }}&lt;/h2&gt;
+
+{{ end }}
+</code></pre><p>In this case, the context is pointing to the group of pages in the folder as signified by the dot notation and the word &ldquo;Pages&rdquo; appeneded to it. Then, we are simply looping through each page&rsquo;s title and outputting them one by one.</p>
+<p>For most cases, that is the generalized version of context. As this is an introduction, I won&rsquo;t go to deeply into context. Just know that is scoping the next item in an array if items and bringing it to the execution stack to be worked with. If you want to learn a ton of information about context I recommend the following article. <a href="https://www.regisphilibert.com/blog/2018/02/hugo-the-scope-the-context-and-the-dot/">https://www.regisphilibert.com/blog/2018/02/hugo-the-scope-the-context-and-the-dot/</a></p>
+<h2 id="templating-the-hugo-theme">Templating The Hugo Theme</h2>
+<p>In the theme folder you will have a folder called layouts. This is where you keep your theme template files. There will be a _default folder as well as a partials folder. As I am sure you can guess, we put components inside the partial folders. These are accessed in the templates with a custom piece of code specific to Hugo. To include a partial in a template, all you need to do is type out: {{ partial &ldquo;header.html &quot; }}. That is it. Hugo will know what to do and bring the partial into the template when it builds the pages.</p>
+<h2 id="website-tracking-code">Website Tracking Code</h2>
+<p>Hugo also has some built in template partials. These are known as internal templates. One of these is the Google Analytics internal template. This is great if you use Google&rsquo;s service for website tracking code. To make your website tracking code work, all you need to do is add the following bit to your site config file first:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go-html-template" data-lang="go-html-template"><span style="display:flex;"><span>googleAnalytics = &#39;G-MEASUREMENT_ID&#39;
+</span></span></code></pre></div><p>Then, somewhere in your head partial all you need to do is include the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go-html-template" data-lang="go-html-template"><span style="display:flex;"><span><span style="color:#75715e">{{</span> <span style="color:#66d9ef">template</span> <span style="color:#e6db74">&#34;_internal/google_analytics_async.html&#34;</span> <span style="color:#a6e22e">.</span> <span style="color:#75715e">}}</span>  
+</span></span></code></pre></div><p>Now you have included your Google analytics website tracking code into your Hugo project.</p>
+<p>Unfortunately there is not support for other types of website tracking code at this time built in. Thankfully, we can easily create partials to include other website tracking code in our projects. I highly recommend using <a href="https://www.plausible.io/">https://www.plausible.io/</a> because it is an open source project that is privacy-focused tracking software. It tracks visitors but the most you can find out about them is their country of origin. A great feature of this is it does not use cookies which is an added bonus.</p>
+<h2 id="markdown--frontmatter">Markdown &amp; Frontmatter</h2>
+<p>Hugo uses markdown and frontmatter to manage content. I have an article to help you get started on frontmatter here: <a href="https://www.andrew-mccall.com/blog/markdown-syntax-for-quick-development-and-fast-content-creation/">Markdown Editor Tutorial</a></p>
+<p>The main takeaway for this article is that markdown is how we create our content. Frontmatter is basically how we store our variables, arrays, and objects to render out onto the page. I want to point out that these are not, technically speaking, variables, arrays, and objects. Frontmatter is not a programming language. I just think it is easier to abstract away some of the complexity and think of it this way. For example, you may want to be able to easily update a list of services on a page. You can achieve that pretty easily with frontmatter:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go-html-template" data-lang="go-html-template"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title: services
+</span></span><span style="display:flex;"><span>headless: true
+</span></span><span style="display:flex;"><span>services:
+</span></span><span style="display:flex;"><span>- name: &#34;Walk On Times&#34;
+</span></span><span style="display:flex;"><span>Description: &#34;This is our general admission gameplay time. You don&#39;t need to call ahead to book a time with us when there is walk-on time available.&#34;
+</span></span><span style="display:flex;"><span>url: &#34;/paintball-services/walk-on-play&#34;
+</span></span><span style="display:flex;"><span>icon: &#34;/images/icons&#34;
+</span></span><span style="display:flex;"><span>- name: &#34;Corporate Events&#34;
+</span></span><span style="display:flex;"><span>Description: &#34;Paintball is great for team building because it allows the players to work together as a cohesive unit to achieve a goal.&#34;
+</span></span><span style="display:flex;"><span>url: &#34;/paintball-services/corporate-entertainment-services&#34;
+</span></span><span style="display:flex;"><span>icon: &#34;/images/icons&#34;
+</span></span><span style="display:flex;"><span>- name: &#34;Paintball Parties&#34;
+</span></span><span style="display:flex;"><span>Description: &#34;Birthday Parties and special events are our specialties! Area 51 Paintball can help you plan a birthday or party event.&#34;
+</span></span><span style="display:flex;"><span>url: &#34;/paintball-services/paintball-parties&#34;
+</span></span><span style="display:flex;"><span>icon: &#34;/images/icons&#34;
+</span></span><span style="display:flex;"><span>- name: &#34;Paintball Equipment Repair&#34;
+</span></span><span style="display:flex;"><span>Description: &#34;We can help troubleshoot and repair your broken paintball markers and equipment to help you.&#34;
+</span></span><span style="display:flex;"><span>url: &#34;/paintball-services/paintball-equipment-repair&#34;
+</span></span><span style="display:flex;"><span>icon: &#34;/images/icons&#34;
+</span></span><span style="display:flex;"><span>- name: &#34;Paintball Equipment Sales&#34;
+</span></span><span style="display:flex;"><span>Description: &#34;Ready to upgrade your gear? We have a full selection of top models for you to choose from.&#34;
+</span></span><span style="display:flex;"><span>url: &#34;/paintball-services/paintball-equipment-sales&#34;
+</span></span><span style="display:flex;"><span>icon: &#34;/images/icons&#34;
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div><p>Note the declaration for headless. It is set to true. This is how you tell Hugo that you want to use the frontmatter from a markdown file but you don&rsquo;t want to actually render a page for it. Now, if I want to output some services, I can simply use a statement like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go-html-template" data-lang="go-html-template"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">{{</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">.services</span> <span style="color:#75715e">}}</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">{{</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">$index</span><span style="color:#f92672">,</span> <span style="color:#a6e22e">$service</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">.</span> <span style="color:#75715e">}}</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#75715e">{{</span><span style="color:#a6e22e">$index</span><span style="color:#75715e">}}</span><span style="color:#e6db74">&#34;</span>&gt;<span style="color:#75715e">{{</span> <span style="color:#a6e22e">.name</span> <span style="color:#75715e">}}</span>&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#75715e">{{</span><span style="color:#a6e22e">$index</span><span style="color:#75715e">}}</span><span style="color:#e6db74">&#34;</span>&gt; <span style="color:#75715e">{{</span> <span style="color:#a6e22e">.Description</span> <span style="color:#75715e">}}</span> &lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">{{</span> <span style="color:#66d9ef">end</span> <span style="color:#75715e">}}</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">{{</span> <span style="color:#66d9ef">end</span> <span style="color:#75715e">}}</span>
+</span></span></code></pre></div><p>I am sure you can see how this is handy. By the way, I also just showed you to get the index and the context from an array in Hugo.</p>
+<p>Frontmatter and markdown are pretty powerful but I also appreciate the fact that it is simple in nature. It really cannot do too much in and of itself which does limit you but also makes you think critically about your project. If you can&rsquo;t do it with markdown, your project may be growing too complex and you need to scale it back.</p>
+<h2 id="hugo-image-processing">Hugo Image Processing</h2>
+<p>Hugo has some very handy image processing capabilities. Your client sent you a bunch of random sized photos and you need thumbnails? No problem. Images are a first class citizen in Hugo. They are considered page resources which means you can put them in your page bundle for processing. This is especially handy for gallery pages. Simply drag all those photos into a directory named &ldquo;gallery&rdquo; in your content sub directory. Make sure you have an index.md file as well. You can than create a page template in your theme&rsquo;s default directory called &ldquo;gallery.html&rdquo; Hugo should automatically assign this layout to it, but sometimes I have had to add layout: gallery in my frontmatter for that page.</p>
+<p>This gallery layout now has powerful image processing capabilities. The complete image processing documentation can be viewed here: <a href="https://gohugo.io/content-management/image-processing/">https://gohugo.io/content-management/image-processing/</a></p>
+<p>A simple example of creating thumbnails from your images:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go-html-template" data-lang="go-html-template"><span style="display:flex;"><span><span style="color:#75715e">{{</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">.Resources.ByType</span> <span style="color:#e6db74">&#34;image&#34;</span> <span style="color:#75715e">}}</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">{{</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">.</span> <span style="color:#75715e">}}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{ <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">image</span> <span style="color:#f92672">:=</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">resource</span>.<span style="color:#a6e22e">Resize</span> <span style="color:#e6db74">&#34;100x100&#34;</span> }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">figure</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">img</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;{{ $image | absURL }}&#34;</span> <span style="color:#a6e22e">loading</span>=<span style="color:#e6db74">&#34;lazy&#34;</span> <span style="color:#a6e22e">decoding</span>=<span style="color:#e6db74">&#34;async&#34;</span> <span style="color:#a6e22e">height</span>=<span style="color:#e6db74">&#34;100&#34;</span> <span style="color:#a6e22e">width</span>=<span style="color:#e6db74">&#34;100&#34;</span> <span style="color:#f92672">/</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">figure</span>&gt;
+</span></span><span style="display:flex;"><span>{{ <span style="color:#a6e22e">end</span> }}  
+</span></span><span style="display:flex;"><span>{{ <span style="color:#a6e22e">end</span> }}  
+</span></span></code></pre></div><p>Again, check out the official image processing documentation to see all of the features.</p>
+<h2 id="hugo-asset-bundling">Hugo Asset Bundling</h2>
+<p>I personally don&rsquo;t feel that the Hugo documentation does a great job of explaining asset bundling in the documentation. The official documentation on asset bundling in Hugo can be found here: <a href="https://gohugo.io/hugo-pipes/bundling/">https://gohugo.io/hugo-pipes/bundling/</a></p>
+<p>The key take away here is that you can create an asset folder either in your main project directory or theme folder. Then, you can put assets with like MIME type into folders and bundle, minimize, and process them into one file. To learn this, it a good idea to look at the source code of other Hugo themes and you will get a better idea of how to bundle assets.</p>
+<p>You can also process assets in other ways. One example is processing scss files and using PostCSS to take advantage of build time css features that don&rsquo;t exist in traditional css.</p>
+<h2 id="hosting">Hosting</h2>
+<p>So you have been playing around and you have made a simple site with Hugo but now you don&rsquo;t know how to host it. I personally recommend vercel or github pages. These are CI/CD services that will build your page each time it&rsquo;s git repository changes. I won&rsquo;t go to deep into how hosting with a git-based solution works, but the one advantage that can be taken from this method is that you can often host your site for free this way.</p>
+<p>The official documentation for github deployment: <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a></p>
+<p>An easier way that I like with Vercel: <a href="https://vercel.com/guides/deploying-hugo-with-vercel">https://vercel.com/guides/deploying-hugo-with-vercel</a></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This tutorial has taught you a bit about how to use Hugo for generating static websites quickly and efficiently. I have also gone over several imporant features and techniques. The work is not done, however. Hugo is a powerful static website generator that can create very dynamic content despite it&rsquo;s limitations to static generation.</p>
+<p>Need help getting started with Hugo? I offer free one on one consulting and training sessions. Book an appointment with me or simply leave me a message on the site. I can be found @elkcityhazard on twitter.</p>
+
+  
+  <section data-taxonomy="tags">
+    <header><hgroup>Tags:</hgroup></header>
+    <ul data-taxonomy="tags">
+        <li><a href="/tags/hugo/">Hugo</a></li>
+        <li><a href="/tags/html/">Html</a></li>
+        <li><a href="/tags/css/">Css</a></li>
+        <li><a href="/tags/javascript/">Javascript</a></li>
+        <li><a href="/tags/jamstack/">JAMStack</a></li>
+        <li><a href="/tags/cms/">CMS</a></li>
+    </ul>
+  </section>
+
+
+  </main>
+  <footer>
+    <section data-section="footer">
+    <ul>
+        
+       </ul>
+       <p>Copyright 2024. All rights reserved.</p>       
+</section>
+
+
+
+
+  </footer>
+</body>
+</html>

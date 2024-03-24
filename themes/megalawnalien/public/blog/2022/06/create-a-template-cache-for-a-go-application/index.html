@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content=" How to create a reusable template cache for a go web application that allows the application to read templates from memory. ">
+<title>How To Create A Template Cache For Your Golang Web Application | Andrew M McCall</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bundle.css">
+
+
+
+
+<script src="/js/main.js" defer type="module" type="text/javascript"></script>
+
+</head>
+<body data-theme="light">
+  <a 
+  href="#content"
+  aria-label="jump to main content"
+  >Jump to Content</a>
+  <header>
+    <div data-ui-toggle>
+    <svg aria-label="dark theme icon" role="presentation" data-icon="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+        <path d="M12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <svg aria-label="light theme icon" role="presentation" data-icon="light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+       </svg>
+          
+    <label 
+    for="themeToggle" 
+    aria-controls="themeToggle"
+    title="theme toggle"
+    >
+        <input 
+        type="checkbox" 
+        name="themeToggle" 
+        id="themeToggle" 
+        aria-checked="false"
+        aria-label="theme toggle"
+        role="switch"
+        >
+    </label>
+</div>
+
+   
+    <hgroup>
+    <h1>Andrew M McCall</h1>
+</hgroup>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/blog/">Blog</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    <li>
+      <a href="/resume/">Resume</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+
+  </header>
+  <main id="#content">
+    
+  <h1>How To Create A Template Cache For Your Golang Web Application</h1>
+  
+  
+  <time datetime="2022-06-26T00:00:00&#43;00:00">June 26, 2022</time>
+
+  <p>A beginner&rsquo;s guide to create a reusable template cache for your Go web application:  eveything you need to get started.   For example the <code>net/http</code> and <code>html/template</code> package are part of the standard library and allow us to create full-featured web applications with just the standard library.</p>
+<h2 id="template-cache-in-go-web-applications-a-beginners-guide">Template Cache In Go Web Applications: A Beginner&rsquo;s Guide</h2>
+<p>Getting started creating a web application with <strong>Go</strong> isn&rsquo;t difficult.  One area that was difficult for me was the idea of creating a template cache to serve <strong>Go</strong> template files.</p>
+<p><strong>Note</strong>: This example actually uses material from Trevor Sawler&rsquo;s udemy course which can be purchased here: <a href="https://www.udemy.com/course/building-modern-web-applications-with-go/" title="Trevor Sawler's Udemy Course On Golang">Building Modern Web Applications With Go</a></p>
+<p>Reading templates from the filesystem is pretty straightforward.  But what if you want to read all the templates onces and store them in an in-memory app?  Well that is entirely possible of course.  It does take a little bit of work that was confusing for me at first.  The tricky part, in my opinion, was learning how to create a site-wide app configuration and passing the data around the app.  For this particulary method, we use an AppConfig to store the template cache as a map.  Then to pass the data to the rendering engine, we create a helper function inside of the rendering engine to get the AppConfig and have access to it.</p>
+<ol>
+<li>Create a new go application and run <code>go mod init basic-web-app</code> where <code>basic-web-app</code> is the location of your project repo such as github or gitlab.</li>
+<li>Create a new directory in the root of your project at <code>cmd/web</code></li>
+<li>Inside of <code>cmd/web</code> we want to create our <code>main.go</code> file</li>
+<li>At the root of your project directory, you will want to create a new folder called <code>pkg</code></li>
+<li>Inside of <code>pkg</code>, create 3 new directories <code>config</code>, <code>render</code>, <code>handlers</code>. For each new folder respectively, create a new go file named the same as the folder.  For example, <code>config.go</code>, <code>handlers.go</code>, and <code>render.go</code></li>
+<li>Again, at the root of the project directory, we need to also create a folder named <code>templates</code> which will store our respective templates.  Inside of the <code>templates</code> directory we need to create two templates: <code>base.layout.tmpl</code> and <code>home.page.tmpl</code>  These will be the go html templates to render our pages. These will need to be populated like so:</li>
+</ol>
+<pre tabindex="0"><code>@@ base.layout.tmpl will look like this
+
+{{ define &#34;base&#34; }}
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&#34;en&#34;&gt;
+&lt;head&gt;
+    &lt;meta charset=&#34;UTF-8&#34;&gt;
+    &lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34;&gt;
+    &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt;
+    &lt;title&gt;{{ template &#34;title&#34; . }}&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    {{ template &#34;Content&#34; . }}
+    
+&lt;/body&gt;
+&lt;/html&gt;
+
+{{ end }}
+</code></pre><pre tabindex="0"><code>@@ home.page.tmpl will look like this
+
+{{ template &#34;base&#34; }}
+
+{{ define &#34;title&#34; }}
+
+My home Page
+
+{{ end }}
+
+
+{{ define &#34;Content&#34;  }}
+&lt;p&gt;This is some content&lt;/p&gt;
+
+
+{{ end }}
+</code></pre><ol start="7">
+<li>Next, in the render package, I want to create a new function called <code>CreateTemplateCache</code> to handle creating the templates.  This file will create a new map that will hold our template sets.  Inside of the render package create a new function that looks something like this.</li>
+</ol>
+<pre tabindex="0"><code>//  CreateTemplateCache finds all of the templates and returns a map of pointers to the templates
+
+func CreateTemplateCache() (map[string]*template.Template, error) {
+
+	//	create a new map to hold our templates
+	myCache := map[string]*template.Template{}
+
+	//	using go built-in filepath module, blog the pages
+
+	pages, err := filepath.Glob(&#34;./templates/*.page.tmpl&#34;)
+
+	// handle the filepath.Glob error if there is one
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	//	 next we need to loop through all the pages and create a new template set
+
+	for _, page := range pages {
+
+		//	first we need to get the actual name of the page using filepath.Base
+
+		name := filepath.Base(page)
+
+		// next, we need to actually create the template set
+
+		ts, err := template.New(name).ParseFiles(page)
+
+		//	again, if there are any errors creating the template set and parsing the files
+
+		if err != nil {
+			log.Fatalln(err)
+		}
+
+		//	Next, the template set needs to know of any layouts we are using so it can parse correctly
+
+		matches, err := filepath.Glob(&#34;./templates/*.layout.tmpl&#34;)
+
+		// check for errors
+
+		if err != nil {
+			log.Fatalln(err)
+		}
+
+		//	check if matches are greater than zero (layouts exist)
+
+		if len(matches) &gt; 0 {
+
+			//	using the template set from above, we continue to parse the layouts
+			ts, err = ts.ParseGlob(&#34;./templates/*.layout.tmpl&#34;)
+
+			// check for errors
+
+			if err != nil {
+				log.Fatalln(err)
+			}
+
+			//  finally, once we parse all of the elements of the page we can add it to the template cache
+
+			myCache[name] = ts
+		}
+	}
+
+	return myCache, err
+
+}
+</code></pre><ol start="8">
+<li>Next, we are going to want to create a function to actually handle rendering the templates.   This function will need access to our templateCache which we are going to store in our config package.  We are going to reference or config from memory through a variable called <code>app</code>.  To get started, create a fyuncion called <code>Render Template</code> inside of the <code>render</code> package.</li>
+</ol>
+<pre tabindex="0"><code>
+// RenderTemplate renders templates using html/template
+func RenderTemplate(w http.ResponseWriter, r *http.Request, tmpl string) error {
+
+	// holds the templates for easy access
+	var tc map[string]*template.Template
+
+	// app.UseCache checks to see if we are in development or production and decides how we get our templates to render
+
+	if app.UseCache {
+		// get the template cache from the app config
+		tc = app.TemplateCache
+	} else {
+		// this is just used for testing, so that we rebuild
+		// the cache on every request
+		tc, _ = CreateTemplateCache()
+	}
+
+	//	 does the template exist in the templateCache?
+
+	t, ok := tc[tmpl]
+	if !ok {
+		return errors.New(&#34;can&#39;t get template from cache&#34;)
+	}
+
+	//	Create a new bytes butter
+
+	buf := new(bytes.Buffer)
+
+	//	execute the template to the buffer
+
+	err := t.Execute(buf, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	//	write the buffer to http.ResponseWriter
+	_, err = buf.WriteTo(w)
+	if err != nil {
+		fmt.Println(&#34;Error writing template to browser&#34;, err)
+		return err
+	}
+
+	// return err
+
+	return nil
+}
+</code></pre><ol start="9">
+<li>Lets head over to our config package and set that up to get the templatecache to work.  We will need to create a new type <code>AppConfig</code> to hold our templateCache in memory for us.</li>
+</ol>
+<pre tabindex="0"><code>package config
+
+import &#34;html/template&#34;
+
+type AppConfig struct {
+	TemplateCache map[string]*template.Template
+	UseCache      bool
+}
+</code></pre><ol start="10">
+<li>Back in <code>main.go</code> we are going to need to initialize our AppConfig and Store our templates in it</li>
+</ol>
+<pre tabindex="0"><code>package main
+
+import (
+	&#34;basic-web-app/pkg/config&#34;
+	&#34;basic-web-app/pkg/render&#34;
+	&#34;log&#34;
+	&#34;net/http&#34;
+)
+
+func main() {
+
+	// initalize app config
+
+	var app config.AppConfig
+
+	// render the templates once
+
+	tc, err := render.CreateTemplateCache()
+
+	//	 handle err
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	// store the templatecache inside of the AppConfig
+
+	app.TemplateCache = tc
+
+	// Turn on production mode to read templates from memory cache
+
+	app.UseCache = true
+
+	// create a new mux
+
+	srv := http.NewServeMux()
+
+	srv.HandleFunc(&#34;/&#34;, handlers.Home)
+
+	http.ListenAndServe(&#34;:8080&#34;, srv)
+}
+</code></pre><ol start="11">
+<li>Next, we are going to need to go back into render and create a little helper function.  This function will be called <code>NewRenderer</code> and it&rsquo;s only job right now is to bring the AppConfig into the render package so we have access to it. <code>render.go</code> will now look like this:</li>
+</ol>
+<pre tabindex="0"><code>package render
+
+import (
+	&#34;basic-web-app/pkg/config&#34;
+	&#34;bytes&#34;
+	&#34;errors&#34;
+	&#34;fmt&#34;
+	&#34;html/template&#34;
+	&#34;log&#34;
+	&#34;net/http&#34;
+	&#34;path/filepath&#34;
+)
+
+var app *config.AppConfig
+
+func NewRender(a *config.AppConfig) {
+	app = a
+}
+
+// RenderTemplate renders templates using html/template
+func RenderTemplate(w http.ResponseWriter, r *http.Request, tmpl string) error {
+
+	// holds the templates for easy access
+	var tc map[string]*template.Template
+
+	// app.UseCache checks to see if we are in development or production and decides how we get our templates to render
+
+	if app.UseCache {
+		// get the template cache from the app config
+		tc = app.TemplateCache
+	} else {
+		// this is just used for testing, so that we rebuild
+		// the cache on every request
+		tc, _ = CreateTemplateCache()
+	}
+
+	//	 does the template exist in the templateCache?
+
+	t, ok := tc[tmpl]
+	if !ok {
+		return errors.New(&#34;can&#39;t get template from cache&#34;)
+	}
+
+	//	Create a new bytes butter
+
+	buf := new(bytes.Buffer)
+
+	//	execute the template to the buffer
+
+	err := t.Execute(buf, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	//	write the buffer to http.ResponseWriter
+	_, err = buf.WriteTo(w)
+	if err != nil {
+		fmt.Println(&#34;Error writing template to browser&#34;, err)
+		return err
+	}
+
+	// return err
+
+	return nil
+}
+
+func CreateTemplateCache() (map[string]*template.Template, error) {
+
+	//	create a new map to hold our templates
+	myCache := map[string]*template.Template{}
+
+	//	using go built-in filepath module, blog the pages
+
+	pages, err := filepath.Glob(&#34;./templates/*.page.tmpl&#34;)
+
+	// handle the filepath.Glob error if there is one
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	//	 next we need to loop through all the pages and create a new template set
+
+	for _, page := range pages {
+
+		//	first we need to get the actual name of the page using filepath.Base
+
+		name := filepath.Base(page)
+
+		// next, we need to actually create the template set
+
+		ts, err := template.New(name).ParseFiles(page)
+
+		//	again, if there are any errors creating the template set and parsing the files
+
+		if err != nil {
+			log.Fatalln(err)
+		}
+
+		//	Next, the template set needs to know of any layouts we are using so it can parse correctly
+
+		matches, err := filepath.Glob(&#34;./templates/*.layout.tmpl&#34;)
+
+		// check for errors
+
+		if err != nil {
+			log.Fatalln(err)
+		}
+
+		//	check if matches are greater than zero (layouts exist)
+
+		if len(matches) &gt; 0 {
+
+			//	using the template set from above, we continue to parse the layouts
+			ts, err = ts.ParseGlob(&#34;./templates/*.layout.tmpl&#34;)
+
+			// check for errors
+
+			if err != nil {
+				log.Fatalln(err)
+			}
+
+			//  finally, once we parse all of the elements of the page we can add it to the template cache
+
+			myCache[name] = ts
+		}
+	}
+
+	return myCache, err
+
+}
+</code></pre><ol start="12">
+<li>
+<p>But we still need to call the <code>NewRender</code>  function so we can give the <code>render</code> package access to the <code>AppConfig</code>.  So back in <code>main.go</code> before we start the server we can do this: <code>	render.NewRender(&amp;app)</code>.  This will allow us to pass our data from the <code>AppConfig</code> to the render package.</p>
+</li>
+<li>
+<p>All that is left is to actually handle our route.  In the <code>handlers</code>   package we need to create a new function called <code>Home</code>.  This will handle our home page route.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>package handlers
+
+import (
+	&#34;basic-web-app/pkg/render&#34;
+	&#34;net/http&#34;
+)
+
+func Home(w http.ResponseWriter, r *http.Request) {
+
+	//	since &#34;/&#34; is a catch all we need to handle what happens if it is not the home page
+	if r.URL.Path != &#34;/&#34; {
+		http.Error(w, &#34;Not Found, Sorry&#34;, 404)
+		return
+	}
+
+	//	if the path is correct, render the home page
+
+	render.RenderTemplate(w, &#34;home.page.tmpl&#34;)
+}
+</code></pre><p>This concept was difficult for me to wrap my head around at first.  I come from a Javascript background so I am not very used to the idea of working with pointers.  I hope this simplified demo helps you get started on the right path with making your Golang web application more efficient if you are using built in templates.</p>
+
+  
+  <section data-taxonomy="tags">
+    <header><hgroup>Tags:</hgroup></header>
+    <ul data-taxonomy="tags">
+        <li><a href="/tags/golang/">Golang</a></li>
+        <li><a href="/tags/web-development/">Web Development</a></li>
+        <li><a href="/tags/server-side-go/">Server Side Go</a></li>
+    </ul>
+  </section>
+
+
+  </main>
+  <footer>
+    <section data-section="footer">
+    <ul>
+        
+       </ul>
+       <p>Copyright 2024. All rights reserved.</p>       
+</section>
+
+
+
+
+  </footer>
+</body>
+</html>

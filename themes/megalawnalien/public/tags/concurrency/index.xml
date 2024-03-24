@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Concurrency on Andrew M McCall</title>
+    <link>http://localhost:1313/tags/concurrency/</link>
+    <description>Recent content in Concurrency on Andrew M McCall</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/concurrency/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go Channels Tutorial - Understanding Goroutines and Channels</title>
+      <link>http://localhost:1313/blog/2023/12/go-channels-tutorial/</link>
+      <pubDate>Tue, 26 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2023/12/go-channels-tutorial/</guid>
+      <description>Go has powerful concurrency tools fully baked into the programming Language.  This post aims to explain go routines and channels so you can get started using them in your own projects.</description>
+    </item>
+  </channel>
+</rss>

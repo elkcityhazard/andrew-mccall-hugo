@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content=" My Notes From Google Skillshop Course on Google Analytics 4 On The Differences Between GA4 and Universal Analytics ">
+<title>Google Analytics 4: Key Differences From Universal Analytics | Andrew M McCall</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bundle.css">
+
+
+
+
+<script src="/js/main.js" defer type="module" type="text/javascript"></script>
+
+</head>
+<body data-theme="light">
+  <a 
+  href="#content"
+  aria-label="jump to main content"
+  >Jump to Content</a>
+  <header>
+    <div data-ui-toggle>
+    <svg aria-label="dark theme icon" role="presentation" data-icon="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+        <path d="M12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <svg aria-label="light theme icon" role="presentation" data-icon="light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+       </svg>
+          
+    <label 
+    for="themeToggle" 
+    aria-controls="themeToggle"
+    title="theme toggle"
+    >
+        <input 
+        type="checkbox" 
+        name="themeToggle" 
+        id="themeToggle" 
+        aria-checked="false"
+        aria-label="theme toggle"
+        role="switch"
+        >
+    </label>
+</div>
+
+   
+    <hgroup>
+    <h1>Andrew M McCall</h1>
+</hgroup>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/blog/">Blog</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    <li>
+      <a href="/resume/">Resume</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+
+  </header>
+  <main id="#content">
+    
+  <h1>Google Analytics 4: Key Differences From Universal Analytics</h1>
+  
+  
+  <time datetime="2023-02-09T20:44:47-05:00">February 9, 2023</time>
+
+  <h1 id="google-analytics-4-vs-universal-analytics-a-comparison">Google Analytics 4 vs Universal Analytics: A Comparison</h1>
+<ul>
+<li><strong>Measurement</strong>: Universal analytics measurement is session-based while Google Analytics 4 has a flexible event-based data model.</li>
+<li><strong>Reporting</strong>: Universal Analytics has limited cross-device and cross-platform reporting whereas Google Analytics 4 has greater support for full cross-device and cross-platform reporting.</li>
+<li><strong>Automation</strong>: Universal Analytics properties have limited support for automation.  Google Analytics 4 supports machine learning throughout to improve and simplify insight discovery.</li>
+</ul>
+<h2 id="what-is-an-audience">What is An Audience?</h2>
+<p>an audience is simply a set of defined users based on attributes that are essential to your business. Some examples include: users that have already engaged with your brand or products, users shopping for a laptop computer or headphones, fans of anime and manga.  These would all comprise audiences in Google Analytics 4.   One of the advantages of Google Analytics 4 is that you have greater options in defining your audiences and segmenting users.</p>
+<p>One key addition is that if you assign Id&rsquo;s to users when they sign up on your website, you can actually pass those Id&rsquo;s on to GA4 to help define your audiences based on IDs that are sent to GA4.</p>
+<h2 id="some-advanced-features-that-ga4-makes-available">Some Advanced Features That GA4 Makes Available</h2>
+<ul>
+<li><strong>Explorations</strong>: A useful tool that allows for an advanced discovery of insights about your users.</li>
+<li><strong>BigQuery Export</strong>: Export analytics data to BigQuery to be saved securely in the cloud, and be able to combine it with other data sets and run queries against it.</li>
+</ul>
+<h2 id="google-analytics-4-how-it-collects--processes-data">Google Analytics 4: How It Collects &amp; Processes Data</h2>
+<blockquote>
+<p>The new way Analytics collects and stores data enables many of the benefits of the latest Google Analytics experience. Rather than using a session-based model, which groups user interactions within a given time frame, it uses an event-based model, which processes each user interaction as a standalone event.</p>
+</blockquote>
+<p>Source: <a href="https://skillshop.exceedlms.com/uploads/resource_courses/targets/928607/original/index.html?_courseId=66663#/page/620f7224596b180cd13aa53d" title="Google Analytics 4 Skill Shop Course">Google Skill Shop</a></p>
+<h3 id="session-based-model">Session Based Model</h3>
+<p>Analytics groups data into sessions and these session are the foundation for all reporting.  A session is as group of user interactions with your website that take place within a given timeframe (usually the time they are on the site).</p>
+<h3 id="the-event-based-model">The Event Based Model</h3>
+<p>In GA4, you can still see session data, but Analytics collects and stores user interactions with your website or app as events.  Events provide insight to users&rsquo; action on your website such as clicking, scrolling, downloading.</p>
+<p>Events have the ability to send information that gives a better understanindg  of the context of the event or actions of the user. This data includes value of purchase, geography, and what page someone may have visited.</p>
+<h3 id="benefits-of-an-event-based-model">Benefits Of An Event-Based Model</h3>
+<ul>
+<li>More Flexible and Scaleable</li>
+<li>Perform a greater depth of calculations, faster</li>
+<li>The event based data model consistently measures events across platforms and provides a richer insight experience for digital marketers</li>
+</ul>
+<h3 id="basic-interactions-automatically-recorded">Basic Interactions Automatically Recorded</h3>
+<p>The first time a user visits your website the property will log &ldquo;first visit&rdquo; event</p>
+<p><code>Enhanced Measurement</code> can be enabled to automatically collect more events without adding code to the website.</p>
+<p><strong>Enhanced Measurements</strong> allow us to measure common web events such as:</p>
+<ul>
+<li>pageview</li>
+<li>scrolls</li>
+<li>file downloads</li>
+<li>video views</li>
+</ul>
+<h2 id="identity-spaces-in-google-analytics">Identity Spaces In Google Analytics</h2>
+<p>While trying to understand user journeys, GA4 allows several different user identifiers.  Thse include user IDs that you assign to your user when the login, Google signals, and device ID.  These groups are called identity spaces.</p>
+<ul>
+<li><strong>User-ID</strong>: If you create your own persistent IDs for signed-in users, you can use this data to accurately measure user journeys across devices. To enable the User-ID feature, you must consistently assign IDs to your users and include the IDs along with the data you send to Analytics.</li>
+<li><strong>Google Signals</strong>: Google signals uses data from users who are signed in to Google. With Google signals enabled, Analytics associates event data it collects from users on your site with the Google accounts of signed-in users who have consented to sharing this information.
+Enabling Google signals is very simple. You don’t have to make modifications to your website or app to get started with this feature — just turn it on!</li>
+<li><strong>Device ID</strong>: Analytics can also use device ID as an identity space. On websites, the device ID comes from the user’s browser. On apps, the device ID comes from app-instance ID. You don&rsquo;t need any further setup in Google Analytics to use device ID.</li>
+</ul>
+<h3 id="identity-spaces-in-universal-analytics-properties">Identity Spaces In Universal Analytics Properties</h3>
+<p>In UA properties, reporting relies heavily on device ID.  A few reports can use the Google signals.  In UA, if User-ID is turned on, the data is reported separately from the rest of your data and cannot be integrated with other identity spaces.  Because identity spaces work separately in UA, it is harder to measure user journeys across devices and de-duplicate users in UA properties.</p>
+<h3 id="identity-spaces-in-ga4">Identity Spaces in GA4</h3>
+<p>GA4 processes data using all available identity spaces.  First, GA4 looks for User-Id because this feature uses data you collect.  Next it tried Google Signals and if that doesn&rsquo;t match it relies on device ID.  Since this is collected concurrently, GA4 can create a single user journey from all the associated data and, because these identity spaces are used in all of the reports, it is easier to de-duplicate users and track their journey across devices.</p>
+<blockquote>
+<p>When you only have access to one identity space, like device ID, a single person could appear as a different user every time they interact with your business on a different device. But when you use multiple identity spaces, you can get better insight into user journeys, with more robust cross-device and cross-platform data and reporting that reflects de-duplicated users.</p>
+</blockquote>
+<p>Source: <a href="https://skillshop.exceedlms.com/uploads/resource_courses/targets/928607/original/index.html?_courseId=66663#/page/620f7224596b180cd13aa53d" title="Get Started Learning Google Analytics 4">Google Analytics 4 Skill Shop Course</a></p>
+<p>GA4 allows you to see how many unique users you have no matter what platform they use and see how many conversions occurred on your app and website last week and which is contributing the most.</p>
+<p>You can also see things such as how many people started on your app but visited your website to make a purchase.</p>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li>With GA4 properties, it’s easy to create new audiences, and you have more options when defining and segmenting these audiences.</li>
+<li>GA4 properties collect and store user interactions with your business as events instead of sessions. This allows Analytics to be more flexible and scalable, and to perform more custom calculations, faster.</li>
+<li>GA4 properties combine the use of several different user identity spaces. This gives better insight into user journeys, with more robust cross-device and cross-platform data and reporting that reflects de-duplicated users.</li>
+</ul>
+<h2 id="get-to-know-google-analytics-4-properties">Get to Know Google Analytics 4 Properties</h2>
+<blockquote>
+<p>How reporting and analysis work in Universal Analytics properties: Historically, Google Analytics organized your data into predefined reports, designed to reveal valuable insights. As more features became available in Analytics over time, more and more new reports became available to cover these new use cases, until there were dozens of available reports.  If you’ve used Analytics in the past, you may have noticed that you can customize these predefined reports to an extent with Custom Reports. But if the information you’re looking for isn&rsquo;t available in any of the existing reports, you may have difficulty finding the insight you’re looking for.</p>
+</blockquote>
+<blockquote>
+<p>In GA4 properties, reporting is simplified. Instead of a very long list of predefined reports that try to cover every use case, a handful of overview reports each cover a single insight about your business in a summary card, like &ldquo;What are your user demographics?&rdquo; If you want to go deeper, you can drill into a more comprehensive report by selecting the link at the bottom of each summary card. This experience gives you more flexibility and can provide you with deeper insights.</p>
+</blockquote>
+<p>Note: material for this post can be found easily by signing up for Google Skillshare: <a href="https://skillshop.exceedlms.com/uploads/resource_courses/targets/928607/original/index.html?_courseId=66663#/page/620f7224596b180cd13aa53d" title="Google Analytics 4 Skill Shop Course">Google Skill Shop</a></p>
+
+  
+  <section data-taxonomy="tags">
+    <header><hgroup>Tags:</hgroup></header>
+    <ul data-taxonomy="tags">
+        <li><a href="/tags/digital-marketing/">Digital Marketing</a></li>
+        <li><a href="/tags/google-analytics-4/">Google Analytics 4</a></li>
+        <li><a href="/tags/google-analytics/">Google Analytics</a></li>
+        <li><a href="/tags/universal-analytics/">Universal Analytics</a></li>
+    </ul>
+  </section>
+
+
+  </main>
+  <footer>
+    <section data-section="footer">
+    <ul>
+        
+       </ul>
+       <p>Copyright 2024. All rights reserved.</p>       
+</section>
+
+
+
+
+  </footer>
+</body>
+</html>

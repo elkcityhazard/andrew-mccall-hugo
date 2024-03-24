@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content=" Learn how to create a reusable javascript coundown timer with vanilla javascript and no dependencies. ">
+<title>Javascript For Countdown Timer | [VIDEO] | Andrew M McCall</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bundle.css">
+
+
+
+
+<script src="/js/main.js" defer type="module" type="text/javascript"></script>
+
+</head>
+<body data-theme="light">
+  <a 
+  href="#content"
+  aria-label="jump to main content"
+  >Jump to Content</a>
+  <header>
+    <div data-ui-toggle>
+    <svg aria-label="dark theme icon" role="presentation" data-icon="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+        <path d="M12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <svg aria-label="light theme icon" role="presentation" data-icon="light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+       </svg>
+          
+    <label 
+    for="themeToggle" 
+    aria-controls="themeToggle"
+    title="theme toggle"
+    >
+        <input 
+        type="checkbox" 
+        name="themeToggle" 
+        id="themeToggle" 
+        aria-checked="false"
+        aria-label="theme toggle"
+        role="switch"
+        >
+    </label>
+</div>
+
+   
+    <hgroup>
+    <h1>Andrew M McCall</h1>
+</hgroup>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/blog/">Blog</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    <li>
+      <a href="/resume/">Resume</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+
+  </header>
+  <main id="#content">
+    
+  <h1>Javascript For Countdown Timer | [VIDEO]</h1>
+  
+  
+  <time datetime="2022-04-10T00:00:00&#43;00:00">April 10, 2022</time>
+
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BLe9v1G7swc" title="YouTube video player" frameborder="0" style="margin: 1rem auto;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+<p>A recurring problem that I need to solve for clients are counting down to an event, such as a sale or promotion.  Countdown timers can help create a sense of urgency for potential leads so they are often used to instill a &ldquo;fear of missing out&rdquo; sense in leads.</p>
+<p>If you wanted to, you could go a step further and pass in the DOM elements as part of the updateTime function to make it more reusable.  In this particular example I did not do that.  This particular version requires you to pass the future date into the function as a date time string formatted: &ldquo;January 1, 2023 00:00:00&rdquo;.</p>
+<p>Technically, you do not need to add the time but I do because I like be specific to the parameters of the event we are counting down to.</p>
+<p>In the <strong>updateTime</strong> function I like to use a ternary operator to determine if the time object is singular or plural to conditionally render &ldquo;Days&rdquo; or &ldquo;Day&rdquo;.  This is not 100% necessary but I like to do that for the sake of accuracy in real life.</p>
+<h2 id="what-can-this-javascript-countdown-timer-help-you-achieve">What can this javascript countdown timer help you achieve?</h2>
+<p>Use it to countdown to a special promotion, urge potential leads to signup for something, or use it to countdown to special dates.</p>
+<p>The Javascript for countdown timer is below.</p>
+<h2 id="indexhtml">index.html</h2>
+<pre tabindex="0"><code>&lt;!DOCTYPE  html&gt;
+&lt;html  lang=&#34;en&#34;&gt;
+&lt;head&gt;
+&lt;meta  charset=&#34;UTF-8&#34;&gt;
+&lt;meta  http-equiv=&#34;X-UA-Compatible&#34;  content=&#34;IE=edge&#34;&gt;
+&lt;meta  name=&#34;viewport&#34;  content=&#34;width=device-width, initial-scale=1.0&#34;&gt;
+&lt;title&gt;Countdown Timer&lt;/title&gt;
+&lt;link  rel=&#34;stylesheet&#34;  href=&#34;./style.css&#34;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  
+
+&lt;div  class=&#34;countdown-container&#34;&gt;
+&lt;span  class=&#34;days&#34;&gt;&lt;/span&gt;  &lt;span  class=&#34;hours&#34;&gt;&lt;/span&gt;  &lt;span  class=&#34;minutes&#34;&gt;&lt;/span&gt;  &lt;span  class=&#34;seconds&#34;&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;script  src=&#34;./script.js&#34;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h2 id="stylecss">style.css</h2>
+<pre tabindex="0"><code>.countdown-container {
+display: grid;
+place-items: center;
+gap: 1rem;
+}
+</code></pre><h2 id="scriptjs">script.js</h2>
+<pre><code>// Global Variables (state)
+    
+const  d = document.querySelector('.days');
+
+const  h = document.querySelector('.hours');
+
+const  m = document.querySelector('.minutes');
+
+const  s = document.querySelector('.seconds');     
+
+// future should be type of String i.e., &quot;January 1, 2023 00:00:00&quot;    
+  
+  
+
+function  DateCountdown(future) {     
+
+// Today's Date    
+this.today = Date.now();      
+
+// future Date    
+this.future = function () {    
+return  new  Date(future).getTime();    
+} 
+
+// The Difference      
+
+this.difference = function () {    
+return  this.future() - this.today;    
+}   
+
+// How Many Days?    
+this.days = function () {    
+return  Math.floor(this.difference() / 1000 / 60 / 60 / 24 )    
+}
+
+  
+
+// How Many Hours    
+this.hours = function () {    
+return  Math.floor(this.difference() / 1000 / 60 / 60 % 24)    
+}     
+
+// How Many Minutes?     
+
+this.minutes = function () {    
+return  Math.floor(this.difference() / 1000 / 60) % 60    
+}   
+
+// How Many Seconds?      
+
+this.seconds = function () {    
+return  Math.floor(this.difference() / 1000) % 60    
+}    
+}
+
+  
+  
+
+function  updateTime(future) {   
+
+// create the interval Timer     
+
+const  timer = setInterval(() =&gt; { 
+
+// Creating a new instance of the DateCountdown and passing in as string as the date we want to count down to    
+const  theTime = new  DateCountdown(future)   
+
+d.textContent = theTime.days() == 1 ? theTime.days() + ' Day' : theTime.days() + ' Days';    
+h.textContent = theTime.hours() == 1 ? theTime.hours() + ' Hour' : theTime.hours() + ' Hours';    
+m.textContent = theTime.minutes() == 1 ? theTime.minutes() + ' Minute' : theTime.minutes() + ' Minutes';    
+s.textContent = theTime.seconds() == 1 ? theTime.seconds() + ' Second' : theTime.seconds() + ' Seconds';   
+
+}, 1000)
+
+  
+
+if (theTime.difference() &lt;= 0) {   
+return  clearInterval(timer)    
+}    
+}
+   updateTime(&quot;January 1, 2023 00:00:00&quot;)
+</code></pre>
+
+  
+  <section data-taxonomy="tags">
+    <header><hgroup>Tags:</hgroup></header>
+    <ul data-taxonomy="tags">
+        <li><a href="/tags/javascript/">Javascript</a></li>
+        <li><a href="/tags/web-development/">Web Development</a></li>
+    </ul>
+  </section>
+
+
+  </main>
+  <footer>
+    <section data-section="footer">
+    <ul>
+        
+       </ul>
+       <p>Copyright 2024. All rights reserved.</p>       
+</section>
+
+
+
+
+  </footer>
+</body>
+</html>

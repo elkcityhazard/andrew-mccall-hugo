@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content=" My Notes on unit testing json.NewEncoder().Encode in Go ">
+<title>Unit Testing Json Encode | Andrew M McCall</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bundle.css">
+
+
+
+
+<script src="/js/main.js" defer type="module" type="text/javascript"></script>
+
+</head>
+<body data-theme="light">
+  <a 
+  href="#content"
+  aria-label="jump to main content"
+  >Jump to Content</a>
+  <header>
+    <div data-ui-toggle>
+    <svg aria-label="dark theme icon" role="presentation" data-icon="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+        <path d="M12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <svg aria-label="light theme icon" role="presentation" data-icon="light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+       </svg>
+          
+    <label 
+    for="themeToggle" 
+    aria-controls="themeToggle"
+    title="theme toggle"
+    >
+        <input 
+        type="checkbox" 
+        name="themeToggle" 
+        id="themeToggle" 
+        aria-checked="false"
+        aria-label="theme toggle"
+        role="switch"
+        >
+    </label>
+</div>
+
+   
+    <hgroup>
+    <h1>Andrew M McCall</h1>
+</hgroup>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/blog/">Blog</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    <li>
+      <a href="/resume/">Resume</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+
+  </header>
+  <main id="#content">
+    
+  <h1>Unit Testing Json Encode</h1>
+  
+  
+  <time datetime="2024-03-13T20:22:02-04:00">March 13, 2024</time>
+
+  <p><code>JSON</code> is one of the most common things we work with in Go.  That being said, I always forget how to write tests for it.</p>
+<p>So here is my process.</p>
+<h2 id="package-utils">Package Utils</h2>
+<p>Here is what my package utils looks like:</p>
+<pre tabindex="0"><code>package utils
+
+import (
+	&#34;encoding/json&#34;
+	&#34;net/http&#34;
+
+	&#34;github.com/elkcityhazard/remind-me/cmd/internal/config&#34;
+)
+
+var app *config.AppConfig
+
+type Utilser interface {
+	WriteJSON(w http.ResponseWriter, r *http.Request, envelope string, data interface{}) error
+}
+
+type Utils struct {
+	app         *config.AppConfig
+	maxFileSize int
+}
+
+func NewUtils(a *config.AppConfig) *Utils {
+	app = a
+
+	return &amp;Utils{
+		app:         app,
+		maxFileSize: 1024 * 1024 * 1024 * 30,
+	}
+}
+
+func (u *Utils) WriteJSON(w http.ResponseWriter, r *http.Request, envelope string, data interface{}) error {
+	payload := make(map[string]interface{})
+
+	payload[envelope] = data
+
+	w.Header().Set(&#34;Content-Type&#34;, &#34;application/json;encoding=utf-8;&#34;)
+
+	w.WriteHeader(http.StatusOK)
+
+	err := json.NewEncoder(w).Encode(payload)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+</code></pre><p>In this particular instance, I am passing in my app config as a private variable so that my utilser has access to it if it needs it later in my application.  This could go both ways, though.  I think it would be easier to pass in my utils to my app config, but in this particular instance I did it this way since it is just an example.</p>
+<p>Next, I create an interface in case I need to mock this later for further unit testing.  Right now, this is very simple.  All we have in our interface is the <code>WriteJSON</code> function which accepts a few params, and hopefully produces a result that we want.</p>
+<p>Next, we created a <code>NewUtils</code> function which accepts the app config as a parameter, and sets the local app variable.  This isn&rsquo;t 100% ideal because it causes some redundancy, but again, it gets the job done.  The worst thing that is going to happen is it is going to keep resetting the app variable, even when you pass in the app variable from the utils package.</p>
+<p>Besides that, the single common function here is to return a new <code>&amp;Utils{}</code> struct so we can write some json.</p>
+<p>Finally, we create a receiver function to write the json which looks like this:</p>
+<pre tabindex="0"><code>func (u *Utils) WriteJSON(w http.ResponseWriter, r *http.Request, envelope string, data interface{}) error {
+	payload := make(map[string]interface{})
+
+	payload[envelope] = data
+
+	w.Header().Set(&#34;Content-Type&#34;, &#34;application/json;encoding=utf-8;&#34;)
+
+	w.WriteHeader(http.StatusOK)
+
+	err := json.NewEncoder(w).Encode(payload)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+</code></pre><p>This function is pretty straight forward.  Since this is for a web application, it needs access to at least the <strong>http.ResponseWriter</strong> but I am also passing in the request object in the event I need to abstract something from it later.  Additionally, I am passing in an <code>envelope</code> param and data which is of type interface since we don&rsquo;t know what we are going to be writing to the response writer.</p>
+<p>The function simply initializes a payload, and sets the payload key as the envelope name and gives it the value of the data which is an interface.</p>
+<p>Finally, we set the content type and write the response header.  Note that the <strong>Content-Type</strong> is often put into a piece of middleware, and the WriteHeader here is actually redundant because that is the default anyways.  I left it in here to be very explicit for myself and anyone who stumbles upon this post.</p>
+<p>Finally, to write the json to the response writer, we are using <code>json.NewEncoder(w).Encode(payload)</code>.  This is typically suited for medium to large data, because it can write data in chunks and save on memory usage.  The alternative way to write this function would be swap json.NewEncoder with:</p>
+<pre tabindex="0"><code>jsonData, err := json.Marshal(payload)
+	if err != nil {
+		return err
+	}
+
+_, err := w.Write(jsonData)
+
+if err != nil {
+        return err
+    }
+return nil
+</code></pre><p>The advantage of doing it this way is less io involved in the encoding process, and is generally more acceptable when you just need a byte slice or simple string.</p>
+<h2 id="testing-a-json-writer-in-golang">Testing A JSON Writer In Golang</h2>
+<pre tabindex="0"><code>package utils
+
+import (
+	&#34;bytes&#34;
+	&#34;encoding/json&#34;
+	&#34;net/http&#34;
+	&#34;testing&#34;
+)
+
+type MockResponseWriter struct {
+	http.ResponseWriter
+	Buffer *bytes.Buffer
+}
+
+func NewMockResponseWriter() *MockResponseWriter {
+	return &amp;MockResponseWriter{
+		Buffer: new(bytes.Buffer),
+	}
+}
+
+func (mrw *MockResponseWriter) Write(p []byte) (int, error) {
+	return mrw.Buffer.Write(p)
+}
+
+func (mrw *MockResponseWriter) WriteHeader(statusCode int) {
+
+}
+
+func (mrw *MockResponseWriter) Header() http.Header {
+	// Implement if needed for your tests
+	return http.Header{}
+}
+
+func Test_WriteJSON(t *testing.T) {
+
+	utils := NewUtils(app)
+
+	mrw := NewMockResponseWriter()
+
+	req, err := http.NewRequest(&#34;GET&#34;, &#34;/test&#34;, nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	tests := []struct {
+		testType string
+		data     any
+	}{
+		{
+			testType: &#34;fail&#34;,
+			data:     make(chan bool),
+		},
+		{
+			testType: &#34;pass&#34;,
+			data:     struct{ status string }{status: &#34;okay&#34;},
+		},
+	}
+
+	// Call the method under test
+
+	for _, tt := range tests {
+
+		t.Run(tt.testType, func(t *testing.T) {
+
+			err = utils.WriteJSON(mrw, req, &#34;testEnvelope&#34;, tt.data)
+			if err != nil {
+				if tt.testType == &#34;pass&#34; {
+					t.Fatalf(&#34;WriteJSON failed: %v&#34;, err)
+				}
+			}
+
+			var result map[string]interface{}
+
+			err = json.Unmarshal(mrw.Buffer.Bytes(), &amp;result)
+
+			if err != nil {
+				if tt.testType == &#34;pass&#34; {
+					t.Fatalf(&#34;Expected an error, but got none.&#34;)
+				}
+
+			}
+		})
+	}
+
+}
+</code></pre><p>The first thing I do is mock a new response writer.  All this means, is we need create a struct that satisfies the response writer interface.  To do that we create a new <code>MockResponseWriter</code> type:</p>
+<pre tabindex="0"><code>type MockResponseWriter struct {
+	http.ResponseWriter
+	Buffer *bytes.Buffer
+}
+</code></pre><p>Then we need to implement some of the receiver functions to fulfill our obligation to the <code>WriteJSON</code> receiver function:</p>
+<pre tabindex="0"><code>func NewMockResponseWriter() *MockResponseWriter {
+	return &amp;MockResponseWriter{
+		Buffer: new(bytes.Buffer),
+	}
+}
+
+func (mrw *MockResponseWriter) Write(p []byte) (int, error) {
+	return mrw.Buffer.Write(p)
+}
+
+func (mrw *MockResponseWriter) WriteHeader(statusCode int) {
+
+}
+
+func (mrw *MockResponseWriter) Header() http.Header {
+	// Implement if needed for your tests
+	return http.Header{}
+}
+</code></pre><p>Note that I am also creating a helper function to return a new <code>MockResponseWriter</code>.</p>
+<p>All we are doing here is writing the functions we need to implement <code>WriteJSON</code>.  These functions are all a part of the ResponseWriter Interface which can be viewed here: <a href="https://pkg.go.dev/net/http#ResponseWriter" title="ResponseWriter Interface">http.ResponseWriter Interface</a>.</p>
+<p>Finally we can start setting up our unit under test:</p>
+<pre tabindex="0"><code>unc Test_WriteJSON(t *testing.T) {
+
+	utils := NewUtils(app)
+
+	mrw := NewMockResponseWriter()
+
+	req, err := http.NewRequest(&#34;GET&#34;, &#34;/test&#34;, nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	tests := []struct {
+		testType string
+		data     any
+	}{
+		{
+			testType: &#34;fail&#34;,
+			data:     make(chan bool),
+		},
+		{
+			testType: &#34;pass&#34;,
+			data:     struct{ status string }{status: &#34;okay&#34;},
+		},
+	}
+
+	// Call the method under test
+
+	for _, tt := range tests {
+
+		t.Run(tt.testType, func(t *testing.T) {
+
+			err = utils.WriteJSON(mrw, req, &#34;testEnvelope&#34;, tt.data)
+			if err != nil {
+				if tt.testType == &#34;pass&#34; {
+					t.Fatalf(&#34;WriteJSON failed: %v&#34;, err)
+				}
+			}
+
+			var result map[string]interface{}
+
+			err = json.Unmarshal(mrw.Buffer.Bytes(), &amp;result)
+
+			if err != nil {
+				if tt.testType == &#34;pass&#34; {
+					t.Fatalf(&#34;Expected an error, but got none.&#34;)
+				}
+
+			}
+		})
+	}
+
+}
+</code></pre><ol>
+<li>We need to instantiate a new utils and pass in the app config.</li>
+<li>Next, we need to instantiate our <code>NewMockResponseWriter</code></li>
+<li>Next, we need to create a mock request that we are going to use in our <code>WriteJSON</code> receiver function.</li>
+<li>We then  set up our test table which is just a simple slice of structs with two properties.</li>
+<li>Finally, we perform our tests by looping through our test table.</li>
+</ol>
+<p>Notice that in the actual test, we are writing the output to our <code>MockResponseWriter</code> and using our mock request as the request parameter.</p>
+<p>After we perform the <code>act</code> portion of attemping to write the json, we can evaluate our assertions.</p>
+<p>In this case, the test is pretty simple, because my function isn&rsquo;t too complex.  To handle test cases, I check for the test type in order to determine if an error should be thrown.</p>
+<p><code>go test ./... -coverprofile=c.out</code>
+<code>go tool cover -html=c.out</code></p>
+<p>Check you coverage and hopefully you&rsquo;ll be looking good!</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Arrange, Act, Assert are the fundamentals of test driven development.  This example is here to come back to as a moderately simple example of unit testing in go.  It serves as a reminder when we forget, or just something to light on fire on mastodon!</p>
+<p>Until next time, Love yourself now, then, and later.</p>
+<p>Andrew @elkcityhazard on Mastodon</p>
+
+  
+  <section data-taxonomy="tags">
+    <header><hgroup>Tags:</hgroup></header>
+    <ul data-taxonomy="tags">
+        <li><a href="/tags/go/">Go</a></li>
+        <li><a href="/tags/golang/">Golang</a></li>
+        <li><a href="/tags/test-driven-development/">Test Driven Development</a></li>
+        <li><a href="/tags/unit-testing/">Unit Testing</a></li>
+    </ul>
+  </section>
+
+
+  </main>
+  <footer>
+    <section data-section="footer">
+    <ul>
+        
+       </ul>
+       <p>Copyright 2024. All rights reserved.</p>       
+</section>
+
+
+
+
+  </footer>
+</body>
+</html>
