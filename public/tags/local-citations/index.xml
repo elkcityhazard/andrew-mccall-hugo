@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Local Citations on Andrew M McCall</title>
-    <link>http://localhost:1313/tags/local-citations/</link>
+    <link>//localhost:1313/tags/local-citations/</link>
     <description>Recent content in Local Citations on Andrew M McCall</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 27 Oct 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/local-citations/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/local-citations/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Complete SEO Checklist For Local Small Business Websites [Free SEO Audit Template]</title>
-      <link>http://localhost:1313/blog/2022/10/seo-checklist-for-local-small-business-websites/</link>
+      <link>//localhost:1313/blog/2022/10/seo-checklist-for-local-small-business-websites/</link>
       <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2022/10/seo-checklist-for-local-small-business-websites/</guid>
+      <guid>//localhost:1313/blog/2022/10/seo-checklist-for-local-small-business-websites/</guid>
       <description>Demystify Search Engine Optimization by using my free SEO Checklist for Local Small Business Websites.&#xA;SEO CHECKLIST FOR LOCAL SMALL BUSINESS WEBSITES Download My Free Manual SEO Audit Template: free SEO Checklist For Local Small Business Websites&#xA;Today, I am going to show you how to conduct your first manual SEO audit on your local small business website. There is a ton of competing information out there which can confuse SEO beginners.</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Frontend Web Development on Andrew M McCall</title>
-    <link>http://localhost:1313/tags/frontend-web-development/</link>
+    <link>//localhost:1313/tags/frontend-web-development/</link>
     <description>Recent content in Frontend Web Development on Andrew M McCall</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 29 Jan 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/frontend-web-development/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/frontend-web-development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vanilla Javascript Carousel Slider: A Beginner&#39;s Tutorial</title>
-      <link>http://localhost:1313/blog/2023/01/easy-vanilla-javascript-carousel-slider-tutorial-for-beginners/</link>
+      <link>//localhost:1313/blog/2023/01/easy-vanilla-javascript-carousel-slider-tutorial-for-beginners/</link>
       <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2023/01/easy-vanilla-javascript-carousel-slider-tutorial-for-beginners/</guid>
+      <guid>//localhost:1313/blog/2023/01/easy-vanilla-javascript-carousel-slider-tutorial-for-beginners/</guid>
       <description>Vanilla Javascript Carousel Slider: A Beginner Slider A photo or content slider is one of the oldest, but most popular design assets one can create with javascript. Many developers will reach for popular carousel frameworks such as swiper, slick, or photoswipe. Most of the time, you don&amp;rsquo;t need so much overhead. Let&amp;rsquo;s build a slider together and see how we can build a responsive slider without using a ton of a extra javascript.</description>
     </item>
   </channel>

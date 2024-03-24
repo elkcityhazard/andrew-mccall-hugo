@@ -5,34 +5,35 @@ ul li ul li {
 ul[data-taxonomy="tags"] {
     display: flex;
     flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
     gap: var(--spacing-1);
     font-size: var(--font-size-md);
     letter-spacing: var(--letter-spacing-2);
+    list-style: none;
+    margin: unset;
     text-transform: uppercase;
+    width: var(--width-100);
 }
 
 ul[data-taxonomy="tags"] li {
-    border: var(--border-default);
-    border-color: var(--off-white);
-    flex: 0 0 auto;
+    margin-bottom: var(--spacing-0);
     padding: var(--spacing-1);
-}
-
-body[data-theme="light"] ul[data-taxonomy="tags"] li {
-    border-color: var(--dark-black);
+    width: fit-content;
 }
 
 main ul,
 main ol,
 main dl {
     list-style: initial;
-    list-style-position: inside;
+    max-width: var(--width-11-12);
+    margin: var(--spacing-0) var(--spacing-auto);
 }
 
 main ul li,
 main ol li,
 main dl li {
-    margin: 0 var(--spacing-auto) var(--spacing-1);
+    /* margin: 0 var(--spacing-auto) var(--spacing-1); */
     padding: var(--spacing-1) 0;
 }
 

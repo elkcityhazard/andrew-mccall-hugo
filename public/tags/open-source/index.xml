@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Open Source on Andrew M McCall</title>
-    <link>http://localhost:1313/tags/open-source/</link>
+    <link>//localhost:1313/tags/open-source/</link>
     <description>Recent content in Open Source on Andrew M McCall</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 23 Jan 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Web Analytics Platforms That Are Privacy Focused</title>
-      <link>http://localhost:1313/blog/web-analytics-platforms-that-are-privacy-focused/</link>
+      <link>//localhost:1313/blog/web-analytics-platforms-that-are-privacy-focused/</link>
       <pubDate>Sun, 23 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/web-analytics-platforms-that-are-privacy-focused/</guid>
+      <guid>//localhost:1313/blog/web-analytics-platforms-that-are-privacy-focused/</guid>
       <description>If you are still using Google Analytics: stop!&#xA;Google analytics is a powerful tool and the number one analytics platform used by businesses today. Upon first glance it may seem like a simple data analysis tool, but in reality it can be used to collect massive amounts of personal information on any internet user or device.&#xA;As we begin to shift away from the web 2.0 paradigm to web 3.0, it is important to take an inventory of our data collection habits.</description>
     </item>
   </channel>

@@ -95,6 +95,7 @@ footer {
 
 section[data-taxonomy="tags"],
 section[data-taxonomy="tags"] header {
+    margin-bottom: var(--spacing-1);
     max-width: unset;
     padding: var(--spacing-0);
 }

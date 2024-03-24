@@ -11,6 +11,7 @@ class ThemeToggle {
         this.checkboxId.addEventListener('change', this.toggleAriaChecked.bind(this))
         this.checkboxId.addEventListener('change', this.toggleSunMoon.bind(this))
         this.checkboxId.addEventListener('change', this.saveState.bind(this))
+        this.checkboxId.addEventListener('change', this.toggleLineColors.bind(this))
 
     }
 
@@ -47,6 +48,19 @@ class ThemeToggle {
 
     }
 
+
+    toggleLineColors() {
+
+        return 
+        let lines = document.querySelectorAll('line')
+
+
+        this.checkboxId.checked ?
+        lines.forEach(line => line.setAttribute('stroke', "white"))
+        :
+        lines.forEach(line => line.setAttribute('stroke', "black"))
+    }
+
     saveState() {
         if (this.checkboxId.checked) {
             localStorage.setItem("theme", "dark")
@@ -63,6 +77,7 @@ class ThemeToggle {
             this.toggleTheme()
             this.toggleAriaChecked()
             this.toggleSunMoon()
+            this.toggleLineColors()
             this.saveState()
 
         } else  {
@@ -70,6 +85,7 @@ class ThemeToggle {
             this.toggleTheme()
             this.toggleAriaChecked()
             this.toggleSunMoon()
+            this.toggleLineColors()
             this.saveState()
         }
     }

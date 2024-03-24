@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web Development Tips on Andrew M McCall</title>
-    <link>http://localhost:1313/tags/web-development-tips/</link>
+    <link>//localhost:1313/tags/web-development-tips/</link>
     <description>Recent content in Web Development Tips on Andrew M McCall</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 07 Jun 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/web-development-tips/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/web-development-tips/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SCSS Use VS Import: How To Use @Use in SCSS</title>
-      <link>http://localhost:1313/blog/2022/06/scss-use-vs-import/</link>
+      <link>//localhost:1313/blog/2022/06/scss-use-vs-import/</link>
       <pubDate>Tue, 07 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2022/06/scss-use-vs-import/</guid>
+      <guid>//localhost:1313/blog/2022/06/scss-use-vs-import/</guid>
       <description>You have probably seen many times that @import is gradually being deprecated in SASS. So what is the alternative? Sass wants us to use @use which actually requires a little bit more setup but comes with the ability to namespace your sass and make it easier to maintain in larger projects.&#xA;What Is Wrong With Using @Import in SASS? I do not feel there is any better way to put this than cite the official SASS documentation:</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unit Testing on Andrew M McCall</title>
-    <link>http://localhost:1313/tags/unit-testing/</link>
+    <link>//localhost:1313/tags/unit-testing/</link>
     <description>Recent content in Unit Testing on Andrew M McCall</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 13 Mar 2024 20:22:02 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/unit-testing/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/unit-testing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unit Testing Json Encode</title>
-      <link>http://localhost:1313/blog/2024/03/unit-testing-json-encode/</link>
+      <link>//localhost:1313/blog/2024/03/unit-testing-json-encode/</link>
       <pubDate>Wed, 13 Mar 2024 20:22:02 -0400</pubDate>
-      <guid>http://localhost:1313/blog/2024/03/unit-testing-json-encode/</guid>
+      <guid>//localhost:1313/blog/2024/03/unit-testing-json-encode/</guid>
       <description>Here are my notes on testing a JSON writer for Golang that lets you wrap the response in an envelope</description>
     </item>
   </channel>

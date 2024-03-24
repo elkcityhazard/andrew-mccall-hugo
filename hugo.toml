@@ -1,13 +1,20 @@
 baseURL = '/'
 languageCode = 'en-us'
 title = 'Andrew M McCall'
-name = "megalawnalien"
+theme = 'megalawnalien'
+paginate = 10
 
 [markup.goldmark.renderer]
 unsafe = true
 
 [params]
-description = "Andrew M McCall is a fullstack web developer with 6 years of professional experience in Golang, Javascript, PHP, Lua, MongoDB, Mysql, Postgres, and NGINX, & Caddy"
+ description = "Andrew M McCall is a fullstack web developer in Traverse City, Michigan who loves Go, Lua, PHP, Javascript, Vanilla CSS, SQL, Postgresql, Semantic HTML, and Accessibility."
+ social = [
+    { name = "mastodon", url = "https://indieweb.social/@elkcityhazard" },
+    { name = "github", url = "https://github.com/elkcityhazard" },
+    { name = "gitlab", url = "https://gitlab.com/elkcityhazard" },
+    { name = "linkedIn", url = "https://www.linkedin.com/in/andrew-mccall-8a09582b3/" }
+ ]
 
 [[menus.main]]
 name = 'Home'
@@ -34,3 +41,4 @@ weight = 40
   [module.hugoVersion]
     extended = false
     min = "0.116.0"
+

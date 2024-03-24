@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Static Websites on Andrew M McCall</title>
-    <link>http://localhost:1313/tags/static-websites/</link>
+    <link>//localhost:1313/tags/static-websites/</link>
     <description>Recent content in Static Websites on Andrew M McCall</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Aug 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/static-websites/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/static-websites/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Markdown Syntax For Quick Development and Fast Content Creation</title>
-      <link>http://localhost:1313/blog/markdown-syntax-for-quick-development-and-fast-content-creation/</link>
+      <link>//localhost:1313/blog/markdown-syntax-for-quick-development-and-fast-content-creation/</link>
       <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/markdown-syntax-for-quick-development-and-fast-content-creation/</guid>
+      <guid>//localhost:1313/blog/markdown-syntax-for-quick-development-and-fast-content-creation/</guid>
       <description>Markdown is a markup language developed to be easy for writers to write. It allows writers to generate web pages quickly with excellent readability. It&amp;rsquo;s main purpose is to keep things simple and straightforward so that the writer can focus on the content rather than formatting. Markdown syntax is an alternative to HTML. It is not as powerful, but in some cases, it may be easier for a writer who doesn&amp;rsquo;t know HTML (or doesn&amp;rsquo;t want to know HTML) than learning that language.</description>
     </item>
     <item>
       <title>10 Static Site Mistakes You Should Stop Making: A blog about the common mistakes people make when creating static sites.</title>
-      <link>http://localhost:1313/blog/10-static-website-mistakes-you-should-stop-making/</link>
+      <link>//localhost:1313/blog/10-static-website-mistakes-you-should-stop-making/</link>
       <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/10-static-website-mistakes-you-should-stop-making/</guid>
+      <guid>//localhost:1313/blog/10-static-website-mistakes-you-should-stop-making/</guid>
       <description>When starting a business, it can be tempting to go with the &amp;ldquo;latest and greatest&amp;rdquo; web development technology. In fact, this same temptation often happens within a business even after it has launched a website. A website that has been built with a static site generator is always going to have a lower risk of being hacked. This doesn&amp;rsquo;t just mean your company will be less likely to be hacked, but you will also not have to throw away any code and start over if things do go wrong.</description>
     </item>
   </channel>
