@@ -43,11 +43,11 @@ jobs:
         uses: actions/checkout@v3
         with:
           submodules: recursive
-      - name: Compile CSS from SCSS files
-        uses: gha-utilities/sass-build@v0.5.1
-        with:
-          source: ./assets/scss/index.scss #I have removed the / in /src and it is still failing
-          destination:  ./assets/css/index.css 
+      # - name: Compile CSS from SCSS files
+      #   uses: gha-utilities/sass-build@v0.5.1
+      #   with:
+      #     source: ./assets/scss/index.scss #I have removed the / in /src and it is still failing
+      #     destination:  ./assets/css/index.css 
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
