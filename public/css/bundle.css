@@ -405,7 +405,7 @@ body[data-theme="light"] h6 {
 
 h1 {
   padding: var(--spacing-0);
-  font-size: var(--font-size-1);
+  font-size: clamp(var(--font-size-4), 1.3641rem + 4.0683vw, var(--font-size-1));
 }
 
 h2 {
@@ -450,6 +450,7 @@ a {
   color: var(--off-white);
   font-family: var(--font-sans);
   font-weight: 500;
+  max-width: var(--width-100);
   text-decoration: solid underline;
   -moz-transition: var(--base-transition);
   -webkit-transition: var(--base-transition);
@@ -471,7 +472,7 @@ body[data-theme="light"] a:focus {
   color: var(--aqua-green);
 }
 
-:is(h1,h2,h3) > a {
+:is(h1, h2, h3)>a {
   display: inline-block;
   font-family: var(--font-display);
   margin-bottom: var(--spacing-2);
@@ -874,6 +875,7 @@ section[data-section="pagination"] ul.pagination {
   align-items: center;
   justify-content: center;
   flex-flow: row wrap;
+  gap: var(--spacing-2);
   list-style: none;
   margin: 0 var(--spacing-auto);
 }
@@ -1135,6 +1137,7 @@ section[data-section="pagination"] ul.pagination {
   align-items: center;
   justify-content: center;
   flex-flow: row wrap;
+  gap: var(--spacing-2);
   list-style: none;
   margin: 0 var(--spacing-auto);
 }
@@ -1279,7 +1282,7 @@ body[data-theme="light"] h6 {
 
 h1 {
   padding: var(--spacing-0);
-  font-size: var(--font-size-1);
+  font-size: clamp(var(--font-size-4), 1.3641rem + 4.0683vw, var(--font-size-1));
 }
 
 h2 {
@@ -1324,6 +1327,7 @@ a {
   color: var(--off-white);
   font-family: var(--font-sans);
   font-weight: 500;
+  max-width: var(--width-100);
   text-decoration: solid underline;
   -moz-transition: var(--base-transition);
   -webkit-transition: var(--base-transition);
@@ -1345,7 +1349,7 @@ body[data-theme="light"] a:focus {
   color: var(--aqua-green);
 }
 
-:is(h1,h2,h3) > a {
+:is(h1, h2, h3)>a {
   display: inline-block;
   font-family: var(--font-display);
   margin-bottom: var(--spacing-2);
