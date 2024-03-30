@@ -1,12 +1,11 @@
 
 
 {{ define "main" }}
-<random-thing>Hello World</random-thing>
   {{ .Content }}
   {{ $paginator := .Paginate (where .Site.RegularPages "Section" "blog") }}
   {{ range first 3 $paginator.Pages }}
   
-    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+  <h2><a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a></h2>
     <p>{{ .Summary }}</p>
   {{ end }}
   <a 
