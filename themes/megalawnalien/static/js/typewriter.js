@@ -30,7 +30,7 @@ class TypeWriter {
     }
 
     updateTextContent() {
-        this.titleEl.textContent = this.messages[this.currentMsg].substring(0, this.currentIndex) + (this.currentIndex %this.cursorFactor == 0 ? "|" : "")
+        this.titleEl.textContent = this.messages[this.currentMsg].substring(0, this.currentIndex) + (this.currentIndex % this.cursorFactor == 0 ? "|" : "")
     }
 
 
@@ -38,7 +38,7 @@ class TypeWriter {
 
         const typewriter = setInterval(() => {
     
-      let  length = this.messages[this.currentMsg].length
+      let length = this.messages[this.currentMsg].length
   
       if (!this.complete) {
         if (this.currentIndex > length + this.waitFactor) {

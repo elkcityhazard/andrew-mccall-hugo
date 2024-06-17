@@ -4,6 +4,8 @@ title = 'Andrew M McCall'
 theme = 'megalawnalien'
 paginate = 10
 
+enableRobotsTXT = true
+
 [markup.goldmark.renderer]
 unsafe = true
 
