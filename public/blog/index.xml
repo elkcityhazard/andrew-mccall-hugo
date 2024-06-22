@@ -6,8 +6,22 @@
     <description>Recent content in Blog on Andrew M McCall</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Mar 2024 20:22:02 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 22 Jun 2024 08:57:31 -0400</lastBuildDate>
     <atom:link href="//localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create an Accessible Vanilla Javascript Accordion</title>
+      <link>//localhost:1313/blog/2024/06/create-an-accessible-vanilla-javascript-accordion/</link>
+      <pubDate>Sat, 22 Jun 2024 08:57:31 -0400</pubDate>
+      <guid>//localhost:1313/blog/2024/06/create-an-accessible-vanilla-javascript-accordion/</guid>
+      <description>The accordion is a user interface component that helps structure and display website information through an expansion/contraction mechanism.  This article explores building a vanilla javascript accordion with accessibility in mind.</description>
+    </item>
+    <item>
+      <title>Setup DisplayLink on Manjaro Linux</title>
+      <link>//localhost:1313/blog/2024/06/setup-displaylink-on-manjaro-linux/</link>
+      <pubDate>Sat, 15 Jun 2024 11:07:16 -0400</pubDate>
+      <guid>//localhost:1313/blog/2024/06/setup-displaylink-on-manjaro-linux/</guid>
+      <description>Getting displaylink drivers to work on Arch linux flavors can be challenging to newcomers. Here are my notes for getting displaylink drivers working on Manjaro Linux.</description>
+    </item>
     <item>
       <title>Unit Testing Json Encode</title>
       <link>//localhost:1313/blog/2024/03/unit-testing-json-encode/</link>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content=" Javascript accordions are interesting little client widgets that can  help control and organize information and display it in a concise, digestable way. ">
+<title>Create an Accessible Vanilla Javascript Accordion | Andrew M McCall</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bundle.css">
+
+
+
+
+<script src="/js/main.js" defer type="module" type="text/javascript"></script>
+<script defer src="https://umami.lofilounge.xyz/script.js" data-website-id="8a9aa23f-877c-43b3-82b6-00435dfdecd7"></script>
+
+</head>
+<body data-theme="light">
+  <a 
+  href="#content"
+  aria-label="jump to main content"
+  >Jump to Content</a>
+  <header>
+    <div data-ui-toggle>
+    <svg aria-label="dark theme icon" role="presentation" data-icon="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+        <path d="M12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <svg aria-label="light theme icon" role="presentation" data-icon="light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+       </svg>
+          
+    <label 
+    for="themeToggle" 
+    aria-controls="themeToggle"
+    title="theme toggle"
+    >
+        <input 
+        type="checkbox" 
+        name="themeToggle" 
+        id="themeToggle" 
+        aria-checked="false"
+        aria-label="theme toggle"
+        role="switch"
+        >
+    </label>
+</div>
+
+   
+    <hgroup>
+    <h1 id="siteHeader">Andrew M McCall</h1>
+</hgroup>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/blog/">Blog</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    <li>
+      <a href="/resume/">Resume</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+
+  </header>
+  <main id="#content">
+    
+  <h1>Create an Accessible Vanilla Javascript Accordion</h1>
+  
+  
+  <time datetime="2024-06-22T08:57:31-04:00">June 22, 2024</time>
+
+  <iframe id="odysee-iframe" style="width:100%; aspect-ratio:16 / 9;" src="https://odysee.com/$/embed/@megalawnalien:3/create-a-vanilla-javascript-accordion-that-is-accessible:f?r=HADqujT6idtBaZKLwMq9UWNb6LbwVV2z" allowfullscreen></iframe>
+<small><strong>Note:</strong> there is no audio, just a guide to follow along</small>
+<p>Lately, I have come across older websites that all use some sort of drop in plugin to achieve the &ldquo;accordion&rdquo;.  IF you are not familiar with what an accordion is in web development, it can be summarized as a common user interface element where content panels can be expanded or collapsed based on the user toggling an interactive element such as a button. They often get used to:</p>
+<ul>
+<li>Show and hide additional information in a way that reduces page clutter and gives greater degrees of focus to the currently expanded item.</li>
+<li>They can be used to organize data in a hierarchical way, grouping information together under expandable headings.</li>
+<li>Allow users to view additional information without navigating away from the page.</li>
+</ul>
+<p>Some of the key characteristics of the web page accordion are:</p>
+<ul>
+<li>One panel is open at a time, while the others are closed.  Some accordions allow expansion of all elements.</li>
+<li>Click or tap events handle expanding and contracting the accordion panels.</li>
+<li>The panel headings often act as the interactive trigger for the content.</li>
+<li>Are built with HTML, Javascript, CSS</li>
+<li>Can often be used for frequently asked questions, product specifications, settings menus, multistep forms, and more.</li>
+</ul>
+<p>In summary, an accordion is a user interface widget that expands and collapses sections of content to provide additional information in an organized and space-saving way,  They can also help with hierarchical organization and give websites dynamic functionality with interactivity.</p>
+<h2 id="the-problem-with-drop-in-javascript-accordions">The Problem With Drop In Javascript Accordions</h2>
+<p>As I mentioned above, I have seen a few of these accordions in the wild that are essentially drop in plugins that take care of the boiler plate.  There is really nothing wrong with these, but I want to highlight a few reasons to build your own vanilla Javascript accordion:</p>
+<ul>
+<li>Plugins and packages are often heavy in terms of their file sizes.  Plugin and package developers are often trying to handle every edge case, and make their product as feature rich as possible which ads extra bloat to your website.</li>
+<li>The more reputable javascript carousel packages do consider accessibility, but many smaller packages simply do not.  In 2024m accessibility is simply a standard, and not a nice to have, and by using packages that don&rsquo;t respect, or attempt accessibility will make your site more vulnerable to user experience issues or potentially even <a href="https://www.whoisaccessible.com/guidelines/largest-web-accessibility-lawsuits/" title="Largest Web Accessibility Lawsuits">lawsuits</a>.</li>
+<li>Owning your own code: writing and maintaining your own codecan be challenging, but you will always expand your learning, and in the event that a package or plugin becomes deprecated, you won&rsquo;t have to start over from scratch.  (Note this argument can go both ways).  It also makes your website smaller in size which will help it load faster and make it more appealing to search engines since it will load faster.</li>
+</ul>
+<h2 id="requirements-for-a-vanilla-javascript-accordion-component">Requirements For A Vanilla Javascript Accordion Component</h2>
+<ol>
+<li>Should be reusable</li>
+<li>Should be accessible and pass all <a href="https://www.a11yproject.com/checklist/" title="A11y Project Checklist">a11y</a></li>
+<li>Should be lightweight</li>
+</ol>
+<p>With our goals in mind, let us start building our own vanilla Javascript accordion!</p>
+<h2 id="setting-up-html-for-vanilla-javascript-accordion">Setting Up HTML For Vanilla Javascript Accordion</h2>
+<pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&#34;en&#34;&gt;
+&lt;head&gt;
+    &lt;meta charset=&#34;UTF-8&#34;&gt;
+    &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt;
+    &lt;meta name=&#34;description&#34; content=&#34;A Vanilla Javascript Accordion UI Component that is lightweight and open source.&#34;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;link rel=&#34;stylesheet&#34; href=&#34;./style.css&#34;&gt;
+    &lt;script src=&#34;./index.js&#34; defer&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&#34;app&#34;&gt;
+        &lt;h1&gt;Accordion Demo&lt;/h1&gt;
+        &lt;main&gt;
+       &lt;section class=&#34;accordion&#34;&gt;
+            &lt;div class=&#34;inner&#34;&gt;
+                &lt;div id=&#34;accordion&#34;&gt;
+                    &lt;div class=&#34;item&#34;&gt;
+                        &lt;button&gt;Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, saepe minus. Consequatur, veniam. Vel, iusto quaerat aliquam deleniti inventore et.&lt;/button&gt;
+                        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti praesentium dolorem iste fugiat facere officiis iure minus? Voluptatum et ut dignissimos molestias in! Est facilis soluta quam voluptatem, fugit nam aut nemo maxime dolore maiores odit, corrupti perspiciatis dolorum itaque.&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&#34;item&#34;&gt;
+                        &lt;button&gt;Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, saepe minus. Consequatur, veniam. Vel, iusto quaerat aliquam deleniti inventore et.&lt;/button&gt;
+                        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti praesentium dolorem iste fugiat facere officiis iure minus? Voluptatum et ut dignissimos molestias in! Est facilis soluta quam voluptatem, fugit nam aut nemo maxime dolore maiores odit, corrupti perspiciatis dolorum itaque.&lt;/p&gt;&lt;/div&gt;
+                    &lt;div class=&#34;item&#34;&gt;
+                        &lt;button&gt;Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, saepe minus. Consequatur, veniam. Vel, iusto quaerat aliquam deleniti inventore et.&lt;/button&gt;
+                        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti praesentium dolorem iste fugiat facere officiis iure minus? Voluptatum et ut dignissimos molestias in! Est facilis soluta quam voluptatem, fugit nam aut nemo maxime dolore maiores odit, corrupti perspiciatis dolorum itaque.&lt;/p&gt;&lt;/div&gt; 
+                    &lt;div class=&#34;item&#34;&gt;
+                        &lt;button&gt;Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, saepe minus. Consequatur, veniam. Vel, iusto quaerat aliquam deleniti inventore et.&lt;/button&gt;
+                        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti praesentium dolorem iste fugiat facere officiis iure minus? Voluptatum et ut dignissimos molestias in! Est facilis soluta quam voluptatem, fugit nam aut nemo maxime dolore maiores odit, corrupti perspiciatis dolorum itaque.&lt;/p&gt;&lt;/div&gt; 
+                    &lt;div class=&#34;item&#34;&gt;
+                        &lt;button&gt;Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, saepe minus. Consequatur, veniam. Vel, iusto quaerat aliquam deleniti inventore et.&lt;/button&gt;
+                        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti praesentium dolorem iste fugiat facere officiis iure minus? Voluptatum et ut dignissimos molestias in! Est facilis soluta quam voluptatem, fugit nam aut nemo maxime dolore maiores odit, corrupti perspiciatis dolorum itaque.&lt;/p&gt;&lt;/div&gt; 
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+       &lt;/section&gt; 
+        &lt;/main&gt;
+    &lt;/div&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><ul>
+<li>We have a landmark area which is the <code>main</code> html tag.</li>
+<li>The section tag holds are accordion.</li>
+<li>Note that we have an id on a <code>div</code> and it is set to &ldquo;accordion&rdquo;.  That will be the entry point for our javascript.</li>
+<li>In hindsight, it might be better to upgrade this to a <code>ul</code> or a <code>ol</code> since technically an accordion is probably a list.  I chose not to in this particular instance, but something to consider for next time.</li>
+<li>Note: I haven&rsquo;t added any aria labels yet because I plan to do that with Javascript.</li>
+</ul>
+<h2 id="setting-up-the-css-for-vanilla-javascript-accordion">Setting Up The CSS For Vanilla Javascript Accordion</h2>
+<pre tabindex="0"><code>main,
+h1{
+    max-width: 60rem;
+    width: 100%;
+    margin: auto;
+}
+
+.accordion {
+    padding-block: 1rem;
+    
+}
+.accordion button {
+    background: white;
+    border: 1px solid indigo;
+    border-radius: 1rem 1rem 0 0;
+    color: black;
+    text-transform: uppercase;
+    cursor: pointer;
+    min-height: 2.25rem;
+    padding-inline: 2.25rem;
+    position: relative;
+    -moz-transition: all 300ms ease;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+.accordion button:focus {
+    background: black;
+    color: white;
+}
+
+.accordion button::before {
+    border-radius: 50%;
+    color: black;
+    border: none;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    content: &#34;\002B&#34;;
+    width:2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(0.25rem, -50%);
+    height: 2.0rem;
+    width: 2.0rem;
+    font-size: 2rem;
+    z-index: 2;
+    -moz-transition: all 300ms ease;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+.accordion button.active::before {
+    transform: translate(0.25rem,-50%) rotateZ(45deg);
+}
+.accordion p {
+    margin: 0 auto 1rem;
+    padding-inline: 1rem;
+    line-height: 2;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+.accordion button:focus + p {
+    background: #e6e6e6;
+}
+</code></pre><p>The styles are not particularly difficult, but lets walk through them:</p>
+<ol>
+<li>The button is the main interactive element to the accordion.  To create a focus state, I am using <code>css::before</code> to create a button.  I also want to style the current active accordion button based on the button being in focus.</li>
+<li>We should be able to clearly know what accordion item is expanded.  So we use <code>:focus</code> on the button to ensure that we can style the currently focused accordion element.</li>
+<li>Transitions help our brains understand what is happening.  By creating subtle transitions, we can better convey to the user that the state of the application has updated.</li>
+</ol>
+<h2 id="implementing-the-vanilla-javascript-accordion-javascript-code">Implementing the Vanilla Javascript Accordion Javascript Code</h2>
+<pre tabindex="0"><code>function Accordion(accordionId, resetOnEveryClick = false) {
+
+    this.accordion = document.getElementById(accordionId)
+    this.accordionBtns = this.accordion.querySelectorAll(&#39;button&#39;)
+    this.lastClickedId = null
+    this.resetAllActive = resetOnEveryClick
+    this.events = function() {
+        this.init()
+    }
+
+    this.init = function() {
+
+        for (let [index, btn] of this.accordionBtns.entries()) {
+
+            let parentContainer = btn.closest(&#39;div&#39;) || null
+            let msgContainer = parentContainer.getElementsByTagName(&#39;p&#39;)[0] || null
+
+            if (!parentContainer || !msgContainer) return null
+
+            let childId = &#34;msg-&#34; + index
+
+            msgContainer.id = childId
+            msgContainer.setAttribute(&#39;aria-labelledby&#39;, `btn-${index}`)
+            msgContainer.setAttribute(&#39;aria-controlledby&#39;, `btn-${index}`)
+
+
+            btn.id = &#34;btn-&#34; + index
+            btn.setAttribute(&#34;role&#34;, &#39;button&#39;)
+            btn.setAttribute(&#34;aria-label&#34;, `${index + 1} of ${this.accordionBtns.length}`)
+            btn.setAttribute(&#34;aria-expanded&#34;, false)
+            btn.setAttribute(&#34;aria-controls&#34;, childId)
+            btn.addEventListener(&#39;pointerup&#39;, this.handleClick.bind(this))
+        }
+
+    }
+
+
+    this.handleActiveState = function(e) {
+        let contentBox = e.target.nextElementSibling
+        e.target.focus()
+        e.target.setAttribute(&#39;aria-expanded&#39;, true)
+        contentBox.setAttribute(&#39;aria-expanded&#39;, true)
+        contentBox.style.height = contentBox.scrollHeight + &#39;px&#39;
+
+    }
+
+    this.handleNotActiveState = function(e) {
+        let contentBox = e.target.nextElementSibling
+        e.target.blur()
+        e.target.setAttribute(&#39;aria-expanded&#39;, false)
+        contentBox.setAttribute(&#39;aria-expanded&#39;, false)
+        contentBox.style.height = 0
+    }
+
+    this.handleClick = function(e) {
+        //  this check exists so the panel isn&#39;t stuck
+        //  when the resetOnClick mode is set to true
+        if (e.target.id === this.lastClickedId) {
+            this.lastClickedId = e.target.id
+            if (e.target.classList.contains(&#39;active&#39;)) {
+                e.target.classList.remove(&#39;active&#39;)
+                this.handleNotActiveState(e)
+            } else {
+                e.target.classList.add(&#39;active&#39;)
+                this.handleActiveState(e)
+            }
+            return
+        }
+        if (this.resetAllActive) {
+
+            this.accordionBtns.forEach((btn) =&gt; {
+                if (btn.classList.contains(&#39;active&#39;)) {
+                    btn.classList.remove(&#39;active&#39;)
+                    let contentBox = btn.closest(&#39;div&#39;).getElementsByTagName(&#39;p&#39;)[0]
+                    contentBox.style.height = 0
+                }
+            })
+        }
+        if (this.lastClickedId !== e.target.id) {
+            this.lastClickedId = e.target.id
+            e.target.classList.toggle(&#39;active&#39;)
+
+            if (e.target.classList.contains(&#39;active&#39;)) {
+                this.handleActiveState(e)
+            } else {
+                this.handleNotActiveState(e)
+            }
+        }
+    }
+    this.events()
+}
+
+
+
+new Accordion(&#34;accordion&#34;, false)
+</code></pre><p>There is a lot to cover here but none of it is too difficult to understand:</p>
+<ol>
+<li>In this case, I am creating a factory function, but it could easily be a class.  A class might be better from a readability standpoint, but this function works just as well.</li>
+<li>We are passing in the id of the carousel which we set previously when writing the html.  We also have a flag to control the behavior of the vanilla j:w
+avascript accordion.  This basically just toggles the behavior of closing the last opened accordion item.</li>
+<li>At the top, we are defining the variables we need to control our accordion.  Note, we are also creating a method to initialize our vanilla Javascript accordion.  <code>this.events()</code> gets called at the end of the function to get everything started.</li>
+<li>All <code>this.events</code> does is wrap the <code>this.init</code> function which sets everything up.
+<ul>
+<li>Uses <code>this.accordionBtns</code> which is set at the top of the function using <code>querySelectorAll</code> on <code>this.accordion</code></li>
+<li>We want to get the index so we can generate some default attributes.  This is achieved by using <code>Object.entries()</code> on the <code>this.accordionBtns</code>.</li>
+<li>We loop through the buttons and set up the default attributes.</li>
+<li>Finally, we need to add an event Handler to each button.  This eventHandler handles the toggling of the state/</li>
+</ul>
+</li>
+<li><code>this.handleClick</code> is the main logic for our application.</li>
+</ol>
+<pre tabindex="0"><code>this.handleClick = function(e) {
+        //  this check exists so the panel isn&#39;t stuck
+        //  when the resetOnClick mode is set to true
+        if (e.target.id === this.lastClickedId) {
+            this.lastClickedId = e.target.id
+            if (e.target.classList.contains(&#39;active&#39;)) {
+                e.target.classList.remove(&#39;active&#39;)
+                this.handleNotActiveState(e)
+            } else {
+                e.target.classList.add(&#39;active&#39;)
+                this.handleActiveState(e)
+            }
+            return
+        }
+        if (this.resetAllActive) {
+
+            this.accordionBtns.forEach((btn) =&gt; {
+                if (btn.classList.contains(&#39;active&#39;)) {
+                    btn.classList.remove(&#39;active&#39;)
+                    let contentBox = btn.closest(&#39;div&#39;).getElementsByTagName(&#39;p&#39;)[0]
+                    contentBox.style.height = 0
+                }
+            })
+        }
+        if (this.lastClickedId !== e.target.id) {
+            this.lastClickedId = e.target.id
+            e.target.classList.toggle(&#39;active&#39;)
+
+            if (e.target.classList.contains(&#39;active&#39;)) {
+                this.handleActiveState(e)
+            } else {
+                this.handleNotActiveState(e)
+            }
+        }
+    }
+</code></pre><ol start="6">
+<li>The first section of <code>this.handleClick</code> checks to see if the current click is the same as the last click.  We need to handle the logic slightly different for that case, in the event that we want the person using the application to be able to open AND close the accordion item.  Withouth this check, if we have <code>resetOnEveryClick</code> set to true, repeated clicks will never expand and contract the same button.  To get around this, we simply handle this case as an edge and return from the function.</li>
+<li>Otherwise, if <code>resetOnEveryClick</code> is set to true, we loop through all of the buttons and look for any that have an <code>active</code> class on them.  IF they do, we simply close the content box, then continue on handling the click event.</li>
+<li>Since we have logic for when <code>e.target.id</code> === btn.id<code>, the rest of the logic should exclude that case.  These cases really just act more like a traditional </code>toggle<code>event where we toggle the active class on the button, then utilize either</code>this.handleActiveState<code>or</code>this.handleNotActiveState`.  These functions are just setting and unsetting the attibutes for aria, and showing and hiding the content box.</li>
+<li>The trick to hiding the content box is achieved by setting the contentBox height to 0 with an <code>overflow:hidden</code>.  When the button has active state, we simply set the height to the content box&rsquo;s scrollHeight.</li>
+<li>And that is pretty much it!</li>
+</ol>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>It&rsquo;s not as hard as you think to create a vanilla Javascript accordion that is accessible and reusable.</p>
+
+  
+  <section data-taxonomy="tags">
+    <header><hgroup>Tags:</hgroup></header>
+    <ul data-taxonomy="tags">
+        <li><a href="/tags/javascript/">Javascript</a></li>
+        <li><a href="/tags/ui/">UI</a></li>
+        <li><a href="/tags/a11ty/">A11ty</a></li>
+        <li><a href="/tags/accessibility/">Accessibility</a></li>
+    </ul>
+  </section>
+
+
+  </main>
+  <footer>
+    <section data-section="footer">
+    <ul>
+        
+           <li><a href="https://indieweb.social/@elkcityhazard" title="Link To mastodon for Andrew M McCall" aria-label="Link To mastodon for Andrew M McCall">mastodon</a></li>
+        
+           <li><a href="https://github.com/elkcityhazard" title="Link To github for Andrew M McCall" aria-label="Link To github for Andrew M McCall">github</a></li>
+        
+           <li><a href="https://gitlab.com/elkcityhazard" title="Link To gitlab for Andrew M McCall" aria-label="Link To gitlab for Andrew M McCall">gitlab</a></li>
+        
+           <li><a href="https://www.linkedin.com/in/andrew-mccall-8a09582b3/" title="Link To linkedIn for Andrew M McCall" aria-label="Link To linkedIn for Andrew M McCall">linkedIn</a></li>
+        
+       </ul>
+       <p>Copyright 2024 - Andrew M McCall</p> 
+</section>
+
+
+
+
+  </footer>
+</body>
+</html>
