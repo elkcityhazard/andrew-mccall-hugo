@@ -1,0 +1,15 @@
+section[data-section="footer"] {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    font-size: var(--font-size-base);
+    max-width: unset;
+    place-items: start center;
+}
+
+section[data-section="footer"] ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    gap: var(--spacing-1);
+}

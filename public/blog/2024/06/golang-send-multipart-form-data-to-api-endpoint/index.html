@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content=" This is an example of using a multipart writer in golang to create a multipart form payload and send it to a json endpoint. ">
+<title>Golang Send Multipart Form Data to Api Endpoint | Andrew M McCall</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bundle.css">
+
+
+
+
+<script src="/js/main.js" defer type="module" type="text/javascript"></script>
+
+
+
+</head>
+<body data-theme="light">
+  <a 
+  href="#content"
+  aria-label="jump to main content"
+  >Jump to Content</a>
+  <header>
+    <div data-ui-toggle>
+    <svg aria-label="dark theme icon" role="presentation" data-icon="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+        <path d="M12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <svg aria-label="light theme icon" role="presentation" data-icon="light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+       </svg>
+          
+    <label 
+    for="themeToggle" 
+    aria-controls="themeToggle"
+    title="theme toggle"
+    >
+        <input 
+        type="checkbox" 
+        name="themeToggle" 
+        id="themeToggle" 
+        aria-checked="false"
+        aria-label="theme toggle"
+        role="switch"
+        >
+    </label>
+</div>
+
+   
+    <hgroup>
+    <h1 id="siteHeader">Andrew M McCall</h1>
+</hgroup>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/blog/">Blog</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    <li>
+      <a href="/resume/">Resume</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+
+  </header>
+  <main id="#content">
+    
+  <h1>Golang Send Multipart Form Data to Api Endpoint</h1>
+  
+  
+  <time datetime="2024-06-27T20:29:08-04:00">June 27, 2024</time>
+
+  <p><strong>Code For This Post Can Be Viewed Here:</strong> <a href="https://gist.github.com/elkcityhazard/ac4342f395f1cf4639b5e58d0763ccc2#file-gistfile1-txt-L36" title="An example of sending multipart form data to an api endpoint">github.com gist - elkcityhazard</a></p>
+<p>The case of receiving multpart form data as a post request is pretty straightforward in Golang.  Typically, you just `*http.Request.ParseMultipartForm, making sure to set an upper limit for the request Body size, and allocating the amount of memory needed to store the multipart form body request.</p>
+<p>But, what if you want to do some processing, and send it on to another api endpoint that accepts multipart form data?  I had this use case in my day job not too long ago and had to learn a little bit about the <code>mime/multipart Writer</code> type. In this post, we will explore how to send multipart form data using golang.</p>
+<h2 id="what-is-a-multipart-form">What Is A Multipart Form?</h2>
+<p>Multipart is a form data content type that allows submitting formws with binary files such as images and videos to a server application from the client, i.e., the browser.  In general terms, it splits the form data into multiple parts each with its own content-disposition header.</p>
+<blockquote>
+<p>In a regular HTTP response, the Content-Disposition response header is a header indicating if the content is expected to be displayed inline in the browser, that is, as a Web page or as part of a Web page, or as an attachment, that is downloaded and saved locally.<br/><br/>
+In a multipart/form-data body, the HTTP Content-Disposition general header is a header that must be used on each subpart of a multipart body to give information about the field it applies to. The subpart is delimited by the boundary defined in the Content-Type header. Used on the body itself, Content-Disposition has no effect.</br><br/>
+The Content-Disposition header is defined in the larger context of MIME messages for email, but only a subset of the possible parameters apply to HTTP forms and POST requests. Only the value form-data, as well as the optional directive name and filename, can be used in the HTTP context.</p>
+</blockquote>
+<p>Source: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition" title="Mozilla Web Documentation For Content-Disposition Header">Mozilla Developer Network Web Docs</a></p>
+<p>Multipart helps us add the necessary context or information to each subpart of the form body.  Each part can contain text fields, file uploads, and metadata about the file or field.  We typically define a multipart form in some html by making sure that the form element has the <code>enctype</code> set to &ldquo;multipart/form-data&rdquo;.  On the server, the multipart form is parsed to excract the individual fields or files allowing them to exist in the same request.  An advantage to this method over URL-encoding the entire form is that it allows us to preserve the binary data and file structure, rather than encoding everything to text.</p>
+<h2 id="how-to-handle-a-multipart-form-request-body-in-golang">How To Handle A Multipart Form Request Body In Golang</h2>
+<p>To handle a multipart file upload, we of course need a server.</p>
+<p>Consider the following basic server:</p>
+<pre tabindex="0"><code>func main() {
+	srv := &amp;http.Server{
+		Addr:    &#34;:8080&#34;,
+		Handler: routes(),
+	}
+
+	fmt.Printf(&#34;listening on %s&#34;, srv.Addr)
+
+	if err := srv.ListenAndServe(); err != nil {
+		log.Fatal(err)
+	}
+}
+
+func routes() http.Handler {
+	routes := http.NewServeMux()
+
+	routes.HandleFunc(&#34;/api/v1/upload&#34;, handleUpload)
+	routes.HandleFunc(&#34;/api/v1/api-endpoint&#34;, receiveMultipartForm)
+	return routes
+}
+</code></pre><p>This is about the most minimal example of a server in Goland using the standard library.  We are initializing a new pointer to an http.Server  and populating the Address and the Handler.  The Handler is just a function that returns an http.Handler.</p>
+<p>The <code>routes</code> function has a couple of http.Handlers with their corresponding paths.</p>
+<p>The process to recreate this is:</p>
+<ol>
+<li>Create a pointer to an <code>http.Server</code> from the net/http package</li>
+<li>Set the port you want the application to listen on.  In this case it is port &ldquo;:8080&rdquo;</li>
+<li>Pass in an http.Handler to the Handler struct field.  In my case, I am using a separate function that returns a http.Handler.</li>
+<li>Make sure to populate the routes function to serve content on the routes.</li>
+</ol>
+<h2 id="setting-up-the-api-endpoint-to-receive-and-respond-to-the-multipart-form-request">Setting Up The API Endpoint To Receive And Respond To The Multipart Form Request</h2>
+<p>At a high level we need to breakdown the parts to handle a multipart form request.</p>
+<ol>
+<li>We need to validate the requet method</li>
+<li>We need to parse the form data</li>
+<li>We need to process the request&rsquo;s multipartform file</li>
+<li>We need to construct a payload to to respond with</li>
+</ol>
+<pre tabindex="0"><code>func receiveMultipartForm(w http.ResponseWriter, r *http.Request) {
+	if r.Method != &#34;POST&#34; {
+		log.Fatalln(errors.New(&#34;invalid method&#34;))
+		return
+	}
+
+	err := r.ParseMultipartForm(32 &lt;&lt; 10) // 32 MB
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	name := r.FormValue(&#34;name&#34;)
+
+	type uploadedFile struct {
+		Size        int64  `json:&#34;size&#34;`
+		ContentType string `json:&#34;content_type&#34;`
+		Filename    string `json:&#34;filename&#34;`
+		FileContent string `json:&#34;file_content&#34;`
+	}
+
+	var newFile uploadedFile
+
+	for _, fheaders := range r.MultipartForm.File {
+
+		for _, headers := range fheaders {
+
+			file, err := headers.Open()
+
+			if err != nil {
+				http.Error(w, err.Error(), http.StatusInternalServerError)
+				return
+			}
+
+			defer file.Close()
+
+			// detect contentType
+
+			buff := make([]byte, 512)
+
+			file.Read(buff)
+
+			file.Seek(0, 0)
+
+			contentType := http.DetectContentType(buff)
+
+			newFile.ContentType = contentType
+
+			// get file size
+
+			var sizeBuff bytes.Buffer
+			fileSize, err := sizeBuff.ReadFrom(file)
+
+			if err != nil {
+				http.Error(w, err.Error(), http.StatusInternalServerError)
+				return
+			}
+
+			file.Seek(0, 0)
+
+			newFile.Size = fileSize
+
+			newFile.Filename = headers.Filename
+
+			contentBuf := bytes.NewBuffer(nil)
+
+			if _, err := io.Copy(contentBuf, file); err != nil {
+				http.Error(w, err.Error(), http.StatusInternalServerError)
+				return
+			}
+
+			newFile.FileContent = contentBuf.String()
+
+		}
+
+	}
+	data := make(map[string]interface{})
+
+	data[&#34;form_field_value&#34;] = name
+	data[&#34;status&#34;] = 200
+	data[&#34;file_stats&#34;] = newFile
+
+	if err = json.NewEncoder(w).Encode(data); err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+}
+</code></pre><p>Validating the request method is really easy in golang.  The request always has that information and we just need to access the <code>r.Method</code> struct field and get the method out of the header information.</p>
+<p>In this case, we are are just exiting the function, but in the real world, we would construct an error message to return to the client.</p>
+<p>The next step is to actually parse the form data.  http.Request has a build in receiver function to handle this for us.  We simply call <code>r.ParseMultipartForm(32 &lt;&lt; 10)</code>. This function takes in one argument which is the max memory and is of type int64.</p>
+<blockquote>
+<p>ParseMultipartForm parses a request body as multipart/form-data. The whole request body is parsed and up to a total of maxMemory bytes of its file parts are stored in memory, with the remainder stored on disk in temporary files. ParseMultipartForm calls Request.ParseForm if necessary. If ParseForm returns an error, ParseMultipartForm returns it but also continues parsing the request body. After one call to ParseMultipartForm, subsequent calls have no effect.</p>
+</blockquote>
+<p>Source: <a href="https://pkg.go.dev/net/http#Request.ParseMultipartForm" title="Golang Official net/http documentation">ParseMultipartForm Documentation</a></p>
+<p>If we take into consideration, we can parse basic text fields from the form like any other regular form.  In this case, we are calling <code>r.FormValue(&quot;name&quot;)</code> and storing it into a variable called name.</p>
+<p>That is easy enough, but what about binary files?  This is a little bit more complex, but at the end of the day, once we do it a few times, it becomes second nature.  The trick here is to range through each of the file headers of the <code>MultipartForm.File</code> slice.</p>
+<ol>
+<li>Set up the loop</li>
+<li>use <code>Open</code> on the current header to open it</li>
+<li>don&rsquo;t forget to defer closing it</li>
+<li>Do some business logic
+.5 Don&rsquo;t forget, that if you read it it all, you usually need to seek back to the beginning.</li>
+<li>Construct the payload to send back to the client</li>
+</ol>
+<h2 id="handle-creating-an-http-client-and-sending-multipart-form-data">Handle Creating An HTTP Client And Sending Multipart Form Data</h2>
+<pre tabindex="0"><code>func handleUpload(w http.ResponseWriter, r *http.Request) {
+	buf := &amp;bytes.Buffer{}
+
+	mpw := multipart.NewWriter(buf)
+
+	// create a new field
+
+	nameWriter, err := mpw.CreateFormField(&#34;name&#34;)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+
+	_, err = nameWriter.Write([]byte(&#34;Omar&#34;))
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+
+	// add a file
+
+	f, err := os.Open(&#34;hello-world.txt&#34;)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+
+	defer f.Close()
+
+	fWriter, err := mpw.CreateFormFile(&#34;upload_file&#34;, &#34;hello-world.txt&#34;)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+
+	_, err = io.Copy(fWriter, f)
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	// Close the multipart writer before creating the request
+	err = mpw.Close()
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	// set up the request
+
+	client := &amp;http.Client{}
+
+	req, err := http.NewRequest(&#34;POST&#34;, &#34;http://localhost:8080/api/v1/api-endpoint&#34;, buf)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+
+	req.Header.Add(&#34;Content-Type&#34;, mpw.FormDataContentType()) // detect the form data content type
+
+	resp, err := client.Do(req)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+
+	defer resp.Body.Close()
+
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+
+	type uploadResponse struct {
+		Status         int    `json:&#34;status&#34;`
+		FormFieldValue string `json:&#34;form_field_value&#34;`
+		FIleStats      any    `json:&#34;file_stats&#34;`
+	}
+
+	var ur uploadResponse
+
+	if err = json.Unmarshal(body, &amp;ur); err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	w.Header().Set(&#34;Content-Type&#34;, &#34;application/json&#34;)
+	w.WriteHeader(200)
+
+	if err = json.NewEncoder(w).Encode(ur); err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+}
+</code></pre><p>There are a few things we need to consider to be able to use golang to send multipart data.</p>
+<ol>
+<li>We need to create a <code>multipart.Writer</code> to be able to write the data.</li>
+<li>We also need to create an <code>http Client</code> to be able to send the data.</li>
+<li>Handle the response.</li>
+</ol>
+<p>To create a multipart writer we call <code>multipart.NewWriter</code> and it accepts<code>bytes.Buffer</code> to write data to.  Creating a text field is straightForward: we call <code>CreateFormField</code> on the multipartWriter and give the field a name.  That gets stored in a variable, and we can call <code>Write</code> on that variable and pass it a slice of byte to write data to it.</p>
+<p>To add a file, it is a similar process, but slightly more complciated.  the <code>multipart writer</code> also has a receiver function called <code>CreateFormFile</code> and accepts two arguments, a field name, as well as the filename you want to pass in.</p>
+<p>In this example, we are opening a file called <code>hello-world.txt</code> and using ioCopy to copy the contents of the file into the <code>multipart.writer</code> form file field.</p>
+<p>Once we are all done adding stuff to the form, we can close the writer.</p>
+<p>The next step is to create a new <code>http.Client</code>.  This is relatively straightforward, but there are a few things to note:</p>
+<ol>
+<li>The request body is going to be the buf that we wrote to with our multipart.writer</li>
+<li>We need to add teh following Header to the requestion: <code>req.Header.Add(&quot;Content-Type&quot;, mpw.FormDataContentType())</code> to be able to populate the <code>Content-Disposition</code></li>
+<li>Initiate the request, and handle the response.</li>
+</ol>
+
+  
+  <section data-taxonomy="tags">
+    <header><hgroup>Tags:</hgroup></header>
+    <ul data-taxonomy="tags">
+        <li><a href="/tags/go/">Go</a></li>
+        <li><a href="/tags/golang/">Golang</a></li>
+        <li><a href="/tags/multipart-forms/">Multipart Forms</a></li>
+        <li><a href="/tags/json/">JSON</a></li>
+        <li><a href="/tags/api-development/">API Development</a></li>
+    </ul>
+  </section>
+
+
+  </main>
+  <footer>
+    <section data-section="footer">
+    <ul>
+        
+           <li><a href="https://indieweb.social/@elkcityhazard" title="Link To mastodon for Andrew M McCall" aria-label="Link To mastodon for Andrew M McCall">mastodon</a></li>
+        
+           <li><a href="https://github.com/elkcityhazard" title="Link To github for Andrew M McCall" aria-label="Link To github for Andrew M McCall">github</a></li>
+        
+           <li><a href="https://gitlab.com/elkcityhazard" title="Link To gitlab for Andrew M McCall" aria-label="Link To gitlab for Andrew M McCall">gitlab</a></li>
+        
+           <li><a href="https://www.linkedin.com/in/andrew-mccall-8a09582b3/" title="Link To linkedIn for Andrew M McCall" aria-label="Link To linkedIn for Andrew M McCall">linkedIn</a></li>
+        
+       </ul>
+       <p>Copyright 2024 - Andrew M McCall</p> 
+</section>
+
+
+
+
+  </footer>
+</body>
+</html>
