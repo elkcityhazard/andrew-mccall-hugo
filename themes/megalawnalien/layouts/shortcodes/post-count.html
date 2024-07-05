@@ -1,0 +1,6 @@
+{{ $section := where .Site.RegularPages "Section" "blog" }}
+
+{{ $pages := len $section }}
+
+ <strong {{ with .Get "id" }} id="{{ . }}" {{ end }} data-count="{{- $pages  -}}">{{- $pages -}}</strong>
+

@@ -1,0 +1,10 @@
+{{ $section := where .Site.RegularPages "Section" "blog" }}
+
+{{ $pages := len $section }}
+
+
+<div>
+    <span id="postCount" data-count="{{- $pages  -}}">{{- $pages -}}</span>
+</div>
+
+

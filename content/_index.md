@@ -6,8 +6,10 @@ draft = false
 
 ## Hi There!
 
+Blog Posts Written So Far: {{< post-count id="postCount" >}}
+
 I am a fullstack web developer with 6 years of experience in modern web technologies.  My mission is to leverage my experience in Go, Javascript, PHP, Lua, Relational Databases, Non-Relational Databases, and server technologies to simplify the web and help drive your organization's mission through clean, well planned web architecture built on a foundation of proven technologies.
 
-_Read some of my technology writing below:__  
+__Read one of my of my technology writing below:__
 
 

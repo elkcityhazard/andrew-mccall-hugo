@@ -1,0 +1,116 @@
+/*
+ *   theme checkbox
+ */
+
+ :root {
+
+    --theme-toggle-checkbox-label-width: calc(3 * 1rem);
+    --theme-toggle-checkbox-label-height: calc(1.5rem);
+    --theme-toggle-checkbox-width: calc(var(--theme-toggle-checkbox-label-width) / 2);
+    --border-default: 1px solid var(--dark-black);
+    --border-radius: var(--border-radius-xxl);
+
+
+
+
+    --border-radius-xs: 0.1rem;
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 1rem;
+    --border-radius-xl: 1.5rem;
+    --border-radius--xxl: 2rem;
+    --border-radius-50: 50%;
+ }
+
+ div[data-ui-toggle] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: var(--spacing-auto);
+    margin-right: var(--spacing-1);
+    width: fit-content;
+ }
+
+
+ svg[data-icon] {
+    height: var(--theme-toggle-checkbox-label-height);
+    margin-right: var(--spacing-1);
+    width: var(--theme-toggle-checkbox-label-height);
+ }
+
+ svg[data-icon="dark"] {
+    display: none;
+ }
+
+label[for="themeToggle"] {
+    border: var(--border-default);
+    border-radius: var(--border-radius-xl);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-auto);
+    height: var(--theme-toggle-checkbox-label-height);
+    overflow: hidden;
+    width: var(--theme-toggle-checkbox-label-width);
+    -moz-transition: var(--base-transition);
+    -webkit-transition: var(--base-transition);
+    transition: var(--base-transition);
+}
+
+label[for="themeToggle"] > input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    display: block;
+    height: var(--theme-toggle-checkbox-width);
+    margin-left: var(--spacing-0);
+    position: relative;
+    -moz-transition: var(--base-transition);
+    -webkit-transition: var(--base-transition);
+    transition: var(--base-transition);
+    width: var(--theme-toggle-checkbox-width);
+
+}
+
+label[for="themeToggle"] > input[type="checkbox"]::after {
+    background: var(--dark-black);
+    border-radius: var(--border-radius-50);
+    border: var(--border-default);
+    border-color: var(--dark-black);
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transition: var(--base-transition);
+    -webkit-transition: var(--base-transition);
+    transition: var(--base-transition);
+    transform: translate(-50%, -50%) scale(1);
+    visibility: initial;
+    z-index: 0;
+}
+
+body[data-theme="dark"] label  {
+    background: var(--off-white);
+    
+}
+
+body[data-theme="dark"] label > input[type="checkbox"]::after {
+    background: var(--aqua-green);
+    border: var(--border-default);
+    border-color: var(--white);
+}
+
+
+
+label[for="themeToggle"] > input[type="checkbox"]:checked,
+label[for="themeToggle"] > input[aria-checked="true"]{
+
+    transform: translateX(100%);
+}
+
+
+
+
