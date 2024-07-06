@@ -1,0 +1,75 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+::slotted(*) {
+    box-sizing: border-box !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+blockquote,
+figure {
+    overflow-wrap: break-word;
+}
+
+
+:where(img, svg, video, canvas, audio, iframe, embed, object) {
+    display: block;
+}
+
+:where(img, svg, video) {
+    max-inline-size: 100%;
+    block-size: auto;
+}
+
+:where(a[href], area, button, input:not([type="text"], [type="email"], [type="number"], [type="password"], [type=""], [type="tel"], [type="url"]), label[for], select, summary, [tabindex]:not([tabindex*="-"])) {
+    cursor: pointer;
+}
+
+:where(a[href], area, button, input, label[for], select, summary, textarea, [tabindex]:not([tabindex*="-"])) {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+:where(ul, ol, dl) {
+    list-style: none;
+    padding-inline-start: var(--spacing-0);
+}
+
+:where(p, span) {
+    padding: var(--spacing-0);
+}
+
+
+:where(input, button, textarea, select),
+:where(input[type="file"])::-webkit-file-upload-button {
+    font: inherit;
+    font-size: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+}

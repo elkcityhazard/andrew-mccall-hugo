@@ -5,7 +5,7 @@ author: Andrew M McCall
 description:  In implementation of a classic UI component where we use Javascript to countup to a number.
 summary:  This article explores the classic UI component that is the simple count up timer written in Javascript.  Often used to help display statistics in a dynamic way.  
 publishDate: 2024-07-05T10:41:13-04:00
-updateDate:  2024-07-05T10:41:13-04:00
+updateDate:  2024-07-05T21:38:00-04:00
 draft: false
 categories:
   - Web Development
@@ -98,6 +98,118 @@ const countUp = new CountUp("postCount", 0, null, 30, 80) // null because grabbi
   - Then, we just multiply the baseInterval by each currentInterval beyond the threshhold interval.  For example, using this formula: `this.baseInterval * (this.currentIndex - this.percentOf)`, if the currentIndex was 92, then the it would be `this.baseInterval * 2`, etc.
 
 8. Finally, after we update the DOM element, we just return a new setTimeout utilizing the updated incrementSpeed
+
+## Adding Animation To The Javascript Count Up Timer
+
+SO the counter is working but right now we are just updating the element.  Wouldn't it be cool if we could add a little bit of animation to the count up timer?  
+
+First let's observe the method which can help us accomplish that:
+
+```
+ handleAnimate() {
+        if (!this.animate) return false
+        if (this.currentIndex == this.limit) return null
+
+            let childEl = this.element.querySelector(".counter-inner")
+            if (!childEl) return null
+
+            this.incrementSpeed = this.currentIndex / this.limit * 100 < this.coolDown ? this.baseInterval : this.baseInterval * (this.currentIndex - this.percentOf)
+
+            childEl.style.transform = `translateY(-${100 * this.currentIndex}%)`
+            childEl.style.transition = `transform ${this.incrementSpeed}ms ease`
+          
+            setTimeout(() => {
+            return this.handleAnimate(this.elID, this.currentIndex++, this.limit, this.baseInterval, this.coolDown)
+        }, this.incrementSpeed)
+
+
+    }
+```
+
+Now, I have added a new property called animate.  This checks to see if animate is set to true, then calls handleAnimate to handle the javascript animation.
+
+The html for this is a little bit different:
+
+```
+{{ $section := where .Site.RegularPages "Section" "blog" }}
+
+{{ $pages := len $section }}
+
+ <strong {{ with .Get "id" }} id="{{ . }}" {{ end }} data-count="{{- $pages  -}}">{{- $pages -}}</strong>
+
+{{ $counter := 0  }}
+<div id="counter2" class="counter">
+    <div class="counter-inner">
+{{ range $section }}
+{{ $counter = add $counter 1}}
+<span>{{ $counter }}</span>
+
+{{ end }}
+</div> <!-- /end counter inner-->
+</div>
+
+<style>
+
+    :root {
+        --counter-dimension: 40px;
+    }
+
+    .counter {
+        padding: 0;
+        margin: 0;
+        display: block;
+        overflow: hidden;
+        height: var(--counter-dimension);
+        width: var(--counter-dimension);
+    }
+    
+    .counter-inner {
+        display: flex;
+        flex-flow: column nowrap;
+        margin: auto;
+        height: var(--counter-dimension);
+        width:  var(--counter-dimension);
+        align-items: center;
+        justify-content: start;
+    }
+    .counter span {
+        color :#333;
+        font-family: var(--font-mono);
+        padding: 0;
+        margin: 0;
+        flex: 0 0 var(--counter-dimension);
+        display: block;
+        text-align: center;
+        height: var(--counter-dimension);
+        width: var(--counter-dimension);
+        
+    }
+</style>
+```
+
+In this example, I am getting my blog posts from hugo, and ranging through them.  I have a global variable I am calling $counter, and imcrementing the count in each iteration and also constructing a list of dom elements to handle the count up function.  
+
+What needs to be considered here is that we are going to use css transform to animate the countup.  To make sure this looks correct, we will need to have a parent element, an inner container element, then finally all of the DOM elements that make up our counter increments.  
+
+I have also included some minor styles which is basically just a container with some flex boxes.  Note, the parent container needs to exist to have `overflow:hidden` so that the non active numbers are not shown.  
+
+The only other thing we are doing different with Javascript is:
+
+```
+childEl.style.transform = `translateY(-${100 * this.currentIndex}%)`
+            childEl.style.transition = `transform ${this.incrementSpeed}ms ease`
+          
+            setTimeout(() => {
+            return this.handleAnimate(this.elID, this.currentIndex++, this.limit, this.baseInterval, this.coolDown)
+        }, this.incrementSpeed)
+```
+
+We are using querySelector to get the inner element, but it would probably make more sense to use `this.element.firstElementChild` so that you don't have to worry about labeling the inner element,  
+
+Finally, we are just updating the transition and transform on the style property to align with the currentIndex and increment speed.  
+
+We return a new timeout to rerun the "animation". 
+
 
 
 ## Final Thoughts on the Simple Cout Up Timer In Javascript
