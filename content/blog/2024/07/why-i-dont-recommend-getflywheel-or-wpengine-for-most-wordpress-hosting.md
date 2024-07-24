@@ -5,7 +5,7 @@ author: Andrew M McCall
 description: An explanation on why managed Wordpress hosting like GetFlywheel & WPEngine isn't always the best choice and what to do instead. 
 summary:  I explain my experience working for an agency that uses GetFlywheel and WPEngine for Wordpress Hosting
 publishDate: 2024-07-20T13:25:28-04:00
-updateDate:  2024-07-20T13:25:28-04:00
+updateDate:  2024-07-24T17:54:28-04:00
 draft: false
 categories:
   - Web Development
@@ -56,6 +56,13 @@ Flywheel doesn't let you add anything to the system services or crontab.  To ach
 
 On 25 sites, that adds up very quickly each month.  A better solution is to easily log in to your server and set up a crontab or system service.  
 
+## Large Sites Cause Syncing Issues
+
+The Local Development Tool has many positive attributes and it has never been easier to set up a local Wordpress development environment using it.  For small sites, it is almost always all one needs to have an efficient and positive Wordpress development experience.  That being said, many of our clients have older and much larger websites.  Once the database tables increase in size to the 30GB plus range, Local By Flywheel tends to struggle.  Pulling and pushing sites tends to take an inordinately long time; sometimes it will even take up an entire mornining to pull down the site from localhost.  
+
+For these sites, I almost always resort to rsync because it is simply more efficient at processing the large amount of data.  
+
+If you are interested in syncing a Wordpress site locally, I suggesting reading up on this excellent tutorial: [How To Clone A Wordpress Website With WP-CLI and Rsync](https://permanenttourist.ch/2021/02/how-to-clone-a-wordpress-website-with-wp-cli-and-rsync/ "How To Clone A Wordpress Website With WP-CLI and Rsync")
 
 ## Where to host instead of Flywheel or WP Engine?
 
