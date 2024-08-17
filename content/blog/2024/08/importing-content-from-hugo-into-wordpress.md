@@ -17,7 +17,7 @@ tags:
 
 ## Why I Need To Import Hugo Data Sources Into Wordpress
 
-Most poeple want to get away from Wordpress for something easier to manage.  However, I have a friend who wants to switch to Wordpress because of the experiences of their friends and family members who use it.
+Most people want to get away from Wordpress for something easier to manage.  However, I have a friend who wants to switch to Wordpress because of the experiences of their friends and family members who use it.
 
 To be fair, Hugo wasn't exactly a great choice considering their technology skill level and demographic.  Markdown can be clunky to learn and very foreign if you have never utilized it.
 
@@ -32,7 +32,7 @@ I considered just having them send me over the content and implementing the chan
 
 When I built the hugo site.  I utilized Hugo's `data` folder to store JSON files that make up the site content.  This is really convenient since everything is already in a structured data format.
 
-The entries are basically a key:value pair that maps a little bit of meta data and most importantly a path to a static folder.
+The entries are a key:value pair that maps a little bit of meta data and most importantly a path to a static folder.
 
 The first thing I did was just copy the static folder into a new wordpress installation so that wordpress can have access to it.
 
