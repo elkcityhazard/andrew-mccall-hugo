@@ -672,4 +672,20 @@ Initially, I hooked into the wrong Wordpress hook and the taxonomies weren't bei
 Also, noteably, I didn't do a very good job at sanitizing and checking for errors.  This is because I knew what the json data was like and had already spent time upfront organizing it.  
 
 Either way, this was a func project to learn a bit about how Wordpress does things and even though I still don't really enjoy working with Wordpress, since 40% of websites use it, is good to have some familiarity.  
-ca
+
+
+### Links To Wordpress Documentation
+- [get_term_by](https://developer.wordpress.org/reference/functions/get_term_by/ "Gets all term data from database by term field and data.")
+- [wp_insert_post](https://developer.wordpress.org/reference/functions/wp_insert_post/ "Inserts or update a post.")
+- [wp_check_filetype](https://developer.wordpress.org/reference/functions/wp_check_filetype/ "Retrieves the file type from the file name.")
+- [sanitize_file_name](https://developer.wordpress.org/reference/functions/sanitize_file_name/ "Sanitizes a filename, replacing whitespace with dashes.")
+- [wp_upload_bits](https://developer.wordpress.org/reference/functions/wp_upload_bits/ "Creates a file in the upload folder with given content.")
+- [wp_insert_attachment](https://developer.wordpress.org/reference/functions/wp_insert_attachment/ "Inserts an attachment")
+- [wp_generate_attachment_metadata](https://developer.wordpress.org/reference/functions/wp_generate_attachment_metadata/ "Generates attachment meta data and create image sub-sizes for images")
+- [wp_update_attachment_metadata](https://developer.wordpress.org/reference/functions/wp_update_attachment_metadata/ "Updates metadata for an attachment")
+- [update_post_meta](https://developer.wordpress.org/reference/functions/update_post_meta/ "Updates a post meta field base on the given post ID")
+- [wp_get_image_editor](https://developer.wordpress.org/reference/functions/wp_get_image_editor/ "Returns a WP_Image_Editor instance and loads file into it")
+- [is_wp_error](https://developer.wordpress.org/reference/functions/is_wp_error/ "Checks whether the given variable is a Wordpress Error")
+- [wp_get_additional_image_sizes](https://developer.wordpress.org/reference/functions/wp_get_additional_image_sizes/ "Retreives additional image sizes") 
+- [wp_upload_dir](https://developer.wordpress.org/reference/functions/wp_upload_dir/ "Returns an array containing the current upload directory's path and URL")
+
