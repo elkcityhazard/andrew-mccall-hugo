@@ -3,7 +3,7 @@ title: 'Importing Content From Hugo Into Wordpress'
 date: 2024-08-16T21:18:22-04:00
 author: Andrew M McCall
 description:  This article walks through how I migrated Hugo data into Wordpress.
-summary:  I walk through my philosophy of migrating Hugo data sources into wordpress as custom post types.
+summary:  I walk through my philosophy on migrating Hugo data sources into wordpress as custom post types.
 publishDate: 2024-08-16T21:18:22-04:00
 updateDate:  2024-08-16T21:18:22-04:00
 draft: false
