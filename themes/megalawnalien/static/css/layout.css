@@ -67,6 +67,13 @@ header {
     max-width: var(--width-100);
 }
 
+#content > div:has(iframe) {
+    display: block;
+    min-width: unset;
+    max-width:100%;
+    width: 100%;
+}
+
 main blockquote {
     background: var(--off-white);
     border-left: var(--spacing-1) solid var(--aqua-green);
