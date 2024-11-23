@@ -1,6 +1,6 @@
 ---
 title: This Is A Simple Blog Post
-date: 2020-05-12 06:14:34 Z
+date: 2020-05-12 06:14:34 
 image: images/portfolio/item6.jpg
 tags:
 - design
