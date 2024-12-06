@@ -530,6 +530,22 @@ main blockquote code {
   background: var(--white);
 }
 
+.single__meta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-flow: column nowrap;
+  gap: 0;
+  list-style: none;
+}
+
+.single__meta li {
+  font-size: var(--font-size-medium);
+  line-height: initial;
+  margin-block-end: var(--spacing-1);
+  margin-bottom: var(--spacing-1);
+}
+
 :root {
   --xs-breakpoint: 250px;
   --sm-breakpoint: 399px;
@@ -1419,4 +1435,20 @@ main blockquote p {
 
 main blockquote code {
   background: var(--white);
+}
+
+.single__meta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-flow: column nowrap;
+  gap: 0;
+  list-style: none;
+}
+
+.single__meta li {
+  font-size: var(--font-size-medium);
+  line-height: initial;
+  margin-block-end: var(--spacing-1);
+  margin-bottom: var(--spacing-1);
 }

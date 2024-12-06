@@ -5,7 +5,7 @@ author: Andrew M McCall
 description: An explanation on why managed Wordpress hosting like GetFlywheel & WPEngine isn't always the best choice and what to do instead. 
 summary:  I explain my experience working for an agency that uses GetFlywheel and WPEngine for Wordpress Hosting
 publishDate: 2024-07-20T13:25:28-04:00
-updateDate:  2024-07-24T17:54:28-04:00
+updateDate:  2024-12-05T17:54:28-04:00
 draft: false
 categories:
   - Web Development

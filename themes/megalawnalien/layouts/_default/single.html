@@ -1,9 +1,25 @@
 {{ define "main" }}
+    <hgroup>
   <h1>{{ .Title }}</h1>
-  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-  {{ $dateHuman := .Date | time.Format ":date_long" }}
-  <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+  <p>{{.Description}}</p>
+    </hgroup>
+  {{ $dateMachine := .PublishDate | time.Format "2006-01-02T15:04:05-07:00" }}
+  {{ $dateHuman := .PublishDate | time.Format ":date_long" }}
+  <ul class="single__meta">
+  <li><strong>By: </strong>{{.Params.author}}</li>
+  <li><strong>Published: </strong><time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></li>
 
+  {{ if .Params.updateDate }}
+
+  {{ if not (eq  .PublishDate .Params.updateDate )}}
+
+  {{ $updateMachine := .Params.updateDate | time.Format "2006-01-02T15:04:05-07:00" }}
+  {{ $updateHuman := .Params.updateDate | time.Format ":date_long" }}
+  <li><strong>Updated: </strong><time datetime="{{ $updateMachine }}">{{ $updateHuman }}</time></li>
+  {{ end }}
+  {{ end }}
+        
+</ul>
   {{ .Content }}
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 {{ end }}
