@@ -373,6 +373,19 @@ server {
 - `sudo nginx -t`
 - `sudo systemctl reload nginx`
 
+## Updating PHP.INI For Wordpress File Uploads & Post Requests
+- `php --ini`
+- Look for the loaded configuration file which in my case is
+  `/etc/php/.3/cli/php.ini`
+- `sudo vim /etc/php/8.3/cli.php.ini`
+- `upload_max_filesize = 1048M` This can be whatever you need it to be
+- `post_max_size = 1048M` This can be whatever you need it to be 
+- `Save the buffer`
+- `sudo systemctl reload php8.3-fpm.server` Pay attention to what your php
+  version for this.
+
+
+
 ## Conclusion
 
 Congratulations! You have successfully set up a self-hosted WordPress site on your own virtual private server. By following this tutorial, you have gained control over your website, improved security, and learned valuable Linux skills along the way.
