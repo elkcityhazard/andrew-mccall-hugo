@@ -405,7 +405,7 @@ core/thread count for this.  These are just example values.
 WP Engine charges $7 usd per site for this :-)
 
 - `wp --info`
-- `sudo crontab -e` or `sudo -u www-data crontab -e` use www-data to act on
+- `sudo crontab -e` or `sudo crontab -u www-data -e` use www-data to act on
   behalf of the web server user.
 - get path to wp cli: `which wp`
 - `0 2 * * * /usr/local/bin/wp plugin update --all --path=/path/to/wordpress --allow-root > /dev/null 2>&1`
