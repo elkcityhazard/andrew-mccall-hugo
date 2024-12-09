@@ -395,7 +395,8 @@ pm.min_spare_servers = 5
 pm.max_spare_servers = 35
 
 ```
-Note: these can be adjusted as needed.  
+Note: these can be adjusted as needed.  I would say mind your actual cpu
+core/thread count for this.  These are just example values.  
 
 - `sudo systemctl restart php8.3-fpm`
 
