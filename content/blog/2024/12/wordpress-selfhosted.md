@@ -395,7 +395,7 @@ config:
 - `sudo vim /etc/php/8.3/cli.php.ini`
 - `upload_max_filesize = 1048M` This can be whatever you need it to be
 - `post_max_size = 1048M` This can be whatever you need it to be 
-- `Save the buffer`
+- Save the buffer
 - `sudo systemctl reload php8.3-fpm.server` Pay attention to what your php
   version for this.
 
