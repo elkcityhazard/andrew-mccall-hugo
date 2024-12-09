@@ -333,6 +333,8 @@ To improve the performance of your WordPress site, you can configure server-side
 
 - Update The Nginx Conf file:
 
+```
+
 - Update the configuration to include the caching directives:
 
 ```
@@ -353,6 +355,7 @@ server {
         add_header X-FastCGI-Cache $upstream_cache_status;
     }
 }
+
 ```
 - fastcgi_cache_path: defines the cache directory, levels, keys_zone,
   max_size, and inactive time
