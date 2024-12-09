@@ -373,6 +373,21 @@ server {
 - `sudo nginx -t`
 - `sudo systemctl reload nginx`
 
+## Don't forget to cache static assets
+
+GTMetrix will most definitely have issue if you don't do this in your nginx
+config:
+
+```
+ location ~* \.(jpg|jpeg|png|gif|ico|css|js|woff|woff2|ttf|svg|eot)$ {
+        expires 28d;
+        add_header Cache-Control "public, no-transform";
+        # Optionally set:
+         add_header Pragma "public";
+         add_header Vary "Accept-Encoding";
+    }
+```
+
 ## Updating PHP.INI For Wordpress File Uploads & Post Requests
 - `php --ini`
 - Look for the loaded configuration file which in my case is
