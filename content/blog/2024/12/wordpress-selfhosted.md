@@ -384,6 +384,31 @@ server {
 - `sudo systemctl reload php8.3-fpm.server` Pay attention to what your php
   version for this.
 
+## Add PHP workers
+- `sudo vim /etc/php/8.3/fpm/pool.d/www.conf`
+
+```
+pm = dynamic
+pm.max_children = 50
+pm.start_servers = 5
+pm.min_spare_servers = 5
+pm.max_spare_servers = 35
+
+```
+Note: these can be adjusted as needed.  
+
+- `sudo systemctl restart php8.3-fpm`
+
+## Automatic Updates with WP-CLI and Crontab
+
+WP Engine charges $7 usd per site for this :-)
+
+- `wp --info`
+- `sudo crontab -e` or `sudo -u www-data crontab -e` use www-data to act on
+  behalf of the web server user.
+- get path to wp cli: `which wp`
+- `0 2 * * * /usr/local/bin/wp plugin update --all --path=/path/to/wordpress --allow-root > /dev/null 2>&1`
+
 
 
 ## Conclusion
