@@ -4,6 +4,7 @@ date: 2025-01-01
 author: Andrew M McCall
 description: An exploration of writing an http router from scracth with middleware capabilties.
 summary: Go standard library, as well as many others have already solved implementing a robust, production grade http server. So why bother writing one? This post will hopefully yield some insight of why it is important to revisit established technology.
+images: ['/images/twitter-card.png']
 publishDate: '2025-01-01T19:08:05-05:00'
 updateDate:  '2025-01-01T19:08:05-05:00'
 draft: false
