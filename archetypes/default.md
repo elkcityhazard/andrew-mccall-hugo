@@ -6,6 +6,7 @@ description:  I explain Goroutines and Channels and how to apply them from basic
 summary:  Go has powerful concurrency tools fully baked into the programming Language.  This post aims to explain go routines and channels so you can get started using them in your own projects.
 publishDate: '{{ .Date }}'
 updateDate:  '{{ .Date }}'
+images: ['/images/twitter-card.png']
 draft: true
 categories:
   -
