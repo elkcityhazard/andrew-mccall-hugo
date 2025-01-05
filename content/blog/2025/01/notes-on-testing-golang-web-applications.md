@@ -167,4 +167,110 @@ call nosurf.Token(r) to generate a new token for the request.  The token
 gets stored in the request context, and we can retrieve it in the handler.  
 
 Since the test request has no concept of our session data, we are using
-`addContextAndSessionToRequest` to make that available.  
+`addContextAndSessionToRequest` to make that available. 
+
+
+## Testing justinas/nosurf functinality
+
+In `setup_test.go` in the `handlers` package I recreated the csrfToken
+middleware.  
+
+```
+func csrfToken(next http.Handler) http.Handler {
+	csrfHandler := nosurf.New(next)
+	csrfHandler.ExemptFunc(func(r *http.Request) bool {
+		return true
+	})
+
+	csrfHandler.SetBaseCookie(http.Cookie{
+		HttpOnly: false,
+		Path:     "/",
+		Secure:   false,
+		SameSite: http.SameSiteLaxMode,
+	})
+
+	return csrfHandler
+}
+```
+
+
+I created another bit of middleware to mock api calls that pass the
+`csrf_token` via a request header.
+
+```
+func AddCSRFTokenHeader(h http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		r.Header.Set("X-CSRF-Token", nosurf.Token(r))
+        r.Header.Set("Content-Type", "application/json")
+		h.ServeHTTP(w, r)
+	})
+}
+```
+
+To generate a slug, I created an API endpoint that dispatches everytime the
+headline field updates.  
+
+To test this, I needed to create a new `httptest.NewServer()`.  
+
+```
+func Test_HandleGenerateSlug(t *testing.T) {
+
+	ts := httptest.NewServer(csrfToken(AddCSRFTokenHeader(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+
+		// nosurf.Token(r) // don't need this
+		Repo.HandleGenerateSlug(w, r)
+
+	}))))
+
+	defer ts.Close()
+
+	slug := struct {
+		Value string `json:"value"`
+	}{
+		Value: "some-cool-slug",
+	}
+
+	b, _ := json.Marshal(slug)
+
+	buf := bytes.NewBuffer(b)
+
+	req, _ := http.NewRequest("POST", ts.URL, buf)
+
+	client := &http.Client{}
+
+	resp, err := client.Do(req)
+
+	if err != nil {
+		t.Error("expected no error for client.Do")
+	}
+
+	if resp.StatusCode != 200 {
+		t.Error("expected 200 status code but got", resp.StatusCode)
+	}
+
+}
+```
+
+1. Created the test server, with a dummy handler.  This dummy handler gets
+   wrapped in the `csrfToken` and `AddCSRFTokenHeader` middleware.  This is
+   so we can get access to the token in the request. 
+2. Since the server is started, and the handler we want to test
+   (`Repo.HandleGenerateSlug`) is wrapped in the server context, we now
+   have access to the `csrf_token`.
+3. The rest of the handler is just calling the handler that we want to test
+   and passing in the `http.ResponseWriter` and the `*http.Request`
+4. Next, we defer closing the server so that it only closes when the test
+   finishes
+5. Then I am creating a dummy payload to send in my request in the server.
+   We do this, because in the actual functionality, we are using Javascript
+   to send an asynchronous post request from the client each time the Post
+   Title field changes.  
+6. Next, we create a new request.  We use ts.URL to pass in the test url
+   from the test server.  
+7. Finally, we execute the request using the client, getting the response
+   and an error.  
+8. In this case, we are testing that the Handler responds with the
+   appropriate codes, so we just test again the response.StatusCode and
+   what would be expected.
+
+
