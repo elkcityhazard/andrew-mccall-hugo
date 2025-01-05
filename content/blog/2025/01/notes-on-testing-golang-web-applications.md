@@ -101,7 +101,40 @@ req = addContextAndSessionToRequest(req, yourMockConfig)
 field such as `app.SessionData = yourSessionDataInitFunc()`.  This would be
 populated in the `setup_test.go` file.
 
-## Testing justinas/nosurf functinality
+## Testing the csrfToken Middleware that adds csrf_token to each request
+
+```
+
+func Test_csrfToken(t *testing.T) {
+	var mockHandler http.Handler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+
+		token := nosurf.Token(r)
+
+		if token == "" {
+			t.Error("ExpectedToken")
+		}
+
+	})
+
+	mockHandler = csrfToken(mockHandler)
+
+	req := httptest.NewRequest("GET", "/", nil)
+
+	w := httptest.NewRecorder()
+
+	mockHandler.ServeHTTP(w, req)
+
+}
+```
+
+1. Set up a mockhandler that generates a csrf_token.
+2. wrap the mockHandler with the middleware `csrfToken`
+3. create a new `*http.Request` amd `ResponseWriter`
+4. Serve the `mockHandler`
+5. The test is conducted inside the mockHandler
+
+## Testing Handlers that rely on justina/nosurf package that has an
+exemptFunc
 
 In `setup_test.go` in the `handlers` package I recreated the csrfToken
 middleware.  
