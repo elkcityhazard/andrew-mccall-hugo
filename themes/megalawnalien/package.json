@@ -6,7 +6,7 @@
   "scripts": {
     "build:gulp": "gulp concat-css && postcss static/css/index.css -o assets/css/index.min.css",
     "build": "NODE_ENV=production postcss src/index.css -o assets/styles.css",
-    "dev": "postcss src/index.css -o assets/dist/styles.css -w"
+    "dev": "NODE_ENV=development postcss src/index.css -o assets/dist/styles.css -w"
   },
   "keywords": [],
   "author": "",
