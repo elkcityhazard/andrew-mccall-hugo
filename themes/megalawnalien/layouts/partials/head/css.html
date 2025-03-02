@@ -7,4 +7,11 @@
     {{- end }}
   {{- end }}
 {{- end }}
+
+{{ with resources.Get "dist/styles.css"}}
+
+<link rel="stylesheet" href="{{.RelPermalink}}" />
+
+{{ end}}
+
 <!-- <link rel="stylesheet" type="text/css" href="/css/index.css"> -->

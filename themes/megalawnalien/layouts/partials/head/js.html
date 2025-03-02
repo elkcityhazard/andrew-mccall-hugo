@@ -12,3 +12,7 @@
 {{- end }}
 
 <script src="/js/main.js" defer type="module" type="text/javascript"></script>
+
+{{with resources.Get "dist/js/script.js" }}
+<script src="{{.RelPermalink}}" defer type="module" type="text/javascript"></script>
+{{ end }}

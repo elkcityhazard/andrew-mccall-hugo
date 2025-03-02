@@ -4,17 +4,28 @@
   "description": "## Features",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp concat-css && postcss static/css/index.css -o assets/css/index.min.css"
+    "build:gulp": "gulp concat-css && postcss static/css/index.css -o assets/css/index.min.css",
+    "build": "NODE_ENV=production postcss src/index.css -o assets/styles.css",
+    "dev": "postcss src/index.css -o assets/dist/styles.css -w"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cssnano": "^6.1.1",
-    "gulp": "^4.0.2",
-    "gulp-concat-css": "^3.1.0",
-    "postcss": "^8.4.38",
-    "postcss-cli": "^11.0.0"
+    "autoprefixer": "^10.4.20",
+    "babel-loader": "^9.2.1",
+    "css-loader": "^7.1.2",
+    "cssnano": "^7.0.6",
+    "postcss": "^8.5.1",
+    "postcss-cli": "^11.0.0",
+    "postcss-cssnext": "^3.1.1",
+    "postcss-import": "^16.1.0",
+    "postcss-nested": "^7.0.2",
+    "postcss-utilities": "^0.8.4",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.7.3",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
   }
 }

@@ -1,0 +1,28 @@
+{{ define "main" }}
+<form id="contact" class="contact" method="POST" action="/api/v1/contact">
+<fieldset>
+<legend>Contact Andrew McCall</legend>
+<div class="form-control">
+<label for="email">Email: </label>
+<input 
+    type="email" 
+    id="email" 
+    value="" 
+    placeholder="email@example.com" 
+    name="email" 
+    />
+    <small class="error" data-id="error">&nbsp;</small>
+</div>
+<div class="form-control">
+<label for="message">Message: </label>
+<textarea id="message" name="message" rows="5" cols="60"></textarea>
+    <small class="error" data-id="error">&nbsp;</small>
+</div>
+<div class="form-control">
+<input type="hidden" name="phone_number" value="" />
+<input type="submit" value="submit" id="submit" />
+</div>
+</fieldset>
+
+</form>
+{{ end }}

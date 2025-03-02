@@ -1,0 +1,30 @@
+@keyframes transitionOut {
+    from {
+        opacity:1;
+    } 
+    to {
+        opacity: 0;
+
+    }
+}
+
+
+:root {
+    --error-padding: 0.25rem;
+}
+
+.form-control:has(small[data-id*="error"]) {
+    overflow: hidden;
+}
+
+small[data-id*="error"] {
+    /*animation: transitionOut 500ms 3s ease forwards;*/
+    background: transparent;
+    color: red;
+    padding-inline: var(--error-padding);
+    padding-block: var(--error-padding);
+    padding: var(--error-padding);
+    -moz-transition: all 350ms;
+    -webkit-transition: all 350ms;
+    transition: all 350ms;
+}

@@ -1,8 +1,9 @@
 baseURL = '/'
 languageCode = 'en-us'
-title = 'Andrew M McCall'
+itle = 'Andrew M McCall'
 theme = 'megalawnalien'
-paginate = 10
+[pagination]
+    pagerSize = 10
 
 enableRobotsTXT = true
 
@@ -37,6 +38,11 @@ weight = 30
 name = 'Resume'
 pageRef = '/resume'
 weight = 40
+
+[[menus.main]]
+name = 'Contact'
+pageRef = '/contact'
+weight = 50
 
 [module.hugoVersion]
   extended = true
