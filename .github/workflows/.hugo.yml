@@ -33,9 +33,6 @@ jobs:
     env:
       HUGO_VERSION: 0.145.0
     steps:
-      - name: Install PostCSS
-        run: |
-          npm install -g postcss
       - name: Install Hugo CLI
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
@@ -53,7 +50,7 @@ jobs:
       - name: Bundle CSS With PostCSS
         env:
           NODE_ENV: production
-        run: npm install && npm run build
+        run: npm run build
         working-directory: ./themes/megalawnalien
       - name: Build with Hugo
         env:
