@@ -19,8 +19,8 @@
     --letter-spacing-1: 1px;
     --letter-spacing-2: 1.33px;
 
-    --heading-color-primary: var(--off-white);
-    --heading-color-secondary: var(--light-black);
+    --heading-color-primary: var(--off-white, #fff);
+    --heading-color-secondary: var(--light-black, #333);
 
     --line-height-base: 1.25;
     --line-height-lg: 1.5;
@@ -54,6 +54,9 @@ body[data-theme="light"] h4,
 body[data-theme="light"] h5,
 body[data-theme="light"] h6 {
     color: var(--heading-color-secondary);
+}
+
+hgroup {
 }
 
 

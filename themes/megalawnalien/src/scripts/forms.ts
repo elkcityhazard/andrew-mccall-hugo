@@ -10,7 +10,8 @@ class Form {
     }
 
 
-    events() {
+    events():Function {
+        if (!this.form || !this.formID) return null
         this.form.addEventListener('submit', this.handleOnFormSubmit.bind(this))
         this.form.addEventListener('formdata', this.handleOnFormData.bind(this))
     }
