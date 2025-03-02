@@ -49,6 +49,7 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+        working-directory: ./themes/megalawnalien
       - name: Bundle CSS With PostCSS
         env:
           NODE_ENV: production
