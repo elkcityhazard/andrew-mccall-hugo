@@ -32,8 +32,8 @@
 
 @font-face {
     font-family: "Italiana Regular";
-    src: url("./fonts/italiana-regular-webfont.woff") format('woff');
-    src: url("./fonts/italiana-regular-webfont.ttf") format("truetype");
+    src: url("../../static/css/fonts/italiana-regular-webfont.ttf") format("truetype");
+    src: url("../../static/css/fonts/italiana-regular-webfont.woff") format('woff');
 }
 
 h1,
