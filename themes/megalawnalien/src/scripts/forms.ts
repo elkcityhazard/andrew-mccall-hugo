@@ -37,8 +37,6 @@ class Form {
 
 async handleOnFormData(e:FormDataEvent) {
         try {
-
-
             const formData = e.formData
 
             if (!formData) return 
@@ -48,7 +46,7 @@ async handleOnFormData(e:FormDataEvent) {
             const phoneNumber = formData.get("phone_number")
 
 
-            const resp = await fetch("http://localhost:8281/api/v1/andrew-mccall/contact", {
+            const resp = await fetch("https://contact.andrew-mccall.com/api/v1/andrew-mccall/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
