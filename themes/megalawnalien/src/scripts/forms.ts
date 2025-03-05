@@ -12,6 +12,7 @@ class Form {
 
     events():Function {
         if (!this.form || !this.formID) return null
+            console.log(this.form)
         this.form.addEventListener('submit', this.handleOnFormSubmit.bind(this))
         this.form.addEventListener('formdata', this.handleOnFormData.bind(this))
     }
@@ -30,9 +31,7 @@ class Form {
     handleOnFormSubmit(e:Event) {
         e.preventDefault()
         this.handleClearErrorMsgs()
-
         const fd = new FormData(e.target as HTMLFormElement)
-
     }
 
 

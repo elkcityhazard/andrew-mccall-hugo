@@ -1,3 +1,8 @@
 @import "partials/reset";
 @import "partials/typography";
 @import "partials/forms";
+
+.is-auto-column-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(calc(399 / 16 * 1rem), 100%), 1fr));
+}

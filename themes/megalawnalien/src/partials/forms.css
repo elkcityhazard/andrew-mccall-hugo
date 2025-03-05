@@ -38,5 +38,43 @@
             flex: 0 0 100%;
             width: 100%;
         }
+        input[type="email"] {
+            padding-block: var(--spacing-sm,0.5rem);
+            padding-inline: var(--spacing-sm,0.5);
+            &:user-valid {
+                border: none;
+                outline: 2px solid green;
+            }
+        }
+    }
+}
+
+
+
+body[data-theme="dark"] {
+    form {
+        textarea {
+            background: #e6e6e6;
+            color: #333;
+            &:active,
+            &:focus {
+                color: #000;
+            }
+        }
+        label {
+        background: transparent;
+        color: #fff;
+        &+ input[type="email"]{
+            color: #333;
+            &:active,
+            &:focus {
+                color: #000;
+            }
+        }
+        }
+        input[type="submit"] {
+            border: 1px solid #fff;
+            padding-block: var(--spacing-sm, 0.5rem);
+        }
     }
 }

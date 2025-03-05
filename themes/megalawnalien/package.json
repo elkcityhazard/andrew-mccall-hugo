@@ -6,7 +6,9 @@
   "scripts": {
     "build:gulp": "gulp concat-css && postcss static/css/index.css -o assets/css/index.min.css",
     "build": "NODE_ENV=production postcss src/index.css -o assets/styles.css",
-    "dev": "NODE_ENV=development postcss src/index.css -o assets/dist/styles.css -w"
+    "dev": "NODE_ENV=development postcss src/index.css -o assets/dist/styles.css -w",
+    "webpack:watch": "NODE_ENV=development webpack --watch",
+    "webpack:build": "NODE_ENV=production webpack build"
   },
   "keywords": [],
   "author": "",
@@ -25,7 +27,7 @@
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.2",
     "typescript": "^5.8.2",
-    "webpack": "^5.97.1",
+    "webpack": "^5.98.0",
     "webpack-cli": "^6.0.1"
   }
 }

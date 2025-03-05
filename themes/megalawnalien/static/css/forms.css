@@ -94,6 +94,7 @@ label[for="themeToggle"] > input[type="checkbox"]::after {
 
 body[data-theme="dark"] label  {
     background: var(--off-white);
+    color: #333;
     
 }
 
