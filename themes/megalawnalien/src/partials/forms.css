@@ -40,7 +40,7 @@
         }
         input[type="email"] {
             padding-block: var(--spacing-sm,0.5rem);
-            padding-inline: var(--spacing-sm,0.5);
+            padding-inline: var(--spacing-sm,0.5rem);
             &:user-valid {
                 border: none;
                 outline: 2px solid green;
