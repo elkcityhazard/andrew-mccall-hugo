@@ -65,11 +65,11 @@ async handleOnFormData(e:FormDataEvent) {
             switch (resp.statusText) {
                 case "OK":
                     const parent = this.form.parentElement
-                    this.form.remove()
+                    this?.form?.remove()
                     const msg = "Thank you for contacting me. I look forward to responding to your inquiry"
                     const pEl = document.createElement('p')
                     pEl.textContent = msg
-                    parent.appendChild(pEl)
+                    parent?.appendChild(pEl)
                 break;
                 default:
                 const {email, message} = data.data
