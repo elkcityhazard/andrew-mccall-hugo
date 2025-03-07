@@ -12,7 +12,11 @@ class Form {
     events():void {
         if (!this.form || !this.formID) return null
         this.form.addEventListener('submit', async (e:SubmitEvent) => {
-            this.handleOnFormSubmit(e)
+            try {
+            await this.handleOnFormSubmit(e)
+            } catch (err) {
+                throw new Error(err)
+            }
         })
     }
 
