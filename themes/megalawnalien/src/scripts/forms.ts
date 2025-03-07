@@ -46,7 +46,7 @@ async handleOnFormData(e:FormDataEvent) {
             const message = formData.get("message")
             const phoneNumber = formData.get("phone_number")
 
-            const baseUrl = process.env.NODE_ENV == "development" ? "http://localhost:8675" : "https://contact.andrew-mccall.com"
+            const baseUrl = process.env.NODE_ENV == "development" ? "https://contact.andrew-mccall.com" : "https://contact.andrew-mccall.com"
 
 
             const resp = await fetch(baseUrl+"/api/v1/andrew-mccall/contact", {
