@@ -1,4 +1,4 @@
-
+import "../index.css";
 class Form {
     formID: string;
     form: HTMLFormElement
@@ -11,9 +11,9 @@ class Form {
 
     events():void {
         if (!this.form || !this.formID) return null
-            console.log(this.form)
-        this.form.addEventListener('submit', this.handleOnFormSubmit.bind(this))
-        //this.form.addEventListener('formdata', this.handleOnFormData.bind(this))
+        this.form.addEventListener('submit', async (e:SubmitEvent) => {
+            this.handleOnFormSubmit(e)
+        })
     }
 
     handleClearErrorMsgs() {
