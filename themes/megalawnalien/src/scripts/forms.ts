@@ -46,7 +46,8 @@ async handleOnFormData(e:FormDataEvent) {
             const message = formData.get("message")
             const phoneNumber = formData.get("phone_number")
 
-            const baseUrl = process.env.NODE_ENV == "development" ? "https://contact.andrew-mccall.com" : "https://contact.andrew-mccall.com"
+
+            const baseUrl = process.env.NODE_ENV == "development" ? "http://localhost:8675" : "https://contact.andrew-mccall.com"
 
 
             const resp = await fetch(baseUrl+"/api/v1/andrew-mccall/contact", {
@@ -54,7 +55,7 @@ async handleOnFormData(e:FormDataEvent) {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                mode: "cors",
+                
                 body: JSON.stringify({
                     email,
                     message,
@@ -72,8 +73,8 @@ async handleOnFormData(e:FormDataEvent) {
                     parent?.appendChild(pEl)
                 break;
                 default:
-                const {email, message} = data.data
-                const {error_message} = data
+                const {email = "", message = ""} = data?.data
+                const {error_message = ""} = data
                     var emailField:HTMLInputElement
                     var msgField:HTMLTextAreaElement
                     var inputList:any[]
