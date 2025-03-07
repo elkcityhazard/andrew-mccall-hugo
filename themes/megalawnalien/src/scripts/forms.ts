@@ -9,7 +9,7 @@ class Form {
     }
 
 
-    events():Function {
+    events():void {
         if (!this.form || !this.formID) return null
             console.log(this.form)
         this.form.addEventListener('submit', this.handleOnFormSubmit.bind(this))
@@ -27,7 +27,7 @@ class Form {
         }
     }
 
-    async handleOnFormSubmit(e:SubmitEvent) {
+    async handleOnFormSubmit(e:SubmitEvent): Promise<void> {
         e.preventDefault()
         this.handleClearErrorMsgs()
         try {
@@ -64,7 +64,7 @@ class Form {
                     const pEl = document.createElement('p')
                     pEl.textContent = msg
                     parent?.appendChild(pEl)
-                break;
+                    break;
                 default:
                 const {email = "", message = ""} = data?.data
                 const {error_message = ""} = data
@@ -83,9 +83,11 @@ class Form {
                     inputList = [emailField, msgField]
 
                     for (let i = 0; i < inputList.length; i++) {
-                        let formControl:HTMLElement = inputList[i].closest('.form-control')
-                        formControl.querySelector('small[data-id*="error"]').textContent = error_message
+                        let formControl = inputList[i]?.closest('.form-control');
+
+                        if (formControl) formControl.querySelector('small[data-id*="error"]').textContent = error_message
                     }
+                    break;
 
 
             }
