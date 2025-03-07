@@ -397,50 +397,8 @@ section[data-taxonomy="tags"] header {
 }
 
 .nav-bar__wrap {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: reverse;
-            -ms-flex-flow: column-reverse nowrap;
-                flex-flow: column-reverse nowrap;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
+        display: grid;
     }
-
-.nav-bar__wrap nav ul li {
-                    -webkit-box-flex: 0;
-                        -ms-flex: 0 0 100%;
-                            flex: 0 0 100%;
-                    text-align: center;
-                }
-
-.nav-bar__wrap nav ul li a {
-                        display: inline-block;
-                        padding-inline: 8px;
-                        padding-inline: 0.5rem;
-                        padding-inline: 8px;
-                        padding-inline: 0.5rem;
-                        padding-block: 12px;
-                        padding-block: 0.75rem;
-                        padding-block: 12px;
-                        padding-block: 0.75rem;
-                        text-underline-offset: 4px;
-                        text-underline-offset: 0.25rem;
-                        text-underline-offset: 4px;
-                        text-underline-offset: 0.25rem
-                    }
-
-.nav-bar__wrap nav ul li a:hover,
-                        .nav-bar__wrap nav ul li a:active,
-                        .nav-bar__wrap nav ul li a:focus {
-    text-decoration-thickness: 2px;
-    text-decoration-thickness: 0.125rem;
-}
 
 @media screen and (min-width: 499px) {
 
@@ -457,37 +415,6 @@ section[data-taxonomy="tags"] header {
     header {
         max-width: 83.33333%;
     }
-        .nav-bar__wrap {
-            -webkit-box-orient: horizontal;
-            -webkit-box-direction: normal;
-                -ms-flex-flow: row nowrap;
-                    flex-flow: row nowrap;
-            max-width: unset;
-            width: 100%;
-        }
-            .nav-bar__wrap nav {
-                -webkit-box-flex: 1;
-                    -ms-flex: 1 1 50%;
-                        flex: 1 1 50%;
-            }
-            .nav-bar__wrap nav {
-                max-width: unset;
-            }
-                .nav-bar__wrap nav ul {
-                    width: 100%;
-                    display: -webkit-box;
-                    display: -ms-flexbox;
-                    display: flex;
-                    -webkit-box-orient: horizontal;
-                    -webkit-box-direction: normal;
-                        -ms-flex-flow: row nowrap;
-                            flex-flow: row nowrap;
-                }
-                    .nav-bar__wrap nav ul li {
-                        -webkit-box-flex: 0;
-                            -ms-flex: none;
-                                flex: none;
-                    }
 }
 
 @media screen and (min-width: 768px) {
@@ -575,7 +502,7 @@ div[data-ui-toggle] {
     margin-left: auto;
     margin-right: 4px;
     margin-right: 0.25rem;
-    width: auto;
+    width: min(40px, 100%);
  }
 
 svg[data-icon] {
@@ -806,4 +733,5 @@ section[data-section="footer"] ul {
     gap: 4px;
     gap: 0.25rem;
 }
+
 

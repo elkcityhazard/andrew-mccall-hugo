@@ -113,25 +113,6 @@ section[data-taxonomy="tags"] header {
         flex-flow: column-reverse nowrap;
         align-items: center;
         justify-content: space-between;
-        nav {
-            ul {
-                li {
-                    flex: 0 0 100%;
-                    text-align: center;
-                    a {
-                        display: inline-block;
-                        padding-inline: var(--spacing-2, 0.5rem);
-                        padding-block: var(--spacing-3, 0.75rem);
-                        text-underline-offset: var(--spacing-1, 0.25rem);
-                        &:hover,
-                        &:active,
-                        &:focus {
-                            text-decoration-thickness: calc(2 / 16 * 1rem);
-                        }
-                    }
-                }
-            }
-        }
     }
 }
 
@@ -166,7 +147,7 @@ section[data-taxonomy="tags"] header {
                     display: flex;
                     flex-flow: row nowrap;
                     li {
-                        flex: none;
+                        flex: 0 0 100%:
                     }
                 }
             }

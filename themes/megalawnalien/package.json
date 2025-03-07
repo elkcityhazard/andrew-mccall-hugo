@@ -4,9 +4,9 @@
   "description": "## Features",
   "main": "index.js",
   "scripts": {
-    "build:gulp": "gulp concat-css && postcss static/css/index.css -o assets/css/index.min.css",
-    "build": "NODE_ENV=production postcss src/index.css -o assets/styles.css",
-    "dev": "NODE_ENV=development postcss src/index.css -o assets/dist/styles.css -w",
+    "css:watch": "NODE_ENV=development postcss static/css/index.css -o assets/css/bundle.css --watch",
+    "build": "NODE_ENV=production postcss src/index.css -o assets/style.css",
+    "dev": "NODE_ENV=development postcss src/index.css -o assets/css/bundle.css -w",
     "webpack:watch": "NODE_ENV=development webpack --watch",
     "webpack:build": "NODE_ENV=production webpack build"
   },

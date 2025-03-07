@@ -28,7 +28,7 @@
     justify-content: center;
     margin-left: var(--spacing-auto);
     margin-right: var(--spacing-1);
-    width: fit-content;
+    width: auto;
  }
 
 
