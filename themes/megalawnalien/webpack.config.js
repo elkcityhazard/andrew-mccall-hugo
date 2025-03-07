@@ -1,10 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  mode: "development",
-  optimization: {
-    minimize: false,
-  },
+  mode: process.env.NODE_ENV === "production" ? "production" : "development",
   devtool: "source-map",
   watch: process.env.NODE_ENV === "production" ? false : true,
   entry: "./src/scripts/index.ts",
