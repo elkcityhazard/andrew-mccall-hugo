@@ -1,5 +1,3 @@
-import "./forms.css";
-import "../index.css";
 
 class Form {
     formID: string;
