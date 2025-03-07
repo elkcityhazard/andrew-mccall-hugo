@@ -13,7 +13,7 @@ class Form {
         if (!this.form || !this.formID) return null
             console.log(this.form)
         this.form.addEventListener('submit', this.handleOnFormSubmit.bind(this))
-        this.form.addEventListener('formdata', this.handleOnFormData.bind(this))
+        //this.form.addEventListener('formdata', this.handleOnFormData.bind(this))
     }
 
     handleClearErrorMsgs() {
@@ -27,16 +27,11 @@ class Form {
         }
     }
 
-    handleOnFormSubmit(e:Event) {
+    async handleOnFormSubmit(e:SubmitEvent) {
         e.preventDefault()
         this.handleClearErrorMsgs()
-        const fd = new FormData(e.target as HTMLFormElement)
-    }
-
-
-async handleOnFormData(e:FormDataEvent) {
         try {
-            const formData = e.formData
+            const formData = new FormData(this.form)
 
             if (!formData) return 
 
@@ -101,6 +96,7 @@ async handleOnFormData(e:FormDataEvent) {
             throw new Error(err)
         }
     }
+
 }
 
 
