@@ -59,27 +59,17 @@ class Form {
                     phone_number: phoneNumber,
                 })
             })
-            const data = await resp.json()
-            switch (resp.statusText) {
-                case "OK":
-                    const parent = this.form.parentElement
-                    this?.form?.remove()
-                    const msg = "Thank you for contacting me. I look forward to responding to your inquiry"
-                    const pEl = document.createElement('p')
-                    pEl.textContent = msg
-                    parent?.appendChild(pEl)
-                    break;
-                default:
+
+            if (resp.statusText != "OK") {
+                const data = await resp.json()
                 const {email = "", message = ""} = data?.data
                 const {error_message = ""} = data
                     var emailField:HTMLInputElement
                     var msgField:HTMLTextAreaElement
                     var inputList:any[]
 
-
                     emailField = this.form.querySelector('input[name="email"]')
                     emailField.value = email
-
 
                     msgField = this.form.querySelector('textarea[name="message"]')
                     msgField.textContent = message
@@ -88,12 +78,13 @@ class Form {
 
                     for (let i = 0; i < inputList.length; i++) {
                         let formControl = inputList[i]?.closest('.form-control');
-
                         if (formControl) formControl.querySelector('small[data-id*="error"]').textContent = error_message
                     }
-                    break;
+                return
+            }
 
-
+            location.assign('/success')
+            return
             }
 
 

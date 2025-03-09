@@ -1,0 +1,9 @@
+{{ define "main" }}
+    <hgroup>
+  <h1>Thank you for </h1>
+  <p>{{.Description}}</p>
+    </hgroup>
+</ul>
+  {{ .Content }}
+{{ end }}
+

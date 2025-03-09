@@ -1,6 +1,7 @@
 ---
 title: Resume
 publishDate: "2024-03-23"
+
 ---
 __Email:__ andrew[at]andrew-mccall[dot]com  
 __Phone Number:__ 231 299 0217  
