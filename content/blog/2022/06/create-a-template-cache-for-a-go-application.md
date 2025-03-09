@@ -3,15 +3,22 @@ title: How To Create A Template Cache For Your Golang Web Application
 author: Andrew M McCall
 date: 2022-06-26 00:00:00
 description: How to create a reusable template cache for a go web application that allows the application to read templates from memory.
+summary: This is an example of how to create a template cache for a go web application that uses an in-memory map.
+publishDate: '2022-06-26'
+updateDate: '2025-03-08'
 image: "/images/blog/2022/template-cache-1200x600.jpeg"
 draft: false
-category:
+categories:
 - Web Development
 tags:
 - Golang
 - Web Development
 - Server Side Go
 ---
+
+__Note__: This example covers creating an in-memory cache that is uses an
+external folder to store templates.  If you want to learn how to use the
+`go:embed` package to create a template cache, go here: [Use Go Embed Package for Template Rendering](/blog/2025/01/using-go-embed-package-for-template-rendering/ "Using Go Embed Package for Template Rendering").
 
 A beginner's guide to create a reusable template cache for your Go web application:  eveything you need to get started.   For example the `net/http` and `html/template` package are part of the standard library and allow us to create full-featured web applications with just the standard library.  
 
