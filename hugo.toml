@@ -1,6 +1,6 @@
 baseURL = '/'
 languageCode = 'en-us'
-itle = 'Andrew M McCall'
+title = 'Andrew M McCall'
 theme = 'megalawnalien'
 [pagination]
     pagerSize = 10
