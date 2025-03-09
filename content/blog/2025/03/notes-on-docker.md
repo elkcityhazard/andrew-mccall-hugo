@@ -1,10 +1,11 @@
 ---
-title: 'Notes on Docker'
+title: 'Docker: Important Topics & Notes'
 date: 2025-03-07
 author: Andrew M McCall
-description: Some basic docker commands for reference. 
-summary:  This is a repository of my notes on docker commands. Helpful for when I forget things.
-publishDate: '2025-03-07T19:31:54-05:00'
+description: Some basic docker commands for reference. My personal
+important topics and notes for Docker.  
+summary:  This is a repository of my notes and important topics on docker commands. Helpful for when I forget things.
+publishDate: '2025-03-07T19:31:54-05:00' 
 updateDate:  '2025-03-07T19:31:54-05:00'
 images: ['/images/twitter-card.png']
 draft: false
