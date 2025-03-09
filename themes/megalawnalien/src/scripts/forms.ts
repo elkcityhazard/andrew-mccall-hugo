@@ -60,7 +60,7 @@ class Form {
                 })
             })
 
-            if (resp.statusText != "OK") {
+            if (!resp.ok) {
                 const data = await resp.json()
                 const {email = "", message = ""} = data?.data
                 const {error_message = ""} = data
@@ -88,7 +88,6 @@ class Form {
 
         } catch (err) {
             console.error(err.message)
-            throw new Error(err)
         }
     }
 
