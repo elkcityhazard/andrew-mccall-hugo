@@ -5,7 +5,7 @@ author: Andrew M McCall
 description: An explanation on why managed Wordpress hosting like GetFlywheel & WPEngine isn't always the best choice and what to do instead. 
 summary:  I explain my experience working for an agency that uses GetFlywheel and WPEngine for Wordpress Hosting
 publishDate: 2024-07-20T13:25:28-04:00
-updateDate:  2024-12-05T17:54:28-04:00
+updateDate:  2025-03-08T17:54:28-04:00
 draft: false
 categories:
   - Web Development
@@ -15,6 +15,20 @@ tags:
   - PHP
   - VPS
 ---
+
+## TL;DR  Summarizing  Why I don't recommend getflywheel.com or wpengine.com
+
+- [WP Engine is not WordPress](https://wordpress.org/news/2024/09/wp-engine/ "WP Engine is not WordPress")
+- Shared hosting runs out of resources easily and often
+- Local By Flywheel is pretty clunky these days
+- Server is locked down, unable to customize nginx, install any 3rd party
+  software
+- Caching changes need to have a support ticket
+- You have to pay for server side automatic updates for plugins (3 lines of
+  code in crontab)
+- Expensive compared to alternatives that are just as fine and dandy
+- 500 errors due to constrained resources
+- Nagging sales emails
 
 I am sure there are many flywheel hosting reviews out there who can point out some very convenient features of flywheel hosting.  This is meant to be more of a reflection on my own experience using flyhweel web hosting services.  To provide some perspective, the current agency I work for uses both Flywheel and Kinsta for Wordpress hosting.  These were set up well before my time, and at first, I really didn't have a problem with them.  After all, there are many convenient features such as easy local development syncs, daily backups, and genuinely decent customer support.  
 
@@ -77,4 +91,11 @@ I personally use Hetzner cloud which has been working pretty well for me.  Heztn
 I use tools like wp-cli and rsync to make syncing changes back and forth easier, and I have even configured github actions to actually sync the site for me from local to the server.  
 
 In conclusion, I think Flywheel and WPEngine serve their purpose.  If you are looking for a very hands-off approach to hosting Wordpress sites, they may be for you.  But after working with them for over 2 years, I have run into a few too many issues that have made me decide to move to a self hosting platform to make my own personal workflow easier.  
+
+
+### Additional WordPress Articles By Me
+
+- [WordPress Self Hosted - A Guided Tour To Running WordPress Independent Of Big Hosting](/blog/2024/12/wordpress-selfhosted/ "Self Hosting WordPress: My Guide To
+  Running WordPress Independent Of Big Hosting")
+- [Import Content From Hugo Into Wordpress](/blog/2024/08/importing-content-from-hugo-into-wordpress/ "My quick and dirty experience with migrating a Hugo website to WordPress")
 
