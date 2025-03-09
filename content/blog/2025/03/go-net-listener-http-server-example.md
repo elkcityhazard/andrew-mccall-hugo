@@ -5,7 +5,7 @@ author: Andrew M McCall
 description:  Making an http server using Go's net package only
 summary: We explore the net package, spin up a net.Listener, accept requests, and respond with html 
 publishDate: '2025-03-02T08:50:31-05:00'
-updateDate:  '2025-03-02T08:50:31-05:00'
+updateDate:  '2025-03-08T08:50:31-05:00'
 images: ['/images/twitter-card.png']
 draft: false
 categories:
@@ -79,6 +79,9 @@ to the client and get any requests that are accepted by the connection.
 - a helper function called `respondConn`
 - `defer c.Close()` which closes the current connection when we are all
   done
+
+We have an open for loop that calls `conn.Accept()`.  This is so we can
+accept requests to the `net.Conn` listener.
 
   Notice that we are passing `c net.Conn` into each of the helper functions
   to do further processing.  
