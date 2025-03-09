@@ -1,6 +1,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <meta name="description" content="{{ if .Description }} {{ .Description }} {{ else }} {{ .Site.Params.description }} {{ end }}">
+{{ $isSuccessPage := strings.HasSuffix . "success.md"}}
+{{ if eq $isSuccessPage true}}
+<meta name="robots" content="nonindex nofollow nosnippet">
+{{ end }}
 {{ template "_internal/twitter_cards.html" . }}
 {{ template "_internal/opengraph.html" . }}
 
