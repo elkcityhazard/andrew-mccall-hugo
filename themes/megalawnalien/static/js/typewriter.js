@@ -34,7 +34,8 @@ class TypeWriter {
   }
 
   setHeightOfTextContainer() {
-    this.titleEl.style.height = this.titleEl.scrollHeight + "px";
+    this.titleEl.style.height =
+      this.titleEl.scrollHeight > 0 ? this.titleEl.scrollHeight + "px" : "3rem";
   }
 
   updateTextContent() {
@@ -77,4 +78,3 @@ class TypeWriter {
 }
 
 export { TypeWriter };
-
