@@ -85,8 +85,6 @@ class Form {
 
             location.assign('/success')
             return
-            }
-
 
         } catch (err) {
             console.error(err.message)
