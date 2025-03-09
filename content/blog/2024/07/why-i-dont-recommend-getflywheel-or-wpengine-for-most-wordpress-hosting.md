@@ -60,7 +60,12 @@ Making nginx configs are behind a walled garden that only customer agents can he
 
 ## Flywheel & WPEngine Caching Can Be Very Stubborn
 
-Especially when it comes to the staging environments, the caching can be a little intense.  Often times when you want to a show a client some website change, they have difficulty viewing it because they don't understand the details of caching.  Pages can appear broken, site's can just not load, and almost always due to stale cache being served.  
+Especially when it comes to the staging environments, the caching can be a little intense.  Often times when you want to a show a client some website change, they have difficulty viewing it because they don't understand the details of caching.  Pages can appear broken, site's can just not load, and almost always due to stale cache being served.
+
+## Random 500 Internal Server Errors
+
+At our agency, resources get very constrained which causes sites to crash
+periodically.  
 
 ## You Have To Pay For Automatic Plugin Updates
 
@@ -69,6 +74,20 @@ If we manage our own server, we can easily utilize tools like systemd, crontab, 
 Flywheel doesn't let you add anything to the system services or crontab.  To achieve this using their service, you have to pay $5 USD per website to have your plugins set to update server side.  
 
 On 25 sites, that adds up very quickly each month.  A better solution is to easily log in to your server and set up a crontab or system service.  
+
+## Automatic Plugins Rollbacks can be annoying
+
+- Recently, a plugin was not getting the minimum required PHP version.
+  Instead of updating all of the plugins it could, it reverted them all.
+  This is really annoying. We don't always have time to upgrade PHP and
+  check the site thoroughly.  A better behavior would be to continue
+  upgrading the ones that it can and send an email.  Instead, you do get an
+  email, but none of the updates move forward.  
+
+  If you aren't able to update the php version quickly and check your
+  theme, this means either having to SSH into the server to run `wp plugin
+  update --all` or using the WordPress admin dashboard to do these
+  manually.
 
 ## Large Sites Cause Syncing Issues
 
