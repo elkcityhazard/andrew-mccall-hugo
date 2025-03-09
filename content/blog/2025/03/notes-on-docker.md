@@ -420,10 +420,119 @@ tokens.
 `docker image push elkcityhazard/nginx:my_new_tag`
 
 
+## Dockerfile: A Recipe For Creating An Image
+
+Dockerfile at first glance looks like a bash script, but it is a Docker-
+specific syntax.
+
+Dockerfile stanzas are executed top down, so the order actually does
+matter.  
+
+- simple build command: `docker build -f some-dockerfile`.  This is how to
+  specify a different file other than `dockerfile`.
+
+- `FROM debian:jessie`.  All images must have a FROM command. This is
+    usually from a minimal linux distro like debian or alpine. If you
+    want to start from an empty container, use `FROM scratch`. A main
+    benefit of using a distro here is to have access to that distros
+    package management system such as apt,yum,etc.
+- `ENV NGINX_VERSION 1.11.10-1~jessie`.  The main way we set keys and
+  values for container building and running containers.  
+- `RUN` executing shell commands inside the container as it is building it.
+  Use RUN commands when we need to install software from a package
+  repository, do some unzipping, file edits, and more. RUN commands can run shell scripts that you
+  copied into the container earlier, or anything that it has access to inside of the container at that time. 
+  Each stanza of the dockerfile is its own layer, so to bundle things into one layer, we can use the `&&` to chain commands 
+  together.   This ensures that all of the commands fit into one single layer which can help us save time, space, and very common.
+- `RUN`: example of setting up logging to `stdout` and `stderr`
+```
+RUN ln -sf /dev/stdout /var/log/nginx/access.log \
+&& ln -sf /dev/stderr /var/log/nginx.error.log
+```
+
+Docker takes  care of logging for us.  We just need to make sure that
+anything we want to log is sent to `stdout` and `stderr`.
+
+- `EXPOSE`: Expose ports on the docker virtual network.  We still need to
+  use -p or -P to open/forward these ports on host.
+
+- `CMD`: required run this command when the container is launched. Only one
+  `CMD` allowed, so if there are multiple, the last one wins.
+
+## Building a dockerfile
+
+`docker image build -t examplenginx .`
+
+Any line inside the dockerfile that changes, it will not use the cache.
+Also, lines after that line will be rebuilt disregarding the cache.
+__Note__: it is a good practice to keep the things that change the least at
+the top of your dockerfile, while things that change the most near the
+bottom of your dockerfile.
 
 
+### Copy a file into an container
 
+```
+FROM nginx:latest
 
+WORKDIR /usr/share/nginx/html
+
+COPY index.html index.html
+```
+
+- `WORKDIR` a best practice for changing directories to do thing. 
+- `COPY`: the stanza to copy your source code from your local machine into
+  your container.  
+- `FROM nginx:latest` has a built in CMD, so our dockerfile can inherit it. 
+
+## A Simple Dockerfile Example
+
+```
+FROM node:6-alpine
+EXPOSE 3000
+
+RUN apk add --no-cache tini
+
+RUN mkdir -p /usr/src/app
+
+WORKDIR /usr/src/app
+
+COPY package.json package.json
+
+RUN npm install \
+&& npm cache clean --force
+
+COPY . .
+
+CMD ["/sbin/tini", "--", "node", "./bin/www"]
+```
+
+- using a prebuilt node:6 with alpine
+- exposing 3000 since the app listens for connections on that port
+- adding the tini package
+- switching the current working dir
+- copying in the package.json
+- RUN npm install and force cleaning the cache
+- COPY the files from the source dir into the working directory # not each
+  RUN command starts back at the root directory.
+- start the app using tini
+- build: `docker build -t elkcityhazard/my_test_app .`
+- run it: `docker container run --rm -p 80:3000 elkcityhazard/my_test_app`
+- rename it: `docker tag elkcityhazard/my_test_app
+  elkcityhazard/my_test_app:renamed`
+- push it: `docker push elkcityhazard/my_test_app`
+- remove it: `docker image rm elkcityhazard/my_test_app`
+- pull it down: `docker container run --rm -p 80:3000
+  elkcityhazard/my_test_app`
+
+## Using Prune To Keep Docker System Clean
+
+- `docker image prune`
+- `docker system prune`
+- `docker image prune -a`
+- `docker system df`
+
+More about `docker system prune` here: [docker system prune](https://youtu.be/_4QzP7uwtvI?si=qzPEFkcLHvM7slJr "docker ssystem prune").
 
 
 
