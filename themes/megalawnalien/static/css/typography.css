@@ -188,6 +188,27 @@ main blockquote code {
     background: var(--white);
 }
 
+body {
+    code,
+    pre{
+        background: var(--offwhite, #e6e6e6);
+        padding-inline: var(--spacing-sm, 0.25rem);
+        padding-block: var(--spacing-sm, 0.25rem);
+    }
+    &[data-theme="dark"] {
+        code,
+        pre {
+        background: var(--off-white, #e6e6e6);
+        color: var(--black, #000);
+    }
+    }
+}
+
+body[data-theme="light"] {
+    code {
+    }
+}
+
 .single__meta {
     display: flex;
     align-items: flex-start;

@@ -15,6 +15,10 @@ html {
 ::slotted(*) {
     box-sizing: border-box !important;
 }
+html,
+body {
+    width: 100%;
+}
 
 body {
     margin: 0;
