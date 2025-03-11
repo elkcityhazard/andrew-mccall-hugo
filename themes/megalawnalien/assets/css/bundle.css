@@ -339,6 +339,40 @@ body[data-theme="light"] code {
         margin-bottom: 0.25rem;
     }
 
+svg,
+svg path {
+    height: 13.6px;
+    height: 0.85rem;
+    height: 32px;
+    height: 2rem;
+    width: 13.6px;
+    width: 0.85rem;
+    width: 32px;
+    width: 2rem;
+    -webkit-transition: all 350ms;
+    transition: all 350ms;
+}
+
+a {
+    -webkit-transition: all 350ms;
+    transition: all 350ms
+}
+
+a:hover svg,
+        a:hover path,
+        a:active svg,
+        a:active path {
+           color: green;
+           color: hsla(195, 25%, 45%, 1);
+}
+
+a:hover line, a:active line {
+        -webkit-transition : all 350ms;
+        transition : all 350ms;
+        color: green;
+        color: hsla(195, 25%, 45%, 1);
+}
+
 html body header,
 html body main {
     margin: 0px auto;

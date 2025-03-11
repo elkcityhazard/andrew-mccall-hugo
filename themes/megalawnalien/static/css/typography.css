@@ -224,4 +224,23 @@ body[data-theme="light"] {
         margin-block-end: var(--spacing-1);
         margin-bottom: var(--spacing-1);
     }
-
+svg,
+svg path {
+    height: var(--font-size-4, 0.85rem);
+    width: var(--font-size-4, 0.85rem);
+    transition: all 350ms;
+}
+a {
+    transition: all 350ms;
+    &:hover,
+    &:active {
+        svg,
+        path {
+           color: var(--aqua-green, green);
+    }
+    line {
+        transition : all 350ms;
+        color: var(--aqua-green, green);
+    }
+}
+}
