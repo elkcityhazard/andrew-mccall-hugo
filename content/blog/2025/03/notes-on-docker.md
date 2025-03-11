@@ -532,9 +532,84 @@ CMD ["/sbin/tini", "--", "node", "./bin/www"]
 - `docker image prune -a`
 - `docker system df`
 
-More about `docker system prune` here: [docker system prune](https://youtu.be/_4QzP7uwtvI?si=qzPEFkcLHvM7slJr "docker ssystem prune").
+More about `docker system prune` here: [docker system prune](https://youtu.be/_4QzP7uwtvI?si=qzPEFkcLHvM7slJr "docker system prune").
+
+## Container Lifetime & Persistent Data
+
+- What is persistent data?
+- Immutable infrastructure, and containers being naturally ephemeral
+- Data Volumes and how they solve some problems
+- Bind Mounts, and how that solves different problems with persistent data
+
+Containers are meant to be immutable and ephemeral.  You can just throw
+away a container and create a new one from an image.  This is a design
+goal. What about databases, unique data, and other data separation of
+concerns. Containers are persistent by nature until we remove the
+container.  Unique data aka persistent data.  
+
+Docker has two solutions for this problem: __Volumes__ and __Bind Mounts__.
+
+Volumes make a special location outside of the container UFS aka Union File
+System.
+
+Bind mounts link container path to host path. This is just sharing or
+mounting a host directory or file into a container.  
 
 
+### Persistent Data: Volumes
+
+VOLUME command in Dockerfile.
+
+`VOLUME /var/lib/mysql` # default location of mysql database.  This tells
+docker that when we start a container, to create a new volume location and
+assign it to this directory until we delete it.  
+
+Volumes need manual deletion.  
+
+`docker volume prune` to cleanup unused volumes and make it easiser to see
+what you have.  
 
 
+`docker container run -d --name mysql_sandbox -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql`
 
+`docker container inspect mysql_sandbox` will show us that there is a
+volume, but it is also located in "Mounts".  This gives you some
+interesting metadata such as where the data is actually being stored on the
+host system.
+
+``` 
+"Mounts": [
+            {
+                "Type": "volume",
+                "Name": "520765faa029897f9b21b945dd4b818fd6f9b1848165585d32a19b26ebe3cd73",
+                "Source": "/var/lib/docker/volumes/520765faa029897f9b21b945dd4b818fd6f9b1848165585d32a19b26ebe3cd73/_data",
+                "Destination": "/var/lib/mysql",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+"Volumes": {
+                "/var/lib/mysql": {}
+            },
+```
+`docker volume ls` && `docker volume inspect {volume_id}`.
+
+We can see from the container perspective what volume it is using, but we
+can't really see what it is connected to.  
+
+Volumes persist after container is destroyed.  
+
+### Named Volumes
+
+`docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=ture -v mysql-db:/var/lib/mysql  mysql`
+
+This creates a named volume which is more user friendly.  Named volumes
+are much easier to work with if it needs to stick around.  
+
+`docker volume create`
+
+Required to do this before "docker run" to use custom drivers and labels.  
+
+This is a time where you ight need to create a custom driver or label.  
