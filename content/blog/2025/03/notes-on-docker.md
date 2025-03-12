@@ -5,7 +5,7 @@ author: Andrew M McCall
 description: 'Some basic docker commands for reference. My personal important topics and notes for Docker.'
 summary:  'This is a repository of my notes and important topics on docker commands. Helpful for when I forget things.'
 publishDate: '2025-03-07T19:31:54-05:00' 
-updateDate:  '2025-03-09T19:31:54-05:00'
+updateDate:  '2025-03-11T19:31:54-05:00'
 images: ['/images/twitter-card.png']
 draft: false
 categories:
@@ -603,7 +603,7 @@ Volumes persist after container is destroyed.
 
 ### Named Volumes
 
-`docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=ture -v mysql-db:/var/lib/mysql  mysql`
+`docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=true -v mysql-db:/var/lib/mysql  mysql`
 
 This creates a named volume which is more user friendly.  Named volumes
 are much easier to work with if it needs to stick around.  
@@ -613,3 +613,109 @@ are much easier to work with if it needs to stick around.
 Required to do this before "docker run" to use custom drivers and labels.  
 
 This is a time where you ight need to create a custom driver or label.  
+
+
+
+### Bind Mounts
+Maps a host file or directory to a container file or directory - "bind
+outside to inside."
+
+You can specify a directory or a single file.
+
+This skips the UFS and host files overwrite any in container/
+
+Cannot use bind mounts in Dockerfile, must be at container run.
+
+`... run -v /Users/me/stuff:/path/container` for mac/linux
+`...run -v //c/Users/me/stuff:/path/container` windoze
+
+This is useful for development when you need to use or access files in
+development.  
+
+`docker container run -d --name nginx -p 80:70 -v
+$(pwd):/usr/share/nginx/html nginx`
+
+After we bind a volume, we can do something like this:
+
+`docker container exec -it nginx bash && ls -la`
+
+And we should be able to access our bind mount from inside the container.
+
+### Postgres Password
+
+`docker container run --name postgres -e POSTGRES_PASSWORD=mypasswd`
+
+__Note__: In the real world, I always pin my production apps to the patch version. It's the only safe way to operate.
+
+### Upgrading Postgres with named volume
+
+```
+docker container run --rm -d --name mypg2 \
+-e POSTGRES_PASSWORD=mypgpw \
+-e PGDATA=/var/lib/postgresql/data/pgdata \
+-v data:/var/lib/postgresql/data \
+postgres:9.6.1
+```
+
+you can continue to use the same named volume and only change the postgres
+tag i.e.,
+
+```
+docker container run --rm -d --name mypg2 \
+-e POSTGRES_PASSWORD=mypgpw \
+-e PGDATA=/var/lib/postgresql/data/pgdata \
+-v data:/var/lib/postgresql/data \
+postgres:9.6.2
+```
+
+
+## Troubleshooting File Permissions accross multiple containers
+
+`ps aux`
+
+Look at containers `/etc/passwd` and `/etc/group`,  you'll likely find a
+mismatch.  
+
+Figure out how to make sure both containers are running with matching
+user ID or group ID.
+i
+```
+    RUN groupadd --gid 1000 node \\
+            && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
+    USER 1000:1000
+```
+__Note__: When setting a Dockerfile's USER, use numbers, which work better in Kubernetes than using names.
+
+__Note 2__: If ps doesn't work in your container, you may need to install it. In debian-based images with apt, you can add it with apt-get update && apt-get install procps
+
+
+### Bind Mount Example
+
+`docker run -p 9090:4000 -v $(pwd):/container/dir username/image:tag`
+`docker run -p 9090:4000 -v ./data:/some/container/data/path
+username/image:tag`
+
+
+## Dockerfile ENTRYPOINTa
+
+
+### Recap Basic Dockerfile Statements
+
+- `FROM` is always needed and lets us select base image we want to build or
+  start with an empty image "scratch" image. 
+- `ENV` way to use environment variables which can be used later and
+- `WORKDIR` is the proper way to change into a directory and also create it
+  if it does not exist
+- `COPY` typical way to copy source code and any local files needed into
+  the container
+- `RUN` universal way to run any command inside the container image while
+  it is building as long as the linux binary exists already
+- EXPOSE will tell container runtime which ports your application is
+  listening on
+- `CMD` statement is teh default command your container will execute when
+  it starts.
+
+
+
+
+
