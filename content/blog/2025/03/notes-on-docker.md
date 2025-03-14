@@ -716,6 +716,143 @@ username/image:tag`
   it starts.
 
 
+## Dockerfile ENTRYPOINT
+
+Two questions to ask with every new instruction you write in a
+dockerfile:
+
+1. Will this new statement overwrite it's previous use in my dockerfile or
+   any use in my from image.  Overwrite vs Additive.
+2. Will this statement be used during my image build or will it be stored
+   in my image metadata and used later when I start a container from this
+   image.  Buildtime vs Runtime.
+
+A common confusion for beginners is thinking that the CMD command is run at
+build time. It is stored in the image metadata and only executed when you
+start a container from that image.  
+
+Only the last `CMD` in a dockerfile will ever be used including any that
+might be coming in a from statement.  THe final workdir statement decales
+the file system path where the cmd is exeucted from. 
+
+[Dockerfile Buildtime vs. Runtime
+Cheatsheet](../dockerfile_buildtime_vs_runtime_01_2025.pdf "Courtesy of
+bretfisher.com")
 
 
+### What Is An ENTRYPOINT?
 
+The purpose of `ENTRYPOINT` is to execute a command on container start. They
+act differently than the `CMD` command and can work together.
+
+`ENTRYPOINT` only runs on container starts.  Only the last `ENTRYPOINT` is
+used in the container.  
+
+```
+docker run busybox
+docker inspect busybox
+docker run -it busybox
+whoami # root in container
+ps # check processes
+ls /bin # get binaries
+hostname # returns the hostname of the os
+date # get date
+exit # exit container
+```
+
+```
+FROM busybox:latest
+
+CMD ["hostname"] // docker calls this json syntax the execform
+
+```
+
+```
+cd /path-to-directory
+docker build -t hostname . 
+docker run hostname
+docker run --help
+docker run hostname date // override the cmd statement
+```
+
+Update `CMD` to `ENTRYPOINT`
+
+```
+FROM busybox:latest
+
+ENTRYPOINT ["hostname"] // docker calls this json syntax the execform
+
+```
+
+`docker build -t entryhostname .`
+
+`docker run entryhostname` => nothing changed
+`docker run entryhostname date` => operation not permitted
+
+`docker run --help`
+
+`docker run --entrypoint date entryhostname`
+
+Docker intends the `ENTRYPOINT` to complement the `CMD` and not replace it. 
+
+`CMD` is good for images meant to run long lasting processes in the
+background.
+
+`ENTRYPOINT` offers no benefits over `CMD` by itself, but shines when
+used together. 
+
+### ENTRYPOINT & CMD Together
+
+If you set both, then every time you start the container docker takes the
+`ENTRYPOINT` and the `CMD` and combines them with a space between them.  
+
+Two main use cases:
+
+1. You want to treat your containers like a command line tool 
+2. You want to run a startup script in the main container before the
+   program starts
+
+
+This is good for linux utilities:
+```
+FROM ubuntu:latest
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+ENTRYPOINT ["curl"]
+
+CMD ["--help"]
+
+```
+
+### Container startup script
+
+```
+.sh
+exec "$@"
+
+FROM python:slim
+USER www-data
+WORKDIR /var/www/html
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . . 
+ENTRYPOINT ["./startup.sh"]
+CMD ["python", "app.py"]
+```
+
+[Choosing Between RUN, CMD, & ENTRYPOINT](https://www.docker.com/blog/docker-best-practices-choosing-between-run-cmd-and-entrypoint/ "Docker Blog Article")
+
+
+## Shell vs Exec Form
+
+[Shell vs Exec Form](https://docs.docker.com/reference/dockerfile/#shell-and-exec-form "Shell
+vs Exec")
+
+`RUN` - `shell` by default
+`ENTRYPOINT` - always use `EXEC` Form
+`CMD` - Use `EXEC` form by default, but in rare cases `shell` might be needed
+`ENTRYPOINT` + `CMD`: always use `Exec` form
