@@ -272,3 +272,237 @@ usually just use `this.dispatchEvent(myCustomEvent)`
 Note: you still most likely need to at `bubbles: true` and `composed: true`
 so the event bubbles up and also can leave the shadow dom.  
 
+
+## A Complete Example Of A Web Component
+
+```
+// modal.js
+class AmModal extends HTMLElement {
+  constructor() {
+    super();
+    this.template = document.createElement("template");
+    this.pointerEventType = "none";
+    this.opacity = 0;
+    this.template.innerHTML = `
+        <style>
+        #backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,0.75);
+        z-index: 10;
+        pointer-events: ${this.pointerEventType};
+        opacity: ${this.opacity};
+        transition: all 350ms;
+        -webkit-transition: all 350ms;
+        -moz-transition: all 350ms;
+        }
+        #modal {
+            background: #fff;
+            border-radius: 3px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 100;
+            position: fixed;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 50%;
+            pointer-events: ${this.pointerEventType};
+            -webkit-transition: all 350ms;
+            -moz-transtion-all: all 350ms;
+            transition: all 350ms;
+
+        }
+
+        :host([open]) {
+        #backdrop,
+        #modal {
+        opacity: 1;
+        pointer-events: all;
+         }
+        }
+
+        :host([open]) #modal {
+        top: 50%;
+        }
+
+        header {
+        padding: 1rem;
+        border-bottom: 1px solid #fff;
+        }
+        header h2 {
+        font-size: 1.25rem;
+        }
+
+        ::slotted(h2) {
+        margin-bottom: 0;
+        overflow-wrap: break-word;
+        }
+
+        #main {
+        padding: 1rem;
+        }
+
+        #actions {
+         border-top: 1px solid #ccc;
+         padding: 1rem;
+         display: flex;
+         justify-content: flex-end;
+        }
+        #actions button {
+        margin: 0 0.25rem;
+        }
+        </style>
+        <div id="backdrop">
+        <div id="modal">
+        <header>
+        <slot name="title">Default Header</slot>
+        </header>
+        <section id="main">
+        <slot></slot>
+        </section>
+        <section id="actions">
+        <button id="cancelBtn">Cancel</button>
+        <button id="okayBtn">Okay</button>
+        </section>
+        </div>
+        </div>
+        `;
+    this.isOpen = false;
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.appendChild(this.template.content.cloneNode(true));
+    this.cancelBtn = this.shadowRoot.getElementById("cancelBtn");
+    this.confirmBtn = this.shadowRoot.getElementById("okayBtn");
+
+    const slots = this.shadowRoot.querySelectorAll("slot");
+    slots[1].addEventListener("slotchange", (event) => {
+      //console.dir(slots[1].assignedNodes());
+    });
+  }
+
+  toggleActive() {
+    if (this.hasAttribute("open")) {
+      this.isOpen = true;
+      this.shadowRoot.getElementById("backdrop");
+      this.render();
+      return;
+    }
+    this.isOpen = false;
+    this.shadowRoot.getElementById("backdrop");
+    this.render();
+  }
+
+  open() {
+    if (!this.hasAttribute("open")) this.setAttribute("open", "");
+  }
+
+  hide() {
+    if (this.hasAttribute("open")) this.removeAttribute("open");
+  }
+
+  handleClick(event) {
+    event.target.focus();
+    switch (event.target.id) {
+      case "cancelBtn":
+        this.hide();
+        const cancelEvent = new Event("cancel", {
+          bubbles: true,
+          composed: true,
+        });
+        this.dispatchEvent(cancelEvent);
+        break;
+      case "okayBtn":
+        this.hide();
+        const okayEvent = new Event("confirm", {
+          bubbles: true,
+          composed: true,
+        });
+        this.dispatchEvent(okayEvent);
+        break;
+      default:
+    }
+    event.target.blur();
+  }
+
+  handleKeyPress(e) {
+    if (e.key === "Escape") {
+      this.hide();
+    }
+    if (e.key === "Enter") {
+      this.open();
+    }
+  }
+
+  events() {
+    this.cancelBtn.addEventListener("click", this.handleClick.bind(this));
+    this.confirmBtn.addEventListener("click", this.handleClick.bind(this));
+    this.shadowRoot
+      .getElementById("backdrop")
+      .addEventListener("click", this.hide.bind(this));
+
+    document.addEventListener("keydown", this.handleKeyPress.bind(this));
+  }
+
+  connectedCallback() {
+    this.events();
+  }
+
+  disconnectedCallback() {
+    document.removeEventListener("keydown", this.handleKeyPress);
+    this.cancelBtn.removeEventListener("click", this.handlClick);
+    this.confirmBtn.removeEventListener("click", this.handleClick);
+  }
+}
+
+customElements.define("am-modal", AmModal);
+
+// modal.html
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="modal.js" defer></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 2rem;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <am-modal>
+      <h2 slot="title">My Custom Slot</h2>
+      <p>Show Me The Money!</p>
+    </am-modal>
+    <button>Show Details & Confirm</button>
+  </body>
+  <script>
+    const [confirmButton] = document.getElementsByTagName("button");
+    const [modal] = document.getElementsByTagName("am-modal");
+
+    modal.addEventListener("confirm", () => {
+      console.log("confirmed");
+    });
+
+    modal.addEventListener("cancel", () => {
+      console.log("cancelled...");
+    });
+
+    confirmButton.addEventListener("click", function (e) {
+      modal.open();
+    });
+  </script>
+</html>
+```
