@@ -90,7 +90,7 @@ regular database.  The container database is not like pluggable database:
 it does not have objects.  It stores metadata such as configuration files,
 etc. 
 
-### Why Pluggable Databses?
+### Why Pluggable Databases?
 
 Each database used to be installed on a separate server. Some small
 databases don't need dedicated servers.  Each servers needs a lot of work
