@@ -373,6 +373,38 @@ a:hover line, a:active line {
         color: hsla(195, 25%, 45%, 1);
 }
 
+table {
+  --table-width: 967px;
+  --table-width: 60.4375rem;
+  --table-spacing: 8px;
+  --table-spacing: 0.5rem;
+  display: block;
+  margin-inline: auto;
+  margin-block: var(--table-spacing);
+  margin: var(--table-spacing) auto;
+  padding: var(--table-spacing);
+  overflow-x: auto;
+  width: min(var(--table-width),100%);
+}
+
+table thead,
+  table tbody {
+  --table-font-size: clamp(10.08px, -18.23px + 11.3208vw, 12px);
+  --table-font-size: clamp(0.63rem, -1.1394rem + 11.3208vw, 0.75rem);
+    font-size: var(--table-font-size);
+  }
+
+tr:nth-child(2n+1) {
+    background: #e6e6e6;
+}
+
+td {
+  --table-font-size: clamp(10.08px, -18.23px + 11.3208vw, 12px);
+  --table-font-size: clamp(0.63rem, -1.1394rem + 11.3208vw, 0.75rem);
+  font-family: Monaco, 'Courier New', sans-serif;
+  font-size: 12px;
+}
+
 html body header,
 html body main {
     margin: 0px auto;
