@@ -2,8 +2,8 @@
 title: 'Pl Sql Architecture Introduction'
 date: 2025-07-03
 author: Andrew M McCall
-description:  I explain Goroutines and Channels and how to apply them from basic concepts to more advanced use cases. 
-summary:  Go has powerful concurrency tools fully baked into the programming Language.  This post aims to explain go routines and channels so you can get started using them in your own projects.
+description:  An introduction to PL/SQL including a brief explanation of what it is, why we would want to use it, and the basics you need to know. 
+summary:  PL/SQL is an extension of SQL Engine created by Oracle to add logical programming to SQL for Oracle databases which offers a blend of programming as well as optimizations for SQL engine.  
 publishDate: '2025-07-03T20:07:01-04:00'
 updateDate:  '2025-07-03T20:07:01-04:00'
 images: ['/images/twitter-card.png']
@@ -19,7 +19,7 @@ tags:
 
 ## PL/SQL Architecture
 
-Knowing PL/SQL architecture can help improve performance. 
+Knowing <abbr title="Procedural Language For SQL (Structured Query Language)">PL/SQL</abbr> architecture can help improve performance. 
 
 ### Physical Architecture
 
