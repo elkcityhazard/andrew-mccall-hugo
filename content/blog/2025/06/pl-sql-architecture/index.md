@@ -1167,5 +1167,154 @@ Records when we want to store some related values as one row.
 Collections are are great to store multiple rows of related data.
 
 
+#### PL/SQL Records
+
+Records are similar to structures in C or C++.  They are similar to object
+oriented programming but not the same.  They can have different types of variables. Records are good for representing a row in a table.  We can store an entire row in a record, or create our own structure.  Previously, we saw storing columns in individual variables, but we can also do this with one Record type.  Furthermore, we can also add a record to a record which has some potential benefits.  Records are more meaniningful when we use them along with collections.  
+
+Record can have one or multiple values.  When we create a record, all
+properties in it are null by default.  It is possible to initialize the
+values when we instantiate the record or define the properties as not null.  
+
+There are two ways to create a record.  The simplest way is to point a
+database table structure.  This can be done using the `%type` keyword to dynamically pass the type to the record property.  
+
+- create a record: `record_name TABLE_NAME%rowtype;`
+- simple and efficient, no need to specify each type
+- one benefit is if type changes in db, our codes doesn't change
+- Second way is we specify our variables one by one in to our record.
+- Good for when we only need a subset of columns.  
+- `type type_name is record (variable_name
+  variable_type,variable_name2,variable_type2,[.....]);` (there is an
+  exception of reference cursors)
+- Must be at least one variable
+- Use all valid PL/SQL types, %TYPE, %ROWTYPE, NOT NULL, and DEFAULT%
 
 
+A Complex Example using records:
+
+```
+set serveroutput on;
+declare
+
+    type t_edu is record (
+    primary_school varchar2(100),
+    high_school varchar2(100),
+    university varchar2(100),
+    uni_graduate_date date
+    );
+    type t_emp is record (
+        first_name employees.first_name%type,
+        last_name employees.first_name%type,
+        salary employees.salary%type not null default 1000,
+        hire_date employees.hire_date%type,
+        dept_id employees.department_id%type,
+        department departments%rowtype, -- adding an additional row type
+        education t_edu
+    );  
+    
+    r_emp t_emp;
+      
+begin
+
+    select first_name,last_name,salary,hire_date,department_id
+        into r_emp.first_name,r_emp.last_name,r_emp.salary,r_emp.hire_date,r_emp.dept_id
+        from employees
+        where employee_id = '146';
+        
+    select * into r_emp.department from departments where department_id = r_emp.dept_id;
+    
+        r_emp.education.high_school := 'Traverse City';
+        r_emp.education.uni_graduate_date := '01-JAN-23';
+        r_emp.education.university := 'Western Michigan University';
+        
+        dbms_output.put_line(r_emp.first_name || ' ' || r_emp.last_name || ' earns ' || r_emp.salary || ' and was hired on ' || r_emp.hire_date);
+        dbms_output.put_line('They graduated from ' || r_emp.education.university || ' on: ' || r_emp.education.uni_graduate_date);
+        dbms_output.put_line('Their department name is: ' || r_emp.department.department_name);
+
+end;
+```
+
+Another Example:
+
+```
+/************************ Example 1 *************************/
+DECLARE
+  r_emp employees%rowtype;
+BEGIN
+  SELECT * INTO r_emp 
+  FROM   employees 
+  WHERE  employee_id = '101';
+  --r_emp.salary := 2000;
+  dbms_output.put_line(r_emp.first_name || ' '                ||
+                       r_emp.last_name  || ' earns '          ||
+                       r_emp.salary     || ' and hired at : ' || 
+                       r_emp.hire_date);
+END;
+ 
+/************************ Example 2 *************************/
+DECLARE
+  --r_emp employees%rowtype;
+  type t_emp IS RECORD (first_name VARCHAR2(50),
+                        last_name  employees.last_name%TYPE,
+                        salary     employees.salary%TYPE,
+                        hire_date  DATE);
+  r_emp t_emp;
+BEGIN
+  SELECT first_name,last_name,salary,hire_date 
+  INTO   r_emp 
+  FROM   employees 
+  WHERE  employee_id = '101';
+ 
+ /* r_emp.first_name := 'Alex';
+    r_emp.salary     := 2000;
+    r_emp.hire_date  := '01-JAN-20'; */
+ 
+  dbms_output.put_line(r_emp.first_name || ' '                || 
+                       r_emp.last_name  || ' earns '          || 
+                       r_emp.salary     || ' and hired at : ' || 
+                       r_emp.hire_date);
+END;
+ 
+/************************ Example 3 *************************/
+DECLARE
+  TYPE t_edu is RECORD(primary_school    VARCHAR2(100),
+                       high_school       VARCHAR2(100),
+                       university        VARCHAR2(100),
+                       uni_graduate_date DATE
+                       );
+  
+  TYPE t_emp IS RECORD(first_name       VARCHAR2(50),
+                       last_name        employees.last_name%type,
+                       salary           employees.salary%type  NOT NULL DEFAULT 1000,
+                       hire_date        DATE,
+                       dept_id          employees.department_id%type,
+                       department       departments%rowtype,
+                       education        t_edu
+                       );
+  r_emp t_emp;
+BEGIN
+  SELECT first_name, last_name, salary, hire_date, department_id 
+    INTO r_emp.first_name, r_emp.last_name, r_emp.salary, r_emp.hire_date, r_emp.dept_id 
+    FROM employees where employee_id = '146';
+  
+  SELECT * 
+  INTO   r_emp.department 
+  FROM   departments 
+  WHERE  department_id = r_emp.dept_id;
+  
+  r_emp.education.high_school       := 'Beverly Hills';
+  r_emp.education.university        := 'Oxford';
+  r_emp.education.uni_graduate_date := '01-JAN-13'; 
+  
+  dbms_output.put_line(r_emp.first_name || ' '                || 
+                       r_emp.last_name  || ' earns '          || 
+                       r_emp.salary     || ' and hired at : ' ||
+                       r_emp.hire_date);
+  dbms_output.put_line('She graduated from '       || 
+                       r_emp.education.university  || 
+                       ' at '                      ||  
+                       r_emp.education.uni_graduate_date);
+  dbms_output.put_line('Her Department Name is : '|| r_emp.department.department_name);
+END;
+```
