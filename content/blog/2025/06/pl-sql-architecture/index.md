@@ -531,3 +531,641 @@ Example of `Bind Variables`:
     them separately, there will be no problem.
     ----------------------------------------------------------------*/
 ```
+
+
+## Control Structures
+
+Examples:
+
+```
+     
+    /************************ Example 1 *************************/
+    SET SERVEROUTPUT ON;
+    DECLARE
+      v_number NUMBER := 30;
+    BEGIN
+      IF v_number < 10 THEN
+        dbms_output.put_line('I am smaller than 10');
+      ELSIF v_number < 20 THEN
+        dbms_output.put_line('I am smaller than 20');
+      ELSIF v_number < 30 THEN
+        dbms_output.put_line('I am smaller than 30');
+      ELSE
+        dbms_output.put_line('I am equal or greater than 30');
+      END IF;
+    END;
+     
+    /************************ Example 2 *************************/
+    DECLARE
+      v_number NUMBER       := 5;
+      v_name   VARCHAR2(30) := 'Adam';
+    BEGIN
+      IF v_number < 10 OR v_name = 'Carol' THEN
+        dbms_output.put_line('HI');
+        dbms_output.put_line('I am smaller than 10');
+      ELSIF v_number < 20 THEN
+        dbms_output.put_line('I am smaller than 20');
+      ELSIF v_number < 30 THEN
+        dbms_output.put_line('I am smaller than 30');
+      ELSE
+        IF v_number IS NULL THEN
+          dbms_output.put_line('The number is null..');
+        ELSE
+          dbms_output.put_line('I am equal or greater than 30');
+        END IF;
+      END IF;
+    END;
+   ```
+
+### CASE Expressions
+
+In a searched case statement, each `WHEN` clause contains a condition that
+is evaluated independently.  The firstion condtion that evaluates to true
+will have its corresponding code block executed.  The `ELSE` clause
+provides the default action when none of the conditions are met.
+
+```
+    /****************** Simple Case Expression ******************/
+    DECLARE
+      v_job_code        VARCHAR2(10) := 'SA_MAN';
+      v_salary_increase NUMBER;
+    BEGIN
+      v_salary_increase :=  CASE v_job_code 
+                             WHEN 'SA_MAN' THEN 0.2
+                             WHEN 'SA_REP' THEN 0.3
+                            ELSE 0
+                            END;
+      dbms_output.put_line('Your salary increase is : '|| v_salary_increase);
+    END;
+    /************************************************************/
+     
+    /****************** Searched Case Expression ****************/
+    DECLARE
+      v_job_code        VARCHAR2(10) := 'IT_PROG';
+      v_department      VARCHAR2(10) := 'IT';
+      v_salary_increase NUMBER;
+    BEGIN
+      v_salary_increase:=CASE
+                          WHEN v_job_code   = 'SA_MAN' THEN 0.2
+                          WHEN v_department = 'IT' AND v_job_code = 'IT_PROG' THEN 0.3
+                         ELSE 0
+                         END;
+      dbms_output.put_line('Your salary increase is : '|| v_salary_increase);
+    END;
+    /************************************************************/
+     
+    /********************* CASE Statements **********************/
+    DECLARE
+      v_job_code        VARCHAR2(10) := 'IT_PROG';
+      v_department      VARCHAR2(10) := 'IT';
+      v_salary_increase NUMBER;
+    BEGIN
+      CASE
+        WHEN v_job_code = 'SA_MAN' THEN
+          v_salary_increase := 0.2;
+          dbms_output.put_line('The salary increase for a Sales Manager is: '|| v_salary_increase);
+        WHEN v_department = 'IT' AND v_job_code = 'IT_PROG' THEN
+          v_salary_increase := 0.2;
+          dbms_output.put_line('The salary increase for a Sales Manager is: '|| v_salary_increase);
+        ELSE
+          v_salary_increase := 0;
+          dbms_output.put_line('The salary increase for this job code is: '|| v_salary_increase);
+      END CASE;
+    END;
+```
+
+### Basic Loops
+
+```
+/*********************** Basic Loops ************************/
+DECLARE
+  v_counter NUMBER(2) := 1;
+BEGIN
+  LOOP
+    dbms_output.put_line('My counter is : '|| v_counter);
+    v_counter := v_counter + 1;
+    --IF v_counter = 10 THEN
+    --  dbms_output.put_line('Now I reached : '|| v_counter);
+    --  EXIT;
+    --END IF;
+    EXIT WHEN v_counter > 10;
+  END LOOP;
+END;
+```
+
+### While Loops
+
+```
+/********************** WHILE LOOP **************************/
+DECLARE
+  v_counter NUMBER(2) := 1;
+BEGIN
+  WHILE v_counter <= 10 LOOP
+    dbms_output.put_line('My counter is : '|| v_counter);
+    v_counter := v_counter + 1;
+   -- EXIT WHEN v_counter > 3;
+  END LOOP;
+END;
+/*****
+```
+
+
+### For Loops
+
+```
+FOR counter IN [REVERSE]
+    lower_bound..upper_bound LOOP
+    my_code;
+END LOOP;
+```
+
+```
+/************************ FOR LOOP **************************/
+BEGIN
+  FOR i IN REVERSE 1..3 LOOP
+    dbms_output.put_line('My counter is : ' || i);
+  END LOOP;
+END;
+/************************************************************/
+```
+
+### Nested Loops
+
+We can use labels with nested loops to break out of outer inside of inner.
+A label has a syntax like this: `<<label_name>>`.  We can write this before
+the `LOOP` keyword in basic loops while writing it before `WHILE` and `FOR`
+keyword in these loops.  At the end of the loop, you can append the label
+to the `end loop outer_loop` for added clarity.  A normal `exit` keyword
+will not finish the outer loop, only the currently scoped loop.  Labeles
+can help us exit the outer loop: `exit outer_loop when [some condition]`. 
+
+```
+DECLARE
+ v_inner NUMBER := 1;
+BEGIN
+ FOR v_outer IN 1..5 LOOP
+  dbms_output.put_line('My outer value is : ' || v_outer );
+    v_inner := 1;
+    LOOP
+      v_inner := v_inner+1;
+      dbms_output.put_line('  My inner value is : ' || v_inner );
+      EXIT WHEN v_inner * v_outer >= 15;
+    END LOOP;
+ END LOOP;
+END;
+/************************************************************/
+ 
+/**************** Nested Loops with Labels ******************/
+DECLARE
+ v_inner NUMBER := 1;
+BEGIN
+<<outer_loop>>
+ FOR v_outer IN 1..5 LOOP
+  dbms_output.put_line('My outer value is : ' || v_outer );
+    v_inner := 1;
+    <<inner_loop>>
+    LOOP
+      v_inner := v_inner+1;
+      dbms_output.put_line('  My inner value is : ' || v_inner );
+      EXIT outer_loop WHEN v_inner * v_outer >= 16;
+      EXIT WHEN v_inner * v_outer >= 15;
+    END LOOP inner_loop;
+ END LOOP outer_loop;
+END;
+
+set serverout on;
+declare
+v_inner number := 1;
+
+begin
+-- we can use label for loops
+-- we write our label before the LOOP keyword in basic loops;
+-- for while and for loops, we write before while and for keywords
+-- exit keyword: it will not finish the outer loop, only the current scoped loop
+-- but we can use labels to exit the outer loop
+-- if we label outer loop, we can use exit command with the label and finish both inner and outer loop
+    <<outer_loop>>
+    for v_outer in 1..5 loop
+        dbms_output.put_line('My outer value is : ' || v_outer);
+        v_inner := 1;
+        <<inner_loop>>
+        loop
+            v_inner := v_inner + 1;
+             dbms_output.put_line('My inner value is : ' || v_inner);
+              exit outer_loop when v_inner * v_outer >= 16; -- using a label to exit outer loop inside of inner loop
+              exit when v_inner * v_outer >= 15; -- we can have a condition to exit inner to outer
+             end loop inner_loop; -- declare the end of inner loop by placing at the end of `end loop` keyword
+    end loop outer_loop; -- declare the end of the inner loop by placing at the end of the `end loop` keyword
+end;
+
+```
+
+
+### Continue Statement
+
+How it is used: `CONTINUE [label_name] [WHEN CONDITION]`
+
+
+
+```
+set serveroutput on;
+--
+--declare
+--v_inner number := 1;
+--
+--begin
+--    <<outer_loop>>
+--        for v_outer in 1..10 loop
+--            dbms_output.put_line('My outer value is: ' || v_outer);
+--            v_inner := 1;
+--            <<inner_loop>>
+--            while v_inner * v_outer < 15 loop
+--                v_inner := v_inner + 1;
+--                continue when mod(v_inner*v_outer,3) = 0; -- mod explanation: return ((v_inner * v_outer) - 3 * floor((v_inner*v_outer) / 3)) == 0 i.e., ((3 *3) - 3 * ((3*3) /3))
+--                dbms_output.put_line('My inner value is: ' || v_inner);
+--            end loop inner_loop;
+--        end loop outer_loop;
+--end;
+
+declare
+v_inner number := 1;
+
+begin
+    <<outer_loop>>
+        for v_outer in 1..10 loop
+            dbms_output.put_line('My outer value is: ' || v_outer);
+            v_inner := 1;
+            <<inner_loop>>
+            loop
+                v_inner := v_inner + 1;
+                continue outer_loop when v_inner = 10;
+                dbms_output.put_line('My inner value is: ' || v_inner);
+            end loop inner_loop;
+        end loop outer_loop;
+end;
+
+```
+
+
+### GOTO Statements
+
+`GOTO` is a keyword that transfers the control to  a labeled place. We
+place the cursor of the program directly to the place of the label that we
+pointed to.  With GOTO, you can go almost anywhere in your codebase.  We
+cannon write a condition for the gotostatement.  GOTO statements are good
+for jumping to other places in your code. 
+
+Usage: `GOTO label_name`;
+
+__Note__: we cannot write when and condition with goto statements.  
+
+We cannot go into an if statement, case statement, or a loop with a goto
+statement.  We cannot go into an inner block from an outer block, but you
+can jump from an inner block to an outer block.  
+
+If you are in a subprogram like a function or procedure, you cannot go out
+of it by using a goto statement.  
+
+If we are in an exception handler block, we cannot go out of it (there is a
+trick).  
+
+If your exception handler is in an inner block, then you can jump into a
+place in the outer block, but you cannot go into the current or inner
+block.  
+
+Examples:
+
+```
+set serveroutput on;
+
+--declare
+--v_searched_number number := 32453;
+--v_is_prime boolean := true;
+--
+--begin
+--    for x in 2..v_searched_number-1 loop
+--        if v_searched_number mod x = 0 then
+--            dbms_output.put_line(v_searched_number || ' is not a prime number...');
+--            v_is_prime := false;
+--            goto end_point;
+--        end if;
+--    end loop;
+--    
+--    if v_is_prime then
+--        dbms_output.put_line(v_searched_number || ' is a prime number...');
+--    end if;
+--    
+--    
+--    <<end_point>>
+--    -- there must be something after label for goto
+--    dbms_output.put_line('Check complete...');
+--
+--end;
+
+
+declare
+v_searched_number number := 32453;
+v_is_prime boolean := true;
+v_x number := 2;
+
+begin
+    <<start_point>>
+    
+        if v_searched_number mod v_x = 0 then
+            dbms_output.put_line(v_searched_number || ' is not a prime number...');
+            v_is_prime := false;
+            goto end_point;
+        end if;
+        v_x := v_x+1;
+        if v_x = v_searched_number then
+            goto prime_point;
+        end if;
+        
+        goto start_point;
+    <<prime_point>>
+    if v_is_prime then
+        dbms_output.put_line(v_searched_number || ' is a prime number...');
+    end if;
+    
+    
+    <<end_point>>
+    -- there must be something after label for goto
+    dbms_output.put_line('Check complete...');
+
+end;
+```
+
+
+## SQL in PL/SQL
+
+- You cannot use DDL commands directly. i.e., creating a table, altering
+  it, etc.
+- DCL operations are transacton control statements like granting,
+    revoking, etc. 
+- A block does not mean a transaction
+- There can be many DML commands and many commits, rollbacks, and multiple
+  transactions in one PL/SQL command.
+- `INTO` clause: we store the returned data into our variables or records.
+  We have our select keyword, then our columns, or expressions.  
+- `SELECT columns|expressions INTO variables|records FROM table|tables
+  [WHERE condition];`
+- We need to have same number of variables as in our select statement.  
+- Code must return one row
+
+
+```
+/************************ Example 1 *************************/
+DECLARE
+  v_name   VARCHAR2(50);
+  v_salary employees.salary%type;
+BEGIN
+  SELECT first_name ||' '|| last_name, salary 
+  INTO   v_name, v_salary  
+  FROM   employees 
+  WHERE  employee_id = 130;
+  dbms_output.put_line('The salary of '|| v_name || ' is : '|| v_salary);
+END;
+ 
+/************************ Example 2 *************************/
+DECLARE
+  v_name   VARCHAR2(50);
+  sysdates employees.hire_date%type;
+BEGIN
+  SELECT first_name ||' '|| last_name, sysdates 
+  INTO   v_name, sysdates 
+  FROM   employees 
+  WHERE employee_id = 130;
+  dbms_output.put_line('The salary of '|| v_name || ' is : '|| sysdates);
+END;
+ 
+/************************ Example 3 *************************/
+DECLARE
+  v_name      VARCHAR2(50);
+  v_sysdate   employees.hire_date%type;
+  employee_id employees.employee_id%type := 130;
+BEGIN 
+  SELECT first_name ||' '|| last_name, sysdate 
+  INTO   v_name, v_sysdate 
+  FROM   employees 
+  WHERE  employee_id = employee_id;
+  dbms_output.put_line('The salary of '|| v_name || ' is : '|| v_sysdate );
+END;
+ 
+/************************ Example 4 *************************/
+DECLARE
+  v_name        VARCHAR2(50);
+  v_salary      employees.salary%type;
+  v_employee_id employees.employee_id%type := 130;
+BEGIN 
+  SELECT first_name ||' '|| last_name, salary 
+  INTO   v_name, v_salary 
+  FROM   employees 
+  WHERE  employee_id = v_employee_id;
+  dbms_output.put_line('The salary of '|| v_name || ' is : '|| v_salary );
+END;
+```
+### DML Operations in PL/SQL
+
+```
+CREATE TABLE employees_copy 
+AS SELECT * FROM employees;
+ 
+DECLARE
+  v_employee_id     PLS_INTEGER := 0;
+  v_salary_increase NUMBER      := 400;
+BEGIN
+  FOR i IN 217..226 LOOP
+    -- INSERT INTO employees_copy 
+    -- (employee_id, first_name, last_name, email, hire_date, job_id, salary)
+    -- VALUES
+    -- (i, 'employee#'||i,'temp_emp','abc@xmail.com',sysdate,'IT_PROG',1000);
+    -- UPDATE employees_copy 
+    -- SET    salary = salary + v_salary_increase
+    -- WHERE  employee_id = i;
+    DELETE FROM employees_copy
+    WHERE employee_id = i;
+  END LOOP;
+END;
+```
+
+
+### Sequences
+
+Sequences are related to auto increment values for new data. With PL/SQL,
+we generally do this with triggers. A sequence is independent from a table.
+We can use it with more than one table.  
+
+`nextval` amd `currval` psuedocolumns in our pl/sql code.  We can assign a
+sequence value into a database column or a pl/sql variable.  But the value
+or column that is assigned a sequence value must be a number type.  
+
+#### Two ways to use sequences
+
+- We can use sequence in a select query
+- We write our sequence name between select and into keywords and specify
+  whether we use next value or current value `sequence_name.currval` or `sequence_name.nextval`.
+- example: `SELECT sequence_name.nextval|currval INTO variable|column
+    FROM table_name|dual [WHERE condition];`
+
+```
+-- using sequences with insert statement
+set serveroutput on;
+
+create sequence employee_id_seq
+start with 207
+increment by 1;
+
+declare
+v_employee_id pls_integer := 0;
+
+begin
+
+    for i in 1..10 loop
+        insert into employees_copy
+            (employee_id,first_name,last_name,email,hire_date,job_id,salary)
+        values
+            (employee_id_seq.nextval,'employee#'||employee_id_seq.nextval,'temp_temp','abc@xmail.com',sysdate,'IT_PROG','100');
+    end loop;
+
+end;
+
+select * from employees_copy WHERE employee_id > 206;
+
+-- example using variables
+
+declare
+    v_seq_num number;
+
+begin
+    for i in 1..10 loop
+        select employee_id_seq.nextval into v_seq_num from dual;
+        dbms_output.put_line(v_seq_num);
+    end loop;
+
+
+end;
+
+```
+
+#### Using Sequence Individually
+
+Using sequences directly:
+
+```
+--create sequence employee_id_seq
+--start with 207
+--increment by 1;
+
+declare
+    v_seq_num number;
+
+begin
+    v_seq_num := employee_id_seq.nextval;
+    dbms_output.put_line(employee_id_seq.currval) -- if we want to see
+    current val of sequence
+    dbms_output.put_line(v_seq_num);
+
+end;
+```
+
+Even More Examples:
+
+```
+/******************** Creating a Sequence *******************/
+CREATE SEQUENCE employee_id_seq 
+START WITH 207
+INCREMENT BY 1;
+ 
+/************************ Example 1 *************************/
+BEGIN
+  FOR i IN 1..10 LOOP
+    INSERT INTO employees_copy 
+      (employee_id,first_name,last_name,email,hire_date,job_id,salary)
+    VALUES 
+      (employee_id_seq.nextval,'employee#'||employee_id_seq.nextval,'temp_emp','abc@xmail.com',sysdate,'IT_PROG',1000);
+  END LOOP;
+END; 
+ 
+/************************ Example 2 *************************/
+DECLARE
+  v_seq_num NUMBER;
+BEGIN
+  SELECT employee_id_seq.nextval 
+  INTO   v_seq_num 
+  FROM   dual;
+  dbms_output.put_line(v_seq_num);
+END;
+ 
+/************************ Example 3 *************************/
+DECLARE
+  v_seq_num NUMBER;
+BEGIN
+  SELECT employee_id_seq.nextval 
+  INTO   v_seq_num 
+  FROM   employees_copy 
+  WHERE  rownum = 1;
+  dbms_output.put_line(v_seq_num);
+END;
+ 
+/************************ Example 4 *************************/
+DECLARE
+  v_seq_num NUMBER;
+BEGIN
+  v_seq_num := employee_id_seq.nextval; 
+  dbms_output.put_line(v_seq_num);
+END;
+ 
+/************************ Example 5 *************************/
+BEGIN
+  dbms_output.put_line(employee_id_seq.nextval);
+END;
+ 
+/************************ Example 6 *************************/
+BEGIN
+  dbms_output.put_line(employee_id_seq.currval);
+END;
+```
+
+
+## PL/SQL Data Types: Simple versus Composite
+
+PGA stands for the Program Global Area.
+
+Variables are kept in pga until their scope is finished.  
+
+Composite data types are designed to hold multiple values in one variable. `Records` and `Collections`.
+
+Records are single row, but multiple variable entities.  
+
+Collections are a bit more detailed.  They are multi-rowed.  Collections
+have three types that store data.  
+
+Nested tables are 1 indexed, not zero indexed.
+Store variables with indexes starting from 1 and increase sequentially.
+These are key-value pairs.  Nested tables are unbound, you can have many
+rows.  
+
+The second collection type, varray, is bound.  It is also one-indexed, but
+we have to specify the exact number of rows the varray will contain and it
+cannot be changed later.
+
+Associated arrays (index by arrays) can have any numbers assigned as index
+values.  It does not need to start at 1 and it does not need to be
+sequential.  Any pls_integer types are valid including 0 and negative
+numbers.  Strings can also be used as ids with this collection type. 
+
+`Records` and `collections` can help us build in-memory tables.  
+
+__Note__: we can use the records and collection in our select statements,
+DML statements, and anywhere in our PL/SQL code.  
+
+### Why And Where To Use Collections And Records
+
+Composite data types are used when we need to operate on related data.  
+
+Records when we want to store some related values as one row.  
+Collections are are great to store multiple rows of related data.
+
+
+
+
