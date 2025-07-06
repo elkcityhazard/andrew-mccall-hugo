@@ -1651,7 +1651,6 @@ END;
 More Examples:
 
 ```
-/*********** The Simple Usage of Nested Tables **************/
 DECLARE
   TYPE e_list IS TABLE OF VARCHAR2(50);
   emps e_list;
@@ -1662,9 +1661,6 @@ BEGIN
   END LOOP;
 END;
  
-/************************************************************
-Adding a New Value to a Nested Table After the Initialization
-*************************************************************/
 DECLARE
   TYPE e_list IS TABLE OF VARCHAR2(50);
   emps e_list;
@@ -1677,7 +1673,6 @@ BEGIN
   END LOOP;
 END;
  
-/*************** Adding Values From a Table *****************/
 DECLARE
   TYPE e_list IS TABLE OF employees.first_name%type;
   emps e_list := e_list();
@@ -1695,7 +1690,6 @@ BEGIN
   END LOOP;
 END;
  
-/********************* Delete Example ***********************/
 DECLARE
   TYPE e_list IS TABLE OF employees.first_name%type;
   emps e_list := e_list();
