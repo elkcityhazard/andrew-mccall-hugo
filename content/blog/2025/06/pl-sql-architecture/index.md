@@ -1717,5 +1717,101 @@ BEGIN
 END;
 ```
   
+### Associative Arrays (index by tables)
 
+- Two columns - key and value
+- they key can be a pls_integer, binary_integer, or string, but the key
+  must be unique.  
+- Even when using numbers as keys, they must be unique since they are not
+  sequential.
+-  Negative numbers are allowed as key types
+- Associative arrays can have both scalar and record types.
+- Associative arrays can house records
+- Unlike the other collection types, we do not initialize them like varray
+  or nested tables.
+- Associative arrays are unbound in length
+- Values do not have 2GB size limitation for values
+- Note, data can be bound by memory/storage limitation
+- Associative arrays are indexed into memory
+- varchar key type, is indexed as a B-TREE index
+- sometimes suggested to use varchar2 type as key, because pls_integer has
+  a different type of indexing.  pls_integer type index can be faster in a
+  direct walk, but slower at traversing.  
+- using associative arrays can help us work with data faster since it is
+  stored in memory versus accessing from table.
+- __Note__: cannot create this type in the schema level, only in-memory
+
+#### Usage of Associative Array Type
+
+`type type_name as table of value_data_type [NOT NULL] INDEX BY
+{PLS_INTEGER | BINARY INTEGER | VARCHAR2(size)};`
+
+
+### Examples Of Associative Arrays
+
+```
+set serveroutput on;
+
+declare
+
+    type e_list is table of employees.first_name%type index by pls_integer;
+    emps e_list;
+
+begin
+    for x in 100..110 loop
+        select first_name into emps(x) from employees where employee_id = x;
+    end loop;
+    
+    for i in emps.first()..emps.last() loop
+        if (emps.exists(i)) then
+            dbms_output.put_line(emps(i));
+        end if;
+    end loop;
+end;
+
+---------------------------------------------
+
+set serveroutput on;
+
+declare
+
+    type e_list is table of employees.first_name%type index by pls_integer;
+    emps e_list;
+    idx pls_integer;
+
+begin
+    for x in 100..110 loop
+        select first_name into emps(x) from employees where employee_id = x;
+    end loop;
+    idx := emps.first();
+    while idx is not null loop
+            dbms_output.put_line(emps(idx));
+            idx := emps.next(idx);
+    end loop;
+end;
+
+-------------------------------------------------------
+set serveroutput on;
+
+declare
+
+    type e_list is table of employees.first_name%type index by varchar2(50);
+    emps e_list;
+    idx employees.email%type;
+    
+    v_email employees.email%type;
+    v_first_name employees.first_name%type;
+
+begin
+    for x in 100..110 loop
+        select first_name,email into v_first_name,v_email from employees where employee_id = x;
+        emps(v_email) := v_first_name;
+    end loop;
+    idx := emps.first();
+    while idx is not null loop
+            dbms_output.put_line('The email of ' || emps(idx) || ' is: ' || emps(idx));
+            idx := emps.next(idx);
+    end loop;
+end;
+```
 
