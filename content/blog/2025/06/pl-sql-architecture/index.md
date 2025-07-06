@@ -2194,4 +2194,101 @@ BEGIN
 END;
 ```
 
+### Working With Cursors In PL/SQL'
+
+Cursors are the pointers that point to the data in memory (context, pga,etc). The server uses implicit cursors to pass us the rest of our data.
+
+### Implicit Cursors vs Explicit cursors
+
+Implicit cursors are created by the database server and managed
+automatically.  Cursors can handle select queries.  Every time we select
+from the database, an implicit cursor is created and the cursor is
+destroyed when the block finishes,or we explicitly finish the cursor.
+(Sounds a little like C to me).   
+
+Cursors handle select queries, and fetching data at a memory location.
+
+We can control the cursor in our program. This  is an explicit cursor.  For
+example, if we need to operate on some data i.e., salaries for employees,
+where me may be updating the salaries for each employee, we can create an
+explicit cursor. We can fetch the values by that cursor one by one and
+operate on all of the employees one by one.  This makes our work more
+efficient because we can load the data into the memory. 
+
+### Collections vs Cursors
+
+Cursors can help manage memory.   There are cases in which there are too
+many rows in a database table to load them all at once into a collection.
+cit cursors can help solve this problem.  
+
+### Cursor Directional Bounds
+
+You cannot go backwards using cursors.  Forwards is the only direction.
+This can be handled by creating a collection from the data at the current
+cursor.  
+
+In summary, cursors are the pointers that you can iterate on the data that
+is selected.  
+
+## Using Explicit Cursors
+
+Cursors are pointers to the current row in teh active set of data.  With
+explicit cursors we can iterate on the current  set of rows one by one.
+Cursors are effective when dealing with multi-row results. 
+
+### Anatomy Of A Cursor
+- Declare: we ned to declare it with it's select query.  This allocates
+  some memory for teh result set. 
+- Open the cursor: execution plan is calculated and the data is stored in
+  the memory
+- Fetch a row - return the current row from the active set of rows.  When
+  we fetch a row, the cursor automatically points to the next row in memory 
+- Check - methods to see if we have exhausted all the rows
+- Close: we can close the cursor ourselves so we can start a new cursor, or
+  it is automatically killed by the database server when the block
+  finishes.  Closing it ourselves is preferred to better manage memory
+- __Note__: After closing a cursor, you can open it again. When you open it, the query that defines the cursor is re-executed.
+
+### An Example Template Of A Cursor
+```
+declare
+    cursor cursor_name is select_statement;
+begin
+    open cursor_name;
+    fetch cursor_name into variables,records, etc.;
+    close cursor_name;
+```
+
+Example Basic Cursor usage:
+
+```
+    declare
+      cursor c_emps is select first_name,last_name from employees;
+      v_first_name employees.first_name%type;
+      v_last_name employees.last_name%type;
+    begin
+      open c_emps;
+      fetch c_emps into v_first_name,v_last_name;
+      fetch c_emps into v_first_name,v_last_name;
+      fetch c_emps into v_first_name,v_last_name;
+      dbms_output.put_line(v_first_name|| ' ' || v_last_name);
+      fetch c_emps into v_first_name,v_last_name;
+      dbms_output.put_line(v_first_name|| ' ' || v_last_name);
+      close c_emps;
+    end;
+    --------------- cursor with join example
+    declare
+      cursor c_emps is select first_name,last_name, department_name from employees
+                          join departments using (department_id)
+                          where department_id between 30 and 60;
+      v_first_name employees.first_name%type;
+      v_last_name employees.last_name%type;
+      v_department_name departments.department_name%type;
+    begin
+      open c_emps;
+      fetch c_emps into v_first_name, v_last_name,v_department_name;
+      dbms_output.put_line(v_first_name|| ' ' || v_last_name|| ' in the department of '|| v_department_name);
+      close c_emps;
+    end;
+```
 
