@@ -1410,6 +1410,10 @@ Records can be used in collections.
 - one dimensional arrays
 - varrays are null by default
 
+__Note__: looping through a set of data, one has to extend the varray to
+add to it's length.   In the example below, we call `employees.extend` to
+grow the varray.
+
 `VARRAY` Example:
 
 ```
@@ -1578,4 +1582,140 @@ END;
 /
 DROP TYPE E_LIST;
 ```
+
+### Nested Tables
+- Key-Value pairs
+- Keys can only be numbers, binary integers, pls_integer.
+- binary integers and pls_integer can be faster since they require less
+  allocated memory
+- Keys should be positive number
+- Up to 2 gigabytes of values
+- unlike varrays, values can be removed from the array after initialization
+  via access by index 
+- nested arrays are not stored consecutively in the database
+- Selecting values from a nested table returns keys in order
+- Nested tables are unbounded, meaning they have a dynamic length
+- When a new value is added to the nested table array, it's maximum size
+  grows
+- create a new nested table: `type type_ name as table of value_data_type
+  [not null];`
+
+  Again, adding key/values to the table requires `table.extend()`.
+  Deleting keys is straightforward:  `table_name.delete(index)`.  To put
+  some guard rails around not using non-existent data, we can use the
+  convention of `table_name.exists(idx)` to make sure the key value exists
+  before using it.
+
+  Examples:
+
+  ```
+  SET SERVEROUTPUT ON;
+
+DECLARE
+    TYPE e_list IS
+        TABLE OF employees.first_name%TYPE; -- nested table needs a declared type
+    emps   e_list := e_list();
+    idx    PLS_INTEGER := 1;
+BEGIN
+--    emps := e_list('Dave','Allie','Elizabeth');
+--    emps.extend();
+--    emps(4) := 'Bill';
+--    for i in 1..emps.count() loop
+--        dbms_output.put_line(emps(i));
+--    end loop;
+    FOR x IN 100..110 LOOP
+        emps.extend();
+        SELECT
+            first_name
+        INTO
+            emps
+        (idx)
+        FROM
+            employees
+        WHERE
+            employee_id = x;
+
+        idx := idx + 1;
+    END LOOP;
+
+    emps.DELETE(3); -- deleting from nested tables
+    FOR i IN emps.first()..emps.count() LOOP 
+    IF emps.EXISTS(i) THEN -- same convention as before - check if exists so not to throw error on missing key 
+        dbms_output.put_line(emps(i));
+    END IF;
+    END LOOP;
+
+END;
+  ```
+
+More Examples:
+
+```
+/*********** The Simple Usage of Nested Tables **************/
+DECLARE
+  TYPE e_list IS TABLE OF VARCHAR2(50);
+  emps e_list;
+BEGIN
+  emps := e_list('Alex','Bruce','John');
+  FOR i IN 1..emps.count() LOOP
+    dbms_output.put_line(emps(i));
+  END LOOP;
+END;
+ 
+/************************************************************
+Adding a New Value to a Nested Table After the Initialization
+*************************************************************/
+DECLARE
+  TYPE e_list IS TABLE OF VARCHAR2(50);
+  emps e_list;
+BEGIN
+  emps := e_list('Alex','Bruce','John');
+  emps.extend;
+  emps(4) := 'Bob';
+  FOR i IN 1..emps.count() LOOP
+    dbms_output.put_line(emps(i));
+  END LOOP;
+END;
+ 
+/*************** Adding Values From a Table *****************/
+DECLARE
+  TYPE e_list IS TABLE OF employees.first_name%type;
+  emps e_list := e_list();
+  idx  PLS_INTEGER:= 1;
+BEGIN
+  FOR x IN 100 .. 110 LOOP
+    emps.extend;
+    SELECT first_name INTO emps(idx) 
+    FROM   employees 
+    WHERE  employee_id = x;
+    idx := idx + 1;
+  END LOOP;
+  FOR i IN 1..emps.count() LOOP
+    dbms_output.put_line(emps(i));
+  END LOOP;
+END;
+ 
+/********************* Delete Example ***********************/
+DECLARE
+  TYPE e_list IS TABLE OF employees.first_name%type;
+  emps e_list := e_list();
+  idx  PLS_INTEGER := 1;
+BEGIN
+  FOR x IN 100 .. 110 LOOP
+    emps.extend;
+    SELECT first_name INTO emps(idx) 
+    FROM   employees 
+    WHERE  employee_id = x;
+    idx := idx + 1;
+  END LOOP;
+  emps.delete(3);
+  FOR i IN 1..emps.count() LOOP
+    IF emps.exists(i) THEN 
+       dbms_output.put_line(emps(i));
+    END IF;
+  END LOOP;
+END;
+```
+  
+
 
