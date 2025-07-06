@@ -1608,107 +1608,109 @@ DROP TYPE E_LIST;
 
   Examples:
 
-  ```
-  SET SERVEROUTPUT ON;
+```
 
-DECLARE
-    TYPE e_list IS
-        TABLE OF employees.first_name%TYPE; -- nested table needs a declared type
-    emps   e_list := e_list();
-    idx    PLS_INTEGER := 1;
-BEGIN
---    emps := e_list('Dave','Allie','Elizabeth');
---    emps.extend();
---    emps(4) := 'Bill';
---    for i in 1..emps.count() loop
---        dbms_output.put_line(emps(i));
---    end loop;
-    FOR x IN 100..110 LOOP
-        emps.extend();
-        SELECT
-            first_name
-        INTO
-            emps
-        (idx)
-        FROM
-            employees
-        WHERE
-            employee_id = x;
+      SET SERVEROUTPUT ON;
+      DECLARE
+        TYPE e_list IS
+            TABLE OF employees.first_name%TYPE; -- nested table needs a declared type        
+            emps   e_list := e_list();
+        idx    PLS_INTEGER := 1;
+        BEGIN
+        --    emps := e_list('Dave','Allie','Elizabeth');
+        --    emps.extend();
+        --    emps(4) := 'Bill';
+        --    for i in 1..emps.count() loop
+        --        dbms_output.put_line(emps(i));
+        --    end loop;
+        FOR x IN 100..110 LOOP
+            emps.extend();
+            SELECT
+                first_name
+            INTO
+                emps
+            (idx)
+            FROM
+                employees
+            WHERE
+                employee_id = x;
 
-        idx := idx + 1;
-    END LOOP;
+            idx := idx + 1;
+        END LOOP;
 
-    emps.DELETE(3); -- deleting from nested tables
-    FOR i IN emps.first()..emps.count() LOOP 
-    IF emps.EXISTS(i) THEN -- same convention as before - check if exists so not to throw error on missing key 
-        dbms_output.put_line(emps(i));
-    END IF;
-    END LOOP;
+        emps.DELETE(3); -- deleting from nested tables
+        FOR i IN emps.first()..emps.count() LOOP 
+        IF emps.EXISTS(i) THEN -- same convention as before - check if exists so not to throw error on missing key 
+            dbms_output.put_line(emps(i));
+        END IF;
+        END LOOP;
 
-END;
-  ```
+        END;
+```
 
 More Examples:
 
+
 ```
-DECLARE
-  TYPE e_list IS TABLE OF VARCHAR2(50);
-  emps e_list;
-BEGIN
-  emps := e_list('Alex','Bruce','John');
-  FOR i IN 1..emps.count() LOOP
-    dbms_output.put_line(emps(i));
-  END LOOP;
-END;
- 
-DECLARE
-  TYPE e_list IS TABLE OF VARCHAR2(50);
-  emps e_list;
-BEGIN
-  emps := e_list('Alex','Bruce','John');
-  emps.extend;
-  emps(4) := 'Bob';
-  FOR i IN 1..emps.count() LOOP
-    dbms_output.put_line(emps(i));
-  END LOOP;
-END;
- 
-DECLARE
-  TYPE e_list IS TABLE OF employees.first_name%type;
-  emps e_list := e_list();
-  idx  PLS_INTEGER:= 1;
-BEGIN
-  FOR x IN 100 .. 110 LOOP
-    emps.extend;
-    SELECT first_name INTO emps(idx) 
-    FROM   employees 
-    WHERE  employee_id = x;
-    idx := idx + 1;
-  END LOOP;
-  FOR i IN 1..emps.count() LOOP
-    dbms_output.put_line(emps(i));
-  END LOOP;
-END;
- 
-DECLARE
-  TYPE e_list IS TABLE OF employees.first_name%type;
-  emps e_list := e_list();
-  idx  PLS_INTEGER := 1;
-BEGIN
-  FOR x IN 100 .. 110 LOOP
-    emps.extend;
-    SELECT first_name INTO emps(idx) 
-    FROM   employees 
-    WHERE  employee_id = x;
-    idx := idx + 1;
-  END LOOP;
-  emps.delete(3);
-  FOR i IN 1..emps.count() LOOP
-    IF emps.exists(i) THEN 
-       dbms_output.put_line(emps(i));
-    END IF;
-  END LOOP;
-END;
+    DECLARE
+      TYPE e_list IS TABLE OF VARCHAR2(50);
+      emps e_list;
+    BEGIN
+      emps := e_list('Alex','Bruce','John');
+      FOR i IN 1..emps.count() LOOP
+        dbms_output.put_line(emps(i));
+      END LOOP;
+    END;
+     
+    DECLARE
+      TYPE e_list IS TABLE OF VARCHAR2(50);
+      emps e_list;
+    BEGIN
+      emps := e_list('Alex','Bruce','John');
+      emps.extend;
+      emps(4) := 'Bob';
+      FOR i IN 1..emps.count() LOOP
+        dbms_output.put_line(emps(i));
+      END LOOP;
+    END;
+     
+    DECLARE
+      TYPE e_list IS TABLE OF employees.first_name%type;
+      emps e_list := e_list();
+      idx  PLS_INTEGER:= 1;
+    BEGIN
+      FOR x IN 100 .. 110 LOOP
+        emps.extend;
+        SELECT first_name INTO emps(idx) 
+        FROM   employees 
+        WHERE  employee_id = x;
+        idx := idx + 1;
+      END LOOP;
+      FOR i IN 1..emps.count() LOOP
+        dbms_output.put_line(emps(i));
+      END LOOP;
+    END;
+     
+    DECLARE
+      TYPE e_list IS TABLE OF employees.first_name%type;
+      emps e_list := e_list();
+      idx  PLS_INTEGER := 1;
+    BEGIN
+      FOR x IN 100 .. 110 LOOP
+        emps.extend;
+        SELECT first_name INTO emps(idx) 
+        FROM   employees 
+        WHERE  employee_id = x;
+        idx := idx + 1;
+      END LOOP;
+      emps.delete(3);
+      FOR i IN 1..emps.count() LOOP
+        IF emps.exists(i) THEN 
+           dbms_output.put_line(emps(i));
+        END IF;
+      END LOOP;
+    END;
+
 ```
   
 ### Associative Arrays (index by tables)
@@ -1734,76 +1736,81 @@ END;
 - using associative arrays can help us work with data faster since it is
   stored in memory versus accessing from table.
 - __Note__: cannot create this type in the schema level, only in-memory
+-- also known as `inline-tables`
 
 #### Usage of Associative Array Type
 
 `type type_name as table of value_data_type [NOT NULL] INDEX BY
 {PLS_INTEGER | BINARY INTEGER | VARCHAR2(size)};`
 
+- `array_name.delete(start,end)`
+- `array_name.delete(index)`
+- prior() functi
+
 
 ### Examples Of Associative Arrays
 
 ```
-set serveroutput on;
+    set serveroutput on;
 
-declare
+    declare
 
-    type e_list is table of employees.first_name%type index by pls_integer;
-    emps e_list;
+        type e_list is table of employees.first_name%type index by pls_integer;
+        emps e_list;
 
-begin
-    for x in 100..110 loop
-        select first_name into emps(x) from employees where employee_id = x;
-    end loop;
-    
-    for i in emps.first()..emps.last() loop
-        if (emps.exists(i)) then
-            dbms_output.put_line(emps(i));
-        end if;
-    end loop;
-end;
+    begin
+        for x in 100..110 loop
+            select first_name into emps(x) from employees where employee_id = x;
+        end loop;
+        
+        for i in emps.first()..emps.last() loop
+            if (emps.exists(i)) then
+                dbms_output.put_line(emps(i));
+            end if;
+        end loop;
+    end;
 
 
-set serveroutput on;
+    set serveroutput on;
 
-declare
+    declare
 
-    type e_list is table of employees.first_name%type index by pls_integer;
-    emps e_list;
-    idx pls_integer;
+        type e_list is table of employees.first_name%type index by pls_integer;
+        emps e_list;
+        idx pls_integer;
 
-begin
-    for x in 100..110 loop
-        select first_name into emps(x) from employees where employee_id = x;
-    end loop;
-    idx := emps.first();
-    while idx is not null loop
-            dbms_output.put_line(emps(idx));
-            idx := emps.next(idx);
-    end loop;
-end;
+    begin
+        for x in 100..110 loop
+            select first_name into emps(x) from employees where employee_id = x;
+        end loop;
+        idx := emps.first();
+        while idx is not null loop
+                dbms_output.put_line(emps(idx));
+                idx := emps.next(idx);
+        end loop;
+    end;
 
-set serveroutput on;
+    set serveroutput on;
 
-declare
+    declare
 
-    type e_list is table of employees.first_name%type index by varchar2(50);
-    emps e_list;
-    idx employees.email%type;
-    
-    v_email employees.email%type;
-    v_first_name employees.first_name%type;
+        type e_list is table of employees.first_name%type index by varchar2(50);
+        emps e_list;
+        idx employees.email%type;
+        
+        v_email employees.email%type;
+        v_first_name employees.first_name%type;
 
-begin
-    for x in 100..110 loop
-        select first_name,email into v_first_name,v_email from employees where employee_id = x;
-        emps(v_email) := v_first_name;
-    end loop;
-    idx := emps.first();
-    while idx is not null loop
-            dbms_output.put_line('The email of ' || emps(idx) || ' is: ' || emps(idx));
-            idx := emps.next(idx);
-    end loop;
-end;
+    begin
+        for x in 100..110 loop
+            select first_name,email into v_first_name,v_email from employees where employee_id = x;
+            emps(v_email) := v_first_name;
+        end loop;
+        idx := emps.first();
+        while idx is not null loop
+                dbms_output.put_line('The email of ' || emps(idx) || ' is: ' || emps(idx));
+                idx := emps.next(idx);
+        end loop;
+    end;
 ```
 
