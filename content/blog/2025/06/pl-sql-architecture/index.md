@@ -1318,3 +1318,264 @@ BEGIN
   dbms_output.put_line('Her Department Name is : '|| r_emp.department.department_name);
 END;
 ```
+
+### Data Manipulation Language Operations With Records
+
+Insert and update are straight forward dml operations that can be done
+using records.  DELETE operations can be done, but we must use the where
+clause to specify that a column is equal to a record value name.  
+
+Some known ways:
+- `insert into departments values (280,'Temp Dept',null, 1500);`
+- `insert into departments (department_id, department_name)
+values(290,'Temp Department 2');`
+
+Example with records:
+
+```
+/************************************************************/
+CREATE TABLE retired_employees 
+AS SELECT * FROM employees WHERE 1=2;
+ 
+SELECT * FROM retired_employees;
+/
+ 
+DECLARE
+    r_emp employees%rowtype;
+BEGIN
+    SELECT * 
+    INTO   r_emp 
+    FROM   employees 
+    WHERE  employee_id = 104;
+    
+    r_emp.salary         := 0;
+    r_emp.commission_pct := 0;
+    
+    INSERT INTO retired_employees VALUES r_emp;
+END;
+ 
+/************************************************************/
+DECLARE
+    r_emp employees%rowtype;
+BEGIN
+    SELECT * 
+    INTO   r_emp 
+    FROM   employees 
+    WHERE  employee_id = 104;
+ 
+    r_emp.salary         := 10;
+    r_emp.commission_pct := 0;
+ 
+    --insert into retired_employees values r_emp;
+    UPDATE retired_employees 
+    SET    row = r_emp 
+    WHERE  employee_id = 104;
+end;
+/
+DELETE FROM retired_employees;
+```
+
+
+
+## What Are Collections?
+
+A list of records or data with the same data types.  
+
+3 Types:
+- Nested Tables - nested keys start with one index.  Unbound. 
+- VARRAYS - bound arrays, one index. This can take empty space. 
+- Associative Arrays
+
+They can have any type of PL/SQL variables including composite data
+types.
+
+The collections are key value pairs.  The key is is a number or a string
+value that represents. For example, an employee ID can be a key, and the
+rest of the employee can be the value.  
+
+`VARRAYS` are good for for processes that have a fixed bound.  
+
+Records can be used in collections.  
+
+--- TABLE operator
+
+
+### VARRAY - Variable-Sized Arrays
+
+- maximum upper limit of varrays are up to 2 gigabytes and the elements of
+  the varrays are stored in an order on the disk. 
+- we can create varray type in sql
+- must not overflow buffer
+- bounded with an index that starts at one
+- one dimensional arrays
+- varrays are null by default
+
+`VARRAY` Example:
+
+```
+set serveroutput on;
+
+create or replace type e_list is varray(20) of varchar2(100);
+/
+drop type e_list;
+declare
+    type e_list is varray(15) of varchar2(50);
+    employees e_list  := e_list();
+    idx number := 1;
+    
+
+begin
+    for i in 100..110 loop
+        employees.extend;
+        select first_name into employees(idx) from employees where employee_id = i;
+        idx := idx + 1;
+    end loop;
+    
+    for x in 1..employees.count() loop
+        dbms_output.put_line(employees(x));
+    end loop;
+    
+
+end;
+```
+
+More Examples:
+
+```
+/**************** A Simple Working Example ******************/
+DECLARE
+  TYPE e_list IS VARRAY(5) OF VARCHAR2(50);
+  employees e_list;
+BEGIN
+  employees := e_list('Alex','Bruce','John','Bob','Richard');
+  FOR i IN 1..5 LOOP
+    dbms_output.put_line(employees(i));
+  END LOOP;
+END;
+ 
+/************** Limit Exceeding Error Example ***************/
+DECLARE
+  TYPE e_list IS VARRAY(4) OF VARCHAR2(50);
+  employees e_list;
+BEGIN
+  employees := e_list('Alex','Bruce','John','Bob','Richard');
+  FOR i IN 1..5 LOOP
+    dbms_output.put_line(employees(i));
+  END LOOP;
+END;
+ 
+/*********** Subscript Beyond Count Error Example ***********/
+DECLARE
+  TYPE e_list IS VARRAY(5) OF VARCHAR2(50);
+  employees e_list;
+BEGIN
+  employees := e_list('Alex','Bruce','John','Bob');
+  FOR i IN 1..5 LOOP
+    dbms_output.put_line(employees(i));
+  end loop;
+END;
+ 
+/**************** A Working count() Example *****************/
+DECLARE
+  TYPE e_list IS VARRAY(5) OF VARCHAR2(50);
+  employees e_list;
+BEGIN
+  employees := e_list('Alex','Bruce','John','Bob');
+  for i IN 1..employees.count() LOOP
+    dbms_output.put_line(employees(i));
+  END LOOP;
+END;
+ 
+/************ A Working first() last() Example **************/
+DECLARE
+  TYPE e_list IS VARRAY(5) OF VARCHAR2(50);
+  employees e_list;
+BEGIN
+  employees := e_list('Alex','Bruce','John','Bob');
+  FOR i IN employees.first()..employees.last() LOOP
+    dbms_output.put_line(employees(i));
+  END LOOP;
+END;
+ 
+/*************** A Working exists() Example *****************/
+DECLARE
+  TYPE e_list IS VARRAY(5) OF VARCHAR2(50);
+  employees e_list;
+BEGIN
+  employees := e_list('Alex','Bruce','John','Bob');
+  FOR i IN 1..5 LOOP
+    IF employees.exists(i) THEN
+      dbms_output.put_line(employees(i));
+    END IF;
+  END LOOP;
+END;
+ 
+/**************** A Working limit() Example *****************/
+DECLARE
+  TYPE e_list IS VARRAY(5) OF VARCHAR2(50);
+  employees e_list;
+BEGIN
+  employees := e_list('Alex','Bruce','John','Bob');
+  dbms_output.put_line(employees.limit());
+END;
+ 
+/****** A Create-Declare at the Same Time Error Example *****/
+DECLARE
+  TYPE e_list IS VARRAY(5) OF VARCHAR2(50);
+  employees e_list('Alex','Bruce','John','Bob');
+BEGIN
+  --employees := e_list('Alex','Bruce','John','Bob');
+  FOR i IN 1..5 LOOP
+    IF employees.exists(i) THEN
+       dbms_output.put_line(employees(i));
+    END IF;
+  END LOOP;
+END;
+ 
+/************** A Post Insert Varray Example ****************/
+DECLARE
+  TYPE e_list IS VARRAY(15) OF VARCHAR2(50);
+  employees e_list := e_list();
+  idx NUMBER := 1;
+BEGIN
+  FOR i IN 100..110 LOOP
+    employees.extend;
+    SELECT first_name 
+    INTO   employees(idx) 
+    FROM   employees 
+    WHERE  employee_id = i;
+    idx := idx + 1;
+  END LOOP;
+  FOR x IN 1..employees.count() LOOP
+    dbms_output.put_line(employees(x));
+  END LOOP;
+END;
+ 
+/******* An Example for the Schema-Level Varray Types *******/
+CREATE TYPE e_list IS VARRAY(15) OF VARCHAR2(50);
+/
+CREATE OR REPLACE TYPE e_list AS VARRAY(20) OF VARCHAR2(100);
+/
+DECLARE
+  employees e_list := e_list();
+  idx       NUMBER := 1;
+BEGIN
+ 
+  FOR i IN 100..110 LOOP
+    employees.extend;
+    SELECT first_name 
+    INTO employees(idx) 
+    FROM employees 
+    WHERE employee_id = i;
+    idx := idx + 1;
+  END LOOP;
+  
+  FOR x IN 1..employees.count() LOOP
+    dbms_output.put_line(employees(x));
+  END LOOP;
+ 
+END;
+/
+DROP TYPE E_LIST;
+```
+
