@@ -2291,4 +2291,250 @@ Example Basic Cursor usage:
       close c_emps;
     end;
 ```
+### Using Cursors with Records
 
+Most of the time we use cursors with records.  There are 3 ways to do this. 
+
+### Way #1: The Hard Way
+
+For when data types are very simple, creating a record can be good enough
+for who it is for. 
+
+```
+set serveroutput on;
+declare
+type r_emp is record (
+    v_first_name employees.first_name%type,
+    v_last_name employees.first_name%type
+);
+v_emp remp;
+
+cursor c_emps is select first_name, last_name from employees;
+
+v_first_name  employees.first_name%type;
+v_last_name    employees.last_name%type;
+
+begin
+
+open c_emps;
+fetch c_emps into v_emp;
+dbms_output.put_line(v_emp.v_first_name || ' ' || v_emp.v_last_name || ' is in department: ' || '');
+
+close c_emps;
+
+
+end;
+```
+
+### Way #2: Using %rowtype
+
+This method works well if there is only one table that needs to be used.
+It has some inefficiencies surrounding added memory overhead due to bringing
+in additional rows that isn't necessary when working with a small
+subset of attributes.  Also, this is not suitable for queries needed more
+than one table.  
+```
+set serveroutput on;
+declare
+
+v_emp employees%rowtype;
+
+cursor c_emps is select first_name, last_name from employees;
+
+begin
+
+open c_emps;
+fetch c_emps into v_emp.first_name, v_emp.last_name;
+dbms_output.put_line(v_emp.first_name || ' ' || v_emp.last_name || ' is in department: ' || '');
+
+close c_emps;
+
+
+end;
+```
+
+### Way #3: Create a record with the cursors rowtype
+
+This is the most useful because our record will have the exact same columns
+as our query.  
+
+```
+set serveroutput on;
+declare
+
+cursor c_emps is select first_name, last_name from employees;
+v_emp c_emps%rowtype;
+
+begin
+
+open c_emps;
+fetch c_emps into v_emp.first_name, v_emp.last_name;
+dbms_output.put_line(v_emp.first_name || ' ' || v_emp.last_name || ' is in department: ' || '');
+
+close c_emps;
+
+
+end;
+```
+
+Further Examples:
+
+```
+    declare
+      type r_emp is record (  v_first_name employees.first_name%type,
+                               v_last_name employees.last_name%type);
+      v_emp r_emp;
+      cursor c_emps is select first_name,last_name from employees;
+    begin
+      open c_emps;
+      fetch c_emps into v_emp;
+      dbms_output.put_line(v_emp.v_first_name|| ' ' || v_emp.v_last_name);
+      close c_emps;
+    end;
+    --------------- An example for using cursors table rowtype
+    declare
+      v_emp employees%rowtype;
+      cursor c_emps is select first_name,last_name from employees;
+    begin
+      open c_emps;
+      fetch c_emps into v_emp.first_name,v_emp.last_name;
+      dbms_output.put_line(v_emp.first_name|| ' ' || v_emp.last_name);
+      close c_emps;
+    end;
+    --------------- An example for using cursors with cursor%rowtype.
+    declare
+      cursor c_emps is select first_name,last_name from employees;
+      v_emp c_emps%rowtype;
+    begin
+      open c_emps;
+      fetch c_emps into v_emp.first_name,v_emp.last_name;
+      dbms_output.put_line(v_emp.first_name|| ' ' || v_emp.last_name);
+      close c_emps;
+    end;
+```
+
+
+## Looping With Cursor
+ 
+### 1. Basic Cursor Usage
+- Declare a cursor for the desired SQL query.
+- Create a variable to hold the fetched row data.
+- Open the cursor.
+- Start a loop to fetch data from the cursor.
+- Fetch a row into the variable.
+- Output the relevant fields from the fetched row.
+- Repeat until all rows have been processed.
+- Close the cursor.
+
+### 2. Using `%NOTFOUND` to Control the Loop
+- Declare a cursor for the desired SQL query.
+- Create a variable to hold the fetched row data.
+- Open the cursor.
+- Start a loop to fetch data from the cursor.
+- Fetch a row into the variable.
+- Check for no more rows using `%NOTFOUND`.
+- If rows are found, output the relevant fields from the fetched row.
+- Repeat until no more rows are found.
+- Close the cursor.
+
+### 3. Using a `WHILE` Loop with Cursor
+- Declare a cursor for the desired SQL query.
+- Create a variable to hold the fetched row data.
+- Open the cursor.
+- Fetch the first row into the variable.
+- Start a `WHILE` loop that continues while rows are found.
+- Output the relevant fields from the fetched row.
+- Fetch the next row into the variable.
+- End the loop when no more rows are found.
+- Close the cursor.
+
+### 4. Using a `FOR` Loop with Cursor
+- Declare a cursor for the desired SQL query.
+- Create a variable to hold the fetched row data (if needed).
+- Open the cursor.
+- Use a `FOR` loop to iterate a specified number of times.
+- Inside the loop, fetch a row into the variable.
+- Output the relevant fields from the fetched row.
+- End the loop after the specified number of iterations.
+- Close the cursor.
+
+### 5. Using the `FOR..IN` Loop with Cursor
+- Declare a cursor for the desired SQL query.
+- Use a `FOR..IN` loop to iterate over each row in the cursor.
+- Within the loop, output the relevant fields from the current row.
+- End the loop automatically after processing all rows.
+- No need to explicitly manage cursor closing.
+
+### 6. Using the `FOR..IN` Loop with a Select Statement
+- Use a `FOR..IN` loop directly with a SELECT statement to get data.
+- Inside the loop, output the relevant fields from the current row.
+- End the loop automatically after processing all rows.
+- No need to explicitly manage cursor closing.
+
+
+```
+    declare
+      cursor c_emps is select * from employees where department_id = 30;
+      v_emps c_emps%rowtype;
+    begin
+      open c_emps;
+      loop
+        fetch c_emps into v_emps;
+        dbms_output.put_line(v_emps.employee_id|| ' ' ||v_emps.first_name|| ' ' ||v_emps.last_name);
+      end loop;
+      close c_emps;
+    end; 
+    ---------------%notfound example
+    declare
+      cursor c_emps is select * from employees where department_id = 30;
+      v_emps c_emps%rowtype;
+    begin
+      open c_emps;
+      loop
+        fetch c_emps into v_emps;
+        exit when c_emps%notfound;
+        dbms_output.put_line(v_emps.employee_id|| ' ' ||v_emps.first_name|| ' ' ||v_emps.last_name);
+      end loop;
+      close c_emps;
+    end;
+    ---------------while loop example
+    declare
+      cursor c_emps is select * from employees where department_id = 30;
+      v_emps c_emps%rowtype;
+    begin
+      open c_emps;
+      fetch c_emps into v_emps;
+      while c_emps%found loop
+        dbms_output.put_line(v_emps.employee_id|| ' ' ||v_emps.first_name|| ' ' ||v_emps.last_name);
+        fetch c_emps into v_emps;
+        --exit when c_emps%notfound;
+      end loop;
+      close c_emps;
+    end;
+    ---------------for loop with cursor example
+    declare
+      cursor c_emps is select * from employees where department_id = 30;
+      v_emps c_emps%rowtype;
+    begin
+      open c_emps;
+      for i in 1..6 loop
+        fetch c_emps into v_emps;
+        dbms_output.put_line(v_emps.employee_id|| ' ' ||v_emps.first_name|| ' ' ||v_emps.last_name);
+      end loop;
+      close c_emps;
+    end;
+    ---------------FOR..IN clause example
+    declare
+      cursor c_emps is select * from employees where department_id = 30;
+    begin
+      for i in c_emps loop
+        dbms_output.put_line(i.employee_id|| ' ' ||i.first_name|| ' ' ||i.last_name);
+      end loop;
+    end;
+    ---------------FOR..IN with select example
+    begin
+      for i in (select * from employees where department_id = 30) loop
+        dbms_output.put_line(i.employee_id|| ' ' ||i.first_name|| ' ' ||i.last_name);
+      end loop;
+    end;
+```
