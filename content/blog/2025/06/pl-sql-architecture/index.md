@@ -1769,7 +1769,6 @@ begin
     end loop;
 end;
 
----------------------------------------------
 
 set serveroutput on;
 
@@ -1790,7 +1789,6 @@ begin
     end loop;
 end;
 
--------------------------------------------------------
 set serveroutput on;
 
 declare
