@@ -1745,7 +1745,20 @@ More Examples:
 
 - `array_name.delete(start,end)`
 - `array_name.delete(index)`
-- prior() functi
+- prior() function can be used to reverse. 
+
+
+### Summary
+
+1. create a type that is a table of with an index
+2. declare a variable to contain array
+3. create an index with type (like pls_integer)
+4. create a foor loop
+    1. select into the array
+    2. establish the index using array.first(), array.last(), etc.
+    3. while index  is not null loop
+    4. perform business operations
+    5. increment index
 
 
 ### Examples Of Associative Arrays
@@ -1813,4 +1826,372 @@ More Examples:
         end loop;
     end;
 ```
+
+Further Examples:
+
+```
+/********************* The First Example ********************/
+DECLARE
+  TYPE e_list IS TABLE OF employees.first_name%TYPE INDEX BY PLS_INTEGER;
+  emps e_list;
+BEGIN
+  FOR x IN 100 .. 110 LOOP
+    SELECT first_name 
+    INTO   emps(x) 
+    FROM   employees 
+    WHERE  employee_id = x ;
+  END LOOP;
+  FOR i IN emps.first()..emps.last() LOOP
+    dbms_output.put_line(emps(i));
+  END LOOP; 
+END;
+ 
+/********* Error Example for the SELECT INTO Clause *********/
+DECLARE
+  TYPE e_list IS TABLE OF employees.first_name%TYPE INDEX BY PLS_INTEGER;
+  emps e_list;
+BEGIN
+  FOR x IN 100 .. 110 LOOP
+    SELECT first_name 
+    INTO   emps(x) 
+    FROM   employees 
+    WHERE  employee_id   = x 
+    AND    department_id = 60;
+  END LOOP;
+  FOR i IN emps.first()..emps.last() LOOP
+    dbms_output.put_line(i);
+  END LOOP; 
+END;
+ 
+/******* Error Example about Reaching an Empty Index ********/
+DECLARE
+  TYPE e_list IS TABLE OF employees.first_name%TYPE INDEX BY PLS_INTEGER;
+  emps e_list;
+BEGIN
+  emps(100) := 'Bob';
+  emps(120) := 'Sue';
+  FOR i IN emps.first()..emps.last() LOOP
+    dbms_output.put_line(emps(i));
+  END LOOP; 
+END;
+ 
+/*************************************************************
+An Example of Iterating in Associative Arrays with WHILE LOOPs
+*************************************************************/
+DECLARE
+  TYPE e_list IS TABLE OF employees.first_name%TYPE INDEX BY PLS_INTEGER;
+  emps e_list;
+  idx  PLS_INTEGER;
+BEGIN
+  emps(100) := 'Bob';
+  emps(120) := 'Sue';
+  idx       := emps.first;
+ 
+  WHILE idx IS NOT NULL LOOP 
+    dbms_output.put_line(emps(idx));
+    idx := emps.next(idx);
+  END LOOP; 
+END;
+ 
+/*************************************************************
+An Example of Using String-based Indexes with Associative Arrays
+*************************************************************/
+DECLARE
+  TYPE e_list IS TABLE OF employees.first_name%TYPE INDEX BY employees.email%type;
+  emps         e_list;
+  idx          employees.email%TYPE;
+  v_email      employees.email%TYPE;
+  v_first_name employees.first_name%TYPE;
+BEGIN
+  FOR x IN 100 .. 110 LOOP
+    SELECT first_name, email 
+    INTO   v_first_name, v_email 
+    FROM   employees
+    WHERE  employee_id = x;
+    emps(v_email) := v_first_name;
+  END LOOP;
+ 
+  idx := emps.first;
+  WHILE idx IS NOT NULL LOOP 
+    dbms_output.put_line('The email of '|| emps(idx) ||' is : '|| idx);
+    idx := emps.next(idx);
+  END LOOP; 
+END;
+ 
+/*** An Example of Using Associative Arrays with Records ****/
+DECLARE
+  TYPE e_list IS TABLE OF employees%rowtype INDEX BY employees.email%TYPE;
+  emps e_list;
+  idx  employees.email%type;
+BEGIN
+  FOR x IN 100 .. 110 LOOP
+    SELECT * 
+    INTO   emps(x) 
+    FROM   employees
+    WHERE  employee_id = x;
+  END LOOP;
+ 
+  idx := emps.first;
+  
+  WHILE idx IS NOT NULL LOOP 
+    dbms_output.put_line('The email of '      || 
+                         emps(idx).first_name || ' '     ||
+                         emps(idx).last_name  || ' is : '|| emps(idx).email);
+    idx := emps.next(idx);
+  END LOOP; 
+END;
+ 
+/* An Example of Using Associative Arrays with Record Types */
+DECLARE
+  TYPE e_type IS RECORD (first_name employees.first_name%TYPE,
+                         last_name  employees.last_name%TYPE,
+                         email      employees.email%TYPE);
+  TYPE e_list IS TABLE OF e_type INDEX BY employees.email%TYPE;
+  emps e_list;
+  idx  employees.email%type;
+BEGIN
+  FOR x IN 100 .. 110 LOOP
+    SELECT first_name,last_name,email 
+    INTO   emps(x) 
+    FROM   employees
+    WHERE  employee_id = x;
+  END LOOP;
+ 
+  idx := emps.first;
+ 
+  WHILE idx IS NOT NULL LOOP
+    dbms_output.put_line('The email of '       || 
+                          emps(idx).first_name || ' ' ||
+                          emps(idx).last_name  || ' is : ' || 
+                          emps(idx).email);
+    idx := emps.next(idx);
+  END LOOP; 
+END;
+ 
+/**** An Example of Printing From the Last to the First *****/
+DECLARE
+  TYPE e_type IS RECORD (first_name employees.first_name%TYPE,
+                         last_name  employees.last_name%TYPE,
+                         email      employees.email%TYPE);
+  TYPE e_list IS TABLE OF e_type INDEX BY employees.email%TYPE;
+  emps e_list;
+  idx  employees.email%type;
+BEGIN
+  FOR x IN 100 .. 110 LOOP
+    SELECT first_name,last_name, email 
+    INTO   emps(x) 
+    FROM   employees
+    WHERE  employee_id = x;
+  END LOOP;
+  
+  --emps.delete(100,104);
+  idx := emps.last;
+  
+  WHILE idx IS NOT NULL LOOP 
+    dbms_output.put_line('The email of '       || 
+                          emps(idx).first_name || ' '     ||
+                          emps(idx).last_name  ||' is : ' || 
+                          emps(idx).email);
+    idx := emps.prior(idx);
+  END LOOP; 
+END;
+ 
+/***** An Example of Inserting with Associative Arrays ******/
+CREATE TABLE employees_salary_history 
+AS SELECT * FROM employees WHERE 1=2;
+ 
+ALTER TABLE employees_salary_history ADD insert_date DATE;
+ 
+SELECT * FROM employees_salary_history;
+/
+DECLARE
+  TYPE e_list IS TABLE OF employees_salary_history%rowtype INDEX BY PLS_INTEGER;
+  emps e_list;
+  idx  PLS_INTEGER;
+BEGIN
+  FOR x IN 100 .. 110 LOOP
+    SELECT e.*,'01-JUN-20' 
+    INTO   emps(x) 
+    FROM   employees e
+    WHERE  employee_id = x;
+  END LOOP;
+  
+  idx := emps.first;
+  
+  WHILE idx IS NOT NULL LOOP 
+    emps(idx).salary := emps(idx).salary + emps(idx).salary*0.2;
+    INSERT INTO employees_salary_history VALUES emps(idx);
+    dbms_output.put_line('The employee '       || emps(idx).first_name ||
+                         ' is inserted to the history table');
+    idx := emps.next(idx);
+  END LOOP; 
+END;
+/
+DROP TABLE employees_salary_history;
+```
+
+### Storing Arrays
+
+Using mysql or mariadb, if we have a list of employees with different types
+of phone number (i.e., home, work) we would need to create separate tables
+for the phone numbers, possibily even type of phone numberers, select and 
+join them together. 
+
+In an Oracle database using PL/SQL, it can be easier to use VARRAY or
+nested table to do this.  
+
+This can improve performance in some cases because it avoids a costly join.
+Especially when the varray data is less than 4 Kilobytes (data is stored in
+column).
+
+When we assign a varray as a column to a table, it is considered like any
+other data type.  To achieve this, our type must be created and stored at
+the schema level.  
+__Note__: Oracle does not allow us to save records in the database.  `create or replace type t_phone_number as record (p_type varchar2(10), p_number varchar2(50));` will not work.
+
+We need to create an object type as schema level and we can use them like
+records.
+
+#### Example of  storing and retrieving a table:
+
+```
+set serveroutput on;
+
+create or replace type t_phone_number as object (p_type varchar2(10), p_number varchar2(50));
+/
+create or replace type v_phone_numbers as varray(3) of t_phone_number;
+
+create table emps_with_phones (
+    employee_id number,
+    first_name varchar2(50),
+    last_name varchar2(50),
+    phone_number v_phone_numbers
+    );
+    /
+    select * from emps_with_phones;
+    /
+    insert into emps_with_phones values(
+        10,'Ally','McCall',v_phone_numbers(t_phone_number('HOME','111.111.1111'),t_phone_number('WORK' ,'222.222.2222'),t_phone_number('MOBILE','333.333.3333'))
+    );
+     insert into emps_with_phones values(
+        12,'Ally','McCall',v_phone_numbers(t_phone_number('HOME','111.111.1111'),t_phone_number('WORK' ,'222.222.2222'))
+    );
+    /
+    select e.first_name,e.last_name,p.p_type,p.p_number from emps_with_phones e, table(e.phone_number) p; -- notice creating aliases
+    /
+    
+declare
+
+begin
+
+
+end;
+```
+
+
+### Storing Nested Tables In The Database
+
+In the example above, we use phone numbers.  What if we need to add some
+extra phone number for each employee?  For example. a fax number.  We can
+run into some problems with varrays because they are a bound, fixed-length.
+Nested tables can help us with this.  
+
+Examples:
+
+```
+/***************** Storing Varray Example *******************/
+CREATE OR REPLACE TYPE t_phone_number AS OBJECT(p_type   VARCHAR2(10), 
+                                                p_number VARCHAR2(50)
+                                               );
+/
+CREATE OR REPLACE TYPE v_phone_numbers AS VARRAY(3) OF t_phone_number;
+/
+CREATE TABLE emps_with_phones(employee_id  NUMBER,
+                              first_name   VARCHAR2(50),
+                              last_name    VARCHAR2(50),
+                              phone_number v_phone_numbers);
+/
+SELECT * FROM emps_with_phones;
+/
+INSERT INTO emps_with_phones
+VALUES(10,'Alex','Brown',v_phone_numbers(t_phone_number('HOME','111.111.1111'),
+                                         t_phone_number('WORK','222.222.2222'),
+                                         t_phone_number('MOBILE','333.333.3333'))
+                                         );
+INSERT INTO emps_with_phones
+VALUES(11,'Bob','Green',v_phone_numbers(t_phone_number('HOME','000.000.000'),
+                                         t_phone_number('WORK','444.444.4444'))
+                                         );                                                                
+/
+ 
+/*************** Querying the Varray Example ****************/
+SELECT e.first_name,
+       last_name,
+       p.p_type,
+       p.p_number 
+FROM emps_with_phones e, table(e.phone_number) p;
+ 
+ 
+/****** The Code For the Storing Nested Table Example *******/
+CREATE OR REPLACE TYPE n_phone_numbers AS TABLE OF t_phone_number;
+/
+CREATE TABLE emps_with_phones2(employee_id  NUMBER,
+                               first_name   VARCHAR2(50),
+                               last_name    VARCHAR2(50),
+                               phone_number n_phone_numbers)
+                               NESTED TABLE phone_number STORE AS phone_numbers_table;
+/
+SELECT * FROM emps_with_phones2;
+/
+INSERT INTO emps_with_phones2 
+VALUES(10,'Alex','Brown',n_phone_numbers(t_phone_number('HOME','111.111.1111'),
+                                         t_phone_number('WORK','222.222.2222'),
+                                         t_phone_number('MOBILE','333.333.3333'))
+                                         );
+INSERT INTO emps_with_phones2
+VALUES(11,'Bob','Green',n_phone_numbers(t_phone_number('HOME','000.000.000'),
+                                        t_phone_number('WORK','444.444.4444'))
+                                        );      
+/
+SELECT e.first_name, last_name, p.p_type, p.p_number 
+FROM emps_with_phones2 e, table(e.phone_number) p;
+ 
+/***************** New Insert and Update ********************/
+INSERT INTO emps_with_phones2 
+VALUES(11,'Bob','Green',n_phone_numbers(t_phone_number('HOME','000.000.000'),
+                                        t_phone_number('WORK','444.444.4444'),
+                                        t_phone_number('WORK2','444.444.4444'),
+                                        t_phone_number('WORK3','444.444.4444'),
+                                        t_phone_number('WORK4','444.444.4444'),
+                                        t_phone_number('WORK5','444.444.4444'))
+                                        );    
+SELECT * FROM emps_with_phones2;
+ 
+UPDATE emps_with_phones2 
+SET phone_number = n_phone_numbers(t_phone_number('HOME','000.000.000'),
+                                   t_phone_number('WORK','444.444.4444'),
+                                   t_phone_number('WORK2','444.444.4444'),
+                                   t_phone_number('WORK3','444.444.4444'),
+                                   t_phone_number('WORK4','444.444.4444'),
+                                   t_phone_number('WORK5','444.444.4444'))
+WHERE employee_id = 11;
+ 
+/**** Adding a New Value into a Nested Inside of a Table ****/
+DECLARE
+  p_num n_phone_numbers;
+BEGIN
+  SELECT phone_number 
+  INTO   p_num 
+  FROM   emps_with_phones2 
+  WHERE  employee_id = 10;
+  
+  p_num.extend;
+  p_num(5) := t_phone_number('FAX','999.99.9999');
+  
+  UPDATE emps_with_phones2 
+  SET    phone_number = p_num
+  WHERE  employee_id  = 10;
+END;
+```
+
 
