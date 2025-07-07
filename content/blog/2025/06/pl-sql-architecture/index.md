@@ -3105,3 +3105,278 @@ Examples:
       close rc_emps;
     end;
 ```
+
+### Exceptions
+
+Exceptions are designed for handling runtime errors.  Pl/SQL encounters an
+error and raises an exception.  Anonymous block will output the error.  
+
+#### Exceptions have two main components:
+- Error Code: ORA-XXXXX
+- Error Message: the human readable error message
+
+#### Sections of code blocks:
+- Declaration
+- Begin/End Sections
+- Exception Section
+
+Exceptions can be raised two ways.  Either the Oracle database server
+implicitly raises it, or we can explicitly raise an exception.  
+
+#### Handle Exceptions with three options:
+- Trap it with an exception handler
+- Directly propogate it to the calling subprogram or environment
+- Trap it, do some actions, propogate it to the caller
+
+#### Types of Exceptions in Pl/SQL
+
+- Predefined Oracle Server Errors
+- Non-predefined Oracle Server Errors
+- User-Defined Errors
+
+```
+declare
+
+begin
+
+exception
+    when exception_name then
+
+    when others then
+
+end;
+```
+
+#### Access Code & Error
+- sqlcode
+- sqlerrm
+
+#### Some Exception Examples
+
+```
+    ----------------- Handling the exception
+    declare
+      v_name varchar2(6);
+    begin
+      select first_name into v_name from employees where employee_id = 50;
+      dbms_output.put_line('Hello');
+    exception
+      when no_data_found then
+        dbms_output.put_line('There is no employee with the selected id');
+    end;
+    ----------------- Handling multiple exceptions
+    declare
+      v_name varchar2(6);
+      v_department_name varchar2(100);
+    begin
+      select first_name into v_name from employees where employee_id = 100;
+      select department_id into v_department_name from employees where first_name = v_name;
+      dbms_output.put_line('Hello '|| v_name || '. Your department id is : '|| v_department_name );
+    exception
+      when no_data_found then
+        dbms_output.put_line('There is no employee with the selected id');
+      when too_many_rows then
+        dbms_output.put_line('There are more than one employees with the name '|| v_name);
+        dbms_output.put_line('Try with a different employee');
+    end;
+    ----------------- when others then example
+    declare
+      v_name varchar2(6);
+      v_department_name varchar2(100);
+    begin
+      select first_name into v_name from employees where employee_id = 103;
+      select department_id into v_department_name from employees where first_name = v_name;
+      dbms_output.put_line('Hello '|| v_name || '. Your department id is : '|| v_department_name );
+    exception
+      when no_data_found then
+        dbms_output.put_line('There is no employee with the selected id');
+      when too_many_rows then
+        dbms_output.put_line('There are more than one employees with the name '|| v_name);
+        dbms_output.put_line('Try with a different employee');
+      when others then
+        dbms_output.put_line('An unexpected error happened. Connect with the programmer..');
+    end;
+    ----------------- sqlerrm & sqlcode example
+    declare
+      v_name varchar2(6);
+      v_department_name varchar2(100);
+    begin
+      select first_name into v_name from employees where employee_id = 103;
+      select department_id into v_department_name from employees where first_name = v_name;
+      dbms_output.put_line('Hello '|| v_name || '. Your department id is : '|| v_department_name );
+    exception
+      when no_data_found then
+        dbms_output.put_line('There is no employee with the selected id');
+      when too_many_rows then
+        dbms_output.put_line('There are more than one employees with the name '|| v_name);
+        dbms_output.put_line('Try with a different employee');
+      when others then
+        dbms_output.put_line('An unexpected error happened. Connect with the programmer..');
+        dbms_output.put_line(sqlcode || ' ---> '|| sqlerrm);
+    end;
+    ----------------- Inner block exception example
+    declare
+      v_name varchar2(6);
+      v_department_name varchar2(100);
+    begin
+      select first_name into v_name from employees where employee_id = 100;
+      begin
+        select department_id into v_department_name from employees where first_name = v_name;
+        exception
+          when too_many_rows then
+          v_department_name := 'Error in department_name';
+      end;
+      dbms_output.put_line('Hello '|| v_name || '. Your department id is : '|| v_department_name );
+    exception
+      when no_data_found then
+        dbms_output.put_line('There is no employee with the selected id');
+      when too_many_rows then
+        dbms_output.put_line('There are more than one employees with the name '|| v_name);
+        dbms_output.put_line('Try with a different employee');
+      when others then
+        dbms_output.put_line('An unexpected error happened. Connect with the programmer..');
+        dbms_output.put_line(sqlcode || ' ---> '|| sqlerrm);
+    end;
+    /
+    select * from employees where first_name = 'Steven';
+```
+
+
+### Non-Predefined Exception Handling
+
+- Unnamed Exceptions  in Oracle 
+- Must declare exception with error code and handle them with the names
+  that we specify
+- Every exception has an error code
+- `PRAGMA EXCEPTION_INIT(exception_name, error_code);`
+- PRAGMA is a compiler directive/hint
+
+####  An Example Of Using `exception_init` To Handle Non-Predefined Errors
+
+```
+    begin
+      UPDATE employees_copy set email = null where employee_id = 100;
+    end;
+    -----------------HANDLING a nonpredefined exception
+    declare
+      cannot_update_to_null exception;
+      pragma exception_init(cannot_update_to_null,-01407);
+    begin
+      UPDATE employees_copy set email = null where employee_id = 100;
+    exception
+      when cannot_update_to_null then
+        dbms_output.put_line('You cannot update with a null value!');
+    end;
+```
+
+### Handle User Defined Exceptions & Raise User Defined Exceptions
+
+At times we may need to  handle some exceptions related to our own business
+domain / logic.  These exceptions are not an error for the database, but
+our own implementation.  This is a good case for a user deffined exception.  
+
+- Specify Exception
+- Raise explicitly when needed
+- Define: `exception_name EXCEPTION;`
+
+#### Example Of Raised Exceptions
+
+```
+/*************** Creating a User defined Exception *****************/
+declare
+too_high_salary exception;
+v_salary_check pls_integer;
+begin
+  select salary into v_salary_check from employees where employee_id = 100;
+  if v_salary_check > 20000 then
+    raise too_high_salary;
+  end if;
+  --we do our business if the salary is under 2000
+  dbms_output.put_line('The salary is in an acceptable range');
+exception
+  when too_high_salary then
+  dbms_output.put_line('This salary is too high. You need to decrease it.');
+end;
+/**************** Raising a Predefined Exception *******************/
+declare
+  too_high_salary exception;
+  v_salary_check pls_integer;
+begin
+  select salary into v_salary_check from employees where employee_id = 100;
+  if v_salary_check > 20000 then
+    raise invalid_number;
+  end if;
+  --we do our business if the salary is under 2000
+  dbms_output.put_line('The salary is in an acceptable range');
+exception
+  when invalid_number then
+    dbms_output.put_line('This salary is too high. You need to decrease it.');
+end;
+/****************** Raising Inside of the Exception ****************/
+declare
+  too_high_salary exception;
+  v_salary_check pls_integer;
+begin
+  select salary into v_salary_check from employees where employee_id = 100;
+  if v_salary_check > 20000 then
+    raise invalid_number;
+  end if;
+  --we do our business if the salary is under 2000
+  dbms_output.put_line('The salary is in an acceptable range');
+exception
+  when invalid_number then
+    dbms_output.put_line('This salary is too high. You need to decrease it.');
+ raise;
+end;
+```
+
+
+### Raise Application Error Procedure
+
+- Sometimes we want to raise an exception outside a block
+- `raise_application_error()`
+- raises the error to the caller subprogram or application.  Informs the
+  caller about our business exceptions. 
+- `raise_application_error(error_number,error_message[, TRUE|FALSE]);`
+- Third parameter is for error stack. 
+- Stops execution of application
+- Error number must be between -20000 and - 20999
+- Message will be up to 2048 bytes long
+
+#### Examples Of `raise_application_error()`
+
+```
+    declare
+    too_high_salary exception;
+    v_salary_check pls_integer;
+    begin
+      select salary into v_salary_check from employees where employee_id = 100;
+      if v_salary_check > 20000 then
+        --raise too_high_salary;
+     raise_application_error(-20243,'The salary of the selected employee is too high!');
+      end if;
+      --we do our business if the salary is under 2000
+      dbms_output.put_line('The salary is in an acceptable range');
+    exception
+      when too_high_salary then
+      dbms_output.put_line('This salary is too high. You need to decrease it.');
+    end;
+    ----------------- raise inside of the exception section
+    declare
+    too_high_salary exception;
+    v_salary_check pls_integer;
+    begin
+      select salary into v_salary_check from employees where employee_id = 100;
+      if v_salary_check > 20000 then
+        raise too_high_salary;
+      end if;
+      --we do our business if the salary is under 2000
+      dbms_output.put_line('The salary is in an acceptable range');
+    exception
+      when too_high_salary then
+      dbms_output.put_line('This salary is too high. You need to decrease it.');
+      raise_application_error(-01403,'The salary of the selected employee is too high!',true);
+    end;
+```
+
+
