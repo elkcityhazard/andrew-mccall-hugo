@@ -1,0 +1,38 @@
+hgroup:has(figure) {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+figure:has(img) {
+  margin-inline: auto;
+  margin-block: auto;
+  text-align: center;
+  width: min(calc(250 / 16 * 1rem), 100%);
+  height: auto;
+  img {
+  border-radius: 50%;
+    display: block;
+    margin-inline:auto;
+    height: 100%;
+   width: 100%%;
+   transition: 250ms;
+      transform: rotate(-8deg) scale(1);
+   
+    &:hover {
+      box-shadow: 0 0 10px -4px  #000;
+      transform: rotate(8deg) scale(1.1);
+    }
+  }
+}
+@media screen and (min-width: calc(967/16 * 1rem)) {
+  hgroup:has(figure) {
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+  }
+  figure:has(img) {
+    flex: 0 0 calc(225 /16 * 1rem);
+    margin-left: auto;
+    margin-right: 0;
+  }
+}

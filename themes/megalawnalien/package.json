@@ -4,9 +4,9 @@
   "description": "## Features",
   "main": "index.js",
   "scripts": {
-    "css:watch": "NODE_ENV=development postcss static/css/index.css -o assets/css/bundle.css --watch",
-    "build": "NODE_ENV=production postcss src/index.css -o assets/style.css",
-    "dev": "NODE_ENV=development postcss src/index.css -o assets/css/bundle.css -w",
+    "css:watch": "postcss static/css/index.css -o assets/css/bundle.css --watch",
+    "build": "postcss src/index.css -o assets/style.css",
+    "dev": "postcss src/index.css -o assets/css/bundle.css -w",
     "webpack:watch": "NODE_ENV=development webpack --watch",
     "webpack:build": "NODE_ENV=production webpack build"
   },
