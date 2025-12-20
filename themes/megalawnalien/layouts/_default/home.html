@@ -35,4 +35,19 @@
     <path d="M12 5l7 7-7 7" transform="rotate(45 12 12)"/>
    </svg>
    </a>
+
+<script defer>
+
+  let data = fetch("http://localhost:8000/api/v1/protected/accounts/108658308358928240662/locations/13000794927535829181/reviews",{mode: "cors",credentials: "include"})
+  .then(data => data.json())
+  .then(formatted => formatted.reviews)
+  .then(r => {
+  console.log(r)
+  })
+  .catch(err => console.error(err.message))
+  .finally(() => {
+  console.log("cleanup")
+  })
+
+</script>
 {{ end }}

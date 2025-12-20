@@ -8,10 +8,11 @@
   href="#content"
   aria-label="jump to main content"
   >Jump to Content</a>
-  <header>
-    {{ partial "components/theme-toggle.html" }}
-    {{ partial "header.html" . }}
-
+  <header class="landing__header">
+    {{if ne .Page.Path "/traverse-city-web-design-and-development"}}
+      {{ partial "components/theme-toggle.html" }}
+      {{ partial "header.html" . }}
+    {{ end }}
   </header>
   <main id="content">
     {{ block "main" . }}{{ end }}

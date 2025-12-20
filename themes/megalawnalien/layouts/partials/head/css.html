@@ -8,10 +8,16 @@
   {{- end }}
 {{- end }}
 
+{{if eq .Page.Path "/traverse-city-web-design-and-development"}}
+    <!-- landing page styles -->
+    <link rel="stylesheet" href="#">
+    <!--/landing page styles -->
+{{ end }}
 {{ with resources.Get "dist/styles.css"}}
 
 <link rel="stylesheet" href="{{.RelPermalink}}" />
 
 {{ end}}
+
 
 <!-- <link rel="stylesheet" type="text/css" href="/css/index.css"> -->

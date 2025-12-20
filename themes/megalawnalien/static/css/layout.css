@@ -27,7 +27,7 @@
     --width-09-12: calc(09/12 * var(--width-100));
     --width-08-12: calc(08/12 * var(--width-100));
     --width-07-12: calc(07/12 * var(--width-100));
-    --width-06-12: calc(06/12 * var(--width-100));
+    --width-06-12: min(calc(06/12 * var(--width-100)),100%);
     --width-05-12: calc(05/12 * var(--width-100));
     --width-04-12: calc(04/12 * var(--width-100));
     --width-03-12: calc(03/12 * var(--width-100));
@@ -221,7 +221,7 @@ section[data-taxonomy="tags"] header {
     aside,
     footer,
     header {
-        max-width: var(--width-06-12);
+        min-width: var(--width-06-12);
     }
 }
 

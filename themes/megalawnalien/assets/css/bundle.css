@@ -688,7 +688,7 @@ section[data-taxonomy="tags"] header {
     aside,
     footer,
     header {
-        max-width: 50%;
+        min-width: min(50%,100%);
     }
 }
 

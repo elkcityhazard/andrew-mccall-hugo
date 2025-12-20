@@ -465,8 +465,8 @@ section[data-taxonomy="tags"] header {
     aside,
     footer,
     header {
-        max-width: 50%;
-    }
+        width: min(calc(967 / 16 * 1rem),100%) !important;
+      }
 }
 
 @media screen and (min-width: 1500px) {
