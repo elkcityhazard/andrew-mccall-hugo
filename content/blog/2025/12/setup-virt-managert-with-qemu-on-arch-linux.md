@@ -25,7 +25,7 @@ and QEMU.
 1. Download Dependencies
 `sudo pacman -Syu qemu virt-manager libvirt dnsmasq ebtables iptabvles-nft`
 
-It will promptr you to enter a number for qemu provider, I just pick number
+It will prompt you to enter a number for qemu provider, I just pick number
 one. 
 
 2. Enable the libvirtd service
