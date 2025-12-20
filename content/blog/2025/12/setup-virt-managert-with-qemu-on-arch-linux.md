@@ -49,6 +49,6 @@ better.
 You should now be able to use QEMU to setup a new virtual machine with say
 a fresh Arch iso file.  
 
-Enjoy
+Enjoy.
 
 Reach out to me @elkcityhazard@indieweb.social if you have any questions.
