@@ -49,6 +49,10 @@ better.
 You should now be able to use QEMU to setup a new virtual machine with say
 a fresh Arch iso file.  
 
+__Note:__ You may encounter an error like: `Error starting domain: Requested operation is not
+valid: network 'default is not active'`.  The solutution to this is run ththe following command
+`sudo virsh net-autostart default`. Then reboot your system. This will start the default network when you load up virt manager.
+
 Enjoy.
 
 Reach out to me @elkcityhazard@indieweb.social if you have any questions.
