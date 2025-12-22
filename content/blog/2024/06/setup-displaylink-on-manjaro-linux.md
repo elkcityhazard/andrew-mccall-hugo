@@ -5,7 +5,7 @@ author: Andrew M McCall
 description: I explain the process I use to get displaylink drivers working on Manjaro linux.
 summary: Getting displaylink drivers to work on Arch linux flavors can be challenging to newcomers. Here are my notes for getting displaylink drivers working on Manjaro Linux.
 publishDate: 2024-06-15T11:07:16-04:00
-updateDate:  2024-06-15T11:07:16-04:00
+updateDate:  2025-12-21T21:00:00-04:00
 draft: false
 categories:
   - Linux
@@ -15,9 +15,6 @@ tags:
   - FOSS
 
 ---
-
-So you have a fresh install of Manjaro Linux, a displaylink dock, and several displays that are not showing an image.  This is pretty much the common experience everytime I install an arch linux distribution on a new retired fleet dell or lenovo laptop.  It always tends to take me some time of messing around before I get my displaylink dock working again.  Because of this, I decided to write some notes so I can just look back and and spend less time re-learning how to ride the bike again. 
-
 ##  Dont want An Explanation? Here is the TL;DR;
 
 ```
@@ -50,6 +47,46 @@ sudo systemctl start displayalink.service
 
 
 ```
+## The State of DisplayLink On Arch-Based Systems as of December 2025
+
+It has been a while since I updated this how to guide. The reason that I
+haven't is because it still works for the most part.  I haven't had to
+install linux-headers by kernel version in a while.  
+
+For Intel iGPUs and AMD GPUs it is usually a pretty low lift to get
+displaylink working correctly.  I am using a displaylink dock from
+AliExpress that was $40 usd and it is working mostly fine. 
+
+Nvidia, on the other hand, has never played well for me.  Hopefully you
+have an iGPU that accompanies your Nvidia card.  The best thing to do here
+to let your iGPU be the primary GPU which will have good compatibility with
+DisplayLink.  Then, you can use `prime-run` or `optimus-manager` to run
+more demanding applications.  This also has the added benefit of working
+mostly well with `xdg-desktop-portal`. iGPUs have plenty of power to do
+OBS stream capturing for most people. 
+
+But, what about if you _only_ have Nvidia?  Suffice it to say, it has not
+been a great experience for me.  I have a `T1000` as well as a `T2000`
+Nvidia card and DisplayLink on Arch Linux has not worked well with it.  No
+level of kernel module parameters, variations on drivers, and tweaking has
+resulted in a positive experience regarding DisplayLink.
+
+### What To Do If You Only Have Nvidia
+
+1. Try using an LTS kernel
+2. Try using x11 instead of wayland.  I admit, I have only tried on wayland
+   as I use `Niri` and `Gnome` as my primary desktop environments.
+3. If you have a slightly more modern computer that supports thunderbolt or
+   usb-c alt modes, just by a thunderbolt dock.  I have been having great
+   success using the Dell WD22TB4 on a Dell as well as a Lenovo
+   workstation. 
+4. Don't stray too far from common desktop environments.  If you must use a
+   DisplayLink option and Arch, try installing one of the more stable
+   distros with a well supported desktop environment such as KDE or Gnome. 
+
+
+So you have a fresh install of Manjaro Linux, a displaylink dock, and several displays that are not showing an image.  This is pretty much the common experience everytime I install an arch linux distribution on a new retired fleet dell or lenovo laptop.  It always tends to take me some time of messing around before I get my displaylink dock working again.  Because of this, I decided to write some notes so I can just look back and and spend less time re-learning how to ride the bike again. 
+
 
 ## Manjaro Housekeeping Tasks
 
@@ -105,3 +142,7 @@ If for whatever reason, you are are still having issues, I highly recommend revi
 If you still need help, feel free to reach out directly to me and I am happy to help.
 
 Love yourself now, then, and tomorrow.
+
+
+
+
