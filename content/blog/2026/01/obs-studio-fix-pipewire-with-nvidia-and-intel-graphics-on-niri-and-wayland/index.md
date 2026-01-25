@@ -5,8 +5,8 @@ author: Andrew M McCall
 description: "I have strugged to get OBS Studio and Pipewire working to capture my screen on Arch
 Linux, Wayland, Niri, using Intel iGPU and Nvidia. Here is how I solved the problem."  
 summary: "Incomplete EGL implementation and linear buffer import issues with Nvidia causes issues
-with pipewire and screen casting in dual gpu configurations. The solution is to use Nvidia as the
-render device with Niri."  
+with pipewire and screen casting in dual gpu configurations. This causes OBS Studio to capture a
+\"black screen\" with Niri.  The solution is to use Nvidia as the render device with Niri."  
 publishDate: '2026-01-25T11:13:57-05:00'
 updateDate:  '2026-01-25T11:13:57-05:00'
 images: ['/images/twitter-card.png']
@@ -24,7 +24,7 @@ tags:
 
 ## What I did To Solve The Problem
 
-1. `sudo pacman -S nvidia-open-dkms nvidia-utils nvidia-settings nvidia-prime`
+1. `sudo pacman -S nvidia-open-dkms nvidia-utils nvidia-settings nvidia-prime linux-headers`
 2. add `nvidia-drm.modeset=1` at `/boot/loader/entries/arch.conf` at the end of my `options` list
 3. while you are there you might as well add `i915.enable_psr=0` to solve any built-in display
    flickering
