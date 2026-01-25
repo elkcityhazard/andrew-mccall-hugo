@@ -5,7 +5,7 @@ author: Andrew M McCall
 description: A no nonsense guide to setting up virt-manager on Arch Linux with qemu and libvirt
 summary:  A no nonsense guide to setting up virt-manager on Arch Linux with qemu and libvirt 
 publishDate: '2025-12-20T11:49:17-05:00'
-updateDate:  '2025-12-20T11:49:17-05:00'
+updateDate:  '2026-01-25T11:49:17-05:00'
 images: ['/images/twitter-card.png']
 draft: false
 categories:
@@ -23,7 +23,7 @@ This is a step by step guide to ge tting up and running with virt manager
 and QEMU.  
 
 1. Download Dependencies
-`sudo pacman -Syu qemu virt-manager libvirt dnsmasq ebtables iptabvles-nft`
+`sudo pacman -Syu qemu virt-manager libvirt dnsmasq ebtables iptables-nft`
 
 It will prompt you to enter a number for qemu provider, I just pick number
 one. 
@@ -56,3 +56,7 @@ valid: network 'default is not active'`.  The solutution to this is run ththe fo
 Enjoy.
 
 Reach out to me @elkcityhazard@indieweb.social if you have any questions.
+
+
+### Change Log
+- __2026-01-25:__ Updated spelling of `iptables-nft` for 1. Download Dependencies. 
