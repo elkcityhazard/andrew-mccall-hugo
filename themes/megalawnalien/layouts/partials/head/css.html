@@ -1,23 +1,6 @@
-{{- with resources.Get "css/bundle.css" }}
-  {{- if eq hugo.Environment "development" }}
-    <link rel="stylesheet" type="text/css" href="{{ .RelPermalink }}">
-  {{- else }}
-    {{- with . | minify | fingerprint }}
-      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-    {{- end }}
-  {{- end }}
-{{- end }}
-
-{{if eq .Page.Path "/traverse-city-web-design-and-development"}}
-    <!-- landing page styles -->
-    <link rel="stylesheet" href="#">
-    <!--/landing page styles -->
-{{ end }}
-{{ with resources.Get "dist/styles.css"}}
-
-<link rel="stylesheet" href="{{.RelPermalink}}" />
-
-{{ end}}
 
 
-<!-- <link rel="stylesheet" type="text/css" href="/css/index.css"> -->
+<link rel="stylesheet" href="css/style.css" />
+
+
+

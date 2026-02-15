@@ -727,6 +727,10 @@ div[data-ui-toggle] {
     margin-right: 4px;
     margin-right: 0.25rem;
     width: auto;
+    max-width: unset;
+    min-width: unset;
+    width: min(100px, 100%);
+    width: min(6.25rem, 100%);
  }
 
 svg[data-icon] {

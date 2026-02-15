@@ -1,5 +1,0 @@
-figure:has(img) {
-  figure {
-    border-radius: 50%;
-  }
-}

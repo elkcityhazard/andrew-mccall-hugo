@@ -4,8 +4,8 @@
   "description": "## Features",
   "main": "index.js",
   "scripts": {
-    "css:watch": " npx postcss static/css/index.css -o assets/css/bundle.css --watch",
-    "build": "npx postcss src/index.css -o assets/style.css",
+    "css:watch": " npx postcss static/css/index.css -o static/css/style.css --watch",
+    "build": "npx postcss static/css/index.css -o static/css/style.css",
     "dev": "postcss src/index.css -o assets/css/bundle.css -w",
     "webpack:watch": "NODE_ENV=development webpack --watch",
     "webpack:build": "NODE_ENV=production webpack build"

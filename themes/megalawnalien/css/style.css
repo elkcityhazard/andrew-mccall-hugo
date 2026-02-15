@@ -1,4 +1,3 @@
-@import "./_partials/_portrait.css";
 html {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -19,6 +18,11 @@ html {
 ::slotted(*) {
     -webkit-box-sizing: border-box !important;
             box-sizing: border-box !important;
+}
+
+html,
+body {
+    width: 100%;
 }
 
 body {
@@ -80,6 +84,66 @@ figure {
     font-size: inherit;
     color: inherit;
     letter-spacing: inherit;
+}
+
+hgroup:has(figure) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+figure:has(img) {
+  margin-inline: auto;
+  margin-block: auto;
+  text-align: center;
+  width: min(250px, 100%);
+  width: min(15.625rem, 100%);
+  height: auto;
+}
+
+figure:has(img) img {
+  border-radius: 50%;
+    display: block;
+    margin-inline:auto;
+    height: 100%;
+   width: 100%%;
+   -webkit-transition: 250ms;
+   transition: 250ms;
+      -webkit-transform: rotate(-8deg) scale(1);
+              transform: rotate(-8deg) scale(1)
+  }
+
+figure:has(img) img:hover {
+        -webkit-box-shadow: 0 0 10px -4px  #000;
+                box-shadow: 0 0 10px -4px  #000;
+        -webkit-transform: rotate(8deg) scale(1.1);
+                transform: rotate(8deg) scale(1.1);
+}
+
+@media screen and (min-width: calc(967/16 * 1rem)) {
+  hgroup:has(figure) {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+  }
+  figure:has(img) {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 14.0625rem;
+            flex: 0 0 14.0625rem;
+    margin-left: auto;
+    margin-right: 0;
+  }
 }
 
 body {
@@ -285,6 +349,26 @@ main blockquote code {
     background: hsla(0, 0%, 100%, 1.0);
 }
 
+body code,
+    body pre{
+        background: #e6e6e6;
+        padding-inline: 4px;
+        padding-inline: 0.25rem;
+        padding-block: 4px;
+        padding-block: 0.25rem;
+    }
+
+body[data-theme="dark"] code,
+        body[data-theme="dark"] pre {
+        background: #e6e6e6;
+        background: hsla(0, 0%, 93%, 1);
+        color: #000;
+        color: hsla(0, 0%, 0%, 1.0);
+}
+
+body[data-theme="light"] code {
+    }
+
 .single__meta {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -314,6 +398,72 @@ main blockquote code {
         margin-bottom: 4px;
         margin-bottom: 0.25rem;
     }
+
+svg,
+svg path {
+    height: 13.6px;
+    height: 0.85rem;
+    height: 32px;
+    height: 2rem;
+    width: 13.6px;
+    width: 0.85rem;
+    width: 32px;
+    width: 2rem;
+    -webkit-transition: all 350ms;
+    transition: all 350ms;
+}
+
+a {
+    -webkit-transition: all 350ms;
+    transition: all 350ms
+}
+
+a:hover svg,
+        a:hover path,
+        a:active svg,
+        a:active path {
+           color: green;
+           color: hsla(195, 25%, 45%, 1);
+}
+
+a:hover line, a:active line {
+        -webkit-transition : all 350ms;
+        transition : all 350ms;
+        color: green;
+        color: hsla(195, 25%, 45%, 1);
+}
+
+table {
+  --table-width: 967px;
+  --table-width: 60.4375rem;
+  --table-spacing: 8px;
+  --table-spacing: 0.5rem;
+  display: block;
+  margin-inline: auto;
+  margin-block: var(--table-spacing);
+  margin: var(--table-spacing) auto;
+  padding: var(--table-spacing);
+  overflow-x: auto;
+  width: min(var(--table-width),100%);
+}
+
+table thead,
+  table tbody {
+  --table-font-size: clamp(10.08px, -18.23px + 11.3208vw, 12px);
+  --table-font-size: clamp(0.63rem, -1.1394rem + 11.3208vw, 0.75rem);
+    font-size: var(--table-font-size);
+  }
+
+tr:nth-child(2n+1) {
+    background: #e6e6e6;
+}
+
+td {
+  --table-font-size: clamp(10.08px, -18.23px + 11.3208vw, 12px);
+  --table-font-size: clamp(0.63rem, -1.1394rem + 11.3208vw, 0.75rem);
+  font-family: Monaco, 'Courier New', sans-serif;
+  font-size: 12px;
+}
 
 html body header,
 html body main {
@@ -398,8 +548,50 @@ section[data-taxonomy="tags"] header {
 }
 
 .nav-bar__wrap {
-        display: grid;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-flow: column-reverse nowrap;
+                flex-flow: column-reverse nowrap;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
     }
+
+.nav-bar__wrap nav ul li {
+                    -webkit-box-flex: 1;
+                        -ms-flex: 1;
+                            flex: 1;
+                    text-align: center;
+                }
+
+.nav-bar__wrap nav ul li a {
+                        display: inline-block;
+                        padding-inline: 8px;
+                        padding-inline: 0.5rem;
+                        padding-inline: 8px;
+                        padding-inline: 0.5rem;
+                        padding-block: 12px;
+                        padding-block: 0.75rem;
+                        padding-block: 12px;
+                        padding-block: 0.75rem;
+                        text-underline-offset: 4px;
+                        text-underline-offset: 0.25rem;
+                        text-underline-offset: 4px;
+                        text-underline-offset: 0.25rem
+                    }
+
+.nav-bar__wrap nav ul li a:hover,
+                        .nav-bar__wrap nav ul li a:active,
+                        .nav-bar__wrap nav ul li a:focus {
+    text-decoration-thickness: 2px;
+    text-decoration-thickness: 0.125rem;
+}
 
 @media screen and (min-width: 499px) {
 
@@ -416,6 +608,37 @@ section[data-taxonomy="tags"] header {
     header {
         max-width: 83.33333%;
     }
+        .nav-bar__wrap {
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+                -ms-flex-flow: row nowrap;
+                    flex-flow: row nowrap;
+            max-width: unset;
+            width: 100%;
+        }
+            .nav-bar__wrap nav {
+                -webkit-box-flex: 1;
+                    -ms-flex: 1 1 50%;
+                        flex: 1 1 50%;
+            }
+            .nav-bar__wrap nav {
+                max-width: unset;
+            }
+                .nav-bar__wrap nav ul {
+                    width: 100%;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: normal;
+                        -ms-flex-flow: row nowrap;
+                            flex-flow: row nowrap;
+                }
+                    .nav-bar__wrap nav ul li {
+                        -webkit-box-flex: 0;
+                            -ms-flex: none;
+                                flex: none;
+                    }
 }
 
 @media screen and (min-width: 768px) {
@@ -465,8 +688,8 @@ section[data-taxonomy="tags"] header {
     aside,
     footer,
     header {
-        width: min(calc(967 / 16 * 1rem),100%) !important;
-      }
+        min-width: min(50%,100%);
+    }
 }
 
 @media screen and (min-width: 1500px) {
@@ -503,7 +726,12 @@ div[data-ui-toggle] {
     margin-left: auto;
     margin-right: 4px;
     margin-right: 0.25rem;
-    width: min(40px, 100%);
+    width: auto;
+    width: min(40px, 100%) !important;
+    max-width: unset;
+    min-width: unset;
+    width: min(100px, 100%);
+    width: min(6.25rem, 100%);
  }
 
 svg[data-icon] {
@@ -603,6 +831,107 @@ label[for="themeToggle"] > input[aria-checked="true"]{
 
             transform: translateX(100%);
 }
+
+body[data-theme="light"] input[type="submit"] {
+    border: 1px solid #333;
+    border: 1px solid hsla(210, 13%, 15%, .9);
+}
+
+.contact {
+    font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+    font-size: 16px;
+    font-size: 1rem;
+}
+
+.contact fieldset legend {
+            padding-inline: 16px;
+            padding-inline: 1rem;
+        }
+
+.contact input:user-valid {
+        outline: 1px solid lightgreen;
+    }
+
+.contact input[type="submit"] {
+        border: 1px solid hsla(210, 13%, 15%, .9);
+        background: transparent;
+        border-top-left-radius: 0.25rem;
+        border-top-right-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+        padding-block: 8px;
+        padding-block: 0.5rem;
+        -webkit-transition: all 300ms ease;
+        transition: all 300ms ease
+    }
+
+.contact input[type="submit"]:hover,
+        .contact input[type="submit"]:active,
+        .contact input[type="submit"]:focus {
+    background: hsla(210, 13%, 15%, .9);
+    color: hsla(0, 0%, 93%, 1);
+}
+
+.contact .form-control {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-flow: column nowrap;
+                flex-flow: column nowrap;
+        gap: 10.56px;
+        gap: 0.66rem;
+        max-width: unset;
+        width: 100%;
+    }
+
+.contact .form-control > * {
+            -webkit-box-flex: 0;
+                -ms-flex: 0 0 100%;
+                    flex: 0 0 100%;
+            width: 100%;
+        }
+
+.contact .form-control input[type="email"] {
+            padding-block: 8px;
+            padding-block: 0.5rem;
+            padding-inline: 8px;
+            padding-inline: 0.5rem
+        }
+
+.contact .form-control input[type="email"]:user-valid {
+    border: none;
+    outline: 2px solid green;
+}
+
+body[data-theme="dark"] form textarea {
+            background: #e6e6e6;
+            color: #333
+        }
+
+body[data-theme="dark"] form textarea:active,
+            body[data-theme="dark"] form textarea:focus {
+    color: #000;
+}
+
+body[data-theme="dark"] form label {
+        background: transparent;
+        color: #fff
+        }
+
+body[data-theme="dark"] form label+ input[type="email"] {
+    color: #333;
+}
+
+body[data-theme="dark"] form label+ input[type="email"]:active,
+            body[data-theme="dark"] form label+ input[type="email"]:focus {
+    color: #000;
+}
+
+body[data-theme="dark"] form input[type="submit"] {
+            border: 1px solid #fff;
+        }
 
 ul li ul li {
     -webkit-margin-start: 16px;
@@ -734,5 +1063,4 @@ section[data-section="footer"] ul {
     gap: 4px;
     gap: 0.25rem;
 }
-
 
