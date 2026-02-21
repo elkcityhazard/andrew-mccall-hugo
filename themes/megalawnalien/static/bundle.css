@@ -616,11 +616,6 @@ nav ul {
     flex-flow: row wrap;
 }
 
-nav ul li:not(:first-child) {
-    margin-left: 0.25rem;
-    margin-left: var(--spacing-1);
-}
-
 div,
 section,
 article,
@@ -640,7 +635,7 @@ header {
 
 #content {
   margin: auto;
-  width: min(calc(135 * 1ch),100%);
+  width: min(calc(115 * 1ch),100%);
 }
 
 #content > div:has(iframe) {
@@ -665,11 +660,18 @@ header {
 @media screen and (min-width: calc(1200 / 16 * 1rem)) {
 
 .wrapper:not(:root:has(footer)) {
-    grid-template-columns: 75ch 35ch
+    grid-template-columns: 75ch 35ch;
+    align-items: start;
+    justify-items: start;
+    place-items: start
 }
   }
 
 .wrapper:not(:root:has(footer)) main,.wrapper:not(:scope:has(footer)) #sidebar {
+    margin: 0;
+    margin: initial;
+    margin-left: auto;
+    margin-right: auto;
     max-width: none;
     max-width: initial;
   }
@@ -788,15 +790,25 @@ section[data-taxonomy="tags"] header {
                     width: min(calc(525 / 16 * 1rem), 100%);
                     display: flex;
                     flex-flow: row nowrap;
+                    justify-content: flex-start;
                     padding-top: 0;
                     padding-bottom: 0;
                     margin-top: 0;
                     margin-bottom: 0;
                 }
-                    .nav-bar__wrap nav ul li {
-                        flex: 1 1 auto;
+                    .nav-bar__wrap nav ul li{
+                        flex: 0 0 auto !important;
                         margin-bottom: 0;
+                        padding-left: 0;
+                        padding-right: 0;
+                        width: auto;
+                        width: initial;
+                        margin-left: none;
                     }
+                        .nav-bar__wrap nav ul li a {
+                          padding-left: 0.5rem;
+                          padding-right: 0.5rem;
+                        }
 }
 
 @media screen and (min-width: 768px) {
@@ -885,8 +897,6 @@ section[data-taxonomy="tags"] header {
     max-width: initial;
         margin: auto;
         width: min(115ch, 100%);
-        max-width: calc(10/12 * 100%);
-        max-width: var(--width-10-12);
   }
 
 .landing__header hgroup {
