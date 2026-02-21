@@ -19,8 +19,8 @@
     --letter-spacing-1: 1px;
     --letter-spacing-2: 1.33px;
 
-    --heading-color-primary: var(--off-white, #fff);
-    --heading-color-secondary: var(--light-black, #333);
+    --heading-color-primary: var(--off-white);
+    --heading-color-secondary: var(--light-black);
 
     --line-height-base: 1.25;
     --line-height-lg: 1.5;
@@ -32,8 +32,8 @@
 
 @font-face {
     font-family: "Italiana Regular";
-    src: url("../../static/css/fonts/italiana-regular-webfont.ttf") format("truetype");
-    src: url("../../static/css/fonts/italiana-regular-webfont.woff") format('woff');
+    src: url("./fonts/italiana-regular-webfont.woff") format('woff');
+    src: url("./fonts/italiana-regular-webfont.ttf") format("truetype");
 }
 
 h1,
@@ -45,6 +45,7 @@ h6 {
     color: var(--heading-color-primary);
     font-family: var(--font-display);
     margin: var(--spacing-4) var(--spacing-0);
+
 }
 
 body[data-theme="light"] h1,
@@ -54,9 +55,6 @@ body[data-theme="light"] h4,
 body[data-theme="light"] h5,
 body[data-theme="light"] h6 {
     color: var(--heading-color-secondary);
-}
-
-hgroup {
 }
 
 
@@ -164,8 +162,23 @@ dl li {
     font-family: var(--font-sans);
     line-height: var(--line-height-xl);
     margin-bottom: var(--spacing-5);
-    max-width: 75ch;
+    width:min(75ch,100%);
 }
+
+#sidebar {
+  a {
+    font-weight: 600;
+  }
+p {
+  &.related {
+    font-size: var(--font-bsize-base);
+    line-height: 1.2;
+    font-weight: normal;
+    margin-block-start: 0.25rem;
+  }
+}
+}
+
 
 pre {
     background: var(--off-white);
@@ -174,6 +187,13 @@ pre {
     padding: var(--spacing-4);
     overflow-y: auto;
 }
+
+pre,
+code,
+blockquote {
+  width: min(75ch,100%);
+}
+
 
 code {
     background: var(--off-white);
@@ -191,6 +211,27 @@ main blockquote code {
     background: var(--white);
 }
 
+body {
+    code,
+    pre{
+        background: var(--offwhite, #e6e6e6);
+        padding-inline: var(--spacing-sm, 0.25rem);
+        padding-block: var(--spacing-sm, 0.25rem);
+    }
+    &[data-theme="dark"] {
+        code,
+        pre {
+        background: var(--off-white, #e6e6e6);
+        color: var(--black, #000);
+    }
+    }
+}
+
+body[data-theme="light"] {
+    code {
+    }
+}
+
 .single__meta {
     display: flex;
     align-items: flex-start;
@@ -206,4 +247,52 @@ main blockquote code {
         margin-block-end: var(--spacing-1);
         margin-bottom: var(--spacing-1);
     }
+svg,
+svg path {
+    height: var(--font-size-4, 0.85rem);
+    width: var(--font-size-4, 0.85rem);
+    transition: all 350ms;
+}
+a {
+    transition: all 350ms;
+    &:hover,
+    &:active {
+        svg,
+        path {
+           color: var(--aqua-green, green);
+    }
+    line {
+        transition : all 350ms;
+        color: var(--aqua-green, green);
+    }
+}
+}
 
+table {
+  --table-width: calc(967 / 16 * 1rem);
+  --table-spacing: 0.5rem;
+  display: block;
+  margin-inline: auto;
+  margin-block: var(--table-spacing);
+  margin: var(--table-spacing) auto;
+  padding: var(--table-spacing);
+  overflow-x: auto;
+  width: min(var(--table-width),100%);
+  thead,
+  tbody {
+  --table-font-size: clamp(0.63rem, -1.1394rem + 11.3208vw, 0.75rem);
+    font-size: var(--table-font-size);
+  }
+}
+
+tr {
+  &:nth-child(2n+1) {
+    background: #e6e6e6;
+  }
+}
+
+td {
+  --table-font-size: clamp(0.63rem, -1.1394rem + 11.3208vw, 0.75rem);
+  font-family: Monaco, 'Courier New', sans-serif;
+  font-size: var(--table-font-size,12px);
+}

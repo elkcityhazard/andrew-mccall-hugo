@@ -50,7 +50,7 @@ jobs:
       - name: Bundle CSS With PostCSS
         env:
           NODE_ENV: production
-        run: npm run build
+        run: npm run postcss:build
         working-directory: ./themes/megalawnalien
       - name: Build Webpack
         run: npm run webpack:build

@@ -74,14 +74,15 @@ header {
     width: 100%;
 }
 
-.wrapper {
+.wrapper:not(&:has(footer)) {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(calc(967 / 16 * 1rem), 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(calc(1500 / 16 * 1rem), 100%), 1fr));
   margin: auto;
   gap: 1rem;
-  width: min(calc(1500 / 16 * 1rem),100%);
-  @media screen and (min-width: calc(968 / 16 * 1rem)) {
-    grid-template-columns: 72.5% 27.5%;
+  width: min(115ch,100%);
+  max-width: unset;
+  @media screen and (min-width: calc(1200 / 16 * 1rem)) {
+    grid-template-columns: 75ch 35ch;
   }
   main,
   #sidebar {
@@ -130,9 +131,11 @@ section[data-taxonomy="tags"] header {
         justify-content: flex-start;
         nav {
             ul {
+              margin-block: 0;
                 li {
-                    flex: 1;
+                    flex:  0 0 100%;
                     text-align: center;
+                    margin-block-end: 0;
                     a {
                         display: inline-block;
                         padding-inline: var(--spacing-2, 0.5rem);
@@ -167,7 +170,8 @@ section[data-taxonomy="tags"] header {
     }
 
     .nav-bar {
-        &__wrap {
+        &__wrap { 
+            align-items: stretch;
             flex-flow: row nowrap;
             max-width: unset;
             width: 100%;
@@ -175,13 +179,16 @@ section[data-taxonomy="tags"] header {
                 flex: 1 1 50%;
             }
             nav {
-                max-width: unset;
+                padding-block: 0;
                 ul {
                     width: 100%;
                     display: flex;
                     flex-flow: row nowrap;
+                    padding-block: 0;
+                    margin-block: 0;
                     li {
-                        flex: none;
+                        flex: 1;
+                        margin-block-end: 0;
                     }
                 }
             }
@@ -204,6 +211,14 @@ section[data-taxonomy="tags"] header {
     header {
         max-width: var(--width-10-12);
     }
+    .nav-bar__wrap {
+      margin-inline: auto;
+      max-width: min(calc(768 / 16 * 1rem),100%);
+      nav {
+      max-width: min(calc(768 * 0.5 / 16 * 1rem), 100%);
+      }
+    }
+
 }
 
 @media screen and (min-width: 968px) {

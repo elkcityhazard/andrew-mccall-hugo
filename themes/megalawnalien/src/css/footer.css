@@ -10,6 +10,14 @@ section[data-section="footer"] ul {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    flex-flow: row wrap;
     gap: var(--spacing-1);
+    flex-flow: row wrap;
+    li {
+      padding: 0;
+      margin-bottom: 0;
+    }
+    @media screen and (min-width: calc(499 / 16 * 1rem)) {
+      flex-flow: row nowrap;
+
+    }
 }

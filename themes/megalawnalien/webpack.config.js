@@ -4,7 +4,7 @@ module.exports = {
   mode: process.env.NODE_ENV === "production" ? "production" : "development",
   devtool: "source-map",
   watch: process.env.NODE_ENV === "production" ? false : true,
-  entry: "./src/scripts/index.ts",
+  entry: "./src/js/main.js",
   plugins: [...(MiniCssExtractPlugin ? [new MiniCssExtractPlugin()] : [])],
   module: {
     rules: [
@@ -40,7 +40,7 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js", ".css", ".scss"],
   },
   output: {
-    filename: "script.js",
-    path: path.resolve(__dirname, "assets/dist/js"),
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "static/"),
   },
 };

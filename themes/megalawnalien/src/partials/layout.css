@@ -1,7 +1,0 @@
-.landing {
-  &__header {
-    &-container {
-      max-width: unset;
-    }
-  }
-}

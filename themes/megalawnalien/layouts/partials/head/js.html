@@ -1,18 +1,1 @@
-{{- with resources.Get "js/main.js" }}
-  {{- if eq hugo.Environment "development" }}
-    {{- with . | js.Build }}
-      <script src="{{ .RelPermalink }}" defer type="module"></script>
-    {{- end }}
-  {{- else }}
-    {{- $opts := dict "minify" true }}
-    {{- with . | js.Build $opts | fingerprint }}
-      <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer type="module"></script>
-    {{- end }}
-  {{- end }}
-{{- end }}
-
-<script src="/js/main.js" defer type="module" type="text/javascript"></script>
-
-{{with resources.Get "dist/js/script.js" }}
-<script src="{{.RelPermalink}}" defer type="module" type="text/javascript"></script>
-{{ end }}
+<script type="text/javascript" src="/bundle.js" defer></script>
