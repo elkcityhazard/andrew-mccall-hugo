@@ -74,4 +74,48 @@ section[data-section="pagination"] ul.pagination {
     gap: var(--spacing-2);
     list-style: none;
     margin: 0 var(--spacing-auto);
+    li {
+      --size: min(calc(40 / 16 * 1rem), 100%);
+      border-radius: 100vw;
+      border: 1px solid light-dark(#000000,#ffffff);
+      flex: 0 0  var(--size);
+      max-width: initial;
+      min-width: 0;
+      height: var(--size,40px);
+      width: var(--size,40px);
+      margin-bottom: 0;
+      padding: 0;
+      margin: 0;
+      aspect-ratio: 1/1;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      a {
+        cursor: pointer;
+        display: block;
+        height: inherit;
+        width: inherit;
+        line-height: 1;
+        align-self: center;
+        display: grid;
+        place-items: center;
+      }
+      &.active a {
+        background: #000;
+        color: #fff;
+      }
+    }
+}
+
+body[data-theme="dark"] {
+  section[data-section="pagination"] {
+    ul {
+      li {
+      &.active a {
+        background: #fff; 
+        color: #000;
+      }
+      }
+    }
+  }
 }

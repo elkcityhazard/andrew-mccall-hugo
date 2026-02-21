@@ -210,6 +210,8 @@ body[data-theme="dark"] {
 }
 
 :root {
+      --csstools-color-scheme--light: initial;
+      color-scheme: light dark;
 
     --font-display: "Italiana Regular", serif;
     --font-sans: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
@@ -239,6 +241,14 @@ body[data-theme="dark"] {
 
     --base-transition: all 250ms ease;
 
+}
+
+@media (prefers-color-scheme: dark) {
+
+:root {
+      --csstools-color-scheme--light:  ;
+
+}
 }
 
 @font-face {
@@ -1232,6 +1242,56 @@ section[data-section="pagination"] ul.pagination {
     margin: 0 auto;
     margin: 0 var(--spacing-auto);
 }
+
+section[data-section="pagination"] ul.pagination li {
+      --size: min(calc(40 / 16 * 1rem), 100%);
+      border-radius: 100vw;
+      --csstools-light-dark-toggle--0: var(--csstools-color-scheme--light) #ffffff;
+      border: 1px solid #000000;
+      border: 1px solid var(--csstools-light-dark-toggle--0, #000000);
+      border: 1px solid light-dark(#000000,#ffffff);
+      flex: 0 0  min(calc(40 / 16 * 1rem), 100%);
+      flex: 0 0  var(--size);
+      max-width: none;
+      max-width: initial;
+      min-width: 0;
+      height: min(calc(40 / 16 * 1rem), 100%);
+      height: var(--size,40px);
+      width: min(calc(40 / 16 * 1rem), 100%);
+      width: var(--size,40px);
+      margin-bottom: 0;
+      padding: 0;
+      margin: 0;
+      aspect-ratio: 1/1;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      place-items: center;
+      overflow: hidden;
+    }
+
+section[data-section="pagination"] ul.pagination li a {
+        cursor: pointer;
+        display: block;
+        height: inherit;
+        width: inherit;
+        line-height: 1;
+        align-self: center;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        place-items: center;
+      }
+
+section[data-section="pagination"] ul.pagination li.active a {
+        background: #000;
+        color: #fff;
+      }
+
+body[data-theme="dark"] section[data-section="pagination"] ul li.active a {
+        background: #fff; 
+        color: #000;
+      }
 
 section[data-section="footer"] {
     display: grid;
