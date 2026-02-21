@@ -16,7 +16,7 @@ section[data-section="footer"] ul {
       padding: 0;
       margin-bottom: 0;
     }
-    @media screen and (min-width: calc(499 / 16 * 1rem)) {
+    @media screen and (min-width: calc(967 / 16 * 1rem)) {
       flex-flow: row nowrap;
 
     }

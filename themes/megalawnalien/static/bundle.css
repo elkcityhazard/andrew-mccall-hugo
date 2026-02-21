@@ -645,45 +645,56 @@ header {
 
 #content {
   margin: auto;
-  width: min(calc(115 * 1ch),100%);
 }
 
 #content > div:has(iframe) {
     display: block;
     min-width: 0;
     min-width: initial;
-    max-width:100%;
-    width: 100%;
 }
 
-.wrapper:not(:root:has(footer)) {
+.wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(calc(1500 / 16 * 1rem), 100%), 1fr));
-  margin: auto;
   grid-gap: 1rem;
   gap: 1rem;
-  width: min(115ch,100%);
-  max-width: none;
-  max-width: initial;
+  grid-template-columns: 1fr;
+  margin: auto;
 }
 
-@media screen and (min-width: calc(1200 / 16 * 1rem)) {
+@media screen and (min-width: calc(967 / 16 * 1rem)) {
 
-.wrapper:not(:root:has(footer)) {
-    grid-template-columns: 75ch 35ch;
+.wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:  1fr auto 1fr;
+    grid-template-areas: "header header header"
+                         "content content aside"
+                         "footer footer footer";
     align-items: start;
-    justify-items: start;
-    place-items: start
+    justify-content: start
 }
-  }
+    .wrapper .landing__header {
+      grid-area: header;
+    }
+    .wrapper #content {
+      grid-area: content;
+      margin-right: auto;
+      margin-left: 0;
+    }
+    .wrapper #sidebar {
+      margin: 0;
+      margin: initial;
+      margin-left: auto;
+      margin-right: auto;
+      grid-area: aside;
+    }
+    .wrapper footer {
+      grid-area: footer;
+      max-width: none;
+      max-width: initial;
+      width: 100%;
 
-.wrapper:not(:root:has(footer)) main,.wrapper:not(:scope:has(footer)) #sidebar {
-    margin: 0;
-    margin: initial;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: none;
-    max-width: initial;
+    }
+
   }
 
 main blockquote {
@@ -785,6 +796,7 @@ section[data-taxonomy="tags"] header {
         .nav-bar__wrap { 
             align-items: stretch;
             flex-flow: row nowrap;
+            justify-content: space-between;
             max-width: none;
             max-width: initial;
             width: 100%;
@@ -898,7 +910,7 @@ section[data-taxonomy="tags"] header {
     footer,
     header {
         margin: auto;
-        width: min(115ch, 100%);
+        width: min(110ch, 100%);
     }
 }
 
@@ -906,7 +918,6 @@ section[data-taxonomy="tags"] header {
     max-width: none;
     max-width: initial;
         margin: auto;
-        width: min(115ch, 100%);
   }
 
 .landing__header hgroup {
@@ -1319,7 +1330,7 @@ section[data-section="footer"] ul li {
       margin-bottom: 0;
     }
 
-@media screen and (min-width: calc(499 / 16 * 1rem)) {
+@media screen and (min-width: calc(967 / 16 * 1rem)) {
 
 section[data-section="footer"] ul {
       flex-flow: row nowrap

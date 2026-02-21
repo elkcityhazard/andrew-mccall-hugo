@@ -78,9 +78,9 @@ header {
   gap: 1rem;
   grid-template-columns: 1fr;
   margin: auto;
+  width: min(calc(110 / 16 * 1ch), 100%);
   @media screen and (min-width: calc(967 / 16 * 1rem)) {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows:  1fr auto 1fr;
     grid-template-areas: "header header header"
                          "content content aside"
                          "footer footer footer";
@@ -101,9 +101,6 @@ header {
     }
     footer {
       grid-area: footer;
-      max-width: initial;
-      width: 100%;
-
     }
 
   }

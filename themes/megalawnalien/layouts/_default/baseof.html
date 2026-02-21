@@ -4,6 +4,7 @@
   {{ partial "head.html" . }}
 </head>
 <body data-theme="light">
+  <div class="wrapper">
   <a 
   href="#content"
   aria-label="jump to main content"
@@ -14,20 +15,15 @@
       {{ partial "header.html" . }}
     {{ end }}
   </header>
-  {{ if eq .Kind "page"  }}
-  <div class="wrapper">
-  {{ end }}
   <main id="content">
     {{ block "main" . }}{{ end }}
   </main>
     {{ block "sidebar" . }}
 
    {{ end }}
-  {{ if eq .Kind "page"  }}
-  </div>
-  {{ end }}
   <footer>
     {{ partial "footer.html" . }}
   </footer>
+  </div>
 </body>
 </html>
