@@ -210,8 +210,6 @@ body[data-theme="dark"] {
 }
 
 :root {
-      --csstools-color-scheme--light: initial;
-      color-scheme: light dark;
 
     --font-display: "Italiana Regular", serif;
     --font-sans: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
@@ -241,14 +239,6 @@ body[data-theme="dark"] {
 
     --base-transition: all 250ms ease;
 
-}
-
-@media (prefers-color-scheme: dark) {
-
-:root {
-      --csstools-color-scheme--light:  ;
-
-}
 }
 
 @font-face {
