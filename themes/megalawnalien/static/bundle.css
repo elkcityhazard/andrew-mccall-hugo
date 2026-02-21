@@ -259,6 +259,7 @@ h6 {
     font-family: var(--font-display);
     margin: 1rem 0rem;
     margin: var(--spacing-4) var(--spacing-0);
+    width: min(calc(75/ 2 * 1ch), 100%);
 
 }
 
@@ -559,6 +560,10 @@ td {
   font-size: var(--table-font-size,12px);
 }
 
+h1#siteHeader {
+  word-wrap: break-word;
+}
+
 :root {
 
     --xs-breakpoint: 250px;
@@ -631,6 +636,11 @@ header {
     padding: var(--spacing-2);
     max-width: 100%;
     max-width: var(--width-100);
+}
+
+#content {
+  margin: auto;
+  width: min(calc(135 * 1ch),100%);
 }
 
 #content > div:has(iframe) {
@@ -864,10 +874,24 @@ section[data-taxonomy="tags"] header {
     aside,
     footer,
     header {
-        max-width: calc(05/12 * 100%);
-        max-width: var(--width-05-12);
+        margin: auto;
+        width: min(115ch, 100%);
     }
 }
+
+.landing__header {
+    max-width: none;
+    max-width: initial;
+        margin: auto;
+        width: min(115ch, 100%);
+        max-width: calc(10/12 * 100%);
+        max-width: var(--width-10-12);
+  }
+
+.landing__header hgroup {
+      padding-left: calc(8 / 16 * 1rem);
+      padding-right: calc(8 / 16 * 1rem);
+    }
 
 /*
  *   theme checkbox

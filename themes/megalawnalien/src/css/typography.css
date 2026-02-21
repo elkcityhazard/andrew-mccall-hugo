@@ -45,6 +45,7 @@ h6 {
     color: var(--heading-color-primary);
     font-family: var(--font-display);
     margin: var(--spacing-4) var(--spacing-0);
+    width: min(calc(75/ 2 * 1ch), 100%);
 
 }
 
@@ -295,4 +296,10 @@ td {
   --table-font-size: clamp(0.63rem, -1.1394rem + 11.3208vw, 0.75rem);
   font-family: Monaco, 'Courier New', sans-serif;
   font-size: var(--table-font-size,12px);
+}
+
+
+
+h1#siteHeader {
+  overflow-wrap: break-word;
 }

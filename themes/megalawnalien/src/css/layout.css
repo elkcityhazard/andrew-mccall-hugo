@@ -67,6 +67,11 @@ header {
     max-width: var(--width-100);
 }
 
+#content {
+  margin: auto;
+  width: min(calc(135 * 1ch),100%);
+}
+
 #content > div:has(iframe) {
     display: block;
     min-width: unset;
@@ -268,7 +273,20 @@ section[data-taxonomy="tags"] header {
     aside,
     footer,
     header {
-        max-width: var(--width-05-12);
+        margin: auto;
+        width: min(115ch, 100%);
     }
 }
 
+
+.landing {
+  &__header {
+    max-width: unset;
+        margin: auto;
+        width: min(115ch, 100%);
+        max-width: var(--width-10-12);
+    hgroup {
+      padding-inline: calc(8 / 16 * 1rem);
+    }
+  }
+}
