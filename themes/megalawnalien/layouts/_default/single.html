@@ -23,3 +23,10 @@
   {{ .Content }}
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 {{ end }}
+
+{{ define "sidebar" }}
+	<aside id="sidebar">
+    <h3>Further Reading</h3>
+    {{ partial "related.html" . }}
+  </aside>
+{{ end }}

@@ -3,11 +3,11 @@ title: 'Install Nerd Fonts on Arch Linux Manually'
 date: 2026-02-14
 author: Andrew M McCall
 description:  "Many applications depend on Nerd Fonts to display correctly. Learn how to manually
-install nerd fonts on Arch Linux using curl and wget." 
+install nerd fonts on Arch Linux using curl and unzip." 
 summary: "Quickly install Nerd Fonts on Arch Linux using nerdfonts.com, curl, and unzip.  No special
 packages needed. Manage Nerd Fonts with ease and bonus content on setting the font in Alacritty." 
 publishDate: '2026-02-14T20:51:44-05:00'
-updateDate:  '2026-02-14T20:51:44-05:00'
+updateDate:  '2026-02-20T20:51:44-05:00'
 images: ['/images/twitter-card.png']
 draft: false
 categories:
@@ -91,3 +91,9 @@ typographical fontface. Nerd Fonts have great community support and continue to 
 improvements as the project matures.  You can read all about Nerd Fonts at
 [nerdfonts.com](https://nerdfonts.com "Nerd Fonts website") or at
 [github.com](https://github.com/ryanoasis/nerd-fonts "Nerd Fonts on github.com")
+
+
+## Change Log
+
+- 2026-02-20 - the description of the article inaccurately referenced wget
+  to install Nerd Fonts.  This article uses curl.

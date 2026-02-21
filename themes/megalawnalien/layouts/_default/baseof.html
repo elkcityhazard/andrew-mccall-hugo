@@ -14,9 +14,18 @@
       {{ partial "header.html" . }}
     {{ end }}
   </header>
+  {{ if eq .Kind "page"  }}
+  <div class="wrapper">
+  {{ end }}
   <main id="content">
     {{ block "main" . }}{{ end }}
   </main>
+    {{ block "sidebar" . }}
+
+   {{ end }}
+  {{ if eq .Kind "page"  }}
+  <div class="wrapper">
+  {{ end }}
   <footer>
     {{ partial "footer.html" . }}
   </footer>

@@ -164,6 +164,21 @@ dl li {
     max-width: 75ch;
 }
 
+#sidebar {
+  a {
+    font-weight: 600;
+  }
+p {
+  &.related {
+    font-size: var(--font-bsize-base);
+    line-height: 1.2;
+    font-weight: normal;
+    margin-block-start: 0.25rem;
+  }
+}
+}
+
+
 pre {
     background: var(--off-white);
     color: var(--dark-black);

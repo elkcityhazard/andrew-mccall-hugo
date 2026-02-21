@@ -323,6 +323,20 @@ dl li {
     max-width: 75ch;
 }
 
+#sidebar a {
+    font-weight: 600;
+  }
+
+#sidebar p.related {
+    font-size: var(--font-bsize-base);
+    line-height: 1.2;
+    font-weight: normal;
+        -webkit-margin-before: 4px;
+                margin-block-start: 4px;
+        -webkit-margin-before: 0.25rem;
+                margin-block-start: 0.25rem;
+}
+
 pre {
     background: hsla(0, 0%, 93%, 1);
     color: hsla(210, 13%, 15%, 1);
@@ -508,6 +522,28 @@ header {
     min-width: unset;
     max-width:100%;
     width: 100%;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(60.4375rem, 100%), 1fr));
+  margin: auto;
+  gap: 16px;
+  gap: 1rem;
+  width: min(1500px,100%);
+  width: min(93.75rem,100%);
+}
+
+@media screen and (min-width: calc(968 / 16 * 1rem)) {
+
+    .wrapper {
+        grid-template-columns: 72.5% 27.5%;
+    }
+}
+
+.wrapper main,
+  .wrapper #sidebar {
+    max-width: unset;
 }
 
 main blockquote {

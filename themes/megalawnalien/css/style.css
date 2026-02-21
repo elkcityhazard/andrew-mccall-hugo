@@ -323,6 +323,11 @@ dl li {
     max-width: 75ch;
 }
 
+p.related {
+    font-size: 8px;
+    font-size: 0.5rem;
+}
+
 pre {
     background: hsla(0, 0%, 93%, 1);
     color: hsla(210, 13%, 15%, 1);
@@ -727,7 +732,6 @@ div[data-ui-toggle] {
     margin-right: 4px;
     margin-right: 0.25rem;
     width: auto;
-    width: min(40px, 100%) !important;
     max-width: unset;
     min-width: unset;
     width: min(100px, 100%);

@@ -1,0 +1,13 @@
+{{ with site.RegularPages.Related . | first 5 }}
+  <ul>
+    {{ range . }}
+    {{ $description := .Description}}
+    {{ $summary := .Summary }}
+      <li>
+        <a href="{{ .RelPermalink }}" title="{{$description}}">{{ .LinkTitle }}</a>
+        <p class="related">{{ $summary }}</p>
+        
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}
