@@ -731,6 +731,7 @@ section[data-taxonomy="tags"] header {
                     flex:  0 0 100%;
                     text-align: center;
                     margin-bottom: 0;
+                    text-align: left;
                 }
 
 .nav-bar__wrap nav ul li a {
@@ -784,7 +785,7 @@ section[data-taxonomy="tags"] header {
                 padding-bottom: 0;
             }
                 .nav-bar__wrap nav ul {
-                    width: 100%;
+                    width: min(calc(525 / 16 * 1rem), 100%);
                     display: flex;
                     flex-flow: row nowrap;
                     padding-top: 0;
@@ -793,7 +794,7 @@ section[data-taxonomy="tags"] header {
                     margin-bottom: 0;
                 }
                     .nav-bar__wrap nav ul li {
-                        flex: 1;
+                        flex: 1 1 auto;
                         margin-bottom: 0;
                     }
 }
@@ -817,10 +818,10 @@ section[data-taxonomy="tags"] header {
     .nav-bar__wrap {
       margin-left: auto;
       margin-right: auto;
-      max-width: min(calc(768 / 16 * 1rem),100%);
     }
       .nav-bar__wrap nav {
-      max-width: min(calc(768 * 0.5 / 16 * 1rem), 100%);
+      max-width: none;
+      max-width: initial;
       }
 
 }

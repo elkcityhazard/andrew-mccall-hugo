@@ -141,6 +141,7 @@ section[data-taxonomy="tags"] header {
                     flex:  0 0 100%;
                     text-align: center;
                     margin-block-end: 0;
+                    text-align: left;
                     a {
                         display: inline-block;
                         padding-inline: var(--spacing-2, 0.5rem);
@@ -186,13 +187,13 @@ section[data-taxonomy="tags"] header {
             nav {
                 padding-block: 0;
                 ul {
-                    width: 100%;
+                    width: min(calc(525 / 16 * 1rem), 100%);
                     display: flex;
                     flex-flow: row nowrap;
                     padding-block: 0;
                     margin-block: 0;
                     li {
-                        flex: 1;
+                        flex: 1 1 auto;
                         margin-block-end: 0;
                     }
                 }
@@ -218,9 +219,8 @@ section[data-taxonomy="tags"] header {
     }
     .nav-bar__wrap {
       margin-inline: auto;
-      max-width: min(calc(768 / 16 * 1rem),100%);
       nav {
-      max-width: min(calc(768 * 0.5 / 16 * 1rem), 100%);
+      max-width: unset;
       }
     }
 
