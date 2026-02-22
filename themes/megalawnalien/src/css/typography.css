@@ -231,9 +231,6 @@ code {
     padding: var(--spacing-1);
 }
 
-main blockquote p {
-    color: var(--dark-black);
-}
 
 main blockquote code {
     background: var(--white);
