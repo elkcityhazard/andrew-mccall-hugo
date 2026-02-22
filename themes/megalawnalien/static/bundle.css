@@ -342,6 +342,17 @@ a {
     transition: var(--base-transition);
 }
 
+a[aria-label*="jump to main content"] {
+        top: 0;
+        left: 0;
+        transform: translate3d(0,-100%,0);
+    }
+
+a[aria-label*="jump to main content"]:focus {
+        top: 0;
+        left: 0;
+      }
+
 a:hover,
 a:active {
     color: hsla(195, 25%, 45%, 1);

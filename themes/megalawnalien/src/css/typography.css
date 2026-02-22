@@ -112,6 +112,15 @@ a {
     -moz-transition: var(--base-transition);
     -webkit-transition: var(--base-transition);
     transition: var(--base-transition);
+    &[aria-label*="jump to main content"] {
+        top: 0;
+        left: 0;
+        transform: translate3d(0,-100%,0);
+      &:focus {
+        top: 0;
+        left: 0;
+      }
+    }
 }
 
 a:hover,
@@ -119,6 +128,7 @@ a:active {
     color: var(--aqua-green);
 
 }
+
 
 body[data-theme="light"] a {
     color: var(--dark-black);
