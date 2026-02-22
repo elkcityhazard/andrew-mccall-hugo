@@ -45,7 +45,7 @@ h6 {
     color: var(--heading-color-primary);
     font-family: var(--font-display);
     margin: var(--spacing-4) var(--spacing-0);
-    width: min(calc(75/ 2 * 1ch), 100%);
+    width: min(calc(767 / 16 * 1rem), 100%);
 
 }
 
@@ -163,7 +163,7 @@ dl li {
     font-family: var(--font-sans);
     line-height: var(--line-height-xl);
     margin-bottom: var(--spacing-5);
-    width:min(75ch,100%);
+    width:min(calc(767  / 16 * 1rem),100%);
 }
 
 #sidebar {
@@ -192,7 +192,7 @@ pre {
 pre,
 code,
 blockquote {
-  width: min(75ch,100%);
+  width: min(calc(767  / 16 * 1rem),100%);
 }
 
 

@@ -259,7 +259,7 @@ h6 {
     font-family: var(--font-display);
     margin: 1rem 0rem;
     margin: var(--spacing-4) var(--spacing-0);
-    width: min(calc(75/ 2 * 1ch), 100%);
+    width: min(calc(767 / 16 * 1rem), 100%);
 
 }
 
@@ -397,7 +397,7 @@ dl li {
     line-height: var(--line-height-xl);
     margin-bottom: 1.25rem;
     margin-bottom: var(--spacing-5);
-    width:min(75ch,100%);
+    width:min(calc(767  / 16 * 1rem),100%);
 }
 
 #sidebar a {
@@ -426,7 +426,7 @@ pre {
 pre,
 code,
 blockquote {
-  width: min(75ch,100%);
+  width: min(calc(767  / 16 * 1rem),100%);
 }
 
 code {
@@ -900,7 +900,7 @@ section[data-taxonomy="tags"] header {
     footer,
     header {
         margin: auto;
-        width: min(110ch, 100%);
+        width: min(calc(1500 / 16 * 1rem), 100%);
     }
 }
 

@@ -295,7 +295,7 @@ section[data-taxonomy="tags"] header {
     footer,
     header {
         margin: auto;
-        width: min(110ch, 100%);
+        width: min(calc(1500 / 16 * 1rem), 100%);
     }
 }
 
