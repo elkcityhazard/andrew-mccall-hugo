@@ -1,0 +1,36 @@
+.nav-bar {
+  &__wrap {
+    margin-inline-start: 0;
+    margin-inline-end: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content:flex-start;
+    @media screen and (min-width: calc(499 / 16 * 1rem)) {
+    align-items: center;
+    }
+    nav {
+      ul {
+        display: flex;
+    @media screen and (min-width: calc(499 / 16 * 1rem)) {
+      flex-flow: row;
+      justify-content: flex-start;
+      li {
+        flex: 0 0 auto;
+      }
+    }
+        
+        li {
+          margin-block-end: 0;
+          width: auto;
+          a {
+            display: block;
+            padding: 0.25rem 0;
+            @media screen and (min-width: calc(499 / 16 * 1rem)) {
+              padding: 0.25rem 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

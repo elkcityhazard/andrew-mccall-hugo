@@ -26,11 +26,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: var(--spacing-auto);
-    margin-right: var(--spacing-1);
     width: auto;
     max-width: unset;
     min-width: unset;
+    padding-block: 0.25rem;
     width: min(calc(100 / 16 * 1rem), 100%);
  }
 
