@@ -5,7 +5,7 @@ author: Andrew M McCall
 description: A straight to the point guide on configuring swayidle to lock and suspend your system when using Niri Compositor and Noctalia Quickshell Config on Arch Linux
 summary:  Noctalia does not come with an idle listener by default so you have to pick your own.  This is my guide for configuring Swayidle to work with Niri and Noctalia Quickshell so your system locks and suspends. 
 publishDate: '2026-01-24T10:16:49-05:00'
-updateDate:  '2026-01-24T10:16:49-05:00'
+updateDate:  '2026-02-26T10:16:49-05:00'
 images: ['/images/twitter-card.png']
 draft: false
 categories:
@@ -20,7 +20,7 @@ tags:
 
 ## Configure Hibernation On Arch Linux
 
-[This guide can help you configure hibernation]((https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate "Arch official hibernation documentation")
+[This guide can help you configure hibernation](https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate "Arch official hibernation documentation")
 
 1. You need to have swap enabled and ideally be the same size as your installed system memory
 2. edit `/etc/mkinitcpio.conf` and add resume to your `HOOKS` dependencies: `HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont block filesystems resume fsck)`
@@ -91,3 +91,6 @@ If you have any issues, feel free to find me at @elkcityhazard on indieweb.socia
 
 Overall, I find Noctalia to be a little snappier than Dank Material Shell on my system.  A minor pain is setting up system idle for locking and suspending but following this guide, reading the documentation carefully, and taking your time will enable you to have success in automatic locking and suspending.  
 
+### Change Log
+
+- 2025-02-26: Fixed an broken link to the Arch Wiki regarding hibernation configuration. 
