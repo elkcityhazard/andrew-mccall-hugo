@@ -61,7 +61,7 @@ figure {
 }
 
 :where(ul, ol, dl) {
-    list-style: none;
+    list-style-position:inside;
     padding-inline-start: var(--spacing-0);
 }
 

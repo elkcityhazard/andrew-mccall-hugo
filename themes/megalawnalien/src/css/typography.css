@@ -1,39 +1,32 @@
 :root {
 
-    --font-display: "Italiana Regular", serif;
-    --font-sans: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
-    --font-serif: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
-    --font-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  --font-display: "Italiana Regular", serif;
+  --font-sans: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+  --font-serif: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+  --font-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 
-    --font-size-1: 3.5rem;
-    --font-size-2: 3rem;
-    --font-size-3: 2.5rem;
-    --font-size-4: 2rem;
-    --font-size-5: 1.5rem;
-    --font-size-6: 1.25rem;
-    --font-size-base: 1rem;
-    --font-size-md: 0.85rem;
-    --font-size-small: 0.667rem;
-    --font-size-xsmall: 0.5rem;
+  --font-size-1: 3.5rem;
+  --font-size-2: 3rem;
+  --font-size-3: 2.5rem;
+  --font-size-4: 2rem;
+  --font-size-5: 1.5rem;
+  --font-size-6: 1.25rem;
+  --font-size-base: 1rem;
+  --font-size-md: 0.85rem;
+  --font-size-small: 0.667rem;
+  --font-size-xsmall: 0.5rem;
 
-    --letter-spacing-1: 1px;
-    --letter-spacing-2: 1.33px;
+  --letter-spacing-1: 1px;
+  --letter-spacing-2: 1.33px;
 
-    --heading-color-primary: var(--off-white);
-    --heading-color-secondary: var(--light-black);
+  --heading-color-primary: var(--off-white);
+  --heading-color-secondary: var(--light-black);
 
-    --line-height-base: 1.25;
-    --line-height-lg: 1.5;
-    --line-height-xl: 1.67;
+  --line-height-base: 1.25;
+  --line-height-lg: 1.5;
+  --line-height-xl: 1.67;
+  --base-transition: all 250ms ease;
 
-    --base-transition: all 250ms ease;
-
-}
-
-@font-face {
-    font-family: "Italiana Regular";
-    src: url("./fonts/italiana-regular-webfont.woff") format('woff');
-    src: url("./fonts/italiana-regular-webfont.ttf") format("truetype");
 }
 
 h1,
@@ -42,10 +35,10 @@ h3,
 h4,
 h5,
 h6 {
-    color: var(--heading-color-primary);
-    font-family: var(--font-display);
-    margin: var(--spacing-4) var(--spacing-0);
-    width: min(calc(767 / 16 * 1rem), 100%);
+  color: var(--heading-color-primary);
+  font-family: var(--font-display);
+  margin: var(--spacing-4) var(--spacing-0);
+  width: min(calc(767 / 16 * 1rem), 100%);
 
 }
 
@@ -55,28 +48,28 @@ body[data-theme="light"] h3,
 body[data-theme="light"] h4,
 body[data-theme="light"] h5,
 body[data-theme="light"] h6 {
-    color: var(--heading-color-secondary);
+  color: var(--heading-color-secondary);
 }
 
 
 h1 {
 
-    padding: var(--spacing-0);
-    font-size: clamp(var(--font-size-4), 1.3641rem + 4.0683vw, var(--font-size-1));
+  padding: var(--spacing-0);
+  font-size: clamp(var(--font-size-4), 1.3641rem + 4.0683vw, var(--font-size-1));
 }
 
 h2 {
-    font-size: var(--font-size-2);
-    padding: var(--spacing-0);
+  font-size: var(--font-size-2);
+  padding: var(--spacing-0);
 }
 
 h3 {
-    font-size: var(--font-size-3);
-    padding: var(--spacing-0);
+  font-size: var(--font-size-3);
+  padding: var(--spacing-0);
 }
 
 h3[data-term] {
-    font-size: var(--font-size-3);
+  font-size: var(--font-size-3);
 }
 h1 {
   padding: var(--spacing-0);
@@ -96,70 +89,70 @@ h3[data-term] {
 
 
 a[href="#content"] {
-    background: var(--off-white);
-    /* Background color */
-    color: var(--dark-black);
-    /* Text color */
-    font-weight: 700;
-    /* Bold text */
-    left: 50%;
-    /* Center the link */
-    padding: 4px;
-    /* Add some padding */
-    position: absolute;
-    /* Position the link */
-    transform: translateY(-100%);
-    /* Hide the link off-screen */
-    transition: transform 0.3s;
-    /* Smooth transition */
+  background: var(--off-white);
+  /* Background color */
+  color: var(--dark-black);
+  /* Text color */
+  font-weight: 700;
+  /* Bold text */
+  left: 50%;
+  /* Center the link */
+  padding: 4px;
+  /* Add some padding */
+  position: absolute;
+  /* Position the link */
+  transform: translateY(-100%);
+  /* Hide the link off-screen */
+  transition: transform 0.3s;
+  /* Smooth transition */
 }
 
 a[href="#content"]:focus {
-    transform: translateY(0%);
-    /* Bring the link into view when focused */
+  transform: translateY(0%);
+  /* Bring the link into view when focused */
 }
 
 a {
-    color: var(--off-white);
-    font-family: var(--font-sans);
-    font-weight: 500;
-    max-width: var(--width-100);
-    text-decoration: solid underline;
-    -moz-transition: var(--base-transition);
-    -webkit-transition: var(--base-transition);
-    transition: var(--base-transition);
-    &[aria-label*="jump to main content"] {
-        top: 0;
-        left: 0;
-        transform: translate3d(0,-100%,0);
-      &:focus {
-        top: 0;
-        left: 0;
-      }
+  color: var(--off-white);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  max-width: var(--width-100);
+  text-decoration: solid underline;
+  -moz-transition: var(--base-transition);
+  -webkit-transition: var(--base-transition);
+  transition: var(--base-transition);
+  &[aria-label*="jump to main content"] {
+    top: 0;
+    left: 0;
+    transform: translate3d(0,-100%,0);
+    &:focus {
+      top: 0;
+      left: 0;
     }
+  }
 }
 
 a:hover,
 a:active {
-    color: var(--aqua-green);
+  color: var(--aqua-green);
 
 }
 
 
 body[data-theme="light"] a {
-    color: var(--dark-black);
+  color: var(--dark-black);
 }
 
 body[data-theme="light"] a:active,
 body[data-theme="light"] a:hover,
 body[data-theme="light"] a:focus {
-    color: var(--aqua-green);
+  color: var(--aqua-green);
 }
 
 :is(h1, h2, h3)>a {
-    display: inline-block;
-    font-family: var(--font-display);
-    margin-bottom: var(--spacing-2);
+  display: inline-block;
+  font-family: var(--font-display);
+  margin-bottom: var(--spacing-2);
 }
 
 p,
@@ -177,7 +170,7 @@ main,
 aside,
 footer,
 header {
-    font-size: clamp(1rem, 0.913rem + 0.557vw, 1.25rem);
+  font-size: clamp(1rem, 0.913rem + 0.557vw, 1.25rem);
 }
 
 
@@ -186,111 +179,105 @@ p,
 ul li,
 ol li,
 dl li {
-    font-family: var(--font-sans);
-    line-height: var(--line-height-xl);
-    margin-bottom: var(--spacing-5);
-    width:min(calc(767  / 16 * 1rem),100%);
+  font-family: var(--font-sans);
+  line-height: var(--line-height-xl);
+  margin-bottom: var(--spacing-5);
+  width:min(calc(767  / 16 * 1rem),100%);
 }
 
 #sidebar {
   a {
     font-weight: 600;
   }
-p {
-  &.related {
-    font-size: var(--font-bsize-base);
-    line-height: 1.2;
-    font-weight: normal;
-    margin-block-start: 0.25rem;
+  p {
+    &.related {
+      font-size: var(--font-bsize-base);
+      line-height: 1.2;
+      font-weight: normal;
+      margin-block-start: 0.25rem;
+    }
   }
-}
 }
 
 
 pre {
-    background: var(--off-white);
-    color: var(--dark-black);
-    font-family: var(--font-sans);
-    padding: var(--spacing-4);
-    overflow-y: auto;
+  background: var(--off-white);
+  color: var(--dark-black);
+  font-family: var(--font-sans);
+  padding: var(--spacing-4);
+  overflow-y: auto;
 }
 
-pre,
-code,
-blockquote {
-  display: block;
-  width: min(calc(767  / 16 * 1rem),100%);
-}
 
 
 code {
-    background: var(--off-white);
-    color: var(--dark-black);
-    line-height: var(--line-height-base);
-    font-family: var(--font-mono);
-    padding: var(--spacing-1);
+  background: var(--off-white);
+  color: var(--dark-black);
+  line-height: var(--line-height-base);
+  font-family: var(--font-mono);
+  padding: var(--spacing-1);
 }
 
 
 main blockquote code {
-    background: var(--white);
+  background: var(--white);
 }
 
 body {
+  code,
+  pre{
+    background: var(--offwhite, #e6e6e6);
+    padding-inline: var(--spacing-sm, 0.25rem);
+    padding-block: var(--spacing-sm, 0.25rem);
+  }
+  &[data-theme="dark"] {
     code,
-    pre{
-        background: var(--offwhite, #e6e6e6);
-        padding-inline: var(--spacing-sm, 0.25rem);
-        padding-block: var(--spacing-sm, 0.25rem);
+    pre {
+      background: var(--off-white, #e6e6e6);
+      color: var(--black, #000);
     }
-    &[data-theme="dark"] {
-        code,
-        pre {
-        background: var(--off-white, #e6e6e6);
-        color: var(--black, #000);
-    }
-    }
+  }
 }
 
 body[data-theme="light"] {
-    code {
-    }
+  code {
+  }
 }
 
 .single__meta {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-flow: column nowrap;
-    gap: 0;
-    list-style: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-flow: column nowrap;
+  gap: 0;
+  list-style: none;
 }
 
 .single__meta li {
-        font-size: var(--font-size-medium);
-        line-height: initial;
-        margin-block-end: var(--spacing-1);
-        margin-bottom: var(--spacing-1);
-    }
+  font-size: var(--font-size-medium);
+  line-height: initial;
+  margin-block-end: var(--spacing-1);
+  margin-bottom: var(--spacing-1);
+}
 svg,
 svg path {
-    height: var(--font-size-4, 0.85rem);
-    width: var(--font-size-4, 0.85rem);
-    transition: all 350ms;
+  height: var(--font-size-4, 0.85rem);
+  width: var(--font-size-4, 0.85rem);
+  transition: all 350ms;
 }
 a {
-    transition: all 350ms;
-    &:hover,
-    &:active {
-        svg,
-        path {
-           color: var(--aqua-green, green);
+  transition: all 350ms;
+  &:hover,
+  &:active {
+    svg,
+    path {
+      color: var(--aqua-green, green);
     }
     line {
-        transition : all 350ms;
-        color: var(--aqua-green, green);
+      transition : all 350ms;
+      color: var(--aqua-green, green);
     }
-}
+  }
 }
 
 table {
@@ -305,7 +292,7 @@ table {
   width: min(var(--table-width),100%);
   thead,
   tbody {
-  --table-font-size: clamp(0.63rem, -1.1394rem + 11.3208vw, 0.75rem);
+    --table-font-size: clamp(0.63rem, -1.1394rem + 11.3208vw, 0.75rem);
     font-size: var(--table-font-size);
   }
 }

@@ -1,73 +1,72 @@
 ul li ul li {
-    margin-inline-start: var(--spacing-4);
+  margin-inline-start: var(--spacing-4);
 }
 
 ul[data-taxonomy="tags"] {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: flex-start;
-    gap: var(--spacing-1);
-    font-size: var(--font-size-md);
-    letter-spacing: var(--letter-spacing-2);
-    list-style: none;
-    margin: unset;
-    text-transform: uppercase;
-    width: var(--width-100);
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--spacing-1);
+  font-size: var(--font-size-md);
+  letter-spacing: var(--letter-spacing-2);
+  list-style: none;
+  margin: unset;
+  text-transform: uppercase;
+  width: var(--width-100);
 }
 
 ul[data-taxonomy="tags"] li {
-    margin-bottom: var(--spacing-0);
-    padding: var(--spacing-1);
-    width: fit-content;
+  margin-bottom: var(--spacing-0);
+  padding: var(--spacing-1);
+  width: fit-content;
 }
 
 main ul,
 main ol,
 main dl {
-    display: block;
-    padding-left: 0;
-    list-style: none;
-    margin: var(--spacing-0) var(--spacing-auto);
+  display: block;
+  padding-left: 0;
+  margin: var(--spacing-0) var(--spacing-auto);
 }
 
 main ul li,
 main ol li,
 main dl li {
-    /* margin: 0 var(--spacing-auto) var(--spacing-1); */
-    padding: var(--spacing-0) 0;
+  /* margin: 0 var(--spacing-auto) var(--spacing-1); */
+  padding: var(--spacing-0) 0;
 }
 
 
 
 
 /*
-*   dark theme tag links
-*/
-
-body[data-theme="dark"] ul[data-taxonomy="tags"] li a {
-    color: var(--off-white);
-}
-
-body[data-theme="dark"] ul[data-taxonomy="tags"] li a:hover,
-body[data-theme="dark"] ul[data-taxonomy="tags"] li a:active,
-body[data-theme="dark"] ul[data-taxonomy="tags"] li a:focus {
-    color: var(--aqua-green);
-}
-
-
-
-/*
- * pagination
+ *   dark theme tag links
  */
 
- section[data-section="pagination"] {
+  body[data-theme="dark"] ul[data-taxonomy="tags"] li a {
+    color: var(--off-white);
+  }
+
+  body[data-theme="dark"] ul[data-taxonomy="tags"] li a:hover,
+  body[data-theme="dark"] ul[data-taxonomy="tags"] li a:active,
+  body[data-theme="dark"] ul[data-taxonomy="tags"] li a:focus {
+    color: var(--aqua-green);
+  }
+
+
+
+  /*
+   * pagination
+   */
+
+  section[data-section="pagination"] {
     width: var(--width-100);
     max-width: var(--width-100);
     text-align: center;
- }
+  }
 
-section[data-section="pagination"] ul.pagination {
+  section[data-section="pagination"] ul.pagination {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -106,17 +105,17 @@ section[data-section="pagination"] ul.pagination {
         color: #fff;
       }
     }
-}
+  }
 
-body[data-theme="dark"] {
-  section[data-section="pagination"] {
-    ul {
-      li {
-      &.active a {
-        background: #fff; 
-        color: #000;
-      }
+  body[data-theme="dark"] {
+    section[data-section="pagination"] {
+      ul {
+        li {
+          &.active a {
+            background: #fff;
+            color: #000;
+          }
+        }
       }
     }
   }
-}
