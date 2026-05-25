@@ -582,7 +582,8 @@ header, main, section, article, aside, footer, nav, div, figure, blockquote, add
 .landing__header {
   width: 100%;
   max-width: 100vw;
-  margin: 0 auto;
+  margin: 0;
+  margin: initial;
 }
 nav ul {
   display: flex;
