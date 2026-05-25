@@ -446,8 +446,15 @@ pre {
   font-family: var(--font-sans);
   padding: 1rem;
   padding: var(--spacing-4);
-  overflow-y: auto;
+  overflow-y: auto; 
 }
+
+pre[tabindex="0"] {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: min(calc(767 / 16 * 1rem),100%);
+  }
 
 code {
   background: hsla(0, 0%, 93%, 1);

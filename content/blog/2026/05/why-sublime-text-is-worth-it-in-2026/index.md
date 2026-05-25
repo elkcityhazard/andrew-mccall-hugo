@@ -86,7 +86,7 @@ Many complain about the __License Upgrade Required__ message.  I have used an ol
 
 ## Sublime Text Is A Lightweight Text Editor That Gets Out Of The Way
 
-Certainly it is not a product for everyone nor does it try to do everything.  Why did I refresh my Sublime Text License in 2026?  Simple: I want a lightweight text editor that gets out of my way, is extensible if needed, and just works.  We've all been there before:  your Vim config is just a little bit janky, things are working great.  Especially when you are a Neovim user, you can almost reliably expect an API to be broken every 3 months which requires a config refactor.  Sublime Text can do everything and well.  I comfortably code C, Go, Javascript, Typescript, Lua, PL/SQL, SQL, PHP, HTML, and CSS in Sublime Text.  It works when I don't feel like putting in the work.  
+Certainly it is not a product for everyone nor does it try to do everything.  Why did I refresh my Sublime Text License in 2026?  Simple: I want a lightweight text editor that gets out of my way, is extensible if needed, and just works.  We've all been there before:  your Vim config is just a little bit janky, things are working great.  Especially when you are a Neovim user, you can almost reliably expect an API to be broken every 3 months which requires a config refactor.  Sublime Text can do everything and well.  I comfortably code C, Go, Javascript, Typescript, Lua, PL/SQL, SQL, PHP, HTML, and CSS in Sublime Text.  It works when I don't feel like putting in theggg work.  
 
 
 ## Conclusion
