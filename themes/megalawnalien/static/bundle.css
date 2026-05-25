@@ -446,14 +446,12 @@ pre {
   font-family: var(--font-sans);
   padding: 1rem;
   padding: var(--spacing-4);
-  overflow-y: auto; 
+  overflow-y: auto;
 }
 
 pre[tabindex="0"] {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: min(calc(767 / 16 * 1rem),100%);
+    display: block;
+    width: min(calc(767 / 16 * 1rem),100%);
   }
 
 code {
@@ -646,9 +644,10 @@ header, main, section, article, aside, footer, nav, div, figure, blockquote, add
 }
 
 #content {
+  margin: 0;
+  margin: initial;
   width: 100%;
   max-width: calc(100vw - 24px);
-  margin: 0 auto;
   padding: 0.30rem;
 }
 
@@ -673,7 +672,7 @@ nav ul li {
 
 @media (min-width: 968px) {
   .wrapper {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3,minmax(min(calc(33%),100%),1fr));
     grid-template-areas:
     "header header header"
     "content content aside"
