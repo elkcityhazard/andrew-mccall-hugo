@@ -63,7 +63,7 @@ If one truly wants "open source" Visual Studio Code, they must build it themselv
 
 Additionally, newer text editors such as Zed receive funding through the normal capitalistic channels such as Series B Funding: [Zed Industries Raises $32 Million in Series B Funding to Enhance AI-Driven Code Collaboration](https://eprnews.com/zed-industries-raises-32-million-in-series-b-funding-686549/ "Zed Industries Raises $32 Million in Series B Funding to Enhance AI-Driven Code Collaboration").  
 
-Although currently open source, because the goal of series B funding is to make profits for the investors, the trajectory of the product will likely suffer as time goes on.  This is because the value of the product is re-oriented to be more value for stakeholders while becoming less valuable for end users.  
+Although currently open source, because the goal of series B funding is to make profits for the investors, the trajectory of the product will likely suffer as time goes on.  This is because the value of the product is re-oriented to be more valuable for stakeholders while becoming less valuable for end users.  
 
 ## Low Update Cadence Is A Good Thing
 
@@ -100,4 +100,4 @@ Despite using Vim 95% of the time, it was a no brainer to renew my Sublime Text 
 - [Sublime Text: All about the editor preferred by programmers and writers](https://gomakethings.com/a-sublime-coding-experience/ "Sublime Text: All about the editor preferred by programmers and writers")
 - [Sublime Text in 2026?](https://bobrockefeller.com/blog/2026-01-06-sublime-text-in-2026/  "Sublime Text in 2026?")
 - [VS Code is Bloatware: Why I Returned to Sublime Text in 2026 (The 16GB solution)](https://devtechinsights.com/vscode-vs-sublimetext-2026-benchmark/ "VS Code is Bloatware: Why I Returned to Sublime Text in 2026 (The 16GB solution)")
--[Reddit: Unpopular personal opinion: Sublime Text is still (one of) the most well-made popular editor (Sic)](https://www.reddit.com/r/webdev/comments/12ln8gj/unpopular_personal_opinion_sublime_text_is_still/ "A random Sublime Text Reddit thread")
+- [Reddit: Unpopular personal opinion: Sublime Text is still (one of) the most well-made popular editor (Sic)](https://www.reddit.com/r/webdev/comments/12ln8gj/unpopular_personal_opinion_sublime_text_is_still/ "A random Sublime Text Reddit thread")
