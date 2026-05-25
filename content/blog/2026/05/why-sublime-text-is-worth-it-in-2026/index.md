@@ -77,7 +77,8 @@ If I want to add features, I certainly can. But it feels good to start from less
 
 ## Sublime Text Vintage Mode Is Great For a Vim User Like Myself
 
-Vim does eventually break your brain. As someone who spends time on a server editing config and source files, Sublime Text vintage mode is a great resource. This lets me use vim bindings in Sublime text. Although I haven't determined if it can read your vim config, it is easy enough to add keybinds to match your vim flow in Sublime text. `jk <Esc>` anyone? It works great and gives me a more comfortable experience in Sublime Text.
+Vim does eventually break your brain. As someone who spends time on a server editing config and source files, Sublime Text vintage mode is a great resource. This lets me use vim bindings in Sublime text. Although I haven't determined if it can read your vim config, it is easy enough to add keybinds to match your vim flow in Sublime text. `jk <Esc>` anyone? It works---
+great and gives me a more comfortable experience in Sublime Text.
 
 ## You Don't Have To Renew Your License If You Don't Want To
 
@@ -99,3 +100,4 @@ Despite using Vim 95% of the time, it was a no brainer to renew my Sublime Text 
 - [Sublime Text in 2026?](https://bobrockefeller.com/blog/2026-01-06-sublime-text-in-2026/ "Sublime Text in 2026?")
 - [VS Code is Bloatware: Why I Returned to Sublime Text in 2026 (The 16GB solution)](https://devtechinsights.com/vscode-vs-sublimetext-2026-benchmark/ "VS Code is Bloatware: Why I Returned to Sublime Text in 2026 (The 16GB solution)")
 - [Reddit: Unpopular personal opinion: Sublime Text is still (one of) the most well-made popular editor (Sic)](https://www.reddit.com/r/webdev/comments/12ln8gj/unpopular_personal_opinion_sublime_text_is_still/ "A random Sublime Text Reddit thread")
+- [Still Using Sublime Text](https://kpwags.com/posts/2026/still-using-sublime-text/ "Still Using Sublime Text")
