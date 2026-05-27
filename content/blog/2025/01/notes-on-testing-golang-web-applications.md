@@ -1,12 +1,12 @@
 ---
-title: 'Notes On Testing Golang Applications'
+title: "Notes On Testing Golang Applications"
 date: 2025-01-04
 author: Andrew M McCall
-description: Notes On Golang Testing
-summary:  
-publishDate: '2025-01-04T10:00:10-05:00'
-updateDate:  '2025-01-04T10:00:10-05:00'
-images: ['/images/twitter-card.png']
+description: A collection of personal notes to remember certain patterns for Golang Testing
+summary: My personal collection of Go testing notes.  Some of these may be helpful if you find yourself in similar situations writing web applications.
+publishDate: "2025-01-04T10:00:10-05:00"
+updateDate: "2026-05-26T10:00:10-05:00"
+images: ["/images/twitter-card.png"]
 draft: false
 categories:
   - Web Development
@@ -14,14 +14,16 @@ tags:
   - TDD
   - Testing
   - Go
-  - Golang 
+  - Golang
 ---
+
+Go comes with a full testing framework batteries included. Here are some of my personal notes for writing test. I hope it can help anyone who might need it.
 
 ## Setup Main
 
-`setup_test.go` is where you do any app setup for your test.  This runs
+`setup_test.go` is where you do any app setup for your test. This runs
 before the rest of the tests and can help you mock things that need to be
-mocked.  When you build your application, test files are ignored.   It is a
+mocked. When you build your application, test files are ignored. It is a
 safe space to declare variables, override variables, etc. Each package can
 have a TestMain func in the setup_test.go file.
 
@@ -59,14 +61,10 @@ func TestMain(m *testing.M) {
 
 ```
 
-
-
-## Adding Context And Session To http.Request  
-
+## Adding Context And Session To http.Request
 
 Create a couple of helper functions to create dummy session data and add it
 to the request:
-
 
 ```
 // getCtx creates a mock id in context
@@ -98,7 +96,7 @@ req = addContextAndSessionToRequest(req, yourMockConfig)
 ```
 
 `yourMockConfig` should already have session data initialized on a struct
-field such as `app.SessionData = yourSessionDataInitFunc()`.  This would be
+field such as `app.SessionData = yourSessionDataInitFunc()`. This would be
 populated in the `setup_test.go` file.
 
 ## Testing the csrfToken Middleware that adds csrf_token to each request
@@ -134,10 +132,11 @@ func Test_csrfToken(t *testing.T) {
 5. The test is conducted inside the mockHandler
 
 ## Testing Handlers that rely on justina/nosurf package that has an
+
 exemptFunc
 
 In `setup_test.go` in the `handlers` package I recreated the csrfToken
-middleware.  
+middleware.
 
 ```
 func csrfToken(next http.Handler) http.Handler {
@@ -157,7 +156,6 @@ func csrfToken(next http.Handler) http.Handler {
 }
 ```
 
-
 I created another bit of middleware to mock api calls that pass the
 `csrf_token` via a request header.
 
@@ -172,9 +170,9 @@ func AddCSRFTokenHeader(h http.Handler) http.Handler {
 ```
 
 To generate a slug, I created an API endpoint that dispatches everytime the
-headline field updates.  
+headline field updates.
 
-To test this, I needed to create a new `httptest.NewServer()`.  
+To test this, I needed to create a new `httptest.NewServer()`.
 
 ```
 func Test_HandleGenerateSlug(t *testing.T) {
@@ -215,9 +213,9 @@ func Test_HandleGenerateSlug(t *testing.T) {
 }
 ```
 
-1. Created the test server, with a dummy handler.  This dummy handler gets
-   wrapped in the `csrfToken` and `AddCSRFTokenHeader` middleware.  This is
-   so we can get access to the token in the request. 
+1. Created the test server, with a dummy handler. This dummy handler gets
+   wrapped in the `csrfToken` and `AddCSRFTokenHeader` middleware. This is
+   so we can get access to the token in the request.
 2. Since the server is started, and the handler we want to test
    (`Repo.HandleGenerateSlug`) is wrapped in the server context, we now
    have access to the `csrf_token`.
@@ -228,13 +226,11 @@ func Test_HandleGenerateSlug(t *testing.T) {
 5. Then I am creating a dummy payload to send in my request in the server.
    We do this, because in the actual functionality, we are using Javascript
    to send an asynchronous post request from the client each time the Post
-   Title field changes.  
-6. Next, we create a new request.  We use ts.URL to pass in the test url
-   from the test server.  
+   Title field changes.
+6. Next, we create a new request. We use ts.URL to pass in the test url
+   from the test server.
 7. Finally, we execute the request using the client, getting the response
-   and an error.  
+   and an error.
 8. In this case, we are testing that the Handler responds with the
    appropriate codes, so we just test again the response.StatusCode and
    what would be expected.
-
-
