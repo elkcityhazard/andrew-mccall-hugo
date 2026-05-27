@@ -2,24 +2,25 @@
 title: "A Complete SEO Checklist For Local Small Business Websites [Free SEO Audit Template]"
 author: Andrew M McCall
 description: "Utilize my free SEO audit template to start doing your own small business manual seo audits."
+summary: An overview of some methods to do SEO on the cheap and a link to my free SEO audit Google sheet.
 date: 2022-10-27
 updated: 2022-10-27T00:00:00
 image: "/images/blog/2022/small-busines-seo-audit.jpeg"
 images:
-- "/images/blog/2022/small-busines-seo-audit.jpeg"
+  - "/images/blog/2022/small-busines-seo-audit.jpeg"
 categories:
-- Search Engine Optimization
+  - Search Engine Optimization
 tags:
-- SEO
-- SEO Traverse City
-- Small Business SEO
-- Local SEO
-- Local Citations
-- Google Business Profile Optimization
+  - SEO
+  - SEO Traverse City
+  - Small Business SEO
+  - Local SEO
+  - Local Citations
+  - Google Business Profile Optimization
 draft: false
 ---
 
-Demystify Search Engine Optimization by using my free SEO Checklist for Local Small Business Websites.  
+Demystify Search Engine Optimization by using my free SEO Checklist for Local Small Business Websites.
 
 ## SEO CHECKLIST FOR LOCAL SMALL BUSINESS WEBSITES
 
@@ -40,32 +41,20 @@ A [search engine optimization audit](https://www.searchenginejournal.com/seo-aud
 It can help achieve a few goals:
 
 1.  First, it helps you get a sense of where your site currently is on its SEO journey.
-    
 2.  SEO audits sheds like on your current content and publishing strategy.
-    
 3.  SEO audits can help find glaring technical issues with your site
-    
 4.  You become intimately familiar with your website
-    
 5.  Can give you a great depth of information about your content, what needs to be rewritten, and what needs to be reworked, and where you need to put effort into creating content around.
-    
 
 Some of the topics that a manual search engine optimization audit include:
 
 1.  [Core Web Vitals](https://web.dev/vitals-tools/ "Google's Core Web Vitals Tools") are a set of measurable metrics that impact your websites user experience. This includes user input responsiveness, website load performance, and general layout stability.
-    
 2.  [Safe Browsing](https://seositecheckup.com/tools/safe-browsing-test "safe browsing checker") audit is making sure your website does not have active malware installed or phishing campaigns lurking on it.
-    
 3.  [Responsive Web Design](https://search.google.com/test/mobile-friendly "Google's Mobile Friendly Test") is checking websites need to have a mobile-first approach and be able to respond to viewport size changes fluidly.
-    
 4.  [On-Page SEO](https://backlinko.com/on-page-seo "Backlink O's Guide To On-Page SEO") is anything you optimize on your website pages that relates to your website’s SEO performance. This includes URL structure, internal linking, title tags, page and content structure, as well as other website and page related items.
-    
 5.  [Off-Page SEO](https://backlinko.com/off-page-seo-guide "Backlinko's Guide To Off-Page SEO") is anything you optimize for your SEO campaign that is not a part of your websites pages. This includes things like local citations, backlink outreach, Google Business Profile.
-    
 6.  [Keywords](https://databox.com/ideas-for-improving-seo-with-google-search-console "Google Search Console") and [Content](https://www.screamingfrog.co.uk/seo-spider/pricing/ "Screaming Frog SEO Spider"): This includes measuring your contents performance and researching new topics and planning your SEO content strategy. Also taking a look at thin content and the types of content you currenty have.
-    
 7.  [Local Search Optimization](https://www.searchenginejournal.com/local-seo/ "Definitive Guide To SEO") is the process of optimizing a website for the purpose of being found by local searches. This can be done through a variety of methods, such as optimizing the website for specific keywords, creating local listings, and building citations.
-    
 
 Now that we know what goes into an audit, let’s start creating the checklist so you can easily do your own manual search engine audit on your own website.
 
@@ -94,8 +83,6 @@ First, let's see a broad overview of what goes into an SEO checklist for local s
 As you can see, the founations of the basic seo checklist are broken into managable chunks. Each step has child items that make the checklist comprehensive. The goal with this small business website checklist is to not overwhelm you. In fact, I recommend starting small and only working on sections one at a time to get used to the idea of manually auditing your website.
 
 Next, we need to start breaking down our checklist into the managable chunks.
-
-
 
 ## Domain Name: Does A Domain Name Help WIth SEO?
 
@@ -165,7 +152,7 @@ It is recommended that you put your primary keyword as early as possible in your
 
 8. Structured Markup is a data-schema format that search engines use to better understand your page content, and in turn better display your content in the search engine results page. From Google:
 
->Google Search works hard to understand the content of a page. You can help us by providing explicit clues about the meaning of a page to Google by including structured data on the page. Structured data is a standardized format for providing information about a page and classifying the page content; for example, on a recipe page, what are the ingredients, the cooking time and temperature, the calories, and so on.
+> Google Search works hard to understand the content of a page. You can help us by providing explicit clues about the meaning of a page to Google by including structured data on the page. Structured data is a standardized format for providing information about a page and classifying the page content; for example, on a recipe page, what are the ingredients, the cooking time and temperature, the calories, and so on.
 
 Source: [Google](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data "Google Structured Data Overview")
 
@@ -221,7 +208,7 @@ That being said, there is quite a bit more to discuss here.
 
 ### Local Citations: Why your small business needs local citations
 
->A local citation is any online mention of partial or complete name, address, and phone number of a local business - also called NAP data. Citations can occur on local business directories, on websites and apps, and on social platforms. Citations help people to discover local businesses and can also impact local search engine rankings. Specifically, having high quality basic citations can help you [rank accurately on Google’s local search interfaces](https://moz.com/blog/beginner-guide-google-maps-ranking). Local businesses can actively manage many citations to ensure data accuracy.
+> A local citation is any online mention of partial or complete name, address, and phone number of a local business - also called NAP data. Citations can occur on local business directories, on websites and apps, and on social platforms. Citations help people to discover local businesses and can also impact local search engine rankings. Specifically, having high quality basic citations can help you [rank accurately on Google’s local search interfaces](https://moz.com/blog/beginner-guide-google-maps-ranking). Local businesses can actively manage many citations to ensure data accuracy.
 
 Source: [Moz: What Is a Local Citation?](https://moz.com/learn/seo/local-citations "What is a local citation?")
 
