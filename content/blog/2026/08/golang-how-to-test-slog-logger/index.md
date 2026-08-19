@@ -7,7 +7,7 @@ summary: This is a straight and too the point guide to testing slog.TextHandler 
 publishDate: '2026-08-18T21:25:13-04:00'
 updateDate:  '2026-08-18T21:25:13-04:00'
 images: ['/images/twitter-card.png']
-draft: true
+draft: false
 categories:
   - Go
   - Golang
