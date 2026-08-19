@@ -40,13 +40,19 @@ if !strings.Contains(string(out), "message") {
     }
 ```
 
+This pattern is pretty typical when you want to redirect os.Stdout.  We are capturing the "old"
+`os.Stdout` for later so we can reset it back to what it was. We create a couple of pipes, set
+`os.Stdout` to the writer, perform some action, then close the writer.  Once the writer is closed,
+we can restore our original `os.Stdout` that we saved in "old".  Then we get the captured bytes
+from out via `io.ReadAll(r)`.  If this was `fmt.Println("hello, world!")` then we would be done. 
+
 I assumed I'd be able to capture the output from Stdout but I was wrong.  When I
 used `t.Log(string(out))` I realized it was not capturing any output. Instead of figuring out a
 solution, I decided to adjust my code.
 
 __Note:__ After some review and reading, I realized that in my TestMain function I had set the
 slog.TextHandler had a previous os.Stdout it wasn't redirecting correctly but, instead, was
-redirecting to where it was assigned initially.    
+redirecting to where it was assigned initially.     
 
 1. Create a reusable factory function
 2. Pass in the writer and level parameter
