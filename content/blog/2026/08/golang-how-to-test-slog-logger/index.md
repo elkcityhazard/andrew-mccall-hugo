@@ -1,5 +1,5 @@
 ---
-title: 'Golang How to Test Slog.TextHander'
+title: 'Golang How to Test Slog.TextHandler'
 date: 2026-08-18
 author: Andrew M McCall
 description: I explain the easiest way to test slog Handlers in Google's Go (Golang) 
