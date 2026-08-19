@@ -3,7 +3,7 @@ title: 'Golang How to Test Slog Logger'
 date: 2026-08-18
 author: Andrew M McCall
 description: I explain the easiest way to test slog Handlers in Google's Go (Golang) 
-summary: This is a straight and too the point guide to testing slog.TextHandler using Go's testing package for Google's Golang.
+summary: This is a straight and to the point guide to testing slog.TextHandler using Go's testing package for Google's Golang.
 publishDate: '2026-08-18T21:25:13-04:00'
 updateDate:  '2026-08-18T21:25:13-04:00'
 images: ['/images/twitter-card.png']
@@ -43,6 +43,10 @@ if !strings.Contains(string(out), "message") {
 I assumed I'd be able to capture the output from Stdout but I was wrong.  When I
 used `t.Log(string(out))` I realized it was not capturing any output. Instead of figuring out a
 solution, I decided to adjust my code.
+
+__Note:__ After some review and reading, I realized that in my TestMain function I had set the
+slog.TextHandler had a previous os.Stdout it wasn't redirecting correctly but, instead, was
+redirecting to where it was assigned initially.    
 
 1. Create a reusable factory function
 2. Pass in the writer and level parameter
