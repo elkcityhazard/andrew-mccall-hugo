@@ -60,6 +60,10 @@ redirecting to where it was assigned initially.
 
 ## Create A Reusable slog.Handler Factory Function
 
+Instead of fighting with `os.Stdout`, I decided to just upgrade my code to be more testable and
+maintanable. We can create a reusable factory function to return a logger at will. All the caller
+needs to do is pass in the writer and the level and we are set to go. 
+
 ```
 func NewLogger(w io.Writer,levl slog.Level) *slog.Logger {
 		return slog.New(slog.NewTextHandler(w,&slog.HandlerOptions{
@@ -73,7 +77,10 @@ Now we can use this in our production code to setup a new logger:
 
 `logger := NewLogger(os.Stdout,slog.LevelInfo)`
 
-But in testing we can write the following unit test:
+This is great for production because it is flexible and maintainable.  For testing, it works well,
+too, because we can now pass in a `bytes.Buffer` as the writer and easily access it's content. 
+
+For testing,  we can write the following unit test:
 
 ```
 func Test_NewLogger(t *testing.T) {
