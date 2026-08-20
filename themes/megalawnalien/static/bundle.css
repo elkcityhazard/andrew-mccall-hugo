@@ -417,6 +417,25 @@ code {
   padding: 0.25rem;
   padding: var(--spacing-1);
 }
+main code {
+    display: inline;
+  }
+main ul,main ol {
+    list-style-position: inside;
+  }
+main ul li, main ol li {
+      margin-bottom: 0rem;
+      margin-bottom: var(--spacing-0);
+    }
+main ul li p, main ol li p {
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+      margin-top: var(--spacing-1);
+      margin-bottom: var(--spacing-1);
+      display: inline;
+      width: auto;
+      width: initial;
+    }
 main blockquote code {
   background: hsla(0, 0%, 100%, 1.0);
   background: var(--white);
@@ -1043,33 +1062,40 @@ body[data-theme="dark"] section[data-section="pagination"] ul li.active a {
             background: #fff;
             color: #000;
           }
-section[data-section="footer"] {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-    font-size: 1rem;
-    font-size: var(--font-size-base);
-    max-width: none;
-    max-width: initial;
-    align-items: start;
-    justify-items: center;
-    place-items: start center;
+section[data-section="footer"] a,section[data-section="footer"] p {
+    font-size: clamp(0.75rem, 0.5625rem + 0.8333vw, 1rem);
+  }
+section[data-section="footer"] p {
+    text-align: center;
+  }
+section[data-section="footer"] > * {
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: var(--spacing-auto);
+    margin-right: var(--spacing-auto);
+  }
+[data-list-id="social"] {
+  list-style: none;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  margin-top: var(--spacing-0);
+  margin-bottom: var(--spacing-0);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
-section[data-section="footer"] ul {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0.25rem;
-    gap: var(--spacing-1);
-    flex-flow: row wrap;
+[data-list-id="social"] li {
+  flex: 0 1 auto;
+    margin-bottom: 0rem;
+    margin-bottom: var(--spacing-0);
+    width: auto;
+    width: initial;
+  }
+[data-list-id="social"] li:not(:last-child) {
+    margin-right: 0.5rem;
+    margin-right: var(--spacing-2);
+  }
+@media screen and (min-width: calc(399 / 16 * 1rem)) {
 }
-section[data-section="footer"] ul li {
-      padding: 0;
-      margin-bottom: 0;
-    }
-@media screen and (min-width: calc(967 / 16 * 1rem)) {
-section[data-section="footer"] ul {
-      flex-flow: row nowrap
-}
-
-    }
 

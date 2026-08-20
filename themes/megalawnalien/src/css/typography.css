@@ -222,7 +222,22 @@ code {
   padding: var(--spacing-1);
 }
 
-
+main {
+  code {
+    display: inline;
+  }
+  ul,ol {
+    list-style-position: inside;
+    li {
+      margin-block-end: var(--spacing-0);
+    p {
+      margin-block: var(--spacing-1);
+      display: inline;
+      width: initial;
+    }
+    }
+  }
+}
 main blockquote code {
   background: var(--white);
 }

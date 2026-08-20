@@ -1,5 +1,5 @@
 <section data-section="footer">
-    <ul>
+    <ul data-list-id="social">
         {{ range .Site.Params.social }}
            <li><a href="{{ .url }}" title="Link To {{.name}} for Andrew M McCall" aria-label="Link To {{.name}} for Andrew M McCall">{{ .name }}</a></li>
         {{ end }}
