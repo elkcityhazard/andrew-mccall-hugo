@@ -7,7 +7,7 @@ install nerd fonts on Arch Linux using curl and unzip."
 summary: "Quickly install Nerd Fonts on Arch Linux using nerdfonts.com, curl, and unzip.  No special
 packages needed. Manage Nerd Fonts with ease and bonus content on setting the font in Alacritty." 
 publishDate: '2026-02-14T20:51:44-05:00'
-updateDate:  '2026-02-20T20:51:44-05:00'
+updateDate:  '2026-10-25T20:51:44-05:00'
 images: ['/images/twitter-card.png']
 draft: false
 categories:
@@ -52,6 +52,28 @@ https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/0xProto.zip`
  12. [Update Alacritty Following This Template](#alacritty-toml-example "Alacritty TOML Example For
 Nerd Fonts")
 
+## Verify What Nerd Fonts You Have Installed
+
+If you want to check to see if the font is installed or verify the name:
+
+```bash
+andrew@fedora:~$ fc-match "Iosevka Nerd Font Mono"
+IosevkaNerdFontMono-Regular.ttf: "Iosevka Nerd Font Mono" "Regular"
+andrew@fedora:~$ fc-match "Iosevka Nerd Font"
+IosevkaNerdFont-Regular.ttf: "Iosevka Nerd Font" "Regular"
+andrew@fedora:~$
+```
+
+This will help you confirm the name of your font when you go to use it in a config file.  
+
+Additionally, you can also 8utilize the `fc-list` command:
+
+```bash
+fc-list :family | grep -i "iosevka" | sort -u
+```
+This is especially helpful if you want to list all the fonts or just need to see if one exists.
+
+`fc-list` lists all of the currently installed fonts. passing in `:family` lets the system know we only want to list the families and not all of the extra details.  Next, we pipe the output of that command into grep to search for a specific font that we are interested in.  Finally, we pipe the result of that into sort to sort the output.  The `-u` flag says we want unique results only.  
 
 ## Alacritty TOML Example
 

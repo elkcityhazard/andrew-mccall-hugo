@@ -334,3 +334,37 @@ h1#siteHeader {
   overflow-wrap: break-word;
 }
 
+[class*="language-"] {
+	background: none;
+	padding-inline: 0.25rem;
+	font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+font-weight: normal;
+}
+
+body:is(body[data-theme='light']) {
+
+	.highlight {
+		background: #fff;
+	}
+
+	[class*="language-"] {
+		span {
+			color : #fff;
+		}
+	}
+
+}
+
+body:is(body[data-theme="dark"]) {
+	.highlight {
+		background: #333;
+	}
+
+	[class*="language-"] {
+		span {
+			color : #fff;
+		}
+	}
+
+}
+
