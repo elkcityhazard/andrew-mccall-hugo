@@ -119,3 +119,4 @@ improvements as the project matures.  You can read all about Nerd Fonts at
 
 - 2026-02-20 - the description of the article inaccurately referenced wget
   to install Nerd Fonts.  This article uses curl.
+- 2026-10-25 - added a small section describing how to use `fc-list` and `fc-match`
