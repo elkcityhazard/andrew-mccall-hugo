@@ -121,10 +121,10 @@ for item in ~/Dotfiles/*; do
 done
 ```
 
-This works, but isn't completely ideal.  When things update you typically need to
+This works, but isn't completely ideal.  When things update you need to
 go through a process to unlink everything. 
 
-This would look really similar to our linking script but we would replace the
+This would look similar to our linking script but we would replace the
 action with `unlink ~/.config/$(basename "$item")`. 
 
 ## An Alternative To Manual Linking: Stow
@@ -158,11 +158,11 @@ rm ~/.config/alacritty/alacritty.toml
 # OR
 mv ~/.config/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml.bak
 ```
-Once these are removed or backed up, you can run `stow config` cleanly without flags and your repository files will link to the system.
+Once these are removed or backed up, you can run `stow config` without flags and your repository files will link to the system.
 
 ## Making Updates
 
-On the current machine, you make updates as needed directly to the linked files and push them to the repo. Nothing really needs to be updated with Stow because the files are live symlinks. After you make changes to your config, you would do the following: 
+On the current machine, we make updates as needed directly to the linked files and push them to the repo. Nothing needs to be updated with Stow because the files are live symlinks. After you make changes to your config, you would do the following: 
 
 ```bash
 cd ~/Dotfiles
@@ -171,7 +171,7 @@ git commit -m "Update alacritty config"
 git push
 ```
 
-If you need to add a completely new program config file, you can manage it as its own package folder:
+If you want to add a new program config file, you can manage it as its own package folder:
 
 ```bash
 mkdir -p ~/Dotfiles/tmux/.config/tmux
@@ -183,7 +183,7 @@ git push -u origin main
 stow tmux
 ```
 
-The reason this structural symmetry matters is because when you go to another machine, your workflow becomes incredibly straightforward: 
+The reason this matters is because when you go to another machine, your workflow becomes straightforward: 
 
 ```bash
 cd ~/Dotfiles
