@@ -17,7 +17,7 @@ tags:
 ---
 
 My admittedly older dotfiles live at
-[://github.com](https://://github.com "External Link: github.com"). Every time I setup a new Unix-like system i.e., Linux I have a need to reconfigure my `.config` directory for my personalized configurations. 
+[github.com/elkcityhazard/archconfigs](https://github.com/elkcityhazard/archconfigs "External Link: github.com"). Every time I setup a new Unix-like system i.e., Linux I have a need to reconfigure my `.config` directory for my personalized configurations. 
 
 This assumes that you know how to create a git repo, and push files to git.  
 
@@ -129,7 +129,7 @@ action with `unlink ~/.config/$(basename "$item")`.
 
 ## An Alternative To Manual Linking: Stow
 
-[GNU Stow](https://gnu.org "External Link: GNU Stow") is free
+[GNU Stow](https://gnu.org/software/stow/ "External Link: GNU Stow") is free
 software designed to fix this exact problem.  
 
 It manages all of this messy process for us so we can think less strenuously
